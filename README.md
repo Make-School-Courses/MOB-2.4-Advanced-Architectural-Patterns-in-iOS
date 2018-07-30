@@ -48,8 +48,6 @@ Should be ~13 planned lessons (7 weeks x 2 meetings per week -~1 holiday)
 1. Monads, Monoids
 1. Functors
 1. Applicatives
-    
-- #### Week 3
 
 ## Tutorials & Projects
 
