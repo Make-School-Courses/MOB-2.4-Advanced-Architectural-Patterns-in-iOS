@@ -1,7 +1,5 @@
 # MOB-2.4-Advanced-Architecture-in-iOS
 
-## Course Overview
-
 ## Course Description
 
 We will be exploring some Advanced features of Swift as well as some interesting architectural patterns that will help you build rock solid iOS apps.
