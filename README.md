@@ -2,7 +2,7 @@
 
 ## Course Description
 
-We will be exploring some Advanced features of Swift as well as some interesting architectural patterns that will help you build rock solid iOS apps.
+We will be exploring some Advanced features of Swift as well as some interesting architectural patterns that will help you build rock solid iOS apps. We will review the architectural paradigms and then do a deep dive into a cutting edge iOS patterns like Functional Programming & Functional Reactive Programming (FRP).
 
 ## Course Specifics
 
@@ -16,7 +16,8 @@ Class Sessions:  14 classes, 7 labs
 
 ## Prerequisites:  
 
-MOB-2.4 <br>
+MOB-2.3 <br>
+BEW-2.2 <br>
 
 ## Learning Objectives or Competencies
 
