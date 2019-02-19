@@ -25,6 +25,9 @@ Students by the end of the course will be able to ...
 **[NEEDS TO BE WRITTEN]**
 
 ## Schedule
+
+**[LESSONS NEED TO BE WRITTEN]**
+
 ---
 ### **[INSTRUCTOR NOTE: PLEASE REMOVE THIS BEFORE APRIL 1]**
 If you teach **M/W** or **Tu/Th**, please pick from a template below and delete the other one
