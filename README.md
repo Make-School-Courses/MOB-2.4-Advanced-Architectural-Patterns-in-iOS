@@ -16,17 +16,79 @@ Class Sessions:  14 classes, 7 labs
 
 ## Prerequisites:  
 
-MOB-2.3 <br>
-BEW-2.2 <br>
+[MOB-2.3](https://github.com/Make-School-Courses/MOB-2.3-Concurrency-Parallelism-in-iOS)
 
 ## Learning Objectives or Competencies
 
 Students by the end of the course will be able to ...
 
-- Use functional programming methodologies in their projects.
-- Design and implement complex app architectures using a functional design pattern.
-- Compare and contrast functional design patterns with other design patterns(OOP etc).
-- Understand Monads, Monoids, Functors, Applicatives
+**[NEEDS TO BE WRITTEN]**
+
+## Schedule
+---
+### **[INSTRUCTOR NOTE: PLEASE REMOVE THIS BEFORE APRIL 1]**
+If you teach **M/W** or **Tu/Th**, please pick from a template below and delete the other one
+
+---
+### M/W Template **[PLEASE REMOVE THIS HEADER BEFORE APRIL 1]**
+**Course Dates:** Monday, April 1 – Wednesday, May 15, 2019 (7 weeks)
+
+**Class Times:** Monday and Wednesday at 3:30–5:20pm (14 class sessions)
+
+| Class |          Date          |                 Topics                  |
+|:-----:|:----------------------:|:---------------------------------------:|
+|  1 |  Monday, April 1                         | [Lesson 1] |
+|  2 |  Wednesday, April 3                      | [Lesson 2] |
+|  3 |  Monday, April 8                         | [Lesson 3] |
+|  4 |  Wednesday, April 10                     | [Lesson 4] |
+|  5 |  Monday, April 15                        | [Lesson 5] |
+|  6 |  Wednesday, April 17                     | [Lesson 6] |
+|  7 |  Monday, April 22                        | [Lesson 7] |
+|  8 |  Wednesday, April 24                     | [Lesson 8] |
+|  9 |  Monday, April 29                        | [Lesson 9] |
+| 10 |  Wednesday, May 1                        | [Lesson 10] |
+| 11 |  Monday, May 6                           | [Lesson 11] |  
+| 12 |  Wednesday, May 8                        | [Lesson 12] |
+| 13 |  Monday, May 13                          | Final Class (presentations, etc) |
+| 14 |  Wednesday, May 15                       | Final Exams/Presentations |
+
+[Lesson 1]: Lessons/Lesson1.md
+[Lesson 2]: Lessons/Lesson2.md
+[Lesson 3]: Lessons/Lesson3.md
+[Lesson 4]: Lessons/Lesson4.md
+[Lesson 5]: Lessons/Lesson5.md
+[Lesson 6]: Lessons/Lesson6.md
+[Lesson 7]: Lessons/Lesson7.md
+[Lesson 8]: Lessons/Lesson8.md
+[Lesson 9]: Lessons/Lesson9.md
+[Lesson 10]: Lessons/Lesson10.md
+[Lesson 11]: Lessons/Lesson11.md
+[Lesson 12]: Lessons/Lesson12.md
+
+## Class Assignments
+
+### Tutorials
+**[FILL IN]**
+
+### Projects
+**[FILL IN]**
+
+**All projects will require a minimum of 10 commits, and must take place throughout the entirety of the course**
+
+- **Good Example:** 40+ commits throughout the length of the course, looking for a healthy spattering of commits each week (such as 3-5 per day).
+- **Bad Example:** 10 commits on one day during the course and no others. Students who do this will be at severe risk of not passing the class.
+- **Unacceptable Example:** 2 commits the day before a project is due. Students who do this should not expect to pass the class. 
+
+#### Why are we doing this?
+
+We want to encourage best practices that you will see working as a professional software engineer. Breaking up a project by doing a large amount of commits helps engineers in the following ways:
+
+- It's much easier to retrace your steps if you break your project/product/code up into smaller pieces
+- It helps with being able to comprehend the larger problem, and also will help with your debugging (i.e. finding exactly when you pushed that piece of broken code)
+- It allows for more streamlined, iterative communication in your team, as it's much easier to hand off a small change to someone (updating a function) than a huge one (changed the architecture of the project)
+
+Through this requirement, we hope to encourage you to think about projects with an iterative, modular mindset. Doing so will allow you to break projects down into smaller milestones that come together to make your fully-realized solution.
+
 
 ## Evaluation
 
@@ -38,27 +100,14 @@ To pass this course you must meet the following requirements:
 - Finish all required tutorials and projects
 - Pass the final exam (summative assessment) with >=80%
 
-## Lessons
-
-Should be ~13 planned lessons (7 weeks x 2 meetings per week -~1 holiday)
-
-1. Intro to Functional Programming
-1. State Management with Recursion
-1. Monads, Monoids
-1. Functors
-1. Applicatives
-
-## Tutorials & Projects
-
-Projects:
-[Contractor App]()
 
 ## Make School Course Policies
 
-[Academic Honesty](https://github.com/Product-College-Courses/Common-Syllabus-Sections/blob/master/Academic-Honesty-and-Plagiarism.md)<br>
-[Accomodation Policy](https://github.com/Product-College-Courses/Common-Syllabus-Sections/blob/master/Accommodation-Policy.md)<br>
-[Diversity Statement](https://github.com/Product-College-Courses/Common-Syllabus-Sections/blob/master/Diversity-Statement.md)<br>
-[Evaluation Methods](https://github.com/Product-College-Courses/Common-Syllabus-Sections/blob/master/Evaluation-Methods.md)
+[Academic Honesty](https://make.sc/academic-honesty)<br>
+[Accommodations for Students](https://make.sc/accommodations-for-students)<br>
+[Attendance Policy](https://make.sc/attendance-policy)  
+[Diversity and Inclusion Policy](https://make.sc/diversity-and-inclusion-policy)<br>
+[Grading System](https://make.sc/grading-system)
 <br>
-[Title IX Disclaimer](https://github.com/Product-College-Courses/Common-Syllabus-Sections/blob/master/Evaluations-Title-X-Disclaimer.md)<br>
-[Program Learning Outcomes](https://github.com/Product-College-Courses/Common-Syllabus-Sections/blob/master/Program-Learning-Outcomes.md)
+[Title IX Policy](https://make.sc/title-ix-policy)<br>
+[Program Learning Outcomes](https://make.sc/program-learning-outcomes)
