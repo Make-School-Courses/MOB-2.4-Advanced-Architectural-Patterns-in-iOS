@@ -22,7 +22,10 @@ Class Sessions:  14 classes, 7 labs
 
 Students by the end of the course will be able to ...
 
-**[NEEDS TO BE WRITTEN]**
+1. Analyze and apply different creational, behavioral and structural patterns.
+1. Implement MVVM, Coordinators, MVP as architectural patterns.
+1. Use functional programming in Swift.
+1. Evaluate when to implement Reactive Programming in their projects.
 
 ## Schedule
 
