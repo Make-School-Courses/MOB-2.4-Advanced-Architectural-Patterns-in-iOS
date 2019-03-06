@@ -43,33 +43,33 @@ If you teach **M/W** or **Tu/Th**, please pick from a template below and delete 
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  Monday, April 1                         | [Lesson 1] |
-|  2 |  Wednesday, April 3                      | [Lesson 2] |
-|  3 |  Monday, April 8                         | [Lesson 3] |
-|  4 |  Wednesday, April 10                     | [Lesson 4] |
-|  5 |  Monday, April 15                        | [Lesson 5] |
-|  6 |  Wednesday, April 17                     | [Lesson 6] |
-|  7 |  Monday, April 22                        | [Lesson 7] |
-|  8 |  Wednesday, April 24                     | [Lesson 8] |
-|  9 |  Monday, April 29                        | [Lesson 9] |
-| 10 |  Wednesday, May 1                        | [Lesson 10] |
-| 11 |  Monday, May 6                           | [Lesson 11] |  
-| 12 |  Wednesday, May 8                        | [Lesson 12] |
+|  1 |  Monday, April 1                         | [Creational Patterns Pt.1] NEEDS CREATION |
+|  2 |  Wednesday, April 3                      | [Creational Patterns Pt.2] NEEDS CREATION |
+|  3 |  Monday, April 8                         | [Behavioral Patterns Pt.1] NEEDS CREATION |
+|  4 |  Wednesday, April 10                     | [Behavioral Patterns Pt.2] NEEDS CREATION |
+|  5 |  Monday, April 15                        | [Structural Patterns Pt.1] NEEDS CREATION |
+|  6 |  Wednesday, April 17                     | [Structural Patterns Pt.2] NEEDS CREATION |
+|  7 |  Monday, April 22                        | [MVVM] NEEDS CREATION |
+|  8 |  Wednesday, April 24                     | [Coordinators] NEEDS CREATION |
+|  9 |  Monday, April 29                        | [Functional Programming Pt.1] NEEDS CREATION |
+| 10 |  Wednesday, May 1                        | [Functional Programming Pt.2] NEEDS CREATION|
+| 11 |  Monday, May 6                           | [Reactive Programming Pt.1] NEEDS CREATION |  
+| 12 |  Wednesday, May 8                        | [Reactive Programming Pt.2] NEEDS CREATION |
 | 13 |  Monday, May 13                          | Final Class (presentations, etc) |
 | 14 |  Wednesday, May 15                       | Final Exams/Presentations |
 
-[Lesson 1]: Lessons/Lesson1.md
-[Lesson 2]: Lessons/Lesson2.md
-[Lesson 3]: Lessons/Lesson3.md
-[Lesson 4]: Lessons/Lesson4.md
-[Lesson 5]: Lessons/Lesson5.md
-[Lesson 6]: Lessons/Lesson6.md
-[Lesson 7]: Lessons/Lesson7.md
-[Lesson 8]: Lessons/Lesson8.md
-[Lesson 9]: Lessons/Lesson9.md
-[Lesson 10]: Lessons/Lesson10.md
-[Lesson 11]: Lessons/Lesson11.md
-[Lesson 12]: Lessons/Lesson12.md
+[Creational Patterns Pt.1]: Lessons/Lesson1.md
+[Creational Patterns Pt.2]: Lessons/Lesson2.md
+[Behavioral Patterns Pt.1]: Lessons/Lesson3.md
+[Behavioral Patterns Pt.2]: Lessons/Lesson4.md
+[Structural Patterns Pt.1]: Lessons/Lesson5.md
+[Structural Patterns Pt.2]: Lessons/Lesson6.md
+[MVVM]: Lessons/Lesson7.md
+[Coordinators]: Lessons/Lesson8.md
+[Functional Programming Pt.1]: Lessons/Lesson9.md
+[Functional Programming Pt.2]: Lessons/Lesson10.md
+[Reactive Programming Pt.1]: Lessons/Lesson11.md
+[Reactive Programming Pt.2]: Lessons/Lesson12.md
 
 ## Class Assignments
 
