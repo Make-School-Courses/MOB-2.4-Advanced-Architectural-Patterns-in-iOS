@@ -40,6 +40,8 @@ Explain why students should care to learn the material presented in this class.
 
 ## In Class Activity I (30 min)
 
+< student driver exercise here? >
+
 - I do, We do, You do
 - Reading & Discussion Questions in small groups
 - Draw a picture/diagram
