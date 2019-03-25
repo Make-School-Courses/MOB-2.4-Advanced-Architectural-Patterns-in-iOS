@@ -13,7 +13,17 @@
 
 ## Why you should know this or industry application (optional) (5 min)
 
-Explain why students should care to learn the material presented in this class.
+Design patterns represent time-tested solutions to general software development challenges realized by numerous experienced software engineers through decades of trial and error.
+
+Design patterns...
+
+- Create a common language
+- Provide tested solutions
+- Fast-track developer on-boarding
+- Allow you to spot similarities between code
+
+It’s best for a new developer to have an understanding of what they are before running into them...
+
 
 ## Learning Objectives (5 min)
 
@@ -32,6 +42,9 @@ Explain why students should care to learn the material presented in this class.
 - Concept Test
 
 ## Overview/TT I (20 min)
+
+__*The Singleton Pattern*__
+Apple uses this extensively in iOS development
 
 - Why learn this?
 - Industry examples of usage
@@ -54,6 +67,11 @@ Explain why students should care to learn the material presented in this class.
 - etc (get creative :D)
 
 ## Overview/TT II (optional) (20 min)
+
+__*The Object Template Pattern*__
+- Helps prevent the tight coupling of components
+- Also provides a foundation for more advanced patterns
+
 
 ## In Class Activity II (optional) (30 min)
 
