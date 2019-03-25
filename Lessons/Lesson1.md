@@ -13,12 +13,12 @@
 
 ## Why you should know this or industry application (optional) (5 min)
 
-Design patterns represent time-tested solutions to general software development challenges realized by numerous experienced software engineers through decades of trial and error.
+__*Design patterns*__ represent time-tested solutions to general software development challenges realized by numerous experienced software engineers through decades of trial and error.
 
 Design patterns...
 
 - Create a common language
-- Provide tested solutions
+- Provide tested solutions to common development problems
 - Fast-track developer on-boarding
 - Allow you to spot similarities between code
 
@@ -32,6 +32,77 @@ It’s best for a new developer to have an understanding of what they are before
 1. Design
 1. Implement
 
+
+## Overview/TT I (20 min)
+
+### 3 Types of Design Patterns
+
+There are three main types of design patterns:
+- Structural
+- Behavioral
+- Creational
+
+Lessons 1 and 2 cover Creational design Patterns
+
+### Creational patterns
+Creational patterns are concerned with how objects are created in an application.
+
+They aim to increase an application’s flexibility in instantiating objects in a manner suitable for a given situation.
+
+Creational design patterns include:
+- Object Template
+- Factory Method
+- Abstract Factory
+- Builder
+- Singleton
+- Prototype
+
+*from wikipedia*
+
+<!-- TODO: Insert a diagram? -->
+
+
+### The Singleton Pattern
+The singleton pattern restricts a class to only one, unique instance.
+
+To ensure there is only one instance of your singleton, you must make it impossible for anyone else to make an instance.
+
+Swift allows you to do this by marking the initializers as `private`. You can then add a `static` property for the shared instance, which is initialized inside the class.
+
+**Apple* uses this approach **extensively in iOS** development.
+
+Examples include:
+- UserDefaults.standard
+- UIApplication.shared
+- FileManager.default
+
+...all return a Singleton object.
+
+__*Simple Example:*__
+
+```Swift
+// Singleton design pattern
+   class DataSource {
+       static let sharedInstance = DataSource()
+
+       private init() // use a private init to ensure only 1 instance is created
+   }
+
+   // Invocation/usage
+   let data = DataSource.sharedInstance
+   ```
+
+
+<!-- for Presenter notes?
+- Why learn this?
+- Industry examples of usage
+- Best practices
+- Personal anecdote
+
+-->
+
+
+
 ## Initial Exercise (15 min)
 
 - Funny comic
@@ -41,15 +112,7 @@ It’s best for a new developer to have an understanding of what they are before
 - Quiz on homework or topic(s) of past class
 - Concept Test
 
-## Overview/TT I (20 min)
 
-__*The Singleton Pattern*__
-Apple uses this extensively in iOS development
-
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
 
 ## In Class Activity I (30 min)
 
