@@ -4,12 +4,15 @@
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview 1                  |
-| 0:20        | 0:45      | In Class Activity I       |
-| 1:05        | 0:10      | BREAK                     |
-| 1:15        | 0:45      | In Class Activity II      |
-| TOTAL       | 2:00      |                           |
+| 0:00        | 0:05      | Intro (Why know this?)                |
+| 0:05        | 0:05      | Objectives                |
+| 0:10       | 0:20      | Overview 1                  |
+| 0:30        | 0:20      | In Class Activity I       |
+|0:50        | 0:10      | BREAK                     |
+| 1:00       | 0:10      | Overview 2                  |
+| 1:10        | 0:30      | In Class Activity II      |
+|1:40       | 0:05    | Wrap Up                     |
+| TOTAL       | 1:45      |                           |
 
 ## Why you should know this or industry application (optional) (5 min)
 
