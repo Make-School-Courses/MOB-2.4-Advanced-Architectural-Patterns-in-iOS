@@ -5,7 +5,7 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
+| 0:05        | 0:15      | Overview 1                  |
 | 0:20        | 0:45      | In Class Activity I       |
 | 1:05        | 0:10      | BREAK                     |
 | 1:15        | 0:45      | In Class Activity II      |
@@ -119,7 +119,7 @@ Singletons are not the answer to every problem. And some developers are critical
 
 
 
-## Initial Exercise (15 min)
+## Initial Exercise (20 min)
 
 ### 1. As A Class
 
@@ -168,6 +168,20 @@ Singletons are not the answer to every problem. And some developers are critical
 __*The Object Template Pattern*__
 - Helps prevent the tight coupling of components
 - Also provides a foundation for more advanced patterns
+
+In the __*object template pattern,*__ you define a template from which objects are created from a class or struct.
+
+When some component in your app needs a new object created, it calls the runtime by specifying the name of the template to use, along with any initialization values required to configure the object.
+
+The __*object template pattern,*__ is composed of **three operations:**
+
+1. A calling component asks the runtime to **create** an object and provides the **template name** and required **initialization values.**
+
+2. The **runtime allocates memory** to store the object, **uses the template** to create it, and **prepares** (initializes) **the object for use.**
+
+3. The **runtime returns the created object** to the calling component
+
+Because this __*process can be easily repeated*__ as often as desired (within memory limits), a single template can be used to create many, many objects.
 
 
 ## In Class Activity II (optional) (30 min)
