@@ -27,10 +27,16 @@ It’s best for a new developer to have an understanding of what they are before
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+By the end of this lesson, you should be able to...
+
+1. Explain why design patterns are important in software development
+2. Describe:
+- the Singleton and Object Template patterns
+- the software construction problem each is intended to solve
+- potential use cases for each (when to use them)
+3. Assess:
+- the suitability of a given design pattern to solve a given problem
+- the trade offs (pros/cons) inherent in each
 
 
 ## Overview/TT I (20 min)
@@ -182,6 +188,10 @@ The __*object template pattern,*__ is composed of **three operations:**
 3. The **runtime returns the created object** to the calling component
 
 Because this __*process can be easily repeated*__ as often as desired (within memory limits), a single template can be used to create many, many objects.
+
+<!-- Needs code sample -->
+
+<!-- Needs diagram -->
 
 
 ## In Class Activity II (optional) (30 min)
