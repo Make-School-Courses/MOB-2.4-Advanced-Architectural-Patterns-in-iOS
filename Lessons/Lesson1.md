@@ -1,4 +1,4 @@
-# Lesson Title
+# Creational Patterns Pt.1
 
 ## Minute-by-Minute [OPTIONAL]
 
@@ -31,7 +31,7 @@ By the end of this lesson, you should be able to...
 
 1. Explain why design patterns are important in software development
 2. Describe:
-- the Singleton and Object Template patterns
+- the **Singleton** and **Object Template** patterns
 - the software construction problem each is intended to solve
 - potential use cases for each (when to use them)
 3. Assess:
@@ -252,4 +252,6 @@ The code snippet you analyzed above presents a simple example of __*Tight Coupli
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. [Software design pattern - wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+2. [Top 5 Design Patterns in Swift for iOS App Development - an article](https://rubygarage.org/blog/swift-design-patterns)
+3. [What Is a Singleton and How To Create One In Swift - an article](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift)
