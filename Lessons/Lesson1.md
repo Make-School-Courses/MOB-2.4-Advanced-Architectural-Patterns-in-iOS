@@ -207,7 +207,7 @@ print(“Total value of stock: $\(calculateStockValue(tuples: products))“)
 
 **Q:** If we remove an element from each of the tuples, how will that effect the rest of the code?
 
-*TODO:*
+**TODOs:**
 1. Have one person validate the code by running it in a playground just as it is.
 2. For each of the tuples in the array, remove the second element - the element which describes the product - so that your array now looks like this:
 ```Swift
@@ -220,16 +220,35 @@ var products = [
 4. Now, validate your analysis by applying your proposed fixes to the code in the playground (each person should do this separately in their own playground)
 
 
+## After Class
+
+1. **Research** — and __*be ready to discuss*__ in our next class the following:
+a) The two design patterns we’ve covered today, paying rapt attention to:
+- definition/design
+- the specific problem(s) that the pattern is intended to solve
+- pros/cons of using it
+- use case examples (with code to illustrate them, if possible)
+b) These concepts:
+- Inversion of Control (IoC)
+- Tight Coupling...and the benefits of decoupling
+
+2. **Rework the code** In the Activity above to **optimize maintainability:**
+
+The code snippet you analyzed above presents a simple example of __*Tight Coupling.*__ The functions used to process the items in the products array are *tightly coupled* to the variables in each product tuple.
+
+**TODO:** Applying what you’ve learned today, refactor the code in the snippet above to allow changing the properties on the product in a way that minimizes points of code change required elsewhere.
+
+
 ## Wrap Up (5 min)
 
 <!-- Note that the above code is an example of Tight Coupling
 - TODO:
   - reserach Tight Coupling
   - rework it using the Object Template pattern -->
-  
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+
+1) Brief summary of today's design Patterns
+2) Any questions re: the After Class assignments above
+
 
 ## Additional Resources
 
