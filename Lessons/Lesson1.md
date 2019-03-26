@@ -244,11 +244,6 @@ The code snippet you analyzed above presents a simple example of __*Tight Coupli
 
 ## Wrap Up (5 min)
 
-<!-- Note that the above code is an example of Tight Coupling
-- TODO:
-  - reserach Tight Coupling
-  - rework it using the Object Template pattern -->
-
 1) Brief summary of today's design Patterns
 2) Any questions re: the After Class assignments above
 
