@@ -1,20 +1,20 @@
 # Creational Patterns Pt.1
 
-## Minute-by-Minute [OPTIONAL]
+## Minute-by-Minute
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Intro (Why know this?)                |
+| 0:00        | 0:05      | Intro                |
 | 0:05        | 0:05      | Objectives                |
-| 0:10       | 0:20      | Overview 1                  |
+| 0:10       | 0:20      | Overview #1                 |
 | 0:30        | 0:20      | In Class Activity I       |
 |0:50        | 0:10      | BREAK                     |
-| 1:00       | 0:10      | Overview 2                  |
+| 1:00       | 0:10      | Overview #2                 |
 | 1:10        | 0:30      | In Class Activity II      |
 |1:40       | 0:05    | Wrap Up                     |
 | TOTAL       | 1:45      |                           |
 
-## Why you should know this or industry application (optional) (5 min)
+## Why you should know this or industry application (5 min)
 
 __*Design patterns*__ represent time-tested solutions to general software development challenges realized by numerous experienced software engineers through decades of trial and error.
 
@@ -42,7 +42,7 @@ By the end of this lesson, you should be able to...
 - the trade offs (pros/cons) inherent in each
 
 
-## Overview/TT I (20 min)
+## Overview/TT #1 (20 min)
 
 ### 3 Types of Design Patterns
 
@@ -128,7 +128,7 @@ Singletons are not the answer to every problem. And some developers are critical
 
 
 
-## Initial Exercise (20 min)
+## In Class Activity I (20 min)
 
 ### 1. As A Class
 
@@ -156,7 +156,7 @@ Singletons are not the answer to every problem. And some developers are critical
 -->
 
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT #2 (20 min)
 
 __*The Object Template Pattern*__
 - Helps prevent the tight coupling of components
@@ -181,7 +181,7 @@ Because this __*process can be easily repeated*__ as often as desired (within me
 <!-- Needs diagram -->
 
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (30 min)
 
 ### In Pairs
 
