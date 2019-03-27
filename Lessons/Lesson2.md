@@ -5,9 +5,10 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
+| 0:05        | 0:15      | Overview  I                |
 | 0:20        | 0:45      | In Class Activity I       |
 | 1:05        | 0:10      | BREAK                     |
+| 0:05        | 0:15      | Overview  II                |
 | 1:15        | 0:45      | In Class Activity II      |
 | TOTAL       | 2:00      |                           |
 
@@ -48,6 +49,9 @@ By using the Factory Method pattern!
 Factory Method is a Creational Pattern that is used to create objects without needing to specify the exact class of the object to be created.
 
 Instead of using a constructor, it creates objects by calling a specialized method accessible to calling components.
+
+
+#### Implementation
 
 Factory Method implementation is:
 
@@ -103,7 +107,62 @@ This pattern works when a calling component can rely on the existence of only on
 - Form into groups
 - etc (get creative :D)
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT II (20 min)
+
+#### Problems Addressed
+
+
+
+
+
+#### Description
+
+The Builder pattern is a creational design pattern that allows you to create  complex objects — composed of requisite parts — from simple objects.
+
+It differs from other Creational patterns in that it:
+- employs a step-by-step approach
+- calls for separating the construction of an object from its own class (i.e., An external class controls the construction algorithm).
+
+#### Implementation
+
+*Step-by-Step Approach*
+The pattern organizes object construction into a set of steps which must be created in the same order, or by using a specific algorithm, to repeatedly create multiple objects of the same type.
+
+To create an object, you execute a series these steps on a __*builder*__ object — but you are not required to call all steps for *all* objects created. You are allowed to call only those steps required to produced a particular object configuration.
+
+**External Builders**
+The Builder pattern suggests that you extract the object construction code out of its own class and move it to separate objects called *builders.*
+
+The construction of the intended object is assigned to builder classes/objects and split into multiple steps.
+
+To create an object, you successively call builder methods on an instance of a builder class, which builds the final object step-by-step and returns it as its final step.
+
+**Typical Steps**
+1. In a base builder class or protocol, declare the construction steps common to all intended optional object representations.
+2. Declare are concrete builder class for each of the object representations. Implement their specific construction steps, including implementing a function to fetch/return the constructed object, if applicable.
+3. Consider creating an additional class — often referred to as a Director — to encapsulate various ways to construct an object using the same builder class.
+4. Implement client code (in calling component) to create both the builder and director objects.
+- The client should pass the builder object to the director, and the director will use this builder object in all additional construction.
+5. Returning the constructed result can be achieved in optional ways. For examples:
+- It can be obtained directly from the director,  if all optional intended objects follow the same steps.
+- The client can fetch the result from the builder.
+
+#### Example
+
+<!-- Example code -->
+
+
+#### Benefits
+
+
+
+
+#### When to use (or not to)
+
+
+
+
+
 
 ## In Class Activity II (optional) (30 min)
 
