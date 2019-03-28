@@ -127,7 +127,7 @@ It differs from other Creational patterns in that it:
 
 #### Implementation
 
-*Step-by-Step Approach*
+**Step-by-Step Approach**
 The pattern organizes object construction into a set of steps which must be created in the same order, or by using a specific algorithm, to repeatedly create multiple objects of the same type.
 
 To create an object, you execute a series these steps on a __*builder*__ object — but you are not required to call all steps for *all* objects created. You are allowed to call only those steps required to produced a particular object configuration.
@@ -141,7 +141,7 @@ To create an object, you successively call builder methods on an instance of a b
 
 **Typical Steps**
 1. In a base builder class or protocol, declare the construction steps common to all intended optional object representations.
-2. Declare are concrete builder class for each of the object representations. Implement their specific construction steps, including implementing a function to fetch/return the constructed object, if applicable.
+2. Declare a concrete builder class for each of the object representations. Implement their specific construction steps, including implementing a function to fetch/return the constructed object, if applicable.
 3. Consider creating an additional class — often referred to as a Director — to encapsulate various ways to construct an object using the same builder class.
 4. Implement client code (in calling component) to create both the builder and director objects.
 - The client should pass the builder object to the director, and the director will use this builder object in all additional construction.
@@ -152,7 +152,7 @@ To create an object, you successively call builder methods on an instance of a b
 #### Example
 
 ```Swift
-/ Builder Pattern example
+// Builder Pattern example
 class WidgetFactory {
    var parts: String = “”
 }
@@ -186,19 +186,36 @@ print(widget.parts) // prints: adding part #1 adding part #2 adding part #3 addi
 
 
 #### Benefits
+This pattern allows you to produce different types and representations of an object using the same construction code.
 
+Builder can use one of the other patterns — including Singleton or Bridge — to provide the logic that decides which object gets built.
 
-
+Builder is one of the top design patterns used in iOS development (along with Singleton and Factory Method)
 
 #### When to use (or not to)
 
+Use the Builder pattern when…
+- you need to compose complex objects
+- you want to avoid having a constructor with too many parameters (difficult to work with)
+- your code needs different versions of a specific object
 
+**iOS Example**
+What if you want to create a view controller which creates a custom view based on the user’s selection of key criteria such as:
 
+- Region
+- Gender
+- Age
+- Personal Interests
+- etc.
 
+...and then present a *different* view based on each of the choices the user selects?
+
+Builder facilitates this architecture nicely!
 
 
 ## In Class Activity II (optional) (30 min)
 
+<!-- TODO: -->
 
 
 ## After Class
@@ -212,6 +229,7 @@ Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely
 - Abstract Factory Pattern
 - Template Method Pattern
 - Object Pool Pattern
+- Bridge Pattern
 
 2. Create a simple table view app (name it something like `MobDesignPatterns`) with the following characteristics:
 
