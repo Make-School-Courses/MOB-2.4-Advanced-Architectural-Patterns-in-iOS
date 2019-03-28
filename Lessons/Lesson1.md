@@ -230,7 +230,7 @@ a) The two design patterns we’ve covered today, paying rapt attention to:
 - definition/design
 - the specific problem(s) that the pattern is intended to solve
 - pros/cons of using it
-- use case examples (with code to illustrate them, if possible)
+- use case examples (with code to illustrate them, if possible)</br>
 b) These concepts:
 - Inversion of Control (IoC)
 - Tight Coupling...and the benefits of decoupling

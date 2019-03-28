@@ -1,4 +1,4 @@
-# Lesson Title
+# Creational Patterns Pt.1
 
 ## Minute-by-Minute [OPTIONAL]
 
@@ -11,10 +11,6 @@
 | 0:05        | 0:15      | Overview  II                |
 | 1:15        | 0:45      | In Class Activity II      |
 | TOTAL       | 2:00      |                           |
-
-## Why you should know this or industry application (optional) (5 min)
-
-Explain why students should care to learn the material presented in this class.
 
 ## Learning Objectives (5 min)
 
