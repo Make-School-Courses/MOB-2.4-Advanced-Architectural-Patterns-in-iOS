@@ -21,16 +21,22 @@
 
 ## Initial Exercise (15 min)
 
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
+### In Pairs
+
+Discuss...
+
+1. What you learned about the impact of tuples on extending and maintaining code.
+
+2. These concepts that you researched after the previous class:
+- Inversion of Control (IoC)
+- Tight Coupling...and the benefits of decoupling
+- The Singleton Plus design pattern
+
+**TIP:** *Feel free to look back at the previous lesson plan and/or to use Internet sources to jog your memory here...*
 
 ## Overview/TT I (20 min)
 
-### The Factory Patterns
+### The Factory Method Pattern
 
 #### Problems Addressed
 How do you create objects without needing to specify the exact class of the object to be created?
@@ -145,7 +151,38 @@ To create an object, you successively call builder methods on an instance of a b
 
 #### Example
 
-<!-- Example code -->
+```Swift
+/ Builder Pattern example
+class WidgetFactory {
+   var parts: String = “”
+}
+
+class Builder {
+   let widgetFactory = WidgetFactory()
+   var part = 0
+   func buildPart() {
+       part += 1
+       widgetFactory.parts = widgetFactory.parts + ” adding part #\(part)”
+   }
+
+   func getResult() -> WidgetFactory{
+       return widgetFactory
+   }
+}
+
+   class Director {
+       let builder = Builder()
+       func construct() -> WidgetFactory {
+           for _ in 1...5 {
+               builder.buildPart()
+           }
+           return builder.getResult()
+       }
+}
+let director = Director()
+let widget = director.construct()
+print(widget.parts) // prints: adding part #1 adding part #2 adding part #3 adding part #4 adding part #5
+```
 
 
 #### Benefits
@@ -162,12 +199,41 @@ To create an object, you successively call builder methods on an instance of a b
 
 ## In Class Activity II (optional) (30 min)
 
+
+
+## After Class
+
+Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely related to the *Abstract Factory pattern* and can also be considered a specialization of the *Template Method pattern.*
+
+**TODO:**
+
+1. Research these patterns with an eye toward examining how they relate to either the Builder or Factory Method patterns:
+- Virtual Constructor
+- Abstract Factory Pattern
+- Template Method Pattern
+- Object Pool Pattern
+
+2. Create a simple table view app (name it something like `MobDesignPatterns`) with the following characteristics:
+
+a) its data source is a string array with only the following 4 strings:
+"Singleton"
+"Object Template
+"Builder"
+"Factory Method"
+
+b) Tapping each of those 4 cells will launch a subordinate scene presenting a VC of the same name as its name in the data source (i.e, a VC called "Singleton" will be presented when the "Singleton" cell is tapped)
+
+3. (Stretch) For the Builder scene: Using the Builder pattern, create the constructs necessary to build a pizza, including 4 toppings, when the user presses a button (no UI response needed; log results are fine for now)
+
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+1) Brief review of today's design patterns
+2) Any questions re: the After Class assignments above
+
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. [Factory Method Pattern - wikipedia](https://en.wikipedia.org/wiki/Factory_method_pattern)
+2. Builder Design Pattern:
+[](https://en.wikipedia.org/wiki/Builder_pattern)
+[](https://www.geeksforgeeks.org/builder-design-pattern/)

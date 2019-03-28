@@ -236,12 +236,13 @@ a) The two design patterns we’ve covered today, paying rapt attention to:
 b) These concepts:
 - Inversion of Control (IoC)
 - Tight Coupling...and the benefits of decoupling
+- The Singleton Plus design pattern
 
 2. **Rework the code** In the Activity above to **optimize maintainability:**
 
 The code snippet you analyzed above presents a simple example of __*Tight Coupling.*__ The functions used to process the items in the products array are *tightly coupled* to the variables in each product tuple.
 
-**TODO:** Applying what you’ve learned today, refactor the code in the snippet above to allow changing the properties on the product in a way that minimizes points of code change required elsewhere.
+**TODO:** Applying what you’ve learned today, refactor the code in the snippet above to allow changing the properties on the product in a way that minimizes the need to change the calling code.
 
 
 ## Wrap Up (5 min)
