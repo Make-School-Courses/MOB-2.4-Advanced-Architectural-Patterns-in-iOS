@@ -220,6 +220,7 @@ var products = [
    (“Soccer Ball”, 19.5, 32)]
    ```
 3. Analyze and discuss with your partner the various places in the code which must now be rewritten to accommodate this change to the product tuples.
+- Also discuss what this reveals regarding the impact of tuples on extending and maintaining code.
 4. Now, validate your analysis by applying your proposed fixes to the code in the playground (each person should do this separately in their own playground)
 
 

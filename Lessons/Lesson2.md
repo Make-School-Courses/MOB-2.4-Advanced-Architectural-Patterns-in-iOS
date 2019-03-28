@@ -78,7 +78,7 @@ The Factory Method pattern is executed in **three operations:**
 2. It is simple to implement.
 3. It is often combined with the singleton and object pool patterns.
 
-#### When to use (or not to)
+#### When to use
 
 The goal of this pattern is to encapsulate a thing for which optional variations of that thing are needed.
 
@@ -86,32 +86,11 @@ Use it when there is a choice to be made between classes that implement a shared
 
 This pattern works when a calling component can rely on the existence of only one single base type; do not use it if there is no single common base class or shared protocol.
 
-<!--
-- Why learn this?
-
-- Industry examples of usage
-- Best practices
-- Personal anecdote
--->
-
-
-
 ## In Class Activity I (30 min)
 
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
-
+<!-- TODO: -->
 ## Overview/TT II (20 min)
 
-#### Problems Addressed
 
 
 
@@ -192,7 +171,7 @@ Builder can use one of the other patterns — including Singleton or Bridge — 
 
 Builder is one of the top design patterns used in iOS development (along with Singleton and Factory Method)
 
-#### When to use (or not to)
+#### When to use (problems addressed)
 
 Use the Builder pattern when…
 - you need to compose complex objects
@@ -253,5 +232,5 @@ b) Tapping each of those 4 cells will launch a subordinate scene presenting a VC
 
 1. [Factory Method Pattern - wikipedia](https://en.wikipedia.org/wiki/Factory_method_pattern)
 2. Builder Design Pattern:
-[](https://en.wikipedia.org/wiki/Builder_pattern)
-[](https://www.geeksforgeeks.org/builder-design-pattern/)
+[an article](https://en.wikipedia.org/wiki/Builder_pattern)
+[an article](https://www.geeksforgeeks.org/builder-design-pattern/)
