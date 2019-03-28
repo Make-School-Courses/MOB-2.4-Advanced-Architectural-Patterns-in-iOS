@@ -226,11 +226,13 @@ var products = [
 ## After Class
 
 1. **Research** — and __*be ready to discuss*__ in our next class the following:
+
 a) The two design patterns we’ve covered today, paying rapt attention to:
 - definition/design
 - the specific problem(s) that the pattern is intended to solve
 - pros/cons of using it
-- use case examples (with code to illustrate them, if possible)</br>
+- use case examples (with code to illustrate them, if possible)
+
 b) These concepts:
 - Inversion of Control (IoC)
 - Tight Coupling...and the benefits of decoupling
