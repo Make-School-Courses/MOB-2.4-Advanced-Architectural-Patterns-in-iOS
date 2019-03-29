@@ -65,7 +65,7 @@ Creational design patterns include:
 - __*Singleton*__
 - Prototype
 
-*from wikipedia*
+*From: wikipedia*
 
 *Lessons 1 and 2 cover the Creational design Patterns highlighted above*
 
@@ -92,14 +92,9 @@ __*Simple Example:*__
 
 ```Swift
 // Singleton design pattern
-   class DataSource {
-       static let sharedInstance = DataSource()
 
-       private init() // use a private init to ensure only 1 instance is created
-   }
 
-   // Invocation/usage
-   let data = DataSource.sharedInstance
+
    ```
 
 #### Pros & Cons
@@ -116,22 +111,25 @@ Singletons are not the answer to every problem. And some developers are critical
 - __*Singletons create hidden dependencies*__ and carry state around for the lifetime of the application.
 - They inherently __*cause code to be tightly coupled.__*
 
-
-
-<!-- for Presenter notes?
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
-
--->
-
-
-
 ## In Class Activity I (20 min)
 
 ### 1. As A Class
 
+
+```Swift
+// Singleton design pattern
+   class DataSource {
+       static let sharedInstance = DataSource()
+
+       private init() // use a private init to ensure only 1 instance is created
+   }
+
+   // Invocation/usage
+   let data = DataSource.sharedInstance
+   ```
+
+
+<!-- FIRST ACTIVITY 1 - retained as fallback:
 - View [Swift 2.0 Programming : Design Patterns : The Singleton Pattern](https://www.youtube.com/watch?v=3g7zZJWEbX0) video by the funza Academy (7 mins)
 
 ### 2. In Pairs - Discuss
@@ -144,15 +142,6 @@ Singletons are not the answer to every problem. And some developers are critical
 ### 3. As A Class
 
 - 1 or 2 students to share results of discussion with class...
-
-
-<!--
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
 -->
 
 
@@ -238,6 +227,7 @@ b) These concepts:
 - Inversion of Control (IoC)
 - Tight Coupling...and the benefits of decoupling
 - The Singleton Plus design pattern
+- Dependency Injection
 
 2. **Rework the code** In the Activity above to **optimize maintainability:**
 
@@ -257,3 +247,4 @@ The code snippet you analyzed above presents a simple example of __*Tight Coupli
 1. [Software design pattern - wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
 2. [Top 5 Design Patterns in Swift for iOS App Development - an article](https://rubygarage.org/blog/swift-design-patterns)
 3. [What Is a Singleton and How To Create One In Swift - an article](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift)
+4. [Swift 2.0 Programming : Design Patterns : The Singleton Pattern - video by funza Academy](https://www.youtube.com/watch?v=3g7zZJWEbX0)(7 mins)
