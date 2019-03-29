@@ -35,18 +35,18 @@ Students by the end of the course will be able to ...
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  Tuesday, April 2                         | [Creational Patterns Pt.1] NEEDS CREATION |
-|  2 |  Thursday, April 4                      | [Creational Patterns Pt.2] NEEDS CREATION |
-|  3 |  Tuesday, April 9                         | [Behavioral Patterns Pt.1] NEEDS CREATION |
-|  4 |  Thursday, April 11                     | [Behavioral Patterns Pt.2] NEEDS CREATION |
-|  5 |  Tuesday, April 16                        | [Structural Patterns Pt.1] NEEDS CREATION |
-|  6 |  Thursday, April 18                     | [Structural Patterns Pt.2] NEEDS CREATION |
-|  7 |  Tuesday, April 23                        | [MVVM] NEEDS CREATION |
-|  8 |  Thursday, April 25                     | [Coordinators] NEEDS CREATION |
-|  9 |  Tuesday, April 30                        | [Functional Programming Pt.1] NEEDS CREATION |
-| 10 |  Thursday, May 2                        | [Functional Programming Pt.2] NEEDS CREATION|
-| 11 |  Tuesday, May 7                           | [Reactive Programming Pt.1] NEEDS CREATION |  
-| 12 |  Thursday, May 9                        | [Reactive Programming Pt.2] NEEDS CREATION |
+|  1 |  Tuesday, April 2                         | [Creational Patterns Pt.1] |
+|  2 |  Thursday, April 4                      | [Creational Patterns Pt.2]  |
+|  3 |  Tuesday, April 9                         | [Behavioral Patterns Pt.1]  |
+|  4 |  Thursday, April 11                     | [Behavioral Patterns Pt.2] |
+|  5 |  Tuesday, April 16                        | [Structural Patterns Pt.1]|
+|  6 |  Thursday, April 18                     | [Structural Patterns Pt.2] |
+|  7 |  Tuesday, April 23                        | [MVVM] |
+|  8 |  Thursday, April 25                     | [Coordinators] |
+|  9 |  Tuesday, April 30                        | [Functional Programming Pt.1] 
+| 10 |  Thursday, May 2                        | [Functional Programming Pt.2] |
+| 11 |  Tuesday, May 7                           | [Reactive Programming Pt.1]  |  
+| 12 |  Thursday, May 9                        | [Reactive Programming Pt.2] |
 | 13 |  Tuesday, May 14                          | Final Class (presentations, etc) |
 | 14 |  Thursday, May 16                       | Final Exams/Presentations |
 
