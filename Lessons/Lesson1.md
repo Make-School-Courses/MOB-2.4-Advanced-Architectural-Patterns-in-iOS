@@ -90,11 +90,19 @@ Examples include:
 
 __*Simple Example:*__
 
+This simplified example illustrates the basic structure of a class definition designed to create a single instance of an object:
+
 ```Swift
 // Singleton design pattern
+class Singleton {
 
+   static let shared = Singleton()
 
-
+   private init() { // use a private init to ensure only 1 instance is created
+      // do something
+   }
+}
+let singleton = Singleton.shared
    ```
 
 #### Pros & Cons
@@ -115,6 +123,9 @@ Singletons are not the answer to every problem. And some developers are critical
 
 ### 1. As A Class
 
+#### Individually
+
+
 
 ```Swift
 // Singleton design pattern
@@ -128,6 +139,15 @@ Singletons are not the answer to every problem. And some developers are critical
    let data = DataSource.sharedInstance
    ```
 
+   <!--
+#### Part 2 - As A Class
+
+Discuss...
+
+**Q:** How do you think this pattern works to create a single, global instance?
+
+**Q:** What advantages and disadvantages come to mind?
+-->
 
 <!-- FIRST ACTIVITY 1 - retained as fallback:
 - View [Swift 2.0 Programming : Design Patterns : The Singleton Pattern](https://www.youtube.com/watch?v=3g7zZJWEbX0) video by the funza Academy (7 mins)
@@ -228,6 +248,7 @@ b) These concepts:
 - Tight Coupling...and the benefits of decoupling
 - The Singleton Plus design pattern
 - Dependency Injection
+- the `private` access control level
 
 2. **Rework the code** In the Activity above to **optimize maintainability:**
 
