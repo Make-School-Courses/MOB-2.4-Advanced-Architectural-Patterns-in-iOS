@@ -29,34 +29,26 @@ Students by the end of the course will be able to ...
 
 ## Schedule
 
-**[LESSONS NEED TO BE WRITTEN]**
+**Course Dates:** Tuesda, April 2 – Thursday, May 16, 2019 (7 weeks)
 
----
-### **[INSTRUCTOR NOTE: PLEASE REMOVE THIS BEFORE APRIL 1]**
-If you teach **M/W** or **Tu/Th**, please pick from a template below and delete the other one
-
----
-### M/W Template **[PLEASE REMOVE THIS HEADER BEFORE APRIL 1]**
-**Course Dates:** Monday, April 1 – Wednesday, May 15, 2019 (7 weeks)
-
-**Class Times:** Monday and Wednesday at 3:30–5:20pm (14 class sessions)
+**Class Times:** Monday and Wednesday at 1:30–3:20pm (14 class sessions)
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  Monday, April 1                         | [Creational Patterns Pt.1] NEEDS CREATION |
-|  2 |  Wednesday, April 3                      | [Creational Patterns Pt.2] NEEDS CREATION |
-|  3 |  Monday, April 8                         | [Behavioral Patterns Pt.1] NEEDS CREATION |
-|  4 |  Wednesday, April 10                     | [Behavioral Patterns Pt.2] NEEDS CREATION |
-|  5 |  Monday, April 15                        | [Structural Patterns Pt.1] NEEDS CREATION |
-|  6 |  Wednesday, April 17                     | [Structural Patterns Pt.2] NEEDS CREATION |
-|  7 |  Monday, April 22                        | [MVVM] NEEDS CREATION |
-|  8 |  Wednesday, April 24                     | [Coordinators] NEEDS CREATION |
-|  9 |  Monday, April 29                        | [Functional Programming Pt.1] NEEDS CREATION |
-| 10 |  Wednesday, May 1                        | [Functional Programming Pt.2] NEEDS CREATION|
-| 11 |  Monday, May 6                           | [Reactive Programming Pt.1] NEEDS CREATION |  
-| 12 |  Wednesday, May 8                        | [Reactive Programming Pt.2] NEEDS CREATION |
-| 13 |  Monday, May 13                          | Final Class (presentations, etc) |
-| 14 |  Wednesday, May 15                       | Final Exams/Presentations |
+|  1 |  Tuesday, April 2                         | [Creational Patterns Pt.1] NEEDS CREATION |
+|  2 |  Thursday, April 4                      | [Creational Patterns Pt.2] NEEDS CREATION |
+|  3 |  Tuesday, April 9                         | [Behavioral Patterns Pt.1] NEEDS CREATION |
+|  4 |  Thursday, April 11                     | [Behavioral Patterns Pt.2] NEEDS CREATION |
+|  5 |  Tuesday, April 16                        | [Structural Patterns Pt.1] NEEDS CREATION |
+|  6 |  Thursday, April 18                     | [Structural Patterns Pt.2] NEEDS CREATION |
+|  7 |  Tuesday, April 23                        | [MVVM] NEEDS CREATION |
+|  8 |  Thursday, April 25                     | [Coordinators] NEEDS CREATION |
+|  9 |  Tuesday, April 30                        | [Functional Programming Pt.1] NEEDS CREATION |
+| 10 |  Thursday, May 2                        | [Functional Programming Pt.2] NEEDS CREATION|
+| 11 |  Tuesday, May 7                           | [Reactive Programming Pt.1] NEEDS CREATION |  
+| 12 |  Thursday, May 9                        | [Reactive Programming Pt.2] NEEDS CREATION |
+| 13 |  Tuesday, May 14                          | Final Class (presentations, etc) |
+| 14 |  Thursday, May 16                       | Final Exams/Presentations |
 
 [Creational Patterns Pt.1]: Lessons/Lesson1.md
 [Creational Patterns Pt.2]: Lessons/Lesson2.md
@@ -73,11 +65,8 @@ If you teach **M/W** or **Tu/Th**, please pick from a template below and delete 
 
 ## Class Assignments
 
-### Tutorials
-**[FILL IN]**
-
 ### Projects
-**[FILL IN]**
+- Coming Soon!
 
 **All projects will require a minimum of 10 commits, and must take place throughout the entirety of the course**
 
