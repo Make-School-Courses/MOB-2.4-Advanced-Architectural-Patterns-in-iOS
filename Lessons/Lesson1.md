@@ -139,27 +139,29 @@ var simpleArray = [“eenie”, “meenie”, “minie”, “moe”]
 2. A `private init()` function that only contains these two statements:</br>
 
     `print(“self is:“, self)` </br>
-    
+
     `print("simpleArray is," simpleArray)`  
 
 **Step 2:**  Instantiate the Singleton object
 
 `let data = DataSource.sharedInstance`
 
-Now, __*run*__ the playground...
+Now, __*run*__ your playground...
 
-**Step 3:**  Below your code so far, add and invoke the following `looper()` function
+**Step 3:**  Below your code so far, add and invoke the following `looper()` function:
 
 ```Swift
 func looper(){
 
-  for n in 1...5 {
-      _ = DataSource.sharedInstance
-      print(“n is:“, n)
-  }
+  for num in 1...5 {
+          _ = DataSource.sharedInstance
+          print("num is:", num)
+    }
 }
 looper()
 ```
+
+__*Run*__ your playground again...
 
 **Q:** What is surprising or noteworthy about the result of running `looper()`?
 
