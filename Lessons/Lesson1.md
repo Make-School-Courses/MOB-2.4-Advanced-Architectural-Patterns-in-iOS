@@ -96,13 +96,14 @@ This simplified example illustrates the basic structure of a class definition de
 // Singleton design pattern
 class Singleton {
 
-   static let shared = Singleton()
+   static let sharedInstance = Singleton()
 
    private init() { // use a private init to ensure only 1 instance is created
       // do something
    }
 }
-let singleton = Singleton.shared
+// Instantiate the Singleton object
+let singleton = Singleton.sharedInstance
    ```
 
 #### Pros & Cons
@@ -121,9 +122,74 @@ Singletons are not the answer to every problem. And some developers are critical
 
 ## In Class Activity I (20 min)
 
-### 1. As A Class
-
 #### Individually
+
+Let's create a simple example of a Singleton class that designed to create an array to be used as an applications a single, globally-accessible data source.
+
+**Step 1:** Create and Test Your Singleton
+
+In a playground, create a Singleton class called `DataSource` with these members:
+
+1. an array that holds a few items:
+
+```Swift
+var simpleArray = [“eenie”, “meenie”, “minie”, “moe”]
+```
+
+2. a `private init()` function that only contains these two statements:
+    `print(“self is:“, self)`
+    `print("simpleArray is," simpleArray)`
+
+3. Instantiate the Singleton object
+
+`let data = DataSource.sharedInstance`
+
+Now, __*run*__ the playground...
+
+4. Below your code so far, add and invoke the following `looper()` funcntion
+
+```Swift
+func looper(){
+
+  for n in 1...5 {
+
+      _ = DataSource.sharedInstance
+      print(“n is:“, n)
+  }
+}
+looper()
+```
+
+**Q:** What is surprising or noteworthy about the result of running `looper()`?
+
+
+
+/ Singleton design pattern
+class DataSource {
+  static let sharedInstance = DataSource()
+
+  var stoogesArray = [“eenie”, “meenie”, “minie”, “moe”]
+
+  private init() { // use a private init to ensure only 1 instance is created
+      print(“self is:“, self)
+  }
+}
+
+// Instantiate the shared instance
+//let data = DataSource.sharedInstance
+//
+//let data2 = DataSource.sharedInstance
+
+func looper(){
+
+  for n in 1...5 {
+
+      _ = DataSource.sharedInstance
+      print(“n is:“, n)
+  }
+}
+looper()
+
 
 
 
