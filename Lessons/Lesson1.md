@@ -40,7 +40,24 @@ By the end of this lesson, you should be able to...
 3. Assess:
 - the suitability of a given design pattern to solve a given problem
 - the trade offs (pros/cons) inherent in each
+4. Implement basic examples of both patterns explored in this class
 
+
+By the end of this class, students should be able to…
+
+- Explain why design patterns are important in software development
+Describe:
+What Creational Design Patterns are used for (in general)
+the Singleton and Object Template patterns
+the problem(s) each is intended to solve
+potential use cases for each
+when to use them
+Implement:
+Xxx
+xxx
+Assess:
+- the suitability of a given design pattern to solve a given problem
+the trade offs (pros/cons) inherent in each
 
 ## Overview/TT #1 (20 min)
 
@@ -162,6 +179,11 @@ looper()
 ```
 
 __*Run*__ your playground again...
+
+
+#### As A Class
+
+Discuss...
 
 **Q:** What is surprising or noteworthy about the result of running `looper()`?
 
