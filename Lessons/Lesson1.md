@@ -136,7 +136,7 @@ In a playground, create a Singleton class called `DataSource` with these members
 var simpleArray = [“eenie”, “meenie”, “minie”, “moe”]
 ```
 
-2. a `private init()` function that only contains these two statements:
+2. A `private init()` function that only contains these two statements:</br>
     `print(“self is:“, self)`
     `print("simpleArray is," simpleArray)`  
 
