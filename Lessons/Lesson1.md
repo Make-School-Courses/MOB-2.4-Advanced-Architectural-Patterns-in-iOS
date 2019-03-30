@@ -138,7 +138,7 @@ var simpleArray = [“eenie”, “meenie”, “minie”, “moe”]
 
 2. a `private init()` function that only contains these two statements:
     `print(“self is:“, self)`
-    `print("simpleArray is," simpleArray)`
+    `print("simpleArray is," simpleArray)`  
 
 **Step 2:**  Instantiate the Singleton object
 
@@ -152,7 +152,6 @@ Now, __*run*__ the playground...
 func looper(){
 
   for n in 1...5 {
-
       _ = DataSource.sharedInstance
       print(“n is:“, n)
   }
