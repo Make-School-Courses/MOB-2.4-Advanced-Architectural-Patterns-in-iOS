@@ -137,6 +137,7 @@ var simpleArray = [“eenie”, “meenie”, “minie”, “moe”]
 ```
 
 2. A `private init()` function that only contains these two statements:</br>
+
     `print(“self is:“, self)`
     `print("simpleArray is," simpleArray)`  
 
@@ -146,7 +147,7 @@ var simpleArray = [“eenie”, “meenie”, “minie”, “moe”]
 
 Now, __*run*__ the playground...
 
-**Step 3:**  Below your code so far, add and invoke the following `looper()` funcntion
+**Step 3:**  Below your code so far, add and invoke the following `looper()` function
 
 ```Swift
 func looper(){
