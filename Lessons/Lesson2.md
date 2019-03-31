@@ -68,23 +68,20 @@ The Factory Method pattern is executed in **three operations:**
 2. The factory method executes using the passed-in arguments to create an instance of the desired class.
 3. Once the instance of the desired class is created, the factory method returns to the calling component a reference to the newly-created object of the desired class.
 
-#### Example
-
-<!-- Example code -->
-
 
 #### Benefits
 1. Factory Method pattern makes the codebase more flexible to add or remove new types.
 2. It is simple to implement.
-3. It is often combined with the singleton and object pool patterns.
+3. It is often combined with the Singleton and Object Pool patterns.
 
 #### When to use
 
-The goal of this pattern is to encapsulate a thing for which optional variations of that thing are needed.
+The goal of this pattern is to encapsulate a **thing** for which optional variations of that thing are needed.
 
 Use it when there is a choice to be made between classes that implement a shared protocol or base class.
 
-This pattern works when a calling component can rely on the existence of only one single base type; do not use it if there is no single common base class or shared protocol.
+This pattern works when a calling component can rely on the existence of only one single base type
+- __*do not*__ use it if there is no single common base class or shared protocol.
 
 ## In Class Activity I (30 min)
 
