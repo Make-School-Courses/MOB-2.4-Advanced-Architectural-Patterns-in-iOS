@@ -150,7 +150,9 @@ In a playground, create a Singleton class called `DataSource` with these members
 1. An array that holds a few items:
 
 ```Swift
-var creationalPatternsArray = ["Abstract Factory", "Factory Method", "Builder", "Dependency Injection", "Lazy Initialization", "Object Pool", "Prototype", "Singleton"]
+var creationalPatternsArray = ["Abstract Factory", "Factory Method",
+                      "Builder", "Dependency Injection", "Lazy Initialization",
+                      "Object Pool", "Prototype", "Singleton"]
 ```
 
 2. A `private init()` function that only contains these two statements:</br>
