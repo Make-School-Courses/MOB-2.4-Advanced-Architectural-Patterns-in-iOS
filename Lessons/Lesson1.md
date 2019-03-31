@@ -157,9 +157,11 @@ var creationalPatternsArray = ["Abstract Factory", "Factory Method",
 
 2. A `private init()` function that only contains these two statements:</br>
 
-    `print(“self is:“, self)` </br>
+    ```Swift
+      print(“self is:“, self)` 
 
-    `print("creationalPatternsArray is," creationalPatternsArray)`  
+      print("creationalPatternsArray is," creationalPatternsArray)
+      ```
 
 **Step 2:**  Instantiate the Singleton object
 
