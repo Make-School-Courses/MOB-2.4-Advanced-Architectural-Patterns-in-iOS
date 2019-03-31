@@ -158,7 +158,7 @@ var creationalPatternsArray = ["Abstract Factory", "Factory Method",
 2. A `private init()` function that only contains these two statements:</br>
 
     ```Swift
-      print(“self is:“, self)` 
+      print(“self is:“, self)
 
       print("creationalPatternsArray is," creationalPatternsArray)
       ```
