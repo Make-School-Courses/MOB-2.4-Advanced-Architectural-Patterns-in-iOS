@@ -14,10 +14,17 @@
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+By the end of this lesson, you should be able to...
+
+1. Describe:
+- the **Factory Method** and **Builder** patterns
+- the software construction problem each is intended to solve
+- potential use cases for each (when to use them)
+3. Assess:
+- the suitability of a given design pattern to solve a given problem
+- the trade offs (pros/cons) inherent in each
+4. Implement basic examples of both patterns explored in this class
+
 
 ## Initial Exercise (15 min)
 
