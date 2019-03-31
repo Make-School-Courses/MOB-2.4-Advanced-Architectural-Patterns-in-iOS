@@ -150,14 +150,14 @@ In a playground, create a Singleton class called `DataSource` with these members
 1. An array that holds a few items:
 
 ```Swift
-var simpleArray = [“eenie”, “meenie”, “minie”, “moe”]
+var creationalPatternsArray = ["Abstract Factory", "Factory Method", "Builder", "Dependency Injection", "Lazy Initialization", "Object Pool", "Prototype", "Singleton"]
 ```
 
 2. A `private init()` function that only contains these two statements:</br>
 
     `print(“self is:“, self)` </br>
 
-    `print("simpleArray is," simpleArray)`  
+    `print("creationalPatternsArray is," creationalPatternsArray)`  
 
 **Step 2:**  Instantiate the Singleton object
 
@@ -315,6 +315,9 @@ The code snippet you analyzed above presents a simple example of __*Tight Coupli
 ## Additional Resources
 
 1. [Software design pattern - wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
-2. [Top 5 Design Patterns in Swift for iOS App Development - an article](https://rubygarage.org/blog/swift-design-patterns)
-3. [What Is a Singleton and How To Create One In Swift - an article](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift)
-4. [Swift 2.0 Programming : Design Patterns : The Singleton Pattern - video by funza Academy](https://www.youtube.com/watch?v=3g7zZJWEbX0)(7 mins)
+2. [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
+- An extremely important book in the field of software development. Co-written by the "Gang of Four" (not the British punk rock group of the same name)
+3. [Top 5 Design Patterns in Swift for iOS App Development - an article](https://rubygarage.org/blog/swift-design-patterns)
+4. [Creational pattern - wikipedia](https://en.wikipedia.org/wiki/Creational_pattern)
+5. [What Is a Singleton and How To Create One In Swift - an article](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift)
+6. [Swift 2.0 Programming : Design Patterns : The Singleton Pattern - video by funza Academy](https://www.youtube.com/watch?v=3g7zZJWEbX0)(7 mins)
