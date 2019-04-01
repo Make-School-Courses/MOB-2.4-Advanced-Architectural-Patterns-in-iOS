@@ -134,7 +134,6 @@ class TruckFactory: CarFactory {
     }
 }
 
-
 let truckFactory = TruckFactory()
 let truck = truckFactory.create()
 truck.drive() // prints "driving a truck"
