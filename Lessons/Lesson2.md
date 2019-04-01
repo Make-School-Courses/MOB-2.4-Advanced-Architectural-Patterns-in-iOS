@@ -283,5 +283,5 @@ b) Tapping each of those 4 cells will launch a subordinate scene presenting a VC
 
 1. [Factory Method Pattern - wikipedia](https://en.wikipedia.org/wiki/Factory_method_pattern)
 2. Builder Design Pattern:</br>
-[an article](https://en.wikipedia.org/wiki/Builder_pattern)</br>
-[an article](https://www.geeksforgeeks.org/builder-design-pattern/)
+[Article 1](https://en.wikipedia.org/wiki/Builder_pattern)</br>
+[Article 2](https://www.geeksforgeeks.org/builder-design-pattern/)
