@@ -92,13 +92,61 @@ This pattern works when a calling component can rely on the existence of only on
 
 ## In Class Activity I (30 min)
 
-<!-- TODO: -->
+In the code below, all vehicles are to be created using the `CarFactory` protocol's `create()` function.
+
+But only the code for creating the Truck object has been completed.
+
+**TODO:** Complete the code for creating the **SportsCar** and **SUV** obects following the basic guidelines of the Factory Method pattern introduced above. Validate creation of each object by running it's `drive()` function.
+
+```Swift
+// factory protocol
+protocol CarFactory {
+    func create() -> Car
+}
+
+class Car {
+    func drive() {
+        print("driving a car")
+    }
+}
+
+class Truck: Car {
+    override func drive() {
+        print("driving a truck")
+    }
+}
+
+class SportsCar: Car {
+   // missing function
+
+}
+
+class SUV: Car {
+    override func drive() {
+        print("I’d rather be driving!")
+    }
+}
+
+/// concrete factory
+class TruckFactory: CarFactory {
+    func create() -> Car {
+        return Truck()
+    }
+}
+
+
+let truckFactory = TruckFactory()
+let truck = truckFactory.create()
+truck.drive() // prints "driving a truck"
+
+let sportsCarFactory = SportsCarFactory()
+
+
+let suvFactory = SUVFactory()
+```
+
+
 ## Overview/TT II (20 min)
-
-
-
-
-
 
 #### Description
 
