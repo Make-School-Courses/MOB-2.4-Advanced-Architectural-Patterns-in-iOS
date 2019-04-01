@@ -125,7 +125,7 @@ Singletons are not the answer to every problem. And some developers are critical
 
 #### Individually
 
-Let's create a simple example of a Singleton class that designed to create an array to be used as an applications a single, globally-accessible data source.
+Let's create a simple example of a Singleton class that designed to create an array to be used as an application's a single, globally-accessible data source.
 
 **Step 1:** Create the Singleton
 
@@ -174,6 +174,7 @@ Discuss...
 
 **Q:** What is surprising or noteworthy about the result of running `looper()`?
 
+**Q:** What use cases can you imagine for the Singleton pattern?
 
    <!--
 #### Part 2 - As A Class
