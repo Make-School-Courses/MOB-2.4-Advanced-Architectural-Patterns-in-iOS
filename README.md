@@ -29,7 +29,7 @@ Students by the end of the course will be able to ...
 
 ## Schedule
 
-**Course Dates:** Tuesda, April 2 – Thursday, May 16, 2019 (7 weeks)
+**Course Dates:** Tuesday, April 2 – Thursday, May 16, 2019 (7 weeks)
 
 **Class Times:** Monday and Wednesday at 1:30–3:20pm (14 class sessions)
 
@@ -43,7 +43,7 @@ Students by the end of the course will be able to ...
 |  6 |  Thursday, April 18                     | [Structural Patterns Pt.2] |
 |  7 |  Tuesday, April 23                        | [MVVM] |
 |  8 |  Thursday, April 25                     | [Coordinators] |
-|  9 |  Tuesday, April 30                        | [Functional Programming Pt.1] 
+|  9 |  Tuesday, April 30                        | [Functional Programming Pt.1]
 | 10 |  Thursday, May 2                        | [Functional Programming Pt.2] |
 | 11 |  Tuesday, May 7                           | [Reactive Programming Pt.1]  |  
 | 12 |  Thursday, May 9                        | [Reactive Programming Pt.2] |
@@ -72,7 +72,7 @@ Students by the end of the course will be able to ...
 
 - **Good Example:** 40+ commits throughout the length of the course, looking for a healthy spattering of commits each week (such as 3-5 per day).
 - **Bad Example:** 10 commits on one day during the course and no others. Students who do this will be at severe risk of not passing the class.
-- **Unacceptable Example:** 2 commits the day before a project is due. Students who do this should not expect to pass the class. 
+- **Unacceptable Example:** 2 commits the day before a project is due. Students who do this should not expect to pass the class.
 
 #### Why are we doing this?
 
