@@ -245,7 +245,93 @@ Builder facilitates this architecture nicely!
 
 ## In Class Activity II (optional) (30 min)
 
-<!-- TODO: -->
+### Part 1
+
+The code below uses the Builder pattern (with a Director) to standardize the creation of three types of bicycles.
+
+The implementation for the Kids bike is already complete.
+
+Your job is to complete the code so that the remaining two bicycle types can also be created.
+
+```swift
+import UIKit
+
+enum BicycleSize: String {
+   case small
+   case medium
+   case large
+}
+
+enum BicycleType : String {
+   case kids
+   case standard
+   case mountain
+}
+
+struct Bicycle
+{
+   public let type: BicycleType
+   public let color: UIColor
+   public let size: BicycleSize
+}
+
+extension Bicycle: CustomStringConvertible {
+   public var description: String {
+       return type.rawValue + ” bicycle”
+   }
+}
+
+// Builder Protocol
+protocol BikeBuilder {
+   var type: BicycleType { get set }
+   var color: UIColor { get set }
+   var size: BicycleSize { get set }
+
+   func construct() -> Bicycle
+}
+
+// MARK: - Builder
+class BicycleBuilder: BikeBuilder {
+
+   var type: BicycleType = .standard
+   var color: UIColor = .gray
+   var size: BicycleSize = .medium
+
+   func construct() -> Bicycle {
+       return Bicycle(type: type, color: color, size: size)
+   }
+}
+
+// MARK: - Director
+public class BikeAssembler {
+
+   // Build a kids bike
+   func createKidsBike() -> Bicycle {
+       let builder = BicycleBuilder()
+       builder.type = .kids
+       builder.size = .small
+       return builder.construct()
+   }
+
+   // TODO: 1) build the Mountain bike
+
+   // TODO: 2) the Standard bike
+
+}
+
+let bikeAssembler = BikeAssembler()
+let kids = bikeAssembler.createKidsBike()
+print(kids.description)
+```
+
+### Part 2
+
+Create a `Single View App` project.
+- On the main screen, provide 4 buttons, each of a different color and another button that will create a detail view
+- Applying the Builder pattern, generate the detail view based on the color the user selects (i.e., set the color of the detail view to the color selected by the UserDefaults
+
+### Part 3 - Stretch goal
+
 
 
 ## After Class
@@ -261,17 +347,8 @@ Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely
 - Object Pool Pattern
 - Bridge Pattern
 
-2. Create a simple table view app (name it something like `MobDesignPatterns`) with the following characteristics:
+2. Using the Builder pattern, create a simple Single View App with the constructs necessary to build a pizza -  including 4 toppings - when the user presses a button (no UI presentation needed; log results are fine for now)
 
-a) its data source is a string array with only the following 4 strings:
-"Singleton"
-"Object Template
-"Builder"
-"Factory Method"
-
-b) Tapping each of those 4 cells will launch a subordinate scene presenting a VC of the same name as its name in the data source (i.e, a VC called "Singleton" will be presented when the "Singleton" cell is tapped)
-
-3. (Stretch) For the Builder scene: Using the Builder pattern, create the constructs necessary to build a pizza, including 4 toppings, when the user presses a button (no UI response needed; log results are fine for now)
 
 ## Wrap Up (5 min)
 
