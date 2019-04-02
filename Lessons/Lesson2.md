@@ -1,18 +1,18 @@
-# Creational Patterns Pt.1
+# Creational Patterns Pt.2
 
-## Minute-by-Minute [OPTIONAL]
+## Minute-by-Minute
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview  I                |
-| 0:20        | 0:15      | Initial Exercise             |
-| 0:35        | 0:15      | Overview  I                |
-| 0:50        | 0:15      | In Class Activity I       |
-| 1:05        | 0:10      | BREAK                     |
-| 1:15         | 0:15      | Overview  II                |
-| 1:30        | 0:30      | In Class Activity II      |
-| TOTAL       | 2:00      |                           |
+| 0:05       | 0:15      | Initial Exercise             |
+| 0:20       | 0:15      | Overview  I                |
+| 0:35        | 0:15      | In Class Activity I       |
+| 0:50        | 0:10      | BREAK                     |
+| 1:00         | 0:20      | Overview  II                |
+| 1:20        | 0:30      | In Class Activity II      |
+|1:50       | 0:05    | Wrap Up                     |
+| TOTAL       | 1:55     |                           |
 
 ## Learning Objectives (5 min)
 
@@ -32,14 +32,14 @@ By the end of this lesson, you should be able to...
 
 ### Part 1 - Individually
 
-__*Yeah! ...time for a Quiz!*__
+__*Yay!! ...time for a Quiz!*__
 
 ### Part 2 - In Pairs
 
 Grade each others quiz, sharing answers, insights, etc.
 
 
-## Overview/TT I (20 min)
+## Overview/TT I (15 min)
 
 ### The Factory Method Pattern
 
@@ -328,9 +328,6 @@ Create a `Single View App` project.
 - On the main screen, provide 4 buttons, each of a different color and another button that will create a detail view
 - Applying the Builder pattern, generate the detail view based on the color the user selects (i.e., set the color of the detail view to the color selected by the UserDefaults
 
-### Part 3 - Stretch goal
-
-
 
 ## After Class
 
@@ -345,7 +342,7 @@ Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely
 - Object Pool Pattern
 - Bridge Pattern
 
-2. Using the Builder pattern, create a simple Single View App with the constructs necessary to build a pizza -  including 4 toppings - when the user presses a button (no UI presentation needed; log results are fine for now)
+2. *(Stretch Goal)* Using the Builder pattern, create a simple Single View App with the constructs necessary to build a pizza -  including 4 toppings - when the user presses a button (no UI presentation needed; log results are fine for now)
 
 
 ## Wrap Up (5 min)
