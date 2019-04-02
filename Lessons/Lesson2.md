@@ -6,10 +6,12 @@
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
 | 0:05        | 0:15      | Overview  I                |
-| 0:20        | 0:45      | In Class Activity I       |
+| 0:20        | 0:15      | Initial Exercise             |
+| 0:35        | 0:15      | Overview  I                |
+| 0:50        | 0:15      | In Class Activity I       |
 | 1:05        | 0:10      | BREAK                     |
-| 0:05        | 0:15      | Overview  II                |
-| 1:15        | 0:45      | In Class Activity II      |
+| 1:15         | 0:15      | Overview  II                |
+| 1:30        | 0:30      | In Class Activity II      |
 | TOTAL       | 2:00      |                           |
 
 ## Learning Objectives (5 min)
@@ -28,18 +30,14 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (15 min)
 
-### In Pairs
+### Part 1 - Individually
 
-Discuss...
+__*Yeah! ...time for a Quiz!*__
 
-1. What you learned about the impact of tuples on extending and maintaining code.
+### Part 2 - In Pairs
 
-2. These concepts that you researched after the previous class:
-- Inversion of Control (IoC)
-- Tight Coupling...and the benefits of decoupling
-- The Singleton Plus design pattern
+Grade each others quiz, sharing answers, insights, etc.
 
-**TIP:** *Feel free to look back at the previous lesson plan and/or to use Internet sources to jog your memory here...*
 
 ## Overview/TT I (20 min)
 
@@ -90,7 +88,7 @@ Use it when there is a choice to be made between classes that implement a shared
 This pattern works when a calling component can rely on the existence of only one single base type
 - __*do not*__ use it if there is no single common base class or shared protocol.
 
-## In Class Activity I (30 min)
+## In Class Activity I (15 min)
 
 In the code below, all vehicles are to be created using the `CarFactory` protocol's `create()` function.
 
