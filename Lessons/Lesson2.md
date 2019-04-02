@@ -326,7 +326,7 @@ print(kids.description)
 
 Create a `Single View App` project.
 - On the main screen, provide 4 buttons, each of a different color and another button that will create a detail view
-- Applying the Builder pattern, generate the detail view based on the color the user selects (i.e., set the color of the detail view to the color selected by the UserDefaults
+- Applying the Builder pattern, generate the detail view based on the color the user selects (i.e., set the color of the detail view to the color selected by the UserDefaults)
 
 
 ## After Class
