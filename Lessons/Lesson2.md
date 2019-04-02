@@ -32,11 +32,11 @@ By the end of this lesson, you should be able to...
 
 ### Part 1 - Individually
 
-__*Yay!! ...time for a Quiz!*__
+...__*Yay!!*__ ...__*time for a Quiz!*__
 
 ### Part 2 - In Pairs
 
-Grade each others quiz, sharing answers, insights, etc.
+Grade each other's quizzes, sharing answers, insights, etc.
 
 
 ## Overview/TT I (15 min)
