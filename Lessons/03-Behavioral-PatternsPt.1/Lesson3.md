@@ -97,6 +97,9 @@ __*Source:*__ *wikipedia.org*
 
 ## In Class Activity I (30 min)
 
+
+![Apple_responder_chain_graphic](assets/Responder_Chain_iOS.png)
+
 <!-- TODO: -->
 
 
