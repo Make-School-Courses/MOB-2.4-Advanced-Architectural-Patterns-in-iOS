@@ -51,7 +51,7 @@ Students by the end of the course will be able to ...
 | 14 |  Thursday, May 16                       | Final Exams/Presentations |
 
 [Creational Patterns Pt.1]: Lessons/01-Creational-PatternsPt.1/Lesson1.md
-[Creational Patterns Pt.2]: Lessons/Lesson2.md
+[Creational Patterns Pt.2]: Lessons/02-Creational-PatternsPt.2/Lesson2.md
 [Behavioral Patterns Pt.1]: Lessons/Lesson3.md
 [Behavioral Patterns Pt.2]: Lessons/Lesson4.md
 [Structural Patterns Pt.1]: Lessons/Lesson5.md
