@@ -56,6 +56,12 @@ It consists of a source of command objects and a series of processing objects.
 
 Each processing object contains logic that defines the types of command objects that it can handle; the rest are passed to the next processing object in the chain.
 
+__*Source:*__ *wikipedia.org*
+
+
+![example](assets/CoR_diagram.png)
+
+
 #### Problems Addressed
 
 Implementing a request directly within the class that sends the request is inflexible because it couples the class to a particular receiver and makes it impossible to support multiple receivers.
@@ -87,9 +93,6 @@ Typically, when a view receives an event it can’t handle, it dispatches it to 
 **On iOS,** it’s __*typical to handle view events in the view controller*__ which manages the view hierarchy, instead of subclassing the view itself. Since a view controller lies in the responder chain after all of its managed subviews, it can intercept any view events and handle them.
 
 __*Source:*__ *wikipedia.org*
-
-
-![example](assets/CoR_diagram.png)
 
 
 ## In Class Activity I (30 min)
