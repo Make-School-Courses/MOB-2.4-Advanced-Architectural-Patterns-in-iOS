@@ -71,10 +71,10 @@ This enables sending a request to a __*chain*__ of receivers *without* having to
 
 ### When should you use it?
 
-- Use this pattern whenever you have a group of related objects that handle similar events but vary based on event type, attributes or anything else related to the event.
+- Use this pattern whenever you have a group of related objects that handle similar events but vary based on event type, attributes, user choices/input, or anything else related to the event.
 
 
-### Important Example Use Cases
+### Key Example Use Case
 
 The Cocoa and Cocoa Touch frameworks actively use the chain-of-responsibility pattern for handling events.
 
@@ -141,6 +141,10 @@ Use the Command pattern whenever you want to create actions that can be executed
 
 1. Review the other Behavioral Patterns in the links below
 2. xxx
+
+<!-- Look up:
+- Composite pattern
+-->
 
 ## Wrap Up (5 min)
 
