@@ -88,8 +88,8 @@ Typically, when a view receives an event it can’t handle, it dispatches it to 
 
 __*Source:*__ *wikipedia.org*
 
-![example](assets/CoR_diagram.png)
 
+![example](assets/CoR_diagram.png)
 
 
 ## In Class Activity I (30 min)
