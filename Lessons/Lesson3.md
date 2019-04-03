@@ -1,6 +1,6 @@
 # Behavioral Patterns Pt.1
 
-## Minute-by-Minute [OPTIONAL]
+## Minute-by-Minute
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
@@ -14,25 +14,29 @@
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+By the end of this lesson, you should be able to...
+
+1. Describe:
+- the **Chain-of-Responsibility** and **Command** patterns
+- the software construction problem each is intended to solve
+- potential use cases for each (when to use them)
+3. Assess:
+- the suitability of a given design pattern to solve a given problem
+- the trade offs (pros/cons) inherent in each
+4. Implement basic examples of both patterns explored in this class
+
 
 ## Initial Exercise (15 min)
 
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
+
 - Quiz on homework or topic(s) of past class
-- Concept Test
+
 
 ## Overview/TT I (20 min)
 
 ### Behavioral Patterns
 
-In software engineering, behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns.
+In software engineering, **Behavioral** design patterns are design patterns that identify common communication patterns between objects and realize these patterns.
 
 By doing so, these patterns increase flexibility in carrying out this communication.
 
@@ -124,6 +128,11 @@ Implementing (hard-wiring) a request directly into a class is inflexible because
 __*Source:*__ *wikipedia.org*
 
 
+
+#### When to use it?
+Use the Command pattern whenever you want to create actions that can be executed on receivers at a later point in time. For example, you can create and store commands to be performed by a computer AI, and then execute these over time.
+
+
 ## In Class Activity II (optional) (30 min)
 
 <!-- TODO: -->
@@ -144,3 +153,4 @@ __*Source:*__ *wikipedia.org*
 2. [Behavioral pattern - wikipedia](https://en.wikipedia.org/wiki/Behavioral_pattern)
 3. [Chain-of-Responsibility - wikipedia](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)
 4. [Command pattern - wikipedia](https://en.wikipedia.org/wiki/Command_pattern)
+5. [Intermediate Design Patterns in Swift - Ray Wenderlich](https://www.raywenderlich.com/2102-intermediate-design-patterns-in-swift)
