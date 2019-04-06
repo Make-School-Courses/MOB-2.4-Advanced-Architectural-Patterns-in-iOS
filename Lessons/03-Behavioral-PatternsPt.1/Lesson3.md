@@ -94,11 +94,14 @@ Typically, when a view receives an event it can’t handle, it dispatches it to 
 
 __*Source:*__ *wikipedia.org*
 
+![Apple_responder_chain_graphic](assets/Responder_Chain_iOS.png)
+
+__*Source:*__ *Apple, Inc.*
+
 
 ## In Class Activity I (30 min)
 
 
-![Apple_responder_chain_graphic](assets/Responder_Chain_iOS.png)
 
 <!-- TODO: -->
 
@@ -167,3 +170,4 @@ Use the Command pattern whenever you want to create actions that can be executed
 3. [Chain-of-Responsibility - wikipedia](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)
 4. [Command pattern - wikipedia](https://en.wikipedia.org/wiki/Command_pattern)
 5. [Intermediate Design Patterns in Swift - Ray Wenderlich](https://www.raywenderlich.com/2102-intermediate-design-patterns-in-swift)
+6. [Using Responders and the Responder Chain to Handle Events - from Apple](https://developer.apple.com/documentation/uikit/touches_presses_and_gestures/using_responders_and_the_responder_chain_to_handle_events)
