@@ -107,7 +107,7 @@ A responder object can choose *not* to handle an event simply by forwarding the 
 
 **TODO:** Using the pre-made [TouchResponder starter app](https://github.com/Make-School-Labs/StarterApp-MOB-2.4-L03), add code to pass a double-tap touch event to the view's next responder object (the view controller).
 
-### Step 1: Tracing Framework Class Ancestry
+#### Part 1: Tracing Framework Ancestry
 1. Download the starter apps
 2. Open the `TouchableView.swift` file and __*Jump to Definition*__ `[Ctrl+Cmd+Click]` the `UIView` in the class declaration on line 16
 ```Swift
@@ -143,6 +143,9 @@ class ViewController: UIViewController {
 @available(iOS 2.0, *)
 open class UIViewController : UIResponder, NSCoding, UIAppearanceContainer, UITraitEnvironment, UIContentContainer, UIFocusEnvironment {
 ```
+
+#### Part 2: xxx
+
 
 
 <!-- TODO: -->
