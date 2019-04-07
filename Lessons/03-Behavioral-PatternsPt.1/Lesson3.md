@@ -101,6 +101,34 @@ __*Source:*__ *Apple, Inc.*
 
 ## In Class Activity I (30 min)
 
+Every UIResponder object has a method called `next()` which returns the next responder in the responder chain (or `nil` if there is no next responder). The next responder of a view is typically its view controller or its superview (if it has no view controller).
+
+A responder object can choose not to handle an event simply by forwarding the event message to its *next responder.*
+
+**TODO:** Using the pre-made [TouchResponder starter app](https://github.com/Make-School-Labs/StarterApp-MOB-2.4-L03), add code to pass a double-tap touch event to the view's next responder object (the view controller).
+
+### Step 1: Tracing Framework Class Ancestry
+1. Download the starter apps
+2. Open the `TouchableView.swift` file and __*Jump to Definition*__ `[Ctrl+Cmd+Click]` the `UIView` in the class declaration on line 16
+```Swift
+class TouchableView: UIView {
+```
+- this will open the `UIView` definition/header file in the `UIKit` framework and display the `UIView class's` structural declaration...
+
+```Swift
+@available(iOS 2.0, *)
+open class UIView : UIResponder, NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate {
+  ```
+- Now, notice how `UIView` extends the `UIResponder class` (and conforms to a long list of protocols). `[Ctrl+Cmd+Click]` on `UIResponder` to see how it is constructed:
+
+```Swift
+  @available(iOS 2.0, *)
+  open class UIResponder : NSObject, UIResponderStandardEditActions {
+
+      open var next: UIResponder? { get }
+      ```
+...take a peek at `UIResponder's` properties, especially `next: UIResponder?` variable...    
+
 
 
 <!-- TODO: -->
