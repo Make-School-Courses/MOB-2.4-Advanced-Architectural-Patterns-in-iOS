@@ -404,9 +404,9 @@ class TurnOnTelevision: TelevisionCommand {
 1. Review the other Behavioral Patterns in the links below
 2. Research the following concepts:
 - The Composite Pattern
-- UndoManager (in Foundation framework)
-- UIEvent Objects
-- Touch Objects
+- `UndoManager` (in Foundation framework)
+- `UIEvent` Objects
+- `Touch` Objects
 - All Touch Events (e.g., `touchesEnded(_:_:)`)
 - the `hitTest(_:With:)` function
 2. Using Apple's **Media Player** framework, implement a simple, crude (i.e., basic UI only) iPhone app that will play, pause, and restart (skip to beginning) the following sample file (or any video/audio file of your choice):
