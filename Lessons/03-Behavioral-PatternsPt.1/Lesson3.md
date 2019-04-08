@@ -108,7 +108,9 @@ A responder object can choose *not* to handle an event simply by forwarding the 
 **TODO:** Using the pre-made [TouchResponder starter app](https://github.com/Make-School-Labs/StarterApp-MOB-2.4-L03), add code to pass a double-tap touch event to the view's next responder object (the view controller).
 
 #### Part 1: Tracing Framework Ancestry
-1. Download the starter apps
+
+1. Download the [TouchResponder starter app](https://github.com/Make-School-Labs/StarterApp-MOB-2.4-L03)
+
 2. Open the `TouchableView.swift` file and __*Jump to Definition*__ `[Ctrl+Cmd+Click]` the `UIView` in the class declaration on line 16
 ```Swift
 class TouchableView: UIView {
@@ -144,11 +146,108 @@ class ViewController: UIViewController {
 open class UIViewController : UIResponder, NSCoding, UIAppearanceContainer, UITraitEnvironment, UIContentContainer, UIFocusEnvironment {
 ```
 
-#### Part 2: xxx
+#### Part 2: Handing Off Responsibility to the Next Responder
+
+1. Reopen the `TouchableView.swift` file in the [TouchResponder starter app](https://github.com/Make-School-Labs/StarterApp-MOB-2.4-L03)
+
+The `touchesBegan(_:_:)` function of the `TouchableView` class is currently set up to respond to all touches to its view.
+
+You will need to add a conditional statement which will, in the event a double-tap occurs, forward that event to the view's next responder.
+
+Each Touch object captures the number of taps in its tapCount property.
+
+**a)** For Double-Tap Events:
+
+If the Touch object's `tapCount == 2`, then:
+
+- log that conditional state:
+
+```Swift
+ print("Double Tap Began")
+ ```
+
+- and handoff the responsibility of handling the event to next responder's `touchesBegan(_:_:)` function and *log the identity of the next Responder*.
+
+- also in the event of a double-tap, log the identify of the view's next.next responder.
+
+**b)** For Single Taps:
+
+- just log that state in the conditional:
+
+```Swift
+print("Single Tap Began")
+```
 
 
+<!-- Completed touchesBegan(_:_:) function:
 
-<!-- TODO: -->
+ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        // To see the order of events, log this function name
+        print(#function)
+
+        let touch = touches.first!
+
+        // handle double-taps
+        if touch.tapCount == 2 {
+
+            print("Double Tap Began")
+
+            // 1) handoff to next responder and print identity of next responder
+            next?.touchesBegan(touches, with: event)
+            print(next as Any)
+
+            // 2) print identity of next.next responder
+//            next?.next?.touchesBegan(touches, with: event)
+            print(next?.next as Any)
+
+        } else { // handle touches that are not double-taps
+              print("Single Tap Began")
+        }
+
+        /** location() function -- returns the current location of a UITouch object in the coordinate system of the specified view **/
+        print(touch.location(in:self))
+        print(touch.location(in:self.window!))
+//        print(touch.location(in:nil))
+    }
+    -->
+    
+**c)** Use the Debug View Hierarchy Tool
+
+- Set a couple of breakpoints to capture the double-tap condition, run the app, and tap on the view.
+
+- When Xcode stops at your breakpoint, click on the View Debug Hierarchy icon:
+
+![ViewDebugHierarchyicon](View_Debug_Hierarcy_icon.png)
+
+Experiment with sliders to examine their effect.
+
+And **pay very close attention** to the hierarchy of views presented in your Navigation pane. This shows the relationships between the UIResponder objects that can currently participate in the view's Responder Chain (with the exception of the Application and AppDelegat options, which are not shown):
+
+![Responder_chain_objects_in_view_debug_hierarchy](Responder_chain_objects_in_view_debug_hierarchy.png)
+
+**For The More Curious**
+1. Using the Debug View Hierarchy tool on this simple example reveals little of the powerful utility this tool can have in analyzing your code. Apply this tool to some of your actual projects that have complex UI structures to understand more of how it can be used.
+2. Apple has long provided ways to analyze view hierarchies. In addition to the Debug View Hierarchy tool, there is more than one command-line debugging phrase which can be used to analyze the view hierarchy of your app.
+
+By setting a breakpoint and executing this command in your debug pane:
+
+```Swift
+expr -l objc++ -O -- [UIViewController _printHierarchy]
+```
+
+... you can also return information about the state of your current view hierarchy:
+
+![special_po_command_for_views](special_po_command_for_views.png)
+
+
+#### Part 3: Class Discussion
+
+**Q** How does this Next Responder approach serve to decouple the sender from the receiver?
+
+**Q:** In what ways could this CoR approach be useful in your own work?
+
+
 
 
 ## Overview/TT II (optional) (20 min)
