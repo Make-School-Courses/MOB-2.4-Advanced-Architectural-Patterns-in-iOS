@@ -5,6 +5,8 @@
 - the URL is xxxx
 2) For Activity 1:
 - one possible solution is hidden in this activity's markdown
+3) for Activity 2:
+- the Completed solution for the RemoteControl class is hidden in its markdown
 -->
 
 ## Minute-by-Minute
@@ -185,7 +187,6 @@ If the Touch object's `tapCount == 2`, then:
 print("Single Tap Began")
 ```
 
-
 <!-- Completed touchesBegan(_:_:) function:
 
  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -255,25 +256,21 @@ expr -l objc++ -O -- [UIViewController _printHierarchy]
 **Q:** In what ways could this CoR approach be useful in your own work?
 
 
-
-
 ## Overview/TT II (optional) (20 min)
 
 ### Command
 
  *Command* is a design pattern in which an object is used to encapsulate all information needed to perform an action or trigger an event at a later time. This information includes the method name, the object that owns the method and values for the method parameters
 
- It seeks to encapsulate information to perform an action into a command object.
+ The pattern allows you to *model* the concept of executing an action. It seeks to encapsulate information to perform an action into a command object.
 
- It involves three components types:
+ It involves **three component types**:
 
- - The invoker stores and executes commands.
+ - The **invoker** stores and executes commands.
 
- - The command encapsulates the action as an object.
+ - The **command** encapsulates the action as an object.
 
- - The receiver is the object that’s acted upon by the command.
-
-The pattern allows you to *model* the concept of executing an action.
+ - The **receiver** is the object acted upon by the command.
 
 
 #### Problems Addressed
@@ -284,6 +281,8 @@ Implementing (hard-wiring) a request directly into a class is inflexible because
 
 #### Benefits
 
+Commands are an object-oriented replacement for callbacks.
+
  Using command objects makes it easier to construct general components that need to delegate, sequence or execute method calls at a time of their choosing without the need to know the class of the method or the method parameters.
 
  Using an invoker object allows bookkeeping about command executions to be conveniently performed, as well as implementing different modes for commands, which are managed by the invoker object, without the need for the client to be aware of the existence of bookkeeping or modes.
@@ -291,14 +290,96 @@ Implementing (hard-wiring) a request directly into a class is inflexible because
 __*Source:*__ *wikipedia.org*
 
 
-
 #### When to use it?
-Use the Command pattern whenever you want to create actions that can be executed on receivers at a later point in time. For example, you can create and store commands to be performed by a computer AI, and then execute these over time.
+Use the Command pattern whenever you want to create actions that can be executed on receivers at a later point in time.
 
+For example, you can create and store commands to be performed by a computer AI, then execute these over time.
+
+The most well-known use of this pattern: In some strategy games, the ability to rollback moves the user did not like is an essential user experience feature. The command pattern simplifies the implementation of `Undo` and `Redo` user actions.  
 
 ## In Class Activity II (optional) (30 min)
 
-<!-- TODO: -->
+**TODO:** Below is a simple example of the Command pattern which models a real-world television remote control device. Complete the implementation so that sending commands to turn the TV on or off work successfully.
+
+```Swift
+import UIKit
+
+// Receiver
+class TelevisionControl {
+   func turnOn() {
+       print(“Turning On TV”)
+   }
+   func turnOff() {
+     print(“Turning Off TV”)
+   }
+}
+
+// Command
+protocol TelevisionCommand {
+   func execute()
+}
+
+class TurnOnTelevision: TelevisionCommand {
+   public let televisionControl: TelevisionControl
+
+   public init(_ televisionControl: TelevisionControl) {
+       self.televisionControl = televisionControl
+   }
+   func execute() {
+       self.televisionControl.turnOn()
+   }
+}
+
+class TurnOffTelevision: TelevisionCommand {
+   public let televisionControl: TelevisionControl
+
+   public init(_ televisionControl: TelevisionControl) {
+       self.televisionControl = televisionControl
+   }
+   public func execute() {
+       self.televisionControl.turnOff()
+   }
+}
+
+// Invoker
+class RemoteControl {
+
+   // TODO: Complete Invoker implementation...
+
+   public let televisionControl: TelevisionControl
+
+   // Init()
+
+   func execute(_ command: TelevisionCommand) {
+
+   }
+
+}
+
+let televisionControl = TelevisionControl()
+let remoteControl = RemoteControl(televisionControl: televisionControl)
+let turnOffTelevision = TurnOffTelevision(televisionControl)
+remoteControl.execute(turnOffTelevision)
+```
+
+<!-- Completed solution for the RemoteControl class:
+// Invoker
+class RemoteControl {
+
+   // Complete Invoker implementation...
+
+   public let televisionControl: TelevisionControl
+
+   public init (televisionControl: TelevisionControl) {
+    self.televisionControl = televisionControl
+   }
+
+   func execute(_ command: TelevisionCommand) {
+       command.execute()
+   }
+
+}
+ -->
 
 ## After Class
 
