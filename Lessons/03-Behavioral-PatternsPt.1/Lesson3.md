@@ -56,17 +56,17 @@ https://docs.google.com/document/d/1cwT3b-DUSuB1AwO2bqU-BWuDepK8pANbj5I4R1UOrqA/
 
 ### Behavioral Patterns
 
-In software engineering, **Behavioral** design patterns are design patterns that identify common communication patterns between objects and realize these patterns.
+In software engineering, **Behavioral** design patterns are design patterns that identify common communication patterns between objects.
 
-By doing so, these patterns increase flexibility in carrying out this communication.
+By doing so, these patterns increase flexibility in carrying out such communications.
 
 __*Source:*__ *wikipedia.org*
 
 
 Though there are many more to explore, we will focus on these two key Behavioral patterns in this lesson and the next:
 
-- Chain of Responsibility
-- Command
+- **Chain-of-Responsibility (CoR)**
+- **Command**
 
 ### Chain-of-Responsibility
 
@@ -84,11 +84,11 @@ __*Source:*__ *wikipedia.org*
 
 #### Problems Addressed
 
-Implementing a request directly within the class that sends the request is inflexible because it couples the class to a particular receiver and makes it impossible to support multiple receivers.
+1. Implementing a request directly within the class that sends the request is inflexible because it couples the class to a particular receiver and makes it impossible to support multiple receivers.
 
-It should be possible that more than one receiver can handle a request.
+2. In addition, it is preferred that more than one receiver should be able to handle a request.
 
-Chain-of-Responsibility decouples the sender of a request to its receiver.
+Hence, the Chain-of-Responsibility decouples the sender of a request from its receiver.
 
 #### How to Implement
 You define a chain of *receiver* objects having the responsibility, depending on run-time conditions, to either *handle a request* or *forward it to the next receiver* on the chain (if any).
