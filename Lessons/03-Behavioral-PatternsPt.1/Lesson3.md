@@ -228,23 +228,24 @@ print("Single Tap Began")
 
 ![ViewDebugHierarchyicon](assets/View_Debug_Hierarcy_icon.png)
 
-Experiment with sliders to examine their effect.
+- Experiment with sliders to examine their effect.
 
-And **pay very close attention** to the hierarchy of views presented in your Navigation pane. This shows the relationships between the UIResponder objects that can currently participate in the view's Responder Chain (with the exception of the Application and AppDelegat options, which are not shown):
+... **pay very close attention** to the hierarchy of views presented in your Navigation pane. This shows the relationships between the UIResponder objects that can currently participate in the view's Responder Chain (with the exception of the Application and AppDelegat options, which are not shown):
 
 ![Responder_chain_objects_in_view_debug_hierarchy](assets/Responder_chain_objects_in_view_debug_hierarchy.png)
 
 **For The More Curious**
-1. Using the Debug View Hierarchy tool on this simple example reveals little of the powerful utility this tool can have in analyzing your code. Apply this tool to some of your actual projects that have complex UI structures to understand more of how it can be used.
-2. Apple has long provided ways to analyze view hierarchies. In addition to the Debug View Hierarchy tool, there is more than one command-line debugging phrase which can be used to analyze the view hierarchy of your app.
+1. Using the Debug View Hierarchy tool on this simple example reveals little of the powerful utility this tool can have in analyzing your code.
+- TODO: To understand more of how this tool can be used, experiment with it on some of your actual projects that have more complex UI architectures.
+2. Apple has long provided ways to analyze view hierarchies. In addition to the Debug View Hierarchy tool, there have been several command-line debugging phrases which can be used to analyze the view hierarchy of your app during runtime.
 
-By setting a breakpoint and executing this command in your debug pane:
+One example: You can return information about the state of your current view hierarchy by setting a breakpoint and executing the following command in your debug pane:
 
 ```Swift
 expr -l objc++ -O -- [UIViewController _printHierarchy]
 ```
 
-... you can also return information about the state of your current view hierarchy:
+The output from this command can provide information useful in debugging your views:
 
 ![special_po_command_for_views](assets/special_po_command_for_views.png)
 
