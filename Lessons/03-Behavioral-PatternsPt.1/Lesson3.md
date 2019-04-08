@@ -320,14 +320,9 @@ protocol TelevisionCommand {
 }
 
 class TurnOnTelevision: TelevisionCommand {
-   public let televisionControl: TelevisionControl
 
-   public init(_ televisionControl: TelevisionControl) {
-       self.televisionControl = televisionControl
-   }
-   func execute() {
-       self.televisionControl.turnOn()
-   }
+  // TODO: Complete implementation...
+
 }
 
 class TurnOffTelevision: TelevisionCommand {
@@ -362,7 +357,7 @@ let turnOffTelevision = TurnOffTelevision(televisionControl)
 remoteControl.execute(turnOffTelevision)
 ```
 
-<!-- Completed solution for the RemoteControl class:
+<!-- Completed classes for Activity II:
 // Invoker
 class RemoteControl {
 
@@ -378,6 +373,17 @@ class RemoteControl {
        command.execute()
    }
 
+}
+
+class TurnOnTelevision: TelevisionCommand {
+   public let televisionControl: TelevisionControl
+
+   public init(_ televisionControl: TelevisionControl) {
+       self.televisionControl = televisionControl
+   }
+   func execute() {
+       self.televisionControl.turnOn()
+   }
 }
  -->
 
