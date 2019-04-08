@@ -154,7 +154,7 @@ open class UIView : UIResponder, NSCoding, UIAppearance, UIAppearanceContainer, 
 
 ...take a peek at `UIResponder's` properties, especially `next: UIResponder?` variable...    
 
-3. Repeat the same investigative process for `ViewController` class.
+3. Repeat the same investigative process for the `ViewController` class.
 
 **Q:** What does this tell you about the relationship between these two objects with respect to the Responder Chain?
 
