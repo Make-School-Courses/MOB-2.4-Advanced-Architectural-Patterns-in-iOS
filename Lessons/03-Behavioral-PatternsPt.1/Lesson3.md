@@ -14,11 +14,14 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:45      | In Class Activity I       |
-| 1:05        | 0:10      | BREAK                     |
-| 1:15        | 0:45      | In Class Activity II      |
-| TOTAL       | 2:00      |                           |
+| 0:05       | 0:15      | Initial Exercise             |
+| 0:20       | 0:15      | Overview  I                |
+| 0:35        | 0:20      | In Class Activity I       |
+| 0:55        | 0:10      | BREAK                     |
+| 1:05         | 0:15      | Overview  II                |
+| 1:20        | 0:25      | In Class Activity II      |
+|1:45       | 0:05    | Wrap Up                     |
+| TOTAL       | 1:50    |                          |
 
 
 ## Learning Objectives (5 min)
@@ -37,11 +40,11 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (15 min)
 
-Part 1 - Individually
+### Part 1 - Individually
 
 - A Quiz on homework from previous class
 
-Part 2 - In Pairs
+### Part 2 - In Pairs
 
 Grade each other's quizzes, sharing answers, insights, etc.
 
@@ -49,7 +52,7 @@ Grade each other's quizzes, sharing answers, insights, etc.
 https://docs.google.com/document/d/1cwT3b-DUSuB1AwO2bqU-BWuDepK8pANbj5I4R1UOrqA/edit
 -->
 
-## Overview/TT I (20 min)
+## Overview/TT I (15 min)
 
 ### Behavioral Patterns
 
@@ -116,7 +119,7 @@ __*Source:*__ *wikipedia.org*
 __*Source:*__ *Apple, Inc.*
 
 
-## In Class Activity I (30 min)
+## In Class Activity I (20 min)
 
 Every UIResponder object has a method called `next()` which returns the next responder in the responder chain (or `nil` if there is no next responder). The next responder of a view is typically its view controller or its superview (if it has no view controller).
 
@@ -265,7 +268,7 @@ The output from this command can provide information useful in debugging your vi
 **Q:** In what ways could this CoR approach be useful in your own work?
 
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT II (15 min)
 
 ### Command
 
@@ -306,7 +309,7 @@ For example, you can create and store commands to be performed by a computer AI,
 
 The most well-known use of this pattern: In some strategy games, the ability to rollback moves the user did not like is an essential user experience feature. The command pattern simplifies the implementation of `Undo` and `Redo` user actions.  
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (25 min)
 
 **TODO:** Below is a simple example of the Command pattern which models a real-world television remote control device. Complete the implementation so that sending commands to turn the TV on or off work successfully.
 
