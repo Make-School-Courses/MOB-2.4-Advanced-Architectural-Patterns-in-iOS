@@ -1,5 +1,12 @@
 # Behavioral Patterns Pt.1
 
+<!-- INSTRUCTOR NOTES:
+1) For the quiz in the Initial Exercise:
+- the URL is xxxx
+2) For Activity 1:
+- one possible solution is hidden in this activity's markdown
+-->
+
 ## Minute-by-Minute
 
 | **Elapsed** | **Time**  | **Activity**              |
