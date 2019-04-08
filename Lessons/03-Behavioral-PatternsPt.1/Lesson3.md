@@ -2,7 +2,7 @@
 
 <!-- INSTRUCTOR NOTES:
 1) For the quiz in the Initial Exercise:
-- the URL is xxxx
+- the URL is https://docs.google.com/document/d/1cwT3b-DUSuB1AwO2bqU-BWuDepK8pANbj5I4R1UOrqA/edit
 2) For Activity 1:
 - one possible solution is hidden in this activity's markdown
 3) for Activity 2:
@@ -37,9 +37,17 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (15 min)
 
+Part 1 - Individually
 
-- Quiz on homework or topic(s) of past class
+- A Quiz on homework from previous class
 
+Part 2 - In Pairs
+
+Grade each other's quizzes, sharing answers, insights, etc.
+
+<!-- Quiz location:
+https://docs.google.com/document/d/1cwT3b-DUSuB1AwO2bqU-BWuDepK8pANbj5I4R1UOrqA/edit
+-->
 
 ## Overview/TT I (20 min)
 
