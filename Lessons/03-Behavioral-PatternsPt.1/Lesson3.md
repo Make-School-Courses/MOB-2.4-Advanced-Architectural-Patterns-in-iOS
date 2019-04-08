@@ -88,7 +88,7 @@ __*Source:*__ *wikipedia.org*
 
 2. In addition, it is preferred that more than one receiver should be able to handle a request.
 
-Hence, the Chain-of-Responsibility decouples the sender of a request from its receiver.
+Hence, Chain-of-Responsibility decouples the sender of a request from its receiver.
 
 #### How to Implement
 You define a chain of *receiver* objects having the responsibility, depending on run-time conditions, to either *handle a request* or *forward it to the next receiver* on the chain (if any).

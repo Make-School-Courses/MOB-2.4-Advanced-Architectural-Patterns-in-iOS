@@ -1,4 +1,4 @@
-# Lesson Title
+# Behavioral Patterns Pt.2
 
 <!-- INSTRUCTOR NOTES:
 1) For the quiz in the Initial Exercise:
