@@ -154,17 +154,10 @@ open class UIView : UIResponder, NSCoding, UIAppearance, UIAppearanceContainer, 
 
 ...take a peek at `UIResponder's` properties, especially `next: UIResponder?` variable...    
 
-3. Open the `ViewController.swift` file and __*Jump to Definition*__ `[Ctrl+Cmd+Click]` the `UIViewController` in the class declaration on line 11
-```Swift
-class ViewController: UIViewController {
-```
+3. Repeat the same investigative process for `ViewController` class.
 
-...and notice that the `ViewController` class definition also extends the `UIResponder` class...
+**Q:** What does this tell you about the relationship between these two objects with respect to the Responder Chain?
 
-```Swift
-@available(iOS 2.0, *)
-open class UIViewController : UIResponder, NSCoding, UIAppearanceContainer, UITraitEnvironment, UIContentContainer, UIFocusEnvironment {
-```
 
 #### Part 2: Handing Off Responsibility to the Next Responder
 
