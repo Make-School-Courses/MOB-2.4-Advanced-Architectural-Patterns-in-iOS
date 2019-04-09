@@ -71,7 +71,7 @@ This makes subject and observers loosely coupled - subject and observers have no
 
 [^1]: This notification-registration interaction is also known as __*"publish-subscribe."*__
 
-[^1]: A __*Client object*__ is also a common actor in the Observer pattern. Subject objects often have methods to attach and detach observers to a client object.
+[^1 A __*Client object*__ is also a common actor in the Observer pattern. Subject objects often have methods to attach and detach observers to a client object.]
 
 
 
