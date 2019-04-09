@@ -56,7 +56,7 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ## Overview/TT I (20 min)
 
-### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:eyes:
+### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;:eyes:
 
 
 
@@ -82,7 +82,7 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ## Overview/TT II (optional) (20 min)
 
-### The Visitor Pattern &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:alien:
+### The Visitor Pattern &nbsp;&nbsp;&nbsp;:alien:
 
 
 ## In Class Activity II (optional) (30 min)
