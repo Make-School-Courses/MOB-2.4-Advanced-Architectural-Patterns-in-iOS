@@ -57,7 +57,8 @@ Grade each other's quizzes, sharing answers, insights, etc.
 ## Overview/TT I (20 min)
 
 ### The Observer Pattern
-:eyes:
+
+      :eyes:
 
 
 - Why learn this?
