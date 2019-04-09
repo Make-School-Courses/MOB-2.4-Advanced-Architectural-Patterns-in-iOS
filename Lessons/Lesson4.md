@@ -58,6 +58,22 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;:eyes:
 
+The **Observer pattern** lets one object observe changes to the state of another object without needing to know the implementation of the object observed.
+
+Observer is comprised of __*two main objects:*__*
+1. **Subject** — The object under observation.
+- The subject object __*allows observer objects to register*__ (and unregister) their interest in receiving updates (notifications) whenever changes are made to the subject, and it automatically notifies observers of any state changes.
+- Subjects are responsible for maintaining a list of their dependents (observers).
+2. **Observer(s)** — The object(s) doing the observing.
+- It is the responsibility of observers is to register (and unregister) themselves on a subject (to get notified of state changes) and to update their state (synchronize their state with subject’s state) when they are notified.
+
+This makes subject and observers loosely coupled - subject and observers have no explicit knowledge of each other. Observers can be added and removed independently at run-time.
+
+(This notification-registration interaction is also known as __*"publish-subscribe."*__)"
+
+*/* A __*Client object*__ is also a common actor in the Observer pattern. Subject objects often have methods to attach and detach observers to a client object.*
+
+
 
 
 
@@ -95,4 +111,8 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. [Slides]()
+2. [Observer pattern - wikipedia](https://en.wikipedia.org/wiki/Observer_pattern)
+3. [Publish–subscribe pattern  - wikipedia](https://en.wikipedia.org/wiki/Publish–subscribe_pattern)
+[]()
+[]()
