@@ -58,7 +58,7 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;:eyes:
 
-The **Observer pattern** lets one object observe changes to the state of another object without needing to know the implementation of the object observed.
+The **Observer pattern** lets one object observe changes to the *state* of another object without needing to know the implementation of the object observed.
 
 Observer is comprised of __*two main objects:*__*
 1. **Subject** — The object under observation.
@@ -69,9 +69,9 @@ Observer is comprised of __*two main objects:*__*
 
 This makes subject and observers loosely coupled - subject and observers have no explicit knowledge of each other. Observers can be added and removed independently at run-time.
 
-(This notification-registration interaction is also known as __*"publish-subscribe."*__)"
+*(This notification-registration interaction is also known as __*"publish-subscribe."*__)
 
-*/* A __*Client object*__ is also a common actor in the Observer pattern. Subject objects often have methods to attach and detach observers to a client object.*
+<code>&ast;</code>  *A __*Client object*__ is also a common actor in the Observer pattern. Subject objects often have methods to attach and detach observers to a client object.*
 
 
 
