@@ -344,14 +344,15 @@ class TurnOffTelevision: TelevisionCommand {
 // Invoker
 class RemoteControl {
 
-   // TODO: Complete Invoker implementation...
+   // TODO: add missing properties
 
    public let televisionControl: TelevisionControl
 
-   // Init()
+   // TODO: create Init()
 
    func execute(_ command: TelevisionCommand) {
 
+      // TODO: complete execute() function
    }
 
 }
