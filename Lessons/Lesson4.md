@@ -56,6 +56,10 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ## Overview/TT I (20 min)
 
+### The Observer Pattern
+:eyes:
+
+
 - Why learn this?
 - Industry examples of usage
 - Best practices
