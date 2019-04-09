@@ -1,5 +1,14 @@
 # Lesson Title
 
+<!-- INSTRUCTOR NOTES:
+1) For the quiz in the Initial Exercise:
+- the URL is xxxx
+2) For Activity 1:
+- xxxx
+3) for Activity 2:
+- xxx
+-->
+
 ## Minute-by-Minute [OPTIONAL]
 
 | **Elapsed** | **Time**  | **Activity**              |
