@@ -56,11 +56,10 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ## Overview/TT I (20 min)
 
-### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:eyes:
+### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:eyes:
 
 ##&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:eyes:
 
-## :eyes:
 
 
 
