@@ -179,13 +179,13 @@ If the Touch object's `tapCount == 2`, then:
  print("Double Tap Began")
  ```
 
-- and hand off the responsibility of handling the double-tap event to next responder's `touchesBegan(_:_:)` function and *log the identity of the next Responder*.
+- and hand off the responsibility of handling the double-tap event **to next responder's `touchesBegan(_:_:)` function** and *log the identity of the next Responder*.
 
 - also in the event of a double-tap, log the identify of the view's next.next responder.
 
 **b)** For Single Taps:
 
-- just log that state in the conditional:
+- just log that state in the conditional's `else` block:
 
 ```Swift
 print("Single Tap Began")
