@@ -238,7 +238,7 @@ print("Single Tap Began")
 
 ![Responder_chain_objects_in_view_debug_hierarchy](assets/Responder_chain_objects_in_view_debug_hierarchy.png)
 
-**For The More Curious**
+__*For The More Curious*__
 1. Using the Debug View Hierarchy tool on this simple example reveals little of the powerful utility this tool can have in analyzing your code.
 - TODO: To understand more of how this tool can be used, experiment with it on some of your actual projects that have more complex UI architectures.
 2. Apple has long provided ways to analyze view hierarchies. In addition to the Debug View Hierarchy tool, there have been several command-line debugging phrases which can be used to analyze the view hierarchy of your app during runtime.
