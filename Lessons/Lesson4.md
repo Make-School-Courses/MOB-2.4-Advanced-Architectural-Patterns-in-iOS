@@ -65,7 +65,7 @@ Observer is comprised of __*two main objects:*__ <sup>1</sup>
 - The subject object __*allows observer objects to register*__ (and unregister) their interest in receiving updates (notifications) whenever changes are made to the subject, and it __*automatically notifies observers*__ of any state changes.<sup>2</sup>
 - Subjects are __*responsible for maintaining a list of their dependents*__ (observers).
 2. **Observer(s)** — The object(s) doing the observing.
-- It is the responsibility of observers is to register (and unregister) themselves on a subject (to get notified of state changes) and to update their state (synchronize their state with subject’s state) when they are notified.
+- It is the responsibility of observers is __*to register (and unregister) themselves on a subject*__ (to get notified of state changes) and __*to update their state*__ (synchronize their state with subject’s state) when they are notified.
 
 This makes subject and observers loosely coupled - subject and observers have no explicit knowledge of each other. Observers can be added and removed independently at run-time.
 
