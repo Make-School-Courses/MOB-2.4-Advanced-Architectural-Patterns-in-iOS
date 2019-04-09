@@ -82,6 +82,9 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ## Overview/TT II (optional) (20 min)
 
+### The Visitor Pattern &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:alien:
+
+
 ## In Class Activity II (optional) (30 min)
 
 ## Wrap Up (5 min)
