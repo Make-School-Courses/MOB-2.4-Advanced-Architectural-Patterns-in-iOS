@@ -60,7 +60,7 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 The **Observer pattern** lets one object observe changes to the *state* of another object without needing to know the implementation of the object observed.
 
-Observer is comprised of __*two main objects:*__ [^1]
+Observer is comprised of __*two main objects:*__ <sup>1</sup>
 1. **Subject** — The object under observation.
 - The subject object __*allows observer objects to register*__ (and unregister) their interest in receiving updates (notifications) whenever changes are made to the subject, and it automatically notifies observers of any state changes. [^2]
 - Subjects are responsible for maintaining a list of their dependents (observers).
@@ -69,7 +69,7 @@ Observer is comprised of __*two main objects:*__ [^1]
 
 This makes subject and observers loosely coupled - subject and observers have no explicit knowledge of each other. Observers can be added and removed independently at run-time.
 
-[^1  This notification-registration interaction is also known as __*"publish-subscribe."*__]
+<sup>1</sup>This notification-registration interaction is also known as __*"publish-subscribe."*__
 
 [^2 A __*Client object*__ is also a common actor in the Observer pattern. Subject objects often have methods to attach and detach observers to a client object.]
 
