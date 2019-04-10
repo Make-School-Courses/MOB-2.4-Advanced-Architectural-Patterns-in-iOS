@@ -3,13 +3,18 @@
 <!-- INSTRUCTOR NOTES:
 1) For the quiz in the Initial Exercise:
 - the URL is xxxx
+https://docs.google.com/document/d/1giZglDE141ewuj1fGunZhTqCRq0pA11SO-Sta_yYT60/edit
+
+- Answers are listed in a comment in the Initial Exercise section
+
 2) For Activity 1:
-- xxxx
+- see below Additional Resources
+
 3) for Activity 2:
-- xxx
+- see below Additional Resources
 -->
 
-## Minute-by-Minute [OPTIONAL]
+## Minute-by-Minute
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
@@ -49,12 +54,10 @@ By the end of this lesson, you should be able to...
 https://docs.google.com/document/d/1giZglDE141ewuj1fGunZhTqCRq0pA11SO-Sta_yYT60/edit
 
 - Answers:
+Question 1. a) App Delegate (Application object is also acceptable, as some Apple documentation stops there)
+Question 1. b) It discards it
 
-1. a) App Delegate (Application object is also acceptable, as some Apple documentation stops there)
-1. b) It discards it
-
-2. A, G, B, F, C, E, D
-
+Question 2. A, G, B, F, C, E, D
 -->
 
 ### Part 2 - In Pairs
@@ -201,7 +204,7 @@ Observer is **often used with MVC** where the view **controller is the observer*
 <!-- Instructor Note: Solution to Activity  is below Additional Resources
 -->
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT II (20 min)
 
 ### The Mediator Pattern &nbsp;&nbsp;&nbsp;:mailbox_with_no_mail:
 
@@ -260,7 +263,20 @@ __*Example Use Case -*__ The most popular usage of the Mediator pattern in Swift
 <!-- TODO: add related patterns
 -->
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (30 min)
+
+The playground code below is not complete...
+
+When completed, it will loosely emulate a common real-world scenario in which various categories of "peers" communicate across the same system.
+
+The seeks to implement the Mediator pattern by:
+- creating Colleague and Mediator protocols
+- creating a base implementation class that conforms to the Colleague protocol, and creating classes/objects by extending that base classes
+- creating an implementation of a class that conforms to the Mediator protocol to coordinate communication between disparate peer objects
+- using a Client object to make message requests, through the mediator, for each type of peer
+
+**TODO:** Your job is to complete the code so that its output will match the output listed in the comment below the code snippet
+- __*TIP*__ All of the places where the code is incomplete are neatly marked with "//TODO:" annotation.
 
 
 ```Swift
@@ -360,7 +376,7 @@ messagesMediator.add(recipient: recruiter1)
 
 spamGenerator.spamSpamSpamSpam(message: "I'd Like to Add you to my LinkedIn Network", worker: messagesMediator)
 
-/* The last line of the code will Print:
+/* When successfully completed, the last line of the code will print:
  Hedy Lamar received: I'd Like to Add you to my LinkedIn Network for possible iOS Development work
  Michael Faraday received: I'd Like to Add you to my LinkedIn Network for possible Electrical Engineering work
  Queen Elizabeth I received: I'd Like to Add you to my LinkedIn Network. I am a recruiter at Apple
