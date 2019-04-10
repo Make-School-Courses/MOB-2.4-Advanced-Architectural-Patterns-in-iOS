@@ -45,6 +45,8 @@ By the end of this lesson, you should be able to...
 
 <!-- Quiz location:
 
+TODO: Add quiz answersz
+
 -->
 
 ### Part 2 - In Pairs
@@ -81,9 +83,9 @@ The observer pattern is implemented correctly when an object can receive notific
 
 The key to implementing the Observer pattern is to __*define the interactions*__ between the Subject and Observer objects __*using protocols*__. Subject and Observer protocols should contain methods to:
 
-- Add observers
-- Remove observers
-- Notify observers
+- **Add Observers**
+- **Remove Observers**
+- **Notify Observers**
 
 __*Weak References*__
 Best practice is to keep only weak references to all observers. Otherwise, it’s easy to introduce retain cycles, especially when the owner of an observed object is also an observer itself.

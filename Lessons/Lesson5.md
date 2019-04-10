@@ -40,6 +40,8 @@ By the end of this lesson, you should be able to...
 
 <!-- Quiz location:
 
+TODO: Add quiz answersz
+
 -->
 
 ### Part 2 - In Pairs

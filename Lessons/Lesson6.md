@@ -37,8 +37,9 @@ By the end of this lesson, you should be able to...
 
 ### Part 1 - Individually
 
-
 <!-- Quiz location:
+
+TODO: Add quiz answersz
 
 -->
 
