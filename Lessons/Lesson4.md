@@ -51,6 +51,10 @@ By the end of this lesson, you should be able to...
 
 Grade each other's quizzes, sharing answers, insights, etc.
 
+### Part 3 - As A Class
+
+Review After Class coding assignment from previous class. One or more students to share progress and implementation details with class.
+
 ## Overview/TT I (20 min)
 
 ### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;:eyes:

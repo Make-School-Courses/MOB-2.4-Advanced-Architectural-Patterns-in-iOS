@@ -52,6 +52,12 @@ Grade each other's quizzes, sharing answers, insights, etc.
 https://docs.google.com/document/d/1cwT3b-DUSuB1AwO2bqU-BWuDepK8pANbj5I4R1UOrqA/edit
 -->
 
+<!-- Quiz location:
+
+TODO: Add quiz answersz
+
+-->
+
 ## Overview/TT I (15 min)
 
 ### Behavioral Patterns
