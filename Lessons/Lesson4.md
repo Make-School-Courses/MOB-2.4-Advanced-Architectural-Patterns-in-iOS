@@ -186,18 +186,10 @@ Observer is **often used with MVC** where the view **controller is the observer*
 <!-- TODO: Add notes about iOS and Notifications vs KVO , and we did Notificaions in MOB 1.3
 -->
 
+
 ## In Class Activity I (30 min)
 
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
+
 
 ## Overview/TT II (optional) (20 min)
 
