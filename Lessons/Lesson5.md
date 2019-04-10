@@ -1,4 +1,4 @@
-# Lesson Title
+# Structural Patterns Pt.1
 
 <!-- INSTRUCTOR NOTES:
 1) For the quiz in the Initial Exercise:
@@ -20,25 +20,31 @@
 | 1:15        | 0:45      | In Class Activity II      |
 | TOTAL       | 2:00      |                           |
 
-## Why you should know this or industry application (optional) (5 min)
-
-Explain why students should care to learn the material presented in this class.
-
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+By the end of this lesson, you should be able to...
+
+1. Describe:
+- the **xxx** and **xxx** patterns
+- the software construction problem each is intended to solve
+- potential use cases for each (when to use them)
+3. Assess:
+- the suitability of a given design pattern to solve a given problem
+- the trade offs (pros/cons) inherent in each
+4. Implement basic examples of both patterns explored in this class
 
 ## Initial Exercise (15 min)
 
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
+### Part 1 - Individually
+
+
+<!-- Quiz location:
+
+-->
+
+### Part 2 - In Pairs
+
+Grade each other's quizzes, sharing answers, insights, etc.
 
 ## Overview/TT I (20 min)
 
