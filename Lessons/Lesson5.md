@@ -48,10 +48,32 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ## Overview/TT I (20 min)
 
+#### Description
+
+
+
+#### Implementation
+
+
+
+#### Problems Addressed
+
+
+
+
+
+#### Benefits
+.
 - Why learn this?
 - Industry examples of usage
 - Best practices
 - Personal anecdote
+
+#### Pitfalls
+.
+
+#### When to use
+
 
 ## In Class Activity I (30 min)
 
@@ -67,6 +89,33 @@ Grade each other's quizzes, sharing answers, insights, etc.
 - etc (get creative :D)
 
 ## Overview/TT II (optional) (20 min)
+
+#### Description
+
+
+
+#### Implementation
+
+
+
+#### Problems Addressed
+
+
+
+
+
+#### Benefits
+.
+- Why learn this?
+- Industry examples of usage
+- Best practices
+- Personal anecdote
+
+#### Pitfalls
+.
+
+#### When to use
+
 
 ## In Class Activity II (optional) (30 min)
 

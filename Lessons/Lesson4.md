@@ -29,7 +29,7 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- the **Observer** and **Visitor** patterns
+- the **Observer** and **Mediator** patterns
 - the software construction problem each is intended to solve
 - potential use cases for each (when to use them)
 3. Assess:
@@ -176,7 +176,7 @@ class Subject: Observable { // 7) Subject implementation
 
 ## Overview/TT II (optional) (20 min)
 
-### The Visitor Pattern &nbsp;&nbsp;&nbsp;:alien:
+### The Mediator Pattern &nbsp;&nbsp;&nbsp;::mailbox_with_no_mail::
 
 #### Description
 
