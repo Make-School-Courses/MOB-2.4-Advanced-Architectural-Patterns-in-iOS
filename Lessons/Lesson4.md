@@ -23,9 +23,6 @@
 |1:45       | 0:05    | Wrap Up                     |
 | TOTAL       | 1:50    |                          |
 
-## Why you should know this or industry application (optional) (5 min)
-
-Explain why students should care to learn the material presented in this class.
 
 ## Learning Objectives (5 min)
 
@@ -82,34 +79,39 @@ The key to implementing the Observer pattern is to __*define the interactions*__
 - Remove observers
 - Notify observers
 
+<!-- TODO: add notes on weak properties -->
+
 **Simple Representation of Key Implementation Points**
 
 The example below (in non-functioning pseudocode) illustrates the basic patterns involved in implementing the Observer pattern.
 
-- Notice how 
+Key highlights:
+
+- At item (2), notice that this `addObserver(_:)` function is set up to accept only a single observer. A better, more real-world design would likely accept a variable number of observers.
+- Item (8) shows how the Subject object fulfills it responsibility to maintain a list of its observers.
 
 ```Swift
 protocol Observable { // 1) Subject protocol
-   func addObserver(observer:ObserverObject); // Register
-   func removeObserver(observer:ObserverObject); // Unregister
+   func addObserver(observer:ObserverObject); // 2) Register
+   func removeObserver(observer:ObserverObject); // 3) Unregister
 }
 
-protocol Observer: class { // 2)  Observer protocol
+protocol Observer: class { // 4)  Observer protocol
    func notify(event: Event)
 }
 
-class ObserverObject: Observer { // 3) Observer implementation
+class ObserverObject: Observer { // 5) Observer implementation
 
-   weak var subject = Subject() // 4) Subject property
+   weak var subject = Subject() // 6) Subject property
 
    func notify(event: Event) {
        // update Observer with changes to Subject
    }
 }
 
-class Subject: Observable { // 5) Subject implementation
+class Subject: Observable { // 7) Subject implementation
 
-   // 6) Subject maintains a list of its observers
+   // 8) Subject maintains a list of its observers
    private var observerArray = [ObserverObject]()
 
    func addObserver(observer: ObserverObject) {
@@ -134,7 +136,6 @@ class Subject: Observable { // 5) Subject implementation
 }
 ```
 
-(allows multiple observers)
 
 #### Problems Addressed
 
