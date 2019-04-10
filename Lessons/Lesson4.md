@@ -71,7 +71,9 @@ This makes subject and observers loosely coupled - subject and observers have no
 
 <sup>2</sup> *Another common actor in the Observer pattern is a* __*Client object.*__ *Subject objects often have methods to attach and detach observers to a client object.*
 
-#### Implementation
+#### Implementation Notes
+
+The observer pattern is implemented correctly when an object can receive notifications without being tightly coupled to the object that sends them.
 
 The key to implementing the Observer pattern is to __*define the interactions*__ between the Subject and Observer objects __*using protocols*__. Subject and Observer protocols should contain methods to:
 
@@ -79,7 +81,8 @@ The key to implementing the Observer pattern is to __*define the interactions*__
 - Remove observers
 - Notify observers
 
-<!-- TODO: add notes on weak properties -->
+__*Weak References*__
+Best practice is to keep only weak references to all observers. Otherwise, it’s easy to introduce retain cycles, especially when the owner of an observed object is also an observer itself.
 
 **Simple Representation of Key Implementation Points**
 
@@ -136,7 +139,6 @@ class Subject: Observable { // 7) Subject implementation
 }
 ```
 
-
 #### Problems Addressed
 
 - A one-to-many dependency between objects should be defined without making the objects tightly coupled.
@@ -153,7 +155,7 @@ class Subject: Observable { // 7) Subject implementation
 
 - The observer pattern allows large and complex groups of objects to cooperate with one another with few dependencies between them.
 
-#### Why learn this?
+##### Why learn this?
 
 The Observer pattern is so widely used that you are likely to have come across it if you have developed an application using a __*modern UI component framework.*__
 
@@ -172,7 +174,7 @@ Use the Observer pattern whenever you want to receive changes made on another ob
 
 __*Do not use*__ Observer pattern unless the Subject of the notifications is functionally dependent from the recipients (observers): i.e., the observers could be removed from the application without preventing the subject from performing its work.
 
-##### Example Use Case
+##### - Example Use Case
 Observer is **often used with MVC** where the view **controller is the observer** and the **model is the subject.** This allows the model to communicate changes back to the view controller without needing to know anything about the view controller’s type. Hence, different view controllers can use and observe changes on a shared model type.
 
 ## In Class Activity I (30 min)
