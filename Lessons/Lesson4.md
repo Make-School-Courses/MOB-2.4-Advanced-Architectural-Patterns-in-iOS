@@ -87,14 +87,14 @@ The key to implementing the Observer pattern is to __*define the interactions*__
 - **Remove Observers**
 - **Notify Observers**
 
-__*Weak References*__
+__*Weak References:*__
 Best practice is to keep only weak references to all observers. Otherwise, it’s easy to introduce retain cycles, especially when the owner of an observed object is also an observer itself.
 
 **Simple Representation of Key Implementation Points**
 
 The example below (in non-functioning pseudocode) illustrates the basic patterns involved in implementing the Observer pattern.
 
-Key highlights:
+__*Key Highlights:*__
 
 - At item (2), notice that this `addObserver(_:)` function is set up to accept only a single observer. A better, more real-world design would likely accept a variable number of observers.
 - Item (8) shows how the Subject object fulfills it responsibility to maintain a list of its observers.
@@ -176,12 +176,15 @@ It plays a key part in the familiar **model–view–controller (MVC)** architec
 
 #### When to use
 
-Use the Observer pattern whenever you want to receive changes made on another object but where the sender of the notifications does not depend on the recipient to complete its work.
+Use the Observer pattern whenever you want one object to receive changes made on another object but where the sender (Subject) of the notifications does not depend on the recipient (Observer) to complete its work.
 
-__*Do not use*__ Observer pattern unless the Subject of the notifications is functionally dependent from the recipients (observers): i.e., the observers could be removed from the application without preventing the subject from performing its work.
+__*Do not use*__ the Observer pattern unless the Subject of the notifications is functionally dependent from the recipients (observers): i.e., the observers could be removed from the application without preventing the subject from performing its work.
 
-##### - Example Use Case
+##### - Example Use Cases
 Observer is **often used with MVC** where the view **controller is the observer** and the **model is the subject.** This allows the model to communicate changes back to the view controller without needing to know anything about the view controller’s type. Hence, different view controllers can use and observe changes on a shared model type.
+
+<!-- TODO: Add notes about iOS and Notifications vs KVO , and we did Notificaions in MOB 1.3
+-->
 
 ## In Class Activity I (30 min)
 
@@ -201,8 +204,11 @@ Observer is **often used with MVC** where the view **controller is the observer*
 ### The Mediator Pattern &nbsp;&nbsp;&nbsp;:mailbox_with_no_mail:
 
 #### Description
+The Mediator pattern is used to reduce coupling between objects that communicate with each other.
 
+Instead of objects communicating directly, and thus requiring knowledge of their implementation (i.e., tight coupling), *objects send messages* via a __*mediator object.*__
 
+The Mediator pattern joins together colleagues (peers) who share a single interface.
 
 #### Implementation
 
