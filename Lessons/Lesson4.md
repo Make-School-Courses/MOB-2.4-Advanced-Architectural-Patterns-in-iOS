@@ -211,8 +211,12 @@ Implementing Mediator typically involves some or all of the following components
 4. **Mediator object** - Implements the mediator protocol. Coordinates and controls communication between all colleague objects.
 5. **Client object** – Creates colleagues and associates an appropriate mediator object with each.
 
-*When is the pattern implemented correctly?*  
+__*When is the pattern implemented correctly?*__  
  - When each object deals only with the mediator and has no direct knowledge of its peers.
+
+
+ <!-- TODO: Add examples of protocols and objects from resources
+ -->
 
 #### Problems Addressed
 
