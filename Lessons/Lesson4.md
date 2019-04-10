@@ -70,7 +70,6 @@ Review: The After Class coding assignment from previous class.
 
 ### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;:eyes:
 
-#### Description
 The **Observer pattern** lets one object observe changes to the __*state*__ of another object without needing to know the implementation of the object observed.
 
 Observer is comprised of __*two main objects:*__ <sup>1</sup>
@@ -203,7 +202,6 @@ Observer is **often used with MVC** where the view **controller is the observer*
 
 ### The Mediator Pattern &nbsp;&nbsp;&nbsp;:mailbox_with_no_mail:
 
-#### Description
 The **Mediator pattern** simplifies peer-to-peer communication between objects by introducing a __*mediator object*__ that acts as a __*communications broker*__ between other objects.
 
 Instead of objects communicating directly - and thus requiring knowledge of each other's implementations (i.e., tight coupling) - __*peer objects send messages*__ to each other via the __*mediator object.*__
