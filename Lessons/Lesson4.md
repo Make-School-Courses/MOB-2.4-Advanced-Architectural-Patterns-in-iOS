@@ -84,32 +84,28 @@ The key to implementing the Observer pattern is to __*define the interactions*__
 
 **Simple Representation of Key Implementation Points**
 
+The example below (in non-functioning pseudocode) illustrates the basic patterns involved in implementing the Observer pattern:
 
 ```Swift
-// Subject protocol
-protocol Observable { // 1
-   func addObservers(observers:ObserverObject…); // Register
+protocol Observable { /// Subject protocol
+   func addObserver(observer:ObserverObject); // Register
    func removeObserver(observer:ObserverObject); // Unregister
 }
 
-/// Observer protocol
-protocol Observer: class {
+protocol Observer: class { /// Observer protocol
    func notify(event: Event)
 }
 
-/// Observer implementation
-class ObserverObject: Observer {
+class ObserverObject: Observer { /// Observer implementation
 
    weak var subject = Subject()
 
    func notify(event: Event) {
        // update Observer with changes to Subject
    }
-
 }
 
-/// Subject implementation
-class Subject: Observable {
+class Subject: Observable { /// Subject implementation
 
    // Subject maintains a list of its observers
    private var observerArray = [ObserverObject]()
