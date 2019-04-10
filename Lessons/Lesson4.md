@@ -224,20 +224,22 @@ Implementing Mediator typically involves some or all of the following components
 
 #### Problems Addressed
 
-It is used to reduce coupling between objects that communicate with each other.
-
-
-
-
+Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
 
 #### Benefits
-.
+
+This design pattern __*promotes loose coupling*__ by keeping objects from referring to each other explicitly, and it __*lets you vary their interaction independently.*__
+
+Mediator reduces chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate indirectly, and only through a mediator object.
+
+As a result, the __*components depend only on a single mediator class*__ instead of being coupled to dozens of their colleagues.
 
 #### Pitfalls
 .
 
 #### When to use
 
+When you want to design reusable components, but dependencies between the potentially reusable pieces result in tight coupling
 
 ## In Class Activity II (optional) (30 min)
 
