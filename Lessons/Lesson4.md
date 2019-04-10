@@ -204,17 +204,19 @@ Observer is **often used with MVC** where the view **controller is the observer*
 ### The Mediator Pattern &nbsp;&nbsp;&nbsp;:mailbox_with_no_mail:
 
 #### Description
-The Mediator pattern is used to reduce coupling between objects that communicate with each other.
+The **Mediator pattern** simplifies peer-to-peer communication between objects by introducing a __*mediator object*__ that acts as a __*communications broker*__ between other objects.
 
-Instead of objects communicating directly, and thus requiring knowledge of their implementation (i.e., tight coupling), *objects send messages* via a __*mediator object.*__
+Instead of objects communicating directly - and thus requiring knowledge of each other's implementations (i.e., tight coupling) - __*peer objects send messages*__ to each other via the __*mediator object.*__
 
-The Mediator pattern joins together colleagues (peers) who share a single interface.
+Mediator joins together colleagues (peers) who share a single interface.
 
 #### Implementation
 
 
 
 #### Problems Addressed
+
+It is used to reduce coupling between objects that communicate with each other.
 
 
 
