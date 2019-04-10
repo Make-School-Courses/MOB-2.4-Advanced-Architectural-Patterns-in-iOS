@@ -146,6 +146,11 @@ class Subject: Observable { // 7) Subject implementation
 }
 ```
 
+```Swift
+
+the hitTest(_:With:) function
+
+```
 #### Problems Addressed
 
 - A one-to-many dependency between objects should be defined without making the objects tightly coupled.
