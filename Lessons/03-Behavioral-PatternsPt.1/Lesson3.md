@@ -95,6 +95,12 @@ You define a chain of *receiver* objects having the responsibility, depending on
 
 This enables sending a request to a __*chain*__ of receivers *without* having to know which one handles the request. The request gets passed along the chain until a receiver handles the request. The __*sender*__ of a request is __*no longer coupled*__ to a particular receiver.
 
+
+### Example or CoR
+
+[Example](https://medium.com/design-patterns-in-swift/design-patterns-in-swift-chain-of-responsibility-pattern-f575c85a43c)
+
+
 ### When should you use it?
 
 - Use this pattern whenever you have a group of related objects that handle similar events but vary based on event type, attributes, user choices/input, or anything else related to the event.
@@ -117,6 +123,7 @@ __*Source:*__ *wikipedia.org*
 ![Apple_responder_chain_graphic](assets/Responder_Chain_iOS.png)
 
 __*Source:*__ *Apple, Inc.*
+
 
 
 ## In Class Activity I (20 min)
@@ -167,7 +174,7 @@ The `touchesBegan(_:_:)` function of the `TouchableView` class is currently set 
 
 You will need to add a conditional statement which will, in the event a double-tap occurs, forward that event to the view's next responder.
 
-Each Touch object captures the number of taps in its tapCount property.
+Each Touch object captures the number of taps in its `tapCount` property.
 
 **a)** For Double-Tap Events:
 
