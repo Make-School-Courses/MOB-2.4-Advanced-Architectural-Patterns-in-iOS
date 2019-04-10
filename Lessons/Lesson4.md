@@ -206,9 +206,9 @@ Mediator joins together colleagues (peers) who share a single interface.
 
 Implementing Mediator typically involves some or all of the following components:
 1. **Colleague protocol** - Defines methods and properties each colleague must implement.
-2. **Colleague objects** — Peer objects which want to communicate with each other implement the `colleague protocol`. Colleague objects sends message to and receives messages from other colleagues through an associated mediator object.
+2. **Colleague objects** — `Peer objects` that want to communicate with each other `implement the colleague protocol`. `Colleague objects` send messages to and receives messages from other colleagues through an associated mediator object.
 3. **Mediator protocol** — Defines methods and properties the mediator class must implement.
-4. **Mediator object** - Implements the mediator protocol. Coordinates and controls communication between all colleague objects.
+4. **Mediator object** - `Implements the mediator protocol.` __*Coordinates and controls communication*__ between all colleague objects.
 5. **Client object** – Creates colleagues and associates an appropriate mediator object with each.
 
 __*When is the pattern implemented correctly?*__  
