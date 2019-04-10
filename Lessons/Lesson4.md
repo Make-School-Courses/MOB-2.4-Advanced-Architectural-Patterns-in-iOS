@@ -58,6 +58,7 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;:eyes:
 
+#### Description
 The **Observer pattern** lets one object observe changes to the __*state*__ of another object without needing to know the implementation of the object observed.
 
 Observer is comprised of __*two main objects:*__ <sup>1</sup>
@@ -73,15 +74,93 @@ This makes subject and observers loosely coupled - subject and observers have no
 
 <sup>2</sup> *Another common actor in the Observer pattern is a* __*Client object.*__ *Subject objects often have methods to attach and detach observers to a client object.*
 
+#### Implementation
+
+The key to implementing the Observer pattern is to __*define the interactions*__ between the Subject and Observer objects __*using protocols*__. Subject and Observer protocols should contain methods to:
+
+- Add observers
+- Remove observers
+- Notify observers
+
+**Simple Representation of Key Implementation Points**
+
+
+```Swift
+// Subject protocol
+protocol Observable { // 1
+   func addObservers(observers:ObserverObject…); // Register
+   func removeObserver(observer:ObserverObject); // Unregister
+}
+
+/// Observer protocol
+protocol Observer: class {
+   func notify(event: Event)
+}
+
+/// Observer implementation
+class ObserverObject: Observer {
+
+   weak var subject = Subject()
+
+   func notify(event: Event) {
+       // update Observer with changes to Subject
+   }
+
+}
+
+/// Subject implementation
+class Subject: Observable {
+
+   // Subject maintains a list of its observers
+   private var observerArray = [ObserverObject]()
+
+   func addObserver(observer: ObserverObject) {
+       // implement code to add observer
+   }
+
+   func removeObserver(observer: ObserverObject) {
+       // implement code to remove observer
+
+   }
+
+   func changeSubjectState() {
+
+       // make a change Subject state, then notifiy observers of changed stated
+
+       notifyObservers()
+   }
+
+   func notifyObservers() {
+       observer.notify(event: Event)
+   }
+}
+```
+
+(allows multiple observers)
+
+#### Problems Addressed
 
 
 
 
 
+#### Benefits
+.
 - Why learn this?
 - Industry examples of usage
 - Best practices
 - Personal anecdote
+
+
+#### Pitfalls
+.
+
+#### When to use
+
+
+
+
+-
 
 ## In Class Activity I (30 min)
 
@@ -99,6 +178,28 @@ This makes subject and observers loosely coupled - subject and observers have no
 ## Overview/TT II (optional) (20 min)
 
 ### The Visitor Pattern &nbsp;&nbsp;&nbsp;:alien:
+
+#### Description
+
+
+
+#### Implementation
+
+
+
+#### Problems Addressed
+
+
+
+
+
+#### Benefits
+.
+
+#### Pitfalls
+.
+
+#### When to use
 
 
 ## In Class Activity II (optional) (30 min)
