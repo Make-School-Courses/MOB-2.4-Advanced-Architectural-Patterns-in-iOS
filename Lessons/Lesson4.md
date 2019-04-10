@@ -238,7 +238,9 @@ As a result, the __*components depend only on a single mediator class*__ instead
 
 #### Pitfalls
 
-It is important that the mediator *not* provide peers with access to one another so that they might become interdependent.
+- It is important that the mediator object *not* provide peers with access to one another so that they might become interdependent.
+
+- Over time, a mediator object can evolve into a __*God Object.*__ <sup>3</sup>
 
 #### When to use
 
@@ -251,6 +253,9 @@ Use this pattern when...
 **Do not use** this pattern if you have one object that needs to send notifications to a range of disparate objects — consider using the Observer pattern instead.
 
 __*Example Use Case -*__ The most popular usage of the Mediator pattern in Swift code is facilitating communications between GUI components of an app. *The Mediator objects fits into the* __*Controller*__ *role of MVC.*
+
+<!-- TODO: add related patterns
+-->
 
 ## In Class Activity II (optional) (30 min)
 
@@ -265,7 +270,9 @@ __*Example Use Case -*__ The most popular usage of the Mediator pattern in Swift
 1. [Slides]()
 2. [Observer pattern - wikipedia](https://en.wikipedia.org/wiki/Observer_pattern)
 3. [Publish–subscribe pattern  - wikipedia](https://en.wikipedia.org/wiki/Publish–subscribe_pattern)
-[]()
+4. [God Object - wikipedia](https://en.wikipedia.org/wiki/God_object) <sup>3</sup>
 []()
 
+<!-- TODO: add:
 the lapsed listener problem
+-->
