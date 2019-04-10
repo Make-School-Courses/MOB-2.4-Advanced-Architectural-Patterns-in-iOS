@@ -139,27 +139,41 @@ class Subject: Observable { // 7) Subject implementation
 
 #### Problems Addressed
 
+- A one-to-many dependency between objects should be defined without making the objects tightly coupled.
 
+- It should be possible that when one object changes state an open-ended number of dependent objects are updated automatically.
 
-
+- A single object should be able to notify an open-ended number of other objects.
 
 #### Benefits
-.
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
+
+- Observer simplifies application design by allowing objects that provide notifications to do so in a uniform way without needing to know how those notifications are processed and acted on by the recipients (i.e., without being tightly coupled).
+
+- It allows us to define “one-to-many” relationships between many observers receiving updates from the same subject.
+
+- The observer pattern allows large and complex groups of objects to cooperate with one another with few dependencies between them.
+
+#### Why learn this?
+
+The Observer pattern is so widely used that you are likely to have come across it if you have developed an application using a __*modern UI component framework.*__
+
+It plays a key part in the familiar **model–view–controller (MVC)** architectural pattern. It is implemented in numerous programming libraries and systems, __*including almost all GUI toolkits.*__
 
 
 #### Pitfalls
-.
+
+- **Biggest pitfall:** Allowing objects that send and receive notifications to become interdependent.
+
+- Observer __*can cause memory leaks*__: In basic implementation, it requires explicit registration and unregistration. If Subjects hold strong references to Observer to keep them alive, **retain cycles can occur.** Ensuring Subjects hold **weak references to Observers** whenever possible can prevent this.
 
 #### When to use
 
+Use the Observer pattern whenever you want to receive changes made on another object but where the sender of the notifications does not depend on the recipient to complete its work.
 
+__*Do not use*__ Observer pattern unless the Subject of the notifications is functionally dependent from the recipients (observers): i.e., the observers could be removed from the application without preventing the subject from performing its work.
 
-
--
+##### Example Use Case
+Observer is **often used with MVC** where the view **controller is the observer** and the **model is the subject.** This allows the model to communicate changes back to the view controller without needing to know anything about the view controller’s type. Hence, different view controllers can use and observe changes on a shared model type.
 
 ## In Class Activity I (30 min)
 
@@ -176,7 +190,7 @@ class Subject: Observable { // 7) Subject implementation
 
 ## Overview/TT II (optional) (20 min)
 
-### The Mediator Pattern &nbsp;&nbsp;&nbsp;::mailbox_with_no_mail::
+### The Mediator Pattern &nbsp;&nbsp;&nbsp;:mailbox_with_no_mail:
 
 #### Description
 
@@ -216,3 +230,5 @@ class Subject: Observable { // 7) Subject implementation
 3. [Publish–subscribe pattern  - wikipedia](https://en.wikipedia.org/wiki/Publish–subscribe_pattern)
 []()
 []()
+
+the lapsed listener problem
