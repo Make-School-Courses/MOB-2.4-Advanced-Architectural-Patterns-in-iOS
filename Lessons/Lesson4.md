@@ -226,9 +226,9 @@ __*When is the pattern implemented correctly?*__
  <!-- TODO: Add examples of protocols and objects from resources
  -->
 
-#### Problems Addressed
+#### Problem(s) Addressed
 
-Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
+Designing groups of interdependent and/or reusable obects which need to communicate with one another can easily result in tight coupling.
 
 #### Benefits
 
