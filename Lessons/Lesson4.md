@@ -236,14 +236,15 @@ It is important that the mediator *not* provide peers with access to one another
 
 #### When to use
 
-Use this pattern when:
-- dealing with a group of objects that need to communicate freely between one another.
-- designing reusable components, but dependencies between the potentially reusable pieces might result in tight coupling.
-- you need one or more colleagues to act upon events initiated by another colleague and want this colleague to generate further events which, in turn, further affect other colleagues.
+Use this pattern when...
+
+- __*dealing with a group of objects*__ that need to communicate freely between one another.
+- __*designing reusable components,*__ but dependencies between the potentially reusable pieces might result in tight coupling.
+- you need one or more __*colleagues to act upon events initiated by another colleague*__ and want this colleague to generate further events which, in turn, further affect other colleagues.
 
 **Do not use** this pattern if you have one object that needs to send notifications to a range of disparate objects — consider using the Observer pattern instead.
 
-__*Example Use Case:*__ The most popular usage of the Mediator pattern in Swift code is facilitating communications between GUI components of an app. *The Mediator objects fits into the Controller role of MVC.*
+__*Example Use Case -*__ The most popular usage of the Mediator pattern in Swift code is facilitating communications between GUI components of an app. *The Mediator objects fits into the Controller role of MVC.*
 
 ## In Class Activity II (optional) (30 min)
 
