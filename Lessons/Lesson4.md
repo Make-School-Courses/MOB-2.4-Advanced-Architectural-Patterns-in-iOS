@@ -55,7 +55,8 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 ### Part 3 - As A Class
 
-Review After Class coding assignment from previous class. One or more students to share progress and implementation details with class.
+Review: The After Class coding assignment from previous class.
+- One or more students to share progress and implementation details with class.
 
 ## Overview/TT I (20 min)
 
