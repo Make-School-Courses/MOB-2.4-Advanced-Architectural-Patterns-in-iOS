@@ -43,9 +43,17 @@ By the end of this lesson, you should be able to...
 
 ...__*SURPRISE!!!*__ ...__*time for another Quiz!*__
 
-<!-- Quiz location:
+<!-- Quiz:
 
-TODO: Add quiz answersz
+- location:
+https://docs.google.com/document/d/1giZglDE141ewuj1fGunZhTqCRq0pA11SO-Sta_yYT60/edit
+
+- Answers:
+
+1. a) App Delegate (Application object is also acceptable, as some Apple documentation stops there)
+1. b) It discards it
+
+2. A, G, B, F, C, E, D
 
 -->
 
