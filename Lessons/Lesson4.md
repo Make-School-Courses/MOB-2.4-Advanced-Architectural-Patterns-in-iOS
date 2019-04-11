@@ -510,6 +510,7 @@ taylor.name = "Justin Bieber" // prints "I'm now called Justin Bieber"
 1. [Slides]()
 2. [Observer pattern - wikipedia](https://en.wikipedia.org/wiki/Observer_pattern)
 3. [Publish–subscribe pattern  - wikipedia](https://en.wikipedia.org/wiki/Publish–subscribe_pattern)
+4. [Mediator pattern - wikipedia](https://en.wikipedia.org/wiki/Mediator_pattern)
 4. [God Object - wikipedia](https://en.wikipedia.org/wiki/God_object) <sup>3</sup>
 5. [Using Key-Value Observing in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)
 6. [Lapsed Listener Problem - wikipedia](https://en.wikipedia.org/wiki/Lapsed_listener_problem)
