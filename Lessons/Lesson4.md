@@ -21,10 +21,10 @@ https://docs.google.com/document/d/1giZglDE141ewuj1fGunZhTqCRq0pA11SO-Sta_yYT60/
 | 0:00        | 0:05      | Objectives                |
 | 0:05       | 0:15      | Initial Exercise             |
 | 0:20       | 0:15      | Overview  I                |
-| 0:35        | 0:20      | In Class Activity I       |
+| 0:35       | 0:20      | In Class Activity I       |
 | 0:55        | 0:10      | BREAK                     |
 | 1:05         | 0:15      | Overview  II                |
-| 1:20        | 0:25      | In Class Activity II      |
+| 1:20       | 0:25      | In Class Activity II      |
 |1:45       | 0:05    | Wrap Up                     |
 | TOTAL       | 1:50    |                          |
 
@@ -69,7 +69,7 @@ Grade each other's quizzes, sharing answers, insights, etc.
 Review: The After Class coding assignment from previous class.
 - One or more students to share progress and implementation details with class.
 
-## Overview/TT I (20 min)
+## Overview/TT I (15 min)
 
 ### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;:eyes:
 
@@ -223,14 +223,14 @@ __*Note:*__ *KVO is similar to property observers (`willSet` and `didSet`), exce
 
 #### Apple's KVO Implementation Steps
 
-In [Using Key-Value Observing in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift), Apple outlines KVO implemention in four simple steps:
+In [Using Key-Value Observing in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift), Apple outlines KVO implementation in four simple steps:
 
 1. Annotate a Property for Key-Value Observing
 2. Define an Observer class
 3. Associate the Observer with the Property to Observe
 4. Respond to a Property Change
 
-## In Class Activity I (30 min)
+## In Class Activity I (20 min)
 
 **TODO:** Complete and run the partially-implemented playground code below following the steps from Apple's *Using Key-Value Observing in Swift* document listed above.
 
@@ -345,7 +345,7 @@ __*Example Use Case -*__ The most popular usage of the Mediator pattern in Swift
 <!-- TODO: add related patterns
 -->
 
-## In Class Activity II (30 min)
+## In Class Activity II (25 min)
 
 The playground code below is not complete...
 
