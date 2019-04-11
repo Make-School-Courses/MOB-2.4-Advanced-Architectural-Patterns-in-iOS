@@ -468,19 +468,19 @@ spamGenerator.spamSpamSpamSpam(message: "I'd Like to Add you to my LinkedIn Netw
 
 ## After Class
 
-1. Review these other Behavioral Patterns
+1. Look up these other Behavioral Patterns:
 - Visitor
 - Iterator
 - Memento
 - Strategy
 2. Research the following concepts:
-- Lapsed Listener Problem
+- The Lapsed Listener Problem
 - `NSKeyValueObserving` and its `addObserver` function
-- NSKeyValueChangeKey
-- NSKeyValueObservingOptions
-3. Extend the Media Player app you created in the previous class by implementing the following using either the Observer or the Mediator pattern:
+- `NSKeyValueChangeKey`
+- `NSKeyValueObservingOptions`
+3. **TODO:** Extend the Media Player app you created in the previous class by implementing the following using either the Observer or the Mediator pattern:
 - add a notification that, when the video clip is done playing, sends the user this message: "Your media file is done playing — do you want to replay it?"
-4. Analyze the following simple implementation of the Observer pattern (KVO).
+4. **TODO:** Analyze the following simple implementation of the Observer pattern (KVO).
 - For discussion in next class, pay particular attention to the `.observe(_:_)` function, especially the implications of its origin (where does it come from?) and purpose.
 ```Swift
 import UIKit
