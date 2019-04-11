@@ -195,10 +195,30 @@ Observer is **often used with MVC** where the view **controller is the observer*
 
 ### The Observer Pattern in iOS
 
+There are several examples of the observer pattern in the Cocoa Touch and Cocoa frameworks. The Cocoa Touch implementation of the Observer pattern that most programmers encounter is in the UI frameworks, where user interactions and changes in UI component state are expressed using *events* (which are *a type of Notification*).
 
+Cocoa implements the observer pattern in two ways:
+- Notifications
+- Key-Value Observing (KVO)
 
-<!-- TODO: Add notes about iOS and Notifications vs KVO , and we did Notificaions in MOB 1.3
--->
+#### Notifications
+Notifications are based on a subscribe-and-publish model that allows an object (the publisher) to send messages to other objects (subscribers/listeners). The publisher never needs to know anything about the subscribers.
+
+Notifications are heavily used by Apple.
+
+*(See lessons in MOB 1.3 for more on iOS Notifications)*
+
+#### Key-Value Observing (KVO)
+Objective-C has a feature called **Key-Value Observing (KVO)** that allows one object to receive notifications when the value of another object’s __*property*__ changes.
+
+It is useful for communicating changes between logically separated parts of your app—such as between models and views.
+
+You can use KVO to communicate between Swift objects as long as both of them are derived from NSObject, and you use the  `@objc dynamic` keyword when defining the property that will be observed.
+
+__*Note:*__ *KVO is similar to property observers (willSet and didSet ), except KVO is for adding observers outside of the type definition.*
+
+KVO’s biggest downside: You’re required to subclass NSObject and use the Objective-C runtime.
+
 
 
 In [Using Key-Value Observing in Swift](Using Key-Value Observing in Swift), Apple outlines implemention of Key-Value Observing in four simple steps:
