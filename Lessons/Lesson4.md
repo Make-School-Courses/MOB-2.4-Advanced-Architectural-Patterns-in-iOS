@@ -201,25 +201,33 @@ Observer is **often used with MVC** where the view **controller is the observer*
 -->
 
 
+In [Using Key-Value Observing in Swift](Using Key-Value Observing in Swift), Apple outlines implemention of Key-Value Observing in four simple steps:
+
+1. Create a Subject class and Annotate a Property for Key-Value Observing
+2. Define an Observer class
+3. Associate the Observer with the Property to Observe
+4. Respond to a Property Change
+
 ## In Class Activity I (30 min)
 
-**TODO:** Complete and run the partially-implemented playground code below following the steps from Apple's Using Key-Value Observing in Swift document.
+**TODO:** Complete and run the partially-implemented playground code below following the steps from Apple's *Using Key-Value Observing in Swift* document listed above.
 
-Implementation Notes:
+__*Implementation Notes:*__
 1. Your Subject class only needs to have:
 - A counter variable, initialized to 0, but modified with
 ```Swift
 @objc dynamic```
 2. Your Observer class needs this specific init()
 ```Swift
-
-   init(subject:Subject) {
-       super.init();
-       subject.addObserver(self, forKeyPath: "counter",
-                           options: NSKeyValueObservingOptions.new, context: nil);
-   }
+  init(subject:Subject) {
+        super.init()
+        subject.addObserver(self, forKeyPath: "counter",
+                            options: NSKeyValueObservingOptions.new, context: nil)
+    }
    ```
-
+</br>
+</br>
+**Partially-Implemented Playground Code**
 ```Swift
 import Foundation;
 
@@ -253,7 +261,6 @@ Notification: Optional("counter") = Optional(99)
 */
 
 ```
-
 <!-- Instructor Note: Solution to Activity  is below Additional Resources
 -->
 
@@ -464,7 +471,6 @@ import Foundation
 class Subject : NSObject {
     @objc dynamic var counter = 0
 }
-
 
 /* Step 2: Define an Observer class */
 class Observer : NSObject {
