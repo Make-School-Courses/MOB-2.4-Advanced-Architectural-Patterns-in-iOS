@@ -507,7 +507,7 @@ taylor.name = "Justin Bieber" // prints "I'm now called Justin Bieber"
 
 ## Additional Resources
 
-1. [Slides]()
+1. [Slides](https://docs.google.com/presentation/d/1LtzW3sw9iEuHVDzkx7YQTaQF5UtjC3-X-rdEoHchay8/edit#slide=id.p)
 2. [Observer pattern - wikipedia](https://en.wikipedia.org/wiki/Observer_pattern)
 3. [Publish–subscribe pattern  - wikipedia](https://en.wikipedia.org/wiki/Publish–subscribe_pattern)
 4. [Mediator pattern - wikipedia](https://en.wikipedia.org/wiki/Mediator_pattern)
