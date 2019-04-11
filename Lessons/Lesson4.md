@@ -223,7 +223,7 @@ __*Note:*__ *KVO is similar to property observers (`willSet` and `didSet`), exce
 
 In [Using Key-Value Observing in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift), Apple outlines KVO implemention in four simple steps:
 
-1. Create a Subject class and Annotate a Property for Key-Value Observing
+1. Annotate a Property for Key-Value Observing
 2. Define an Observer class
 3. Associate the Observer with the Property to Observe
 4. Respond to a Property Change
@@ -236,7 +236,8 @@ __*Implementation Notes:*__
 1. Your Subject class only needs to have:
 - A counter variable, initialized to 0, but modified with
 ```Swift
-@objc dynamic```
+@objc dynamic
+```
 2. Your Observer class needs this specific init()
 ```Swift
   init(subject:Subject) {
