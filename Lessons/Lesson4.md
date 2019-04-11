@@ -286,7 +286,7 @@ Notification: Optional("counter") = Optional(99)
 <!-- Instructor Note: Solution to Activity  is below Additional Resources
 -->
 
-## Overview/TT II (20 min)
+## Overview/TT II (15 min)
 
 ### The Mediator Pattern &nbsp;&nbsp;&nbsp;:mailbox_with_no_mail:
 
