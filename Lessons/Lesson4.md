@@ -190,8 +190,12 @@ Use the Observer pattern whenever you want one object to receive changes made on
 
 __*Do not use*__ the Observer pattern unless the Subject of the notifications is functionally dependent from the recipients (observers): i.e., the observers could be removed from the application without preventing the subject from performing its work.
 
-##### - Example Use Cases
+##### Example Use Cases
 Observer is **often used with MVC** where the view **controller is the observer** and the **model is the subject.** This allows the model to communicate changes back to the view controller without needing to know anything about the view controller’s type. Hence, different view controllers can use and observe changes on a shared model type.
+
+### The Observer Pattern in iOS
+
+
 
 <!-- TODO: Add notes about iOS and Notifications vs KVO , and we did Notificaions in MOB 1.3
 -->
@@ -199,7 +203,56 @@ Observer is **often used with MVC** where the view **controller is the observer*
 
 ## In Class Activity I (30 min)
 
+**TODO:** Complete and run the partially-implemented playground code below following the steps from Apple's Using Key-Value Observing in Swift document.
 
+Implementation Notes:
+1. Your Subject class only needs to have:
+- A counter variable, initialized to 0, but modified with
+```Swift
+@objc dynamic```
+2. Your Observer class needs this specific init()
+```Swift
+
+   init(subject:Subject) {
+       super.init();
+       subject.addObserver(self, forKeyPath: "counter",
+                           options: NSKeyValueObservingOptions.new, context: nil);
+   }
+   ```
+
+```Swift
+import Foundation;
+
+/* Step 1: Create a Subject class and Annotate a Property for Key-Value Observing */
+
+//TODO: Create Subject class...
+
+
+/* Step 2: Define an Observer class */
+class Observer : NSObject {
+
+    //TODO: Add init()
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+
+        print("Notification: \(String(describing: keyPath)) = \(String(describing: change?[NSKeyValueChangeKey.newKey]!))");
+
+    }
+}
+/* Step 3: Associate the Observer with the Property to Observe */
+let subject =
+let observer =
+
+/* Step 4: Respond to a Property Change */
+subject.counter += 11
+subject.counter = 99
+
+/* RESULTS - Should print:
+Notification: Optional("counter") = Optional(11)
+Notification: Optional("counter") = Optional(99)
+*/
+
+```
 
 <!-- Instructor Note: Solution to Activity  is below Additional Resources
 -->
@@ -277,7 +330,6 @@ The seeks to implement the Mediator pattern by:
 
 **TODO:** Your job is to complete the code so that its output will match the output listed in the comment below the code snippet
 - __*TIP*__ All of the places where the code is incomplete are neatly marked with "//TODO:" annotation.
-
 
 ```Swift
 import UIKit
@@ -406,6 +458,36 @@ https://en.wikipedia.org/wiki/Hedy_Lamarr
 
 
 <!-- Solution to Activity I:
+import Foundation
+
+/* Step 1: Create a Subject class and Annotate a Property for Key-Value Observing */
+class Subject : NSObject {
+    @objc dynamic var counter = 0
+}
+
+
+/* Step 2: Define an Observer class */
+class Observer : NSObject {
+
+    init(subject:Subject) {
+        super.init()
+        subject.addObserver(self, forKeyPath: "counter",
+                            options: NSKeyValueObservingOptions.new, context: nil)
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+
+        print("Notification: \(String(describing: keyPath)) = \(String(describing: change?[NSKeyValueChangeKey.newKey]!))");
+
+    }
+}
+/* Step 3: Associate the Observer with the Property to Observe */
+let subject = Subject()
+let observer = Observer(subject: subject)
+
+/* Step 4: Respond to a Property Change */
+subject.counter += 11
+subject.counter = 99
 
 -->
 
