@@ -245,7 +245,6 @@ __*Implementation Notes:*__
                             options: NSKeyValueObservingOptions.new, context: nil)
     }
    ```
-</br>
 
 **Partially-Implemented Playground Code**
 ```Swift
