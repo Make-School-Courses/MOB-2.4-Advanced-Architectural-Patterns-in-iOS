@@ -288,7 +288,7 @@ Notification: Optional("counter") = Optional(99)
 
 ## Overview/TT II (15 min)
 
-### The Mediator Pattern &nbsp;&nbsp;&nbsp;:mailbox_with_no_mail:
+### The Mediator Pattern &nbsp;&nbsp;&nbsp;:leftwards_arrow_with_hook::m::arrow_right_hook:
 
 The **Mediator pattern** simplifies peer-to-peer communication between objects by introducing a __*mediator object*__ that acts as a __*communications broker*__ between other objects.
 
