@@ -110,7 +110,7 @@ __*Key Highlights:*__
 - At item (2), notice that this `addObserver(_:)` function is set up to accept only a single observer. A better, more real-world design would likely accept a variable number of observers.
 - Item (8) shows how the Subject object fulfills it responsibility to maintain a list of its observers.
 
-__*Note:*__ This is example is a non-functional "shell" use to illustrate key implementation features of the pattern. __*It will not run in a playground.*__
+__*Note:*__ This is example is a non-functioning "shell" only provided to illustrate key implementation features of the pattern. __*It will not run in a playground.*__
 
 ```Swift
 protocol Observable { // 1) Subject protocol
