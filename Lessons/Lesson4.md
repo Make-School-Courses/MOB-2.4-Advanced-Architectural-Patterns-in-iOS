@@ -234,7 +234,7 @@ In [Using Key-Value Observing in Swift](https://developer.apple.com/documentatio
 
 __*Implementation Notes:*__
 1. Your Subject class only needs to have:
-- A counter variable, initialized to 0, but modified with
+- A variable called `counter`, initialized to `0`, and modified with
 ```Swift
 @objc dynamic
 ```
