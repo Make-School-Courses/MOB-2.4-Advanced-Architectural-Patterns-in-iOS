@@ -466,6 +466,39 @@ spamGenerator.spamSpamSpamSpam(message: "I'd Like to Add you to my LinkedIn Netw
 <!-- Instructor Note: Solution to Activity  is below Additional Resources
 -->
 
+## After Class
+
+1. Review these other Behavioral Patterns
+- Visitor
+- Iterator
+- Memento
+- Strategy
+2. Research the following concepts:
+- Lapsed Listener Problem
+- `NSKeyValueObserving` and its `addObserver` function
+- NSKeyValueChangeKey
+- NSKeyValueObservingOptions
+3. Extend the Media Player app you created in the previous class by implementing the following using either the Observer or the Mediator pattern:
+- add a notification that, when the video clip is done playing, sends the user this message: "Your media file is done playing — do you want to replay it?"
+4. Analyze the following simple implementation of the Observer pattern (KVO).
+- For discussion in next class, pay particular attention to the `.observe(_:_)` function, especially the implications of its origin (where does it come from?) and purpose.
+```Swift
+import UIKit
+
+@objc class Person: NSObject {
+    @objc dynamic var name = "Taylor Swift"
+}
+
+let taylor = Person()
+print(taylor.name)// prints ""Taylor Swift"
+
+taylor.observe(\Person.name, options: .new) { person, change in
+    print("I'm now called \(person.name)")
+}
+
+taylor.name = "Justin Bieber" // prints "I'm now called Justin Bieber"
+```
+
 ## Wrap Up (5 min)
 
 - Continue working on your current tutorial
@@ -479,7 +512,10 @@ spamGenerator.spamSpamSpamSpam(message: "I'd Like to Add you to my LinkedIn Netw
 3. [Publish–subscribe pattern  - wikipedia](https://en.wikipedia.org/wiki/Publish–subscribe_pattern)
 4. [God Object - wikipedia](https://en.wikipedia.org/wiki/God_object) <sup>3</sup>
 5. [Using Key-Value Observing in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)
-[]()
+6. [Lapsed Listener Problem - wikipedia](https://en.wikipedia.org/wiki/Lapsed_listener_problem)
+7. [Design Patterns on iOS using Swift – Part 2/2 - from Ray Wenderlich](https://www.raywenderlich.com/476-design-patterns-on-ios-using-swift-part-2-2)
+- Contains descriptions and examples of the Observer pattern in iOS, including both Notifications and KVO, with a simple, excellent KVO example in which a `UIActivityIndicator` is stopped when there is a change to an `image property`.
+
 
 <!-- TODO: add:
 the lapsed listener problem
@@ -552,7 +588,7 @@ class Peer: Receiver {
     }
 }
 
-// Colleage class extending base Peer class
+// Colleague class extending base Peer class
 class Programmer: Peer {
     let expertise: String
 
@@ -566,7 +602,7 @@ class Programmer: Peer {
     }
 }
 
-// Colleage class extending base Peer class
+// Colleague class extending base Peer class
 class Recruiter: Peer {
     let company: String
 
