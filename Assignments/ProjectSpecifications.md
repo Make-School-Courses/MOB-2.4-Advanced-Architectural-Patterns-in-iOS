@@ -5,7 +5,9 @@
 
 </br>
 </br>
+
 &nbsp;&nbsp;&nbsp;__*Res Ipsa Loquitur*__  — *A Latin phrase that means: "The thing speaks for itself"*
+
 </br>
 </br>
 
