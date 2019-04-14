@@ -1,7 +1,7 @@
 # Design Patterns App
 
 
-# Project Outline
+## Project Outline
 
 </br>
 
@@ -19,13 +19,13 @@ You are to create a a portfolio piece that:
 
 Rather than merely answering interview questions about your knowledge of iOS design patterns, you will have an app that speaks for you.
 
-# Data Model
+## Data Model
 
 Use your own discretion in choosing a data model/data source for each scene.
 
 Robust data persistence is not required; any simple persistence mechanism (i.e, plist, file system) should suffice, as most of the data will be strings, and the focus of this work is mostly on simple architecture with no user-selected data.
 
-# Feature Outline
+## Feature Outline
 
 Create a table view app which showcases the design patterns covered in Lessons 1 through 6 of this course.
 
@@ -77,20 +77,20 @@ __*Suggestions:*__
 __*Other Notes*__
 1. For the Observer Pattern - You may use your choice of either KVO, Notification, or a non-iOS Observer implementation to illustrate it.
 
-## Minimally Viable Product (MVP)
+### Minimally Viable Product (MVP)
 
 To achieve MVP:
 
 - You should create a completed scene for *at least* each and every one of the design patterns taught in class for each of the three main design categories
 - Each pattern's scene should have a general description (text) view and an implementation view that illustrates the pattern by, at minimum, providing a code snippet and/or diagram depicting one use case of the pattern.
 
-## Stretch Challenges
+### Stretch Challenges
 
 1. Show live, functional examples of at least 50% (i.e., only 6) of the design patterns covered in class.
 2. Include, in its respective table view section, at least one additional pattern from each of the three main design pattern categories, that was not covered in any of the formal lessons in this course.
 
 
-# Screen Layout
+## Screen Layout
 <!--
 Here are mockups of the individual screens the app should contain, including their connections to each other:
 
@@ -100,13 +100,13 @@ Feel free to design nicer screens than shown in these mockups! They are primaril
 
 -->
 
-## Screen Details
+### Screen Details
 
 <!--
 This section provides details for some of the more complex screens.
 -->
 
-### Main Screen
+#### Main Screen
 <!--
 ### Main Screen (List of Trips)
 
@@ -127,10 +127,10 @@ This screen allows the user to search for waypoints. It displays the search resu
 -->
 
 
-### Subordinate (Pattern) Scene - Serial Option
+#### Subordinate (Pattern) Scene - Serial Option
 
 
-### Subordinate (Pattern) Scene - Parallel Option
+#### Subordinate (Pattern) Scene - Parallel Option
 
 
 ## Project evaluation criteria
