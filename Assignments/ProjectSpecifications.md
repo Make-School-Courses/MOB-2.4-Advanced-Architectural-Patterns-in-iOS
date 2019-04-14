@@ -10,17 +10,20 @@
 </br>
 </br>
 
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__*Res Ipsa Loquitur*__  — *A Latin phrase that means: "The thing speaks for itself"*
 
+The primary goal of this project is to afford you an opportunity for your knowledge of this course’s topic to speak for itself.
 
-Goals:
-* x
-* x
+You are to create a a portfolio piece that:
+* can be used as a reference for the work you have done in this course, which you might also share with the iOS developer community
+* will demonstrate to prospective employers your knowledge of intermediate design patterns relevant to iOS development
 
+Rather than merely answering interview questions about your knowledge of iOS design patterns, you will have an app that speaks for you. 
 
 # Data Model
 
--
+Use your own discretion in choosing a data model/data source for each scene.
+
+Robust data persistence is not required; any simple persistence mechanism (i.e, plist, file system) should suffice, as most of the data will be strings, and the focus of this work is mostly on simple architecture with no user-selected data.
 
 # Feature Outline
 
@@ -69,6 +72,13 @@ This screen should support deleting waypoints by using the iOS swipe-to-delete f
 
 This screen allows the user to search for waypoints. It displays the search results in a table view. The user can select an entry. The selected entry will be highlighted on the map. By using the *save* button
 -->
+
+
+### Subordinate (Pattern) Scene - Serial Option
+
+
+### Subordinate (Pattern) Scene - Parallel Option
+
 
 ## Project evaluation criteria
 
