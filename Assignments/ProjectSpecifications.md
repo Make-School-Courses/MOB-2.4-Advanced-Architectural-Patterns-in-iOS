@@ -130,6 +130,13 @@ This screen allows the user to search for waypoints. It displays the search resu
 
 #### Subordinate (Pattern) Scene - Serial Option
 
+<!-- TODO: 1) add Master scene graphi
+  2) add notes, etc. to all to explain what is happening Here
+  --> 
+
+![example](assets/CoR_example_1.png)
+
+![example](assets/CoR_example_2.png)
 
 #### Subordinate (Pattern) Scene - Parallel Option
 
