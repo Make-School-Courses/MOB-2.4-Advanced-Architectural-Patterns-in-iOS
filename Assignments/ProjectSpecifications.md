@@ -69,9 +69,26 @@ __*notes on cell implementation examples:*__
 You should however implement at least one API call that successfully works together with your backend (e.g. only syncing new trips but not changes or deletions).
 -->
 
-Stretch Challenges
+__*Suggestions:*__
+- To pace yourself, start by completing the shell of the app first, then work from the top of the list of main types (Creational), filling in each of the patterns in Creational that were taught in class before moving on to Behavioral, etc.
+- When done with all patterns taught in class, you may want to expand each table view section by adding patterns not taught in class to their respective group/table view section (if time permits).
 
--
+
+__*Other Notes*__
+1. For the Observer Pattern - You may use your choice of either KVO, Notification, or a non-iOS Observer implementation to illustrate it.
+
+## Minimally Viable Product (MVP)
+
+To achieve MVP:
+
+- You should create a completed scene for *at least* each and every one of the design patterns taught in class for each of the three main design categories
+- Each pattern's scene should have a general description (text) view and an implementation view that illustrates the pattern by, at minimum, providing a code snippet and/or diagram depicting one use case of the pattern.
+
+## Stretch Challenges
+
+1. Show live, functional examples of at least 50% (i.e., only 6) of the design patterns covered in class.
+2. Include, in its respective table view section, at least one additional pattern from each of the three main design pattern categories, that was not covered in any of the formal lessons in this course.
+
 
 # Screen Layout
 <!--
