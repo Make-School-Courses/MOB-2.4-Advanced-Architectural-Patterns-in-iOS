@@ -75,12 +75,13 @@ __*Suggestions:*__
 
 
 __*Other Notes*__
-1. For the Observer Pattern - You may use your choice of either KVO, Notification, or a non-iOS Observer implementation to illustrate it.
+1. For cell subtitles - You must use the subtitle of the cell as a means to add more information describing each pattern. Though you do *not* need to use the descriptors (`Complexity` and `Popularity`) illustrated in the examples provided, you *may* use those descriptors if you do not arrive at a descriptive subtitle on your own.
+2. For the Observer Pattern - You may use your choice of either KVO, Notification, or a non-iOS Observer implementation to illustrate it.
+
 
 ### Minimally Viable Product (MVP)
 
-To achieve MVP:
-
+To achieve **MVP** status:
 - You should create a completed scene for *at least* each and every one of the design patterns taught in class for each of the three main design categories
 - Each pattern's scene should have a general description (text) view and an implementation view that illustrates the pattern by, at minimum, providing a code snippet and/or diagram depicting one use case of the pattern.
 
