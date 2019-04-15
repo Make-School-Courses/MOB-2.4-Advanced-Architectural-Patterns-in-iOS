@@ -174,3 +174,8 @@ This screen allows the user to search for waypoints. It displays the search resu
 ## Project evaluation criteria
 
 [Link to rubric]()
+
+<!-- TODO:
+  - copy and modify this rubric to fit this course:
+  https://docs.google.com/document/d/1x3ETtKdEMUjxBUJTT0eVWLxRHqZAJBDBTDfawjoVUs4/edit
+  -->
