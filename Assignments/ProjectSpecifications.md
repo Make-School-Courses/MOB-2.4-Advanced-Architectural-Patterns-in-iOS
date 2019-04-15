@@ -38,9 +38,9 @@ The name of your app is up to you. But it is recommended that you choose a name 
 Your app is to have the following **characteristics:**
 
 1. Each section in the table view will represent each of the major types of design patterns. i.e., you will create a separate table view section for each of the following:
-* "Creational"
-* "Behavioral"
-* "Structural"
+* `"Creational"`
+* `"Behavioral"`
+* `"Structural"`
 
 2. Within each table view `section`, each pattern covered in class is to have its own `cell`
 
