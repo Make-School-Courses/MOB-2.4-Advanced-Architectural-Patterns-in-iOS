@@ -20,7 +20,8 @@
 | 1:05         | 0:15      | Overview  II                |
 | 1:20       | 0:25      | In Class Activity II      |
 |1:45       | 0:05    | Wrap Up                     |
-| TOTAL       | 1:50    |                          |                      |
+| TOTAL       | 1:50    |                          |
+
 
 
 ## Why you should know this...
@@ -76,14 +77,21 @@ Examples of Structural Patterns include:
 - **Facade**
 - Flyweight  
 - Marker
-- Pipes and filters
-- Opaque pointer
 - **Proxy**
 
 *From: wikipedia*
 
-*Lessons 1 and 2 cover the Creational design Patterns highlighted above*
 
+*For lessons 5 and 6 in this course, we will cover the patterns highlighted in bold text above…*
+
+**Structural Pattern Notes:**
+1. Many of the structural patterns have similar implementations but different intents. Best practice: Ensure you select the Structural pattern which best suits your intended purpose.
+2. Adapter and Decorator are often each referred to as “wrapper” patterns:
+- An adapter can be used when the wrapper must respect a particular interface and must support polymorphic behavior.
+- Alternatively, a decorator makes it possible to add or alter behavior of an interface at run-time.
+- and a facade is used when an easier or simpler interface to an underlying object is desired.
+
+![wikipedia_table](assests/wikipedia_table.png)
 
 
 #### Adapter
