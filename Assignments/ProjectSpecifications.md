@@ -21,7 +21,9 @@ Rather than merely answering interview questions about your knowledge of iOS des
 
 ## Data Model
 
-Use your own discretion in choosing a data model/data source for each scene.
+As long as you follow the guidelines outlined below, the content of each pattern's subordinate scene is up to you.
+
+Thus you may use your own discretion in choosing a data model/data source for each scene.
 
 Robust data persistence is not required; any simple persistence mechanism (i.e, plist, file system) should suffice, as most of the data will be strings, and the focus of this work is mostly on simple architecture with no user-selected data.
 
@@ -83,12 +85,14 @@ __*Other Notes*__
 
 To achieve **MVP** status:
 
-- You should create a completed scene for *at least* each and every one of the design patterns taught in class for each of the three main design categories
-- Each pattern's scene should have a general description (text) view and an implementation view that illustrates the pattern by, at minimum, providing a code snippet and/or diagram depicting one use case of the pattern.
+- You should create a completed scene for *at least* two (2) of the design patterns taught in class for each of the three main design categories
+&nbsp;&nbsp;&nbsp; - i.e., at least 2 of the 4 from Creational, 2 from Behavioral, and so on.
+
+- Each pattern's scene should have a general description (text) view and an implementation view that illustrates the pattern by, at minimum, providing a code snippet and/or a diagram depicting one use case specific to the given pattern.
 
 ### Stretch Challenges
 
-1. Show live, functional examples of at least 50% (i.e., only 6) of the design patterns covered in class.
+1. Show live, functional examples of at least 2 of the design patterns covered in class.
 2. Include, in its respective table view section, at least one additional pattern from each of the three main design pattern categories, that was not covered in any of the formal lessons in this course.
 3. Add illustrative graphic images/icons next to each pattern.
 
