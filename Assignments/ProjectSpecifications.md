@@ -92,7 +92,7 @@ To achieve **MVP** status:
 2. Include, in its respective table view section, at least one additional pattern from each of the three main design pattern categories, that was not covered in any of the formal lessons in this course.
 3. Add illustrative graphic images/icons next to each pattern.
 
-### Potential Models to Emulate
+### To Jog Your Creativity
 
 You will of course want to create an original app that uniquely showcases and exemplifies your knowledge and experience of the subject.
 
