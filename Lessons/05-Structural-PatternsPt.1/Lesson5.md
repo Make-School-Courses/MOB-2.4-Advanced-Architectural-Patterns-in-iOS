@@ -91,7 +91,7 @@ Examples of Structural Patterns include:
 - Alternatively, a decorator makes it possible to add or alter behavior of an interface at run-time.
 - and a facade is used when an easier or simpler interface to an underlying object is desired.
 
-![wikipedia_table](assets/wikipedia_table.png)
+![example](assets/wikipedia_table.png)
 
 
 #### Adapter
