@@ -46,13 +46,12 @@ Your app is to have the following **characteristics:**
 
 2. Within each table view `section`, each pattern covered in class is to have its own `cell`
 
-__*notes on cell construction:*__
+**notes on cell construction:**
 * It is *not required* that cells need to be reusable Prototype cells. Which type of cell you use is up to you
 * However, it *is required* that cells provide:
 
-&nbsp;&nbsp;&nbsp; - a subtitle
-
-&nbsp;&nbsp;&nbsp; - a way to invoke a detail scene (i.e, either by creating a Detail cell, or providing a button, which will invoke the detail VC)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - a subtitle</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - a way to invoke a detail scene (i.e, either by creating a Detail cell, or providing a button, which will invoke the detail VC)
 
 3. Tapping any of the cells within a section will launch a subordinate scene presenting a VC of the same name as the cell tapped:
 * each pattern's cell will have 2 sub-scenes:
