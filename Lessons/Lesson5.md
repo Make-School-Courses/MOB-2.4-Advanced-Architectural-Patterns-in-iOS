@@ -9,9 +9,10 @@
 - xxx
 -->
 
-## Minute-by-Minute [OPTIONAL]
+## Minute-by-Minute
 
 | **Elapsed** | **Time**  | **Activity**              |
+| ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
 | 0:05       | 0:15      | Initial Exercise             |
 | 0:20       | 0:15      | Overview  I                |
@@ -21,7 +22,6 @@
 | 1:20       | 0:25      | In Class Activity II      |
 |1:45       | 0:05    | Wrap Up                     |
 | TOTAL       | 1:50    |                          |
-
 
 
 ## Why you should know this...
@@ -134,7 +134,7 @@ Examples of Structural Patterns include:
 - Form into groups
 - etc (get creative :D)
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT II  (20 min)
 
 #### Description
 
@@ -163,7 +163,7 @@ Examples of Structural Patterns include:
 #### When to use
 
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II  (30 min)
 
 ## Wrap Up (5 min)
 
