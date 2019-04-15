@@ -60,7 +60,7 @@ __*notes on cell construction:*__
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(see diagrams below for illustrations)*
 
 __*notes on cell implementation examples:*__
-* Whenever possible, try to create a “live” functional example of the pattern (see XXX in the diagram below)
+* Whenever possible, try to create a “live” functional "animation" of the pattern (see XXX in the diagram below)
 * It is understood that it is extremely difficult to provide live functional examples for some patterns due to their essential nature. For those patterns, you may fall back on using the following to illustrate your knowledge of them:
 &nbsp;&nbsp;&nbsp; - example code snippets and/or diagrams
 
@@ -82,6 +82,7 @@ __*Other Notes*__
 ### Minimally Viable Product (MVP)
 
 To achieve **MVP** status:
+
 - You should create a completed scene for *at least* each and every one of the design patterns taught in class for each of the three main design categories
 - Each pattern's scene should have a general description (text) view and an implementation view that illustrates the pattern by, at minimum, providing a code snippet and/or diagram depicting one use case of the pattern.
 
@@ -89,6 +90,17 @@ To achieve **MVP** status:
 
 1. Show live, functional examples of at least 50% (i.e., only 6) of the design patterns covered in class.
 2. Include, in its respective table view section, at least one additional pattern from each of the three main design pattern categories, that was not covered in any of the formal lessons in this course.
+3. Add illustrative graphic images/icons next to each pattern.
+
+### Potential Models to Emulate
+
+You will of course want to create an original app that uniquely showcases and exemplifies your knowledge and experience of the subject.
+
+But in the event you are stuck and need to jog your creativity, check out these example apps for clues:
+
+- [Design Patterns by Example: Examples on Obj-C and Swift - by Geomatix Laboratory s.r.o.](https://itunes.apple.com/us/app/design-patterns-by-example/id1271220838?mt=8)
+- [Design Patterns (OOAD & Service Oriented Architecture) - by SQUBE LLC](https://itunes.apple.com/us/app-bundle/design-patterns-ooad-service-oriented-architecture/id994675488?mt=8)
+- [Algorithms & Data Structures: Examples and implementations - by Alexander Murphy](https://itunes.apple.com/us/app/algorithms-data-structures/id1431032601?mt=8)
 
 
 ## Screen Layout
@@ -132,7 +144,7 @@ This screen allows the user to search for waypoints. It displays the search resu
 
 <!-- TODO: 1) add Master scene graphi
   2) add notes, etc. to all to explain what is happening Here
-  --> 
+  -->
 
 ![example](assets/CoR_example_1.png)
 
