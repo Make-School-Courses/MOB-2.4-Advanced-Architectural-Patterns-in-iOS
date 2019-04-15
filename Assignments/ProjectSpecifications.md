@@ -49,21 +49,30 @@ Your app is to have the following **characteristics:**
 __*notes on cell construction:*__
 * It is *not required* that cells need to be reusable Prototype cells. Which type of cell you use is up to you
 * However, it *is required* that cells provide:
+
 &nbsp;&nbsp;&nbsp; - a subtitle
+
 &nbsp;&nbsp;&nbsp; - a way to invoke a detail scene (i.e, either by creating a Detail cell, or providing a button, which will invoke the detail VC)
 
 3. Tapping any of the cells within a section will launch a subordinate scene presenting a VC of the same name as the cell tapped:
 * each pattern's cell will have 2 sub-scenes:
+
 &nbsp;&nbsp;&nbsp;(a) a description of the pattern
+
 &nbsp;&nbsp;&nbsp;(b) an implementation example
+
 * subordinate scenes can be arranged as either:
+
 &nbsp;&nbsp;&nbsp; - in series — i.e., master/detail
+
 &nbsp;&nbsp;&nbsp; - in parallel — i.e., using a Segmented Control
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(see diagrams below for illustrations)*
 
-__*notes on cell implementation examples:*__
+**notes on cell implementation examples:**
 * Whenever possible, try to create a “live” functional "animation" of the pattern (see XXX in the diagram below)
 * It is understood that it is extremely difficult to provide live functional examples for some patterns due to their essential nature. For those patterns, you may fall back on using the following to illustrate your knowledge of them:
+
 &nbsp;&nbsp;&nbsp; - example code snippets and/or diagrams
 
 
@@ -86,6 +95,7 @@ __*Other Notes*__
 To achieve **MVP** status:
 
 - You should create a completed scene for *at least* two (2) of the design patterns taught in class for each of the three main design categories
+
 &nbsp;&nbsp;&nbsp; - i.e., at least 2 of the 4 from Creational, 2 from Behavioral, and so on.
 
 - Each pattern's scene should have a general description (text) view and an implementation view that illustrates the pattern by, at minimum, providing a code snippet and/or a diagram depicting one use case specific to the given pattern.
