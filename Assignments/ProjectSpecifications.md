@@ -54,9 +54,9 @@ Your app is to have the following **characteristics:**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - a way to invoke a detail scene (i.e, either by creating a Detail cell, or providing a button, which will invoke the detail VC)
 
 3. Tapping any of the cells within a section will launch a subordinate scene presenting a VC of the same name as the cell tapped:
-* each pattern's cell will have 2 sub-scenes:
+&nbsp;&nbsp;&nbsp; - each pattern's cell will have 2 sub-scenes:
 
-&nbsp;&nbsp;&nbsp;(a) a description of the pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a) a description of the pattern
 
 &nbsp;&nbsp;&nbsp;(b) an implementation example
 
