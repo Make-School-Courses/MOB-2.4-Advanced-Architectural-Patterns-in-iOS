@@ -8,7 +8,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__*Res Ipsa Loquitur*__  — *A Latin phrase that means: "The thing speaks for itself"*
 
 </br>
-</br>
 
 
 The primary goal of this project is to afford you an opportunity for your knowledge of this course’s topic to speak for itself.
