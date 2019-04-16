@@ -4,7 +4,7 @@
 1) For the quiz in the Initial Exercise:
 - the URL is xxxx
 2) For Activity 1:
-- xxxx
+- Solution is embedded below activity
 3) for Activity 2:
 - xxx
 -->
@@ -16,7 +16,7 @@
 | 0:00        | 0:05      | Objectives                |
 | 0:05       | 0:15      | Initial Exercise             |
 | 0:20       | 0:15      | Overview  I                |
-| 0:35       | 0:20      | In Class Activity I       |
+| 0:35       | 0:25      | In Class Activity I       |
 | 0:55        | 0:10      | BREAK                     |
 | 1:05         | 0:15      | Overview  II                |
 | 1:20       | 0:25      | In Class Activity II      |
@@ -284,6 +284,68 @@ myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
  Cat_riding_a_roomba.mp4  is now paused...
  */
 ```
+
+*Adapted from this Java code:*
+  http://hackjutsu.com/2015/11/07/Adapter%20Pattern/
+
+
+<!-- SOLUTION FOR ACTIVITY 1:
+import UIKit
+
+// Target protocol 1
+protocol Player {
+    func play(audioType: String, fileName: String)
+}
+
+// Target protocol 2
+protocol Pause {
+    func pause(fileName: String)
+}
+
+// Adaptee 1
+class AudioPlayer {
+    func playAudio(fileName: String) {
+        print("Now Playing: ", fileName)
+    }
+}
+
+// Adaptee 2
+class VideoPlayer {
+    func playVideo(fileName: String) {
+        print("Now Playing: ", fileName)
+    }
+}
+
+// Adapter (class)
+class MyPlayer: Player {
+
+    let videoPlayer = VideoPlayer()
+    let audioPlayer = AudioPlayer()
+
+    func play(audioType: String, fileName: String) {
+        if (audioType == ".mp4"){
+            videoPlayer.playVideo(fileName: fileName);
+        }else if(audioType == ".aac"){
+            audioPlayer.playAudio(fileName: fileName);
+        }
+    }
+}
+
+// Adapter (class extension)
+extension MyPlayer: Pause {
+    func pause(fileName: String) {
+        print(fileName, " is now paused...")
+    }
+}
+
+// Usage
+let myPlayer = MyPlayer()
+myPlayer.play(audioType: ".aac", fileName: "Titanium.aac")
+myPlayer.play(audioType: ".mp4", fileName: "Cat_riding_a_roomba.mp4")
+
+
+myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
+-->
 
 ## Overview/TT II  (20 min)
 
