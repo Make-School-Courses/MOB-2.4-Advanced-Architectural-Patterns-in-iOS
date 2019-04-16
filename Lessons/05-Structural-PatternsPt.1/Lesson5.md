@@ -395,7 +395,7 @@ Another use case is when you have to use several existing final classes or struc
 
 ## Additional Resources
 
-1.
+1.[Slides](https://docs.google.com/presentation/d/1xyvW8EVQLPlqaTkpTg9yhLxHBB_VahGp3hJxdvldeTA/edit?usp=sharing)<br>
 https://en.wikipedia.org/wiki/Adapter_pattern
 [Swift adapter design pattern - an article](https://theswiftdev.com/2018/07/30/swift-adapter-design-pattern/)
 [Pro Design Patterns in Swift - a book by Adam Freeman](https://www.amazon.com/Design-Patterns-Swift-Adam-Freeman/dp/148420395X) <sup>1</sup>
