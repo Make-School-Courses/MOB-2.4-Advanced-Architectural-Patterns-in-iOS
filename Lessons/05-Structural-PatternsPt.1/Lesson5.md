@@ -607,6 +607,29 @@ https://stackoverflow.com/questions/2707401/understand-the-decorator-pattern-wit
 <!-- SOLUTION FOR ACTIVITY 2 -- is below Additional Resources... -->
 
 
+## After Class
+
+1. Look up these other Structural Patterns:
+
+- Aggregate
+- Extensibility
+- Flyweight
+- Marker
+
+2. Research the following concepts:
+
+- The pros and cons of `Class Adapter` vs. `Object Adapter`
+- The `Single Responsibility Principle`
+- The principle of `Composition Over Inheritance`
+
+
+3. TODO: Extend the Media Player app you created in the previous class by implementing the following using either the Adapter or the Decorator pattern:
+
+- Add functionality so that the user can skip to the Next or Previous video clip
+
+__*Note*__ *- This will require that you have a collection of at several video clips.*
+
+
 ## Wrap Up (5 min)
 
 - Continue working on your current tutorial
@@ -624,6 +647,8 @@ https://stackoverflow.com/questions/2707401/understand-the-decorator-pattern-wit
 7. [Single responsibility principle - wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle)
 8. [Open–closed principle - wikipedia](https://en.wikipedia.org/wiki/Open–closed_principle)
 9. [Combinatorial explosion - wikipedia](https://en.wikipedia.org/wiki/Combinatorial_explosion)
+10. [Composition over inheritance - wikipedia](https://en.wikipedia.org/wiki/Composition_over_inheritance)
+11. [Difference between object adapter pattern and class adapter pattern - stackoverflow](https://stackoverflow.com/questions/9978477/difference-between-object-adapter-pattern-and-class-adapter-pattern)
 
 
 <!-- SOLUTION FOR ACTIVITY 1:
