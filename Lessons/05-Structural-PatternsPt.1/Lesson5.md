@@ -225,7 +225,8 @@ Now Playing:  Cat_riding_a_roomba.mp4
 ```
 2. Using the Adapter pattern, add a `pause()` function.
 
-** Playground Code**
+**Playground Code**
+
 ```Swift
 import UIKit
 
@@ -393,24 +394,18 @@ Decorator is also a solution to the **Exploding Class Hierarchy** problem: An ex
 *Source: wikipedia*
 
 #### Benefits
-
-
 The decorator pattern is an alternative to subclassing. Subclassing adds behavior at compile time, and the change affects all instances of the original class; decorating can provide new behavior at run-time for selected objects.
 
-
 The decorator pattern is often useful for adhering to the __*Single Responsibility Principle,*__ as it allows functionality to be divided between classes with unique areas of concern.
-
 
 The changes in behavior defined with the decorator pattern can be combined to create complex effects without needing to create large numbers of subclasses.
 
 **TIP** If you do not have control over the class definition (source code) of an object, you can apply the decorator pattern.
 
-
 #### Pitfalls
 
 The main pitfall is implementing the pattern so that it affects all of the objects created from a given class rather than allowing changes to be applied selectively.
 A less common pitfall is implementing the pattern so that it has hidden side effects that are not related to the original purpose of the objects being modified.
-
 
 #### Related Patterns
 
@@ -525,7 +520,7 @@ print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients(
  */
  ```
 
-*From:*
+*From this series of Swift design pattern articles:*
  https://github.com/ochococo/Design-Patterns-In-Swift
  <!-- under GNU License -->
 
