@@ -352,34 +352,93 @@ myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
 
 #### Decorator &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:art:
 
-
-The Decorator pattern is used to extend or alter the functionality of objects at run- time by wrapping them in an object of a decorator class. This provides a flexible alternative to using inheritance to modify behavior.
-
+The Decorator pattern is used to extend or alter the functionality of objects __*at run-time*__ by wrapping them in an object of a decorator class. This provides *a flexible alternative to using inheritance* to modify behavior.
 
 
-#### Implementation
+allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class.
 
 
 
+
+
+
+#### Implementation Notes
+
+Decorator and Adapter are two key patterns related to polymorphism that you will see often in Swift. They are implemented using the language keywords `protocol` and `extension` respectively.
+
+The __*primary example*__ of the Decorator pattern __*in Swift*__ is when you create an `extension`.
+
+Decorator consists of base components that are *extended* at *run-time* and ‘decorated’ with decorator classes.
+
+Decorator has four key components:
+
+1. (Abstract) Core Component — The (abstract) base class or protocol that a base object will subclass or implement.
+2. Concrete Core Component - Implementation of the Core Component.
+3. Decorator — The Decorator can extend the Core Component using two forms:
+- As an Abstract Decorator - A protocol which extends the Core Component protocol
+- As a Concrete Decorator - An implementation (or subclass) of the Core Component.
+
+The pattern has been implemented correctly when you can select some of the objects created from a class to be modified without affecting all of them and without requiring changes to the original class.
+
+**Key Points**
+- Concrete Decorators have the capability of wrapping around Components or other Decorators and building structures.
+- Decorator designed so that multiple decorators can be stacked on top of each other, each time adding a new functionality to the overridden method(s).
+- Decorators and the original class object share a common set of features.
 
 
 #### Problems Addressed
+
+
+What problems can the Decorator design pattern solve? [4]
+
+Responsibilities should be added to (and removed from) an object dynamically at run-time.
+A flexible alternative to subclassing for extending functionality should be provided.
+
+When using subclassing, different subclasses extend a class in different ways. But an extension is bound to the class at compile-time and can't be changed at run-time.
 
 
 
 
 
 #### Benefits
-.
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
+
+
+The decorator pattern is an alternative to subclassing. Subclassing adds behavior at compile time, and the change affects all instances of the original class; decorating can provide new behavior at run-time for selected objects.
+
+
+The decorator pattern is often useful for adhering to the __*Single Responsibility Principle,*__ as it allows functionality to be divided between classes with unique areas of concern.
+
 
 #### Pitfalls
-.
+
+
+
+
+#### Related Patterns
+
+Decorator is structurally nearly identical to the Chain-of-Responsibility (CoR) pattern.
+
+The difference:
+- in CoR, *exactly one* of the classes handles the request
+- for Decorator, *all* classes handle the request
+
 
 #### When to use
+
+if you need to add behavior not without changing object, you can do it with decorator pattern.
+
+
+#### Decorator in iOS
+
+Decorator is a pattern for __*object composition,*__ which is something that you are encouraged to do in your own code.
+
+Cocoa Touch, however, provides some classes and mechanisms of its own that are based on the pattern.
+
+Cocoa Touch uses the Decorator pattern in the implementation of several of its classes, including `NSAttributedString`, `NSScrollView`, and `UIDatePicker`. The latter two classes are examples of compound views, which group together simple objects of other view classes and coordinate their interaction.
+
+*Source: Apple*
+
+
 
 
 
@@ -404,3 +463,6 @@ Another use case is when you have to use several existing final classes or struc
 4. [CocoaDesignPatterns - Apple docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaFundamentals/CocoaDesignPatterns/CocoaDesignPatterns.html)
 5. [Swift adapter design pattern - an article](https://theswiftdev.com/2018/07/30/swift-adapter-design-pattern/)
 6. [Pro Design Patterns in Swift - a book by Adam Freeman](https://www.amazon.com/Design-Patterns-Swift-Adam-Freeman/dp/148420395X) <sup>1</sup>
+7. [Single responsibility principle - wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+8. [Open–closed principle - wikipedia](https://en.wikipedia.org/wiki/Open–closed_principle)
+9. [Combinatorial explosion - wikipedia](https://en.wikipedia.org/wiki/Combinatorial_explosion)
