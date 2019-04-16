@@ -525,6 +525,10 @@ print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients(
  */
  ```
 
+*From:*
+ https://github.com/ochococo/Design-Patterns-In-Swift
+ <!-- under GNU License -->
+
 
 ## In Class Activity II  (30 min)
 
