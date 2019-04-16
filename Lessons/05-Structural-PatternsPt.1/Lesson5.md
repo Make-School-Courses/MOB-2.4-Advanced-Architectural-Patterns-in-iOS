@@ -24,12 +24,6 @@
 | TOTAL       | 1:50    |                          |
 
 
-<!-- TODO:
-## Why you should know this...
-Why Structural
-- why these 2 patterns -->
-
-
 ## Learning Objectives (5 min)
 
 By the end of this lesson, you should be able to...
@@ -45,18 +39,25 @@ By the end of this lesson, you should be able to...
 4. Implement basic examples of both patterns explored in this class
 
 
-## Initial Exercise (15 min)
+## Initial Exercise (20 min)
 
 ### Part 1 - Individually
 
-<!-- TODO:
-- quiz
-- as a class, review the media player code from last 2 sessions
--->
+**A Quiz** - To test and reinforce your knowledge gleaned from the previous class...
 
 <!-- Quiz location:
+https://docs.google.com/document/d/1kz7OpSDh_S2d7KCbUTeYEOR1M9r6-zgkxDhUGdvaDiY/edit
+-->
 
-TODO: Add quiz answers
+<!-- Quiz answers:
+
+Question 1: D, C, A, B
+
+Question 2: God Object
+https://en.wikipedia.org/wiki/God_object
+
+Question 2:  Weak references
+https://en.wikipedia.org/wiki/Lapsed_listener_problem
 
 -->
 
@@ -64,8 +65,13 @@ TODO: Add quiz answers
 
 Grade each other's quizzes, sharing answers, insights, etc.
 
-## Overview/TT I (20 min)
+### Part 3 - As A Class
 
+- Review progress of the media player app for which After Class work was assigned in the last 2 class sessions
+- One student to volunteer to present their work (if time permits)
+
+
+## Overview/TT I (20 min)
 
 ### Structural Patterns
 Structural design patterns ease design by identifying a simple way to realize relationships between entities.
