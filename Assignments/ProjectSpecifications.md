@@ -5,13 +5,13 @@
 
 </br>
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__*Res Ipsa Loquitur*__  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — *A Latin phrase that means: "The thing speaks for itself"*
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__*Res Ipsa Loquitur*__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — *A Latin phrase that means: "The thing speaks for itself"*
 
 </br>
 
 
-The primary goal of this project is to afford you an opportunity for your knowledge of this course’s topic to speak for itself.
+The primary goal for this project is to afford you an opportunity for your knowledge of this course’s topic to speak for itself.
 
 You are to create a a portfolio piece that:
 * can be used as a reference for the work you have done in this course, which you might also share with the iOS developer community
@@ -46,12 +46,14 @@ Your app is to have the following **characteristics:**
 
 2. Within each table view `section`, each pattern covered in class is to have its own `cell`
 
-**notes on cell construction:**
-* It is *not required* that cells need to be reusable Prototype cells. Which type of cell you use is up to you
-* However, it *is required* that cells provide:
+**Cell Construction Notes:**
+* It is *not required* that cells need to be reusable `Prototype` cells. Whether you use `Static` or reusable `Prototype` table cells is up to you.
+* However, it *is required* that cells must provide:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - a subtitle</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - a way to invoke a detail scene (i.e, either by creating a Detail cell, or providing a button, which will invoke the detail VC)
+
+* For cell subtitles - You are required use the subtitle of the cell as a means to add more information describing each pattern. However, you do *not* need to use the descriptors (`Complexity` and `Popularity`) illustrated in the examples provided; you *may* use those descriptors if you do not arrive at a descriptive subtitle on your own. But you are also free to create a subtitle of your own choosing, provided your custom subtitle adds descriptive value to each cell's design pattern.
 
 3. Tapping any of the cells within a section will launch a subordinate scene presenting a VC of the same name as the cell tapped:
 &nbsp;&nbsp;&nbsp; - each pattern's cell will have 2 sub-scenes:
@@ -80,13 +82,17 @@ You should however implement at least one API call that successfully works toget
 -->
 
 __*Suggestions:*__
-- To pace yourself, start by completing the shell of the app first, then work from the top of the list of main types (Creational), filling in each of the patterns in Creational that were taught in class before moving on to Behavioral, etc.
+- To pace yourself, start by completing the shell of the app first, then work from the top (i.e., Creational) of the list of main types, filling in each of the patterns in Creational that were taught in class before moving on to Behavioral, etc.
 - When done with all patterns taught in class, you may want to expand each table view section by adding patterns not taught in class to their respective group/table view section (if time permits).
+- Before proceeding, become familiar with the free example apps listed below.
 
 
 __*Other Notes*__
-1. For cell subtitles - You must use the subtitle of the cell as a means to add more information describing each pattern. Though you do *not* need to use the descriptors (`Complexity` and `Popularity`) illustrated in the examples provided, you *may* use those descriptors if you do not arrive at a descriptive subtitle on your own.
-2. For the Observer Pattern - You may use your choice of either KVO, Notification, or a non-iOS Observer implementation to illustrate it.
+1. For the Observer Pattern - You may use your choice of either KVO, Notification, or a non-iOS Observer implementation to illustrate it.
+2.
+
+<!-- Add note about animation here -- a symbolic representation of teh pattern itself. for example,
+-->
 
 
 ### Minimally Viable Product (MVP)
@@ -109,7 +115,7 @@ To achieve **MVP** status:
 
 You will of course want to create an original app that uniquely showcases and exemplifies your knowledge and experience of the subject.
 
-But in the event you are stuck and need to jog your creativity, check out these example apps for clues:
+But in the event you are stuck and need to jog your creativity, check out these **example apps** for clues:
 
 - [Design Patterns by Example: Examples on Obj-C and Swift - by Geomatix Laboratory s.r.o.](https://itunes.apple.com/us/app/design-patterns-by-example/id1271220838?mt=8)
 - [Design Patterns (OOAD & Service Oriented Architecture) - by SQUBE LLC](https://itunes.apple.com/us/app-bundle/design-patterns-ooad-service-oriented-architecture/id994675488?mt=8)
