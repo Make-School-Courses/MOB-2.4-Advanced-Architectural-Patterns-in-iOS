@@ -357,7 +357,7 @@ myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
 
 ## Overview/TT II  (20 min)
 
-#### Decorator &nbsp;&nbsp;&nbsp;:art:
+#### The Decorator Pattern &nbsp;&nbsp;&nbsp;:art:
 
 The Decorator pattern is used to extend or alter the functionality of objects __*at run-time*__ by wrapping them in an object of a decorator class. This provides *a flexible alternative to using inheritance* to modify behavior.
 
