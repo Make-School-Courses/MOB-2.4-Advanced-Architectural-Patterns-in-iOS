@@ -485,9 +485,9 @@ When completed, the playground code below will aggregate pizza prices based on t
 
 **TODO:** Complete the  code so that it it runs and its output matches the 2 scenarios listed in comments below the working code.
 1. Implement the toppings decorator classes:</br>
-&nbsp;&nbsp;&nbsp; - Extra Cheese (costs 1.0 extra)</br>
-&nbsp;&nbsp;&nbsp; - Mushrooms (at 1.49)</br>
-&nbsp;&nbsp;&nbsp; - Jalapeno Peppers (at 1.19)</br>
+&nbsp;&nbsp;&nbsp; - **Extra Cheese** - costs 1.0 extra</br>
+&nbsp;&nbsp;&nbsp; - **Mushrooms** - at 1.49</br>
+&nbsp;&nbsp;&nbsp; - **Jalapeno Peppers** - at 1.19</br>
 2. Implement the Gourmet pizza type. Its price is 7.49
 3. Ensure that the code works and outputs correctly for both the Plain Margherita and the Plain Gourmet client code scenarios.
 
