@@ -14,14 +14,14 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05       | 0:15      | Initial Exercise             |
-| 0:20       | 0:15      | Overview  I                |
-| 0:35       | 0:25      | In Class Activity I       |
-| 0:55        | 0:10      | BREAK                     |
-| 1:05         | 0:15      | Overview  II                |
-| 1:20       | 0:25      | In Class Activity II      |
-|1:45       | 0:05    | Wrap Up                     |
-| TOTAL       | 1:50    |                          |
+| 0:05       | 0:20      | Initial Exercise             |
+| 0:25       | 0:15      | Overview  I                |
+| 0:40       | 0:25      | In Class Activity I       |
+| 1:05       | 0:10      | BREAK                     |
+| 1:15         | 0:15      | Overview  II                |
+| 1:30       | 0:25      | In Class Activity II      |
+|1:55       | 0:05    | Wrap Up                     |
+| TOTAL       | 2:00    |                          |
 
 
 ## Learning Objectives (5 min)
@@ -71,7 +71,7 @@ Grade each other's quizzes, sharing answers, insights, etc.
 - One student to volunteer to present their work (if time permits)
 
 
-## Overview/TT I (20 min)
+## Overview/TT I (15 min)
 
 ### Structural Patterns
 Structural design patterns ease design by identifying a simple way to realize relationships between entities.
@@ -300,7 +300,7 @@ myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
 <!-- SOLUTION FOR ACTIVITY 1 -- is below Additional Resources... -->
 
 
-## Overview/TT II  (20 min)
+## Overview/TT II  (15 min)
 
 #### The Decorator Pattern &nbsp;&nbsp;&nbsp;:art:
 
@@ -479,7 +479,7 @@ print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients(
  <!-- under GNU License -->
 
 
-## In Class Activity II  (30 min)
+## In Class Activity II  (25 min)
 
 When completed, the playground code below will aggregate pizza prices based on type of pizza and toppings selected.
 
