@@ -365,13 +365,13 @@ The __*primary example*__ of the Decorator pattern __*in Swift*__ is when you cr
 
 Decorator consists of base components that are *extended* at *run-time* and ‘decorated’ with decorator classes.
 
-Decorator has four key components:
+Decorator is typically comprised of these components:
 
-1. (Abstract) Core Component — The (abstract) base class or protocol that a base object will subclass or implement.
-2. Concrete Core Component - Implementation of the Core Component.
-3. Decorator — The Decorator can extend the Core Component using two forms:
-- As an Abstract Decorator - A protocol which extends the Core Component protocol
-- As a Concrete Decorator - An implementation (or subclass) of the Core Component.
+1. **(Abstract) Core Component** — The (abstract) base class or protocol that a base object will subclass or implement.
+2. **Concrete Core Component** - Implementation of the Core Component.
+3. **Decorator** — The Decorator can extend the Core Component using two forms:
+- As an __*Abstract Decorator*__ - A protocol which extends the Core Component protocol
+- As a __*Concrete Decorator*__ - An implementation (or subclass) of the Core Component.
 
 The pattern has been implemented correctly when you can select some of the objects created from a class to be modified without affecting all of them and without requiring changes to the original class.
 
@@ -380,8 +380,6 @@ The pattern has been implemented correctly when you can select some of the objec
 - Decorator designed so that multiple decorators can be stacked on top of each other, each time adding a new functionality to the overridden method(s).
 - Decorators and the original class object share a common set of features.
 - To prevent subclassing the Core Component class can be declared `final`.
-
-
 
 #### Problems Addressed
 What problems can the Decorator design pattern solve?
