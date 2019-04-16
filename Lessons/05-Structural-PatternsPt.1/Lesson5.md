@@ -403,7 +403,7 @@ The decorator pattern is often useful for adhering to the __*Single Responsibili
 
 The changes in behavior defined with the decorator pattern can be combined to create complex effects without needing to create large numbers of subclasses.
 
-Tip You can apply the decorator pattern if you don’t have control over the class definition of the object
+**TIP** If you do not have control over the class definition (source code) of an object, you can apply the decorator pattern.
 
 
 #### Pitfalls
@@ -421,15 +421,6 @@ The difference:
 - for Decorator, *all* classes handle the request
 
 
-#### When to use
-
-Use Decorator when you need to change the behavior of objects without changing the class they are created from or the components that use them.
-
-Another use case: when you must use several existing classes or structs which lack some desired functionality and that cannot be subclassed. Building a new target interface by wrapping these classes with Decorator can be a very clean solution.
-
-__*Do not use*__ the Decorator pattern when you are able to change the class that creates the objects you want to modify. It is usually simpler and easier to modify the class directly.
-
-
 #### Decorator in iOS
 
 Decorator is a pattern for __*object composition,*__ which is something that you are encouraged to do in your own code.
@@ -442,8 +433,97 @@ In Swift there are two very common implementations of this pattern: **Extensions
 
 *Source: Apple*
 
+#### When to use
+
+Use Decorator when you need to change the behavior of objects without changing the class they are created from or the components that use them.
+
+Another use case: when you must use several existing classes or structs which lack some desired functionality and that cannot be subclassed. Building a new target interface by wrapping these classes with Decorator can be a very clean solution.
+
+__*Do not use*__ the Decorator pattern when you are able to change the class that creates the objects you want to modify. It is usually simpler and easier to modify the class directly.
+
 #### Simple Example
 
+```Swift
+import UIKit
+
+// Abstract Core Component
+protocol Coffee {
+    func getCost() -> Double
+    func getIngredients() -> String
+}
+
+// Concrete Core Component
+class SimpleCoffee: Coffee {
+    func getCost() -> Double {
+        return 1.0
+    }
+
+    func getIngredients() -> String {
+        return "Coffee"
+    }
+}
+
+// Decorator (Base) class
+class CoffeeDecorator: Coffee {
+    private let decoratedCoffee: Coffee
+    fileprivate let ingredientSeparator: String = ", "
+
+    required init(decoratedCoffee: Coffee) {
+        self.decoratedCoffee = decoratedCoffee
+    }
+
+    func getCost() -> Double {
+        return decoratedCoffee.getCost()
+    }
+
+    func getIngredients() -> String {
+        return decoratedCoffee.getIngredients()
+    }
+}
+
+// Decorator class
+final class Milk: CoffeeDecorator {
+    required init(decoratedCoffee: Coffee) {
+        super.init(decoratedCoffee: decoratedCoffee)
+    }
+
+    override func getCost() -> Double {
+        return super.getCost() + 0.5
+    }
+
+    override func getIngredients() -> String {
+        return super.getIngredients() + ingredientSeparator + "Milk"
+    }
+}
+
+// Decorator class
+final class WhipCoffee: CoffeeDecorator {
+    required init(decoratedCoffee: Coffee) {
+        super.init(decoratedCoffee: decoratedCoffee)
+    }
+
+    override func getCost() -> Double {
+        return super.getCost() + 0.7
+    }
+
+    override func getIngredients() -> String {
+        return super.getIngredients() + ingredientSeparator + "Whip"
+    }
+}
+
+var someCoffee: Coffee = SimpleCoffee()
+print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients())")
+someCoffee = Milk(decoratedCoffee: someCoffee)
+print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients())")
+someCoffee = WhipCoffee(decoratedCoffee: someCoffee)
+print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients())")
+
+/* Will print:
+ Cost : 1.0; Ingredients: Coffee
+ Cost : 1.5; Ingredients: Coffee, Milk
+ Cost : 2.2; Ingredients: Coffee, Milk, Whip
+ */
+ ```
 
 
 ## In Class Activity II  (30 min)
