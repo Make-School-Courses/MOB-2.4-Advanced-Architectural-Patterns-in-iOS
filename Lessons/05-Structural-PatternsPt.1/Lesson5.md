@@ -354,12 +354,7 @@ myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
 
 The Decorator pattern is used to extend or alter the functionality of objects __*at run-time*__ by wrapping them in an object of a decorator class. This provides *a flexible alternative to using inheritance* to modify behavior.
 
-
-allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class.
-
-
-
-
+It allows behavior to be added to an individual object - __*dynamically,*__ at run-time - without affecting the behavior of other objects from the same class or in cases where subclassing would result in an exponential rise of new classes.
 
 
 #### Implementation Notes
@@ -384,21 +379,20 @@ The pattern has been implemented correctly when you can select some of the objec
 - Concrete Decorators have the capability of wrapping around Components or other Decorators and building structures.
 - Decorator designed so that multiple decorators can be stacked on top of each other, each time adding a new functionality to the overridden method(s).
 - Decorators and the original class object share a common set of features.
+- To prevent subclassing the Core Component class can be declared `final`.
+
 
 
 #### Problems Addressed
-
-
-What problems can the Decorator design pattern solve? [4]
+What problems can the Decorator design pattern solve?
 
 Responsibilities should be added to (and removed from) an object dynamically at run-time.
-A flexible alternative to subclassing for extending functionality should be provided.
+- A flexible alternative to subclassing for extending functionality should be provided.
+- When using subclassing, different subclasses extend a class in different ways. But an extension is bound to the class at compile-time and can't be changed at run-time.
 
-When using subclassing, different subclasses extend a class in different ways. But an extension is bound to the class at compile-time and can't be changed at run-time.
+Decorator is also a solution to the **Exploding Class Hierarchy** problem: An exploding class hierarchy occurs when the number of classes needed to add a new functionality to a given class hierarchy grows exponentially.
 
-
-
-
+*Source: wikipedia*
 
 #### Benefits
 
@@ -409,9 +403,15 @@ The decorator pattern is an alternative to subclassing. Subclassing adds behavio
 The decorator pattern is often useful for adhering to the __*Single Responsibility Principle,*__ as it allows functionality to be divided between classes with unique areas of concern.
 
 
+The changes in behavior defined with the decorator pattern can be combined to create complex effects without needing to create large numbers of subclasses.
+
+Tip You can apply the decorator pattern if you don’t have control over the class definition of the object
+
+
 #### Pitfalls
 
-
+The main pitfall is implementing the pattern so that it affects all of the objects created from a given class rather than allowing changes to be applied selectively.
+A less common pitfall is implementing the pattern so that it has hidden side effects that are not related to the original purpose of the objects being modified.
 
 
 #### Related Patterns
@@ -425,7 +425,11 @@ The difference:
 
 #### When to use
 
-if you need to add behavior not without changing object, you can do it with decorator pattern.
+Use Decorator when you need to change the behavior of objects without changing the class they are created from or the components that use them.
+
+Another use case: when you must use several existing classes or structs which lack some desired functionality and that cannot be subclassed. Building a new target interface by wrapping these classes with Decorator can be a very clean solution.
+
+__*Do not use*__ the Decorator pattern when you are able to change the class that creates the objects you want to modify. It is usually simpler and easier to modify the class directly.
 
 
 #### Decorator in iOS
@@ -436,15 +440,12 @@ Cocoa Touch, however, provides some classes and mechanisms of its own that are b
 
 Cocoa Touch uses the Decorator pattern in the implementation of several of its classes, including `NSAttributedString`, `NSScrollView`, and `UIDatePicker`. The latter two classes are examples of compound views, which group together simple objects of other view classes and coordinate their interaction.
 
+In Swift there are two very common implementations of this pattern: **Extensions** and **Delegation.**
+
 *Source: Apple*
 
+#### Simple Example
 
-
-
-
-You can use an adapter if you want to integrate a third-party library in your code, but it's interface doesn't match with your requirements.
-
-Another use case is when you have to use several existing final classes or structs but they lack some functionality and you want to build a new target interface on top of them. Sometimes it's a good choice to implement an wrapper to handle this messy situation
 
 
 ## In Class Activity II  (30 min)
