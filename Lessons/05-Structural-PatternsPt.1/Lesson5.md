@@ -102,7 +102,7 @@ Examples of Structural patterns include:
 
 ![example](assets/wikipedia_table.png)
 
-### The Adapter Pattern&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:electric_plug:
+### The Adapter Pattern&nbsp;&nbsp;&nbsp;&nbsp;:electric_plug:
 
 Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.
 
@@ -357,7 +357,7 @@ myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
 
 ## Overview/TT II  (20 min)
 
-#### Decorator &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:art:
+#### Decorator &nbsp;&nbsp;&nbsp;:art:
 
 The Decorator pattern is used to extend or alter the functionality of objects __*at run-time*__ by wrapping them in an object of a decorator class. This provides *a flexible alternative to using inheritance* to modify behavior.
 
