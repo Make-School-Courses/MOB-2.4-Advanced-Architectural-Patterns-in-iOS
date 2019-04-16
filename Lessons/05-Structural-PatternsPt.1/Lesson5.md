@@ -609,7 +609,7 @@ https://stackoverflow.com/questions/2707401/understand-the-decorator-pattern-wit
 
 ## After Class
 
-1. Look up these other Structural Patterns:
+1. Look up these other Structural patterns:
 
 - Aggregate
 - Extensibility
@@ -623,9 +623,9 @@ https://stackoverflow.com/questions/2707401/understand-the-decorator-pattern-wit
 - The principle of `Composition Over Inheritance`
 
 
-3. TODO: Extend the Media Player app you created in the previous class by implementing the following using either the Adapter or the Decorator pattern:
+3. **TODO:** Extend the Media Player app you created and improved in previous classes by implementing the following using either the Adapter or the Decorator pattern:
 
-- Add functionality so that the user can skip to the Next or Previous video clip
+- Add functionality so that the user can skip to the `Next` or `Previous` video clip
 
 __*Note*__ *- This will require that you have a collection of at several video clips.*
 
