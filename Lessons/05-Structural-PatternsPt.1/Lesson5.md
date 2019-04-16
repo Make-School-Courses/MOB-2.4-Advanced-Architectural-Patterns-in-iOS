@@ -601,6 +601,7 @@ print("withPeppers: ", withPeppers.getPrice())
  /*
 ```
 *Adapted from this Java example:*
+
 https://stackoverflow.com/questions/2707401/understand-the-decorator-pattern-with-a-real-world-example
 
 <!-- SOLUTION FOR ACTIVITY 2 -- is below Additional Resources... -->
@@ -684,7 +685,10 @@ myPlayer.play(audioType: ".mp4", fileName: "Cat_riding_a_roomba.mp4")
 myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
 -->
 
-<!-- SOLUTION FOR ACTIVITY 2 --
+
+
+<!-- SOLUTION FOR ACTIVITY 2:
+
 import UIKit
 
 // Abstract Core Component

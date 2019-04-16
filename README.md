@@ -54,7 +54,7 @@ Students by the end of the course will be able to ...
 [Creational Patterns Pt.2]: Lessons/02-Creational-PatternsPt.2/Lesson2.md
 [Behavioral Patterns Pt.1]: Lessons//03-Behavioral-PatternsPt.1/Lesson3.md
 [Behavioral Patterns Pt.2]: Lessons/04-Behavioral-PatternsPt.2/Lesson4.md
-[Structural Patterns Pt.1]: Lessons/Lesson5.md
+[Structural Patterns Pt.1]: Lessons/05-Structural-PatternsPt.1/Lesson5.md
 [Structural Patterns Pt.2]: Lessons/Lesson6.md
 [MVVM]: Lessons/Lesson7.md
 [Coordinators]: Lessons/Lesson8.md
