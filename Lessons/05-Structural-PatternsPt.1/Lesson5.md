@@ -403,40 +403,43 @@ The changes in behavior defined with the decorator pattern can be combined to cr
 **TIP** If you do not have control over the class definition (source code) of an object, you can apply the decorator pattern.
 
 #### Pitfalls
-
-The main pitfall is implementing the pattern so that it affects all of the objects created from a given class rather than allowing changes to be applied selectively.
-A less common pitfall is implementing the pattern so that it has hidden side effects that are not related to the original purpose of the objects being modified.
+The main pitfall is implementing the pattern so that it affects all of the objects created from a given class rather than allowing changes to be applied selectively. A less common pitfall is implementing the pattern so that it has hidden side effects that are not related to the original purpose of the objects being modified.
 
 #### Related Patterns
 
 Decorator is structurally nearly identical to the Chain-of-Responsibility (CoR) pattern.
 
 The difference:
-- in CoR, *exactly one* of the classes handles the request
-- for Decorator, *all* classes handle the request
+- in CoR, exactly one of the classes handles the request
+- for Decorator, all classes handle the request
+Decorator in iOS
 
-
-#### Decorator in iOS
-
-Decorator is a pattern for __*object composition,*__ which is something that you are encouraged to do in your own code.
+Decorator is a pattern for object composition, which is something that you are encouraged to do in your own code.
 
 Cocoa Touch, however, provides some classes and mechanisms of its own that are based on the pattern.
 
-Cocoa Touch uses the Decorator pattern in the implementation of several of its classes, including `NSAttributedString`, `NSScrollView`, and `UIDatePicker`. The latter two classes are examples of compound views, which group together simple objects of other view classes and coordinate their interaction.
+Cocoa Touch uses the Decorator pattern in the implementation of several of its classes, including `NSAttributedString`, `NSScrollView`, and `UIDatePicke`r. The latter two classes are examples of compound views, which group together simple objects of other view classes and coordinate their interaction.
 
 In Swift there are two very common implementations of this pattern: **Extensions** and **Delegation.**
 
 *Source: Apple*
 
 #### When to use
-
 Use Decorator when you need to change the behavior of objects without changing the class they are created from or the components that use them.
 
 Another use case: when you must use several existing classes or structs which lack some desired functionality and that cannot be subclassed. Building a new target interface by wrapping these classes with Decorator can be a very clean solution.
 
-__*Do not use*__ the Decorator pattern when you are able to change the class that creates the objects you want to modify. It is usually simpler and easier to modify the class directly.
+Do not use the Decorator pattern when you are able to change the class that creates the objects you want to modify. It is usually simpler and easier to modify the class directly.
 
 #### Simple Example
+
+**The Problem**
+In this example, the SimpleCoffee object is constrained to only a single price and a single ingredient. If additional ingredients are desired, the cost of a coffee-based item must increase to reflect the cost of additional or more expensive ingredients added.
+
+**The Solution**
+Instead of subclassing SimpleCoffee for every type of coffee or ingredient desired, the Decorator pattern was used to extend the original object with new desired behaviors.
+
+**Playground Code**
 
 ```Swift
 import UIKit
