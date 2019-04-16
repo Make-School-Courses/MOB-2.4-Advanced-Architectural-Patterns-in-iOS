@@ -3,9 +3,7 @@
 
 ## Project Outline
 
-<!-- </br> -->
-
-
+</br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__*Res Ipsa Loquitur*__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — *A Latin phrase that means: "The thing speaks for itself"*
