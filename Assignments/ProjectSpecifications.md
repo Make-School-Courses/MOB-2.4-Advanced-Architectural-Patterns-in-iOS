@@ -6,11 +6,11 @@
 <!-- </br> -->
 
 
+
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__*Res Ipsa Loquitur*__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — *A Latin phrase that means: "The thing speaks for itself"*
 
-</br>
-
+<!-- </br> -->
 The primary goal for this project is to afford you an opportunity for your knowledge of this course’s topic to speak for itself.
 
 You are to create a a portfolio piece that:
