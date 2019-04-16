@@ -225,6 +225,7 @@ Now Playing:  Cat_riding_a_roomba.mp4
 ```
 2. Using the Adapter pattern, add a `pause()` function.
 
+** Playground Code**
 ```Swift
 import UIKit
 
