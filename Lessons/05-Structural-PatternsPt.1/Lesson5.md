@@ -96,7 +96,7 @@ Examples of Structural patterns include:
 
 ![example](assets/wikipedia_table.png)
 
-### The Adapter Pattern
+### The Adapter Pattern&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:electric_plug:
 
 Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.
 
@@ -350,7 +350,10 @@ myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
 
 ## Overview/TT II  (20 min)
 
-The decorator pattern is used to extend or alter the functionality of objects at run- time by wrapping them in an object of a decorator class. This provides a flexible alternative to using inheritance to modify behavior.
+#### Decorator &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:art:
+
+
+The Decorator pattern is used to extend or alter the functionality of objects at run- time by wrapping them in an object of a decorator class. This provides a flexible alternative to using inheritance to modify behavior.
 
 
 
@@ -395,10 +398,9 @@ Another use case is when you have to use several existing final classes or struc
 
 ## Additional Resources
 
-1.[Slides](https://docs.google.com/presentation/d/1xyvW8EVQLPlqaTkpTg9yhLxHBB_VahGp3hJxdvldeTA/edit?usp=sharing)<br>
-https://en.wikipedia.org/wiki/Adapter_pattern
-[Swift adapter design pattern - an article](https://theswiftdev.com/2018/07/30/swift-adapter-design-pattern/)
-[Pro Design Patterns in Swift - a book by Adam Freeman](https://www.amazon.com/Design-Patterns-Swift-Adam-Freeman/dp/148420395X) <sup>1</sup>
-
-
-https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaFundamentals/CocoaDesignPatterns/CocoaDesignPatterns.html
+1. [Slides](https://docs.google.com/presentation/d/1xyvW8EVQLPlqaTkpTg9yhLxHBB_VahGp3hJxdvldeTA/edit?usp=sharing)<br>
+2. [Adapter pattern - wikipedia](https://en.wikipedia.org/wiki/Adapter_pattern)
+3. [Decorator pattern - wikipedia](https://en.wikipedia.org/wiki/Decorator_pattern)
+4. [CocoaDesignPatterns - Apple docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaFundamentals/CocoaDesignPatterns/CocoaDesignPatterns.html)
+5. [Swift adapter design pattern - an article](https://theswiftdev.com/2018/07/30/swift-adapter-design-pattern/)
+6. [Pro Design Patterns in Swift - a book by Adam Freeman](https://www.amazon.com/Design-Patterns-Swift-Adam-Freeman/dp/148420395X) <sup>1</sup>
