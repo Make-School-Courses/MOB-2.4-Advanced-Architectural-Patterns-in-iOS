@@ -3,14 +3,11 @@
 
 ## Project Outline
 
-<!-- </br> -->
-
+</br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__*Res Ipsa Loquitur*__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — *A Latin phrase that means: "The thing speaks for itself"* </br></br>
 
-
-<!-- </br> -->
 The primary goal for this project is to afford you an opportunity for your knowledge of this course’s topic to speak for itself.
 
 You are to create a a portfolio piece that:
@@ -77,11 +74,7 @@ Your app is to have the following **characteristics:**
 &nbsp;&nbsp;&nbsp; - example code snippets and/or diagrams
 
 
-<!--
-You should however implement at least one API call that successfully works together with your backend (e.g. only syncing new trips but not changes or deletions).
--->
-
-__*Suggestions:*__
+__*Suggestions*__
 - To pace yourself, start by completing the shell of the app first, then work from the top (i.e., Creational) of the list of main types, filling in each of the patterns in Creational that were taught in class before moving on to Behavioral, etc.
 - When done with all patterns taught in class, you may want to expand each table view section by adding patterns not taught in class to their respective group/table view section (if time permits).
 - Before proceeding, become familiar with the free example apps listed below.
@@ -107,7 +100,7 @@ To achieve **MVP** status:
 
 ### Stretch Challenges
 
-1. Show live, functional examples of at least 2 of the design patterns covered in class.
+1. Demonstrate live, functional examples of at least 2 of the design patterns covered in class.
 2. Include, in its respective table view section, at least one additional pattern from each of the three main design pattern categories, that was not covered in any of the formal lessons in this course.
 3. Add illustrative graphic images/icons next to each pattern.
 
@@ -115,7 +108,7 @@ To achieve **MVP** status:
 
 You will of course want to create an original app that uniquely showcases and exemplifies your knowledge and experience of the subject.
 
-But in the event you are stuck and need to jog your creativity, check out these **example apps** for clues:
+However, in the event you get stuck and need to jog your creativity at any point, check out these **example apps** for clues:
 
 - [Design Patterns by Example: Examples on Obj-C and Swift - by Geomatix Laboratory s.r.o.](https://itunes.apple.com/us/app/design-patterns-by-example/id1271220838?mt=8)
 - [Design Patterns (OOAD & Service Oriented Architecture) - by SQUBE LLC](https://itunes.apple.com/us/app-bundle/design-patterns-ooad-service-oriented-architecture/id994675488?mt=8)
@@ -150,6 +143,6 @@ The main scene is a list of design patterns organized by main pattern type (Crea
 [Link to rubric]()
 
 <!-- TODO:
-  - copy and modify this rubric to fit this course:
-  https://docs.google.com/document/d/1x3ETtKdEMUjxBUJTT0eVWLxRHqZAJBDBTDfawjoVUs4/edit
+  - Rubric needs mofified to fit:
+https://docs.google.com/document/d/1qKSs3S4QlhD_6QpkSsQKtzIdp2lCouEmoRVxvJDvhI0/edit
   -->
