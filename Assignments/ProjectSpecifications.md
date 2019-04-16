@@ -144,38 +144,6 @@ The main scene is a list of design patterns organized by main pattern type (Crea
 
 ![example](assets/MainScene.png)
 
-<!--
-### Main Screen (List of Trips)
-
-This screen should support deleting waypoints by using the iOS swipe-to-delete feature. Additionally you can add an *Edit* that puts the table view into edit mode; this provides the user with another way of deleting elements.
-
--->
-
-<!--
-### Trip Detail Screen
-
-The Trip Detail Screen shows the waypoints for a selected Trip within a Table View. If the trip doesn't have any waypoints yet it shows another view which has a button to add waypoints (*Pro Tip: you can create two different views within in this View Controller and use code to decide which one to display*).
-
-This screen should support deleting waypoints by using the iOS swipe-to-delete feature. Additionally you can add an *Edit* that puts the table view into edit mode; this provides the user with another way of deleting elements.
-
-### Add Waypoint Screen
-
-This screen allows the user to search for waypoints. It displays the search results in a table view. The user can select an entry. The selected entry will be highlighted on the map. By using the *save* button
--->
-
-
-#### Subordinate (Pattern) Scene - Serial Option
-
-<!-- TODO: 1) add Master scene graphi
-  2) add notes, etc. to all to explain what is happening Here
-  -->
-
-![example](assets/CoR_example_1.png)
-
-![example](assets/CoR_example_2.png)
-
-#### Subordinate (Pattern) Scene - Parallel Option
-
 
 ## Project evaluation criteria
 
