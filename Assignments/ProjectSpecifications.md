@@ -143,6 +143,6 @@ The main scene is a list of design patterns organized by main pattern type (Crea
 [Link to rubric]()
 
 <!-- TODO:
-  - Rubric needs mofified to fit:
+  - Rubric needs modified to fit:
 https://docs.google.com/document/d/1qKSs3S4QlhD_6QpkSsQKtzIdp2lCouEmoRVxvJDvhI0/edit
   -->
