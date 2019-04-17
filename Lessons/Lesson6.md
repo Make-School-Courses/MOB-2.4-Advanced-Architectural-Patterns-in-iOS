@@ -4,21 +4,25 @@
 1) For the quiz in the Initial Exercise:
 - the URL is xxxx
 2) For Activity 1:
-- xxxx
+- Solution is xxxx
 3) for Activity 2:
-- xxx
+- Solution is xxx
 -->
 
-## Minute-by-Minute [OPTIONAL]
+## Minute-by-Minute
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:45      | In Class Activity I       |
-| 1:05        | 0:10      | BREAK                     |
-| 1:15        | 0:45      | In Class Activity II      |
-| TOTAL       | 2:00      |                           |
+| 0:05       | 0:20      | Initial Exercise             |
+| 0:25       | 0:15      | Overview  I                |
+| 0:40       | 0:25      | In Class Activity I       |
+| 1:05       | 0:10      | BREAK                     |
+| 1:15         | 0:15      | Overview  II                |
+| 1:30       | 0:25      | In Class Activity II      |
+|1:55       | 0:05    | Wrap Up                     |
+| TOTAL       | 2:00    |    
+
 
 ## Learning Objectives (5 min)
 
