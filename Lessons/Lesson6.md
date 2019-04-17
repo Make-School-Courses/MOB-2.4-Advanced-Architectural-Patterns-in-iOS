@@ -29,7 +29,7 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- the **xxx** and **xxx** patterns
+- the **Proxy** and **Facade** patterns
 - the software construction problem each is intended to solve
 - potential use cases for each (when to use them)
 3. Assess:
@@ -49,11 +49,10 @@ TODO: Add quiz answersz
 
 ## Overview/TT I (20 min)
 
-#### Description
+#### Proxy
 
 
-
-#### Implementation
+#### Implementation Notes
 
 
 
@@ -64,37 +63,89 @@ TODO: Add quiz answersz
 
 
 #### Benefits
-.
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
+
 
 #### Pitfalls
-.
+
 
 #### When to use
 
 ## In Class Activity I (30 min)
 
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
+
 
 ## Overview/TT II (optional) (20 min)
 
-#### Description
+#### Facade
+
+The Facade pattern is used to define a simplified interface to a more complex subsystem: a library, a framework, or a complex system of classes.
+
+
+#### Implementation Notes
 
 
 
-#### Implementation
+##### Simplified Example
+
+```Swift
+///Subsystem 1
+class SubSystemOne {
+
+    func performActionOne()
+    {
+        // Do something cool...
+        print("printing on line \(#line) in function \(#function)")
+    }
+}
+
+///Subsystem 2
+class SubSystemTwo {
+
+    func performActionTwo()
+    {
+        // Do something else cool...
+        print("printing on line \(#line) in function \(#function)")
+    }
+}
+
+///Subsystem 3
+class SubSystemThree {
+
+    func performActionThree(item: String)
+    {
+        // Do something even more cool...
+        print("printing on line \(#line) in function \(#function), with \(item) passed as the arg")
+    }
+}
+```
+
+
+```Swift
+///Facade class
+class Facade {
+
+    let subSystemOne = SubSystemOne()
+    let subSystemTwo = SubSystemTwo()
+    let subSystemThree = SubSystemThree()
+
+    func performActions() {
+        subSystemOne.performActionOne()
+        subSystemTwo.performActionTwo()
+        subSystemThree.performActionThree(item: "Thing")
+    }
+}
+
+///Client
+let facade = Facade()
+facade.performActions()
+
+/* This will print:
+
+ printing on line 9 in function performActionOne()
+ printing on line 19 in function performActionTwo()
+ printing on line 29 in function performActionThree(item:), with Thing passed as the arg
+ */
+```
 
 
 
@@ -105,16 +156,49 @@ TODO: Add quiz answersz
 
 
 #### Benefits
-.
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
+
 
 #### Pitfalls
 .
 
 #### When to use
+
+
+
+##### Example 1
+
+
+```Swift
+import UIKit
+
+final class Defaults {
+
+    private let defaults: UserDefaults
+
+    init(defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+    }
+
+    subscript(key: String) -> String? {
+        get {
+            return defaults.string(forKey: key)
+        }
+
+        set {
+            defaults.set(newValue, forKey: key)
+        }
+    }
+}
+
+// Client
+let storage = Defaults()
+
+// Store
+storage["Bishop"] = "Disconnect me. I’d rather be nothing"
+
+// Read
+storage["Bishop"]
+```
 
 ## In Class Activity II (optional) (30 min)
 
