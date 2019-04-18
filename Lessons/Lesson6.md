@@ -216,7 +216,9 @@ facade.performActionB()
  printing on line 29 in function performActionThree(item:), with Thing passed as the arg
  */
 ```
-</br>
+
+
+
 ##### - An iOS-Specific Example -
 
 The Facade pattern is commonly used in apps written in Swift. It’s especially handy when working with complex libraries and APIs.
