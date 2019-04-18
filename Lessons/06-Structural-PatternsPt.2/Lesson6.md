@@ -155,7 +155,7 @@ But implementation of the proxy pattern varies based on the kind of problem that
 
 3. **Solving the Restricted Access Problem** - By using a **Protection Proxy**, which might be used to control access to a resource based on access rights. The proxy is defined as a wrapper around an object, adding additional logic to enforce some kind of restriction on its use (which presents a different implementation path from the other proxy types).
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Protection Proxy object usually conforms to a common protocol shared with the wrapped object, </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; which means that proxy objects can be used as seamless replacements without having to modify calling clients.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Protection Proxy object usually conforms to a common protocol shared with the wrapped object, </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; which means that proxy objects can be used as seamless replacements without having to </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify calling clients.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The proxy intercepts requests to access the properties and methods of the underlying object and will  </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pass them on only if an access control policy has been satisfied.
 
