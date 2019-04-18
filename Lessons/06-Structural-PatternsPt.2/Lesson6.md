@@ -523,23 +523,15 @@ Flight booked successfully
 
 ## After Class
 
-1. Look up these other Structural patterns:
+1. Research the following concepts:
 
-- xxx
+- `NSProxy`
+- Lazy initialization
+- Anti-pattern
+- Indirection
+- Distributed object communication
 
-2. Research the following concepts:
-
-- xxx
-
-3. **TODO:**
-
-<!-- get started with project  -->
-
-<!-- Extend the Media Player app you created and improved in previous classes by implementing the following using either the Adapter or the Decorator pattern:
-
-- Add functionality so that the user can skip to the `Next` or `Previous` video clip -->
-
-__*Note*__ *- This will require that you have a collection of at several video clips.*
+3. **TODO:** - Get started with the Course Project
 
 
 ## Wrap Up (5 min)
@@ -551,7 +543,8 @@ __*Note*__ *- This will require that you have a collection of at several video c
 ## Additional Resources
 
 1. [Slides](https://docs.google.com/presentation/d/1IFSv5SJR7c-Y1MMKmLcSPvIQ_pMrEBX_TOkiXkl4i94/edit?usp=sharing)
-
+2. [Proxy pattern - wikipedia](https://en.wikipedia.org/wiki/Proxy_pattern)
+2. [Facade pattern - wikipedia](https://en.wikipedia.org/wiki/Facade_pattern)
 
 <sup>1</sup> The term *expensive* is used to refer to any aspect of an operation that should be minimized, including:
 - the amount  of computation required
