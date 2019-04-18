@@ -100,9 +100,21 @@ The Facade pattern is used to define a simplified interface to a more complex su
 
 #### Implementation Notes
 
+This core component of this pattern a single class - a __*facade class*__ - which provides simplified methods required by client and which delegates calls to methods of existing system classes.
 
+The facade class is a *wrapper* that contains a set of members that are easily understood and simple to use. Members access the subsystem on behalf of the facade client, hiding the implementation details of the subsystem.
 
-##### Simplified Example
+This minimize dependencies on a subsystem by offloading work to the Facade object.
+
+To implement `Facade`:
+1. **Identify target system(s)** whose functionality you seek to simplify.
+2. **Define a Facade object** which provides simple methods to interact with the system and allows clients to use the facade instead of needing to interact with multiple classes in the system. The Facade object could also perform additional functionality before or after forwarding a request/interaction with the target system.
+
+The façade pattern is implemented when common tasks can be performed without calling components having any dependency on the underlying objects or their supporting data types.
+
+In addition, consider whether additional Facades would add value: You may decide to implement more than one facade to provide subsets of functionality for different purposes.
+
+##### - Simplified Example -
 
 In this example, three simple classes - `SubSystemOne`, `SubSystemTwo`, and `SubSystemThree` - represent three separate systems, each potentially with its own set of functions and/or properties.
 
@@ -184,7 +196,9 @@ facade.performActionB()
  */
 ```
 
-##### iOS-Specific Example
+##### - An iOS-Specific Example -
+
+The Facade pattern is commonly used in apps written in Swift. It’s especially handy when working with complex libraries and APIs.
 
 In this example, the "system" being wrapped by the *facade* is the `UserDefaults` system built into iOS.
 
