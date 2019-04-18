@@ -131,13 +131,13 @@ But implementation of the proxy pattern varies based on the kind of problem that
 
 1. **Solving the Remote Object Problem** - Use a **Remote Proxy**, where a local object is a proxy for (represents) a remote object, and calling a method on the local object causes the corresponding method to be invoked on the remote object.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The proxy object hides the details of how the remote resource is accessed and only presents its data.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It consolidates requests to the remote resource in a single application class. It allows implementation changes
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The proxy object hides the details of how the remote resource is accessed and only presents its data.</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It consolidates requests to the remote resource in a single application class. It allows implementation changes</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to itself or the remote object without requiring changes to the calling client code.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Examples: </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*Examples:*__ </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - HTTP requests to a remote web service</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Any scenario involving a *distributed system,* such as an ATM (the ATM must communicate transactions with the bank's central computing system).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Any scenario involving a *distributed system,* such as an ATM (the ATM must communicate </br> transactions with the bank's central computing system).
 
 2. **Solving the Expensive Operation Problem** - A **Virtual Proxy** is used for loading objects on demand. It provides a simplified version of a complex or heavy object. Only when the detail of the object is required is the main object actually populated, providing a form of lazy initialization.
 
