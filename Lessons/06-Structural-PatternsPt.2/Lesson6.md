@@ -1,8 +1,7 @@
 # Structural Patterns Pt.2
 
 <!-- INSTRUCTOR NOTES:
-1) For the quiz in the Initial Exercise:
-- the URL is xxxx
+1) No quiz this class -- course project
 2) For Activity 1:
 - Solution is xxxx
 3) for Activity 2:
@@ -39,13 +38,10 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (15 min)
 
-### Part 1 - Individually
+### As A Class
 
-<!-- Quiz location:
+- __*Course Project Kickoff*__
 
-TODO: Add quiz answersz
-
--->
 
 ## Overview/TT I (20 min)
 
@@ -163,7 +159,7 @@ The Proxy pattern is implemented correctly when the proxy object can be used to 
 
 Note, too, that proxies can reveal as much or as little of their implementation detail as they choose.
 
-##### Simple Protection Proxy Example
+#### Protection Proxy Example
 
 For this simple example, assume that the `HAL9000` object has its own access control/authentication mechanism and that you do not want client classes to access that mechanism directly.
 
@@ -215,6 +211,10 @@ computer.open(doors: podBay) // Result: "Access Denied. I'm afraid I can't do th
 computer.authenticate(password: "pass")
 computer.open(doors: podBay) // Result: "HAL9000: Affirmative, Dave. I read you. Opened Pod Bay Doors."
 ```
+
+*From this series of Swift design pattern articles:*
+ https://github.com/ochococo/Design-Patterns-In-Swift
+ <!-- under GNU License -->
 
 ## In Class Activity I (30 min)
 
@@ -362,7 +362,6 @@ facade.performActionB()
  printing on line 29 in function performActionThree(item:), with Thing passed as the arg
  */
 ```
-</br>
 
 ##### - An iOS-Specific Example -
 
