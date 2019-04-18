@@ -63,14 +63,31 @@ The proxy could interface to anything:
 
  Calling components operate on the proxy, which in turn operates on the underlying resource.
 
-
-#### Implementation Notes
-
-
-
 #### Problems Addressed
 
+The Proxy pattern is used to solve three different problems:
 
+1. **The Remote Object Problem**
+
+arises whenever you are dealing with resources that are accessed over a network, such as a web page or a RESTful web service
+
+2. **the Expensive**<sup>1</sup> **Operation Problem**<sup>1</sup>
+
+Tasks such as making HTTP requests are classified as expensive operations.
+
+3. **The Restricted Access Problem**
+
+
+
+<!-- TODO: Attribute source of this  -->
+
+
+<sup>1</sup> The term *expensive* is used to refer to any aspect of an operation that should be minimized, including:
+- the amount  of computation required
+- the memory needed,
+- the load on the device battery,
+- the bandwidth consumed,
+- and the elapsed time that the user has to wait.
 
 
 
@@ -81,6 +98,18 @@ The proxy could interface to anything:
 
 
 #### When to use
+
+
+
+#### Implementation Notes
+
+
+
+
+
+
+
+
 
 ## In Class Activity I (30 min)
 
