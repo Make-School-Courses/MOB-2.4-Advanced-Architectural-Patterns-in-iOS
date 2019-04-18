@@ -45,7 +45,7 @@ By the end of this lesson, you should be able to...
 
 ## Overview/TT I (25 min)
 
-#### Proxy
+#### Proxy &nbsp;&nbsp;&nbsp;:mailbox_closed:
 
 The Proxy design pattern is used to provide a __*surrogate*__ or __*placeholder*__ object, which references an underlying object.
 
@@ -294,9 +294,9 @@ image.display()
 *Adapted from this Java example:* </br>
 https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT II (20 min)
 
-#### Facade
+#### Facade &nbsp;&nbsp;&nbsp;:office:
 
 The Facade pattern is used to define a simplified interface to a more complex subsystem: a library, a framework, or a complex system of classes.
 
