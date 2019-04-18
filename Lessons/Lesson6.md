@@ -80,24 +80,41 @@ TODO: Add quiz answersz
 
 The Facade pattern is used to define a simplified interface to a more complex subsystem: a library, a framework, or a complex system of classes.
 
+The primary purpose of the Facade pattern is to hide the complexity of a system, class or API and provide all of its functionalities behind a simple interface.
 
-a facade is an object that serves as a front-facing interface masking more complex underlying or structural code.
-
+The *central actor* in the pattern is an *object that serves as a front-facing interface* masking more complex underlying or structural code.
 
 #### Problems Addressed
 
+Facade can make a complex subsystem easier to use.
 
-
-
+Clients that access a complex subsystem directly refer to (depend on) many different objects having different interfaces (tight coupling), which makes the clients hard to implement, change, test, and reuse.
 
 #### Benefits
 
+A facade can:
+- improve readability and usability of a software libraries by masking interaction with more complex components behind a single, simplified API
+- provide a context-specific interface to more generic functionality
+- serve as a launching point for a broader refactor of monolithic or tightly-coupled systems
 
 #### Pitfalls
-.
+
+The primary pitfall when implementing the façade pattern is to leak details of, or create tight dependency to, the underlying objects. This means that the calling components are still dependent on the underlying classes or supporting types and will require modification when they change.
+
+Also steer clear of creating a “god” facade, which might need to know too many details about every class in your app.
+
 
 #### When to use
 
+Facade is often used when a system is very complex or difficult to understand because the system has a large number of interdependent classes or because its source code is unavailable.
+
+Use Facade when:
+- you want to provide a simple or unified interface to a complex subsystem;
+- you need to decompose a subsystem into separate layers.
+
+The facade pattern is ideal when working with a large number of interdependent classes, or with classes that require the use of multiple methods, particularly when they are complicated to use or difficult to understand.
+
+Facade is particularly useful when wrapping __*poorly designed subsystems*__ but cannot be refactored because the __*source code is unavailable*__ or the existing interface is too widely used.
 
 #### Implementation Notes
 
@@ -115,6 +132,8 @@ To implement `Facade`:
 The façade pattern is implemented when common tasks can be performed without calling components having any dependency on the underlying objects or their supporting data types.
 
 In addition, consider whether additional Facades would add value: You may decide to implement more than one facade to provide subsets of functionality for different purposes.
+
+For example, if you notice a facade has functionality that some classes use and other functionality that other classes use, consider splitting it into two or more facades.
 
 ##### - Simplified Example -
 
@@ -194,7 +213,6 @@ facade.performActionB()
  printing on line 49 in function performActionB() from Facade class
  printing on line 9 in function performActionOne()
  printing on line 29 in function performActionThree(item:), with Thing passed as the arg
- */
  */
 ```
 
@@ -286,6 +304,28 @@ Flight booked successfully
 */
 ```
 
+
+## After Class
+
+1. Look up these other Structural patterns:
+
+- xxx
+
+2. Research the following concepts:
+
+- xxx
+
+3. **TODO:**
+
+<!-- get started with project  -->
+
+<!-- Extend the Media Player app you created and improved in previous classes by implementing the following using either the Adapter or the Decorator pattern:
+
+- Add functionality so that the user can skip to the `Next` or `Previous` video clip -->
+
+__*Note*__ *- This will require that you have a collection of at several video clips.*
+
+
 ## Wrap Up (5 min)
 
 - Continue working on your current tutorial
@@ -294,7 +334,7 @@ Flight booked successfully
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. [Slides]
 
 
 <!-- SOLUTION TO ACTIVITY 2:
