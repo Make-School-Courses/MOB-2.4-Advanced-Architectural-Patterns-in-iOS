@@ -436,7 +436,7 @@ __*Note*__ *- This will require that you have a collection of at several video c
 
 ## Additional Resources
 
-1. [Slides]
+1. [Slides](https://docs.google.com/presentation/d/1IFSv5SJR7c-Y1MMKmLcSPvIQ_pMrEBX_TOkiXkl4i94/edit?usp=sharing)
 
 
 <sup>1</sup> The term *expensive* is used to refer to any aspect of an operation that should be minimized, including:
