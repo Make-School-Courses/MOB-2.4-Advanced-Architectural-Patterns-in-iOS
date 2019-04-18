@@ -80,20 +80,20 @@ Pro Design Patterns in Swift* - Adam Freeman
 #### Benefits
 Proxies allow close control over the way underlying resources are accessed, which is useful when you need to intercept and adapt operations.
 
-The intent of the pattern is to:
+The *intent* of the pattern is to:
 - Control access to some object by providing a surrogate or placeholder (proxy) to it.
 - Use an extra level of indirection to support distributed, controlled, or intelligent access.
 - Add a wrapper and delegation to protect the real component from undue complexity.
 
-Proxies can be used to *defer expensive operations* (example, `lazy loading`).
+Proxies can also be used to *defer expensive operations* (example, `lazy loading`).
 
 #### Pitfalls
 
 Pitfalls associated with the proxy pattern depend on how it is being implemented:
 
-- For **remote object proxies** - Ensure that no unnecessary details of the mechanism used to access the remote object are revealed.
-- For proxies used to manage **expensive operations** - Avoid exposing details of how the cost of the operation is being mitigated.
-- For **access restriction proxies** - Take care not to allow calling components to bypass the proxy and access the underlying object directly.
+- For **Remote Object proxies** - Ensure that no unnecessary details of the mechanism used to access the remote object are revealed.
+- For proxies used to manage **Expensive Operations** - Avoid exposing details of how the cost of the operation is being mitigated.
+- For **Access Restriction proxies** - Take care not to allow calling components to bypass the proxy and access the underlying object directly.
 
 Some general, common themes are:
 
@@ -113,10 +113,15 @@ And, if you use the proxy pattern to implement __*reference counting:*__
 
 #### When to use
 
-The proxy pattern can be used whenever an object is required to represent some other resource.
+The proxy pattern can be used whenever an object is required to represent some other resource. The resource can be something abstract, such as a web page, or something local to the application, such as another object.
 
-the resource can be something abstract, such as a web page, or something local to the application, such as another object.
+Proxies are used in three main situations mentioned:
 
+- to define an interface to a remote resource
+- to manage the execution of expensive operations
+- to restrict access to the methods and properties of other objects
+
+Implementing proxy can be complex and labor intensive. If you need a solution that does *not* involve intercepting and adapting operations of another object, consider using one of the other Structural patterns instead.
 
 #### Implementation Notes
 
@@ -136,6 +141,12 @@ The pattern is implemented correctly when the proxy object can be used to perfor
 
 
 proxies can reveal as much or as little of their implementation detail as they choose.
+
+
+##### Simple Example 1
+
+
+##### Simple Example 1
 
 
 
