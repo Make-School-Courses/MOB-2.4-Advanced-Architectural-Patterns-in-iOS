@@ -217,7 +217,6 @@ facade.performActionB()
  */
 ```
 </br>
-
 ##### - An iOS-Specific Example -
 
 The Facade pattern is commonly used in apps written in Swift. It’s especially handy when working with complex libraries and APIs.
