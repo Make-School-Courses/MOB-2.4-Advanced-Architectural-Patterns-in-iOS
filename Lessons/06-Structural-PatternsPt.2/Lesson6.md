@@ -137,32 +137,23 @@ Examples:
 - HTTP requests to a remote web service
 - Any scenario involving a *distributed system,* such as an ATM (the ATM must communicate transactions with the bank's central computing system).
 
-2. **Solving the Expensive Operation Problem** -
+2. **Solving the Expensive Operation Problem** - A **Virtual Proxy** provides a simplified version of a complex or heavy object. Only when the detail of the object is required is the main object actually populated, providing a form of lazy initialization.
 
+A Virtual Proxy can be used to minimize the cost of expensive operations by decoupling the operation from its use, which can often be combined or at least deferred until the cost of performing the operation is lower.
 
- Virtual Proxy. A virtual proxy provides a simplified version of a complex object. Only when the detail of the object is required is the main object actually populated, providing a form of lazy initialization. For example, a file management utility such as Windows Explorer may use an object for each file that is visible on the screen. When obtaining the file list, the file name, size and other easy-to-retrieve information would be held in proxy objects. Only when the "document preview" command is requested would the real object be created and populated with the full contents of the file, as these are slower to access and require more memory.
+Examples:
+- A file management utility may use an object for each file visible on the screen. When obtaining the file list, the file name, size and other easy-to-retrieve information would be held in proxy objects. Only when the actual file is viewed (requested) would the real object be created and populated with the full contents of the file, as these are slower to access and require more memory.
+- A very large image object can be represented using a virtual proxy object (with thumbnail and other image metadata), only loading the real object "on demand" the real image is requested by the user.
 
- Another example, a thumbnail image — or meta data about an image, with thumbnail, can be supplied until the real image is needed…
+3. **Solving the Restricted Access Problem** - By using a **Protection Proxy**, which might be used to control access to a resource based on access rights. The proxy is defined as a wrapper around an object, adding additional logic to enforce some kind of restriction on its use (which presents a different implementation path from the other proxy types).
 
- Virtual Proxy[edit]
- In place of a complex or heavy object, a skeleton representation may be advantageous in some cases. When an underlying image is huge in size, it may be represented using a virtual proxy object, loading the real object on demand.
+A Protection Proxy object usually conforms to a common protocol shared with the wrapped object, which means that proxy objects can be used as seamless replacements without having to modify calling clients.
 
-A proxy can be used to minimize the cost of expensive operations by decoupling the operation from its use.
-expensive operations
-can often be combined or at least deferred until the cost of performing them is lower.
+The proxy intercepts requests to access the properties and methods of the underlying object and will pass them on only if an access control policy has been satisfied.
 
+The Proxy pattern is implemented correctly when the proxy object can be used to perform operations on the resource it represents.
 
-
- Protection Proxy[edit]
- A protection proxy might be used to control access to a resource based on access rights.
-
-
-
-The pattern is implemented correctly when the proxy object can be used to perform operations on the resource it represents.
-
-
-proxies can reveal as much or as little of their implementation detail as they choose.
-
+Note, too, that proxies can reveal as much or as little of their implementation detail as they choose.
 
 ##### Simple Example 1
 
