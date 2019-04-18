@@ -81,6 +81,23 @@ TODO: Add quiz answersz
 The Facade pattern is used to define a simplified interface to a more complex subsystem: a library, a framework, or a complex system of classes.
 
 
+
+
+#### Problems Addressed
+
+
+
+
+
+#### Benefits
+
+
+#### Pitfalls
+.
+
+#### When to use
+
+
 #### Implementation Notes
 
 
@@ -167,30 +184,18 @@ facade.performActionB()
  */
 ```
 
+##### iOS-Specific Example
 
+In this example, the "system" being wrapped by the *facade* is the `UserDefaults` system built into iOS.
 
-#### Problems Addressed
+Try this in a playground.
 
-
-
-
-
-#### Benefits
-
-
-#### Pitfalls
-.
-
-#### When to use
-
-
-
-##### Example 1
-
+**Q:** *Can you see how much simpler it is to set and get values from UserDefaults using this facade pattern?*
 
 ```Swift
 import UIKit
 
+// Facade class
 final class Defaults {
 
     private let defaults: UserDefaults
@@ -219,6 +224,11 @@ storage["Bishop"] = "Disconnect me. I’d rather be nothing"
 // Read
 storage["Bishop"]
 ```
+
+*From:*
+https://github.com/ochococo/Design-Patterns-In-Swift/blob/master/source/structural/facade.swift
+
+
 
 ## In Class Activity II (optional) (30 min)
 
