@@ -67,47 +67,75 @@ The proxy could interface to anything:
 
 The Proxy pattern is used to solve three different problems:
 
-1. **The Remote Object Problem**
+1. **Remote Object Problem** - This arises when dealing with resources that are accessed over a network, such as a web page or a RESTful web service.
 
-arises whenever you are dealing with resources that are accessed over a network, such as a web page or a RESTful web service
+2. **Expensive**<sup>1</sup> **Operation Problem** - Involves tasks such as making HTTP requests which are classified as *expensive*<sup>1</sup> operations.
 
-2. **the Expensive**<sup>1</sup> **Operation Problem**<sup>1</sup>
+3. **Restricted Access Problem** - When you need to restrict access to an object but you don’t have access to the source code or because there is already a dependency on the object type elsewhere in the application, and you cannot afford to let any user perform the operations that the object encapsulates.
 
-Tasks such as making HTTP requests are classified as expensive operations.
-
-3. **The Restricted Access Problem**
-
-
-
-<!-- TODO: Attribute source of this  -->
-
-
-<sup>1</sup> The term *expensive* is used to refer to any aspect of an operation that should be minimized, including:
-- the amount  of computation required
-- the memory needed,
-- the load on the device battery,
-- the bandwidth consumed,
-- and the elapsed time that the user has to wait.
-
+*From:
+Pro Design Patterns in Swift* - Adam Freeman
 
 
 #### Benefits
+Proxies allow close control over the way underlying resources are accessed, which is useful when you need to intercept and adapt operations.
 
+The intent of the pattern is to:
+- Control access to some object by providing a surrogate or placeholder (proxy) to it.
+- Use an extra level of indirection to support distributed, controlled, or intelligent access.
+- Add a wrapper and delegation to protect the real component from undue complexity.
+
+Proxies can be used to *defer expensive operations* (example, `lazy loading`).
 
 #### Pitfalls
+
+Pitfalls associated with the proxy pattern depend on how it is being implemented:
+
+- For **remote object proxies** - Ensure that no unnecessary details of the mechanism used to access the remote object are revealed.
+- For proxies used to manage **expensive operations** - Avoid exposing details of how the cost of the operation is being mitigated.
+- For **access restriction proxies** - Take care not to allow calling components to bypass the proxy and access the underlying object directly.
+
+Some general, common themes are:
+
+- Do not allow details of the implementation to leak out of the proxy class into the calling component.
+- Avoid allowing instances of the underlying class to be instantiated when a proxy is used to restrict access to an object.
+
+And, if you use the proxy pattern to implement __*reference counting:*__
+- Do not use proxies to manage the life cycle of objects.
+- Do not use proxies to implement concurrency protections such as locks and semaphores. Let GCD handle this.
+
+##### Proxy in iOS
+
+
+ - Deferring the Operation
+        - lazy loading
 
 
 #### When to use
 
+The proxy pattern can be used whenever an object is required to represent some other resource.
+
+the resource can be something abstract, such as a web page, or something local to the application, such as another object.
 
 
 #### Implementation Notes
 
+The proxy provides the same public interface as the underlying subject class, adding a level of *indirection* by accepting requests from a client object and passing these to the real subject object as necessary.
+
+
+The implementation of the proxy pattern varies based on the kind of problem that it is being used to solve.
 
 
 
 
 
+
+
+
+The pattern is implemented correctly when the proxy object can be used to perform operations on the resource it represents.
+
+
+proxies can reveal as much or as little of their implementation detail as they choose.
 
 
 
@@ -378,6 +406,14 @@ __*Note*__ *- This will require that you have a collection of at several video c
 ## Additional Resources
 
 1. [Slides]
+
+
+<sup>1</sup> The term *expensive* is used to refer to any aspect of an operation that should be minimized, including:
+- the amount  of computation required
+- the memory needed,
+- the load on the device battery,
+- the bandwidth consumed,
+- and the elapsed time that the user has to wait.
 
 
 <!-- SOLUTION TO ACTIVITY 2:
