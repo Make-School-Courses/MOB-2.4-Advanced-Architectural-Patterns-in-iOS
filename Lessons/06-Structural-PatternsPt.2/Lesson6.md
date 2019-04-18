@@ -17,8 +17,8 @@
 | 0:15       | 0:25      | Overview  I                |
 | 0:40       | 0:25      | In Class Activity I       |
 | 1:05       | 0:10      | BREAK                     |
-| 1:15         | 0:15      | Overview  II                |
-| 1:30       | 0:25      | In Class Activity II      |
+| 1:15         | 0:20      | Overview  II                |
+| 1:35       | 0:20      | In Class Activity II      |
 |1:55       | 0:05    | Wrap Up                     |
 | TOTAL       | 2:00    |    
 
@@ -216,7 +216,7 @@ computer.open(doors: podBay) // Result: "HAL9000: Affirmative, Dave. I read you.
  https://github.com/ochococo/Design-Patterns-In-Swift
  <!-- under GNU License -->
 
-## In Class Activity I (30 min)
+## In Class Activity I (25 min)
 
 In this exercise, you are going to create an `Image` protocol and concrete classes implementing it:
 - `ProxyImage` is a a proxy class created to reduce the memory footprint created when loading the image.
