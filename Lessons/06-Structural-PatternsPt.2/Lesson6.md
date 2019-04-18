@@ -284,6 +284,9 @@ image.display()
  */
 ```
 
+*Adapted from this Java example:* </br>
+https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm
+
 ## Overview/TT II (optional) (20 min)
 
 #### Facade
