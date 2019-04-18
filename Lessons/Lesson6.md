@@ -80,22 +80,22 @@ TODO: Add quiz answersz
 
 The Facade pattern is used to define a simplified interface to a more complex subsystem: a library, a framework, or a complex system of classes.
 
-The primary purpose of the Facade pattern is to hide the complexity of a system, class or API and provide all of its functionalities behind a simple interface.
+The primary purpose of the Facade pattern is to hide the complexity of a system, class or API and provide all of its functionality behind a simple interface.
 
-The *central actor* in the pattern is an *object that serves as a front-facing interface* masking more complex underlying or structural code.
+The __*central actor*__ in this pattern is an __*object that serves as a front-facing interface*__ that masks more complex underlying, structural code.
 
 #### Problems Addressed
 
-Facade can make a complex subsystem easier to use.
-
-Clients that access a complex subsystem directly refer to (depend on) many different objects having different interfaces (tight coupling), which makes the clients hard to implement, change, test, and reuse.
+Clients that access a complex subsystem directly refer to, and depend on, many different objects having different interfaces (tight coupling), which makes the clients hard to implement, change, test, and reuse.
 
 #### Benefits
 
+Facade can make a complex subsystem easier to use.
+
 A facade can:
-- improve readability and usability of a software libraries by masking interaction with more complex components behind a single, simplified API
+- improve readability and usability of a software library by masking interaction with more complex components behind a single, simplified API
 - provide a context-specific interface to more generic functionality
-- serve as a launching point for a broader refactor of monolithic or tightly-coupled systems
+- serve as a launching point for a broader refactoring of monolithic or tightly-coupled systems
 
 #### Pitfalls
 
@@ -106,34 +106,36 @@ Also steer clear of creating a “god” facade, which might need to know too ma
 
 #### When to use
 
-Facade is often used when a system is very complex or difficult to understand because the system has a large number of interdependent classes or because its source code is unavailable.
+Facade is often used when a system is very complex, or it is difficult to understand because it has a large number of interdependent classes, or because its source code is unavailable.
 
 Use Facade when:
-- you want to provide a simple or unified interface to a complex subsystem;
+- you want to provide a simple or unified interface to a complex subsystem.
 - you need to decompose a subsystem into separate layers.
 
 The facade pattern is ideal when working with a large number of interdependent classes, or with classes that require the use of multiple methods, particularly when they are complicated to use or difficult to understand.
 
-Facade is particularly useful when wrapping __*poorly designed subsystems*__ but cannot be refactored because the __*source code is unavailable*__ or the existing interface is too widely used.
+Facade is __*particularly useful*__ when wrapping __*poorly designed subsystems*__ but cannot be refactored because the __*source code is unavailable*__ or the existing interface is too widely used.
 
 #### Implementation Notes
 
-This core component of this pattern a single class - __*the facade class*__ - which provides simplified methods required by client and which delegates calls to methods of existing system classes.
+This **core component** of this pattern a single class - __*the facade class*__ - which provides simplified methods required by client and which delegates calls to methods of existing system classes.
 
 The facade class is a *wrapper* that contains a set of members that are easily understood and simple to use. Members access the subsystem on behalf of the facade client, hiding the implementation details of the subsystem.
 
 This minimize dependencies on a subsystem by offloading work to the Facade object, which provides a single, simplified interface to the more general facilities of the subsystem.
 
 
-To implement `Facade`:
+**To implement** Facade:
 1. **Identify target system(s)** whose functionality you seek to simplify.
 2. **Define a Facade object** which provides simple methods to interact with the system and allows clients to use the facade instead of needing to interact with multiple classes in the system. The Facade object could also perform additional functionality before or after forwarding a request/interaction with the target system.
 
-The façade pattern is implemented when common tasks can be performed without calling components having any dependency on the underlying objects or their supporting data types.
+The façade pattern is implemented correctly when common tasks can be performed without the calling components having any dependency on the underlying objects or their supporting data types.
 
 In addition, consider whether additional Facades would add value: You may decide to implement more than one facade to provide subsets of functionality for different purposes.
 
 For example, if you notice a facade has functionality that some classes use and other functionality that other classes use, consider splitting it into two or more facades.
+
+</br>
 
 ##### - Simplified Example -
 
@@ -215,6 +217,8 @@ facade.performActionB()
  printing on line 29 in function performActionThree(item:), with Thing passed as the arg
  */
 ```
+
+</br>
 
 ##### - An iOS-Specific Example -
 
