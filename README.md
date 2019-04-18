@@ -66,8 +66,6 @@ Students by the end of the course will be able to ...
 ## Class Assignments
 
 ### Projects
-- Coming Soon!
-[Design Patterns App]
 
 [Design Patterns App]: Assignments/ProjectSpecifications.md
 
