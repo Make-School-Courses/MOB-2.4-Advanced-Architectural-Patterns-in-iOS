@@ -163,12 +163,58 @@ The Proxy pattern is implemented correctly when the proxy object can be used to 
 
 Note, too, that proxies can reveal as much or as little of their implementation detail as they choose.
 
-##### Simple Example 1
+##### Simple Protection Proxy Example
 
+For this simple example, assume that the `HAL9000` object has its own access control/authentication mechanism and that you do not want client classes to access that mechanism directly.
 
-##### Simple Example 1
+Instead, the `CurrentComputer` class acts as a Protection Proxy intercepting and handling the client's request for access to the `HAL9000` object.
 
+```Swift
+//Protection Proxy protocol
+protocol DoorOperator {
+    func open(doors: String) -> String
+}
 
+//Restricted Access Object
+class HAL9000 : DoorOperator {
+    func open(doors: String) -> String {
+        return ("HAL9000: Affirmative, Dave. I read you. Opened \(doors).")
+    }
+}
+
+//Protection Proxy object
+class CurrentComputer : DoorOperator {
+    private var computer: HAL9000!
+
+    func authenticate(password: String) -> Bool {
+
+        guard password == "pass" else {
+            return false;
+        }
+
+        computer = HAL9000()
+
+        return true
+    }
+
+    func open(doors: String) -> String {
+
+        guard computer != nil else {
+            return "Access Denied. I'm afraid I can't do that."
+        }
+
+        return computer.open(doors: doors)
+    }
+}
+
+//Client
+let computer = CurrentComputer()
+let podBay = "Pod Bay Doors"
+
+computer.open(doors: podBay) // Result: "Access Denied. I'm afraid I can't do that."
+computer.authenticate(password: "pass")
+computer.open(doors: podBay) // Result: "HAL9000: Affirmative, Dave. I read you. Opened Pod Bay Doors."
+```
 
 ## In Class Activity I (30 min)
 
