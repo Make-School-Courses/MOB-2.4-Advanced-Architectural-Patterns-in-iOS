@@ -1,9 +1,9 @@
 # Structural Patterns Pt.2
 
 <!-- INSTRUCTOR NOTES:
-1) No quiz this class -- course project
+1) No quiz this class -- course project intro instead
 2) For Activity 1:
-- Solution is xxxx
+- Solution is embedded below Add'l Resources
 3) for Activity 2:
 - Solution is embedded below Add'l Resources
 -->
@@ -222,7 +222,67 @@ In this exercise, you are going to create an `Image` protocol and concretes impl
 
 Your "client" will use ProxyImage to get an Image object to load and display, as needs.
 
+```Swift
+import UIKit
 
+//Step 1 - Create a protocol (interface)
+
+    //TODO: Create Image protocol
+
+//Step 2 - Create concrete classes implementing the same protocol
+class RealImage: Image {
+
+    var fileName: String
+
+    init (fileName: String) {
+        self.fileName = fileName
+        loadFromDisk(fileName: fileName)
+    }
+
+    func display() {
+        print("Displaying", fileName)
+    }
+
+      //TODO: Create loadFromDisk function that will accept fileName and prints "Loading" along with the fileName
+
+}
+
+class ProxyImage: Image {
+
+    //TODO: Create vars needed
+
+    init (fileName: String) {
+        self.fileName = fileName
+    }
+
+    func display() {
+        if realImage != nil {
+            print("realImage already loaded")
+        } else {
+            print("Load realImage")
+
+            //TODO: If realImage var is nil, create/load a new RealImage object, and pass it to realImage var
+        }
+        realImage!.display()
+    }
+}
+
+//Step 3 - Client uses ProxyImage object to load the image through the RealImage class, but only when needed
+let image: ProxyImage = ProxyImage(fileName: "test_10mb.jpg")
+image.display()
+print("") // Add line break for separation in output
+image.display()
+
+/* Output should be:
+
+ Load realImage
+ Loading test_10mb.jpg
+ Displaying test_10mb.jpg
+
+ realImage already loaded
+ Displaying test_10mb.jpg
+ */
+```
 
 ## Overview/TT II (optional) (20 min)
 
@@ -494,6 +554,73 @@ __*Note*__ *- This will require that you have a collection of at several video c
 - the load on the device battery,
 - the bandwidth consumed,
 - and the elapsed time that the user has to wait.
+
+
+<!-- SOLUTION TO ACTIVITY 1:
+import UIKit
+
+//Step 1 - Create a protocol (interface)
+protocol Image {
+    func display()
+}
+
+//Step 2 - Create concrete classes implementing the same protocol
+class RealImage: Image {
+
+    var fileName: String
+
+    init (fileName: String) {
+        self.fileName = fileName
+        loadFromDisk(fileName: fileName)
+    }
+
+    func display() {
+        print("Displaying", fileName)
+    }
+
+    func loadFromDisk(fileName: String) {
+        print("Loading", fileName)
+    }
+}
+
+class ProxyImage: Image {
+
+    var realImage: RealImage?
+    var fileName: String
+
+    init (fileName: String) {
+        self.fileName = fileName
+    }
+
+    func display() {
+        if realImage != nil {
+            print("realImage already loaded")
+        } else {
+            print("Load realImage")
+            realImage = RealImage(fileName: fileName)
+        }
+        realImage!.display()
+    }
+}
+
+//Step 3 - Client uses ProxyImage object to load the image through the RealImage class, but only when needed
+let image: ProxyImage = ProxyImage(fileName: "test_10mb.jpg")
+image.display()
+print("") // Add line break for separation in output
+image.display()
+
+
+/* Output should be:
+
+ Load realImage
+ Loading test_10mb.jpg
+ Displaying test_10mb.jpg
+
+ realImage already loaded
+ Displaying test_10mb.jpg
+ */
+
+-->
 
 
 <!-- SOLUTION TO ACTIVITY 2:
