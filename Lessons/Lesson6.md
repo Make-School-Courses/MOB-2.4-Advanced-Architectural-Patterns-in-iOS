@@ -134,7 +134,6 @@ The façade pattern is implemented correctly when common tasks can be performed 
 In addition, consider whether additional Facades would add value: You may decide to implement more than one facade to provide subsets of functionality for different purposes.
 
 For example, if you notice a facade has functionality that some classes use and other functionality that other classes use, consider splitting it into two or more facades.
-
 </br>
 
 ##### - Simplified Example -
@@ -217,7 +216,7 @@ facade.performActionB()
  printing on line 29 in function performActionThree(item:), with Thing passed as the arg
  */
 ```
-</br></br>
+</br>
 
 ##### - An iOS-Specific Example -
 
