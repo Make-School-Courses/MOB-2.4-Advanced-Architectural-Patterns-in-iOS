@@ -218,7 +218,9 @@ computer.open(doors: podBay) // Result: "HAL9000: Affirmative, Dave. I read you.
 
 ## In Class Activity I (30 min)
 
-In this exercise, you are going to create an `Image` protocol and concretes implementing it. `ProxyImage` is a a proxy class created to reduce the memory footprint created when loading the image. Loading the image will up to the `RealImage` object.
+In this exercise, you are going to create an `Image` protocol and concrete classes implementing it:
+- `ProxyImage` is a a proxy class created to reduce the memory footprint created when loading the image.
+- Loading the image will up to the `RealImage` object.
 
 Your "client" will use ProxyImage to get an Image object to load and display, as needs.
 
