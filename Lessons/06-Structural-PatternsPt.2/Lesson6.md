@@ -13,8 +13,8 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05       | 0:20      | Initial Exercise             |
-| 0:25       | 0:15      | Overview  I                |
+| 0:05       | 0:10      | Initial Exercise             |
+| 0:15       | 0:25      | Overview  I                |
 | 0:40       | 0:25      | In Class Activity I       |
 | 1:05       | 0:10      | BREAK                     |
 | 1:15         | 0:15      | Overview  II                |
@@ -36,14 +36,14 @@ By the end of this lesson, you should be able to...
 - the trade offs (pros/cons) inherent in each
 4. Implement basic examples of both patterns explored in this class
 
-## Initial Exercise (15 min)
+## Initial Exercise (10 min)
 
 ### As A Class
 
-- __*Course Project Kickoff*__
+- Course Project Kickoff
 
 
-## Overview/TT I (20 min)
+## Overview/TT I (25 min)
 
 #### Proxy
 
@@ -212,11 +212,15 @@ computer.authenticate(password: "pass")
 computer.open(doors: podBay) // Result: "HAL9000: Affirmative, Dave. I read you. Opened Pod Bay Doors."
 ```
 
-*From this series of Swift design pattern articles:*
+*From this series of Swift design pattern articles:* </br>
  https://github.com/ochococo/Design-Patterns-In-Swift
  <!-- under GNU License -->
 
 ## In Class Activity I (30 min)
+
+In this exercise, you are going to create an `Image` protocol and concretes implementing it. `ProxyImage` is a a proxy class created to reduce the memory footprint created when loading the image. Loading the image will up to the `RealImage` object.
+
+Your "client" will use ProxyImage to get an Image object to load and display, as needs.
 
 
 
