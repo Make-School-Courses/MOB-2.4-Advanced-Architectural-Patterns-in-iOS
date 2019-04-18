@@ -76,13 +76,12 @@ Your app is to have the following **characteristics:**
 
 __*Suggestions*__
 - To pace yourself, start by completing the shell of the app first, then work from the top (i.e., Creational) of the list of main types, filling in each of the patterns in Creational that were taught in class before moving on to Behavioral, etc.
-- When done with all patterns taught in class, you may want to expand each table view section by adding patterns not taught in class to their respective group/table view section (if time permits).
+- When done implementing scenes formal all patterns taught in class, you may want to expand each table view section by adding patterns not taught in class to their respective group/table view section (if time permits).
 - Before proceeding, become familiar with the free example apps listed below.
 
 
 __*Other Notes*__
 1. For the Observer Pattern - You may use your choice of either KVO, Notification, or a non-iOS Observer implementation to illustrate it.
-2.
 
 <!-- Add note about animation here -- a symbolic representation of teh pattern itself. for example,
 -->
@@ -140,7 +139,7 @@ The main scene is a list of design patterns organized by main pattern type (Crea
 
 ## Project evaluation criteria
 
-[Link to rubric]()
+[Link to: 2.4 MOB Project Rubric](https://docs.google.com/document/d/1qKSs3S4QlhD_6QpkSsQKtzIdp2lCouEmoRVxvJDvhI0/edit)
 
 <!-- TODO:
   - Rubric needs modified to fit:
