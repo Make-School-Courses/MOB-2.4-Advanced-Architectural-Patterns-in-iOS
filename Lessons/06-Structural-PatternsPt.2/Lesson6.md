@@ -108,7 +108,7 @@ And, if you use the proxy pattern to implement __*reference counting:*__
 
 
  - Deferring the Operation
-        - lazy loading
+        - lazy loading, lazy initialization
 
 
 #### When to use
@@ -125,15 +125,36 @@ Implementing proxy can be complex and labor intensive. If you need a solution th
 
 #### Implementation Notes
 
-The proxy provides the same public interface as the underlying subject class, adding a level of *indirection* by accepting requests from a client object and passing these to the real subject object as necessary.
+The *proxy class* provides the same public interface as the underlying *subject class,* adding a level of __*indirection*__ *by accepting requests from a client object* and passing these to the real subject object as needed.
+
+But implementation of the proxy pattern varies based on the kind of problem that it is being used to solve.
+
+1. **Solving the Remote Object Problem** - Use a **Remote Proxy**, where a local object is a proxy for (represents) a remote object, and calling a method on the local object causes the corresponding method to be invoked on the remote object.
+
+The proxy object hides the details of how the remote resource is accessed and only presents its data. It consolidates requests to the remote resource in a single application class. It allows implementation changes to itself or the remote object without requiring changes to the calling client code.
+
+Examples:
+- HTTP requests to a remote web service
+- Any scenario involving a *distributed system,* such as an ATM (the ATM must communicate transactions with the bank's central computing system).
+
+2. **Solving the Expensive Operation Problem** -
 
 
-The implementation of the proxy pattern varies based on the kind of problem that it is being used to solve.
+ Virtual Proxy. A virtual proxy provides a simplified version of a complex object. Only when the detail of the object is required is the main object actually populated, providing a form of lazy initialization. For example, a file management utility such as Windows Explorer may use an object for each file that is visible on the screen. When obtaining the file list, the file name, size and other easy-to-retrieve information would be held in proxy objects. Only when the "document preview" command is requested would the real object be created and populated with the full contents of the file, as these are slower to access and require more memory.
+
+ Another example, a thumbnail image — or meta data about an image, with thumbnail, can be supplied until the real image is needed…
+
+ Virtual Proxy[edit]
+ In place of a complex or heavy object, a skeleton representation may be advantageous in some cases. When an underlying image is huge in size, it may be represented using a virtual proxy object, loading the real object on demand.
+
+A proxy can be used to minimize the cost of expensive operations by decoupling the operation from its use.
+expensive operations
+can often be combined or at least deferred until the cost of performing them is lower.
 
 
 
-
-
+ Protection Proxy[edit]
+ A protection proxy might be used to control access to a resource based on access rights.
 
 
 
