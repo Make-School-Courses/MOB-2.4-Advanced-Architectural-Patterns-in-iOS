@@ -132,7 +132,8 @@ This section provides details for some of the more complex screens.
 
 #### Main Screen
 
-The main scene is a list of design patterns organized by main pattern type (Creational, etc.).
+The main scene is a list of design patterns organized by main pattern type (Creational, etc.):
+</br>
 
 ![example](assets/MainScene.png)
 
