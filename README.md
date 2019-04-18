@@ -55,7 +55,7 @@ Students by the end of the course will be able to ...
 [Behavioral Patterns Pt.1]: Lessons//03-Behavioral-PatternsPt.1/Lesson3.md
 [Behavioral Patterns Pt.2]: Lessons/04-Behavioral-PatternsPt.2/Lesson4.md
 [Structural Patterns Pt.1]: Lessons/05-Structural-PatternsPt.1/Lesson5.md
-[Structural Patterns Pt.2]: Lessons/Lesson6.md
+[Structural Patterns Pt.2]: Lessons/06-Structural-PatternsPt.2/Lesson6.md
 [MVVM]: Lessons/Lesson7.md
 [Coordinators]: Lessons/Lesson8.md
 [Functional Programming Pt.1]: Lessons/Lesson9.md
