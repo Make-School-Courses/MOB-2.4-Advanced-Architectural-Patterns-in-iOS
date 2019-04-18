@@ -51,7 +51,7 @@ TODO: Add quiz answersz
 
 #### Proxy
 
-The proxy pattern is used to provide a surrogate or placeholder object, which references an underlying object.
+The Proxy design pattern is used to provide a __*surrogate*__ or __*placeholder*__ object, which references an underlying object.
 
 In its most general form, a *proxy* is a class functioning as an interface to something else.
 
@@ -62,7 +62,7 @@ The proxy could interface to anything:
 - or some other resource that is expensive or impossible to duplicate
 
  Calling components operate on the proxy, which in turn operates on the underlying resource.
- 
+
 
 #### Implementation Notes
 
