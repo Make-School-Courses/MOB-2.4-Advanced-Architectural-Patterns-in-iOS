@@ -218,7 +218,7 @@ facade.performActionB()
  */
 ```
 
-</br>
+</br></br>
 
 ##### - An iOS-Specific Example -
 
