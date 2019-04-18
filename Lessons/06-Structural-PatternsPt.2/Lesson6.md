@@ -102,9 +102,14 @@ And, if you use the proxy pattern to implement __*reference counting:*__
 
 ##### Proxy in iOS
 
+Proxy is very popular in iOS. It is frequently used throughout the Cocoa Touch framework.
 
- - Deferring the Operation
-        - lazy loading, lazy initialization
+Examples in iOS include:
+
+- `UIApperance protocol` - You can customize the appearance of instances of a class by sending appearance modification messages to the class’s appearance proxy.
+- `NSProxy class` - An abstract superclass defining an API for objects that act as stand-ins for other objects or for objects that don’t exist yet.
+
+In addition, due to the resource constraints inherent in iOS devices, *deferring operations* through the use of `lazy loading`/`lazy initialization` has long been an __*iOS best practice *__ under relevant conditions.
 
 
 #### When to use
@@ -545,6 +550,7 @@ Flight booked successfully
 1. [Slides](https://docs.google.com/presentation/d/1IFSv5SJR7c-Y1MMKmLcSPvIQ_pMrEBX_TOkiXkl4i94/edit?usp=sharing)
 2. [Proxy pattern - wikipedia](https://en.wikipedia.org/wiki/Proxy_pattern)
 2. [Facade pattern - wikipedia](https://en.wikipedia.org/wiki/Facade_pattern)
+4. [Proxy design pattern in iOS - an article](http://devmonologue.com/ios/proxy-design-pattern-ios/)
 
 <sup>1</sup> The term *expensive* is used to refer to any aspect of an operation that should be minimized, including:
 - the amount  of computation required
