@@ -87,6 +87,10 @@ The Facade pattern is used to define a simplified interface to a more complex su
 
 ##### Simplified Example
 
+In this example, three simple classes - `SubSystemOne`, `SubSystemTwo`, and `SubSystemThree` - represent three separate systems, each potentially with its own set of functions and/or properties.
+
+Though these are classes, each one could be a separate collection of related classes, as in an API.
+
 ```Swift
 ///Subsystem 1
 class SubSystemOne {
@@ -119,31 +123,47 @@ class SubSystemThree {
 }
 ```
 
+Note that after *wrapping* each of the three "subsystems," the Facade class can choose which behaviors of a given subsystem are to be exercised. The Facade class can also aggregate similar subsystem functions into a single function, simplifying the executions of several functions.
 
 ```Swift
+
 ///Facade class
 class Facade {
-
     let subSystemOne = SubSystemOne()
     let subSystemTwo = SubSystemTwo()
     let subSystemThree = SubSystemThree()
 
-    func performActions() {
+    func performActionA() {
+
+        print("printing on line \(#line) in function \(#function) from Facade class")
+
         subSystemOne.performActionOne()
         subSystemTwo.performActionTwo()
+    }
+
+    func performActionB() {
+
+        print("printing on line \(#line) in function \(#function) from Facade class")
+
+        subSystemOne.performActionOne()
         subSystemThree.performActionThree(item: "Thing")
     }
 }
 
 ///Client
 let facade = Facade()
-facade.performActions()
+facade.performActionA()
+facade.performActionB()
 
 /* This will print:
 
+ printing on line 41 in function performActionA() from Facade class
  printing on line 9 in function performActionOne()
  printing on line 19 in function performActionTwo()
+ printing on line 49 in function performActionB() from Facade class
+ printing on line 9 in function performActionOne()
  printing on line 29 in function performActionThree(item:), with Thing passed as the arg
+ */
  */
 ```
 
