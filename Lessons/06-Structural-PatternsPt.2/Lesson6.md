@@ -131,19 +131,19 @@ But implementation of the proxy pattern varies based on the kind of problem that
 
 1. **Solving the Remote Object Problem** - Use a **Remote Proxy**, where a local object is a proxy for (represents) a remote object, and calling a method on the local object causes the corresponding method to be invoked on the remote object.
 
-The proxy object hides the details of how the remote resource is accessed and only presents its data. It consolidates requests to the remote resource in a single application class. It allows implementation changes to itself or the remote object without requiring changes to the calling client code.
+&nbsp;&nbsp;&nbsp; The proxy object hides the details of how the remote resource is accessed and only presents its data. It consolidates requests to the remote resource in a single application class. It allows implementation changes to itself or the remote object without requiring changes to the calling client code.
 
-Examples:
-- HTTP requests to a remote web service
-- Any scenario involving a *distributed system,* such as an ATM (the ATM must communicate transactions with the bank's central computing system).
+&nbsp;&nbsp;&nbsp; Examples:
+&nbsp;&nbsp;&nbsp; - HTTP requests to a remote web service
+&nbsp;&nbsp;&nbsp; - Any scenario involving a *distributed system,* such as an ATM (the ATM must communicate transactions with the bank's central computing system).
 
-2. **Solving the Expensive Operation Problem** - A **Virtual Proxy** provides a simplified version of a complex or heavy object. Only when the detail of the object is required is the main object actually populated, providing a form of lazy initialization.
+2. **Solving the Expensive Operation Problem** - A **Virtual Proxy** is used for loading objects on demand. It provides a simplified version of a complex or heavy object. Only when the detail of the object is required is the main object actually populated, providing a form of lazy initialization.
 
-A Virtual Proxy can be used to minimize the cost of expensive operations by decoupling the operation from its use, which can often be combined or at least deferred until the cost of performing the operation is lower.
+&nbsp;&nbsp;&nbsp; A Virtual Proxy can be used to minimize the cost of expensive operations by decoupling the operation from its use, which can often be combined or at least deferred until the cost of performing the operation is lower.
 
-Examples:
-- A file management utility may use an object for each file visible on the screen. When obtaining the file list, the file name, size and other easy-to-retrieve information would be held in proxy objects. Only when the actual file is viewed (requested) would the real object be created and populated with the full contents of the file, as these are slower to access and require more memory.
-- A very large image object can be represented using a virtual proxy object (with thumbnail and other image metadata), only loading the real object "on demand" the real image is requested by the user.
+&nbsp;&nbsp;&nbsp; Examples:
+&nbsp;&nbsp;&nbsp; - A file management utility may use an object for each file visible on the screen. When obtaining the file list, the file name, size and other easy-to-retrieve information would be held in proxy objects. Only when the actual file is viewed (requested) would the real object be created and populated with the full contents of the file, as these are slower to access and require more memory.
+&nbsp;&nbsp;&nbsp; - A very large image object can be represented using a virtual proxy object (with thumbnail and other image metadata), only loading the real object "on demand" the real image is requested by the user.
 
 3. **Solving the Restricted Access Problem** - By using a **Protection Proxy**, which might be used to control access to a resource based on access rights. The proxy is defined as a wrapper around an object, adding additional logic to enforce some kind of restriction on its use (which presents a different implementation path from the other proxy types).
 
