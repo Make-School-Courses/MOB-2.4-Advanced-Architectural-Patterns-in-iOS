@@ -531,7 +531,7 @@ Flight booked successfully
 - Indirection
 - Distributed object communication
 
-3. **TODO:** - Get started with the Course Project
+2. **TODO:** - Get started with the Course Project
 
 
 ## Wrap Up (5 min)
