@@ -216,8 +216,7 @@ facade.performActionB()
  printing on line 29 in function performActionThree(item:), with Thing passed as the arg
  */
 ```
-
-
+</br>
 
 ##### - An iOS-Specific Example -
 
