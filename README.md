@@ -67,6 +67,9 @@ Students by the end of the course will be able to ...
 
 ### Projects
 - Coming Soon!
+[Design Patterns App]
+
+[Design Patterns App]: Assignments/ProjectSpecifications.md
 
 **All projects will require a minimum of 10 commits, and must take place throughout the entirety of the course**
 
