@@ -222,14 +222,14 @@ In this exercise, you are going to create an `Image` protocol and concrete class
 - `ProxyImage` is a a proxy class created to reduce the memory footprint created when loading the image.
 - Loading the image will up to the `RealImage` object.
 
-Your "client" will use ProxyImage to get an Image object to load and display, as needs.
+Your "client" will use `ProxyImage` to get an `Image` object to load and display, as needs.
 
 ```Swift
 import UIKit
 
 //Step 1 - Create a protocol (interface)
 
-    //TODO: Create Image protocol
+    //TODO: Create Image protocol, with a display() function
 
 //Step 2 - Create concrete classes implementing the same protocol
 class RealImage: Image {
