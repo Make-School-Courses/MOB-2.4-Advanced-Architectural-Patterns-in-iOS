@@ -6,7 +6,7 @@
 2) For Activity 1:
 - Solution is xxxx
 3) for Activity 2:
-- Solution is xxx
+- Solution is embedded below Add'l Resources
 -->
 
 ## Minute-by-Minute
@@ -81,6 +81,7 @@ TODO: Add quiz answersz
 The Facade pattern is used to define a simplified interface to a more complex subsystem: a library, a framework, or a complex system of classes.
 
 
+a facade is an object that serves as a front-facing interface masking more complex underlying or structural code.
 
 
 #### Problems Addressed
@@ -100,11 +101,12 @@ The Facade pattern is used to define a simplified interface to a more complex su
 
 #### Implementation Notes
 
-This core component of this pattern a single class - a __*facade class*__ - which provides simplified methods required by client and which delegates calls to methods of existing system classes.
+This core component of this pattern a single class - __*the facade class*__ - which provides simplified methods required by client and which delegates calls to methods of existing system classes.
 
 The facade class is a *wrapper* that contains a set of members that are easily understood and simple to use. Members access the subsystem on behalf of the facade client, hiding the implementation details of the subsystem.
 
-This minimize dependencies on a subsystem by offloading work to the Facade object.
+This minimize dependencies on a subsystem by offloading work to the Facade object, which provides a single, simplified interface to the more general facilities of the subsystem.
+
 
 To implement `Facade`:
 1. **Identify target system(s)** whose functionality you seek to simplify.
@@ -244,7 +246,45 @@ https://github.com/ochococo/Design-Patterns-In-Swift/blob/master/source/structur
 
 
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (15 min)
+
+The `HotelBooker` and `FlightBooker` classes in the code below represent separate systems. Your customer, a travel agency, would really like to be able to book both airline flights and hotel accommodations in one simple procedure.
+
+**TODO:** Using the Facade pattern, create a class that will unify the calls to these two disparate interfaces for your customer's app.
+
+```Swift
+import UIKit
+
+///Subsystem 1
+class HotelBooker {
+
+    func book() {
+        print("Hotel booked successfully")
+    }
+}
+
+///Subsystem 2
+class FlightBooker {
+
+    func book() {
+        print("Flight booked successfully")
+    }
+}
+
+///Facade
+
+    //TODO: Create a facade class that wraps both systems and invokes each of their separate book() functions
+
+/// Client
+let travelFacade = TravelFacade()
+travelFacade.getFlightsAndHotels()
+
+
+/* This prints:
+Hotel booked successfully
+Flight booked successfully
+*/
+```
 
 ## Wrap Up (5 min)
 
@@ -255,3 +295,50 @@ https://github.com/ochococo/Design-Patterns-In-Swift/blob/master/source/structur
 ## Additional Resources
 
 1. Links to additional readings and videos
+
+
+<!-- SOLUTION TO ACTIVITY 2:
+
+import UIKit
+
+///Subsystem 1
+class HotelBooker {
+
+    func book() {
+        print("Hotel booked successfully")
+    }
+}
+
+///Subsystem 2
+class FlightBooker {
+
+    func book() {
+        print("Flight booked successfully")
+    }
+}
+
+///Facade
+class TravelFacade {
+
+    private let hotelBooker = HotelBooker()
+    private let flightBooker = FlightBooker()
+
+    init() {
+
+    }
+    func getFlightsAndHotels() {
+        hotelBooker.book()
+        flightBooker.book()
+    }
+}
+
+/// Client
+let travelFacade = TravelFacade()
+travelFacade.getFlightsAndHotels()
+
+
+/* This prints:
+Hotel booked successfully
+Flight booked successfully
+*/
+  -->
