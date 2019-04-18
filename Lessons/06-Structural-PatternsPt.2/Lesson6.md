@@ -138,7 +138,7 @@ But implementation of the proxy pattern varies based on the kind of problem that
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*Examples:*__ </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - HTTP requests to a remote web service</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Any scenario involving a *distributed system,* such as an ATM (the ATM must communicate </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transactions with the bank's central computing system).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  transactions with the bank's central computing system).
 
 2. **Solving the Expensive Operation Problem** - A **Virtual Proxy** is used for loading objects on demand. It provides a simplified version of a complex or heavy object. Only when the detail of the object is required is the main object actually populated, providing a form of lazy initialization.
 
@@ -147,11 +147,11 @@ But implementation of the proxy pattern varies based on the kind of problem that
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*Examples:*__ </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - A file management utility may use an object for each file visible on the screen. When obtaining the file list, </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the file name, size and other easy-to-retrieve information would be held in proxy objects. Only when the </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; actual file is viewed (requested) would the real object be created and populated with the full contents
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; of the file, as these are slower to access and require more memory.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the file name, size and other easy-to-retrieve information would be held in proxy objects. Only when </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the actual file is viewed (requested) would the real object be created and populated with the </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; full contents of the file, as these are slower to access and require more memory. </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - A very large image object can be represented using a virtual proxy object (with thumbnail and other image metadata), </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; only loading the real object "on demand" the real image is requested by the user.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; only loading the real object "on demand" the real image is requested by the user.
 
 3. **Solving the Restricted Access Problem** - By using a **Protection Proxy**, which might be used to control access to a resource based on access rights. The proxy is defined as a wrapper around an object, adding additional logic to enforce some kind of restriction on its use (which presents a different implementation path from the other proxy types).
 
