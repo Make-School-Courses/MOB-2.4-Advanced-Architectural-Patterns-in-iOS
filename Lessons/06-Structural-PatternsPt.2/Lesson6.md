@@ -245,7 +245,7 @@ class RealImage: Image {
         print("Displaying", fileName)
     }
 
-      //TODO: Create loadFromDisk function that will accept fileName and prints "Loading" along with the fileName
+      //TODO: Create loadFromDisk(_:) function that will accept a fileName and print "Loading" along with the fileName
 
 }
 
