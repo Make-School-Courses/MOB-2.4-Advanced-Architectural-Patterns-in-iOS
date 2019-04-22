@@ -45,16 +45,42 @@
 
 ### Model-View-ViewModel
 
-The MVVM pattern introduces a *fourth* component to MVC — *the* __*View Model.*__
+The **MVVM** is a __*Structural*__ design pattern which introduces a *fourth* component to MVC — *the* __*View Model.*__
 
-The idea behind MVVM pattern is that each **View** *with business logic specific to itself* will be backed by a **View Model** that represents the data for the **View.**
+The idea behind the MVVM pattern is that any **View** *with business logic specific to itself* should be backed by a **View Model** that represents and handles the data for the **View.**
 
-In MVVM, we implement *presentational business logic* - such as converting a Date into a date-formatted String - in the `ViewModel` *instead* of in the `View` or in the `Controller`.
+In MVVM, we implement *presentational* business logic - such as converting a Date into a date-formatted String - in the __*ViewModel*__ *instead* of in the View or the Controller.
+
+<!-- TODO: Insert: example code (cell?) and/or diagram here? -->
+
 
 ### Four Components
 
+#### View:
+- Responsible for displaying visual elements and controls on the screen. Subclasses of UIView, typically. (Same as in MVC)
+
+
+
+
+#### Model:
+- This is the same as in MVC;  this is where the data lives. In this case, to-do items are models of the data.
+
+hold app data. They’re usually structs or simple classes.
+
+
+View Controller: The view controller sets up UI views. It does not interact with the model at all. It instead goes through the view model, and asks for what it needs in a format ready for display. It should have absolutely no business logic.
+
+
+View Model: The view model is basically a representation of the view controller. If the view controller has a label, the view model should have a property to supply it with the text in string form. It triggers all calls, and sends and receives data. When dealing with the view model, you should ensure it is as dumb as possible. This means that you should decouple it from the view controller as much as possible. We should ensure that we do not inject instances of the view controller to the view model. The view model should be completely independent of all the view controller.
+
+
+It can be a class or struct but is generally a class so that references of the same instance can be passed around in your code. The ViewModel sits between the view controller and Model.
+
+View models transform model information into values that can be displayed on a view. They’re usually classes, so they can be passed around as references.
 
 ### The ViewModel
+
+but also the Mediator, represented as the View Model.
 
 
 
