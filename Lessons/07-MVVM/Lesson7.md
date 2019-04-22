@@ -69,7 +69,7 @@ In MVVM, we implement *presentational* business logic - such as converting a Dat
 - The view controller sets up UI views. It does not interact with the model at all. It instead goes through the view model, and asks for what it needs in a format ready for display. It should have absolutely no business logic.
 
 
-**View Model** &#151 The view model is basically a representation of the view controller. If the view controller has a label, the view model should have a property to supply it with the text in string form. It triggers all calls, and sends and receives data. When dealing with the view model, you should ensure it is as dumb as possible. This means that you should decouple it from the view controller as much as possible. We should ensure that we do not inject instances of the view controller to the view model. The view model should be completely independent of all the view controller.
+**View Model** &#151 --- The view model is basically a representation of the view controller. If the view controller has a label, the view model should have a property to supply it with the text in string form. It triggers all calls, and sends and receives data. When dealing with the view model, you should ensure it is as dumb as possible. This means that you should decouple it from the view controller as much as possible. We should ensure that we do not inject instances of the view controller to the view model. The view model should be completely independent of all the view controller.
 
 
 It can be a class or struct but is generally a class so that references of the same instance can be passed around in your code. The ViewModel sits between the view controller and Model.
