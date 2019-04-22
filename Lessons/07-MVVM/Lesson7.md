@@ -47,7 +47,7 @@
 
 The MVVM pattern introduces a *fourth component* to MVC — the `View Model`.
 
-The idea behind MVVM pattern is that `Views` with business logic specific to themselves will be backed by a `View Model` that represents the data for the `View`.
+The idea behind MVVM pattern is that each **View** *with business logic specific to itself* will be backed by a **View Model** that represents the data for the **View.**
 
 In MVVM, we implement *presentational business logic* - such as converting a Date into a date-formatted String - in the `ViewModel` *instead* of in the `View` or in the `Controller`.
 
