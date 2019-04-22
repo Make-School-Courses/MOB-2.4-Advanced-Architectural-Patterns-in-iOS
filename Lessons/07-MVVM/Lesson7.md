@@ -57,7 +57,8 @@ In MVVM, we implement *presentational* business logic - such as converting a Dat
 ### Four Components
 
 #### View:
-- Responsible for displaying visual elements and controls on the screen. Subclasses of UIView, typically. (Same as in MVC)
+- Responsible for displaying visual elements and controls on the screen. Subclasses of UIView, typically.
+(Same as in MVC)
 
 
 
