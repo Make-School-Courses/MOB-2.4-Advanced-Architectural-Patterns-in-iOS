@@ -62,14 +62,14 @@ MVVM takes the principle of *Separation of Concerns* one step further &mdash; it
 
 Here is how the four major components of MVVM relate to each other (and to MVC):
 
-**View** &mdash; Responsible for displaying visual elements and controls on the screen. Subclasses of UIView, typically. </br>
+**View** &mdash; Responsible for displaying visual elements and controls on the screen. Subclasses of `UIView`, typically. </br>
 (Same as in MVC)
 
-**Model** &mdash; Objects that hold app data; typically structs of simple classes. (Same as in MVC)
+**Model** &mdash; Objects that hold app data; typically, `structs` or simple `classes`. (Same as in MVC)
 
-**View Controller** &mdash; In MVVM, VCs still set up UI views, but they do not interact with the model. Instead, the VC uses the View Model as a *mediator* and asks for what it needs in a format that will be ready for presentation. In MVVM, VCs should have absolutely no business logic.
+**View Controller** &mdash; In MVVM, VCs still set up UIView objects, but they do not interact with the model. Instead, the VC uses the View Model as a *mediator* and asks for what it needs in a format that will be ready for presentation. In MVVM, Controllers should have absolutely *no business logic.*
 
-**View Model** &mdash; Transform Model data into values that can be displayed on a View. Sits between the View Controller and Model. Can be a class or struct,  but it is typically a class so that references of the same instance can be passed around in code.
+**View Model** &mdash; Transforms Model data into values that can be displayed on a View. Sits between the View Controller and Model. Can be a `class` or `struct`,  but it is *typically a class* so that references of the same instance can be passed around in code.
 
 ### The ViewModel
 
