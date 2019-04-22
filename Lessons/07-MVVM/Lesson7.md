@@ -1,26 +1,29 @@
-# Lesson Title
+# MVVM
 
 <!-- INSTRUCTOR NOTES:
-1) For the quiz in the Initial Exercise:
-- the URL is xxxx
+1) For the QuizLet Game in the Initial Exercise:
+- the URL is https://quizlet.com/_6hmrxi
+
 2) For Activity 1:
 - xxxx
 3) for Activity 2:
 - xxx
 -->
 
-## Minute-by-Minute [OPTIONAL]
+## Minute-by-Minute
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
+| 0:05        | 0:20      | Initial Exercise          |
+| 0:25        | 0:15      | Overview                  |
+
 | 0:20        | 0:45      | In Class Activity I       |
 | 1:05        | 0:10      | BREAK                     |
 | 1:15        | 0:45      | In Class Activity II      |
 | TOTAL       | 2:00      |                           |
 
-## Why you should know this or industry application (optional) (5 min)
+## Why you should know this or industry application (5 min)
 
 Explain why students should care to learn the material presented in this class.
 
@@ -31,14 +34,14 @@ Explain why students should care to learn the material presented in this class.
 1. Design
 1. Implement
 
-## Initial Exercise (15 min)
+## Initial Exercise (20 min)
 
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
+### As A Class
+
+#### A QuizLet Game
+
+...test your knowledge of design patterns in Swift!
+
 
 ## Overview/TT I (20 min)
 
@@ -63,6 +66,14 @@ Explain why students should care to learn the material presented in this class.
 ## Overview/TT II (optional) (20 min)
 
 ## In Class Activity II (optional) (30 min)
+
+## After Class
+
+1. Research these related concepts:
+
+- xxxx
+
+2. **TODO:** - Continue working on your Course Project
 
 ## Wrap Up (5 min)
 
