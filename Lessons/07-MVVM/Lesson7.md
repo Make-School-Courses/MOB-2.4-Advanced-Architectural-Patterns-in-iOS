@@ -23,9 +23,6 @@
 | 1:15        | 0:45      | In Class Activity II      |
 | TOTAL       | 2:00      |                           |
 
-## Why you should know this or industry application (5 min)
-
-Explain why students should care to learn the material presented in this class.
 
 ## Learning Objectives (5 min)
 
@@ -45,33 +42,55 @@ Explain why students should care to learn the material presented in this class.
 
 ## Overview/TT I (20 min)
 
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
+
+### Model-View-ViewModel
+
+The MVVM pattern introduces a *fourth component* to MVC — the `View Model`.
+
+The idea behind MVVM pattern is that `Views` with business logic specific to themselves will be backed by a `View Model` that represents the data for the `View`.
+
+In MVVM, we implement *presentational business logic* - such as converting a Date into a date-formatted String - in the `ViewModel` *instead* of in the `View` or in the `Controller`.
+
+### Four Components
+
+
+### The ViewModel
+
+
+
+### Problem(s) Solved
+
+
+
+
 
 ## In Class Activity I (30 min)
 
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
 
-## Overview/TT II (optional) (20 min)
 
-## In Class Activity II (optional) (30 min)
+## Overview/TT II (20 min)
+
+
+### The View Model
+
+
+
+### Bindings
+
+
+
+## In Class Activity II (30 min)
+
+
 
 ## After Class
 
 1. Research these related concepts:
 
 - xxxx
+
+<!-- Binding and MVVM in ios -->
+
 
 2. **TODO:** - Continue working on your Course Project
 
