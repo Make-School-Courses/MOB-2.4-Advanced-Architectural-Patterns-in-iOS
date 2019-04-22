@@ -45,7 +45,7 @@
 
 ### Model-View-ViewModel
 
-The MVVM pattern introduces a *fourth component* to MVC — the `View Model`.
+The MVVM pattern introduces a *fourth* component to MVC — *the* __*View Model.*__
 
 The idea behind MVVM pattern is that each **View** *with business logic specific to itself* will be backed by a **View Model** that represents the data for the **View.**
 
