@@ -365,12 +365,10 @@ Whenever possible, it is recommended to implement a data binding mechanism (KVO,
 
 ## In Class Activity II (30 min)
 
+**Required Resources:**
+- Internet access to the News API Web Service API: https://newsapi.org
+- The [iOS-NewsApp_Starter](https://github.com/Make-School-Labs/iOS-NewsApp_Starter) app, which includes a pre-built table view ready to present the results of a data fetch.
 
-
-Required Resources:
-The starter app <insert starter app URL here>, which includes a pre-built table view ready to present the results of your data fetch code.
-Web Service API:
-https://newsapi.org
 
 < for reference >
 https://medium.com/@azamsharp/mvvm-in-ios-from-net-perspective-580eb7f4f129
