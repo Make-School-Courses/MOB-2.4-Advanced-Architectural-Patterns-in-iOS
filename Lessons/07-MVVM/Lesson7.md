@@ -324,16 +324,16 @@ View Models can be thought of as representations of the View Controller which ar
 
 It exposes an interface to the Controller for displaying information about the Model: it *hides* the Model from the Controller.
 
-**View Models* are:**
-- An abstraction of the view exposing public properties and commands.
-- Considered more Model than View, because View Models have a close relationship with the Models they consume.
-- Classes that take objects and transform them into different objects which can be passed into the view controller and displayed on the view.
-- Especially useful for converting computed properties - such as a Date or a Decimal - into a String or other data type that can be shown in a UILabel or UIView.
+**View Models** are:
+- an abstraction of the view exposing public properties and commands.
+- considered more Model than View, because View Models have a close relationship with the Models they consume.
+- classes that take objects and transform them into different objects which can be passed into the view controller and displayed on the view.
+- especially useful for converting computed properties - such as a Date or a Decimal - into a String or other data type that can be shown in a UILabel or UIView.
 
-**Recommended Practices**
-When dealing with the View Model, ensure it is *as dumb as possible:*
-- decouple it from the View Controller as much as possible.
-- avoid tight coupling between the View Model layer and web service or data access layers.
+**Recommended Practices** </br>
+When dealing with the View Model, ensure it is *as "dumb" as possible:*
+- Decouple it from the View Controller as much as possible.
+- Avoid tight coupling between the View Model layer and web service or data access layers.
 
 If only using a View Model with a single View, it can be good to put all configurations and set up code into the View Model. If you’re using more than one view, you might find that putting all the logic in one view model complicates and clutters it. In those cases, creating a separate View Model specific to each type of View might declutter and simplify the implementation (by further separation of concerns).
 
