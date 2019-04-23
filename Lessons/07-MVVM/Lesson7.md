@@ -71,12 +71,6 @@ Here is how the four major components of MVVM relate to each other (and to MVC):
 
 **View Model** &mdash; Transforms Model data into values that can be displayed on a View. Sits between the View Controller and Model. Can be a `class` or `struct`,  but it is *typically a class* so that references of the same instance can be passed around in code.
 
-### The ViewModel
-
-
-but also the Mediator, represented as the View Model.
-
-
 
 ### Problem(s) Solved
 
@@ -87,7 +81,7 @@ MVVM can be used to solve two related development issues:
 __*Example*__
 Data formatting is a common task. Imagine your app needs data (dates, currency) formatted differently for various user locales. The data is stored in the Model layer, and the View displays the formatted data  &mdash; but which component should be responsible for formatting the data?
 
-With MVVM, the View Model could handle data formatting, freeing up the View Controller to do its primary job: Responding the View lifecycle methods ( `viewDidLoad()`, and so on).
+Implementing MVVM, the View Model could handle data formatting, freeing up the View Controller to do its primary job: Responding the View lifecycle methods ( `viewDidLoad()`, and so on).
 
 2. **Tight Coupling Between MVC Components** &mdash; In the following code snippet, assume that each reusable cell will be populated with data from separate user records when the `configureWithUser(_:)` is executed:
 
@@ -99,9 +93,13 @@ userCell.configureWithUser(user)
 - In this design, the cell (the View) is configured directly with the Model violating MVC guidelines.
 - You could refactor it by configuring the cell from the Controller, which might follow MVC, but will increase the size of the Controller.
 
-And this problem might not be evident until you implement Unit Testing. Because the Controller is tightly coupled with the View, it becomes difficult to test due to the added complexity of mocking up views and their life cycles and keeping them in sync with the Model.
+Such a problem might not be evident until you implement Unit Testing. Because the Controller is tightly coupled with the View, it becomes difficult to test due to the added complexity of mocking up views and their life cycles and keeping them in sync with the Model.
 
-MVVM 
+With MVVM, the business logic required to supply presentation data to the View can be separated from View layout code. When the View Model knows nothing about View layout, testing each - separately or together - is much easier.
+
+
+
+### Benefits
 
 , while writing the view controller’s code in such a way, that your business logic is separated as much as possible from the view layout code.
 
@@ -109,14 +107,159 @@ MVVM
 
 Testability — the View Model knows nothing about the View, this allows us to test it easily. The View might be also tested, but since it is UIKit dependant you might want to skip it.
 
-
 <!-- TODO: Insert: example code (cell?) and/or diagram here? -->
 
 
+### Pitfalls
 
 
-## In Class Activity I (30 min)
 
+
+## In Class Activity I (15 min)
+
+### Individually
+
+<!-- TODO:
+1) Does this need a BEFORE example?
+- see original URL
+
+2) needs explanatory text/instructions:
+
+**TODO:** Diagram
+ -->
+
+
+
+```Swift
+
+import UIKit
+import PlaygroundSupport
+
+struct Person { // Model
+    let firstName: String
+    let lastName: String
+}
+
+protocol GreetingViewModelProtocol: class {
+    var greeting: String? { get }
+    var greetingDidChange: ((GreetingViewModelProtocol) -> ())? { get set }
+    init(person: Person)
+    func showGreeting()
+}
+
+class GreetingViewModel : GreetingViewModelProtocol {
+    let person: Person
+
+    var greeting: String? {
+        didSet {
+            self.greetingDidChange?(self)
+        }
+    }
+
+    var greetingDidChange: ((GreetingViewModelProtocol) -> ())?
+
+    required init(person: Person) {
+        self.person = person
+    }
+
+    func showGreeting() {
+        self.greeting = "Hello " + self.person.firstName + " " + self.person.lastName
+    }
+}
+
+class GreetingViewController : UIViewController {
+    var viewModel: GreetingViewModelProtocol? {
+        didSet {
+            self.viewModel?.greetingDidChange = { [unowned self] viewModel in
+                self.greetingLabel.text = viewModel.greeting
+            }
+        }
+    }
+    var showGreetingButton: UIButton!
+    var greetingLabel: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 480)
+
+        self.setupUIElements()
+        self.layout()
+    }
+
+    func setGreeting(greeting: String) {
+        self.greetingLabel.text = greeting
+    }
+
+    func setupUIElements() {
+        self.title = "Test"
+
+        self._setupButton()
+        self._setupLabel()
+    }
+
+    private func _setupButton() {
+        self.showGreetingButton = UIButton()
+        self.showGreetingButton.setTitle("Click me", for: .normal)
+        self.showGreetingButton.setTitle("You badass", for: .highlighted)
+        self.showGreetingButton.setTitleColor(UIColor.white, for: .normal)
+        self.showGreetingButton.setTitleColor(UIColor.red, for: .highlighted)
+        self.showGreetingButton.translatesAutoresizingMaskIntoConstraints = false
+        self.showGreetingButton.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchUpInside)
+        self.view.addSubview(self.showGreetingButton)
+    }
+
+    private func _setupLabel() {
+        self.greetingLabel = UILabel()
+        self.greetingLabel.textColor = UIColor.white
+        self.greetingLabel.textAlignment = .center
+        self.greetingLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        self.view.addSubview(self.greetingLabel)
+    }
+
+    func layout() {
+        self._layoutButton()
+        self._layoutLabel()
+
+        self.view.layoutIfNeeded()
+    }
+
+    private func _layoutButton() {
+        // layout button at the center of the screen
+        let cs1 = NSLayoutConstraint(item: self.showGreetingButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 1.0)
+        let cs2 = NSLayoutConstraint(item: self.showGreetingButton, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 1.0)
+
+        self.view.addConstraints([cs1, cs2])
+    }
+
+    private func _layoutLabel() {
+        // layout label at the center, bottom of the screen
+        let cs1 = NSLayoutConstraint(item: self.greetingLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 1.0)
+        let cs2 = NSLayoutConstraint(item: self.greetingLabel, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: -10)
+        let cs3 = NSLayoutConstraint(item: self.greetingLabel, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.70, constant: 0)
+
+        self.view.addConstraints([cs1, cs2, cs3])
+    }
+
+    @objc func didTapButton(sender: UIButton) {
+        guard let vm = self.viewModel else { return }
+
+        vm.showGreeting()
+    }
+}
+
+// Assembling of MVVM
+let model = Person(firstName: "Wasin", lastName: "Thonkaew")
+let view = GreetingViewController()
+let viewModel = GreetingViewModel(person: model)
+view.viewModel = viewModel
+
+PlaygroundPage.current.liveView = view.view
+
+```
+
+<!-- TODO: Attribute this to URL...with MIT License? -->
 
 
 ## Overview/TT II (20 min)
@@ -124,9 +267,17 @@ Testability — the View Model knows nothing about the View, this allows us 
 
 ### The View Model
 
+but also the Mediator, represented as the View Model.
+
+
+
 
 
 ### Bindings
+
+
+
+### When to Use
 
 
 
