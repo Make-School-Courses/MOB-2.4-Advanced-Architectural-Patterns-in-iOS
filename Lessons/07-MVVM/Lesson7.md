@@ -160,17 +160,11 @@ Noteworthy criticism of the pattern comes from MVVM creator, John Gossman, himse
 *Source: wikipedia*
 
 
-### When to Use
+### When to Use MVVM
 
+Use MVVM when you need to transform models into another representation for a View, especially in situations which require several model-to-view transformations.
 
-
-Use this pattern when you need to transform models into another representation for a view. For example, you can use a view model to transform a Date into a date-formatted String, a Decimal into a currency-formatted String, or many other useful transformations.
-
-
-especially in situations which require several model-to-view transformations.
-
-
-
+For example, you can use a View Model to configure a table cell, transform a Date into a date-formatted String, a Decimal into a currency-formatted String, or many other useful View transformations.
 
 ## In Class Activity I (15 min)
 
