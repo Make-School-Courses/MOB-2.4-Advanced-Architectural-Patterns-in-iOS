@@ -388,7 +388,10 @@ class SourceViewController: UITableViewController {
 ```
 
 
-### Part 2 - Refactor the table cell configuration
+### Part 2 -
+
+
+<!-- Refactor the table cell configuration
 
 You will need to refactor the table cell's configuration in 2 places:
 
@@ -423,7 +426,7 @@ override func awakeFromNib() {
 ```
 
 Part 3 -
-(see Part 3 in After Class assignments below)
+(see Part 3 in After Class assignments below) -->
 
 
 ## After Class
