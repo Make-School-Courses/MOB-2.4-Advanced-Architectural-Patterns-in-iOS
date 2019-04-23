@@ -16,12 +16,12 @@
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
 | 0:05        | 0:20      | Initial Exercise          |
-| 0:25        | 0:15      | Overview                  |
-
-| 0:20        | 0:45      | In Class Activity I       |
-| 1:05        | 0:10      | BREAK                     |
-| 1:15        | 0:45      | In Class Activity II      |
-| TOTAL       | 2:00      |                           |
+| 0:25        | 0:20      | Overview                  |
+| 0:45        | 0:15      | In Class Activity I       |
+| 1:00        | 0:10      | BREAK                     |
+| 1:10        | 0:20      | Overview                  |
+| 1:30        | 0:25      | In Class Activity II      |
+| TOTAL       | 1:55      |                           |
 
 
 ## Learning Objectives (5 min)
@@ -363,7 +363,7 @@ The implementation of a View Model is usually straightforward:
 Whenever possible, it is recommended to implement a data binding mechanism (KVO, Notifications) to automatically handle data state changes between the View and the View Model.
 
 
-## In Class Activity II (30 min)
+## In Class Activity II (25 min)
 
 **Required Resources:**
 - Internet access to the News API Web Service API: https://newsapi.org
