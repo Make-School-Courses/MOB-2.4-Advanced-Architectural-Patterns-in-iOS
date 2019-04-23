@@ -114,7 +114,8 @@ MVVM can be used to solve two related development issues:
 
 2. **Tight Coupling Between MVC Components** &mdash; In the following code snippet, assume that each reusable cell will be populated with data from separate user records when the `configureWithUser(_:)` is executed:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ```Swift
+
+```Swift
 var userCell = tableView.dequeueReusableCellWithIdentifier("identifier") as UserCell
 userCell.configureWithUser(user)
 ```
