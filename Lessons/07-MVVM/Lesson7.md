@@ -339,19 +339,17 @@ If only using a View Model with a single View, it can be good to put all configu
 
 
 ### Bindings
-The View Model provides a set of interfaces, each of which represents a UI component in the View. We can use a technique called __*“binding”*__ to *connect UI components to ViewModel interfaces.*
+The View Model provides a set of interfaces, each of which represents a UI component in the View. We can use a technique called __*“binding”*__<sup>1</sup> to *connect UI components to ViewModel interfaces.*
 
-Instead of the controller of the MVC pattern, MVVM<sup>1</sup> often employ a *binder,* which automates communication between the View and its bound properties in the View Model.
+Instead of the controller of the MVC pattern, MVVM<sup>2</sup> often employ a *binder,* which automates communication between the View and its bound properties in the View Model.
 
 Binding refers to the flow of information between Views and View Models; a View directly binds to properties on the View Model to send and receive updates.
 
-Most frameworks employ the Observer pattern as the underlying binding mechanism.
+Most frameworks employ the __*Observer pattern*__ as the underlying binding mechanism.
 
+<sup>1</sup> *UI data binding is a software design pattern to simplify development of GUI applications. It binds UI elements to an application domain model.*
 
-
-UI data binding is a software design pattern to simplify development of GUI applications. It binds UI elements to an application domain model.
-
-<sup>1</sup> *Model–view–viewmodel is also referred to as model–view–binder, especially in implementations not involving the .NET platform.*
+<sup>2</sup> *Model–view–viewmodel is also referred to as model–view–binder, especially in implementations not involving the .NET platform.*
 
 ### How to implement it?
 
