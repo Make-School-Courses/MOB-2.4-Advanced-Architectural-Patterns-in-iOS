@@ -376,6 +376,19 @@ https://medium.com/@azamsharp/mvvm-in-ios-from-net-perspective-580eb7f4f129
 
 ### Part 1 - Refactor the data source (array)
 
+**TODO:** Refactor the `sources` array below into an appropriate construct which implements MVVM.
+
+```Swift
+class SourceViewController: UITableViewController {
+
+    //TODO: Using MVVM, refactor this datasource array
+    var sources: [SourceItem] = []
+
+    ...
+
+    ```
+
+
 ### Part 2 - Refactor the table cell configuration
 
 You will need to refactor the table cell's configuration in 2 places:
