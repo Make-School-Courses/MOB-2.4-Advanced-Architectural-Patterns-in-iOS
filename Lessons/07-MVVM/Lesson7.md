@@ -341,42 +341,26 @@ If only using a View Model with a single View, it can be good to put all configu
 ### Bindings
 The View Model provides a set of interfaces, each of which represents a UI component in the View. We can use a technique called __*“binding”*__<sup>1</sup> to *connect UI components to ViewModel interfaces.*
 
+Binding refers to the flow of information between Views and View Models; a View directly binds to properties on the View Model to send and receive updates. If View Model properties change, those changes can be immediately and automatically reflected on the View.
+
 Instead of the controller of the MVC pattern, MVVM<sup>2</sup> often employ a *binder,* which automates communication between the View and its bound properties in the View Model.
 
-Binding refers to the flow of information between Views and View Models; a View directly binds to properties on the View Model to send and receive updates.
-
 Most frameworks employ the __*Observer pattern*__ as the underlying binding mechanism.
-
-<sup>1</sup> *UI data binding is a software design pattern to simplify development of GUI applications. It binds UI elements to an application domain model.*
-
-<sup>2</sup> *Model–view–viewmodel is also referred to as model–view–binder, especially in implementations not involving the .NET platform.*
-
-### How to implement it?
-
-
-The implementation of a view model is usually straightforward. All it does is translate data from the model to values the view(s) can display. The controller is no longer responsible for this ungrateful task.
-
-
-The view model of MVVM is a value converter,[1] meaning the view model is responsible for exposing (converting) the data objects from the model in such a way that objects are easily managed and presented. In this respect, the view model is more model than view, and handles most if not all of the view's display logic.[1] The view model may implement a mediator pattern, organizing access to the back-end logic around the set of use cases supported by the view.
-
-
-<!-- TODO: implement the Components
-implment or refactor to View Model
-add binding
--->
-
 
 
 ### MVVM in iOS
 
-MVVM has been gaining traction in the Cocoa community. It's commonly referred to as the Model-View- ViewModel pattern, MVVM for short.
-The origins of the MVVM pattern lead back to Microsoft and it continues to be used in modern Windows development.
+MVVM has been gaining traction in the Cocoa and Cocoa Touch communities because of its potential to resolve the Massive-View-Controller problem and to facilitate Unit Testing of presentation logic.
 
-So what is the View Model in the iOS reality? It is basically UIKit independent representation of your View and its state.
+And, although bindings are built in to macOS frameworks, we do not have built-in bindings in iOS. Though less convenient to use than built-in bindings, we can use Key-Value-Observing and Notifications to implement bindings between View properties and View Model behaviors in iOS.
 
 
-Bindings come out of box for the OS X development, but we don’t have them in the iOS toolbox. Of course we have the KVO and notifications, but they aren’t as convenient as bindings.
+### How to implement it?
+The implementation of a View Model is usually straightforward:
+- Identify opportunities to free up View Controllers from data formatting or other presentation tasks
+- Create a View Model to handle those tasks
 
+Whenever possible, it is recommended to implement data binding to automatically handle data state changes between the View and View Model.
 
 
 ## In Class Activity II (30 min)
@@ -403,3 +387,7 @@ Bindings come out of box for the OS X development, but we don’t have them in t
 ## Additional Resources
 
 1. Links to additional readings and videos
+
+<sup>1</sup> *UI data binding is a software design pattern to simplify development of GUI applications. It binds UI elements to an application domain model.*
+
+<sup>2</sup> *Model–view–viewmodel is also referred to as model–view–binder, especially in implementations not involving the .NET platform.*
