@@ -96,7 +96,7 @@ Here is how the four major components of MVVM relate to each other (and to MVC):
 **View Model** &mdash; Transforms Model data into values that can be displayed on a View. Sits between the View Controller and Model. Can be a `class` or `struct`,  but it is *typically a class* so that references of the same instance can be passed around in code.
 
 
-### Problem(s) Solved
+### Problem(s) Addressed
 
 MVVM can be used to solve two related development issues:
 
@@ -114,17 +114,24 @@ MVVM can be used to solve two related development issues:
 
 2. **Tight Coupling Between MVC Components** &mdash; In the following code snippet, assume that each reusable cell will be populated with data from separate user records when the `configureWithUser(_:)` is executed:
 
-```Swift
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ```Swift
 var userCell = tableView.dequeueReusableCellWithIdentifier("identifier") as UserCell
 userCell.configureWithUser(user)
 ```
 
-- In this design, the cell (the View) is configured directly with the Model violating MVC guidelines.
-- You could refactor it by configuring the cell from the Controller, which might follow MVC, but will increase the size of the Controller.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - In this design, the cell (the View) is configured directly with the Model violating MVC guidelines. </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - You could refactor it by configuring the cell from the Controller, which might follow MVC, but will </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; increase the size of the Controller.
 
-Such a problem might not be evident until you implement Unit Testing. Because the Controller is tightly coupled with the View, it becomes difficult to test due to the added complexity of mocking up views and their life cycles and keeping them in sync with the Model.
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Such a problem might not be evident until you implement Unit Testing. Because the *Controller is* </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *tightly coupled with the View,* it becomes *difficult to test* due to the added complexity of </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mocking up views and their life cycles and keeping them in sync with the Model.
 
-With MVVM, the business logic required to supply presentation data to the View can be separated from View layout code. When the View Model knows nothing about View layout, testing each - separately or together - is much easier.
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With MVVM, the business logic required to supply presentation data to the View can be separated from</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View layout code. When the View Model knows nothing about View layout, testing each - separately or together </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - is much easier.
 
 
 
