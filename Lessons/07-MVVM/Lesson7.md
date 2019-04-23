@@ -367,6 +367,54 @@ Whenever possible, it is recommended to implement a data binding mechanism (KVO,
 
 
 
+Required Resources:
+The starter app <insert starter app URL here>, which includes a pre-built table view ready to present the results of your data fetch code.
+Web Service API:
+https://newsapi.org
+
+
+### Part 1 - Refactor the data source (array)
+
+### Part 2 - refactor the table cell configuration
+
+```Swift
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+     let cell = tableView.dequeueReusableCell(withIdentifier: "newsFeedCell", for: indexPath) as! NewsFeedCell
+
+     cell.sourceItem = sources[indexPath.row]
+     return cell
+ }
+```
+
+
+```Swift
+class NewsFeedCell: UITableViewCell {
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
+
+override func awakeFromNib() {
+    super.awakeFromNib()
+
+    nameLabel.adjustsFontForContentSizeCategory = true
+    overviewLabel.adjustsFontForContentSizeCategory = true
+    }
+
+    var sourceItem: SourceItem? {
+        didSet {
+            guard let sourceItem = sourceItem else { return }
+            nameLabel.text = sourceItem.name
+            overviewLabel.text = sourceItem.overview
+        }
+    }
+}
+```
+
+Part 3 -
+(see Part 3 in After Class assignments below)
+
+
 ## After Class
 
 1. Research these related concepts:
