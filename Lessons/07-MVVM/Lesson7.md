@@ -369,9 +369,9 @@ Whenever possible, it is recommended to implement a data binding mechanism (KVO,
 - Internet access to the News API Web Service API: https://newsapi.org
 - The [iOS-NewsApp_Starter](https://github.com/Make-School-Labs/iOS-NewsApp_Starter) app, which includes a pre-built table view ready to present the results of a data fetch.
 
-
+<!--
 < for reference >
-https://medium.com/@azamsharp/mvvm-in-ios-from-net-perspective-580eb7f4f129
+https://medium.com/@azamsharp/mvvm-in-ios-from-net-perspective-580eb7f4f129 -->
 
 
 ### Part 1 - Refactor the data source (array)
@@ -385,8 +385,7 @@ class SourceViewController: UITableViewController {
     var sources: [SourceItem] = []
 
     ...
-
-    ```
+```
 
 
 ### Part 2 - Refactor the table cell configuration
