@@ -152,7 +152,10 @@ With great power comes great responsibility...
 
 The cost of MVVM can be a bit high as sometimes it is difficult to figure one’s way around binding and other technicalities of MVVM. If you do something wrong, you might spend a lot of time debugging your app.
 
-One criticism of the pattern comes from MVVM creator John Gossman himself, who points out that the *overhead in implementing MVVM is "overkill" for simple UI operations.* He says that *for larger applications, generalizing the ViewModel becomes more difficult.* Moreover, he illustrates that *data binding in very large applications* can result in *considerable memory consumption.*
+Criticism of the pattern comes from MVVM creator, John Gossman, himself:
+- the *overhead in implementing MVVM is "overkill" for simple UI operations.*
+- He says that *for larger applications, generalizing the ViewModel becomes more difficult.*
+- *data binding in very large applications* can result in *considerable memory consumption.*
 
 *Source: wikipedia*
 
