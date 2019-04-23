@@ -360,7 +360,7 @@ The implementation of a View Model is usually straightforward:
 - Identify opportunities to free up View Controllers from data formatting or other presentation tasks
 - Create a View Model to handle those tasks
 
-Whenever possible, it is recommended to implement data binding to automatically handle data state changes between the View and View Model.
+Whenever possible, it is recommended to implement a data binding mechanism (KVO, Notifications) to automatically handle data state changes between the View and the View Model.
 
 
 ## In Class Activity II (30 min)
