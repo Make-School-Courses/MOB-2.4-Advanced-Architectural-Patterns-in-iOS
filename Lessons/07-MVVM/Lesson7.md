@@ -5,9 +5,9 @@
 - the URL is https://quizlet.com/_6hmrxi
 
 2) For Activity 1:
-- xxxx
+- is just diagraming on boards
 3) for Activity 2:
-- xxx
+- use starter app listed in exercise
 -->
 
 ## Minute-by-Minute
@@ -439,9 +439,19 @@ Part 3 -
 
 1. Research these related concepts:
 
+- Event-driven programming
+- UI logic
+ business logic
+ code-behind
+ Data binding
+- Data binding and MVVM in ios
+two-way binding
+one-way binding
 - xxxx
 
-<!-- Binding and MVVM in ios -->
+
+
+<!--  -->
 
 
 2. **TODO:** - Continue working on your Course Project
@@ -454,7 +464,11 @@ Part 3 -
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. [Model–view–viewmodel - wikipedia](https://en.wikipedia.org/wiki/Model–view–viewmodel)
+2. [Presentation Model (PM) and Martin Fowler](https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)
+3. [UI data binding](https://en.wikipedia.org/wiki/UI_data_binding)
+4. [The Problems with MVVM on iOS](http://www.danielhall.io/the-problems-with-mvvm-on-ios)
+
 
 <sup>1</sup> *UI data binding is a software design pattern to simplify development of GUI applications. It binds UI elements to an application domain model.*
 
