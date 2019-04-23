@@ -106,10 +106,10 @@ MVVM can be used to solve two related development issues:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data formatting is a common task. Imagine your app needs data &mdash; dates, currency, etc. &mdash; formatted </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *differently* for various user locales. The data is stored in the Model layer, and the View displays the </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; formatted data &mdash; but which component should be responsible for formatting the data?
-
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Implementing MVVM, the View Model could handle data formatting, freeing up the View Controller </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to do its primary job: Responding to `viewDidLoad()` and other View lifecycle events, handling View callbacks through IBActions, and so on.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to do its primary job: Responding to `viewDidLoad()` and other View lifecycle events, handling </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View callbacks through IBActions, and so on.
 
 2. **Tight Coupling Between MVC Components** &mdash; In the following code snippet, assume that each reusable cell will be populated with data from separate user records when the `configureWithUser(_:)` is executed:
 
