@@ -80,6 +80,20 @@ but also the Mediator, represented as the View Model.
 
 ### Problem(s) Solved
 
+MVVM can be used to solve two general development challenges:
+
+1. **"MVC: Massive View Controller"** &mdash; In MVC, where do you put functionality that does not belong neatly in either the View or the Model? For expediency, iOS developers are often tempted to use View Controllers as a "catch-all" component for such code, which results in "bloated" View Controllers.  
+
+__*Example*__
+Data formatting is a common task. Imagine your app needs data (dates, currency) formatted differently for various user locales. The data is stored in the Model layer, and the View displays the formatted data  &mdash; but which component should be responsible for formatting the data?
+
+With MVVM, the View Model could handle data formatting, freeing up the View Controller to do its primary job: Responding the View lifecycle methods ( `viewDidLoad()`, and so on).
+
+2. Tight Coupling of
+
+This leads to what developers jokingly refer to as “MVC: Massive View Controller".
+
+<!-- TODO: Insert: example code (cell?) and/or diagram here? -->
 
 
 
