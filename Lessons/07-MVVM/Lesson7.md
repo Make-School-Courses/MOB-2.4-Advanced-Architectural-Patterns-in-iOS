@@ -361,17 +361,41 @@ Your view model should be as dumb as possible. It should not contain networking 
 
 Networking and data access operations should be isolated from the view models and should be part of separate classes or even separate framework/library. Depending on your application, networking and data access operations can be passed into the view controller constructor as dependency injections.
 
+
+That is, the ViewModel provides a set of interfaces, each of which represents a UI component in the View. We use a technique called “binding” to connect UI components to ViewModel interfaces. So, in MVVM, we don’t touch the View directly, we deal with business logic in the ViewModel and thus the View changes itself accordingly. We write presentational things such as converting Date to String in the ViewModel instead of the View.
+
+
+
+Because view models have a close relationship with the models they consume, they're considered more model than view.
+
+
 ### Bindings
 
 
+<sup>1</sup> *note:
+Model–view–viewmodel is also referred to as model–view–binder, especially in implementations not involving the .NET platform. ZK (a web application framework written in Java) and KnockoutJS (a JavaScript library) use model–view–binder*
+
+
 ### How to implement it?
+
+
+The implementation of a view model is usually straightforward. All it does is translate data from the model to values the view(s) can display. The controller is no longer responsible for this ungrateful task.
+
 
 The view model of MVVM is a value converter,[1] meaning the view model is responsible for exposing (converting) the data objects from the model in such a way that objects are easily managed and presented. In this respect, the view model is more model than view, and handles most if not all of the view's display logic.[1] The view model may implement a mediator pattern, organizing access to the back-end logic around the set of use cases supported by the view.
 
 
 <!-- TODO: implement the Components
-implment or refactor to View Model -->
+implment or refactor to View Model
+add binding
+-->
 
+
+
+### MVVM in iOS
+
+MVVM has been gaining traction in the Cocoa community. It's commonly referred to as the Model-View- ViewModel pattern, MVVM for short.
+The origins of the MVVM pattern lead back to Microsoft and it continues to be used in modern Windows development.
 
 
 ## In Class Activity II (30 min)
