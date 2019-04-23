@@ -138,8 +138,8 @@ MVVM can be used to solve two related development issues:
 
 ### Benefits
 
-1. __*Separation of Concerns*__ &mdash; MVVM can create a much clearer separation of concerns between Model, View and Controller providing several advantages:
-- It allows developers to break an app into smaller components, which facilitates easier debugging, testing, and code readability.
+1. __*Separation of Concerns*__ &mdash; MVVM can create a much clearer separation of concerns between Model, View and Controller providing several advantages: </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- It allows developers to break an app into smaller components, which facilitates easier debugging, testing, and code readability.
 - Due to the decoupling of UI and business logic, the MVVM design pattern results in more flexible code. 
 - MVVM can go a long way to solve the "Massive View Controller" problem by decreasing the code size of View Controllers by delegating some of a VC's tasks to a View Model.
 
