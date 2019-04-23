@@ -318,43 +318,40 @@ https://gist.github.com/BohdanOrlov/bdb64ae4ca83a2fca3af
 
 ### View Model - A Closer Look
 
+Note that using a **View Model** is actually an example of the __*Mediator pattern.*__
 
-but also the Mediator, represented as the View Model.
+View Models can be thought of as representations of the View Controller which are designed to handle a specific subset of functionality that a VC might otherwise handle (though *not designed to handle* `viewDidLoad()` and other lifecycle functions handled by VCs).
+
+It exposes an interface to the Controller for displaying information about the Model: it *hides* the Model from the Controller.
+
+**View Models* are:**
+- An abstraction of the view exposing public properties and commands.
+- Considered more Model than View, because View Models have a close relationship with the Models they consume.
+- Classes that take objects and transform them into different objects which can be passed into the view controller and displayed on the view.
+- Especially useful for converting computed properties - such as a Date or a Decimal - into a String or other data type that can be shown in a UILabel or UIView.
+
+**Recommended Practices**
+When dealing with the View Model, ensure it is *as dumb as possible:*
+- decouple it from the View Controller as much as possible.
+- avoid tight coupling between the View Model layer and web service or data access layers.
+
+If only using a View Model with a single View, it can be good to put all configurations and set up code into the View Model. If you’re using more than one view, you might find that putting all the logic in one view model complicates and clutters it. In those cases, creating a separate View Model specific to each type of View might declutter and simplify the implementation (by further separation of concerns).
 
 
-View models are classes that take objects and transform them into different objects, which can be passed into the view controller and displayed on the view. They’re especially useful for converting computed properties such as Date or Decimal into a String or something else that actually can be shown in a UILabel or UIView.
-a view model abstracts or hides the model from the controller. The view model exposes an interface to the controller for displaying information about the model. The controller does not have direct access to the model.
-The view model exposes an interface to the controller for displaying information about the model. The controller does not have direct access to the model.
+### Bindings
+the ViewModel provides a set of interfaces, each of which represents a UI component in the View. We use a technique called “binding” to connect UI components to ViewModel interfaces.
 
-If you’re only using the view model with one view, it can be good to put all the configurations into the view model. However, if you’re using more than one view, you might find that putting all the logic in the view model clutters it. Having the configure code separated into each view may be simpler.
-
-
-View model
-The view model is an abstraction of the view exposing public properties and commands. Instead of the controller of the MVC pattern, or the presenter of the MVP pattern, MVVM has a binder, which automates communication between the view and its bound properties in the view model. The view model has been described as a state of the data in the model.[7]
+Instead of the controller of the MVC pattern, or the presenter of the MVP pattern, MVVM has a binder, which automates communication between the view and its bound properties in the view model. The view model has been described as a state of the data in the model.[7]
 The main difference between the view model and the Presenter in the MVP pattern, is that the presenter has a reference to a view whereas the view model does not. Instead, a view directly binds to properties on the view model to send and receive updates. To function efficiently, this requires a binding technology or generating boilerplate code to do the binding.[6]
 
-View Model: The view model is basically a representation of the view controller. If the view controller has a label, the view model should have a property to supply it with the text in string form. It triggers all calls, and sends and receives data. When dealing with the view model, you should ensure it is as dumb as possible. This means that you should decouple it from the view controller as much as possible. We should ensure that we do not inject instances of the view controller to the view model. The view model should be completely independent of all the view controller.
-The View Model can be thought of as a representation of the view controller. (VC’s specific functionality, designed for specific functionality — not ViewDid Load, etc.)
-
-
-So what is the View Model in the iOS reality? It is basically UIKit independent representation of your View and its state.
 
 The View Model invokes changes in the Model and updates itself with the updated Model, and since we have a binding between the View and the View Model, the first is updated accordingly.
 
 
-Your view model should be as dumb as possible. It should not contain networking code or data access code. When you start performing networking operations inside view model you are adding tight coupling between the view model layer and the web services layer.
+That is,  So, in MVVM, we don’t touch the View directly, we deal with business logic in the ViewModel and thus the View changes itself accordingly. We write presentational things such as converting Date to String in the ViewModel instead of the View.
 
-Networking and data access operations should be isolated from the view models and should be part of separate classes or even separate framework/library. Depending on your application, networking and data access operations can be passed into the view controller constructor as dependency injections.
+UI data binding is a software design pattern to simplify development of GUI applications. UI data binding binds UI elements to an application domain model. Most frameworks employ the Observer pattern as the underlying binding mechanism. To work efficiently, UI data binding has to address input validation and data type mapping.
 
-
-That is, the ViewModel provides a set of interfaces, each of which represents a UI component in the View. We use a technique called “binding” to connect UI components to ViewModel interfaces. So, in MVVM, we don’t touch the View directly, we deal with business logic in the ViewModel and thus the View changes itself accordingly. We write presentational things such as converting Date to String in the ViewModel instead of the View.
-
-
-
-Because view models have a close relationship with the models they consume, they're considered more model than view.
-
-
-### Bindings
 
 
 <sup>1</sup> *note:
@@ -381,6 +378,8 @@ add binding
 
 MVVM has been gaining traction in the Cocoa community. It's commonly referred to as the Model-View- ViewModel pattern, MVVM for short.
 The origins of the MVVM pattern lead back to Microsoft and it continues to be used in modern Windows development.
+
+So what is the View Model in the iOS reality? It is basically UIKit independent representation of your View and its state.
 
 
 ## In Class Activity II (30 min)
