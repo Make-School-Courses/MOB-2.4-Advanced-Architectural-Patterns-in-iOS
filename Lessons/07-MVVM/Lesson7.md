@@ -439,19 +439,14 @@ Part 3 -
 
 1. Research these related concepts:
 
-- Event-driven programming
-- UI logic
- business logic
- code-behind
- Data binding
-- Data binding and MVVM in ios
-two-way binding
-one-way binding
-- xxxx
-
-
-
-<!--  -->
+- Event-Driven Programming
+- UI Logic
+- Business Logic
+- Code-Behind
+- Data binding
+- Data binding and MVVM in iOS
+&nbsp;&nbsp;&nbsp;&nbsp; - two-way binding
+&nbsp;&nbsp;&nbsp;&nbsp; - one-way binding
 
 
 2. **TODO:** - Continue working on your Course Project
