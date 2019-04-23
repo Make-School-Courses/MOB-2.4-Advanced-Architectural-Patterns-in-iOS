@@ -387,8 +387,14 @@ class SourceViewController: UITableViewController {
     ...
 ```
 
+### Part 2 - Respond to Data changes
 
-### Part 2 -
+**TODO:** Create a new function which will **add** a new `SourceItem` to the datasource (array) whenever the user clicks on any cell in the table view.
+- For the  `name` and `overview` properties, you can hard-code any text you would like; just be sure that it is something simple that you can recognize later.
+- Set an observer<sup>3</sup> on the datasource such that, whenever the array changes, data for the table view is reloaded.
+
+
+<sup>3</sup> *Use either KVO or Notification.*
 
 
 <!-- Refactor the table cell configuration
