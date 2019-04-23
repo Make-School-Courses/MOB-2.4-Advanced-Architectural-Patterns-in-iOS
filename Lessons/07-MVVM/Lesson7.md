@@ -54,6 +54,18 @@ In MVVM, we implement *presentational* business logic - such as converting a Dat
 <!-- TODO: Insert: example code (cell?) and/or diagram here? -->
 
 
+### A Brief History
+
+MVVM was invented by Microsoft architects Ken Cooper and Ted Peters specifically to simplify event-driven programming of user interfaces.
+
+MVVM was designed to make use of data binding functions in WPF (Windows Presentation Foundation) to better facilitate the separation of view layer development from the rest of the pattern, by removing virtually all GUI code ("code-behind") from the view layer.
+
+*Source: wikipedia*
+
+<!-- TODO: add more detail from notes here -->
+
+
+
 ### Four Components of MVVM
 
 MVVM is very similar to MVC and compliments it exceptionally well. It can be seen as an extension of MVC's primary intent: separating the View from the Model and utilizing the Controller as a central "manager" between View and Model.
@@ -100,6 +112,26 @@ With MVVM, the business logic required to supply presentation data to the View c
 
 
 ### Benefits
+
+
+MVVM design allows the developers break the app into smaller components. 
+
+Due to the decoupling of UI and business logic, the MVVM design pattern results in more flexible and easier-to-read classes. 
+
+MVVM does make debugging, testing, and reading code easier.
+
+
+thinner view controllers and a clear separation of concerns between model, view, and controller.
+…slim down the profile view controller by delegating some of the view controller's tasks to a view model.
+
+
+MVVM helps slim down view controllers, making them easier to work with. Thus combatting the "Massive View Controller" problem.
+
+
+MVVM makes it easy to test the logic behind the views.
+Another benefit of moving your ViewController’s business logic into your ViewModel is that the viewModel it then becomes a lot easier to create unit tests for those components of your application.
+
+
 
 , while writing the view controller’s code in such a way, that your business logic is separated as much as possible from the view layout code.
 
@@ -250,7 +282,7 @@ class GreetingViewController : UIViewController {
 }
 
 // Assembling of MVVM
-let model = Person(firstName: "Wasin", lastName: "Thonkaew")
+let model = Person(firstName: "Nikola", lastName: "Tesla")
 let view = GreetingViewController()
 let viewModel = GreetingViewModel(person: model)
 view.viewModel = viewModel
@@ -267,7 +299,24 @@ PlaygroundPage.current.liveView = view.view
 
 ### The View Model
 
+
 but also the Mediator, represented as the View Model.
+
+
+View models are classes that take objects and transform them into different objects, which can be passed into the view controller and displayed on the view. They’re especially useful for converting computed properties such as Date or Decimal into a String or something else that actually can be shown in a UILabel or UIView.
+a view model abstracts or hides the model from the controller. The view model exposes an interface to the controller for displaying information about the model. The controller does not have direct access to the model.
+The view model exposes an interface to the controller for displaying information about the model. The controller does not have direct access to the model.
+
+If you’re only using the view model with one view, it can be good to put all the configurations into the view model. However, if you’re using more than one view, you might find that putting all the logic in the view model clutters it. Having the configure code separated into each view may be simpler.
+
+
+View model
+The view model is an abstraction of the view exposing public properties and commands. Instead of the controller of the MVC pattern, or the presenter of the MVP pattern, MVVM has a binder, which automates communication between the view and its bound properties in the view model. The view model has been described as a state of the data in the model.[7]
+The main difference between the view model and the Presenter in the MVP pattern, is that the presenter has a reference to a view whereas the view model does not. Instead, a view directly binds to properties on the view model to send and receive updates. To function efficiently, this requires a binding technology or generating boilerplate code to do the binding.[6]
+
+View Model: The view model is basically a representation of the view controller. If the view controller has a label, the view model should have a property to supply it with the text in string form. It triggers all calls, and sends and receives data. When dealing with the view model, you should ensure it is as dumb as possible. This means that you should decouple it from the view controller as much as possible. We should ensure that we do not inject instances of the view controller to the view model. The view model should be completely independent of all the view controller.
+The View Model can be thought of as a representation of the view controller. (VC’s specific functionality, designed for specific functionality — not ViewDid Load, etc.)
+
 
 
 
