@@ -146,21 +146,15 @@ MVVM can be used to solve two related development issues:
 2. __*Testability*__ &mdash; MVVM makes it easy to test the logic behind the views. By moving a ViewController’s business logic into a ViewModel it becomes much easier to create unit tests of the business logic and the View layout code.
 
 
-### Pitfalls
+### Pitfalls of MVVM
 
+With great power comes great responsibility...
 
-A criticism of the pattern comes from MVVM creator John Gossman himself,[12] who points out that the overhead in implementing MVVM is "overkill" for simple UI operations. He says that for larger applications, generalizing the ViewModel becomes more difficult. Moreover, he illustrates that data binding in very large applications can result in considerable memory consumption.
+The cost of MVVM can be a bit high as sometimes it is difficult to figure one’s way around binding and other technicalities of MVVM. If you do something wrong, you might spend a lot of time debugging your app.
 
-However, the cost of MVVM can be a bit high as sometimes it is difficult to figure one’s way around binding and other technicalities of MVVM.
+One criticism of the pattern comes from MVVM creator John Gossman himself, who points out that the *overhead in implementing MVVM is "overkill" for simple UI operations.* He says that *for larger applications, generalizing the ViewModel becomes more difficult.* Moreover, he illustrates that *data binding in very large applications* can result in *considerable memory consumption.*
 
-There is one bitter truth about reactive frameworks: the great power comes with the great responsibility. It’s really easy to mess up things when you go reactive. In other words, if you do something wrong, you might spend a lot of time debugging the app, so just take a look at this call stack.
-
-MVVM works well if your app requires many model-to-view transformations. However, not every object will neatly fit into the categories of model, view or view model. Instead, you should use MVVM in combination with other design patterns.
-Furthermore, MVVM may not be very useful when you first create your application. MVC may be a better starting point.
-
-It’s
-okay to introduce MVVM later in an app’s lifetime when you really need it.
-
+*Source: wikipedia*
 
 
 ### When to Use
@@ -171,6 +165,7 @@ Use this pattern when you need to transform models into another representation f
 
 
 especially in situations which require several model-to-view transformations.
+
 
 
 
