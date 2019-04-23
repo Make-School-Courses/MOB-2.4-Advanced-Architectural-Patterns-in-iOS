@@ -115,7 +115,7 @@ MVVM can be used to solve two related development issues:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to do its primary job: Responding to `viewDidLoad()` and other View lifecycle events, handling </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View callbacks through IBActions, and so on.
 
-2. **Tight Coupling Between MVC Components** &mdash; In the following code snippet, assume that each reusable cell will be populated with data from separate user records when the `configureWithUser(_:)` is executed:
+2. **Tight Coupling Between MVC Components** &mdash; In the following code snippet, assume that each reusable cell will be populated with data from separate user records when the `configureWithUser(_:)` function is executed:
 
 
 ```Swift
