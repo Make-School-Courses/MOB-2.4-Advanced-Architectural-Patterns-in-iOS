@@ -372,6 +372,9 @@ The starter app <insert starter app URL here>, which includes a pre-built table 
 Web Service API:
 https://newsapi.org
 
+< for reference >
+https://medium.com/@azamsharp/mvvm-in-ios-from-net-perspective-580eb7f4f129
+
 
 ### Part 1 - Refactor the data source (array)
 
@@ -379,9 +382,7 @@ https://newsapi.org
 
 ```Swift
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-     let cell = tableView.dequeueReusableCell(withIdentifier: "newsFeedCell", for: indexPath) as! NewsFeedCell
-
+  ...
      cell.sourceItem = sources[indexPath.row]
      return cell
  }
@@ -389,18 +390,9 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 
 ```Swift
-class NewsFeedCell: UITableViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var overviewLabel: UILabel!
 
 override func awakeFromNib() {
-    super.awakeFromNib()
-
-    nameLabel.adjustsFontForContentSizeCategory = true
-    overviewLabel.adjustsFontForContentSizeCategory = true
-    }
-
+  ...
     var sourceItem: SourceItem? {
         didSet {
             guard let sourceItem = sourceItem else { return }
@@ -408,7 +400,6 @@ override func awakeFromNib() {
             overviewLabel.text = sourceItem.overview
         }
     }
-}
 ```
 
 Part 3 -
