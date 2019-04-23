@@ -136,38 +136,14 @@ MVVM can be used to solve two related development issues:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the View Model knows nothing about View layout, testing each - separately or together - is much easier.
 
 
-
 ### Benefits
 
+1. __*Separation of Concerns*__ &mdash; MVVM can create a much clearer separation of concerns between Model, View and Controller providing several advantages:
+- It allows developers to break an app into smaller components, which facilitates easier debugging, testing, and code readability.
+- Due to the decoupling of UI and business logic, the MVVM design pattern results in more flexible code. 
+- MVVM can go a long way to solve the "Massive View Controller" problem by decreasing the code size of View Controllers by delegating some of a VC's tasks to a View Model.
 
-MVVM design allows the developers break the app into smaller components. 
-
-Due to the decoupling of UI and business logic, the MVVM design pattern results in more flexible and easier-to-read classes. 
-
-MVVM does make debugging, testing, and reading code easier.
-
-
-thinner view controllers and a clear separation of concerns between model, view, and controller.
-…slim down the profile view controller by delegating some of the view controller's tasks to a view model.
-
-
-MVVM helps slim down view controllers, making them easier to work with. Thus combatting the "Massive View Controller" problem.
-
-MVVM is a great way to slim down massive view controllers that require several model-to-view transformations.
-
-
-MVVM makes it easy to test the logic behind the views.
-Another benefit of moving your ViewController’s business logic into your ViewModel is that the viewModel it then becomes a lot easier to create unit tests for those components of your application.
-
-
-
-, while writing the view controller’s code in such a way, that your business logic is separated as much as possible from the view layout code.
-
-
-
-Testability — the View Model knows nothing about the View, this allows us to test it easily. The View might be also tested, but since it is UIKit dependant you might want to skip it.
-
-<!-- TODO: Insert: example code (cell?) and/or diagram here? -->
+2. __*Testability*__ &mdash; MVVM makes it easy to test the logic behind the views. By moving a ViewController’s business logic into a ViewModel it becomes much easier to create unit tests of the business logic and the View layout code.
 
 
 ### Pitfalls
@@ -192,6 +168,9 @@ okay to introduce MVVM later in an app’s lifetime when you really need it.
 
 
 Use this pattern when you need to transform models into another representation for a view. For example, you can use a view model to transform a Date into a date-formatted String, a Decimal into a currency-formatted String, or many other useful transformations.
+
+
+especially in situations which require several model-to-view transformations.
 
 
 
