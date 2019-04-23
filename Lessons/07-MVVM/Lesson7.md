@@ -82,25 +82,27 @@ MVVM was designed to make use of data binding functions in WPF (Windows Presenta
 
 MVVM is very similar to MVC and compliments it exceptionally well. It can be seen as an extension of MVC's primary intent: separating the View from the Model and utilizing the Controller as a central "manager" between View and Model.
 
-MVVM takes the principle of *Separation of Concerns* one step further &mdash; it adds a special layer between the View and the Model (called the ViewModel or View Model) which allows Controllers to delegate data presentation responsibilities to the View Model.
+MVVM takes the principle of *Separation of Concerns* one step further &mdash; it adds a __*special layer*__ between the View and the Model (called the `ViewModel` or `View Model`) which __*allows Controllers to delegate data presentation responsibilities to the View Model.*__
 
 Here is how the four major components of MVVM relate to each other (and to MVC):
 
-**View** &mdash; Responsible for displaying visual elements and controls on the screen. Subclasses of `UIView`, typically. </br>
+**View** &mdash; Responsible for displaying visual elements and controls on the screen. Typically, subclasses of `UIView`. </br>
 (Same as in MVC)
 
 **Model** &mdash; Objects that hold app data; typically, `structs` or simple `classes`. (Same as in MVC)
 
-**View Controller** &mdash; In MVVM, VCs still set up UIView objects, but they do not interact with the model. Instead, the VC uses the View Model as a *mediator* and asks for what it needs in a format that will be ready for presentation. In MVVM, Controllers should have absolutely *no business logic.*
+**View Controller** &mdash; In MVVM, VCs still set up UIView objects, but *they do not interact with the model.* Instead, the VC uses the View Model as a *mediator* and asks for what it needs in a format that will be ready for presentation. In MVVM, Controllers should have absolutely no business logic.
 
-**View Model** &mdash; Transforms Model data into values that can be displayed on a View. Sits between the View Controller and Model. Can be a `class` or `struct`,  but it is *typically a class* so that references of the same instance can be passed around in code.
+**View Model** &mdash; Transforms Model data into values that can be displayed on a View. Sits between the View Controller and Model. Can be a `class` or a `struct`,  but it is *typically a class* so that references of the same instance can be passed around in code.
 
 
 ### Problem(s) Addressed
 
 MVVM can be used to solve two related development issues:
 
-1. **"MVC: Massive View Controller"** &mdash; In MVC, where do you put functionality that does not belong neatly in either the View or the Model? For expediency, iOS developers are often tempted to use View Controllers as a "catch-all" component for such code, which results in "bloated" View Controllers.
+1. **"MVC: Massive View Controller"** &mdash; In MVC, where do you put functionality that does not belong neatly in either the View or the Model?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For expediency, iOS developers are too often tempted to use View Controllers as a "catch-all" component for such code, which results in bloated View Controllers.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*Example*__ </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data formatting is a common task. Imagine your app needs data &mdash; dates, currency, etc. &mdash; *formatted* </br>
