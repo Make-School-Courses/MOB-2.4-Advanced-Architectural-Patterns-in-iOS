@@ -335,28 +335,23 @@ When dealing with the View Model, ensure it is *as "dumb" as possible:*
 - Decouple it from the View Controller as much as possible.
 - Avoid tight coupling between the View Model layer and web service or data access layers.
 
-If only using a View Model with a single View, it can be good to put all configurations and set up code into the View Model. If you’re using more than one view, you might find that putting all the logic in one view model complicates and clutters it. In those cases, creating a separate View Model specific to each type of View might declutter and simplify the implementation (by further separation of concerns).
+If only using a View Model with a single View, it can be good to put all configurations and set up code into the View Model. If you’re using __*more than one view,*__ you might find that putting all the logic in one view model complicates and clutters it. In those cases, creating __*a separate View Model*__ specific to __*each type of View*__ might declutter and simplify the implementation (by further separating concerns).
 
 
 ### Bindings
-the ViewModel provides a set of interfaces, each of which represents a UI component in the View. We use a technique called “binding” to connect UI components to ViewModel interfaces.
+The View Model provides a set of interfaces, each of which represents a UI component in the View. We can use a technique called __*“binding”*__ to *connect UI components to ViewModel interfaces.*
 
-Instead of the controller of the MVC pattern, or the presenter of the MVP pattern, MVVM has a binder, which automates communication between the view and its bound properties in the view model. The view model has been described as a state of the data in the model.[7]
-The main difference between the view model and the Presenter in the MVP pattern, is that the presenter has a reference to a view whereas the view model does not. Instead, a view directly binds to properties on the view model to send and receive updates. To function efficiently, this requires a binding technology or generating boilerplate code to do the binding.[6]
+Instead of the controller of the MVC pattern, MVVM<sup>1</sup> often employ a *binder,* which automates communication between the View and its bound properties in the View Model.
 
+Binding refers to the flow of information between Views and View Models; a View directly binds to properties on the View Model to send and receive updates.
 
-The View Model invokes changes in the Model and updates itself with the updated Model, and since we have a binding between the View and the View Model, the first is updated accordingly.
-
-
-That is,  So, in MVVM, we don’t touch the View directly, we deal with business logic in the ViewModel and thus the View changes itself accordingly. We write presentational things such as converting Date to String in the ViewModel instead of the View.
-
-UI data binding is a software design pattern to simplify development of GUI applications. UI data binding binds UI elements to an application domain model. Most frameworks employ the Observer pattern as the underlying binding mechanism. To work efficiently, UI data binding has to address input validation and data type mapping.
+Most frameworks employ the Observer pattern as the underlying binding mechanism.
 
 
 
-<sup>1</sup> *note:
-Model–view–viewmodel is also referred to as model–view–binder, especially in implementations not involving the .NET platform. ZK (a web application framework written in Java) and KnockoutJS (a JavaScript library) use model–view–binder*
+UI data binding is a software design pattern to simplify development of GUI applications. It binds UI elements to an application domain model.
 
+<sup>1</sup> *Model–view–viewmodel is also referred to as model–view–binder, especially in implementations not involving the .NET platform.*
 
 ### How to implement it?
 
@@ -380,6 +375,10 @@ MVVM has been gaining traction in the Cocoa community. It's commonly referred to
 The origins of the MVVM pattern lead back to Microsoft and it continues to be used in modern Windows development.
 
 So what is the View Model in the iOS reality? It is basically UIKit independent representation of your View and its state.
+
+
+Bindings come out of box for the OS X development, but we don’t have them in the iOS toolbox. Of course we have the KVO and notifications, but they aren’t as convenient as bindings.
+
 
 
 ## In Class Activity II (30 min)
