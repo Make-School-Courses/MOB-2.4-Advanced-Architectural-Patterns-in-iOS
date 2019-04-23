@@ -26,10 +26,22 @@
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
+By the end of this lesson, you should be able to...
+
+1. Describe:
+- the **MVVM** design pattern
+- the software construction problem(s) it is intended to solve
+- potential use cases for it (when to use it; when not to use it)
+3. Assess:
+- the suitability of a given design pattern to solve a given problem
+- the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
+4. Implement basic examples of MVVM explored in this class
+
+
+<!-- 1. Identify and describe
 1. Define
 1. Design
-1. Implement
+1. Implement -->
 
 ## Initial Exercise (20 min)
 
