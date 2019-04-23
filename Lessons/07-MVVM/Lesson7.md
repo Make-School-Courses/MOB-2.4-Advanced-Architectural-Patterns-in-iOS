@@ -80,18 +80,35 @@ but also the Mediator, represented as the View Model.
 
 ### Problem(s) Solved
 
-MVVM can be used to solve two general development challenges:
+MVVM can be used to solve two related development issues:
 
-1. **"MVC: Massive View Controller"** &mdash; In MVC, where do you put functionality that does not belong neatly in either the View or the Model? For expediency, iOS developers are often tempted to use View Controllers as a "catch-all" component for such code, which results in "bloated" View Controllers.  
+1. **"MVC: Massive View Controller"** &mdash; In MVC, where do you put functionality that does not belong neatly in either the View or the Model? For expediency, iOS developers are often tempted to use View Controllers as a "catch-all" component for such code, which results in "bloated" View Controllers.
 
 __*Example*__
 Data formatting is a common task. Imagine your app needs data (dates, currency) formatted differently for various user locales. The data is stored in the Model layer, and the View displays the formatted data  &mdash; but which component should be responsible for formatting the data?
 
 With MVVM, the View Model could handle data formatting, freeing up the View Controller to do its primary job: Responding the View lifecycle methods ( `viewDidLoad()`, and so on).
 
-2. Tight Coupling of
+2. **Tight Coupling Between MVC Components** &mdash; In the following code snippet, assume that each reusable cell will be populated with data from separate user records when the `configureWithUser(_:)` is executed:
 
-This leads to what developers jokingly refer to as “MVC: Massive View Controller".
+```Swift
+var userCell = tableView.dequeueReusableCellWithIdentifier("identifier") as UserCell
+userCell.configureWithUser(user)
+```
+
+- In this design, the cell (the View) is configured directly with the Model violating MVC guidelines.
+- You could refactor it by configuring the cell from the Controller, which might follow MVC, but will increase the size of the Controller.
+
+And this problem might not be evident until you implement Unit Testing. Because the Controller is tightly coupled with the View, it becomes difficult to test due to the added complexity of mocking up views and their life cycles and keeping them in sync with the Model.
+
+MVVM 
+
+, while writing the view controller’s code in such a way, that your business logic is separated as much as possible from the view layout code.
+
+
+
+Testability — the View Model knows nothing about the View, this allows us to test it easily. The View might be also tested, but since it is UIKit dependant you might want to skip it.
+
 
 <!-- TODO: Insert: example code (cell?) and/or diagram here? -->
 
