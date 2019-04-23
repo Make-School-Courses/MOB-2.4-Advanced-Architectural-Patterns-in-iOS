@@ -124,15 +124,14 @@ userCell.configureWithUser(user)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - You could refactor it by configuring the cell from the Controller, which might follow MVC, but will </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; increase the size of the Controller.
 
-</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Such a problem might not be evident until you implement Unit Testing. Because the *Controller is* </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Such a problem might not be evident until you implement Unit Testing. Because the Controller is </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *tightly coupled with the View,* it becomes *difficult to test* due to the added complexity of </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mocking up views and their life cycles and keeping them in sync with the Model.
 
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With MVVM, the business logic required to supply presentation data to the View can be separated from</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View layout code. When the View Model knows nothing about View layout, testing each - separately or together </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - is much easier.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View layout code. When the View Model knows nothing about View layout, testing each </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - separately or together - is much easier.
 
 
 
