@@ -119,17 +119,18 @@ MVVM can be used to solve two related development issues:
     var userCell = tableView.dequeueReusableCellWithIdentifier("identifier") as UserCell
     userCell.configureWithUser(user)
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * In this design, the cell (the View) is configured directly with the Model violating MVC guidelines. </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- In this design, the cell (the View) is configured directly with the Model, violating MVC guidelines. </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- You could refactor it by configuring the cell from the Controller, which might follow MVC, but will </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; increase the size of the Controller.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Such a problem might not be evident until you implement Unit Testing. Because the Controller is </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *tightly coupled with the View,* it becomes *difficult to test* due to the added complexity of </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mocking up views and their life cycles and keeping them in sync with the Model.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Such a problem might not be evident until you implement Unit Testing. Because the __*Controller is*__ </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*tightly coupled with the View,*__ it becomes __*difficult to test*__ due to the added complexity of </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mocking up views and their life cycles and keeping them all in sync with the Model.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With MVVM, the business logic required to supply presentation data to the View can be separated from</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View layout code. When the View Model knows nothing about View layout, testing each </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - separately or together - is much easier.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With MVVM, the business logic required to supply presentation data to the View can be separated from </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View layout code.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the View Model knows nothing about View layout, testing each - separately or together - is much easier.
 
 
 
