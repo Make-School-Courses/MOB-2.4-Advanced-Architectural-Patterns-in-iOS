@@ -139,6 +139,8 @@ thinner view controllers and a clear separation of concerns between model, view,
 
 MVVM helps slim down view controllers, making them easier to work with. Thus combatting the "Massive View Controller" problem.
 
+MVVM is a great way to slim down massive view controllers that require several model-to-view transformations.
+
 
 MVVM makes it easy to test the logic behind the views.
 Another benefit of moving your ViewController’s business logic into your ViewModel is that the viewModel it then becomes a lot easier to create unit tests for those components of your application.
@@ -156,6 +158,26 @@ Testability — the View Model knows nothing about the View, this allows us 
 
 ### Pitfalls
 
+
+A criticism of the pattern comes from MVVM creator John Gossman himself,[12] who points out that the overhead in implementing MVVM is "overkill" for simple UI operations. He says that for larger applications, generalizing the ViewModel becomes more difficult. Moreover, he illustrates that data binding in very large applications can result in considerable memory consumption.
+
+However, the cost of MVVM can be a bit high as sometimes it is difficult to figure one’s way around binding and other technicalities of MVVM.
+
+There is one bitter truth about reactive frameworks: the great power comes with the great responsibility. It’s really easy to mess up things when you go reactive. In other words, if you do something wrong, you might spend a lot of time debugging the app, so just take a look at this call stack.
+
+MVVM works well if your app requires many model-to-view transformations. However, not every object will neatly fit into the categories of model, view or view model. Instead, you should use MVVM in combination with other design patterns.
+Furthermore, MVVM may not be very useful when you first create your application. MVC may be a better starting point.
+
+It’s
+okay to introduce MVVM later in an app’s lifetime when you really need it.
+
+
+
+### When to Use
+
+
+
+Use this pattern when you need to transform models into another representation for a view. For example, you can use a view model to transform a Date into a date-formatted String, a Decimal into a currency-formatted String, or many other useful transformations.
 
 
 
@@ -309,7 +331,7 @@ PlaygroundPage.current.liveView = view.view
 ## Overview/TT II (20 min)
 
 
-### The View Model
+### View Model - A Closer Look
 
 
 but also the Mediator, represented as the View Model.
@@ -330,15 +352,25 @@ View Model: The view model is basically a representation of the view controller.
 The View Model can be thought of as a representation of the view controller. (VC’s specific functionality, designed for specific functionality — not ViewDid Load, etc.)
 
 
+So what is the View Model in the iOS reality? It is basically UIKit independent representation of your View and its state.
+
+The View Model invokes changes in the Model and updates itself with the updated Model, and since we have a binding between the View and the View Model, the first is updated accordingly.
 
 
+Your view model should be as dumb as possible. It should not contain networking code or data access code. When you start performing networking operations inside view model you are adding tight coupling between the view model layer and the web services layer.
 
+Networking and data access operations should be isolated from the view models and should be part of separate classes or even separate framework/library. Depending on your application, networking and data access operations can be passed into the view controller constructor as dependency injections.
 
 ### Bindings
 
 
+### How to implement it?
 
-### When to Use
+The view model of MVVM is a value converter,[1] meaning the view model is responsible for exposing (converting) the data objects from the model in such a way that objects are easily managed and presented. In this respect, the view model is more model than view, and handles most if not all of the view's display logic.[1] The view model may implement a mediator pattern, organizing access to the back-end logic around the set of use cases supported by the view.
+
+
+<!-- TODO: implement the Components
+implment or refactor to View Model -->
 
 
 
