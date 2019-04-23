@@ -443,8 +443,8 @@ Part 3 -
 - UI Logic
 - Business Logic
 - Code-Behind
-- Data binding
-- Data binding and MVVM in iOS </br>
+- Data Binding
+- Data Binding and MVVM in iOS </br>
 &nbsp;&nbsp;&nbsp;&nbsp; - two-way binding </br>
 &nbsp;&nbsp;&nbsp;&nbsp; - one-way binding
 
