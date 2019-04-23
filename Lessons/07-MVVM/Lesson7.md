@@ -170,8 +170,10 @@ For example, you can use a View Model to configure a table cell, transform a Dat
 
 ### Individually
 
-**TODO:** Analyze the Playground code below and __*diagram*__ how it implements MVVM. Emphasize in your diagram how this implementation changes MVC into MVVM,
-especially which class(es) comprise the View Model, and the relationship between the View Model and the View Controller.
+**TODO:** Analyze the Playground code below and __*diagram*__ how it implements MVVM.
+Emphasize in your diagram:
+- how this implementation changes MVC into MVVM, especially which class(es) comprise the View Model
+- the relationship between the View Model and the View Controller.
 
 **Q:** How does this design free up the View Controller?
 
