@@ -378,21 +378,31 @@ https://medium.com/@azamsharp/mvvm-in-ios-from-net-perspective-580eb7f4f129
 
 ### Part 1 - Refactor the data source (array)
 
-### Part 2 - refactor the table cell configuration
+### Part 2 - Refactor the table cell configuration
+
+You will need to refactor the table cell's configuration in 2 places:
+
+1. In the __*View Controller's*__ `cellForRowAt(_:)` function:
 
 ```Swift
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-  ...
+
+    ...
+
+    //TODO: Using MVVM, refactor cell configuration
      cell.sourceItem = sources[indexPath.row]
      return cell
  }
 ```
 
+2. In the __*NewsFeedCell's*__ `awakeFromNib()` function:
 
 ```Swift
-
 override func awakeFromNib() {
-  ...
+
+    ...
+
+    //TODO: Using MVVM, refactor cell configuration
     var sourceItem: SourceItem? {
         didSet {
             guard let sourceItem = sourceItem else { return }
