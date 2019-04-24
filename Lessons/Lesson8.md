@@ -57,7 +57,7 @@ Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewContr
 >
 > A coordinator is an object that bosses one or more view controllers around.
 
-*Source:* [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/) Soroush Khanlou<sup>1</sup> 
+*Source:* [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/) Soroush Khanlou<sup>1</sup>
 
 
 
@@ -154,9 +154,10 @@ All coordinators will conform to this protocol. At bare minimum, it should inclu
 **Background:**
 The `iOS-CoordinatorsActivity1_B` app seeks to implement the Coordinator pattern by:
 - Creating two protocols:
-</br>
+
 &nbsp;&nbsp;&nbsp;&nbsp; - Navigation </br>
-&nbsp;&nbsp;&nbsp;&nbsp; - Dynamically instantiating View Controller objects from the Main Storyboard bundle
+&nbsp;&nbsp;&nbsp;&nbsp; - Dynamically instantiating View Controller objects from the Main Storyboard bundle </br>
+
 
 __*Navigation Protocol*__
 ```Swift
