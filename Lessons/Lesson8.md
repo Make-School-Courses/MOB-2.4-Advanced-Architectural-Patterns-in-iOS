@@ -53,11 +53,11 @@ Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewContr
 
 *So what is a coordinator?*
 
-> A Coordinator is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
+> A **coordinator** is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
 >
-> A coordinator is an object that bosses one or more view controllers around.
+> A **coordinator** is an object that bosses one or more view controllers around.
 
-*Source:* [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/) Soroush Khanlou<sup>1</sup>
+&nbsp;&nbsp;&nbsp;&nbsp; *Source:* [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/) Soroush Khanlou<sup>1</sup>
 
 
 
