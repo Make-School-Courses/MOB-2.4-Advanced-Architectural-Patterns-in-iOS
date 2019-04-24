@@ -49,16 +49,18 @@ By the end of this lesson, you should be able to...
 
 ### The Coordinator Pattern
 
-
 So what is a coordinator?
 
 - A Coordinator is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
 
 - A coordinator is an object that bosses one or more view controllers around.
 
-Taking all of the driving logic out of your view controllers, and moving that stuff one layer up, is gonna make your life a lot more awesome.
+ and moving that stuff one layer up, is gonna make your life a lot more awesome.
 
 *Source:* Soroush Khanlou<sup>1</sup> [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/)
+
+
+Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewControllers, taking all of the driving logic (navigation) out of view controllers and moving that logic up one layer &emdash; to a __*Coordinator layer.*__
 
 
 <!-- TODO: explain Application Coordinator pattern
