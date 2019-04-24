@@ -51,7 +51,7 @@ By the end of this lesson, you should be able to...
 
 So what is a coordinator?
 
-- A Coordinator is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
+> - A Coordinator is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
 
 - A coordinator is an object that bosses one or more view controllers around.
 
@@ -187,10 +187,10 @@ The code in the app is nearly complete. Your job is to:
 - complete any missing code so that the `BuyViewController` and `CreateAccountViewController` are presented using the Coordinator pattern instead of typical iOS navigation process (*see* The Pushing Problem *above*)
 
 
-*TIP: Look for the //TODO: annotations we left in the app for you...*
+> *TIP: Look for the //TODO: annotations we left in the app for you...*
 
 
-*adapted from:*
+*adapted from:* </br>
 https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios
 
 
