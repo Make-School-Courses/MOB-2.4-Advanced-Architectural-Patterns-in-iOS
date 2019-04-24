@@ -47,12 +47,36 @@ By the end of this lesson, you should be able to...
 
 ## Overview/TT I (20 min)
 
+### The Coordinator Pattern
+
+
+A Coordinator is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
+
+So what is a coordinator? A coordinator is an object that bosses one or more view controllers around. Taking all of the driving logic out of your view controllers, and moving that stuff one layer up is gonna make your life a lot more awesome.
+
+*Source:*
+Soroush Khanlou [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/)
 
 
 <!-- - Why learn this?
 - Industry examples of usage
 - Best practices
 - Personal anecdote -->
+
+
+
+#### Implementation Notes
+
+![example](assets/coordinator_types.png)
+
+
+
+
+
+
+
+To really execute this pattern well, you need one high-level coordinator that directs the whole app (this is sometimes known as the Application Controller pattern). The app delegate holds on to the AppCoordinator. Every coordinator holds an array of its child coordinators. Especially if you have more than one, as in a tab bar app, each navigation controller gets its own coordinator, for directing its behavior and flow. Further child coordinators can be created for specific tasks like signing up or creating content. Each coordinator is spawned by its parent coordinator. As always, use this pattern early in the development process, so they’re useful even in single-step tasks, such as authentication.
+
 
 ## In Class Activity I (30 min)
 
@@ -71,6 +95,13 @@ By the end of this lesson, you should be able to...
 
 ## In Class Activity II (optional) (30 min)
 
+## After Class
+
+- Data Source Design Pattern
+
+deep linking in ios
+
+
 ## Wrap Up (5 min)
 
 - Continue working on your current tutorial
@@ -79,4 +110,16 @@ By the end of this lesson, you should be able to...
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. [Slides]()
+
+[]()
+[]()
+[Coordinators - video presentation](https://vimeo.com/144116310)
+[Coordinators - a slideshare from LinkedIn](https://www.slideshare.net/secret/3jJlEE1weo0RRl)
+
+
+[8 Patterns to Help You Destroy Massive View Controller - an article](http://khanlou.com/2014/09/8-patterns-to-help-you-destroy-massive-view-controller/)
+[NextPrevious What Are Cocoa Bindings? - from Apple ](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html#//apple_ref/doc/uid/20002372-CJBEJBHH)
+
+[Presentation Model - Martin Fowler](https://martinfowler.com/eaaDev/PresentationModel.html)
+[Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html)
