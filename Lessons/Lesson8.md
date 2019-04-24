@@ -49,18 +49,17 @@ By the end of this lesson, you should be able to...
 
 ### The Coordinator Pattern
 
+Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewControllers, taking all of the driving logic (navigation) out of view controllers and moving that logic up one layer &mdash; to a __*Coordinator layer.*__
+
 So what is a coordinator?
 
-> - A Coordinator is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
-
-- A coordinator is an object that bosses one or more view controllers around.
-
- and moving that stuff one layer up, is gonna make your life a lot more awesome.
+> A Coordinator is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
+>
+> A coordinator is an object that bosses one or more view controllers around.
 
 *Source:* Soroush Khanlou<sup>1</sup> [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/)
 
 
-Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewControllers, taking all of the driving logic (navigation) out of view controllers and moving that logic up one layer &mdash; to a __*Coordinator layer.*__
 
 
 <!-- TODO: explain Application Coordinator pattern
@@ -187,7 +186,7 @@ The code in the app is nearly complete. Your job is to:
 - complete any missing code so that the `BuyViewController` and `CreateAccountViewController` are presented using the Coordinator pattern instead of typical iOS navigation process (*see* The Pushing Problem *above*)
 
 
-> *TIP: Look for the //TODO: annotations we left in the app for you...*
+> **TIP:** Look for the //TODO: annotations we left in the app for you...
 
 
 *adapted from:* </br>
