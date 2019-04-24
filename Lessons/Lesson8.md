@@ -28,35 +28,31 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- the **xxxx** design pattern
+- the **Coordinator** design pattern
 - the software construction problem(s) it is intended to solve
 - potential use cases for it (when to use it; when not to use it)
+- how to implement Coordinator in iOS
 3. Assess:
 - the suitability of a given design pattern to solve a given problem
 - the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
-4. Implement basic examples of MVVM explored in this class
+4. Design and implement basic examples of **Coordinator** explored in this class
 
-
-<!-- 1. Identify and describe
-1. Define
-1. Design
-1. Implement -->
 
 ## Initial Exercise (15 min)
 
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
+### As A Class
+
+1. Review After Assignment from Lesson 7
+- selected students demo their solutions
 
 ## Overview/TT I (20 min)
 
-- Why learn this?
+
+
+<!-- - Why learn this?
 - Industry examples of usage
 - Best practices
-- Personal anecdote
+- Personal anecdote -->
 
 ## In Class Activity I (30 min)
 
