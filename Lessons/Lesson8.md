@@ -4,7 +4,7 @@
 1) For the QuizLet Game in the Initial Exercise:
 - the URL is xxxx
 2) For Activity 1:
-- xxx
+- solutions are hidden below Additional Resources
 3) for Activity 2:
 - xxxx
 -->
@@ -69,7 +69,9 @@ Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewContr
 
 
 
-#### Problems Addressed & Benefits
+#### Problems Addressed / Benefits
+
+
 
 
 <!-- Massive View Controller Problem
@@ -81,8 +83,38 @@ push Problem
 
 -->
 
+3. **The Pushing Problem**
+
+One of the standard ways to perform navigation on iOS is to use a `UINavigationController` onto which each view controller can either pop or push other view controllers.
+
+Most iOS developers have implemented this type of navigation a hundred or more times:
+
+```Swift
+if let vc = storyboard?.instantiateViewController(withIdentifier: "SomeVC") {
+    navigationController?.pushViewController(vc, animated: true)
+}
+```
+
+
+```Swift
+class ImageListViewController: UITableViewController {
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        let image = images[indexPath.row]
+        let detailVC = ImageDetailViewController(image: image)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+```
+
+
+
 
 #### Implementation Notes
+
+
+
+
 
 ![example](assets/coordinator_types.png)
 
@@ -98,6 +130,54 @@ To really execute this pattern well, you need one high-level coordinator that di
 
 ## In Class Activity I (30 min)
 
+### Individually
+
+**Required Resources:**
+1. Download the starter app: [iOS-CoordinatorsActivity1_B](https://github.com/Make-School-Labs/iOS-CoordinatorsActivity1_B)
+
+**Background:**
+The iOS-CoordinatorsActivity1_B app seeks to implement the Coordinator pattern by:
+- Creating two protocols:
+&nbsp;&nbsp;&nbsp;&nbsp; - Navigation
+&nbsp;&nbsp;&nbsp;&nbsp; - Dynamically instantiating View Controller objects from the Main Storyboard bundle
+
+__*Navigation Protocol*__
+```Swift
+protocol Coordinator {
+    var childCoordinators: [Coordinator] { get set }
+    var navigationController: UINavigationController { get set }
+
+    func start()
+}
+```
+
+__*VC Creation Protocol*__
+
+```Swift
+protocol Storyboarded {
+    static func instantiate() -> Self
+}
+```
+
+__*Note that:*__
+- the main VC (`ViewController`) is __*not*__ configured as the "Initial View Controller" in the storyboad
+- in order to be created dynamically, all VCs are given a `StoryBoard ID`
+
+**TODO:** The code in the app is nearly complete. Your job is to:
+- analyze the app's structure wrt how it is creating view controllers
+- complete any missing code so that the `BuyViewController` and `CreateAccountViewController` are presented using the Coordinator pattern instead of typical iOS navigation process (*see* The Pushing Problem *above*)
+
+
+*TIP: Look for the //TODO: annotations we left in the app for you...*
+
+
+
+
+adapted from:
+https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios
+
+
+<!-- INSTRUCTOR NOTES: solutions for Activity 1 are hidden below Additional Resources -->
 
 
 <!--
@@ -121,13 +201,36 @@ To really execute this pattern well, you need one high-level coordinator that di
 #### with xxx
 
 
+### When to Use
+
+Use Coordinators when...
+
+(especially when building apps that have a large amount of screens and destinations that can be reached from multiple places) is to introduce dedicated navigator types.
+
 ## In Class Activity II (optional) (30 min)
 
 ## After Class
 
+1. Research:
 - Data Source Design Pattern
 
 deep linking in ios
+
+2. Follow on exercise to today's Activity 1:
+
+[Advanced coordinators in iOS](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
+
+At minimum, complete these:
+
+- How and when to use child coordinators
+- Navigating backwards
+
+Stretch Challenge:
+- finish all
+
+3. Continue working on your Course Project...
+
+
 
 
 ## Wrap Up (5 min)
@@ -157,3 +260,46 @@ deep linking in ios
 <sup>1</sup> <!-- TODO:
 - add footnote to Khanlou popularizing Coordinator for iOS
 -->
+
+
+<!-- INSTRUCTOR NOTES:  -- SOLUTION TO ACTIVITY 1 --
+
+  PART 1: IN App Delegate:
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        // create the main navigation controller to be used for our app
+        let navController = UINavigationController()
+
+        // send that into our coordinator so that it can display view controllers
+        //TODO: create a coordinator var
+        coordinator = MainCoordinator(navigationController: navController)
+
+        // tell the coordinator to take over control
+        coordinator?.start()
+
+        // create a basic UIWindow and activate it
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+
+        return true
+    }
+
+
+    PART 2: in MainCoordinator:
+
+    //TODO: Create functions to instantiate other VCs
+    func buySubscription() {
+        let vc = BuyViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+
+    func createAccount() {
+        let vc = CreateAccountViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+
+    -->
