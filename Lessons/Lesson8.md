@@ -60,7 +60,7 @@ So what is a coordinator?
 *Source:* Soroush Khanlou<sup>1</sup> [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/)
 
 
-Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewControllers, taking all of the driving logic (navigation) out of view controllers and moving that logic up one layer &emdash; to a __*Coordinator layer.*__
+Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewControllers, taking all of the driving logic (navigation) out of view controllers and moving that logic up one layer &mdash; to a __*Coordinator layer.*__
 
 
 <!-- TODO: explain Application Coordinator pattern
@@ -78,7 +78,7 @@ Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewContr
 
 VC Reusability
 
-push Problem
+push
 
 
 -->
@@ -116,15 +116,32 @@ class ImageListViewController: UITableViewController {
 
 
 
+
+
+
+
+
+<!--
+To really execute this pattern well, you need one high-level coordinator that directs the whole app (this is sometimes known as the Application Controller pattern). The app delegate holds on to the AppCoordinator. Every coordinator holds an array of its child coordinators. Especially if you have more than one, as in a tab bar app, each navigation controller gets its own coordinator, for directing its behavior and flow. Further child coordinators can be created for specific tasks like signing up or creating content. Each coordinator is spawned by its parent coordinator. As always, use this pattern early in the development process, so they’re useful even in single-step tasks, such as authentication. -->
+
+
+A solid, basic implementation of coordinators for includes 3 main steps:
+1. Design two protocols:
+- Coordinator Protocol - To be used by all our coordinators.
+- View Controller Creation Protocol - To make view controllers easier to create.
+2. Create a __*main coordinator*__ that will control app flow. Start it when our app launches.
+3. Present other view controllers.
+
+**The Coordinator Protocol**
+All coordinators will conform to this protocol. At bare minimum, it should include:
+- A property to store any child coordinators.
+- A property to store the navigation controller being used to present view controllers. (Even if you don’t show the navigation bar at the top, using a navigation controller is the easiest way to present view controllers.)
+- A `start()` function to make the coordinator take control. This allows us to create a coordinator fully and activate it only when we’re ready.
+
+
+<!-- TODO: Need to get an example of this  -->
+
 ![example](assets/coordinator_types.png)
-
-
-
-
-
-
-To really execute this pattern well, you need one high-level coordinator that directs the whole app (this is sometimes known as the Application Controller pattern). The app delegate holds on to the AppCoordinator. Every coordinator holds an array of its child coordinators. Especially if you have more than one, as in a tab bar app, each navigation controller gets its own coordinator, for directing its behavior and flow. Further child coordinators can be created for specific tasks like signing up or creating content. Each coordinator is spawned by its parent coordinator. As always, use this pattern early in the development process, so they’re useful even in single-step tasks, such as authentication.
-
 
 
 
