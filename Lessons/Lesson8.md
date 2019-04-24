@@ -50,19 +50,34 @@ By the end of this lesson, you should be able to...
 ### The Coordinator Pattern
 
 
-A Coordinator is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
+So what is a coordinator?
 
-So what is a coordinator? A coordinator is an object that bosses one or more view controllers around. Taking all of the driving logic out of your view controllers, and moving that stuff one layer up is gonna make your life a lot more awesome.
+- A Coordinator is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
 
-*Source:*
-Soroush Khanlou [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/)
+- A coordinator is an object that bosses one or more view controllers around.
+
+Taking all of the driving logic out of your view controllers, and moving that stuff one layer up, is gonna make your life a lot more awesome.
+
+*Source:* Soroush Khanlou<sup>1</sup> [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/)
 
 
-<!-- - Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote -->
+<!-- TODO: explain Application Coordinator pattern
+- add footnote to Khanlou popularizing Coordinator for iOS
+- insert diagram of coordinator -->
 
+
+
+#### Problems Addressed & Benefits
+
+
+<!-- Massive View Controller Problem
+
+VC Reusability
+
+push Problem
+
+
+-->
 
 
 #### Implementation Notes
@@ -74,12 +89,16 @@ Soroush Khanlou [Coordinators Redux](http://khanlou.com/2015/10/coordinators-red
 
 
 
-
 To really execute this pattern well, you need one high-level coordinator that directs the whole app (this is sometimes known as the Application Controller pattern). The app delegate holds on to the AppCoordinator. Every coordinator holds an array of its child coordinators. Especially if you have more than one, as in a tab bar app, each navigation controller gets its own coordinator, for directing its behavior and flow. Further child coordinators can be created for specific tasks like signing up or creating content. Each coordinator is spawned by its parent coordinator. As always, use this pattern early in the development process, so they’re useful even in single-step tasks, such as authentication.
+
+
 
 
 ## In Class Activity I (30 min)
 
+
+
+<!--
 - I do, We do, You do
 - Reading & Discussion Questions in small groups
 - Draw a picture/diagram
@@ -89,9 +108,16 @@ To really execute this pattern well, you need one high-level coordinator that di
 - Pair program
 - Formative assessment
 - Form into groups
-- etc (get creative :D)
+- etc (get creative :D) -->
 
 ## Overview/TT II (optional) (20 min)
+
+### Coordinator with Other Patterns
+
+#### with MVVM
+
+#### with xxx
+
 
 ## In Class Activity II (optional) (30 min)
 
@@ -123,3 +149,9 @@ deep linking in ios
 
 [Presentation Model - Martin Fowler](https://martinfowler.com/eaaDev/PresentationModel.html)
 [Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html)
+
+
+
+<sup>1</sup> <!-- TODO:
+- add footnote to Khanlou popularizing Coordinator for iOS
+-->
