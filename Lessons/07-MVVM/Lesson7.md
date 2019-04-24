@@ -465,6 +465,8 @@ Part 3 -
 4. [UI data binding - wikipedia](https://en.wikipedia.org/wiki/UI_data_binding)
 5. [The Problems with MVVM on iOS - an article](http://www.danielhall.io/the-problems-with-mvvm-on-ios)
 </br>
+
 <sup>1</sup> *UI data binding is a software design pattern to simplify development of GUI applications. It binds UI elements to an application domain model.*
 </br>
+
 <sup>2</sup> *Model–view–viewmodel is also referred to as model–view–binder, especially in implementations not involving the .NET platform.*
