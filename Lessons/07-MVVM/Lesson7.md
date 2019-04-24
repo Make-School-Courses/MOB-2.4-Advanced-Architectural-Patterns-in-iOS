@@ -459,11 +459,12 @@ Part 3 -
 
 ## Additional Resources
 
-1. [Slides](https://docs.google.com/presentation/d/1-bBnKifWqL1UqtZMGIIR0A6x53iOTTFzR9aNd5U7D8k/edit#slide=id.g566b9f180a_0_4) 
-[Model–view–viewmodel - wikipedia](https://en.wikipedia.org/wiki/Model–view–viewmodel)
-2. [Presentation Model and Martin Fowler - an article](https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer))
-3. [UI data binding - wikipedia](https://en.wikipedia.org/wiki/UI_data_binding)
-4. [The Problems with MVVM on iOS - an article](http://www.danielhall.io/the-problems-with-mvvm-on-ios)
+1. [Slides](https://docs.google.com/presentation/d/1-bBnKifWqL1UqtZMGIIR0A6x53iOTTFzR9aNd5U7D8k/edit#slide=id.g566b9f180a_0_4)
+ 
+2. [Model–view–viewmodel - wikipedia](https://en.wikipedia.org/wiki/Model–view–viewmodel)
+3. [Presentation Model and Martin Fowler - an article](https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer))
+4. [UI data binding - wikipedia](https://en.wikipedia.org/wiki/UI_data_binding)
+5. [The Problems with MVVM on iOS - an article](http://www.danielhall.io/the-problems-with-mvvm-on-ios)
 
 
 <sup>1</sup> *UI data binding is a software design pattern to simplify development of GUI applications. It binds UI elements to an application domain model.*
