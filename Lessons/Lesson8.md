@@ -136,9 +136,10 @@ To really execute this pattern well, you need one high-level coordinator that di
 1. Download the starter app: [iOS-CoordinatorsActivity1_B](https://github.com/Make-School-Labs/iOS-CoordinatorsActivity1_B)
 
 **Background:**
-The iOS-CoordinatorsActivity1_B app seeks to implement the Coordinator pattern by:
+The `iOS-CoordinatorsActivity1_B` app seeks to implement the Coordinator pattern by:
 - Creating two protocols:
-&nbsp;&nbsp;&nbsp;&nbsp; - Navigation
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Navigation </br>
 &nbsp;&nbsp;&nbsp;&nbsp; - Dynamically instantiating View Controller objects from the Main Storyboard bundle
 
 __*Navigation Protocol*__
@@ -163,7 +164,8 @@ __*Note that:*__
 - the main VC (`ViewController`) is __*not*__ configured as the "Initial View Controller" in the storyboad
 - in order to be created dynamically, all VCs are given a `StoryBoard ID`
 
-**TODO:** The code in the app is nearly complete. Your job is to:
+**- TODO -**
+The code in the app is nearly complete. Your job is to:
 - analyze the app's structure wrt how it is creating view controllers
 - complete any missing code so that the `BuyViewController` and `CreateAccountViewController` are presented using the Coordinator pattern instead of typical iOS navigation process (*see* The Pushing Problem *above*)
 
@@ -171,26 +173,12 @@ __*Note that:*__
 *TIP: Look for the //TODO: annotations we left in the app for you...*
 
 
-
-
-adapted from:
+*adapted from:*
 https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios
 
 
 <!-- INSTRUCTOR NOTES: solutions for Activity 1 are hidden below Additional Resources -->
 
-
-<!--
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D) -->
 
 ## Overview/TT II (optional) (20 min)
 
