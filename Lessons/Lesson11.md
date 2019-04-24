@@ -1,26 +1,41 @@
-# Lesson Title
+# Reactive Programming (Part 1 of 2)
 
-## Minute-by-Minute [OPTIONAL]
+<!-- INSTRUCTOR NOTES:
+1) For the QuizLet Game in the Initial Exercise:
+- the URL is xxxx
+2) For Activity 1:
+- xxx
+3) for Activity 2:
+- xxxx
+-->
+
+## Minute-by-Minute
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:45      | In Class Activity I       |
-| 1:05        | 0:10      | BREAK                     |
-| 1:15        | 0:45      | In Class Activity II      |
-| TOTAL       | 2:00      |                           |
+| 0:05        | 0:20      | Initial Exercise          |
+| 0:25        | 0:20      | Overview                  |
+| 0:45        | 0:15      | In Class Activity I       |
+| 1:00        | 0:10      | BREAK                     |
+| 1:10        | 0:20      | Overview                  |
+| 1:30        | 0:25      | In Class Activity II      |
+| TOTAL       | 1:55      |                           |
 
-## Why you should know this or industry application (optional) (5 min)
-
-Explain why students should care to learn the material presented in this class.
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+By the end of this lesson, you should be able to...
+
+1. Describe:
+- the **xxxx** design pattern
+- the software construction problem(s) it is intended to solve
+- potential use cases for it (when to use it; when not to use it)
+3. Assess:
+- the suitability of a given design pattern to solve a given problem
+- the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
+4. Implement basic examples of MVVM explored in this class
+
 
 ## Initial Exercise (15 min)
 
