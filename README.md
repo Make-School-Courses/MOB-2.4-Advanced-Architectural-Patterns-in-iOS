@@ -56,12 +56,12 @@ Students by the end of the course will be able to ...
 [Behavioral Patterns Pt.2]: Lessons/04-Behavioral-PatternsPt.2/Lesson4.md
 [Structural Patterns Pt.1]: Lessons/05-Structural-PatternsPt.1/Lesson5.md
 [Structural Patterns Pt.2]: Lessons/06-Structural-PatternsPt.2/Lesson6.md
-[MVVM]: Lessons/Lesson7.md
-[Coordinators]: Lessons/Lesson8.md
-[Functional Programming Pt.1]: Lessons/Lesson9.md
-[Functional Programming Pt.2]: Lessons/Lesson10.md
-[Reactive Programming Pt.1]: Lessons/Lesson11.md
-[Reactive Programming Pt.2]: Lessons/Lesson12.md
+[MVVM]: Lessons/07-MVVM/Lesson7.md
+[Coordinators]: Lessons/08-Coordinators/Lesson8.md
+[Functional Programming Pt.1]: Lessons/09-Functional-ProgrammingPt.1/Lesson9.md
+[Functional Programming Pt.2]: Lessons/10-Functional-ProgrammingPt.2/Lesson10.md
+[Reactive Programming Pt.1]: Lessons/11-Reactive-ProgrammingPt.1/Lesson11.md
+[Reactive Programming Pt.2]: Lessons/12-Reactive-ProgrammingPt.2/Lesson12.md
 
 ## Class Assignments
 
