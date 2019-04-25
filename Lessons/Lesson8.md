@@ -201,7 +201,7 @@ class BaseCoordinator : Coordinator {
 }
 ```
 
-3. The View Controller Creation protocol:
+3. The View Controller Creation protocol is created:
 
 ```Swift
   protocol ControllerCreator {
@@ -220,6 +220,8 @@ class ViewController: UIViewController, ControllerCreator {
 
      ...
 ```
+
+5. If coordinated navigation is designed as an application-wide implementation, then, the `AppDelegate`  `application: didFinishLaunchingWithOptions:` function.
 
 
 <!-- TODO: Move this all to a later exercise? After Class research? -->
@@ -491,7 +493,7 @@ __*Stretch Challenge:*__
         let navController = UINavigationController()
 
         // send that into our coordinator so that it can display view controllers
-        //TODO: create a coordinator var
+//TODO: pass the navController var into the coordinator property
         coordinator = MainCoordinator(navigationController: navController)
 
         // tell the coordinator to take over control
