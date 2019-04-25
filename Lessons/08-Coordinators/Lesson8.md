@@ -398,22 +398,30 @@ This exercise follows on today's Activity 1...
 1. Research:
 
 - Application Coordinator Pattern
+- Router (with Coordinators)
 - Data Source Design Pattern
 - Deep Linking (specific to iOS)
-- Universal Link
+- `Universal Link`
+- State Machine
+- VIPER pattern
+- MVP
+
+2. Follow on exercise to today's Activity 1 and Activity 2:
 
 
-2. Follow on exercise to today's Activity 1:
+**Resources Required**
+- use your completed app from Activity 2
 
-[Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
-
-Resources Required:
-- you can use your completed app from Activity 1
+> __*Important Note:*__ First, back up (or commit to github) your completed app from Activity 1.
 
 **TODO:**
 At minimum, complete these sections of the tutorial:
 
-- Navigating backwards
+- "Navigating backwards"
+- "Passing data between view controllers"
+
+[Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
+
 
 __*Stretch Challenge:*__
 - finish all of the implementation sections in this tutorial
