@@ -430,7 +430,7 @@ Note that one of the benefits of this approach, if completed, is that it will re
 -->
 
 
-<!-- INSTRUCTOR NOTES:  -- SOLUTION TO ACTIVITY 1 --
+<!-- INSTRUCTOR NOTES:  SOLUTION TO ACTIVITY 1
 
   PART 1: IN App Delegate:
 
@@ -473,7 +473,7 @@ Note that one of the benefits of this approach, if completed, is that it will re
     -->
 
 
-    
+
     1. Coordinator protocol created, keeping a reference (array) of its (children:*
 
     ```Swift
