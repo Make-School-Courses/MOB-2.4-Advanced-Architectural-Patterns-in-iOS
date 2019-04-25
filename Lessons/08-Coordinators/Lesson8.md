@@ -45,7 +45,7 @@ By the end of this lesson, you should be able to...
 1. Review After Class assignment from Lesson 7
 - students demo their solutions
 
-## Overview/TT I (20 min)
+## Overview/TT I (25 min)
 
 ### The Coordinator Pattern
 
@@ -71,8 +71,6 @@ Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewC
 ![example](assets/coordinator_diagram.png)
 
 <!-- TODO: Attribute graphic -->
-
-
 
 
 
@@ -211,7 +209,7 @@ class ViewController: UIViewController, ControllerCreator {
 - an application-wide association between its `BaseCoordinator` property and an instance of `UINavigationController` in its `application: didFinishLaunchingWithOptions:` function
 
 
-## In Class Activity I (30 min)
+## In Class Activity I (25 min)
 
 ### Individually
 
@@ -269,8 +267,7 @@ https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutor
 <!-- INSTRUCTOR NOTES: solutions for Activity 1 are hidden below Additional Resources -->
 
 
-## Overview/TT II (optional) (20 min)
-
+## Overview/TT II (15 min)
 
 ### Benefits
 
@@ -293,12 +290,9 @@ The downside of the Coordinator pattern:
 
 2. **Overkill** &mdash; The pattern could well take too much work for very simple apps. Many extra classes will need to be created upfront.
 
-
 ### When to Use
 
 Coordinators are especially useful for complex apps with a large number of destinations screens that can be reached (presented) from multiple places.
-
-
 
 ### Coordinator Types
 
@@ -375,7 +369,7 @@ For examples:
 - Combines more flexible navigation with the ability to create objects (even View Controllers) on demand and to dynamically customized specifications.
 
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (20 min)
 
 ### Individually
 
@@ -390,7 +384,6 @@ This exercise follows on today's Activity 1...
 - "How and when to use child coordinators"
 
 [Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
-
 
 
 ## After Class
