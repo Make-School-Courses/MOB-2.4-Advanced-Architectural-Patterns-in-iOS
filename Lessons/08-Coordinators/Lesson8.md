@@ -414,9 +414,20 @@ __*Stretch Challenge:*__
 -->
 
 
-</br>
 
 
+
+<!-- TODO: evaluate for its potential as: a later exercise? After Class research?
+
+The code below is for illustration only -- IT WILL NOT run in a playground!
+
+This example code illustrates an implementation of the Coordinator pattern which employs an `AppCoordinator` as an application-wide navigation "manager."
+
+It is not a complete implementation of the pattern: It lacks the protocol, and other related code, for creating view controllers.
+
+Note that one of the benefits of this approach, if completed, is that it will reduce the amount of code needed in the `AppDelegate`'s `application: didFinishLaunchingWithOptions:` function.
+
+-->
 
 
 <!-- INSTRUCTOR NOTES:  -- SOLUTION TO ACTIVITY 1 --
