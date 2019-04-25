@@ -557,5 +557,5 @@ __*Stretch Challenge:*__
         }
     ```
 
-    *From:* </br>
+    From: 
     https://benoitpasquier.com/coordinator-pattern-swift/  -->
