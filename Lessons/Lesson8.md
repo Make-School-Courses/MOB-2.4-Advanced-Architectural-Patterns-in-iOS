@@ -49,7 +49,7 @@ By the end of this lesson, you should be able to...
 
 ### The Coordinator Pattern
 
-The idea behind the Coordinator pattern is the creation of a separate entity &mdash; __*a Coordinator object *__ &mdash; which is responsible for the application’s *flow.*
+The idea behind the Coordinator pattern is the creation of a separate entity &mdash; __*a Coordinator object*__ &mdash; which is responsible for the application’s *flow.*
 
 *So what is a coordinator?*
 
