@@ -319,7 +319,8 @@ In addition, child coordinators can be created for specific tasks like signing u
 
 *This diagram represents both the relationship between an `AppCoordinator` and its child coordinators, as well as a few potential other coordinator types:*
 
-[example](assets/coordinator_types.png)
+
+![example](assets/coordinator_types.png)
 
 <!-- TODO: Attribute graphic -->
 
