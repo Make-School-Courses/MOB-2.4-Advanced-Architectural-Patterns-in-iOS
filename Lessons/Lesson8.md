@@ -221,7 +221,9 @@ class ViewController: UIViewController, ControllerCreator {
      ...
 ```
 
-5. If coordinated navigation is designed as an application-wide implementation, then, the `AppDelegate`  `application: didFinishLaunchingWithOptions:` function.
+5. If an application-wide navigation strategy, then the `AppDelegate` will need:
+- a `BaseCoordinator` property
+- an application-wide association between its `BaseCoordinator` property and an instance of `UINavigationController` in its `application: didFinishLaunchingWithOptions:` function
 
 
 <!-- TODO: Move this all to a later exercise? After Class research? -->
