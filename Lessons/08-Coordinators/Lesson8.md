@@ -427,53 +427,6 @@ It is not a complete implementation of the pattern: It lacks the protocol, and o
 
 Note that one of the benefits of this approach, if completed, is that it will reduce the amount of code needed in the `AppDelegate`'s `application: didFinishLaunchingWithOptions:` function.
 
--->
-
-
-<!-- INSTRUCTOR NOTES:  SOLUTION TO ACTIVITY 1
-
-  PART 1: IN App Delegate:
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        // create the main navigation controller to be used for our app
-        let navController = UINavigationController()
-
-        // send that into our coordinator so that it can display view controllers
-//TODO: pass the navController var into the coordinator property
-        coordinator = MainCoordinator(navigationController: navController)
-
-        // tell the coordinator to take over control
-        coordinator?.start()
-
-        // create a basic UIWindow and activate it
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
-
-        return true
-    }
-
-
-    PART 2: in MainCoordinator:
-
-    //TODO: Create functions to instantiate other VCs
-    func buySubscription() {
-        let vc = BuyViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
-    }
-
-    func createAccount() {
-        let vc = CreateAccountViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
-    }
-
-    -->
-
-
-
     1. Coordinator protocol created, keeping a reference (array) of its (children:*
 
     ```Swift
@@ -563,4 +516,48 @@ Note that one of the benefits of this approach, if completed, is that it will re
     From:
     https://benoitpasquier.com/coordinator-pattern-swift/  
 
-    -->
+-->
+
+
+
+    <!-- INSTRUCTOR NOTES:  SOLUTION TO ACTIVITY 1
+
+      PART 1: IN App Delegate:
+
+        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+            // create the main navigation controller to be used for our app
+            let navController = UINavigationController()
+
+            // send that into our coordinator so that it can display view controllers
+    //TODO: pass the navController var into the coordinator property
+            coordinator = MainCoordinator(navigationController: navController)
+
+            // tell the coordinator to take over control
+            coordinator?.start()
+
+            // create a basic UIWindow and activate it
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = navController
+            window?.makeKeyAndVisible()
+
+            return true
+        }
+
+
+        PART 2: in MainCoordinator:
+
+        //TODO: Create functions to instantiate other VCs
+        func buySubscription() {
+            let vc = BuyViewController.instantiate()
+            vc.coordinator = self
+            navigationController.pushViewController(vc, animated: true)
+        }
+
+        func createAccount() {
+            let vc = CreateAccountViewController.instantiate()
+            vc.coordinator = self
+            navigationController.pushViewController(vc, animated: true)
+        }
+
+        -->
