@@ -79,6 +79,10 @@ Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewC
 
 ### Problems Addressed
 
+Most of the challenges the Coordinator pattern addresses are related to the limitations of how View Controllers are designed to work within standard MVC.
+
+Key issues the Coordinator pattern can potentially resolve are...
+
 1. **The Pushing Problem**
 
 One of the standard ways to perform navigation on iOS is to use a `UINavigationController` onto which each view controller can either pop or push other view controllers.
@@ -127,11 +131,13 @@ class MyViewController : UIViewController {
 
 2. **Massive View Controller Problem** &mdash; (see previous lesson for description and example)
 
-3. **Reusability** &mdash;
+3. **Reusability** &mdash; with standard MVC, View Controllers are nearly impossible to reuse, especially if overloaded with non-VC tasks.
 
-4. **Tight Coupling** &mdash;
+4. **Tight Coupling** &mdash; an inflexible design in which every controller needs to know details about other controllers inhibits an app's growth.
 
-5. **Deep Linking Issues** &mdash;
+5. **Deep Linking Issues** &mdash; *(see Coordinators and Deep Linking section)*
+
+6. **Testing** &mdash; if you want to generate different views or a different flow in response to user choices (A/B testing) or to handle layout variations, standard MVC implementations of VCs make it extremely difficult to test those scenarios.  
 
 
 ### Implementation Notes
@@ -334,14 +340,26 @@ In addition, child coordinators can be created for specific tasks like signing u
 
 ### Coordinator and Deep Linking
 
-URLs and deep linking
-For many kinds of apps we not only want to make it easy to navigate within our own app, but also to enable other apps & websites to deep link into ours. A common way to do this on iOS is to define a URL scheme that other apps can then use to link directly into a specific screen or feature of our app.
-Using either (or both!) coordinator and navigator objects, implementing URL and deep linking support becomes a lot easier, since we have dedicated places for navigation in which we can inject our URL handling logic.
+A **deep link** is any link that directs a user past the home page of a website or app to content inside of it:
+- for example, linking directly to a product instead of the home page.
 
+**iOS and Deep Linking**
+For many kinds of apps we not only want to make it easy to navigate within our own app, but also to enable other apps and websites to deep link into ours.
 
-Universal link and deep link: when supporting deep link, you might need to open specific view regardless of the navigation history. Coordinator pattern is really helpful to keep things tidy there and avoid creating extra dependencies in the flow
-A/B testing and feature flag: whe
+A common way to do this on iOS is to define a URL scheme that other apps can then use to link directly into a specific screen or feature of an app.
 
+__*The Obstacle*__
+
+To support deep linking in an iOS app, you might need to open specific views in the app, regardless of the navigation history or navigation design.
+
+With standard MVC and its potential to tightly-couple View Controllers, it is very difficult to implement deep linking.
+
+__*The Solution*__
+
+Using Coordinators and navigator objects, implementing URL and deep linking support becomes a lot easier because it allows for dedicated navigation points in which URL handling logic can be injected.
+
+*from:*
+https://medium.com/@abhimuralidharan/universal-links-in-ios-79c4ee038272
 
 <!-- this needs some example TODO: research this more -->
 
@@ -363,7 +381,9 @@ A/B testing and feature flag: whe
 
 - Application Coordinator Pattern
 - Data Source Design Pattern
-- Deep Linking (in iOS)
+- Deep Linking (specific to iOS)
+- Universal Link
+
 
 2. Follow on exercise to today's Activity 1:
 
@@ -407,6 +427,9 @@ __*Stretch Challenge:*__
 [Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html) <sup>2</sup>
 
 
+[Universal Links - Apple Devloper](https://developer.apple.com/ios/universal-links/)
+
+[Universal links in iOS - an article](https://medium.com/@abhimuralidharan/universal-links-in-ios-79c4ee038272)
 
 <!-- TODO:
 <sup>1</sup>
