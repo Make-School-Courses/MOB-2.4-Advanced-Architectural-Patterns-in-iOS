@@ -301,6 +301,7 @@ Coordinators are especially useful for complex apps with a large number of desti
 1. Download the starter app: [iOS-CoordinatorsActivity1_B](https://github.com/Make-School-Labs/iOS-CoordinatorsActivity1_B)
 
 **Background:**
+
 The `iOS-CoordinatorsActivity1_B` app is incomplete.
 
 Instead of pushing and presenting ViewControllers from other view controllers, the app seeks to implement the Coordinator pattern.
