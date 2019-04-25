@@ -372,7 +372,7 @@ For examples:
 - MVVM results in thinner VCs, more easily testable code, and data formatting logic that is decoupled from VCs.
 - Adding navigation flow coordinators further decouples VCs
 2. __*Coordinator with Factory*__
-- Combines more flexible navigation with the ability to create objects (even View Controllers) on demand and to changing specifications.
+- Combines more flexible navigation with the ability to create objects (even View Controllers) on demand and to dynamically customized specifications.
 
 
 ## In Class Activity II (optional) (30 min)
