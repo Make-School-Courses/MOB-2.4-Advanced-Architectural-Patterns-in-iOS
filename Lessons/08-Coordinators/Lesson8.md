@@ -303,7 +303,8 @@ Most often, Coordinators are used for:
 - navigation flow
 - managing changes to the Model
 
-**AppCoordinator Approach**
+**AppCoordinator**
+
 Creating an app-wide `AppCoordinator` is the most common implementation of Coordinators for navigation flow. This requires one high-level coordinator instantiated in the `AppDelegate` that directs navigation for the whole app (also known as the *Application Controller pattern*<sup>2</sup>)
 
 The `AppCoordinator` holds an array of child coordinators, who in turn might hold an array of their own child coordinators.
@@ -314,7 +315,9 @@ In addition, child coordinators can be created for specific tasks like signing u
 
 > **TIP:** Remember to employ the Coordinator pattern early in your development process so child coordinators can be useful even in single-step tasks (such as authentication).
 
-*This diagram represents both the relationship between an `AppCoordinator` and its child coordinators, as well as a small of other potential types of coordinators you might consider including in your implementation of the pattern:*
+</br>
+
+*This diagram represents both the relationship between an `AppCoordinator` and its child coordinators, as well as a few potential other coordinator types:*
 
 ![example](assets/coordinator_types.png)
 
