@@ -338,6 +338,11 @@ URLs and deep linking
 For many kinds of apps we not only want to make it easy to navigate within our own app, but also to enable other apps & websites to deep link into ours. A common way to do this on iOS is to define a URL scheme that other apps can then use to link directly into a specific screen or feature of our app.
 Using either (or both!) coordinator and navigator objects, implementing URL and deep linking support becomes a lot easier, since we have dedicated places for navigation in which we can inject our URL handling logic.
 
+
+Universal link and deep link: when supporting deep link, you might need to open specific view regardless of the navigation history. Coordinator pattern is really helpful to keep things tidy there and avoid creating extra dependencies in the flow
+A/B testing and feature flag: whe
+
+
 <!-- this needs some example TODO: research this more -->
 
 ### Coordinator &mdash; with Other Patterns
@@ -403,7 +408,9 @@ __*Stretch Challenge:*__
 
 
 
-<sup>1</sup> <!-- TODO:
+<sup>1</sup>
+
+<!-- TODO:
 - add footnote to Khanlou popularizing Coordinator for iOS
 -->
 
