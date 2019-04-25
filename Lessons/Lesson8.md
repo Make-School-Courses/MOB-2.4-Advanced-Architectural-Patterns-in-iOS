@@ -80,19 +80,7 @@ Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewC
 
 ### Problems Addressed
 
-
-
-
-<!-- Massive View Controller Problem
-
-VC Reusability
-
-Deep Linking
-
-
--->
-
-3. **The Pushing Problem**
+1. **The Pushing Problem**
 
 One of the standard ways to perform navigation on iOS is to use a `UINavigationController` onto which each view controller can either pop or push other view controllers.
 
@@ -138,22 +126,28 @@ class MyViewController : UIViewController {
 }
 ``` -->
 
+2. **Massive View Controller Problem** &mdash; (see previous lesson for description and example)
+
+3. **Reusability** &mdash;
+
+4. **Tight Coupling** &mdash;
+
+5. **Deep Linking Issues** &mdash;
+
 ### Benefits
 
 Coordinators are very easy to use and implement. They can have huge impact on cleaning the code base and on making view controllers more loosely coupled from each other.
 
+The pattern can be adopted for only part of an app or used across the entire application.
+
 Coordinators create a well defined way to deal with navigation in which view controllers are:
-1. Isolated from each other
+1. Isolated from each other (do not need to know about each other)
 2. Reusable in different contexts
 3. Lightweight, less "massive," and focused on their key responsibilities
 
-They can provide the ability to organize an application's architecture by use case scenarios.
-
-And Coordinators give greater control to you, the developer.
-
+And they can provide the ability to organize an application's architecture by use case scenarios.
 
 ### Implementation Notes
-
 
 
 <!--
@@ -275,6 +269,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 *From:* </br>
 https://benoitpasquier.com/coordinator-pattern-swift/
 
+
 <!--
 ##### Coordinator Types
 
@@ -291,12 +286,12 @@ The downside of the Coordinator pattern:
 
 1. **Back Button Issue** &mdash; When the user navigates back, developers must ensure that the right coordinator is released. Solutions for this might come with potential loss of built-in framework features.
 
-2. **Overkill** &mdash; The pattern could well take too much work for very simple apps. Many extra classes will need to be created.
+2. **Overkill** &mdash; The pattern could well take too much work for very simple apps. Many extra classes will need to be created upfront.
 
 
 ### When to Use
 
-Coordinators are especially useful for apps with a large number of destinations screens that can be reached (presented) from multiple places.
+Coordinators are especially useful for complex apps with a large number of destinations screens that can be reached (presented) from multiple places.
 
 ## In Class Activity I (30 min)
 
@@ -306,12 +301,16 @@ Coordinators are especially useful for apps with a large number of destinations 
 1. Download the starter app: [iOS-CoordinatorsActivity1_B](https://github.com/Make-School-Labs/iOS-CoordinatorsActivity1_B)
 
 **Background:**
-The `iOS-CoordinatorsActivity1_B` app seeks to implement the Coordinator pattern by:
-- Creating two protocols:
+The `iOS-CoordinatorsActivity1_B` app is incomplete.
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Navigation </br>
-&nbsp;&nbsp;&nbsp;&nbsp; - Dynamically instantiating View Controller objects from the Main Storyboard bundle </br>
+Instead of pushing and presenting ViewControllers from other view controllers, the app seeks to implement the Coordinator pattern.
 
+When completed, all screen navigation will be managed by coordinators.
+
+Currently, the app contains implementations of two protocols for:
+
+&nbsp;&nbsp;&nbsp;&nbsp; - The Coordinator procol - for navigation </br>
+&nbsp;&nbsp;&nbsp;&nbsp; - The Storyboarded protocol - for dynamically instantiating View Controller objects from the Main Storyboard bundle </br>
 
 __*Navigation Protocol*__
 ```Swift
@@ -376,20 +375,25 @@ Using either (or both!) coordinator and navigator objects, implementing URL and 
 ## After Class
 
 1. Research:
-- Data Source Design Pattern
 
-deep linking in ios
+- Application Coordinator Pattern
+- Data Source Design Pattern
+- Deep Linking (in iOS)
 
 2. Follow on exercise to today's Activity 1:
 
 [Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
 
-At minimum, complete these:
+Resources Required:
+- you can use your completed app from Activity 1
+
+**TODO:**
+At minimum, complete these sections of the tutorial:
 
 - How and when to use child coordinators
 - Navigating backwards
 
-Stretch Challenge:
+__*Stretch Challenge:*__
 - finish all of the implementation sections in this tutorial
 
 3. Continue working on your Course Project...
