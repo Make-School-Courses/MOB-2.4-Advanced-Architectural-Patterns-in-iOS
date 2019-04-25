@@ -114,8 +114,7 @@ What if...
 - you need to be able to navigate to the same view controller from multiple places?
 - you want to implement something like deep linking from outside your app?
 
-
-
+<!--
 ```Swift
 class ImageListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
@@ -137,16 +136,16 @@ class MyViewController : UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
-```
+``` -->
 
 ### Benefits
 
 Coordinators are very easy to use and implement. They can have huge impact on cleaning the code base and on making view controllers more loosely coupled from each other.
 
 Coordinators create a well defined way to deal with navigation in which view controllers are:
-	1. Isolated from each other
-  2. Reusable in different contexts
-  3. Lightweight, less "massive," and focused on their key responsibilities
+1. Isolated from each other
+2. Reusable in different contexts
+3. Lightweight, less "massive," and focused on their key responsibilities
 
 They can provide the ability to organize an application's architecture by use case scenarios.
 
