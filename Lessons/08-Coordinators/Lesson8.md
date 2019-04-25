@@ -134,32 +134,6 @@ class MyViewController : UIViewController {
 
 5. **Deep Linking Issues** &mdash;
 
-### Benefits
-
-Coordinators are very easy to use and implement. They can have huge impact on cleaning the code base and on making view controllers more loosely coupled from each other.
-
-The pattern can be adopted for only part of an app or used across the entire application.
-
-Coordinators create a well defined way to deal with navigation in which view controllers are:
-1. Isolated from each other (do not need to know about each other)
-2. Reusable in different contexts
-3. Lightweight, less "massive," and focused on their key responsibilities
-
-And they can provide the ability to organize an application's architecture by use case scenarios.
-
-### Pitfalls
-
-The downside of the Coordinator pattern:
-
-1. **Back Button Issue** &mdash; When the user navigates back, developers must ensure that the right coordinator is released. Solutions for this might come with potential loss of built-in framework features.
-
-2. **Overkill** &mdash; The pattern could well take too much work for very simple apps. Many extra classes will need to be created upfront.
-
-
-### When to Use
-
-Coordinators are especially useful for complex apps with a large number of destinations screens that can be reached (presented) from multiple places.
-
 
 ### Implementation Notes
 
@@ -397,6 +371,34 @@ https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutor
 
 
 ## Overview/TT II (optional) (20 min)
+
+
+### Benefits
+
+Coordinators are very easy to use and implement. They can have huge impact on cleaning the code base and on making view controllers more loosely coupled from each other.
+
+The pattern can be adopted for only part of an app or used across the entire application.
+
+Coordinators create a well defined way to deal with navigation in which view controllers are:
+1. Isolated from each other (do not need to know about each other)
+2. Reusable in different contexts
+3. Lightweight, less "massive," and focused on their key responsibilities
+
+And they can provide the ability to organize an application's architecture by use case scenarios.
+
+### Pitfalls
+
+The downside of the Coordinator pattern:
+
+1. **Back Button Issue** &mdash; When the user navigates back, developers must ensure that the right coordinator is released. Solutions for this might come with potential loss of built-in framework features.
+
+2. **Overkill** &mdash; The pattern could well take too much work for very simple apps. Many extra classes will need to be created upfront.
+
+
+### When to Use
+
+Coordinators are especially useful for complex apps with a large number of destinations screens that can be reached (presented) from multiple places.
+
 
 <!--
 ##### Coordinator Types
