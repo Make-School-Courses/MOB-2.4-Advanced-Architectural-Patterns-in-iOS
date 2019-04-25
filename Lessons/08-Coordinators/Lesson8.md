@@ -412,6 +412,7 @@ This exercise follows on today's Activity 1...
 > __*Important Note:*__ First, back up (or commit to github) your completed app from Activity 1.
 
 &nbsp;&nbsp;  **TODO:**
+
 At minimum, complete these sections of the tutorial below (same tutorial used in Activity 2):
 
 - "Navigating backwards"
