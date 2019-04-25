@@ -70,8 +70,7 @@ Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewC
 
 ![example](assets/coordinator_diagram.png)
 
-*Source:*
-
+*Source:* </br>
 https://medium.com/@saad.eloulladi/ios-coordinator-pattern-in-swift-39a15aa3b01b
 
 
@@ -262,7 +261,7 @@ The code in the app is nearly complete. Your job is to:
 > **TIP:** Look for the //TODO: annotations we left in the app for you...
 
 
-*adapted from:* </br>
+*Adapted from:* </br>
 https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios
 
 
@@ -302,8 +301,7 @@ Coordinators can be created for a variety of purposes.
 
 ![example](assets/coordinator_types2.png)
 
-*Source:*
-
+*Source:* </br>
 https://www.scoop.it/topic/swift-by-jerometonnelier/p/4097595680/2018/05/11/the-c-in-mvvm-c-mihael-y-cholakov
 
 Most often, Coordinators are used for:
@@ -329,8 +327,7 @@ In addition, child coordinators can be created for specific tasks like signing u
 
 ![example](assets/coordinator_types.png)
 
-*Source:*
-
+*Source:* </br>
 https://www.slideshare.net/secret/3jJlEE1weo0RRl
 
 </br>
