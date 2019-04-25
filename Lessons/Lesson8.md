@@ -49,7 +49,7 @@ By the end of this lesson, you should be able to...
 
 ### The Coordinator Pattern
 
-Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewControllers, taking all of the driving logic (navigation) out of view controllers and moving that logic up one layer &mdash; to a __*Coordinator layer.*__
+The idea behind the Coordinator pattern is the creation of a separate entity &mdash; a Coordinator object &mdash; which is responsible for the application’s flow.
 
 *So what is a coordinator?*
 
@@ -58,6 +58,11 @@ Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewContr
 > A **coordinator** is an object that bosses one or more view controllers around.
 
 &nbsp;&nbsp;&nbsp;&nbsp; *Source:* [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/) Soroush Khanlou<sup>1</sup>
+
+
+The Coordinator encapsulates a part of the application. A Coordinator knows nothing of its parent Coordinator, but it can start its child Coordinators.
+
+Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewControllers, taking all of the driving logic (navigation) out of view controllers and moving that logic up one layer &mdash; to a __*Coordinator layer.*__
 
 
 ![example](assets/coordinator_diagram.png)
@@ -95,6 +100,16 @@ if let vc = storyboard?.instantiateViewController(withIdentifier: "SomeVC") {
     navigationController?.pushViewController(vc, animated: true)
 }
 ```
+__*The Problem*__
+When the view controllers themselves must decide the next view controller to push onto self.navigationController.
+the View controllers are too tightly coupled.
+
+As apps grow, this approach becomes difficult to deal with: The codebase will be hard to change and maintain, and the view controllers are almost impossible to reuse.
+
+What if...
+- you need to be able to navigate to the same view controller from multiple places?
+- you want to implement something like deep linking from outside your app?
+
 
 
 ```Swift
@@ -158,6 +173,9 @@ Use Coordinators when...
 (especially when building apps that have a large amount of screens and destinations that can be reached from multiple places) is to introduce dedicated navigator types.
 
 
+ Coordinators are useful for a specific part of the application that might be presented from different places.
+
+
 ## In Class Activity I (30 min)
 
 ### Individually
@@ -215,7 +233,11 @@ https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutor
 
 ### Coordinator and Deep Linking
 
+URLs and deep linking
+For many kinds of apps we not only want to make it easy to navigate within our own app, but also to enable other apps & websites to deep link into ours. A common way to do this on iOS is to define a URL scheme that other apps can then use to link directly into a specific screen or feature of our app.
+Using either (or both!) coordinator and navigator objects, implementing URL and deep linking support becomes a lot easier, since we have dedicated places for navigation in which we can inject our URL handling logic.
 
+<!-- this needs some example TODO: research this more -->
 
 ### Coordinator &mdash; with Other Patterns
 
