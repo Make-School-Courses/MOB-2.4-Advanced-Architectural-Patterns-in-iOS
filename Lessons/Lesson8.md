@@ -42,20 +42,23 @@ By the end of this lesson, you should be able to...
 
 ### As A Class
 
-1. Review After Assignment from Lesson 7
-- selected students demo their solutions
+1. Review After Class assignment from Lesson 7
+- students demo their solutions
 
 ## Overview/TT I (20 min)
 
 ### The Coordinator Pattern
 
-The idea behind the Coordinator pattern is the creation of a separate entity &mdash; a Coordinator object &mdash; which is responsible for the application’s flow.
+The idea behind the Coordinator pattern is the creation of a separate entity &mdash; __*a Coordinator object *__ &mdash; which is responsible for the application’s *flow.*
 
 *So what is a coordinator?*
 
-> A **coordinator** is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
 >
 > A **coordinator** is an object that bosses one or more view controllers around.
+>
+> A **coordinator** is an object that encapsulates a lifecycle that is spread over a collection of view controllers.
+>
+
 
 &nbsp;&nbsp;&nbsp;&nbsp; *Source:* [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/) Soroush Khanlou<sup>1</sup>
 
