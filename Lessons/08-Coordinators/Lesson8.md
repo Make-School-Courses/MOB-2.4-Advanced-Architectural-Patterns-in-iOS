@@ -70,11 +70,10 @@ Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewC
 
 ![example](assets/coordinator_diagram.png)
 
+<!-- TODO: Attribute graphic -->
 
 
-<!-- TODO: explain Application Coordinator pattern
-- add footnote to Khanlou popularizing Coordinator for iOS
-- insert diagram of coordinator -->
+
 
 
 
@@ -304,13 +303,28 @@ Most often, Coordinators are used for:
 - navigation flow
 - managing changes to the Model
 
-For navigation flow
+**AppCoordinator Approach**
+Creating an app-wide `AppCoordinator` is the most common implementation of Coordinators for navigation flow. This requires one high-level coordinator instantiated in the `AppDelegate` that directs navigation for the whole app (also known as the *Application Controller pattern*<sup>2</sup>)
 
+The `AppCoordinator` holds an array of child coordinators, who in turn might hold an array of their own child coordinators.
 
-<!--
-To really execute this pattern well, you need one high-level coordinator that directs the whole app (this is sometimes known as the Application Controller pattern). The app delegate holds on to the AppCoordinator. Every coordinator holds an array of its child coordinators. Especially if you have more than one, as in a tab bar app, each navigation controller gets its own coordinator, for directing its behavior and flow. Further child coordinators can be created for specific tasks like signing up or creating content. Each coordinator is spawned by its parent coordinator. As always, use this pattern early in the development process, so they’re useful even in single-step tasks, such as authentication. -->
+This is especially useful in a TabBar app: each TabBar scene's navigation controller could get its own coordinator for directing its own behavior and flow. And each coordinator can be spawned by its parent coordinator.
+
+In addition, child coordinators can be created for specific tasks like signing up or creating content.
+
+> **TIP:** Remember to employ the Coordinator pattern early in your development process so child coordinators can be useful even in single-step tasks (such as authentication).
+
+*This diagram represents both the relationship between an `AppCoordinator` and its child coordinators, as well as a small of other potential types of coordinators you might consider including in your implementation of the pattern:*
 
 ![example](assets/coordinator_types.png)
+
+<!-- TODO: Attribute graphic -->
+
+
+
+<!-- TODO: explain Application Coordinator pattern
+- add footnote to Khanlou popularizing Coordinator for iOS
+- insert diagram of coordinator -->
 
 
 ### Coordinator and Deep Linking
@@ -368,7 +382,7 @@ __*Stretch Challenge:*__
 
 ## Additional Resources
 
-1. [Slides]()
+1. [Slides](https://docs.google.com/presentation/d/1Ny2GlorCMgeJdkNo7AZg3m_SH4FwBLyFnrbh9Twqk4o/edit#slide=id.g50e0c2788f_27_8)
 
 []()
 []()
@@ -380,7 +394,7 @@ __*Stretch Challenge:*__
 [NextPrevious What Are Cocoa Bindings? - from Apple ](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html#//apple_ref/doc/uid/20002372-CJBEJBHH)
 
 [Presentation Model - Martin Fowler](https://martinfowler.com/eaaDev/PresentationModel.html)
-[Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html)
+[Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html) <sup>2</sup>
 
 
 
