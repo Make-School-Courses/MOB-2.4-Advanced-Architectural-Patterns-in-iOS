@@ -377,6 +377,22 @@ For examples:
 
 ## In Class Activity II (optional) (30 min)
 
+### Individually
+
+A follow on exercise to today's Activity 1:
+
+**Resources Required**
+
+- you can use your completed app from Activity 1
+
+**TODO:** In the tutorial below, complete this sections:
+
+- "How and when to use child coordinators"
+
+[Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
+
+
+
 ## After Class
 
 1. Research:
@@ -397,7 +413,6 @@ Resources Required:
 **TODO:**
 At minimum, complete these sections of the tutorial:
 
-- How and when to use child coordinators
 - Navigating backwards
 
 __*Stretch Challenge:*__
