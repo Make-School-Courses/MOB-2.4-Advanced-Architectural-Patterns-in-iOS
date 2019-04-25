@@ -379,13 +379,13 @@ For examples:
 
 ### Individually
 
-A follow on exercise to today's Activity 1:
+This exercise follows on today's Activity 1...
 
 **Resources Required**
 
 - you can use your completed app from Activity 1
 
-**TODO:** In the tutorial below, complete this sections:
+**TODO:** In the tutorial below, complete this section:
 
 - "How and when to use child coordinators"
 
