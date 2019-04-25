@@ -60,6 +60,8 @@ Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewContr
 &nbsp;&nbsp;&nbsp;&nbsp; *Source:* [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/) Soroush Khanlou<sup>1</sup>
 
 
+![example](assets/coordinator_diagram.png)
+
 
 
 <!-- TODO: explain Application Coordinator pattern
@@ -113,13 +115,6 @@ class ImageListViewController: UITableViewController {
 
 
 
-
-
-
-
-
-
-
 <!--
 To really execute this pattern well, you need one high-level coordinator that directs the whole app (this is sometimes known as the Application Controller pattern). The app delegate holds on to the AppCoordinator. Every coordinator holds an array of its child coordinators. Especially if you have more than one, as in a tab bar app, each navigation controller gets its own coordinator, for directing its behavior and flow. Further child coordinators can be created for specific tasks like signing up or creating content. Each coordinator is spawned by its parent coordinator. As always, use this pattern early in the development process, so they’re useful even in single-step tasks, such as authentication. -->
 
@@ -139,6 +134,12 @@ All coordinators will conform to this protocol. At bare minimum, it should inclu
 
 
 <!-- TODO: Need to get an example of this  -->
+
+
+##### Coordinator Types
+
+Coordinators can be created for a variety of purposes.
+
 
 ![example](assets/coordinator_types.png)
 
