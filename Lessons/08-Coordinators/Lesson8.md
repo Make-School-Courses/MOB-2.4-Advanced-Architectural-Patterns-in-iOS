@@ -70,7 +70,9 @@ Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewC
 
 ![example](assets/coordinator_diagram.png)
 
-<!-- TODO: Attribute graphic -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:*
+
+https://medium.com/@saad.eloulladi/ios-coordinator-pattern-in-swift-39a15aa3b01b
 
 
 
@@ -298,6 +300,12 @@ Coordinators are especially useful for complex apps with a large number of desti
 
 Coordinators can be created for a variety of purposes.
 
+![example](assets/coordinator_types2.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:*
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://www.scoop.it/topic/swift-by-jerometonnelier/p/4097595680/2018/05/11/the-c-in-mvvm-c-mihael-y-cholakov
+
 Most often, Coordinators are used for:
 
 - navigation flow
@@ -321,15 +329,15 @@ In addition, child coordinators can be created for specific tasks like signing u
 
 ![example](assets/coordinator_types.png)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:*
+
 <!-- TODO: Attribute graphic -->
 
 </br>
 
 
 
-<!-- TODO: explain Application Coordinator pattern
-- add footnote to Khanlou popularizing Coordinator for iOS
-- insert diagram of coordinator -->
+coordinator_types2>
 
 
 ### Coordinator and Deep Linking
