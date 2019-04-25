@@ -275,33 +275,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 *From:* </br>
 https://benoitpasquier.com/coordinator-pattern-swift/
 
-<!-- TODO: atribute the example above  -->
-
+<!--
 ##### Coordinator Types
 
 Coordinators can be created for a variety of purposes.
 
 
-![example](assets/coordinator_types.png)
+![example](assets/coordinator_types.png) -->
 
 
 
 ### Pitfalls
 
-<!-- backbutton -->
+The downside of the Coordinator pattern:
+
+1. **Back Button Issue** &mdash; When the user navigates back, developers must ensure that the right coordinator is released. Solutions for this might come with potential loss of built-in framework features.
+
+2. **Overkill** &mdash; The pattern could well take too much work for very simple apps. Many extra classes will need to be created.
 
 
 ### When to Use
 
-
-Use Coordinators when...
-
-(especially when building apps that have a large amount of screens and destinations that can be reached from multiple places) is to introduce dedicated navigator types.
-
-
- Coordinators are useful for a specific part of the application that might be presented from different places.
-
-
+Coordinators are especially useful for apps with a large number of destinations screens that can be reached (presented) from multiple places.
 
 ## In Class Activity I (30 min)
 
