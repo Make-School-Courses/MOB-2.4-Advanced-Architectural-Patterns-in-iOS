@@ -123,7 +123,17 @@ class ImageListViewController: UITableViewController {
 }
 ```
 
+```Swift
+class MyViewController : UIViewController {
 
+    // ...
+    @IBAction func didTap(_ button: Any) {
+
+        let newViewController = NextViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+```
 
 
 #### Implementation Notes
@@ -150,6 +160,42 @@ All coordinators will conform to this protocol. At bare minimum, it should inclu
 
 <!-- TODO: Need to get an example of this  -->
 
+
+```Swift
+protocol Coordinator : class {
+    var childCoordinators : [Coordinator] { get set }
+    func start()
+}
+```
+
+```Swift
+extension Coordinator {
+
+    func store(coordinator: Coordinator) {
+        childCoordinators.append(coordinator)
+    }
+
+    func free(coordinator: Coordinator) {
+        childCoordinators = childCoordinators.filter { $0 !== coordinator }
+    }
+}
+```
+
+```Swift
+class BaseCoordinator : Coordinator {
+    var childCoordinators : [Coordinator] = []
+    var isCompleted: (() -> ())?
+
+    func start() {
+        fatalError("Children should implement `start`.")
+    }
+}
+```
+
+```Swift
+
+```
+<!-- TODO: atribute the example above  -->
 
 ##### Coordinator Types
 
