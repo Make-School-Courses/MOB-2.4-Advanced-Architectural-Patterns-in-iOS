@@ -62,7 +62,7 @@ The idea behind the Coordinator pattern is the creation of a separate entity &md
 
 The Coordinator encapsulates a part of the application. A Coordinator knows nothing of its parent Coordinator, but it can start its child Coordinators.
 
-Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewControllers, taking all of the driving logic (navigation) out of view controllers and moving that logic up one layer &mdash; to a __*Coordinator layer.*__
+Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewControllers taking all of the driving logic (navigation) out of view controllers and moving it up one level &mdash; to a __*Coordinator layer.*__
 
 
 ![example](assets/coordinator_diagram.png)
