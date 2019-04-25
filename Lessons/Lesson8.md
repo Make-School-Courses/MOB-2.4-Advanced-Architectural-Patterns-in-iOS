@@ -143,7 +143,7 @@ A solid, basic implementation of coordinators for includes 3 main steps:
 
 **The Coordinator Protocol**
 All coordinators will conform to this protocol. At bare minimum, it should include:
-- A property to store any child coordinators.
+- A property to store any child coordinators. Coordinator responsibility is to handle navigation flow: the same way that UINavigationController keeps reference of its stack, Coordinators do the same with their children.
 - A property to store the navigation controller being used to present view controllers. (Even if you don’t show the navigation bar at the top, using a navigation controller is the easiest way to present view controllers.)
 - A `start()` function to make the coordinator take control. This allows us to create a coordinator fully and activate it only when we’re ready.
 
