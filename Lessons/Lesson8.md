@@ -78,7 +78,7 @@ Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewC
 
 
 
-#### Problems Addressed / Benefits
+### Problems Addressed
 
 
 
@@ -139,8 +139,21 @@ class MyViewController : UIViewController {
 }
 ```
 
+### Benefits
 
-#### Implementation Notes
+Coordinators are very easy to use and implement. They can have huge impact on cleaning the code base and on making view controllers more loosely coupled from each other.
+
+Coordinators create a well defined way to deal with navigation in which view controllers are:
+	1. Isolated from each other
+  2. Reusable in different contexts
+  3. Lightweight, less "massive," and focused on their key responsibilities
+
+They can provide the ability to organize an application's architecture by use case scenarios.
+
+And Coordinators give greater control to you, the developer.
+
+
+### Implementation Notes
 
 
 
@@ -151,11 +164,11 @@ To really execute this pattern well, you need one high-level coordinator that di
 A solid, basic implementation of coordinators includes 3 main steps:
 1. Design two protocols:
 - __*Coordinator Protocol*__ - To be used by all our coordinators.
-- __*View Controller Creation Protocol*__ - To facilitate View Controller creation.
-2. Create a __*main coordinator*__ that will control app flow. Start it when our app launches.
-3. Present other view controllers.
+- __*View Controller Creation Protocol*__ - To facilitate view controller creation.
+2. Create a __*main coordinator*__ that will control app flow. Start it when your app launches.
+3. Create/present view controllers.
 
-**The Coordinator Protocol**
+**About the Coordinator Protocol**
 All coordinators will conform to this protocol. At bare minimum, it should include:
 - A property to store any child coordinators. Coordinator responsibility is to handle navigation flow: the same way that UINavigationController keeps reference of its stack, Coordinators do the same with their children.
 - A property to store the navigation controller being used to present view controllers. (Even if you don’t show the navigation bar at the top, using a navigation controller is the easiest way to present view controllers.)
@@ -164,6 +177,17 @@ All coordinators will conform to this protocol. At bare minimum, it should inclu
 
 <!-- TODO: Need to get an example of this  -->
 
+#### Example:
+
+*The code below is for illustration only &mdash; DO NOT run it in a playground!*
+
+This example code illustrates an implementation of the Coordinator pattern which employs an `AppCoordinator` as an application-wide navigation "manager."
+
+It is not a complete implementation of the pattern: It lacks the protocol, and other related code, for creating view controllers.
+
+Note that one of the benefits of this approach, if completed, is that it will reduce the amount of code needed in the `AppDelegate`'s `application: didFinishLaunchingWithOptions:` function.
+
+1. Coordinator protocol created, keeping a reference (array) of its (children:*
 
 ```Swift
 protocol Coordinator : class {
@@ -171,6 +195,8 @@ protocol Coordinator : class {
     func start()
 }
 ```
+
+2. Extending the protocol to add functions to store or remove coordinators:
 
 ```Swift
 extension Coordinator {
@@ -185,6 +211,9 @@ extension Coordinator {
 }
 ```
 
+3. Creating a concrete for building the user flow, with a closure to capture when the flow is *complete*   and coordinators need to be released:
+
+Closures to know when the flow is completed and I need to free the coordinator
 ```Swift
 class BaseCoordinator : Coordinator {
     var childCoordinators : [Coordinator] = []
@@ -197,8 +226,56 @@ class BaseCoordinator : Coordinator {
 ```
 
 ```Swift
+class AppCoordinator : BaseCoordinator {
 
+    let window : UIWindow
+
+    init(window: UIWindow) {
+        self.window = window
+        super.init()
+    }
+
+    override func start() {
+        // preparing root view
+        let navigationController = UINavigationController()
+        let myCoordinator = MyCoordinator(navigationController: navigationController)
+
+        // store child coordinator
+        self.store(coordinator: myCoordinator)
+        myCoordinator.start()
+
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+
+        // detect when free it
+        myCoordinator.isCompleted = { [weak self] in
+            self?.free(coordinator: myCoordinator)
+        }
+    }
+}
 ```
+
+```Swift
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+    private var appCoordinator : AppCoordinator!
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        window = UIWindow()
+
+        let appCoordinator = AppCoordinator(window: window!)
+        appCoordinator.start()
+        self.appCoordinator = appCoordinator
+
+        return true
+    }
+```
+
+*From:* </br>
+https://benoitpasquier.com/coordinator-pattern-swift/
+
 <!-- TODO: atribute the example above  -->
 
 ##### Coordinator Types
@@ -224,6 +301,7 @@ Use Coordinators when...
 
 
  Coordinators are useful for a specific part of the application that might be presented from different places.
+
 
 
 ## In Class Activity I (30 min)
