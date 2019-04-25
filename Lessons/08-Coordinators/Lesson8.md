@@ -462,9 +462,9 @@ __*Stretch Challenge:*__
     -->
 
 
-    <!-- TODO: evaluate for its potential as: a later exercise? After Class research? -->
+    <!-- TODO: evaluate for its potential as: a later exercise? After Class research?
 
-    <!-- The code below is for illustration only -- IT WILL NOT run in a playground!
+The code below is for illustration only -- IT WILL NOT run in a playground!
 
     This example code illustrates an implementation of the Coordinator pattern which employs an `AppCoordinator` as an application-wide navigation "manager."
 
@@ -472,6 +472,7 @@ __*Stretch Challenge:*__
 
     Note that one of the benefits of this approach, if completed, is that it will reduce the amount of code needed in the `AppDelegate`'s `application: didFinishLaunchingWithOptions:` function.
 
+-->
     1. Coordinator protocol created, keeping a reference (array) of its (children:*
 
     ```Swift
