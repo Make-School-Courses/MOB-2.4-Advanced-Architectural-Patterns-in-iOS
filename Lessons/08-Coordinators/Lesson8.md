@@ -299,11 +299,6 @@ Coordinators are especially useful for complex apps with a large number of desti
 
 Coordinators can be created for a variety of purposes.
 
-![example](assets/coordinator_types2.png)
-
-*Source:* </br>
-https://www.scoop.it/topic/swift-by-jerometonnelier/p/4097595680/2018/05/11/the-c-in-mvvm-c-mihael-y-cholakov
-
 Most often, Coordinators are used for:
 
 - navigation flow
@@ -321,7 +316,15 @@ In addition, child coordinators can be created for specific tasks like signing u
 
 > **TIP:** Remember to employ the Coordinator pattern early in your development process so child coordinators can be useful even in single-step tasks (such as authentication).
 
+
+![example](assets/coordinator_types2.png)
+
+*Source:* </br>
+https://www.scoop.it/topic/swift-by-jerometonnelier/p/4097595680/2018/05/11/the-c-in-mvvm-c-mihael-y-cholakov
+
+
 </br>
+
 
 *Diagram representing the relationship between an `AppCoordinator` and its child coordinators, as well as a few other potential coordinator types:*
 
