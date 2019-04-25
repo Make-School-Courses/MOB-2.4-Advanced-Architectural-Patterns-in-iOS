@@ -252,7 +252,7 @@ __*Note that:*__
 - the main VC (`ViewController`) is __*not*__ configured as the "Initial View Controller" in the storyboad
 - in order to be created dynamically, all VCs are given a `StoryBoard ID`
 
-**- TODO -**
+**- TODO -** </br>
 The code in the app is nearly complete. Your job is to:
 - analyze the app's structure wrt how it is creating view controllers
 - complete any missing code so that the `BuyViewController` and `CreateAccountViewController` are presented using the Coordinator pattern instead of typical iOS navigation process (*see* The Pushing Problem *above*)
