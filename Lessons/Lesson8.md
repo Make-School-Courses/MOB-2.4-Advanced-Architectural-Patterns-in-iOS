@@ -147,6 +147,20 @@ Coordinators create a well defined way to deal with navigation in which view con
 
 And they can provide the ability to organize an application's architecture by use case scenarios.
 
+### Pitfalls
+
+The downside of the Coordinator pattern:
+
+1. **Back Button Issue** &mdash; When the user navigates back, developers must ensure that the right coordinator is released. Solutions for this might come with potential loss of built-in framework features.
+
+2. **Overkill** &mdash; The pattern could well take too much work for very simple apps. Many extra classes will need to be created upfront.
+
+
+### When to Use
+
+Coordinators are especially useful for complex apps with a large number of destinations screens that can be reached (presented) from multiple places.
+
+
 ### Implementation Notes
 
 
@@ -326,28 +340,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 https://benoitpasquier.com/coordinator-pattern-swift/ -->
 
 
-<!--
-##### Coordinator Types
-
-Coordinators can be created for a variety of purposes.
-
-
-![example](assets/coordinator_types.png) -->
-
-
-
-### Pitfalls
-
-The downside of the Coordinator pattern:
-
-1. **Back Button Issue** &mdash; When the user navigates back, developers must ensure that the right coordinator is released. Solutions for this might come with potential loss of built-in framework features.
-
-2. **Overkill** &mdash; The pattern could well take too much work for very simple apps. Many extra classes will need to be created upfront.
-
-
-### When to Use
-
-Coordinators are especially useful for complex apps with a large number of destinations screens that can be reached (presented) from multiple places.
 
 ## In Class Activity I (30 min)
 
@@ -408,6 +400,15 @@ https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutor
 
 
 ## Overview/TT II (optional) (20 min)
+
+<!--
+##### Coordinator Types
+
+Coordinators can be created for a variety of purposes.
+
+
+![example](assets/coordinator_types.png) -->
+
 
 ### Coordinator and Deep Linking
 
