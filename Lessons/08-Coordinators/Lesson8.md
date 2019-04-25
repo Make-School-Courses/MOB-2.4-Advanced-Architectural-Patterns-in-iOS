@@ -406,7 +406,7 @@ __*Stretch Challenge:*__
 [Presentation Model - Martin Fowler](https://martinfowler.com/eaaDev/PresentationModel.html)
 [Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html) <sup>2</sup>
 
-</br>
+
 
 <!-- TODO:
 <sup>1</sup>
@@ -415,112 +415,7 @@ __*Stretch Challenge:*__
 
 
 
-
-
-<!-- TODO: evaluate for its potential as: a later exercise? After Class research?
-
-The code below is for illustration only -- IT WILL NOT run in a playground!
-
-This example code illustrates an implementation of the Coordinator pattern which employs an `AppCoordinator` as an application-wide navigation "manager."
-
-It is not a complete implementation of the pattern: It lacks the protocol, and other related code, for creating view controllers.
-
-Note that one of the benefits of this approach, if completed, is that it will reduce the amount of code needed in the `AppDelegate`'s `application: didFinishLaunchingWithOptions:` function.
-
-    1. Coordinator protocol created, keeping a reference (array) of its (children:*
-
-    ```Swift
-    protocol Coordinator : class {
-        var childCoordinators : [Coordinator] { get set }
-        func start()
-    }
-    ```
-
-    2. Extending the protocol to add functions to store or remove coordinators:
-
-    ```Swift
-    extension Coordinator {
-
-        func store(coordinator: Coordinator) {
-            childCoordinators.append(coordinator)
-        }
-
-        func free(coordinator: Coordinator) {
-            childCoordinators = childCoordinators.filter { $0 !== coordinator }
-        }
-    }
-    ```
-
-    3. Creating a concrete for building the user flow, with a closure to capture when the flow is *complete*   and coordinators need to be released:
-
-    Closures to know when the flow is completed and I need to free the coordinator
-    ```Swift
-    class BaseCoordinator : Coordinator {
-        var childCoordinators : [Coordinator] = []
-        var isCompleted: (() -> ())?
-
-        func start() {
-            fatalError("Children should implement `start`.")
-        }
-    }
-    ```
-
-    ```Swift
-    class AppCoordinator : BaseCoordinator {
-
-        let window : UIWindow
-
-        init(window: UIWindow) {
-            self.window = window
-            super.init()
-        }
-
-        override func start() {
-            // preparing root view
-            let navigationController = UINavigationController()
-            let myCoordinator = MyCoordinator(navigationController: navigationController)
-
-            // store child coordinator
-            self.store(coordinator: myCoordinator)
-            myCoordinator.start()
-
-            window.rootViewController = navigationController
-            window.makeKeyAndVisible()
-
-            // detect when free it
-            myCoordinator.isCompleted = { [weak self] in
-                self?.free(coordinator: myCoordinator)
-            }
-        }
-    }
-    ```
-
-    ```Swift
-    class AppDelegate: UIResponder, UIApplicationDelegate {
-
-        var window: UIWindow?
-        private var appCoordinator : AppCoordinator!
-
-        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-            window = UIWindow()
-
-            let appCoordinator = AppCoordinator(window: window!)
-            appCoordinator.start()
-            self.appCoordinator = appCoordinator
-
-            return true
-        }
-    ```
-
-    From:
-    https://benoitpasquier.com/coordinator-pattern-swift/  
-
--->
-
-
-
-    <!-- INSTRUCTOR NOTES:  SOLUTION TO ACTIVITY 1
+<!-- INSTRUCTOR NOTES:  SOLUTION TO ACTIVITY 1
 
       PART 1: IN App Delegate:
 
