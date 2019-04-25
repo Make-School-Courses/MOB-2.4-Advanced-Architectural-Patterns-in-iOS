@@ -93,7 +93,7 @@ if let vc = storyboard?.instantiateViewController(withIdentifier: "SomeVC") {
 ```
 __*The Problem*__
 
-When the view controllers themselves must decide the next view controller to push onto self.navigationController.
+When the view controllers themselves must decide the next view controller to push onto `self.navigationController`,
 the View controllers are too tightly coupled.
 
 As an app grows, this approach becomes difficult to deal with: The codebase will be hard to change and maintain, and view controllers are almost impossible to reuse.
@@ -176,6 +176,7 @@ A solid, basic implementation of coordinators includes 3 main steps:
 3. Create/present view controllers.
 
 **About the Coordinator Protocol**
+
 All coordinators will conform to this protocol. At bare minimum, it should include:
 - A property to store any child coordinators. Coordinator responsibility is to handle navigation flow: the same way that UINavigationController keeps reference of its stack, Coordinators do the same with their children.
 - A property to store the navigation controller being used to present view controllers. (Even if you don’t show the navigation bar at the top, using a navigation controller is the easiest way to present view controllers.)
@@ -188,11 +189,7 @@ All coordinators will conform to this protocol. At bare minimum, it should inclu
 
 *The code below is for illustration only &mdash; IT WILL NOT run in a playground!*
 
-This example code illustrates an implementation of the Coordinator pattern which employs an `AppCoordinator` as an application-wide navigation "manager."
-
-It is not a complete implementation of the pattern: It lacks the protocol, and other related code, for creating view controllers.
-
-Note that one of the benefits of this approach, if completed, is that it will reduce the amount of code needed in the `AppDelegate`'s `application: didFinishLaunchingWithOptions:` function.
+This example code illustrates basic implementation steps of the Coordinator pattern when intended for use as a an application-wide navigation strategy.
 
 1. Coordinator protocol created, keeping a reference (an array property) to all of its *children:*
 
