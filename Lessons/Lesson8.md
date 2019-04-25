@@ -79,7 +79,7 @@ Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewContr
 
 VC Reusability
 
-push
+Deep Linking
 
 
 -->
@@ -145,6 +145,19 @@ Coordinators can be created for a variety of purposes.
 
 
 
+### Pitfalls
+
+<!-- backbutton -->
+
+
+### When to Use
+
+
+Use Coordinators when...
+
+(especially when building apps that have a large amount of screens and destinations that can be reached from multiple places) is to introduce dedicated navigator types.
+
+
 ## In Class Activity I (30 min)
 
 ### Individually
@@ -200,18 +213,19 @@ https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutor
 
 ## Overview/TT II (optional) (20 min)
 
-### Coordinator with Other Patterns
+### Coordinator and Deep Linking
+
+
+
+### Coordinator &mdash; with Other Patterns
+
+
 
 #### with MVVM
 
 #### with xxx
 
 
-### When to Use
-
-Use Coordinators when...
-
-(especially when building apps that have a large amount of screens and destinations that can be reached from multiple places) is to introduce dedicated navigator types.
 
 ## In Class Activity II (optional) (30 min)
 
@@ -224,7 +238,7 @@ deep linking in ios
 
 2. Follow on exercise to today's Activity 1:
 
-[Advanced coordinators in iOS](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
+[Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
 
 At minimum, complete these:
 
@@ -232,11 +246,9 @@ At minimum, complete these:
 - Navigating backwards
 
 Stretch Challenge:
-- finish all
+- finish all of the implementation sections in this tutorial
 
 3. Continue working on your Course Project...
-
-
 
 
 ## Wrap Up (5 min)
