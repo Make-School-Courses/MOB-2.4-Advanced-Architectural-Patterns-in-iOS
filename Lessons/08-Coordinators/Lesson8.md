@@ -406,9 +406,11 @@ __*Stretch Challenge:*__
 [Presentation Model - Martin Fowler](https://martinfowler.com/eaaDev/PresentationModel.html)
 [Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html) <sup>2</sup>
 
-
+</br>
 
 <sup>1</sup>
+
+</br>
 
 <!-- TODO:
 - add footnote to Khanlou popularizing Coordinator for iOS
