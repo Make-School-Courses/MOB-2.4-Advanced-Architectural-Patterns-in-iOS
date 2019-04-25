@@ -431,28 +431,15 @@ __*Stretch Challenge:*__
 ## Additional Resources
 
 1. [Slides](https://docs.google.com/presentation/d/1Ny2GlorCMgeJdkNo7AZg3m_SH4FwBLyFnrbh9Twqk4o/edit#slide=id.g50e0c2788f_27_8)
-
-[]()
-[]()
-[Coordinators - video presentation](https://vimeo.com/144116310)
-[Coordinators - a slideshare from LinkedIn](https://www.slideshare.net/secret/3jJlEE1weo0RRl)
-
-
-[8 Patterns to Help You Destroy Massive View Controller - an article](http://khanlou.com/2014/09/8-patterns-to-help-you-destroy-massive-view-controller/)
-[NextPrevious What Are Cocoa Bindings? - from Apple ](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html#//apple_ref/doc/uid/20002372-CJBEJBHH)
-
-[Presentation Model - Martin Fowler](https://martinfowler.com/eaaDev/PresentationModel.html)
-[Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html) <sup>2</sup>
-
-
-[Universal Links - Apple Devloper](https://developer.apple.com/ios/universal-links/)
-
-[Universal links in iOS - an article](https://medium.com/@abhimuralidharan/universal-links-in-ios-79c4ee038272)
-
-<!-- TODO:
-<sup>1</sup>
-- add footnote to Khanlou popularizing Coordinator for iOS
--->
+2. [The Coordinator - an aricle ](http://khanlou.com/2015/01/the-coordinator/), by Soroush Khanlou, <sup>1</sup> who popularized the pattern for iOS development.
+3. [Coordinators - video presentation](https://vimeo.com/144116310)
+4. [Coordinators - a slideshare from LinkedIn](https://www.slideshare.net/secret/3jJlEE1weo0RRl)
+5. [8 Patterns to Help You Destroy Massive View Controller - an article](http://khanlou.com/2014/09/8-patterns-to-help-you-destroy-massive-view-controller/)
+6. [NextPrevious What Are Cocoa Bindings? - from Apple ](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html#//apple_ref/doc/uid/20002372-CJBEJBHH)
+7. [Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html) <sup>2</sup>
+8. [Presentation Model - Martin Fowler](https://martinfowler.com/eaaDev/PresentationModel.html)
+9. [Universal Links - Apple Devloper](https://developer.apple.com/ios/universal-links/)
+10. [Universal links in iOS - an article](https://medium.com/@abhimuralidharan/universal-links-in-ios-79c4ee038272)
 
 
 
