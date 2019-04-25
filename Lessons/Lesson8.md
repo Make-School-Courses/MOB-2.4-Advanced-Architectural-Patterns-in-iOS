@@ -172,7 +172,59 @@ All coordinators will conform to this protocol. At bare minimum, it should inclu
 
 #### Example:
 
-*The code below is for illustration only &mdash; DO NOT run it in a playground!*
+*The code below is for illustration only &mdash; IT WILL NOT run in a playground!*
+
+This example code illustrates an implementation of the Coordinator pattern which employs an `AppCoordinator` as an application-wide navigation "manager."
+
+It is not a complete implementation of the pattern: It lacks the protocol, and other related code, for creating view controllers.
+
+Note that one of the benefits of this approach, if completed, is that it will reduce the amount of code needed in the `AppDelegate`'s `application: didFinishLaunchingWithOptions:` function.
+
+1. Coordinator protocol created, keeping a reference (an array property) to all of its *children:*
+
+```Swift
+protocol Coordinator : class {
+    var childCoordinators : [Coordinator] { get set }
+    func start()
+}
+```
+
+2. For building the user flow, a concrete implementation of the protocol is created:
+
+```Swift
+class BaseCoordinator : Coordinator {
+    var childCoordinators : [Coordinator] = []
+
+    func start() {
+        fatalError("Children should implement `start`.")
+    }
+}
+```
+
+3. The View Controller Creation protocol:
+
+```Swift
+  protocol ControllerCreator {
+      static func instantiate() -> Self
+  }
+```
+
+4. All view controllers targeted for participation in the coordinated navigation approach must:
+- Conform to the `ControllerCreator` protocol
+- Have a `BaseCoordinator` property for access to its properties and functions
+
+```Swift
+class ViewController: UIViewController, ControllerCreator {
+
+     weak var coordinator: BaseCoordinator?
+
+     ...
+```
+
+
+<!-- TODO: Move this all to a later exercise? After Class research? -->
+<!--
+*The code below is for illustration only &mdash; IT WILL NOT run in a playground!*
 
 This example code illustrates an implementation of the Coordinator pattern which employs an `AppCoordinator` as an application-wide navigation "manager."
 
@@ -267,7 +319,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 *From:* </br>
-https://benoitpasquier.com/coordinator-pattern-swift/
+https://benoitpasquier.com/coordinator-pattern-swift/ -->
 
 
 <!--
