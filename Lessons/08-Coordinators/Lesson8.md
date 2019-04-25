@@ -408,13 +408,15 @@ __*Stretch Challenge:*__
 
 </br>
 
+<!-- TODO:
 <sup>1</sup>
+- add footnote to Khanlou popularizing Coordinator for iOS
+-->
+
 
 </br>
 
-<!-- TODO:
-- add footnote to Khanlou popularizing Coordinator for iOS
--->
+
 
 
 <!-- INSTRUCTOR NOTES:  -- SOLUTION TO ACTIVITY 1 --
