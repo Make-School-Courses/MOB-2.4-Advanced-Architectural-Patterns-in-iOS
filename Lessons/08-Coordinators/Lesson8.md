@@ -401,12 +401,12 @@ This exercise follows on today's Activity 1...
 
 2. Follow on exercise to today's Activity 1 and Activity 2:
 
-&nbsp;&nbsp;&nbsp;&nbsp; **Resources Required**
+&nbsp;&nbsp; **Resources Required**
 - use your completed app from Activity 2
 
 > __*Important Note:*__ First, back up (or commit to github) your completed app from Activity 1.
 
-&nbsp;&nbsp;&nbsp;&nbsp; **TODO:**
+&nbsp;&nbsp;  **TODO:**
 At minimum, complete these sections of the tutorial below (same tutorial used in Activity 2):
 
 - "Navigating backwards"
