@@ -459,11 +459,10 @@ __*Stretch Challenge:*__
 
     -->
 
-</br>
 
-    <!-- TODO: evaluate for its potential as: a later exercise? After Class research?
+    <!-- TODO: evaluate for its potential as: a later exercise? After Class research? -->
 
-    The code below is for illustration only -- IT WILL NOT run in a playground!
+    <!-- The code below is for illustration only -- IT WILL NOT run in a playground!
 
     This example code illustrates an implementation of the Coordinator pattern which employs an `AppCoordinator` as an application-wide navigation "manager."
 
@@ -557,5 +556,7 @@ __*Stretch Challenge:*__
         }
     ```
 
-    From: 
-    https://benoitpasquier.com/coordinator-pattern-swift/  -->
+    From:
+    https://benoitpasquier.com/coordinator-pattern-swift/  
+
+    -->
