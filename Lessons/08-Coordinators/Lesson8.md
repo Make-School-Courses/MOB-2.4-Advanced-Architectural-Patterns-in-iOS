@@ -365,12 +365,14 @@ https://medium.com/@abhimuralidharan/universal-links-in-ios-79c4ee038272
 
 ### Coordinator &mdash; with Other Patterns
 
+Coordinator is an easy pattern to implement with other complementary patterns.
 
-
-#### with MVVM
-
-#### with xxx
-
+For examples:
+1. __*Coordinator with MVVM*__
+- MVVM results in thinner VCs, more easily testable code, and data formatting logic that is decoupled from VCs.
+- Adding navigation flow coordinators further decouples VCs
+2. __*Coordinator with Factory*__
+- Combines more flexible navigation with the ability to create objects (even View Controllers) on demand and to changing specifications.
 
 
 ## In Class Activity II (optional) (30 min)
