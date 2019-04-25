@@ -330,6 +330,7 @@ In addition, child coordinators can be created for specific tasks like signing u
 ![example](assets/coordinator_types.png)
 
 *Source:*
+
 https://www.slideshare.net/secret/3jJlEE1weo0RRl
 
 </br>
