@@ -14,12 +14,12 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:20      | Initial Exercise          |
-| 0:25        | 0:20      | Overview                  |
-| 0:45        | 0:15      | In Class Activity I       |
-| 1:00        | 0:10      | BREAK                     |
-| 1:10        | 0:20      | Overview                  |
-| 1:30        | 0:25      | In Class Activity II      |
+| 0:05        | 0:15      | Initial Exercise          |
+| 0:20        | 0:25      | Overview                  |
+| 0:45        | 0:25      | In Class Activity I       |
+| 1:10        | 0:10      | BREAK                     |
+| 1:20        | 0:15      | Overview                  |
+| 1:35        | 0:20      | In Class Activity II      |
 | TOTAL       | 1:55      |                           |
 
 
