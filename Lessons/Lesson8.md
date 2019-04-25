@@ -104,10 +104,11 @@ if let vc = storyboard?.instantiateViewController(withIdentifier: "SomeVC") {
 }
 ```
 __*The Problem*__
+
 When the view controllers themselves must decide the next view controller to push onto self.navigationController.
 the View controllers are too tightly coupled.
 
-As apps grow, this approach becomes difficult to deal with: The codebase will be hard to change and maintain, and the view controllers are almost impossible to reuse.
+As an app grows, this approach becomes difficult to deal with: The codebase will be hard to change and maintain, and view controllers are almost impossible to reuse.
 
 What if...
 - you need to be able to navigate to the same view controller from multiple places?
@@ -147,10 +148,10 @@ class MyViewController : UIViewController {
 To really execute this pattern well, you need one high-level coordinator that directs the whole app (this is sometimes known as the Application Controller pattern). The app delegate holds on to the AppCoordinator. Every coordinator holds an array of its child coordinators. Especially if you have more than one, as in a tab bar app, each navigation controller gets its own coordinator, for directing its behavior and flow. Further child coordinators can be created for specific tasks like signing up or creating content. Each coordinator is spawned by its parent coordinator. As always, use this pattern early in the development process, so they’re useful even in single-step tasks, such as authentication. -->
 
 
-A solid, basic implementation of coordinators for includes 3 main steps:
+A solid, basic implementation of coordinators includes 3 main steps:
 1. Design two protocols:
-- Coordinator Protocol - To be used by all our coordinators.
-- View Controller Creation Protocol - To make view controllers easier to create.
+- __*Coordinator Protocol*__ - To be used by all our coordinators.
+- __*View Controller Creation Protocol*__ - To facilitate View Controller creation.
 2. Create a __*main coordinator*__ that will control app flow. Start it when our app launches.
 3. Present other view controllers.
 
