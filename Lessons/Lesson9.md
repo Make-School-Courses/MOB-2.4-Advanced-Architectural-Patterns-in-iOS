@@ -52,14 +52,15 @@ xxxx
 ###  Functional Programming
 
 > “...functional programming is a programming paradigm… that treats computation as the evaluation of mathematical
-> functions and avoids changing-state and mutable data.” – Wikipedia
+> functions and avoids changing-state and mutable data.”
+> – Wikipedia
 
 #### Why Learn This?
 
-**Enemy of the State** <sup>1</sup>
+**Enemy of the State** <sup>1</sup> </br>
 iOS and Mac apps rely heavily on state to change their presentation and respond to input &mdash; it's hard to imagine writing an app without the use of __*properties*__ and __*variables.*__
 
-However, __*state is a huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter.
+However, __*state*__ is a __*huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter.
 
 
 
