@@ -34,7 +34,7 @@ By the end of this lesson, you should be able to...
 3. Assess:
 - the suitability of a given design pattern to solve a given problem
 - the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
-4. Implement basic examples of MVVM explored in this class
+4. Implement basic examples of XXX explored in this class
 
 
 <!-- 1. Identify and describe
@@ -44,14 +44,26 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (15 min)
 
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
+xxxx
+
 
 ## Overview/TT I (20 min)
+
+###  Functional Programming
+
+> “...functional programming is a programming paradigm… that treats computation as the evaluation of mathematical
+> functions and avoids changing-state and mutable data.” – Wikipedia
+
+#### Why Learn This?
+
+**Enemy of the State** <sup>1</sup>
+iOS and Mac apps rely heavily on state to change their presentation and respond to input &mdash; it's hard to imagine writing an app without the use of __*properties*__ and __*variables.*__
+
+However, __*state is a huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter.
+
+
+
+
 
 - Why learn this?
 - Industry examples of usage
@@ -83,4 +95,7 @@ By the end of this lesson, you should be able to...
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. [Slides]()
+2. [Functional programming - wikipedia](https://en.wikipedia.org/wiki/Functional_programming)
+3. [Enemy of the State](https://speakerdeck.com/jspahrsummers/enemy-of-the-state?slide=5) <sup>1</sup>
+[]()
