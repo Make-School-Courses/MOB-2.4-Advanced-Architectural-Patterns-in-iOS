@@ -290,9 +290,56 @@ In Category Theory, a map between categories (object collections) is called a "f
 
 The `map` function in Swift is a type of functor; it is a HoF that solves the problem of transforming the elements of a collection using a function.
 
+Use `map` to loop over a collection and apply the same operation to each element in the collection.
 
+[map(_:)](https://developer.apple.com/documentation/swift/array/3017522-map) &mdash; Returns an array containing the results of mapping the given closure over the sequence’s elements.
 
-<!-- < TODO: Demo map(()) -->
+#### Example 1 - `map`with an Array
+
+> In this example, map is used first to convert the names in the array to lowercase strings and then to count their characters.
+
+```Swift
+let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+let lowercaseNames = cast.map { $0.lowercased() }
+// 'lowercaseNames' == ["vivien", "marlon", "kim", "karl"]
+let letterCounts = cast.map { $0.count }
+// 'letterCounts' == [6, 6, 3, 4]
+```
+
+#### Example 2 -
+
+The `map` function is not limited to arrays; you can use it on other collection types, too.
+
+If you use `map` with a Swift `Dictionary` or `Set`, the return type will still always be a generic array, but you can return an array containing any type.
+
+> Consider a dictionary with book names as key and the amount of each book as the value.
+
+```Swift
+let bookAmount = ["harrypotter": 100.0, "junglebook": 60.00]
+```
+
+__*TIP:*__ If you have trouble understanding the argument types of the closure Xcode code completion will help you:
+```Swift
+let returnFromMap = bookAmount.map(<#T##transform: ((key: String, value: Double)) throws -> T##((key: String, value: Double)) throws -> T#>)
+```
+
+> As we iterate over the dictionary, our closure has arguments that are a String and a Double from the types of the key and
+> value that make up each element of the dictionary. What the array result returned by `map` contains is up to you:
+
+```Swift
+let returnFromMap = bookAmount.map({ key, value in
+//    print(key.capitalized)
+//    print(value * 10)
+    return(key.capitalized, value * 10)
+})
+
+// print the mapped array returned...
+print(returnFromMap) // [("Harrypotter", 1000.0), ("Junglebook", 600.0)]
+```
+
+*From:* </br>
+https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-reduce-flatmap-1837646a63e8
+
 
 ## In Class Activity II (30 min)
 
