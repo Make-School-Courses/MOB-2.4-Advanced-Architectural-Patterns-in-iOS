@@ -142,42 +142,6 @@ Benefits of applying immutability include:
 
 ##### Example 1
 
-<!-- A simple example in which all the odd numbers are chosen from an array of integers: -->
-
-
-
-
-*from:* </br>
-https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c1f420ca9
-
-
-
-### First-Class and Higher-Order Functions
-
-Functions in Swift are first class citizens (or first class values), this means that functions are types, this allows us to treat them as variables, pass them into other functions as arguments, and even allows functions to return other functions.
-
-every language with FP has some version of Map, Filter, Reduce
-
-
-Higher-order functions can receive other functions as their parameters. Swift provides higher-order functions such as map, filter, and reduce.
-
-Also, in Swift, we can develop our own higher-order functions and DSLs.
-
-
-### map
-
-<!-- as a functor  -->
-The map function is a higher-order function that solves the problem of transforming the elements of an array using a function.
-
-
-
-<!-- < TODO: Demo map(()) -->
-
-## In Class Activity I (30 min)
-
-<!-- < TODO: have  students talk about side effects? -->
-
-
 
 > First, create a type and an array to hold objects of the type.
 
@@ -218,7 +182,118 @@ if myArr.contains(where: { $0.name == "Def" }) {
     print("yes")
 }
 ```
+
+> Both achieve the same result. But the imperative version walks through the array step-by-step, while the functional version
+> simply passes a closure to the `.contains(where: )` function that exists for every array object.
+
+
+
+##### Example 2
+> Consider how the following code is imperative. Notice that we are manipulating the values inside a mutable array called numbers,
+> and then printing to the console:
+
+```Swift
+//Imperative Approach
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for i in 0..<numbers.count {
+    let timesTen = numbers[i] * 10
+    numbers[i] = timesTen
+}
+
+print(numbers) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
+
+> Let's now consider this alternate functional approach:
+
+```swift
+//Functional Approach
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // 1)
+
+extension Array where Element == Int {
+
+    func timesTen() -> [Int] { // 2)
+        var output = [Int]()
+
+        for num in self { // 3) and 4)
+            output.append(num * 10)
+        }
+        return output
+    }
+
+}
+
+let result = numbers.timesTen() // 4)
+
+print(numbers) //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(result) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
+
+> Again, the results of the functional version are similar to that of the impertive one. except now:
+> 1) The `numbers` array is now made immutable with the `let` keyword.
+> 2) We moved the process of multiplying numbers into a method stored in an extension on Array.
+> 3) Though still using a `for loop` and updating a variable called `output`, the scope of this variable is limited to the method.
+> 4) The input argument (`numbers`) is being passed by value into the method, giving it the same scope as the output.
+
+*from:* </br>
+https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c1f420ca9
+
+
+
+## In Class Activity I (30 min)
+
+**TODO:**
+1. Analyze the code in Example 2 above
+2. Answer the following questions:
+
+**Q:** What happens if another thread tries to access the `numbers` array during this process for:
+
+- the imperative version?
+- the functional version?
+
+**Q:** What happens if we later want to access the original values stored in numbers?
+
+- with the imperative version?
+- with the functional version?
+
+**Q:** How reliably can the code be tested for:
+
+- the imperative version?
+- the functional version?
+
+
+### First-Class and Higher-Order Functions
+
+Functions in Swift are first class citizens (or first class values), this means that functions are types, this allows us to treat them as variables, pass them into other functions as arguments, and even allows functions to return other functions.
+
+every language with FP has some version of Map, Filter, Reduce
+
+
+Higher-order functions can receive other functions as their parameters. Swift provides higher-order functions such as map, filter, and reduce.
+
+Also, in Swift, we can develop our own higher-order functions and DSLs.
+
+
+### map
+
+<!-- as a functor  -->
+The map function is a higher-order function that solves the problem of transforming the elements of an array using a function.
+
+
+
+<!-- < TODO: Demo map(()) -->
+
+## In Class Activity I (30 min)
+
+<!-- < TODO: have  students talk about side effects? -->
+
+
+
 <!-- < TODO: have them update Example 1 using map() -->
+
+
+<!-- A simple example in which all the odd numbers are chosen from an array of integers: -->
+
 
 <!-- This uses .filter for evens -->
 https://medium.com/@sdrzn/functional-programming-in-swift-221a8cabb8c
