@@ -65,12 +65,19 @@ iOS and Mac apps rely heavily on __*state*__ to change their presentation and re
 
 However, __*state*__ is a __*huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter.
 
+<!-- Add 1. how FP solves this and 2. FP in swift uses value types -->
 
 ### Key Concepts
 
-**State (aka, Mutable State)** &mdash; Refers to a program's stored values at any given time
+**State (aka, Mutable State)** &mdash; Refers to a program's stored values at any given time.
 
-**Mutation** &mdash; The act of updating some state in-place
+**Mutation** &mdash; The act of updating some state in-place.
+
+**Pure Functions** &mdash; A function is pure if it meets two criteria:
+	- It always produces the same output if given the same input.
+	- It does not produce external side effects.
+
+<!-- TODO: show example of pure function? -->
 
 **Imperative programming** &mdash; A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
 
@@ -90,6 +97,7 @@ However, __*state*__ is a __*huge source of needless complexity,*__ and __*respo
 
 Side effects represent any changes to the state outside of your code's current scope.
 if it modifies some state variable value(s) outside its local environment,
+
 
 
 refers simply to the modification of some kind of state - for instance:
@@ -189,8 +197,16 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 
 ### First-Class and Higher-Order Functions
 
+Functions in Swift are first class citizens (or first class values), this means that functions are types, this allows to treat them as variables, pass them in function arguments and even functions can return other functions
+
+
+<!-- < TODO: Demo map(()) -->
 
 ## In Class Activity I (30 min)
+
+<!-- < TODO: have  students talk about side effects? -->
+
+<!-- < TODO: have them update Example 1 using map() -->
 
 
 
