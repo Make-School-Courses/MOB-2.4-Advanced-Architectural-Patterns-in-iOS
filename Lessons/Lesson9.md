@@ -96,7 +96,8 @@ Swift is not purely a functional programming language, but it does combine multi
 
 - **Pure Functions** &mdash; A function is pure if it meets two criteria: </br>
 &nbsp;&nbsp;&nbsp; - It always produces the same output if given the same input. </br>
-&nbsp;&nbsp;&nbsp; - It does not produce external side effects (they do not change any data or state outside of themselves)
+&nbsp;&nbsp;&nbsp; - It does not produce external side effects (they do not change any data or state </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; outside of themselves)
 
 <!-- TODO: show example of pure function? -->
 
