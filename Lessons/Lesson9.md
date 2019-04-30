@@ -281,7 +281,7 @@ In Swift, we can also develop our own Higher-Order Functions and DSLs.
 
 FP employs concepts of a branch of mathematics called *Category Theory.* where a category is a collection of "objects."
 
-In Category Theory, a map between categories (object collections) is called a "functor."
+In Category Theory, a *map*<sup>2</sup> between categories (object collections) is called a "functor."
 
 The `map` function in Swift is a type of functor; it is a HoF that solves the problem of transforming the elements of a collection using a function.
 
@@ -292,6 +292,8 @@ Use `map` to loop over a collection and apply the same operation to each element
 &nbsp;&nbsp;&nbsp; __*transform*__ &mdash; A mapping closure. transform accepts an element of this sequence as its parameter </br>
 &nbsp;&nbsp;&nbsp; and returns a transformed value of the same or of a different type. </br>
 **Return Value** &mdash; Returns an array containing the results of mapping the given closure over the sequence’s elements.
+
+<sup>2</sup> *A functor is simply something that "can be mapped over," which means that you can take all the values inside it, then for each value, derive something new out of it (by calling a function). You then put these resulting values back into a new container of the same structure and shape.*
 
 
 #### Example 1 - `map` with Array
@@ -413,3 +415,7 @@ https://en.wikipedia.org/wiki/Domain-specific_language
 https://en.wikipedia.org/wiki/Functor
 
 https://en.wikipedia.org/wiki/Category_(mathematics)
+
+https://medium.com/@dtinth/what-is-a-functor-dcf510b098b6
+
+http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html
