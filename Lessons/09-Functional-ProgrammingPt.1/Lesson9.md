@@ -281,9 +281,9 @@ In Category Theory, a *map*<sup>2</sup> between categories (object collections) 
 
 The `map` function in Swift is a type of functor; it is a HoF that solves the problem of transforming the elements of a collection using a function.
 
-Use `map` to loop over a collection and apply the same operation to each element in the collection.
-
 ![functor_mapping](assets/functor_mapping.png)
+
+&nbsp;&nbsp;&nbsp; *Use `map` to loop over a collection and apply the same operation to each element in the collection.*
 
 </br>
 
