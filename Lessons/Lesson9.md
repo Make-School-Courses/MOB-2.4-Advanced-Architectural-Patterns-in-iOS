@@ -294,7 +294,7 @@ Use `map` to loop over a collection and apply the same operation to each element
 
 [map(_:)](https://developer.apple.com/documentation/swift/array/3017522-map) &mdash; Returns an array containing the results of mapping the given closure over the sequence’s elements.
 
-#### Example 1 - `map`with an Array
+#### Example 1 - `map` with Array
 
 > In this example, map is used first to convert the names in the array to lowercase strings and then to count their characters.
 
@@ -306,7 +306,7 @@ let letterCounts = cast.map { $0.count }
 // 'letterCounts' == [6, 6, 3, 4]
 ```
 
-#### Example 2 -
+#### Example 2 - `map`with Dictionary
 
 The `map` function is not limited to arrays; you can use it on other collection types, too.
 
