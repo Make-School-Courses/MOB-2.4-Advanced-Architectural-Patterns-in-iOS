@@ -82,9 +82,8 @@ Swift is not purely a functional programming language, but it does combine multi
 
 - **Mutation** &mdash; The act of updating some state in-place.
 
- - **Higher-Order Functions** &mdash; a function that does at least one of the following:
-
-&nbsp;&nbsp;&nbsp; - takes one or more functions as arguments (i.e. procedural parameters),
+ - **Higher-Order Functions** &mdash; a function that does at least one of the following:</br>
+&nbsp;&nbsp;&nbsp; - takes one or more functions as arguments </br>
 &nbsp;&nbsp;&nbsp; - returns a function as its result.
 
 - **Imperative programming** &mdash; A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
@@ -96,7 +95,7 @@ Swift is not purely a functional programming language, but it does combine multi
 &nbsp;&nbsp;&nbsp; - Functional Programming (FP) is considered a subset of Declarative Programming paradigm.
 
 - **Pure Functions** &mdash; A function is pure if it meets two criteria: </br>
-&nbsp;&nbsp;&nbsp; - It always produces the same output if given the same input.
+&nbsp;&nbsp;&nbsp; - It always produces the same output if given the same input. </br>
 &nbsp;&nbsp;&nbsp; - It does not produce external side effects (they do not change any data or state outside of themselves)
 
 <!-- TODO: show example of pure function? -->
