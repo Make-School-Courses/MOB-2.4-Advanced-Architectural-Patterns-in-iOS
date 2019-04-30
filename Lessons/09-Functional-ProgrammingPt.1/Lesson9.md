@@ -294,9 +294,9 @@ The `map` function in Swift is a type of functor; it is a HoF that solves the pr
 &nbsp;&nbsp;&nbsp; **Return Value** &mdash; Returns an array containing the results of mapping the given closure </br>
 &nbsp;&nbsp;&nbsp; over the sequence’s elements.
 
-> <sup>2</sup> A *functor* is simply something that "can be mapped over," which means that you can take all the values inside it,
-> then for each value, derive something new out of it (by calling a function). You then put these resulting values back
-> into a new container of the same structure and shape.
+> <sup>2</sup> A **functor** is simply something that "can be mapped over," which means that you can take all the
+> values  inside it, then for each value, derive something new out of it (by calling a function). You then put these
+> resulting values back into a new container of the same structure and shape.
 
 
 #### Example 1 - `map` with Array
@@ -399,11 +399,9 @@ https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
 - Monad
 - Applicative Functor
 
+2. The tutorial below demonstrates FP using a game as the example. Study and execute it, completing as much of it as you can, but at the very least complete the steps from the beginning through the section on the `Reduce` function:
 
-
-
-
-2.
+https://troz.net/post/2018/functional-programming/
 
 3. Continue working on your Course Project...
 
