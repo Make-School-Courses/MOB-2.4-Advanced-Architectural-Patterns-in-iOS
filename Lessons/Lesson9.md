@@ -292,9 +292,9 @@ The `map` function in Swift is a type of functor; it is a HoF that solves the pr
 
 Use `map` to loop over a collection and apply the same operation to each element in the collection.
 
-[the `map(_:)` function - from Apple](https://developer.apple.com/documentation/swift/array/3017522-map):
+[the `map(_:)` function - from Apple](https://developer.apple.com/documentation/swift/array/3017522-map): </br>
 **Parameters** </br>
-__*transform*__ &mdash; A mapping closure. transform accepts an element of this sequence as its parameter and returns a transformed value of the same or of a different type.
+__*transform*__ &mdash; A mapping closure. transform accepts an element of this sequence as its parameter and returns a transformed value of the same or of a different type. </br>
 **Return Value** &mdash; Returns an array containing the results of mapping the given closure over the sequence’s elements.
 
 
