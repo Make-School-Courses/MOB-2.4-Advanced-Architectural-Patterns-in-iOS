@@ -28,11 +28,13 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- the programming issues caused by mutable state
-- the difference between Imperative and Declarative programming approaches
-- Functional Programming constructs (Pure Functions, Higher-Order Functions, etc.) and the software issues it is intended to solve
-- potential use cases for it (when to use it; when not to use it)
-2. Implement basic examples of the `map` function explored in this class
+- the programming issues caused by *mutable state*
+- the difference between __*Imperative*__ and __*Declarative*__ programming styles
+- *Functional Programming constructs* (`Pure Functions`, `Higher-Order Functions`, etc.) and the software issues FP is intended to solve
+- potential use cases for FP
+2. Implement basic examples of constructs explored in class, especially:
+- Pure Functions
+- the `map`
 
 
 ## Initial Exercise (15 min)
