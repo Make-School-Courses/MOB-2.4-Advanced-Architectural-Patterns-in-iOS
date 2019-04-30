@@ -341,32 +341,17 @@ https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-
 
 ## In Class Activity II (30 min)
 
-<!-- < TODO: have  students talk about side effects? -->
+### Individually
 
+1. Given an array of Users which have properties name:String and age:Int:
+- write a `map` function that returns an array of strings consisting of the user’s names
 
+2. Given an array of of dictionaries containing keys for “name” and “age”:
+- write a `map` function that returns an array of users created from it
 
-<!-- < TODO: have them update Example 1 using map() -->
+3. Write a function applyKTimes(f:(Float -> Float),x:Float,k:Int) -> Float that takes a function f and a float x and applies f to x k times
 
-
-<!-- A simple example in which all the odd numbers are chosen from an array of integers: -->
-
-
-<!-- This uses .filter for evens -->
-https://medium.com/@sdrzn/functional-programming-in-swift-221a8cabb8c
-
-
-## In Class Activity II (optional) (30 min)
-
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
+4. Using applyKTimes, write a function that raises x to the kth power
 
 
 ## Wrap Up (5 min)
