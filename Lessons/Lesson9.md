@@ -262,41 +262,39 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 - the functional version?
 
 
+## Overview/TT II (optional) (20 min)
+
 ### First-Class and Higher-Order Functions
 
-**First-Class Functions:**
-True FP requires functions to be __*first class.*__, and functions in Swift are *first class* citizens.
+**First-Class Functions:** </br>
+True FP requires functions to be __*first class*__, and functions in Swift are *first class* citizens.
 
 This means that functions are types, which allows us to treat them like values (variables) and to pass functions around like data: we can pass them into other functions as arguments, and even allows functions to return other functions.
 
 Treating functions as types lets us combine different functions to create new functions with new behavior.
 
-**Higher-Order Functions:**
-Every language with FP has some version of `Map`, `Filter`, `Reduce`, as does Swift. These functions are called __*Higher-Order Functions (HoF)*__ because they can take other functions as their parameters.
+**Higher-Order Functions:** </br>
+Every language with FP has some version of `Map`, `Filter`, `Reduce`, as does Swift.
+
+These functions are called __*Higher-Order Functions (HoF)*__ because they can take other functions as their parameters.
 
 Higher-Order Functions can be used to reduce repetition, refactor code, and to implement __*domain-specific languages (DSL).*__
 
-In Swift, we can also develop our own higher-order functions and DSLs.
+In Swift, we can also develop our own Higher-Order Functions and DSLs.
 
-<!-- TODO: research better decription of DSL -->
+### Functors and the `map` Function
 
+FP employs concepts of a branch of mathematics called *Category Theory.* where a category is a collection of "objects."
 
+In Category Theory, a map between categories (object collections) is called a "functor."
 
-
-
-
-### map
-
-<!-- < TODO: Introduce Functor -->
-
-<!-- as a functor  -->
-The map function is a higher-order function that solves the problem of transforming the elements of an array using a function.
+The `map` function in Swift is a type of functor; it is a HoF that solves the problem of transforming the elements of a collection using a function.
 
 
 
 <!-- < TODO: Demo map(()) -->
 
-## In Class Activity I (30 min)
+## In Class Activity II (30 min)
 
 <!-- < TODO: have  students talk about side effects? -->
 
@@ -311,8 +309,6 @@ The map function is a higher-order function that solves the problem of transform
 <!-- This uses .filter for evens -->
 https://medium.com/@sdrzn/functional-programming-in-swift-221a8cabb8c
 
-
-## Overview/TT II (optional) (20 min)
 
 ## In Class Activity II (optional) (30 min)
 
@@ -355,6 +351,7 @@ https://en.wikipedia.org/wiki/State_(computer_science)
 https://en.wikipedia.org/wiki/Comparison_of_programming_paradigms
 
 
+
 deterministic
 https://en.wikipedia.org/wiki/Deterministic_system
 
@@ -368,3 +365,8 @@ https://en.wikipedia.org/wiki/Higher-order_function
 domain-specific languages
 https://www.martinfowler.com/books/dsl.html
 https://en.wikipedia.org/wiki/Domain-specific_language
+
+
+https://en.wikipedia.org/wiki/Functor
+
+https://en.wikipedia.org/wiki/Category_(mathematics)
