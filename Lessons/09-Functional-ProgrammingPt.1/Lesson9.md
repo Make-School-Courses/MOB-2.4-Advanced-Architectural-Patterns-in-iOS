@@ -10,13 +10,14 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:20      | Initial Exercise          |
-| 0:25        | 0:20      | Overview                  |
-| 0:45        | 0:15      | In Class Activity I       |
-| 1:00        | 0:10      | BREAK                     |
-| 1:10        | 0:20      | Overview                  |
-| 1:30        | 0:25      | In Class Activity II      |
-| TOTAL       | 1:55      |                           |
+| 0:05        | 0:15      | Initial Exercise          |
+| 0:20        | 0:20      | Overview                  |
+| 0:40        | 0:15      | In Class Activity I       |
+| 0:45       | 0:10      | BREAK                     |
+| 0:55       | 0:20     | Overview                  |
+| 1:15        | 0:30      | In Class Activity II      |
+| 1:45        | 0:5      | Wrap Up      |
+| TOTAL       | 1:50      |                           |
 
 
 ## Learning Objectives (5 min)
@@ -231,7 +232,7 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 
 
 
-## In Class Activity I (30 min)
+## In Class Activity I (15 min)
 
 **TODO:**
 1. Analyze the code in Example 2 above
