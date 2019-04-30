@@ -91,6 +91,44 @@ Many languages that apply this style attempt to minimize or eliminate side effec
 
 ##### Example 1
 
+```Swift
+class MyItem {
+
+    var name: String
+    var description: String
+
+    init(name: String, description: String) {
+        self.name = name
+        self.description = description
+    }
+}
+
+var myArr = [
+    MyItem(name: "Abc", description: "Lorem ipsum 1."),
+    MyItem(name: "Def", description: "Lorem ipsum 2."),
+    MyItem(name: "Xyz", description: "Lorem ipsum 3.")
+]
+```
+
+```Swift
+// Imperative approach
+for item in myArr {
+    if item.name == "Def" {
+        print("Yes")
+    }
+}
+```
+
+
+```Swift
+// Declarative approach
+if myArr.contains(where: { $0.name == "Def" }) {
+    print("yes")
+}
+```
+
+##### Example 2
+
 
 ```Swift
 //Imperative Approach
