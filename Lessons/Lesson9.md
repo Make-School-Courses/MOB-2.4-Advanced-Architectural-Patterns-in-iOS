@@ -82,11 +82,10 @@ Swift is not purely a functional programming language, but it does combine multi
 
 **Mutation** &mdash; The act of updating some state in-place.
 
-**Pure Functions** &mdash; A function is pure if it meets two criteria:
-	- It always produces the same output if given the same input.
-	- It does not produce external side effects (they do not change any data or state outside of themselves)
+**Higher-Order Functions** &mdash; a function that does at least one of the following:
 
-<!-- TODO: show example of pure function? -->
+takes one or more functions as arguments (i.e. procedural parameters),
+returns a function as its result.
 
 **Imperative programming** &mdash; A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
 
@@ -96,6 +95,13 @@ Swift is not purely a functional programming language, but it does combine multi
 
 - Functional Programming (FP) is considered a subset of Declarative Programming paradigm.
 
+**Pure Functions** &mdash; A function is pure if it meets two criteria:
+	- It always produces the same output if given the same input.
+	- It does not produce external side effects (they do not change any data or state outside of themselves)
+
+<!-- TODO: show example of pure function? -->
+
+
 ### Problem(s) Addressed
 
 `Variables` represent data &mdash; or *state.* By definition, since a `variable` can *vary* as your app runs, it fosters *mutable state.*
@@ -104,35 +110,23 @@ Imperative_programming &mdash; with mutable state &mdash; can lead to __*uninten
 
 #### Side Effects
 
-*Side Effects* represent any changes to the state outside of some code's current scope. Side effects might include:
+*Side Effects* represent any changes to the state outside of a code block's current scope. Side effects might include:
 
 - Changing the value of a variable
 - Writing some data to disk
 - Enabling or disabling a button in the User Interface
 
-A function produces side effects if modifies some state variable value(s) outside its local environment,
+A function produces side effects if it modifies some variable's value (state) outside of the variable's local environment.
 
+Not all side effects are unwanted. In fact, it is difficult to produce an iOS app without changing the state of some key variables.
 
-<!-- > NOTE: Not all side effects are negative.  -->
+However, uncontrolled side effects can cause unintended consequences: As apps grow, mutable state becomes harder to manage (and to test), especially
+with concurrency for which mutable state can create dead-locks and race conditions.
 
+<!-- TODO: example here -->
 
-<!-- Not all Side Effects are bad. Some cannot be avoided. As program grows, it gets harder to manage...
-
-Especially with concurrency...deadlocks and race conditions
-
-controlled side effects vs unintended consequences
-
-this leads to:
-
-- hard to test
-
-- race conditions, etc.
-
--->
 
 #### Benefits of FP
-
-
 
 
 <!-- Ease the creation, testing, and maintenance  -->
@@ -155,6 +149,40 @@ Cleaner code: “variables” are not modified once defined, so we don’t have 
 ##### Example 1
 
 <!-- A simple example in which all the odd numbers are chosen from an array of integers: -->
+
+
+
+
+*from:* </br>
+https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c1f420ca9
+
+
+
+### First-Class and Higher-Order Functions
+
+Functions in Swift are first class citizens (or first class values), this means that functions are types, this allows us to treat them as variables, pass them into other functions as arguments, and even allows functions to return other functions.
+
+every language with FP has some version of Map, Filter, Reduce
+
+
+Higher-order functions can receive other functions as their parameters. Swift provides higher-order functions such as map, filter, and reduce.
+
+Also, in Swift, we can develop our own higher-order functions and DSLs.
+
+
+### map
+
+The map function is a higher-order function that solves the problem of transforming the elements of an array using a function.
+
+
+
+<!-- < TODO: Demo map(()) -->
+
+## In Class Activity I (30 min)
+
+<!-- < TODO: have  students talk about side effects? -->
+
+
 
 > First, create a type and an array to hold objects of the type.
 
@@ -195,39 +223,6 @@ if myArr.contains(where: { $0.name == "Def" }) {
     print("yes")
 }
 ```
-
-##### Example 2
-
-
-
-*from:* </br>
-https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c1f420ca9
-
-
-
-### First-Class and Higher-Order Functions
-
-Functions in Swift are first class citizens (or first class values), this means that functions are types, this allows to treat them as variables, pass them in function arguments and even functions can return other functions
-
-
-
-Higher-order functions can receive other functions as their parameters. Swift provides higher-order functions such as map, filter, and reduce.
-
-Also, in Swift, we can develop our own higher-order functions and DSLs.
-
-
-### map
-
-The map function is a higher-order function that solves the problem of transforming the elements of an array using a function.
-
-
-
-<!-- < TODO: Demo map(()) -->
-
-## In Class Activity I (30 min)
-
-<!-- < TODO: have  students talk about side effects? -->
-
 <!-- < TODO: have them update Example 1 using map() -->
 
 
@@ -280,3 +275,6 @@ https://en.wikipedia.org/wiki/Deterministic_system
 
 
 https://en.wikipedia.org/wiki/Side_effect_(computer_science)#Example
+
+
+https://en.wikipedia.org/wiki/Higher-order_function
