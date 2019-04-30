@@ -28,19 +28,12 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- the **xxxx** design pattern
-- the software construction problem(s) it is intended to solve
+- the programming issues caused by mutable state
+- the difference between Imperative and Declarative programming approaches
+- Functional Programming constructs (Pure Functions, Higher-Order Functions, etc.) and the software issues it is intended to solve
 - potential use cases for it (when to use it; when not to use it)
-3. Assess:
-- the suitability of a given design pattern to solve a given problem
-- the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
-4. Implement basic examples of XXX explored in this class
+2. Implement basic examples of the `map` function explored in this class
 
-
-<!-- 1. Identify and describe
-1. Define
-1. Design
-1. Implement -->
 
 ## Initial Exercise (15 min)
 
