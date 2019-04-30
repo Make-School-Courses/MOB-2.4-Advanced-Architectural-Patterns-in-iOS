@@ -100,7 +100,7 @@ Swift is not purely a functional programming language &mdash; we must always imp
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; outside of themselves)
 
 
-<!-- TODO: show example of pure function? -->
+<!-- TODO: show example of pure function resolving state with side effects -->
 
 
 ### Problem(s) Addressed
@@ -264,26 +264,25 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 
 ### First-Class and Higher-Order Functions
 
-True FP requires functions to be __*first class.*__
+**First-Class Functions:**
+True FP requires functions to be __*first class.*__, and functions in Swift are *first class* citizens.
 
-And functions in Swift are *first class* citizens. This means that functions are types, which allows us to treat them like values (variables) and to pass functions around like data: we can pass them into other functions as arguments, and even allows functions to return other functions.
+This means that functions are types, which allows us to treat them like values (variables) and to pass functions around like data: we can pass them into other functions as arguments, and even allows functions to return other functions.
 
-This allows us to combine different functions to create new functions with new behavior.
+Treating functions as types lets us combine different functions to create new functions with new behavior.
 
-Every language with FP has some version of `Map`, `Filter`, `Reduce`. These are **Higher-Order Functions** (HoF) and, as such, can take other functions as their parameters.
+**Higher-Order Functions:**
+Every language with FP has some version of `Map`, `Filter`, `Reduce`, as does Swift. These functions are called __*Higher-Order Functions (HoF)*__ because they can take other functions as their parameters.
 
 Higher-Order Functions can be used to reduce repetition, refactor code, and to implement __*domain-specific languages (DSL).*__
 
+In Swift, we can also develop our own higher-order functions and DSLs.
+
 <!-- TODO: research better decription of DSL -->
 
- These are called
-
-
-Swift provides higher-order functions such as map, filter, and reduce.
 
 
 
-Also, in Swift, we can develop our own higher-order functions and DSLs.
 
 
 ### map
@@ -364,3 +363,8 @@ https://en.wikipedia.org/wiki/Side_effect_(computer_science)#Example
 
 
 https://en.wikipedia.org/wiki/Higher-order_function
+
+
+domain-specific languages
+https://www.martinfowler.com/books/dsl.html
+https://en.wikipedia.org/wiki/Domain-specific_language
