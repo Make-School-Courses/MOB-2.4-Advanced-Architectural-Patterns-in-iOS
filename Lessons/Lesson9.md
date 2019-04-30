@@ -63,9 +63,18 @@ Review solutions to last class's After Class assignment:
 **Enemy of the State** <sup>1</sup> </br>
 iOS and Mac apps rely heavily on __*state*__ to change their presentation and respond to input &mdash; it's hard to imagine writing an app without the use of __*properties*__ and __*variables.*__
 
-However, __*state*__ is a __*huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter.
+However, __*state*__ is a __*huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter. State management is difficult and error-prone.
 
-<!-- Add 1. how FP solves this and 2. FP in swift uses value types -->
+In OOP, programs are composed of classes and objects. Statements, when executed, can mutate the state of objects.
+
+Functional Programming (FP) seeks to avoid using mutable states; functions are the fundamental building blocks. In FP, programs are structured by functions.  
+
+Swift is not purely a functional programming language, but it does combine multiple programming paradigms to give you flexibility for app development, and it firmly embraces key attributes of FP:
+
+- **Higher-Order Functions** &mdash; Including map, filter, reduce and compactMap.
+
+- **Value Types** &mdash; Simpler numerics, enums and structs.
+
 
 ### Key Concepts
 
@@ -123,14 +132,7 @@ this leads to:
 
 #### Benefits of FP
 
-In OOP, programs are composed of classes and objects. statements can mutate the state of objects when executed,
 
-This is a fundamental difference because,
-
-In FP, functions are the fundamental building blocks, so programs are structured by functions.  FP which avoids using mutable states.
-
-
-state management is hard and error-prone,
 
 
 <!-- Ease the creation, testing, and maintenance  -->
