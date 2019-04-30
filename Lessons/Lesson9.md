@@ -1,12 +1,8 @@
 # Functional Programming (Part 1 of 2)
 
 <!-- INSTRUCTOR NOTES:
-1) For the QuizLet Game in the Initial Exercise:
-- the URL is xxxx
-2) For Activity 1:
-- xxx
-3) for Activity 2:
-- xxxx
+1)  SOLUTION FOR ACTIVITY 2:
+- Is in comments below Add'l Rsrcs
 -->
 
 ## Minute-by-Minute
@@ -346,6 +342,35 @@ https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-
 
 ### Individually
 
+1. Here is an imperative version of a function called `doubleIt` that takes an array of numbers and returns a new array after doubling every item in the initial array:
+
+```Swift
+func doubleIt(inputArray: Array<Int>) {
+
+    var results = [Int]()
+
+    for num in inputArray {
+        results.append(num * 2)
+    }
+    print(results)
+}
+
+doubleIt(inputArray: [1,2,3]) // [2,4,6]
+```
+
+**TODO:** Complete the declarative (FP) version of `doubleIt` below so that it achieves the same result as the code above by using the `map` function instead of the `for loop`:
+
+```Swift
+func doubleIt(inputArray: Array<Int>) {
+
+    // TODO: Use map here...
+    let results = ??
+    print(results)
+}
+
+doubleIt(inputArray: [1,2,3]) // [2,4,6]
+```
+
 1. Given an array of Users which have properties name:String and age:Int:
 - write a `map` function that returns an array of strings consisting of the user’s names
 
@@ -421,3 +446,14 @@ https://en.wikipedia.org/wiki/Category_(mathematics)
 https://medium.com/@dtinth/what-is-a-functor-dcf510b098b6
 
 http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html
+
+
+<!-- SOLUTION FOR ACTIVITY 2:
+
+func doubleIt(inputArray: Array<Int>) {
+    let results = inputArray.map({ $0 * 2 })
+    print(results)
+}
+
+doubleIt(inputArray: [1,2,3]) // [2,4,6]
+-->
