@@ -287,13 +287,15 @@ The `map` function in Swift is a type of functor; it is a HoF that solves the pr
 
 Use `map` to loop over a collection and apply the same operation to each element in the collection.
 
-[the `map(_:)` function - from Apple](https://developer.apple.com/documentation/swift/array/3017522-map): </br>
-**Parameters** </br>
-&nbsp;&nbsp;&nbsp; __*transform*__ &mdash; A mapping closure. transform accepts an element of this sequence as its parameter </br>
-&nbsp;&nbsp;&nbsp; and returns a transformed value of the same or of a different type. </br>
-**Return Value** &mdash; Returns an array containing the results of mapping the given closure over the sequence’s elements.
+&nbsp;&nbsp;&nbsp; [the `map(_:)` function - from Apple](https://developer.apple.com/documentation/swift/array/3017522-map): </br>
+&nbsp;&nbsp;&nbsp; **Parameters** </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*transform*__ &mdash; A mapping closure. transform accepts an element of this sequence as its parameter </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and returns a transformed value of the same or of a different type. </br>
+&nbsp;&nbsp;&nbsp; **Return Value** &mdash; Returns an array containing the results of mapping the given closure over the sequence’s elements.
 
-<sup>2</sup> *A functor is simply something that "can be mapped over," which means that you can take all the values inside it, then for each value, derive something new out of it (by calling a function). You then put these resulting values back into a new container of the same structure and shape.*
+> <sup>2</sup> A functor is simply something that "can be mapped over," which means that you can take all the values inside it,
+> then for each value, derive something new out of it (by calling a function). You then put these resulting values back
+> into a new container of the same structure and shape.
 
 
 #### Example 1 - `map` with Array
