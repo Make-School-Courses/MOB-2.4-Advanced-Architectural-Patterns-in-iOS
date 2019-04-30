@@ -49,7 +49,6 @@ Review solutions to last class's After Class assignment:
 - [Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
 
 
-
 ## Overview/TT I (20 min)
 
 ###  Functional Programming
@@ -88,7 +87,7 @@ Swift is not purely a functional programming language, but it does combine multi
 
 - **Imperative programming** &mdash; A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
 
-&nbsp;&nbsp;&nbsp; - __*OOP*__ *typically follows the* __*Imperative Programming paradigm.*__
+&nbsp;&nbsp;&nbsp; - __*OOP*__ *typically follows the* __*Imperative Programming*__ *paradigm.*
 
 - **Declarative programming** &mdash; Focuses on what the program should accomplish without specifying how the program should achieve the result. It seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
 
@@ -107,7 +106,7 @@ Swift is not purely a functional programming language, but it does combine multi
 
 `Variables` represent data &mdash; or *state.* By definition, since a `variable` can *vary* as your app runs, it fosters *mutable state.*
 
-Imperative_programming &mdash; with mutable state &mdash; can lead to __*unintended consequences*__ of certain side effects.
+__*Imperative programming*__ &mdash; with mutable state &mdash; can lead to __*unintended consequences*__ of certain side effects.
 
 #### Side Effects
 
@@ -129,14 +128,14 @@ with concurrency for which mutable state can create dead-locks and race conditio
 
 #### Benefits of FP
 
-Functional code is less prone to bugs and easier to understand than imperative code, and it provides a modular, easy to maintain code base.
-
 Benefits of applying immutability include:
 - elimination of concurrency issues such as dead-locks and race conditions
 - easy to create, test and maintain
 - it promotes code with no side effects, no change of value in variables. And it leaves state in tact for future use
 - cleaner code with less possibility for bugs. Because "variables" are not modified once defined, no change of state needs to tracked
 - more opportunities for the compiler to optimize the code for performance
+
+Functional code is less prone to bugs and easier to understand than imperative code, and it provides a modular, easy to maintain code base.
 
 
 ### Imperative vs. Declarative Code Style
@@ -164,7 +163,7 @@ var myArr = [
 ]
 ```
 
-> With __*imperative programming,*__ you tell the compiler what you want to happen, step by step:
+> With __*imperative programming,*__ you tell the compiler what you want to happen, __*step by step:*__
 
 ```Swift
 // Imperative approach
@@ -175,7 +174,7 @@ for item in myArr { // step through the array and decide if condition is met
 }
 ```
 
-> With __*declarative programming,*__ you write code that describes **what** results are desired, but not the step-by-step commands on **how** to get them:
+> With __*declarative programming,*__ you write code that describes **what** results are desired, but __*not*__ the step-by-step commands on **how** to achieve them:
 
 ```Swift
 // Declarative approach
@@ -184,13 +183,12 @@ if myArr.contains(where: { $0.name == "Def" }) {
 }
 ```
 
-> Both achieve the same result. But the imperative version walks through the array step-by-step, while the functional version
-> simply passes a closure to the `.contains(where: )` function that exists for every array object.
-
+> Both attain the same result. But the imperative version walks through the array step-by-step, while the functional version
+> simply passes a closure to the `.contains(where: )` function, which exists for every array object.
 
 
 ##### Example 2
-> Consider how the following code is imperative. Notice that we are manipulating the values inside a mutable array called numbers,
+> Consider how the following code is __*imperative.*__ Notice that we are manipulating the values inside a mutable array called numbers,
 > and then printing to the console:
 
 ```Swift
@@ -205,7 +203,7 @@ for i in 0..<numbers.count {
 print(numbers) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ```
 
-> Let's now consider this alternate functional approach:
+> Now consider this alternative __*functional approach:*__
 
 ```swift
 //Functional Approach
@@ -230,7 +228,7 @@ print(numbers) //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(result) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ```
 
-> Again, the results of the functional version are similar to that of the impertive one. except now:
+> Again, the results of the functional version are similar to that of the imperative one, except now:
 > 1) The `numbers` array is now made immutable with the `let` keyword.
 > 2) We moved the process of multiplying numbers into a method stored in an extension on Array.
 > 3) Though still using a `for loop` and updating a variable called `output`, the scope of this variable is limited to the method.
@@ -245,7 +243,7 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 
 **TODO:**
 1. Analyze the code in Example 2 above
-2. Answer the following questions:
+2. Answer the following questions about it:
 
 **Q:** What happens if another thread tries to access the `numbers` array during this process for:
 
@@ -257,7 +255,7 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 - with the imperative version?
 - with the functional version?
 
-**Q:** How reliably can the code be tested for:
+**Q:** How reliably can the code be tested using:
 
 - the imperative version?
 - the functional version?
@@ -265,12 +263,23 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 
 ### First-Class and Higher-Order Functions
 
-Functions in Swift are first class citizens (or first class values), this means that functions are types, this allows us to treat them as variables, pass them into other functions as arguments, and even allows functions to return other functions.
+Functions in Swift are **first class citizens.** This means that functions are types, which allows us to treat them as variables, pass them into other functions as arguments, and even allows functions to return other functions.
 
-every language with FP has some version of Map, Filter, Reduce
+True FP requires functions to be first class.
 
 
-Higher-order functions can receive other functions as their parameters. Swift provides higher-order functions such as map, filter, and reduce.
+**Higher-Order Functions** (HoF) are functions which can take other functions as their parameters.
+
+Higher-order functions can be used to refactor code, reduce the amount of repetition, and to implement domain-specific languages (DSL).
+
+<!-- TODO: research better decription of DSL -->
+
+Every language with FP has some version of Map, Filter, Reduce. These are called
+
+
+Swift provides higher-order functions such as map, filter, and reduce.
+
+
 
 Also, in Swift, we can develop our own higher-order functions and DSLs.
 
