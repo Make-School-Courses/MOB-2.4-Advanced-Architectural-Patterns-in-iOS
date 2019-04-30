@@ -398,6 +398,8 @@ https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
 - Currying
 - Monad
 - Applicative Functor
+- Deterministic
+- Side Effects (as it related to CS)
 
 2. The tutorial below demonstrates FP using a game as the example. Study and execute it, completing as much of it as you can, but at the very least complete the steps from the beginning through the section on the `Reduce` function:
 
@@ -417,45 +419,14 @@ https://troz.net/post/2018/functional-programming/
 1. [Slides](https://docs.google.com/presentation/d/1yOC0-DvyG7Pgc_9vffqkZK8dodVcDBvsq1RGPs3ln7g/edit#slide=id.g514277a126_0_184)
 2. [Functional programming - wikipedia](https://en.wikipedia.org/wiki/Functional_programming)
 3. [Enemy of the State](https://speakerdeck.com/jspahrsummers/enemy-of-the-state?slide=5) <sup>1</sup>
-[]()
-
-
-https://en.wikipedia.org/wiki/Imperative_programming
-
-https://en.wikipedia.org/wiki/Declarative_programming
-
-https://realm.io/news/andy-matuschak-controlling-complexity/
-
-
-https://en.wikipedia.org/wiki/State_(computer_science)
-
-
-https://en.wikipedia.org/wiki/Comparison_of_programming_paradigms
-
-
-
-deterministic
-https://en.wikipedia.org/wiki/Deterministic_system
-
-
-https://en.wikipedia.org/wiki/Side_effect_(computer_science)#Example
-
-
-https://en.wikipedia.org/wiki/Higher-order_function
-
-
-domain-specific languages
-https://www.martinfowler.com/books/dsl.html
-https://en.wikipedia.org/wiki/Domain-specific_language
-
-
-https://en.wikipedia.org/wiki/Functor
-
-https://en.wikipedia.org/wiki/Category_(mathematics)
-
-https://medium.com/@dtinth/what-is-a-functor-dcf510b098b6
-
-http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html
+4. [Controlling Complexity - an article by Andy Matuschak](https://realm.io/news/andy-matuschak-controlling-complexity/)
+5. [State - wikipedia](https://en.wikipedia.org/wiki/State_(computer_science))
+6. [Imperative programming - wikipedia](https://en.wikipedia.org/wiki/Imperative_programming)
+7. [Declarative programming - wikipedia](https://en.wikipedia.org/wiki/Declarative_programming)
+8. [Higher-order_function - wikipedia](https://en.wikipedia.org/wiki/Higher-order_function)
+9. Domain-Specific Languages (DSLs):
+- [Domain-Specific Languages - wikipedia](https://en.wikipedia.org/wiki/Domain-specific_language)
+- [A book by Martin Fowler](https://www.martinfowler.com/books/dsl.html)
 
 
 <!-- SOLUTION FOR ACTIVITY 2:
