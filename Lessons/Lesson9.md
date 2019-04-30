@@ -92,7 +92,8 @@ Swift is not purely a functional programming language, but it does combine multi
 
 - **Declarative programming** &mdash; Focuses on what the program should accomplish without specifying how the program should achieve the result. It seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
 
-&nbsp;&nbsp;&nbsp; - __*Functional Programming (FP)*__ *is considered a subset of* __*Declarative Programming paradigm.*__
+&nbsp;&nbsp;&nbsp; - __*Functional Programming (FP)*__ *is considered a subset of* __*Declarative*__ </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*Programming*__ *paradigm.*
 
 - **Pure Functions** &mdash; A function is pure if it meets two criteria: </br>
 &nbsp;&nbsp;&nbsp; - It always produces the same output if given the same input. </br>
