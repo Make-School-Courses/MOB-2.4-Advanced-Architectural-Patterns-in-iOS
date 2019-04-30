@@ -63,11 +63,11 @@ Review solutions to last class's After Class assignment:
 **Enemy of the State** <sup>1</sup> </br>
 iOS and Mac apps rely heavily on __*state*__ to change their presentation and respond to input &mdash; it's hard to imagine writing an app without the use of __*properties*__ and __*variables.*__
 
-However, __*state*__ is a __*huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter. State management is difficult and error-prone.
-
 In OOP, programs are composed of classes and objects. Statements, when executed, can mutate the state of objects.
 
-Functional Programming (FP) seeks to avoid using mutable states; functions are the fundamental building blocks. In FP, programs are structured by functions.  
+However, __*state*__ is a __*huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter. State management is difficult and error-prone.
+
+Functional Programming (FP) seeks to avoid using mutable states by using functions as fundamental building blocks rather than variables.
 
 Swift is not purely a functional programming language, but it does combine multiple programming paradigms to give you flexibility for app development, and it firmly embraces key attributes of FP:
 
@@ -78,26 +78,25 @@ Swift is not purely a functional programming language, but it does combine multi
 
 ### Key Concepts
 
-**State (aka, Mutable State)** &mdash; Refers to a program's stored values at any given time.
+- **State (aka, Mutable State)** &mdash; Refers to a program's stored values at any given time.
 
-**Mutation** &mdash; The act of updating some state in-place.
+- **Mutation** &mdash; The act of updating some state in-place.
 
-**Higher-Order Functions** &mdash; a function that does at least one of the following:
+ - **Higher-Order Functions** &mdash; a function that does at least one of the following:
+&nbsp;&nbsp;&nbsp; - takes one or more functions as arguments (i.e. procedural parameters),
+&nbsp;&nbsp;&nbsp; - returns a function as its result.
 
-takes one or more functions as arguments (i.e. procedural parameters),
-returns a function as its result.
+- **Imperative programming** &mdash; A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
 
-**Imperative programming** &mdash; A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
+&nbsp;&nbsp;&nbsp; - OOP typically follows the Imperative Programming paradigm.
 
-- OOP typically follows the Imperative Programming paradigm.
+- **Declarative programming** &mdash; Focuses on what the program should accomplish without specifying how the program should achieve the result. It seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
 
-**Declarative programming** &mdash; Focuses on what the program should accomplish without specifying how the program should achieve the result. It seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
+&nbsp;&nbsp;&nbsp; - Functional Programming (FP) is considered a subset of Declarative Programming paradigm.
 
-- Functional Programming (FP) is considered a subset of Declarative Programming paradigm.
-
-**Pure Functions** &mdash; A function is pure if it meets two criteria:
-	- It always produces the same output if given the same input.
-	- It does not produce external side effects (they do not change any data or state outside of themselves)
+- **Pure Functions** &mdash; A function is pure if it meets two criteria:
+&nbsp;&nbsp;&nbsp; - It always produces the same output if given the same input.
+&nbsp;&nbsp;&nbsp; - It does not produce external side effects (they do not change any data or state outside of themselves)
 
 <!-- TODO: show example of pure function? -->
 
