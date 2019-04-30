@@ -294,7 +294,7 @@ Use `map` to loop over a collection and apply the same operation to each element
 &nbsp;&nbsp;&nbsp; **Return Value** &mdash; Returns an array containing the results of mapping the given closure </br>
 &nbsp;&nbsp;&nbsp; over the sequence’s elements.
 
-> <sup>2</sup> A functor is simply something that "can be mapped over," which means that you can take all the values inside it,
+> <sup>2</sup> A *functor* is simply something that "can be mapped over," which means that you can take all the values inside it,
 > then for each value, derive something new out of it (by calling a function). You then put these resulting values back
 > into a new container of the same structure and shape.
 
