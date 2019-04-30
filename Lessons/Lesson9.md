@@ -44,7 +44,10 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (15 min)
 
-xxxx
+Review solutions to last class's After Class assignment:  
+
+- [Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
+
 
 
 ## Overview/TT I (20 min)
