@@ -71,9 +71,9 @@ Functional Programming (FP) seeks to avoid using mutable states; functions are t
 
 Swift is not purely a functional programming language, but it does combine multiple programming paradigms to give you flexibility for app development, and it firmly embraces key attributes of FP:
 
-- **Higher-Order Functions** &mdash; Including map, filter, reduce and compactMap.
+- **Higher-Order Functions** &mdash; Including map, filter, reduce, and compactMap.
 
-- **Value Types** &mdash; Simpler numerics, enums and structs.
+- **Value Types** &mdash; Simple numerics, enums, and structs.
 
 
 ### Key Concepts
@@ -128,20 +128,14 @@ with concurrency for which mutable state can create dead-locks and race conditio
 
 #### Benefits of FP
 
+Functional code is less prone to bugs and easier to understand than imperative code, and it provides a modular, easy to maintain code base.
 
-<!-- Ease the creation, testing, and maintenance  -->
-
-Cleaner code: “variables” are not modified once defined, so we don’t have to follow the change of state to comprehend what a function, a, method, a class, a whole project works.
-
- It eradicates threading issues like race-conditions and dead-locks
- It leaves state in tact for future use
- It is easy to test
-
- <!-- concurrency -->
-
-
-
-
+Benefits of applying immutability include:
+- elimination of concurrency issues such as dead-locks and race conditions
+- easy to create, test and maintain
+- it promotes code with no side effects, no change of value in variables. And it leaves state in tact for future use
+- cleaner code with less possibility for bugs. Because "variables" are not modified once defined, no change of state needs to tracked
+- more opportunities for the compiler to optimize the code for performance
 
 
 ### Imperative vs. Declarative Code Style
@@ -172,6 +166,7 @@ Also, in Swift, we can develop our own higher-order functions and DSLs.
 
 ### map
 
+<!-- as a functor  -->
 The map function is a higher-order function that solves the problem of transforming the elements of an array using a function.
 
 
@@ -225,6 +220,8 @@ if myArr.contains(where: { $0.name == "Def" }) {
 ```
 <!-- < TODO: have them update Example 1 using map() -->
 
+<!-- This uses .filter for evens -->
+https://medium.com/@sdrzn/functional-programming-in-swift-221a8cabb8c
 
 
 ## Overview/TT II (optional) (20 min)
