@@ -371,15 +371,15 @@ func doubleIt(inputArray: Array<Int>) {
 doubleIt(inputArray: [1,2,3]) // [2,4,6]
 ```
 
-1. Given an array of Users which have properties name:String and age:Int:
+2. Given an array of Users which have properties name:String and age:Int:
 - write a `map` function that returns an array of strings consisting of the user’s names
 
-2. Given an array of of dictionaries containing keys for “name” and “age”:
+3. Given an array of of dictionaries containing keys for “name” and “age”:
 - write a `map` function that returns an array of users created from it
 
-3. Write a function applyKTimes(f:(Float -> Float),x:Float,k:Int) -> Float that takes a function f and a float x and applies f to x k times
+4. Write a function applyKTimes(f:(Float -> Float),x:Float,k:Int) -> Float that takes a function f and a float x and applies f to x k times
 
-4. Using applyKTimes, write a function that raises x to the kth power
+5. Using applyKTimes, write a function that raises x to the kth power
 
 *From:* </br>
 https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
