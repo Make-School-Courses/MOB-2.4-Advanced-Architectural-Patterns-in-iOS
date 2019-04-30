@@ -48,14 +48,17 @@ By the end of this lesson, you should be able to...
 
 ## Overview/TT I (20 min)
 
-- Why learn this?
-- Industry examples of usage
+
 - Best practices
-- Personal anecdote
+
+
+### Key Concepts
+
+
+
 
 ## In Class Activity I (30 min)
 
-- I do, We do, You do
 - Reading & Discussion Questions in small groups
 - Draw a picture/diagram
 - Complete Challenges solo or in pair
@@ -63,8 +66,7 @@ By the end of this lesson, you should be able to...
 - Pair up and code review
 - Pair program
 - Formative assessment
-- Form into groups
-- etc (get creative :D)
+
 
 ## Overview/TT II (optional) (20 min)
 

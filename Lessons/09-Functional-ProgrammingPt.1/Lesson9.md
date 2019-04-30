@@ -378,12 +378,10 @@ doubleIt(inputArray: [1,2,3]) // [2,4,6]
 2. Given an array of Users which have properties name:String and age:Int:
 - write a `map` function that returns an array of strings consisting of the user’s names
 
-3. Given an array of of dictionaries containing keys for “name” and “age”:
+3. Take the initial array of Users from the exercise above and, using `map`, convert it to a Dictionary
+
+4. Given an array of of dictionaries containing keys for “name” and “age”:
 - write a `map` function that returns an array of users created from it
-
-4. Write a function applyKTimes(f:(Float -> Float),x:Float,k:Int) -> Float that takes a function f and a float x and applies f to x k times
-
-5. Using applyKTimes, write a function that raises x to the kth power
 
 *From:* </br>
 https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
