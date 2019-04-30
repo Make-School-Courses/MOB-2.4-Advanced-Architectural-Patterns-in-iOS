@@ -283,6 +283,10 @@ The `map` function in Swift is a type of functor; it is a HoF that solves the pr
 
 Use `map` to loop over a collection and apply the same operation to each element in the collection.
 
+![functor_mapping]
+![functor_mapping](assets/functor_mapping.png)
+
+
 &nbsp;&nbsp;&nbsp; [About the `map(_:)` function - from Apple Docs](https://developer.apple.com/documentation/swift/array/3017522-map): </br>
 &nbsp;&nbsp;&nbsp; **Parameters** </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*transform*__ &mdash; A mapping closure. transform accepts an element of this sequence as its parameter </br>
@@ -389,7 +393,15 @@ https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
 
 1. Research:
 
--
+- Referential Transparency
+- Equational Reasoning
+- Currying
+- Monad
+- Applicative Functor
+
+
+
+
 
 2.
 
