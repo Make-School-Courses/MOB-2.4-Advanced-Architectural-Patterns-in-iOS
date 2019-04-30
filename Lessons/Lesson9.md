@@ -63,31 +63,17 @@ iOS and Mac apps rely heavily on __*state*__ to change their presentation and re
 However, __*state*__ is a __*huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter.
 
 
-### Imperative vs. Declarative Code Style
+### Key Concepts
 
 **State** &mdash; Refers to a program's stored values at any given time
 
 **Mutation** &mdash; The act of updating some state in-place
 
-#### Imperative
+**Imperative programming** &mdash; A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
 
- > Imperative programming is a programming paradigm that uses statements that change a program's state.
- > ...an imperative program consists of commands for the computer to perform. Imperative programming focuses on describing how a program operates.
- > ...(it) implements algorithms in explicit steps.
- > – Wikipedia
+**Declarative programming** &mdash; Focuses on what the program should accomplish without specifying how the program should achieve the result. Seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
 
-
-<!-- TODO: show simple example in swift  -->
-
-#### Declarative
-
-Declarative (programming style)...focuses on what the program should accomplish without specifying how the program should achieve the result.
-
-Many languages that apply this style attempt to minimize or eliminate side effects by describing what the program must accomplish in terms of the problem domain, rather than describe how to accomplish it as a sequence of the programming language primitives[2] (the how being left up to the language's implementation).
- > – Wikipedia
-
-<!-- TODO: expand on  simple example in swift above with Declarative version -->
-
+### Imperative vs. Declarative Code Style
 
 ##### Example 1
 
