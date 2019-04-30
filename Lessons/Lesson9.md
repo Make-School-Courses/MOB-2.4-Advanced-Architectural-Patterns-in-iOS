@@ -318,11 +318,6 @@ If you use `map` with a Swift `Dictionary` or `Set`, the return type will still 
 let bookAmount = ["harrypotter": 100.0, "junglebook": 60.00]
 ```
 
-__*TIP:*__ If you have trouble understanding the argument types of the closure Xcode code completion will help you:
-```Swift
-let returnFromMap = bookAmount.map(<#T##transform: ((key: String, value: Double)) throws -> T##((key: String, value: Double)) throws -> T#>)
-```
-
 > As we iterate over the dictionary, our closure has arguments that are a String and a Double from the types of the key and
 > value that make up each element of the dictionary. What the array result returned by `map` contains is up to you:
 
