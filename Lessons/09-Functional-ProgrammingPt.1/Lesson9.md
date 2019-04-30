@@ -380,7 +380,7 @@ doubleIt(inputArray: [1,2,3]) // [2,4,6]
 
 3. Take the initial array of Users from the exercise above and, using `map`, convert it to a Dictionary
 
-4. Given an array of of dictionaries containing keys for “name” and “age”:
+4. Given an array of dictionaries containing keys for “name” and “age”:
 - write a `map` function that returns an array of users created from it
 
 *From:* </br>
