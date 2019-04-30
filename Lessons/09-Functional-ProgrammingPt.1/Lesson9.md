@@ -116,7 +116,7 @@ Not all side effects are unwanted. In fact, it is difficult to produce an iOS ap
 However, uncontrolled side effects can cause unintended consequences: As apps grow, mutable state becomes harder to manage (and to test), especially
 with concurrency for which mutable state can create dead-locks and race conditions.
 
-<!-- TODO: example here -->
+<!-- TODO: example of Side Effects here -->
 
 
 #### Benefits of FP
@@ -134,7 +134,6 @@ Functional code is less prone to bugs and easier to understand than imperative c
 ### Imperative vs. Declarative Code Style
 
 ##### Example 1
-
 
 > First, create a type and an array to hold objects of the type.
 
