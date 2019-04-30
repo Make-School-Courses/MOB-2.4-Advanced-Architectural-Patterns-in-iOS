@@ -254,7 +254,7 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 - the functional version?
 
 
-## Overview/TT II (20 min)
+## Overview/TT II (15 min)
 
 ### First-Class and Higher-Order Functions
 
@@ -343,7 +343,7 @@ print(returnFromMap) // [("Harrypotter", 1000.0), ("Junglebook", 600.0)]
 https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-reduce-flatmap-1837646a63e8
 
 
-## In Class Activity II (30 min)
+## In Class Activity II (25 min)
 
 ### Individually
 
