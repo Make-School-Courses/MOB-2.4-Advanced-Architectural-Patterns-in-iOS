@@ -318,8 +318,9 @@ If you use `map` with a Swift `Dictionary` or `Set`, the return type will still 
 let bookAmount = ["harrypotter": 100.0, "junglebook": 60.00]
 ```
 
-> As we iterate over the dictionary, our closure has arguments that are a String and a Double from the types of the key and
-> value that make up each element of the dictionary. What the array result returned by `map` contains is up to you:
+> The closure has arguments of types String and Double that were inferred from the types of the key and
+> value that comprise each element of the dictionary.
+> Notice that the contents of the array result returned by `map` is up to you:
 
 ```Swift
 let returnFromMap = bookAmount.map({ key, value in
