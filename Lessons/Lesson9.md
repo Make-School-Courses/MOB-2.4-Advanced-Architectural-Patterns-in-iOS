@@ -51,27 +51,94 @@ xxxx
 
 ###  Functional Programming
 
-> “...functional programming is a programming paradigm… that treats computation as the evaluation of mathematical
+> “Functional programming is a programming paradigm &mdash; a style of building the structure and elements of computer programs &mdash; that treats computation as the evaluation of mathematical
 > functions and avoids changing-state and mutable data.”
 > – Wikipedia
 
-#### Why Learn This?
+### Why Learn This?
 
 **Enemy of the State** <sup>1</sup> </br>
-iOS and Mac apps rely heavily on state to change their presentation and respond to input &mdash; it's hard to imagine writing an app without the use of __*properties*__ and __*variables.*__
+iOS and Mac apps rely heavily on __*state*__ to change their presentation and respond to input &mdash; it's hard to imagine writing an app without the use of __*properties*__ and __*variables.*__
 
 However, __*state*__ is a __*huge source of needless complexity,*__ and __*responsible for most of the easily avoidable bugs*__ that users encounter.
 
 
+### Imperative vs. Declarative Code Style
+
+**State** &mdash; Refers to a program's stored values at any given time
+
+**Mutation** &mdash; The act of updating some state in-place
+
+#### Imperative
+
+ > Imperative programming is a programming paradigm that uses statements that change a program's state.
+ > ...an imperative program consists of commands for the computer to perform. Imperative programming focuses on describing how a program operates.
+ > ...(it) implements algorithms in explicit steps.
+ > – Wikipedia
 
 
+<!-- TODO: show simple example in swift  -->
 
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
+#### Declarative
+
+Declarative (programming style)...focuses on what the program should accomplish without specifying how the program should achieve the result.
+
+Many languages that apply this style attempt to minimize or eliminate side effects by describing what the program must accomplish in terms of the problem domain, rather than describe how to accomplish it as a sequence of the programming language primitives[2] (the how being left up to the language's implementation).
+ > – Wikipedia
+
+<!-- TODO: expand on  simple example in swift above with Declarative version -->
+
+
+##### Example 1
+
+
+```Swift
+//Imperative Approach
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for i in 0..<numbers.count {
+    let timesTen = numbers[i] * 10
+    numbers[i] = timesTen
+}
+
+print(numbers) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
+
+
+```Swift
+//Functional Approach
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+extension Array where Element == Int {
+
+    func timesTen() -> [Int] {
+        var output = [Int]()
+
+        for num in self {
+            output.append(num * 10)
+        }
+        return output
+    }
+
+}
+
+let result = numbers.timesTen()
+
+print(numbers) //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(result) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
+
+*from:* </br>
+https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c1f420ca9
+
 
 ## In Class Activity I (30 min)
+
+
+
+## Overview/TT II (optional) (20 min)
+
+## In Class Activity II (optional) (30 min)
 
 - I do, We do, You do
 - Reading & Discussion Questions in small groups
@@ -84,9 +151,6 @@ However, __*state*__ is a __*huge source of needless complexity,*__ and __*respo
 - Form into groups
 - etc (get creative :D)
 
-## Overview/TT II (optional) (20 min)
-
-## In Class Activity II (optional) (30 min)
 
 ## Wrap Up (5 min)
 
@@ -100,3 +164,16 @@ However, __*state*__ is a __*huge source of needless complexity,*__ and __*respo
 2. [Functional programming - wikipedia](https://en.wikipedia.org/wiki/Functional_programming)
 3. [Enemy of the State](https://speakerdeck.com/jspahrsummers/enemy-of-the-state?slide=5) <sup>1</sup>
 []()
+
+
+https://en.wikipedia.org/wiki/Imperative_programming
+
+https://en.wikipedia.org/wiki/Declarative_programming
+
+https://realm.io/news/andy-matuschak-controlling-complexity/
+
+
+https://en.wikipedia.org/wiki/State_(computer_science)
+
+
+https://en.wikipedia.org/wiki/Comparison_of_programming_paradigms
