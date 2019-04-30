@@ -283,9 +283,9 @@ The `map` function in Swift is a type of functor; it is a HoF that solves the pr
 
 Use `map` to loop over a collection and apply the same operation to each element in the collection.
 
-![functor_mapping]
 ![functor_mapping](assets/functor_mapping.png)
 
+</br>
 
 &nbsp;&nbsp;&nbsp; [About the `map(_:)` function - from Apple Docs](https://developer.apple.com/documentation/swift/array/3017522-map): </br>
 &nbsp;&nbsp;&nbsp; **Parameters** </br>
@@ -416,7 +416,7 @@ https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
 
 ## Additional Resources
 
-1. [Slides]()
+1. [Slides](https://docs.google.com/presentation/d/1yOC0-DvyG7Pgc_9vffqkZK8dodVcDBvsq1RGPs3ln7g/edit#slide=id.g514277a126_0_184)
 2. [Functional programming - wikipedia](https://en.wikipedia.org/wiki/Functional_programming)
 3. [Enemy of the State](https://speakerdeck.com/jspahrsummers/enemy-of-the-state?slide=5) <sup>1</sup>
 []()
