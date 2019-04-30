@@ -13,10 +13,10 @@
 | 0:05        | 0:15      | Initial Exercise          |
 | 0:20        | 0:20      | Overview                  |
 | 0:40        | 0:15      | In Class Activity I       |
-| 0:45       | 0:10      | BREAK                     |
-| 0:55       | 0:20     | Overview                  |
-| 1:15        | 0:30      | In Class Activity II      |
-| 1:45        | 0:5      | Wrap Up      |
+| 0:55       | 0:10      | BREAK                     |
+| 1:05      | 0:15     | Overview                  |
+| 1:20        | 0:25      | In Class Activity II      |
+| 1:45        | 0:05      | Wrap Up      |
 | TOTAL       | 1:50      |                           |
 
 
