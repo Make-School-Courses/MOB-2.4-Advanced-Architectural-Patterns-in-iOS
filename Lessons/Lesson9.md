@@ -257,7 +257,7 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 - the functional version?
 
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT II (20 min)
 
 ### First-Class and Higher-Order Functions
 
@@ -355,6 +355,20 @@ https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-
 3. Write a function applyKTimes(f:(Float -> Float),x:Float,k:Int) -> Float that takes a function f and a float x and applies f to x k times
 
 4. Using applyKTimes, write a function that raises x to the kth power
+
+*From:* </br>
+https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
+
+
+## After Class
+
+1. Research:
+
+-
+
+2.
+
+3. Continue working on your Course Project...
 
 
 ## Wrap Up (5 min)
