@@ -68,7 +68,7 @@ However, __*state*__ is a __*huge source of needless complexity,*__ and __*respo
 
 Functional Programming (FP) seeks to avoid using mutable states by using functions as fundamental building blocks rather than variables.
 
-Swift is not purely a functional programming language, but it does combine multiple programming paradigms to give you flexibility for app development, and it firmly embraces key attributes of FP:
+Swift is not purely a functional programming language &mdash; we must always implement Cocoa frameworks that are mostly designed in an OOP manner &mdash; but Swift combines multiple programming paradigms to give you flexibility for app development, and it firmly embraces two key attributes of FP:
 
 - **Higher-Order Functions** &mdash; Including map, filter, reduce, and compactMap.
 
@@ -98,6 +98,7 @@ Swift is not purely a functional programming language, but it does combine multi
 &nbsp;&nbsp;&nbsp; - It always produces the same output if given the same input. </br>
 &nbsp;&nbsp;&nbsp; - It does not produce external side effects (they do not change any data or state </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; outside of themselves)
+
 
 <!-- TODO: show example of pure function? -->
 
@@ -263,18 +264,19 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 
 ### First-Class and Higher-Order Functions
 
-Functions in Swift are **first class citizens.** This means that functions are types, which allows us to treat them as variables, pass them into other functions as arguments, and even allows functions to return other functions.
+True FP requires functions to be __*first class.*__
 
-True FP requires functions to be first class.
+And functions in Swift are *first class* citizens. This means that functions are types, which allows us to treat them like values (variables) and to pass functions around like data: we can pass them into other functions as arguments, and even allows functions to return other functions.
 
+This allows us to combine different functions to create new functions with new behavior.
 
-**Higher-Order Functions** (HoF) are functions which can take other functions as their parameters.
+Every language with FP has some version of `Map`, `Filter`, `Reduce`. These are **Higher-Order Functions** (HoF) and, as such, can take other functions as their parameters.
 
-Higher-order functions can be used to refactor code, reduce the amount of repetition, and to implement domain-specific languages (DSL).
+Higher-Order Functions can be used to reduce repetition, refactor code, and to implement __*domain-specific languages (DSL).*__
 
 <!-- TODO: research better decription of DSL -->
 
-Every language with FP has some version of Map, Filter, Reduce. These are called
+ These are called
 
 
 Swift provides higher-order functions such as map, filter, and reduce.
@@ -285,6 +287,8 @@ Also, in Swift, we can develop our own higher-order functions and DSLs.
 
 
 ### map
+
+<!-- < TODO: Introduce Functor -->
 
 <!-- as a functor  -->
 The map function is a higher-order function that solves the problem of transforming the elements of an array using a function.
