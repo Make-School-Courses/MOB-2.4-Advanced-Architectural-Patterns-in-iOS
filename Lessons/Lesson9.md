@@ -91,9 +91,12 @@ Many languages that apply this style attempt to minimize or eliminate side effec
 
 ##### Example 1
 
+<!-- A simple example in which all the odd numbers are chosen from an array of integers: -->
+
+> First, create a type and an array to hold objects of the type.
+
 ```Swift
 class MyItem {
-
     var name: String
     var description: String
 
@@ -110,15 +113,18 @@ var myArr = [
 ]
 ```
 
+> With __*imperative programming,*__ you tell the compiler what you want to happen, step by step:
+
 ```Swift
 // Imperative approach
-for item in myArr {
+for item in myArr { // step through the array and decide if condition is met
     if item.name == "Def" {
         print("Yes")
     }
 }
 ```
 
+With __*declarative programming,*__ you write code that describes what you want, but not necessarily how to get it (declare your desired results, but not the step-by-step):
 
 ```Swift
 // Declarative approach
@@ -130,41 +136,6 @@ if myArr.contains(where: { $0.name == "Def" }) {
 ##### Example 2
 
 
-```Swift
-//Imperative Approach
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-for i in 0..<numbers.count {
-    let timesTen = numbers[i] * 10
-    numbers[i] = timesTen
-}
-
-print(numbers) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-```
-
-
-```Swift
-//Functional Approach
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-extension Array where Element == Int {
-
-    func timesTen() -> [Int] {
-        var output = [Int]()
-
-        for num in self {
-            output.append(num * 10)
-        }
-        return output
-    }
-
-}
-
-let result = numbers.timesTen()
-
-print(numbers) //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(result) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-```
 
 *from:* </br>
 https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c1f420ca9
