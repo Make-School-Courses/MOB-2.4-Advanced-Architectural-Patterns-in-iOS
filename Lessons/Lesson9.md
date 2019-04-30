@@ -75,7 +75,7 @@ However, __*state*__ is a __*huge source of needless complexity,*__ and __*respo
 
 **Pure Functions** &mdash; A function is pure if it meets two criteria:
 	- It always produces the same output if given the same input.
-	- It does not produce external side effects.
+	- It does not produce external side effects (they do not change any data or state outside of themselves)
 
 <!-- TODO: show example of pure function? -->
 
@@ -89,29 +89,39 @@ However, __*state*__ is a __*huge source of needless complexity,*__ and __*respo
 
 ### Problem(s) Addressed
 
-`Variables` represent data &mdash; or *state.* By definition, since a `variable` can *vary* as your app runs, you have created *mutable state.*
+`Variables` represent data &mdash; or *state.* By definition, since a `variable` can *vary* as your app runs, it fosters *mutable state.*
 
- Imperative_programming and its mutable state can lead to __*unplanned side effects.*__
+Imperative_programming &mdash; with mutable state &mdash; can lead to __*unintended consequences*__ of certain side effects.
 
 #### Side Effects
 
-Side effects represent any changes to the state outside of your code's current scope.
-if it modifies some state variable value(s) outside its local environment,
+*Side Effects* represent any changes to the state outside of some code's current scope. Side effects might include:
+
+- Changing the value of a variable
+- Writing some data to disk
+- Enabling or disabling a button in the User Interface
+
+A function produces side effects if modifies some state variable value(s) outside its local environment,
 
 
-
-refers simply to the modification of some kind of state - for instance:
-
-Changing the value of a variable;
-Writing some data to disk;
-Enabling or disabling a button in the User Interface.
+<!-- > NOTE: Not all side effects are negative.  -->
 
 
 <!-- Not all Side Effects are bad. Some cannot be avoided. As program grows, it gets harder to manage...
-Especially with concurrency...deadlocks and race conditions -->
 
-#### FP vs OOP
+Especially with concurrency...deadlocks and race conditions
 
+controlled side effects vs unintended consequences
+
+this leads to:
+
+- hard to test
+
+- race conditions, etc.
+
+-->
+
+#### Benefits of FP
 
 In OOP, programs are composed of classes and objects. statements can mutate the state of objects when executed,
 
@@ -125,15 +135,13 @@ state management is hard and error-prone,
 
 <!-- Ease the creation, testing, and maintenance  -->
 
-### Benefits
-
 Cleaner code: “variables” are not modified once defined, so we don’t have to follow the change of state to comprehend what a function, a, method, a class, a whole project works.
 
  It eradicates threading issues like race-conditions and dead-locks
  It leaves state in tact for future use
  It is easy to test
 
-
+ <!-- concurrency -->
 
 
 
