@@ -88,11 +88,11 @@ Swift is not purely a functional programming language, but it does combine multi
 
 - **Imperative programming** &mdash; A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
 
-&nbsp;&nbsp;&nbsp; - OOP typically follows the Imperative Programming paradigm.
+&nbsp;&nbsp;&nbsp; - __*OOP*__ *typically follows the* __*Imperative Programming paradigm.*__
 
 - **Declarative programming** &mdash; Focuses on what the program should accomplish without specifying how the program should achieve the result. It seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
 
-&nbsp;&nbsp;&nbsp; - Functional Programming (FP) is considered a subset of Declarative Programming paradigm.
+&nbsp;&nbsp;&nbsp; - __*Functional Programming (FP)*__ *is considered a subset of* __*Declarative Programming paradigm.*__
 
 - **Pure Functions** &mdash; A function is pure if it meets two criteria: </br>
 &nbsp;&nbsp;&nbsp; - It always produces the same output if given the same input. </br>
