@@ -208,6 +208,18 @@ https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c
 Functions in Swift are first class citizens (or first class values), this means that functions are types, this allows to treat them as variables, pass them in function arguments and even functions can return other functions
 
 
+
+Higher-order functions can receive other functions as their parameters. Swift provides higher-order functions such as map, filter, and reduce.
+
+Also, in Swift, we can develop our own higher-order functions and DSLs.
+
+
+### map
+
+The map function is a higher-order function that solves the problem of transforming the elements of an array using a function.
+
+
+
 <!-- < TODO: Demo map(()) -->
 
 ## In Class Activity I (30 min)
