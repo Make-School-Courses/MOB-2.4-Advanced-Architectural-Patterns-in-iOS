@@ -65,13 +65,69 @@ However, __*state*__ is a __*huge source of needless complexity,*__ and __*respo
 
 ### Key Concepts
 
-**State** &mdash; Refers to a program's stored values at any given time
+**State (aka, Mutable State)** &mdash; Refers to a program's stored values at any given time
 
 **Mutation** &mdash; The act of updating some state in-place
 
 **Imperative programming** &mdash; A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
 
-**Declarative programming** &mdash; Focuses on what the program should accomplish without specifying how the program should achieve the result. Seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
+- OOP typically follows the Imperative Programming paradigm.
+
+**Declarative programming** &mdash; Focuses on what the program should accomplish without specifying how the program should achieve the result. It seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
+
+- Functional Programming (FP) is considered a subset of Declarative Programming paradigm.
+
+### Problem(s) Addressed
+
+`Variables` represent data &mdash; or *state.* By definition, since a `variable` can *vary* as your app runs, you have created *mutable state.*
+
+ Imperative_programming and its mutable state can lead to __*unplanned side effects.*__
+
+#### Side Effects
+
+Side effects represent any changes to the state outside of your code's current scope.
+if it modifies some state variable value(s) outside its local environment,
+
+
+refers simply to the modification of some kind of state - for instance:
+
+Changing the value of a variable;
+Writing some data to disk;
+Enabling or disabling a button in the User Interface.
+
+
+<!-- Not all Side Effects are bad. Some cannot be avoided. As program grows, it gets harder to manage...
+Especially with concurrency...deadlocks and race conditions -->
+
+#### FP vs OOP
+
+
+In OOP, programs are composed of classes and objects. statements can mutate the state of objects when executed,
+
+This is a fundamental difference because,
+
+In FP, functions are the fundamental building blocks, so programs are structured by functions.  FP which avoids using mutable states.
+
+
+state management is hard and error-prone,
+
+
+<!-- Ease the creation, testing, and maintenance  -->
+
+### Benefits
+
+Cleaner code: “variables” are not modified once defined, so we don’t have to follow the change of state to comprehend what a function, a, method, a class, a whole project works.
+
+ It eradicates threading issues like race-conditions and dead-locks
+ It leaves state in tact for future use
+ It is easy to test
+
+
+
+
+
+
+
 
 ### Imperative vs. Declarative Code Style
 
@@ -110,7 +166,7 @@ for item in myArr { // step through the array and decide if condition is met
 }
 ```
 
-With __*declarative programming,*__ you write code that describes what you want, but not necessarily how to get it (declare your desired results, but not the step-by-step):
+> With __*declarative programming,*__ you write code that describes **what** results are desired, but not the step-by-step commands on **how** to get them:
 
 ```Swift
 // Declarative approach
@@ -125,6 +181,10 @@ if myArr.contains(where: { $0.name == "Def" }) {
 
 *from:* </br>
 https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c1f420ca9
+
+
+
+### First-Class and Higher-Order Functions
 
 
 ## In Class Activity I (30 min)
@@ -172,3 +232,10 @@ https://en.wikipedia.org/wiki/State_(computer_science)
 
 
 https://en.wikipedia.org/wiki/Comparison_of_programming_paradigms
+
+
+deterministic
+https://en.wikipedia.org/wiki/Deterministic_system
+
+
+https://en.wikipedia.org/wiki/Side_effect_(computer_science)#Example
