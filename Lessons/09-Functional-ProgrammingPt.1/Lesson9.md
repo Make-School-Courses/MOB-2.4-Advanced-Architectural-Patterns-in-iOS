@@ -403,16 +403,16 @@ https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
 
 2. The tutorial below demonstrates FP using a game as the example. Study and execute it, completing as much of it as you can, but at the very least complete the steps from the beginning through the section on the `Reduce` function:
 
-https://troz.net/post/2018/functional-programming/
+&nbsp;&nbsp;&nbsp; https://troz.net/post/2018/functional-programming/
 
 3. Continue working on your Course Project...
 
 
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
+- Continue working on your Course Project...
 - Complete reading
-- Complete challenges
+- Complete challenges/assignments
 
 ## Additional Resources
 
