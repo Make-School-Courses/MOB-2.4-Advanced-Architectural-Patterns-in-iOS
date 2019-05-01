@@ -49,8 +49,6 @@ By the end of this lesson, you should be able to...
 ## Overview/TT I (20 min)
 
 
-- Best practices
-
 
 ### Key Concepts
 
@@ -70,6 +68,12 @@ By the end of this lesson, you should be able to...
 
 ## Overview/TT II (optional) (20 min)
 
+
+
+- Best practices
+
+
+
 ## In Class Activity II (optional) (30 min)
 
 ## Wrap Up (5 min)
@@ -81,3 +85,7 @@ By the end of this lesson, you should be able to...
 ## Additional Resources
 
 1. Links to additional readings and videos
+
+
+
+For curious readers, it is recommended to read the Swift Evolution Proposal (https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002736.html) and the Generic manifesto (https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#higher-kinded-types).
