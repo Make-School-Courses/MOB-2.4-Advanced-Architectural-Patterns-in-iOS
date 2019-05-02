@@ -25,18 +25,14 @@
 
 By the end of this lesson, you should be able to...
 
-1. Describe **Higher-kinded types** in FP:
+1. Describe **Higher-kinded types (HKTs)** in FP:
 - **Functors**
 - **Applicative Functors** (aka, Applicatives)
 - **Monads**
-
-- the software construction problem(s) it is intended to solve
-- potential use cases for it (when to use it; when not to use it)
-3. Assess:
-- the suitability of a given design pattern to solve a given problem
-- the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
-4. Implement basic examples of MVVM explored in this class
-
+2. Describe how HKTs map to **Higher-Order Functions (HoFs)** in Swift
+- along with software construction problem(s) each is intended to solve
+3. Implement the Swift HoFs: `map`, `filter`, `reduce`, `flatMap`, and `compactMap`.
+4. Describe **Best Practices** for integrating FP and OOP in Swift.
 
 ## Initial Exercise (15 min)
 
@@ -584,13 +580,17 @@ https://www.varvet.com/blog/higher-order-functions-in-swift/
 
 https://medium.com/@akbsteam/functional-swift-6-view-styling-1efc4588d1ce
 
+![View_Styling_Exercise.playround](assignments/View_Styling_Exercise.playround)
+
 
 
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+
+
+- Continue working on your current course project
+
+
 
 ## Additional Resources
 
