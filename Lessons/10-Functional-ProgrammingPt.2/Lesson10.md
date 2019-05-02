@@ -500,12 +500,56 @@ https://learnappmaking.com/map-reduce-filter-swift-programming/#filter
 2) coding exercises for reduce, filter, compactMap...and combining map and filter -->
 
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT II (10 min)
+
+### FP and Swift
+
+In the last lesson, we noted how Swift was designed to combine multiple programming paradigms to provide flexibility in app development, including embracing the two key attributes of FP: Higher-Order Functions and Value Types, and using Optionals and functions (instead of methods).
+
+Since we've covered how HoFs in Swift emulate HKTs in FP, let's delve into the importance of Swift `value types` as an expression of Functional Programming...
+
+#### Value Types
+
+Value Types - numbers, enums, and structs - are excellent at avoiding side effects because they are copied on assignment.
+
+This means that value types always have only one "owner," which makes them safer, especially in multithreaded applications, and they make code easier to read, understand, reuse, and test.
+
+They typically provide performance gains, as well.
+
+#### FP in Swift Best Practices
+
+1. **Follow The Concepts**
+
+Your functions should have a clear input and a clear output with no global side effects such as mutating objects.
+
+So, use the Swift equivalents of FP Functors, Monads, etc.: Higher-Order Functions like `map`, `filterMap`, etc.
+
+2. **Avoid Mutable State**
+
+Use `lets` instead of `vars` when dealing with data. Functional code is less prone to bugs and easier to understand than imperative code.
+
+`Enums` are especially powerful in Swift because cases can have associated values. This kind of type (known as a `sum` type) are common in functional languages.
+
+Using `value types` (structs) and `protocols` instead of classes helps you avoid mutable state. This can lead not only to much safer and easier to maintain code, but also to performance gains in computationally intensive parts of the program.
+
+Consider creating a struct when one or more of these apply:
+- the object's primary purpose is to encapsulate a few relatively simple data values
+- encapsulated values will be copied rather than referenced when you assign or pass around an instance
+- Any properties stored by the struct are themselves value types
+- the object does not need to inherit properties or behavior from another existing type
+
+3. **Readability First**
+
+Readability takes priority over complexity and cleverness.
+
+Complicated things can be broken down into smaller, simpler things: break code down into smaller, pure functions, which can be used several times throughout the project.
+
+4. **Don’t fight the iOS Frameworks**
+
+Of course, in iOS programming, having no global side effects is not possible a lot of the time due to how the Cocoa framework is set up
 
 
-
-- Best practices
-
+You also have to use UIViewControllers and UIViews for the UI Layer. There are ways to isolate your logic into nice immutable components to help with the mutability of these, but don’t go overboard fighting the framework to an unrecognizable (read unreadable) state.
 
 
 ## In Class Activity II (optional) (30 min)
