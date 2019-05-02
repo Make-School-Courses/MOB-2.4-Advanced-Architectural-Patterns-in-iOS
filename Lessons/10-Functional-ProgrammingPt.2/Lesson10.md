@@ -3,9 +3,9 @@
 <!-- INSTRUCTOR NOTES:
 1) For Activity 1:
 - solution is inline below each exercises
-3) for Activity 2:
-- xxxx
 -->
+
+<!-- TODO: review and edit the Min X Min section - this was never validated  -->
 
 ## Minute-by-Minute
 
@@ -16,9 +16,9 @@
 | 0:25        | 0:20      | Overview                  |
 | 0:45        | 0:15      | In Class Activity I       |
 | 1:00        | 0:10      | BREAK                     |
-| 1:10        | 0:20      | Overview                  |
-| 1:30        | 0:25      | In Class Activity II      |
-| TOTAL       | 1:55      |                           |
+| 1:10        | 0:15      | Overview                  |
+| 1:25        | 0:25      | In Class Activity II      |
+| TOTAL       | 1:50      |                           |
 
 
 ## Learning Objectives (5 min)
@@ -31,7 +31,7 @@ By the end of this lesson, you should be able to...
 - **Monads**
 2. Describe how HKTs map to **Higher-Order Functions (HoFs)** in Swift
 - along with software construction problem(s) each is intended to solve
-3. Implement the Swift HoFs: `map`, `filter`, `reduce`, `flatMap`, and `compactMap`.
+3. Implement basic examples of the Swift HoFs explored in class: `map`, `filter`, `reduce`, `flatMap`, and `compactMap`.
 4. Describe **Best Practices** for integrating FP and OOP in Swift.
 
 ## Initial Exercise (15 min)
@@ -626,48 +626,19 @@ https://medium.com/@akbsteam/functional-swift-6-view-styling-1efc4588d1ce
 
 ## Additional Resources
 
-1. [Slides]()
-
-1. []()
-2. []()
-3. []()
-4. []()
-5. []()
-
-[]()
-
-higher-kinded types
-https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#higher-kinded-types
-https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002736.html
+1. [Slides](https://docs.google.com/presentation/d/14kWg6CYB0HbqMwRE7TU6kmAzCykjg2uLcOKR4ADBjik/edit#slide=id.g591f3aad1c_0_227)
+2. [Swift Functors, Applicatives, and Monads in Pictures - an article](https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/)
+3. [What is a Mondad? - article](https://www.hackingwithswift.com/example-code/language/what-is-a-monad)
+4. [Fold - wikipedia](https://en.wikipedia.org/wiki/Fold_(higher-order_function))
+5. [Lots of Videos on FP in Swift](http://2014.funswiftconf.com)
+6. For curious readers, it is recommended to read the [Swift Evolution Proposal](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002736.html) and the [Generic manifesto](https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#higher-kinded-types).
 
 
-For curious readers, it is recommended to read the Swift Evolution Proposal (https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002736.html) and the Generic manifesto (https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#higher-kinded-types).
-
-
-https://www.hackingwithswift.com/example-code/language/what-is-a-monad
-
-
-https://en.wikipedia.org/wiki/Fold_(higher-order_function)
-
-
-https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/
-
-https://en.wikipedia.org/wiki/Currying
-
-
-
+<!--
+Misc secondary posts:
 (https://blog.codinghorror.com/code-smells/)
-
-
-https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/
-
-
-< lots of videos >
-http://2014.funswiftconf.com
-
-
-< excellent — about Swift, etc. >
 https://academy.realm.io/posts/andy-matuschak-controlling-complexity/
 
 
 https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+ -->
