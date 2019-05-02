@@ -416,10 +416,10 @@ Functor deals with one effect while applicative functor can deal with multiple i
 
 ## In Class Activity I (30 min)
 
-So far, we have learned that:
+<!-- So far, we have learned that:
 - Functors are structures with `map` functions.
 - Applicative Functors are Functors with `apply` functions
-- Monads are Functors with `flatMap` (and `compactMap`) functions
+- Monads are Functors with `flatMap` (and `compactMap`) functions -->
 
 **Exercise 1:** The output for the following code snippet is `[Optional(1), Optional(2), nil, nil, Optional(5)]`, which is not the desired output.
 
