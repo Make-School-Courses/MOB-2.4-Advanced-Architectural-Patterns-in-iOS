@@ -256,7 +256,7 @@ extension Optional {
 ```
 </br>
 
-##### Applicatives with Multiple Parameters
+#### Applicatives with Multiple Parameters
 
 Applicative Functors let us perform very powerful operations with a minimum of code.
 
@@ -273,22 +273,116 @@ Even though this is not currently native to Swift, there are workarounds in Swif
 
 #### Monads
 
-<!-- TODO: Insert image here  -->
+Functors apply a function to a wrapped value.
 
-##### compactMap
+And Applicatives apply a wrapped function to a wrapped value.
 
-<!-- https://useyourloaf.com/blog/swift-non-nil-values-in-an-array-of-optionals/ -->
+**Monads** apply a function that *returns* a wrapped value *to* a wrapped value.
 
+To do this, Monads have a `flatMap` function (modeled after the `liftM` in Haskell).
 
+`flatMap` can be used to flatten one level of a dimension of a sequence or to remove `nil` values in the sequence.
+
+##### Example 1 - Flattening a Nested Array
+
+> This example starts with a nested array of integers. The numbers array consists of an array of 3 arrays,
+> that each contain 3 numbers.
+> The closure { $0 } simply returns the first argument of the closure, i.e. the individual nested arrays.
+> When you call `flatMap(_:)` on the numbers array, you end up with a flattened array of individual numbers.
+
+```Swift
+let numbers = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+let result = numbers.flatMap({ $0 })
+
+print(result) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+*from:* </br>
+https://learnappmaking.com/swift-flatmap-compactmap-how-to/
+
+##### Examples of Monads with Optionals: `compactMap(_:)`
+
+A common use of a Monad in Swift is to filter out `nil` values from flattened arrays.
+
+Since Swift 4.2, this is using the `compactMap(_:)` function.
+
+&mdash; **Example 1** &mdash;
+
+> Here is a simple example which removes `nil` from an array...
+
+```Swift
 let paths:[String?] = ["test", nil, "Two"]
-
 let nonOptionals = paths.compactMap{$0}
 
+print(nonOptionals) // ["test", "Two"]
+```
 
-You may heard of Monad, it is a typeclass(protocol) based on Functor
+*from:* </br>
+https://useyourloaf.com/blog/swift-non-nil-values-in-an-array-of-optionals/
+
+
+&mdash; **Example 2** &mdash;
+
+> For this example, let's first see the results of using the `map` function on a collection with mixed data types.
+> The `Int($0)` closure takes an individual string from numbers with $0 and attempts to convert it to an integer with the
+> `Int()` initializer, which might return `nil` (since it’s an optional) – so its return type is `Int?`.
+
+```Swift
+let numbers = ["5", "42", "nine", "100", "Bob"]
+let result = numbers.map({ Int($0) })
+
+print(result) // [Optional(5), Optional(42), nil, Optional(100), nil]
+
+```
+
+> As a result, the return type of the mapping transformation is [Int?] – an array of optional integers:
+
+```Swift
+  [Optional(5), Optional(42), nil, Optional(100), nil]
+```
+
+> Let's apply the `compactMap(_:)` function to the same array:
+
+```Swift
+let numbers = ["5", "42", "nine", "100", "Bob"]
+let result = numbers.compactMap({ Int($0) })
+
+print(result) // [5, 42, 100]
+```
+
+> `compactMap(_:)` automatically removes `nil` elements from the returned array, and the return type of the `compactMap(_:)` function is a non-optional array:
+
+```Swift
+[5, 42, 100]
+```
+
+*from:* </br>
+https://learnappmaking.com/swift-flatmap-compactmap-how-to/
 
 
 
+</br>
+
+Monads are any type of *container* you can call flatMap on.
+
+Arrays and Optionals are examples of Monads.
+
+If you can define `flatMap` for a type, the type can be called a Monad.
+
+<!-- You can also define `flatMap` for other types, such as functions, tuples, reactive cocoa signals, the Result type, and many more -->
+
+
+<!-- TODO: Insert image here  -->
+
+
+
+
+#### Reduce function
+
+
+
+
+<!--
 
 #### < recap Functors, etc. >
 
@@ -299,7 +393,6 @@ Applicatives apply a wrapped function to a wrapped value
 
 
 
-
 Applicative Functors are Functors with apply functions.
 
 Applicative functor picks up where functor leaves off.
@@ -307,15 +400,16 @@ Functor lifts/upgrades a function making it capable of operating on a single eff
 
 Applicative functor allows the sequencing of multiple independent effects.
 
-Functor deals with one effect while applicative functor can deal with multiple independent effects. In other words, applicative functor generalizes functor.
+Functor deals with one effect while applicative functor can deal with multiple independent effects. In other words, applicative functor generalizes functor. -->
 
 
 
 
 ## In Class Activity I (30 min)
 
-
 So far, we have learned that Functors are structures with map functions. Applicative Functors are Functors with apply functions and Monads are Functors with flatMap functions.
+
+
 
 
 <!-- 1) a few examples for recognition
