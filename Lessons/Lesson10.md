@@ -96,6 +96,8 @@ A Functor can also be thought of as:
 
 In other words, a Functor is *any type that implements the `map` function.*
 
+The map function can be applied to any *container type* that wraps a value or multiple values inside itself. Any container that provides the map function becomes the Functor.
+
 Examples of Functors in Swift:
 - Dictionaries
 - Arrays
@@ -106,34 +108,24 @@ Examples of Functors in Swift:
 
 But __*specific programming problem*__ do functors solve?
 
-&mdash; When a value is wrapped in a context, you can’t apply a normal function to it:
+&mdash; When a value is wrapped in a context, you can’t apply a normal function to it.
 
 
+##### Example 1 - Optionals
 
+> You can see how optionals are implemented in the Swift Standard Library by typing "Optional" into any Swift file and ⌘-clicking on it:
 
-
-
-
-
-The map function can be applied to any container type that wraps a value or multiple values inside itself. Any container that provides the map function becomes the Functor,
-
-
-
-
-OPtionals
-
-An optional is a kind of container.
-You can see how optionals are implemented in the Swift Standard Library by typing "Optional" into any Swift file and ⌘-clicking on it. Here's the important part of the definition:
-
+<!-- TODO: Validate this is still correct  -->
+```Swift
 enum Optional<Wrapped> {
     case none
     case some(Wrapped)
 }
+```
+> Thus, an optional is a type of container.
 
 
-<!-- https://www.hackingwithswift.com/example-code/language/how-to-use-map-with-an-optional-value -->
-
-
+```Swift
 func increment(someNumber: Int?) -> Int? {
     if let number = someNumber {
         return number + 1
@@ -144,15 +136,18 @@ func increment(someNumber: Int?) -> Int? {
 
 increment(5)   // Some 6
 increment(nil) // nil
+```
 
-
+```Swift
 func increment(someNumber: Int?) -> Int? {
     return someNumber.map { number in number + 1 }
 }
 
 increment(5)   // Some 6
 increment(nil) // nil
+```
 
+<!-- https://www.hackingwithswift.com/example-code/language/how-to-use-map-with-an-optional-value -->
 
 
 #### Applicative Functors
