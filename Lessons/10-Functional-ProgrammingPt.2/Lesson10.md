@@ -79,7 +79,6 @@ Though HKTs are not currently supported in Swift,<sup>1</sup> Swift simulates HK
 </br>
 
 
-
 #### Functors revisited
 
 In the last lesson, we defined a **Functor** as a "a map between categories (object collections)."
@@ -255,7 +254,6 @@ extension Optional {
     }
 }
 ```
-
 </br>
 
 ##### Applicatives with Multiple Parameters
