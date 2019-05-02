@@ -98,6 +98,8 @@ In other words, a Functor is *any type that implements the `map` function.*
 
 The map function can be applied to any *container type* that wraps a value or multiple values inside itself. Any container that provides the map function becomes the Functor.
 
+<!-- TODO: Insert image here  -->
+
 Examples of Functors in Swift:
 - Dictionaries
 - Arrays
@@ -106,12 +108,12 @@ Examples of Functors in Swift:
 - Functions
 - Optionals
 
-But __*specific programming problem*__ do functors solve?
+But...__*what specific programming problem*__ do functors solve?
 
 &mdash; When a value is wrapped in a context, you can’t apply a normal function to it.
 
 
-##### Example 1 - Optionals
+##### Example 1 - Using `map` with Optionals
 
 > You can see how optionals are implemented in the Swift Standard Library by typing "Optional" into any Swift file and ⌘-clicking on it:
 
@@ -149,14 +151,22 @@ increment(nil) // nil
 
 <!-- https://www.hackingwithswift.com/example-code/language/how-to-use-map-with-an-optional-value -->
 
+##### Example 1 - Using `map` with Sequence types
+
+
+
+##### Example 1 - Optionals
+
 
 #### Applicative Functors
 
 
+<!-- TODO: Insert image here  -->
 
 
 #### Monads
 
+<!-- TODO: Insert image here  -->
 
 ##### compactMap
 
