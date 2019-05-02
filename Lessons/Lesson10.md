@@ -121,7 +121,7 @@ But...__*what specific programming problem*__ do functors solve?
 
 <!-- TODO: Validate this is still correct  -->
 ```Swift
-enum Optional<Wrapped> {
+public enum Optional<Wrapped> : ExpressibleByNilLiteral {
     case none
     case some(Wrapped)
 }
@@ -165,62 +165,114 @@ increment(someNumber: nil) // nil
 
 #### Applicative Functors
 
-Applicative Functors let us perform some very powerful operations with a minimum of code.
+Applicative Functors take Functors to the next level. An Applicative lets you put the transformation function inside a container or Functor.
+
+With an Applicative, our values are wrapped in a context, just like Functors. But our functions are wrapped in a context, too.
+
+Suppose we want to have *a function in the Functor* and apply it to values *in another Functor* of the same kind. For instance, we can extend a Functor by adding an `apply` function that *takes a function* and *applies it to the Functor.*
+
+> NOTE: In native Swift, there currently is no base type for Applicatives; as a developer,
+> you will need to create an `apply` function as needed.
 
 
-…a structure intermediate between functors and monads, in that they allow sequencing of functorial computations (unlike plain functors) but without deciding on which computation to perform on the basis of the result of a previous computation (unlike monads).
-
-An Applicative Functor is a Functor equipped with a function that takes a value to an instance of a Functor containing that value. Applicative Functors provide us with the ability to operate on not just values, but values in a functorial context, such as optionals, without needing to unwrap or map over their contents.
-
-An Applicative Functor is a Functor equipped with a function that takes a value to an instance of a Functor containing that value. Applicative Functors provide us with the ability to operate on not just values, but values in a functorial context, such as optionals, without needing to unwrap or map over their contents.
 
 
-Applicative functor picks up where functor leaves off. Functor lifts/upgrades a function making it capable of operating on a single effect. Applicative functor allows the sequencing of multiple independent effects. Functor deals with one effect while applicative functor can deal with multiple independent effects. In other words, applicative functor generalizes functor.
 
+##### Example 1 - Creating `apply` for Array
 
-An applicative lets you put the transformation function inside a container.
+Unfortunately, Swift does not provide any `apply` function on arrays. To be able to implement Applicative Functors, we need to develop `apply` functions.
 
-Applicative Functors enable us to put a function inside a container or Functor.
+> Here is a simple version of an `apply` function that takes only one argument:
 
-
-Suppose we want to have a function in the Functor and apply it to values in another Functor of the same kind. For instance,we can extend a Functor by adding an apply function that takes a function and applies it to the Functor.
-
-
-So, Applicative Functors are Functors with apply functions.
-
-Functors apply a function to a wrapped value:
-Applicatives apply a wrapped function to a wrapped value:
-
-
-<!-- TODO: mentioned that there is no Applicative correlative in Swift -- you have to create it -->
-
-
-apply is a function that applies a function to a list of arguments.
-
-Nayebi, Dr. Fatih. Swift Functional Programming - Second Edition: Ease the creation, testing, and maintenance of Swift codes . Packt Publishing. Kindle Edition.
-
-
-Unfortunately, Swift does not provide any apply method on arrays. To be able to implement Applicative Functors, we need to develop the apply function. The following code presents a simple version of the apply function with only one argument: func apply<T, V>(fn: ([T]) -> V, args: [T]) -> V {
+```Swift
+func apply<T, V>(fn: ([T]) -> V, args: [T]) -> V {
     return fn(args)
-}  The apply function takes a function and an array of any type and applies the function to the first element of the array. Let's test this function as follows:
+}
+```
 
+> xxxx
+
+```Swift
 let numbers = [1, 3, 5]
- func incrementValues(a: [Int]) -> [Int] {
 
-   return a.map { $0 + 1 }
-   }
-    let applied
+func incrementValues(a: [Int]) -> [Int] {
 
-   Nayebi, Dr. Fatih. Swift Functional Programming - Second Edition: Ease the creation, testing, and maintenance of Swift codes . Packt Publishing. Kindle Edition.
+    return a.map { $0 + 1 }
+}
+
+let applied = apply(fn: incrementValues, args: numbers) // prints: [2, 4, 6]
+```
+
+> Just to demonstrate how you could make the above `apply` function available to *all* arrays in a project, here is the same simple example in an extension of the Array class:
+
+```Swift
+extension Array {
+
+    func apply<T, V>(fn: ([T]) -> V, args: [T]) -> V {
+        return fn(args)
+    }
+}
+```
+
+> Note: this simple example is not ideal for demonstrating the extension of Array with `apply`; try adding `apply` functions to extensions on your own to understand how the Applicatives can add to Swift Sequence types.
+
+
+##### Example 2 - Creating `apply` for Optionals
+
+Applicative Functors provide us with the ability to operate on not just values, but values in a functorial context &mdash; such as Swift __*Optionals*__ &mdash; without needing to unwrap or map over their contents.
+
+> Examine how the `apply` function in this example handles the Optional without unwrapping it:
+
+```Swift
+func add(_ a: Int) -> (Int) -> Int {
+    return { b in
+        return a + b
+    }
+}
+
+let value: Optional<Int> = Optional.some(12)
+let wrappedFunction: Optional<(Int) -> Int> = Optional.some(add(5))
+
+func apply<T,U>(_ wrappedF: Optional<(T) -> U>, to value: Optional<T>) -> Optional<U> {
+    switch (wrappedF, value) {
+    case let (.some(f), .some(v)):
+        return .some(f(v))
+    default:
+        return .none
+    }
+}
+
+apply(wrappedFunction, to: value) // Prints: 17
+```
+
+> Again, if you create an `apply` function that you are satisfied should be applied to all Optionals, placing your `apply` function in an extension makes it accessible to any Optional:
+
+```Swift
+extension Optional {
+
+    func apply<T,U>(_ wrappedF: Optional<(T) -> U>, to value: Optional<T>) -> Optional<U> {
+        switch (wrappedF, value) {
+        case let (.some(f), .some(v)):
+            return .some(f(v))
+        default:
+            return .none
+        }
+    }
+}
+```
 
 
 
-Applicatives take it to the next level. With an applicative, our values are wrapped in a context, just like Functors:
+##### Applicatives with Multiple Parameters
 
-But our functions are wrapped in a context too!
+Applicative Functors let us perform very powerful operations with a minimum of code.
 
+In Haskell and other pure FP languages, Applicatives are more powerful than Functors because they allow function application with multiple parameters.
 
-Note: the original article now shows how Applicatives are more powerful than Functors in that they allow function application with multiple parameters. Again this is not feasible in vanilla Swift, but we can work around it by defining the function we want to handle in a curried way.
+Even though this is not currently native to Swift, there are workarounds in Swift avaialable that allow you to create Applicatives which take multiple parameters.
+
+> This topic is beyond the scope of today's lesson; It is recommended that you review Applicatives in this blog for details:
+> https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/
 
 
 <!-- TODO: Insert image here  -->
@@ -245,7 +297,25 @@ You may heard of Monad, it is a typeclass(protocol) based on Functor
 
 
 
-#### xxx
+#### < recap Functors, etc. >
+
+Functors apply a function to a wrapped value
+Applicatives apply a wrapped function to a wrapped value
+
+…a structure intermediate between functors and monads, in that they allow sequencing of functorial computations (unlike plain functors) but without deciding on which computation to perform on the basis of the result of a previous computation (unlike monads).
+
+
+
+
+Applicative Functors are Functors with apply functions.
+
+Applicative functor picks up where functor leaves off.
+Functor lifts/upgrades a function making it capable of operating on a single effect.
+
+Applicative functor allows the sequencing of multiple independent effects.
+
+Functor deals with one effect while applicative functor can deal with multiple independent effects. In other words, applicative functor generalizes functor.
+
 
 
 
@@ -294,3 +364,5 @@ https://en.wikipedia.org/wiki/Fold_(higher-order_function)
 
 
 https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/
+
+https://en.wikipedia.org/wiki/Currying
