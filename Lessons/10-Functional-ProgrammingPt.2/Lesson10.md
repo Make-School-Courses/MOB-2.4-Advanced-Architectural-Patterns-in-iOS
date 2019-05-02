@@ -27,8 +27,11 @@
 
 By the end of this lesson, you should be able to...
 
-1. Describe:
-- the **xxxx** design pattern
+1. Describe **Higher-kinded types** in FP:
+- **Functors**
+- **Applicative Functors** (aka, Applicatives)
+- **Monads**
+
 - the software construction problem(s) it is intended to solve
 - potential use cases for it (when to use it; when not to use it)
 3. Assess:
@@ -39,10 +42,20 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (15 min)
 
+### Part 1 - As a class
+
+- Review progress on course project
+
+### Part 2 - As a class
+
+__*Discussion Topic:*__ Side Effects
+
+**Q:** What examples of side effects can you think of?
+
+**Q:** Are side effects ever desirable?
 
 
 ## Overview/TT I (20 min)
-
 
 ### Higher-Order Functions (continued...)
 
@@ -376,6 +389,7 @@ You can also define `flatMap` for other types, such as functions, tuples, reacti
 
 
 #### Reduce function
+
 
 
 
