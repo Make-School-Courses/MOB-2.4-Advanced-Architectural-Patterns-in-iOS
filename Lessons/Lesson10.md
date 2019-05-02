@@ -65,7 +65,7 @@ Think of HKTs as __*types*__ *that* __*take other types*__ and __*construct new 
 
 In progressive order, HKTs types are:
 
-- **Functors*
+- **Functors**
 - **Applicative Functors** (aka, Applicatives)
 - **Monads**
 
@@ -78,7 +78,7 @@ Though HKTs are not currently supported in Swift,<sup>1</sup> Swift simulates HK
 > <sup>1</sup> HKTs do not currently have native support in Swift. The standard Swift libraries are tied to base types, and Swift
 > does not currently have HKT base types - such as a `Functor` type - to which subordinate types would conform to implement HKTss.
 > For more on Swift and HKTs, see this doc from Apple on Generics:
-> https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md
+> https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md </br>
 > "Higher-kinded types allow one to express the relationship between two different specializations of the same nominal type within a protocol."
 
 </br>
@@ -91,7 +91,7 @@ In the last lesson, we defined a **Functor** as a "a map between categories (obj
 
 A Functor can also be thought of as:
 - a functional design pattern
-- an abstraction of a way to apply a function over or around some structure which we cannot (or do not want to) alter
+- an abstraction of a way to apply a function over some structure which we cannot (or do not want to) alter
 - a structure or container that applies *morphisms* or functions to the values it contains, instead of to itself
 
 In other words, a Functor is *any type that implements the `map` function.*
@@ -110,12 +110,16 @@ Examples of Functors in Swift:
 
 But...__*what specific programming problem*__ do functors solve?
 
-&mdash; When a value is wrapped in a context, you can’t apply a normal function to it.
+&mdash; **Problem:** When a value is wrapped in a context, you can’t apply a normal function to it.
 
 
 ##### Example 1 - Using `map` with Optionals
 
-<!-- TODO: note that Optionals are actually the Swift equivalent of Maybe in Haskell  -->
+**Note:** *Swift Optionals are another item borrowed from Haskell, which has a type called a `Maybe` that is functionally equivalent to the Swift `Optional` type definition.*
+
+In the last lesson, we saw how to use the `map` function with collections (Swift Sequence types).
+
+Because Optionals are also *container types,* we can also use the `map` function with Optionals guard against `nil`, etc.
 
 > You can see how optionals are implemented in the Swift Standard Library by typing "Optional" into any Swift file and ⌘-clicking on it:
 
@@ -126,9 +130,10 @@ public enum Optional<Wrapped> : ExpressibleByNilLiteral {
     case some(Wrapped)
 }
 ```
-> Thus, an optional is a type of container.
+> Thus, an optional is a type of container. It contains optional values of `none` and `some(Wrapped)`, and it can be mapped over just like an array or other Sequence type.
 
-<!-- TODO: explain what this is doing... -->
+> To illustrate how an Optional behaves under the hood, we can create a function that takes an Optional, adds 1 to it if it is not `nil`, or returns `nil` if the Optional was actually `nil`...
+
 ```Swift
 func increment(someNumber: Int?) -> Int? {
     if let number = someNumber {
@@ -142,7 +147,7 @@ increment(someNumber: 5)   // Some 6
 increment(someNumber: nil) // nil
 ```
 
-<!-- TODO: explain what this is doing... -->
+> ...but we can also accomplish the same task, and with fewer lines of code, by creating a function that uses `map` to iterate over the Optional and return
 
 ```Swift
 func increment(someNumber: Int?) -> Int? {
@@ -153,14 +158,8 @@ increment(someNumber: 5)   // Some 6
 increment(someNumber: nil) // nil
 ```
 
-<!-- https://www.hackingwithswift.com/example-code/language/how-to-use-map-with-an-optional-value -->
-
-
-
-##### Example 1 - Using `map` with Sequence types
-
-
-
+> For a similar example using String Optionals, see this post:
+> https://www.hackingwithswift.com/example-code/language/how-to-use-map-with-an-optional-value
 
 
 #### Applicative Functors
