@@ -89,21 +89,69 @@ Though HKTs are not currently supported in Swift,<sup>1</sup> Swift simulates HK
 
 In the last lesson, we defined a **Functor** as a "a map between categories (object collections)."
 
+A Functor can also be thought of as:
+- a functional design pattern
+- an abstraction of a way to apply a function over or around some structure which we cannot (or do not want to) alter
+- a structure or container that applies *morphisms* or functions to the values it contains, instead of to itself
 
-We can think about a Functor as a functional design pattern.
-It is an abstraction of a way to apply a function over or around some structure that we don’t want to alter.
+In other words, a Functor is *any type that implements the `map` function.*
+
+Examples of Functors in Swift:
+- Dictionaries
+- Arrays
+- Sets
+- Closure types
+- Functions
+- Optionals
+
+But __*specific programming problem*__ do functors solve?
+
+&mdash; When a value is wrapped in a context, you can’t apply a normal function to it:
 
 
 
 
 
-a Functor is a structure or container that we can map over. In other words, a Functor is any type that implements the map function. Examples of Functors are Dictionary, Array, Set, Optional, and Closure types.
-A Functor applies morphisms or functions to the values it contains, instead of itself.
-Simply put, whenever we talk about Functors, the first thing that should come to our mind is containers that we can call the map function over them and transform them.
+
+
+
+The map function can be applied to any container type that wraps a value or multiple values inside itself. Any container that provides the map function becomes the Functor,
 
 
 
 
+OPtionals
+
+An optional is a kind of container.
+You can see how optionals are implemented in the Swift Standard Library by typing "Optional" into any Swift file and ⌘-clicking on it. Here's the important part of the definition:
+
+enum Optional<Wrapped> {
+    case none
+    case some(Wrapped)
+}
+
+
+<!-- https://www.hackingwithswift.com/example-code/language/how-to-use-map-with-an-optional-value -->
+
+
+func increment(someNumber: Int?) -> Int? {
+    if let number = someNumber {
+        return number + 1
+    } else {
+        return nil
+    }
+}
+
+increment(5)   // Some 6
+increment(nil) // nil
+
+
+func increment(someNumber: Int?) -> Int? {
+    return someNumber.map { number in number + 1 }
+}
+
+increment(5)   // Some 6
+increment(nil) // nil
 
 
 
@@ -115,7 +163,14 @@ Simply put, whenever we talk about Functors, the first thing that should come to
 #### Monads
 
 
+##### compactMap
 
+<!-- https://useyourloaf.com/blog/swift-non-nil-values-in-an-array-of-optionals/ -->
+
+
+let paths:[String?] = ["test", nil, "Two"]
+
+let nonOptionals = paths.compactMap{$0}
 
 
 You may heard of Monad, it is a typeclass(protocol) based on Functor
