@@ -557,7 +557,34 @@ You also have to use UIViewControllers and UIViews for the UI Layer. There are w
 Instead, get the best out of Swift functional programming by looking for opportunities to combine FP with OOP whenever possible.
 
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (30 min)
+
+Despite the emphasis on OOP constructs in the Cocoa Touch frameworks, especially in UIKit, it is still possible to apply FP principles to Views and View Controllers.
+
+**Exercise 1:** As a Class: Quickly review the following:
+
+> You have probably used __*higher-order functions*__ without really thinking about it as many of the methods in Cocoa Touch
+> utilise them to a great extent. You just need to look at `UIViewController`, `URLSession`, or `UIView` to find common
+> examples of *methods that take closures as arguments.*
+
+```swift
+viewController.present(anotherViewController, animated: true) {
+  /* This is a closure */
+}
+
+UIView.animate(withDuration: 3) {
+  /* This is a closure */
+}
+```
+*Excerpted from:* </br>
+https://www.varvet.com/blog/higher-order-functions-in-swift/
+
+
+**Exercise 2:** As a Class: Examine and discuss the way that this post uses FP concepts (`apply` functions, HoFs, etc.) to dynamically style view controllers:
+
+https://medium.com/@akbsteam/functional-swift-6-view-styling-1efc4588d1ce
+
+
 
 ## Wrap Up (5 min)
 
@@ -567,7 +594,13 @@ Instead, get the best out of Swift functional programming by looking for opportu
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. []()
+2. []()
+3. []()
+4. []()
+5. []()
+
+[]()
 
 higher-kinded types
 https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#higher-kinded-types
