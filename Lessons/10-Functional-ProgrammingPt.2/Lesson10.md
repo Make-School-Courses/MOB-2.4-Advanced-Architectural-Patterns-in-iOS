@@ -631,7 +631,7 @@ https://medium.com/@akbsteam/functional-swift-6-view-styling-1efc4588d1ce
 3. [What is a Mondad? - article](https://www.hackingwithswift.com/example-code/language/what-is-a-monad)
 4. [Fold - wikipedia](https://en.wikipedia.org/wiki/Fold_(higher-order_function))
 5. [Lots of Videos on FP in Swift](http://2014.funswiftconf.com)
-6. For curious readers, it is recommended to read the [Swift Evolution Proposal](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002736.html) and the [Generic manifesto](https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#higher-kinded-types).
+6. For curious readers, it is recommended to read the [Swift Evolution Proposal](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002736.html) and the **Higher-kinded types** section of the [Generic manifesto](https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#higher-kinded-types).
 
 
 <!--
