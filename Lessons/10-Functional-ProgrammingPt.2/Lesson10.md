@@ -363,22 +363,24 @@ https://learnappmaking.com/swift-flatmap-compactmap-how-to/
 
 </br>
 
-Monads are any type of *container* you can call flatMap on.
+<!-- Monads are any type of *container* you can call `flatMap` on.
+
+In Swift, you can define `flatMap` for a type, the type can be called a Monad.
 
 Arrays and Optionals are examples of Monads.
 
-If you can define `flatMap` for a type, the type can be called a Monad.
-
-<!-- You can also define `flatMap` for other types, such as functions, tuples, reactive cocoa signals, the Result type, and many more -->
+You can also define `flatMap` for other types, such as functions, tuples, reactive cocoa signals, the Result type, and many more... -->
 
 
 <!-- TODO: Insert image here  -->
 
 
-
-
 #### Reduce function
 
+
+
+
+#### Filter function
 
 
 
