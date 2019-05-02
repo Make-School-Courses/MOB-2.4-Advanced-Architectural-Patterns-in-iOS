@@ -96,6 +96,8 @@ A Functor can also be thought of as:
 
 In other words, a Functor is *any type that implements the `map` function.*
 
+![functor_mapping](assets/functor_mapping.png)
+
 The map function can be applied to any *container type* that wraps a value or multiple values inside itself. Any container that provides the map function becomes the Functor.
 
 <!-- TODO: Insert image here  -->
@@ -110,7 +112,7 @@ Examples of Functors in Swift:
 
 But...__*what specific programming problem*__ do functors solve?
 
-&mdash; **Problem:** When a value is wrapped in a context, you can’t apply a normal function to it.
+**Problem:** When a value is wrapped in a context, you can’t apply a normal function to it.
 
 
 ##### Example 1 - Using `map` with Optionals
@@ -119,7 +121,7 @@ But...__*what specific programming problem*__ do functors solve?
 
 In the last lesson, we saw how to use the `map` function with collections (Swift Sequence types).
 
-Because Optionals are also *container types,* we can also use the `map` function with Optionals guard against `nil`, etc.
+Because Optionals are also *container types,* we can also use the `map` function with Optionals to guard against `nil` (without unwrapping them).
 
 > You can see how optionals are implemented in the Swift Standard Library by typing "Optional" into any Swift file and ⌘-clicking on it:
 
@@ -147,7 +149,7 @@ increment(someNumber: 5)   // Some 6
 increment(someNumber: nil) // nil
 ```
 
-> ...but we can also accomplish the same task, and with fewer lines of code, by creating a function that uses `map` to iterate over the Optional and return
+> ...but we can also accomplish the same task, and with fewer lines of code, by creating a function that uses `map` to iterate over the Optional and return whichever optional state it finds...
 
 ```Swift
 func increment(someNumber: Int?) -> Int? {
@@ -158,7 +160,7 @@ increment(someNumber: 5)   // Some 6
 increment(someNumber: nil) // nil
 ```
 
-> For a similar example using String Optionals, see this post:
+> For a similar example using String Optionals, see this post: </br>
 > https://www.hackingwithswift.com/example-code/language/how-to-use-map-with-an-optional-value
 
 
@@ -168,13 +170,12 @@ Applicative Functors take Functors to the next level. An Applicative lets you pu
 
 With an Applicative, our values are wrapped in a context, just like Functors. But our functions are wrapped in a context, too.
 
-Suppose we want to have *a function in the Functor* and apply it to values *in another Functor* of the same kind. For instance, we can extend a Functor by adding an `apply` function that *takes a function* and *applies it to the Functor.*
+Suppose we want to have *a function in the Functor* and apply it to values *in another Functor* of the same kind.
 
-> NOTE: In native Swift, there currently is no base type for Applicatives; as a developer,
+For instance, we can extend a Functor by adding an `apply` function that *takes a function* and *applies it to the Functor.*
+
+> Note: In native Swift, there currently is no base type for Applicatives; as a developer,
 > you will need to create an `apply` function as needed.
-
-
-
 
 
 ##### Example 1 - Creating `apply` for Array
@@ -189,7 +190,7 @@ func apply<T, V>(fn: ([T]) -> V, args: [T]) -> V {
 }
 ```
 
-> xxxx
+> ...here is how that `apply` function could be used in your code:
 
 ```Swift
 let numbers = [1, 3, 5]
@@ -260,7 +261,7 @@ extension Optional {
 }
 ```
 
-
+</br>
 
 ##### Applicatives with Multiple Parameters
 
@@ -270,7 +271,7 @@ In Haskell and other pure FP languages, Applicatives are more powerful than Func
 
 Even though this is not currently native to Swift, there are workarounds in Swift avaialable that allow you to create Applicatives which take multiple parameters.
 
-> This topic is beyond the scope of today's lesson; It is recommended that you review Applicatives in this blog for details:
+> This topic is beyond the scope of today's lesson; It is recommended that you review Applicatives in this blog for details: </br>
 > https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/
 
 
