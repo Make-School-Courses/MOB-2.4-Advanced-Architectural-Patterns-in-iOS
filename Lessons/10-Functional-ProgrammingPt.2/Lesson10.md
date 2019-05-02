@@ -587,10 +587,24 @@ https://medium.com/@akbsteam/functional-swift-6-view-styling-1efc4588d1ce
 
 ## After Class
 
-1. Research:
+1. Research (for light familiarity):
 
--
-
+- Category Theory
+- Arity and Variable Arity
+- Morphism
+- Kind
+&nbsp;&nbsp;&nbsp; - and Type Constructor
+- the “~=“ operator
+- Functional Programming:
+&nbsp;&nbsp;&nbsp; - Currying
+&nbsp;&nbsp;&nbsp; - Partial Functions
+&nbsp;&nbsp;&nbsp; - Eager vs Lazy Evaluation
+&nbsp;&nbsp;&nbsp; - Recursion
+&nbsp;&nbsp;&nbsp; - Endofunctor
+- Futures, Promises, and Promise Frameworks
+- Other Swift HoFs:
+&nbsp;&nbsp;&nbsp; - sorted
+&nbsp;&nbsp;&nbsp; - zip
 
 2.  Study the "Traversing view hierarchy" section of the post below:
 
@@ -600,6 +614,8 @@ https://medium.com/@akbsteam/functional-swift-6-view-styling-1efc4588d1ce
 - the `flatmap` function
 
 [Practical functional programming in Swift - an article](https://jakubturek.com/practical-functional-programming-in-swift/)
+
+3. Continue working on your Course Project
 
 
 ## Wrap Up (5 min)
@@ -641,3 +657,17 @@ https://en.wikipedia.org/wiki/Currying
 
 
 (https://blog.codinghorror.com/code-smells/)
+
+
+https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/
+
+
+< lots of videos >
+http://2014.funswiftconf.com
+
+
+< excellent — about Swift, etc. >
+https://academy.realm.io/posts/andy-matuschak-controlling-complexity/
+
+
+https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
