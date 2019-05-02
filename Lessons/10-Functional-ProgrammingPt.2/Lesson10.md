@@ -585,15 +585,32 @@ https://medium.com/@akbsteam/functional-swift-6-view-styling-1efc4588d1ce
 
 
 
+## After Class
+
+1. Research:
+
+-
+
+
+2.  Study the "Traversing view hierarchy" section of the post below:
+
+**TODO:** Create a single view app &mdash; or, better yet, use a more complex existing project such as your Course Project &mdash; and in that app, apply and experiment with the following extensions from the posted article:
+
+- the `reduce` function
+- the `flatmap` function
+
+[Practical functional programming in Swift - an article](https://jakubturek.com/practical-functional-programming-in-swift/)
+
+
 ## Wrap Up (5 min)
 
-
-
-- Continue working on your current course project
-
-
+- Continue working on your Course Project...
+- Complete reading
+- Complete challenges/assignments
 
 ## Additional Resources
+
+1. [Slides]()
 
 1. []()
 2. []()
