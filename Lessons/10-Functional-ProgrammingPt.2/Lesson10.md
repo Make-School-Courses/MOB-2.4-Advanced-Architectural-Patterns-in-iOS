@@ -441,8 +441,8 @@ let compactMapped: [Int] = possibleNumbers.compactMap { str in Int(str) }
 
 __*Remember:*__ The function `reduce` takes two arguments, an initial value and a closure.
 
-The initial value = `0.0`
-The closure expression to use is `{ $0 + ($1 / Double(values.count)) }`
+For initial value, use: `0.0` </br>
+Closure expression: `{ $0 + ($1 / Double(values.count)) }`
 
 ```Swift
 let values = [7.0, 3.0, 10.0]
