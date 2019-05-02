@@ -516,7 +516,9 @@ This means that value types always have only one "owner," which makes them safer
 
 They typically provide performance gains, as well.
 
-#### FP in Swift Best Practices
+<!-- TODO: show example of struct or enum replacing class instances -->
+
+#### FP in Swift: Best Practices
 
 1. **Follow The Concepts**
 
@@ -546,10 +548,13 @@ Complicated things can be broken down into smaller, simpler things: break code d
 
 4. **Don’t fight the iOS Frameworks**
 
-Of course, in iOS programming, having no global side effects is not possible a lot of the time due to how the Cocoa framework is set up
+Swift is not a purely functional programming language and we always need to deal with Cocoa Touch frameworks that are mostly designed according to OOP principles.
 
+Achieving a goal of no global side effects is not possible a great deal of the time due to how the Cocoa Touch frameworks are set up.
 
-You also have to use UIViewControllers and UIViews for the UI Layer. There are ways to isolate your logic into nice immutable components to help with the mutability of these, but don’t go overboard fighting the framework to an unrecognizable (read unreadable) state.
+You also have to use UIViewControllers and UIViews for the UI Layer. There are ways to isolate your logic into nice immutable components to help with the mutability of these, but fighting the frameworks and overcomplicating your code to an unrecognizable, unreadable state is not the preferred practice.
+
+Instead, get the best out of Swift functional programming by looking for opportunities to combine FP with OOP whenever possible.
 
 
 ## In Class Activity II (optional) (30 min)
@@ -581,3 +586,7 @@ https://en.wikipedia.org/wiki/Fold_(higher-order_function)
 https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/
 
 https://en.wikipedia.org/wiki/Currying
+
+
+
+(https://blog.codinghorror.com/code-smells/)
