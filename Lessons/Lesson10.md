@@ -115,6 +115,8 @@ But...__*what specific programming problem*__ do functors solve?
 
 ##### Example 1 - Using `map` with Optionals
 
+<!-- TODO: note that Optionals are actually the Swift equivalent of Maybe in Haskell  -->
+
 > You can see how optionals are implemented in the Swift Standard Library by typing "Optional" into any Swift file and ⌘-clicking on it:
 
 <!-- TODO: Validate this is still correct  -->
@@ -126,7 +128,7 @@ enum Optional<Wrapped> {
 ```
 > Thus, an optional is a type of container.
 
-
+<!-- TODO: explain what this is doing... -->
 ```Swift
 func increment(someNumber: Int?) -> Int? {
     if let number = someNumber {
@@ -136,29 +138,80 @@ func increment(someNumber: Int?) -> Int? {
     }
 }
 
-increment(5)   // Some 6
-increment(nil) // nil
+increment(someNumber: 5)   // Some 6
+increment(someNumber: nil) // nil
 ```
+
+<!-- TODO: explain what this is doing... -->
 
 ```Swift
 func increment(someNumber: Int?) -> Int? {
     return someNumber.map { number in number + 1 }
 }
 
-increment(5)   // Some 6
-increment(nil) // nil
+increment(someNumber: 5)   // Some 6
+increment(someNumber: nil) // nil
 ```
 
 <!-- https://www.hackingwithswift.com/example-code/language/how-to-use-map-with-an-optional-value -->
+
+
 
 ##### Example 1 - Using `map` with Sequence types
 
 
 
-##### Example 1 - Optionals
 
 
 #### Applicative Functors
+
+Applicative Functors let us perform some very powerful operations with a minimum of code.
+
+
+…a structure intermediate between functors and monads, in that they allow sequencing of functorial computations (unlike plain functors) but without deciding on which computation to perform on the basis of the result of a previous computation (unlike monads).
+
+An Applicative Functor is a Functor equipped with a function that takes a value to an instance of a Functor containing that value. Applicative Functors provide us with the ability to operate on not just values, but values in a functorial context, such as optionals, without needing to unwrap or map over their contents.
+
+An Applicative Functor is a Functor equipped with a function that takes a value to an instance of a Functor containing that value. Applicative Functors provide us with the ability to operate on not just values, but values in a functorial context, such as optionals, without needing to unwrap or map over their contents.
+
+
+Applicative functor picks up where functor leaves off. Functor lifts/upgrades a function making it capable of operating on a single effect. Applicative functor allows the sequencing of multiple independent effects. Functor deals with one effect while applicative functor can deal with multiple independent effects. In other words, applicative functor generalizes functor.
+
+
+An applicative lets you put the transformation function inside a container.
+
+Applicative Functors enable us to put a function inside a container or Functor.
+
+
+Suppose we want to have a function in the Functor and apply it to values in another Functor of the same kind. For instance,we can extend a Functor by adding an apply function that takes a function and applies it to the Functor.
+
+
+So, Applicative Functors are Functors with apply functions.
+
+Functors apply a function to a wrapped value:
+Applicatives apply a wrapped function to a wrapped value:
+
+
+<!-- TODO: mentioned that there is no Applicative correlative in Swift -- you have to create it -->
+
+
+apply is a function that applies a function to a list of arguments.
+
+Nayebi, Dr. Fatih. Swift Functional Programming - Second Edition: Ease the creation, testing, and maintenance of Swift codes . Packt Publishing. Kindle Edition.
+
+
+Unfortunately, Swift does not provide any apply method on arrays. To be able to implement Applicative Functors, we need to develop the apply function. The following code presents a simple version of the apply function with only one argument: func apply<T, V>(fn: ([T]) -> V, args: [T]) -> V {
+    return fn(args)
+}  The apply function takes a function and an array of any type and applies the function to the first element of the array. Let's test this function as follows:
+
+let numbers = [1, 3, 5]
+ func incrementValues(a: [Int]) -> [Int] {
+
+   return a.map { $0 + 1 }
+   }
+    let applied
+
+   Nayebi, Dr. Fatih. Swift Functional Programming - Second Edition: Ease the creation, testing, and maintenance of Swift codes . Packt Publishing. Kindle Edition.
 
 
 <!-- TODO: Insert image here  -->
