@@ -1,10 +1,8 @@
 # Functional Programming (Part 2 of 2)
 
 <!-- INSTRUCTOR NOTES:
-1) For the QuizLet Game in the Initial Exercise:
-- the URL is xxxx
-2) For Activity 1:
-- xxx
+1) For Activity 1:
+- solution is inline below each exercises
 3) for Activity 2:
 - xxxx
 -->
@@ -387,17 +385,6 @@ You can also define `flatMap` for other types, such as functions, tuples, reacti
 
 <!-- TODO: Insert image here  -->
 
-
-#### Reduce function
-
-
-
-
-
-#### Filter function
-
-
-
 <!--
 
 #### < recap Functors, etc. >
@@ -420,12 +407,55 @@ Functor deals with one effect while applicative functor can deal with multiple i
 
 
 
+<!-- TODO: add reduce and filter  
+#### Reduce function
+
+#### Filter function
+-->
+
 
 ## In Class Activity I (30 min)
 
-So far, we have learned that Functors are structures with map functions. Applicative Functors are Functors with apply functions and Monads are Functors with flatMap functions.
+So far, we have learned that:
+- Functors are structures with `map` functions.
+- Applicative Functors are Functors with `apply` functions
+- Monads are Functors with `flatMap` (and `compactMap`) functions
 
+**Exercise 1:** The output for the following code snippet is `[Optional(1), Optional(2), nil, nil, Optional(5)]`, which is not the desired output.
 
+**TODO:** Rework this code so that it only prints the string equivalents of the the integers as ` [1, 2, 5]`
+
+```Swift
+let possibleNumbers = ["1", "2", "three", "///4///", "5"]
+let mapped: [Int?] = possibleNumbers.map { str in Int(str) }
+
+print(mapped)
+```
+
+<!-- SOLUTION to Exercise 1:
+let compactMapped: [Int] = possibleNumbers.compactMap { str in Int(str) }
+// [1, 2, 5]
+-->
+
+**Exercise 2:** Using the `reduce` function, complete the code below so that the output is `6.667`
+
+Remember: The function reduce takes two arguments, an initial value and a closure.
+
+The initial value = `0.0`
+The closure expression to use is `{ $0 + ($1 / Double(values.count)) }`
+
+```Swift
+let values = [7.0, 3.0, 10.0]
+let avg:Double = values.reduce(0.0) { $0 + ($1 / Double(values.count)) }
+
+print(avg)
+```
+<!-- SOLUTION to Exercise :
+let values = [7.0, 3.0, 10.0]
+let avg:Double = values.reduce(0.0) { $0 + ($1 / Double(values.count)) }
+print(avg)
+// Output: 6.667
+-->
 
 
 <!-- 1) a few examples for recognition
