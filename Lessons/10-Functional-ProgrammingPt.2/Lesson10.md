@@ -110,7 +110,7 @@ But...__*what specific programming problem*__ do functors solve?
 **Problem:** When a value is wrapped in a context, you can’t apply a normal function to it.
 
 
-##### Example 1 - Using `map` with Optionals
+##### Functor Example: Using `map` with Optionals
 
 **Note:** *Swift Optionals are another item borrowed from Haskell, which has a type called a `Maybe` that is functionally equivalent to the Swift `Optional` type definition.*
 
