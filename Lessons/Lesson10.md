@@ -214,6 +214,15 @@ let numbers = [1, 3, 5]
    Nayebi, Dr. Fatih. Swift Functional Programming - Second Edition: Ease the creation, testing, and maintenance of Swift codes . Packt Publishing. Kindle Edition.
 
 
+
+Applicatives take it to the next level. With an applicative, our values are wrapped in a context, just like Functors:
+
+But our functions are wrapped in a context too!
+
+
+Note: the original article now shows how Applicatives are more powerful than Functors in that they allow function application with multiple parameters. Again this is not feasible in vanilla Swift, but we can work around it by defining the function we want to handle in a curried way.
+
+
 <!-- TODO: Insert image here  -->
 
 
