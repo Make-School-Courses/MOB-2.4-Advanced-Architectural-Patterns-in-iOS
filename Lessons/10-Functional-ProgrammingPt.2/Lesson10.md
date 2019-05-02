@@ -580,7 +580,8 @@ https://www.varvet.com/blog/higher-order-functions-in-swift/
 
 https://medium.com/@akbsteam/functional-swift-6-view-styling-1efc4588d1ce
 
-![View_Styling_Exercise.playground](View_Styling_Exercise.playground)
+> The post contains a playground, which can also be found here:
+[View_Styling_Exercise.playground](View_Styling_Exercise.playground)
 
 
 
