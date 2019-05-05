@@ -49,6 +49,14 @@ how to read marble diagrams
 
 #### Why learn it
 
+< general reason >
+
+Problems solved by Rx
+-
+
+How Rx solves them
+
+
 
 ### Brief History
 
