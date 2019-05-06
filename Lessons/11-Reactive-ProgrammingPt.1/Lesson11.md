@@ -41,12 +41,120 @@ By the end of this lesson, you should be able to...
 
 ### Reactive Programming using RxSwift
 
+### Modeling Event Streams with Marble Diagrams
+
+### Event Streams
+
+Reactive Programming (Rx) can be thought of as the practice of programming with *asynchronous* data streams, or __*event streams.*__
+
+An event stream is a sequence of events happening over time.
+
+An asynchronous data stream is a stream of data where values are *emitted* &mdash; one after another &mdash; with a delay between them, and without blocking program flow to wait for results (Parallelism).
+
+And because the stream is asynchronous, the data emitted can appear anywhere in time &mdash; after a second or two, or even after two minutes.
+
+For examples, your iOS app might be doing any of the following at any particular moment:
+• Reacting to button taps and gestures
+• Animating the keyboard as a text field loses focus
+• Downloading a large photo from the Internet
+• Saving bits of data to disk
+• Playing audio
+- Tracking GPS location updates
+•
+
+
 ## Marble Diagrams
 
-
-
-
 how to read marble diagrams
+
+
+The common way of modeling asynchronous streams in Rx is to place the emitted values on a time axis in what is called a Marble Diagram &mdash; interactive diagrams that depict how Rx operators work with observable sequences over time.
+
+This first Marble Diagram depicts a timeline by itself, with no items being emitted, illustrating that you read Marble Diagrams from left to right:
+
+![Marble_TimeLine](assets/Marble_TimeLine.png)
+
+
+A simple description of an event stream is shown in the following diagram:
+
+
+
+
+![Marble_diagram_breakdown](assets/Marble_diagram_breakdown.png)
+
+
+
+we have expressed time on the arrow aligned from left to right, moving forward to the right, and events happen over time. The colored bubbles (indicated by their names) drawn at intermittent intervals on the timeline represent the events.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The word asynchronous means that the data emitted can appear anywhere in time, after one second or even after two minutes, for example.
+
+
+
+
+
+
+
+
+
+An event stream can be anything like keyboard inputs, button taps, gestures, GPS location updates, accelerometer, iBeacon, and such.
+
+You can listen to a stream and react to it accordingly.
+
+
+Event streams (a sequence of events that happen over time).
+
+“In its basic form, it deals with event streams (a sequence of events that happen over time).
+
+Whenever an event occurs, we react to it by doing something.
+
+We could react to events by using for loops but in Functional Programming the transformations are done via map(), filter() and other Rx operators.”
+
+
+Examples of event streams.
+
+Examples of async event streams.
+at any moment, might be doing any of the following things and more:
+• Reacting to button taps and gestures
+• Animating the keyboard as a text field loses focus
+• Downloading a large photo from the Internet
+• Saving bits of data to disk
+• Playing audio
+
+
+
+< comparing Arrays as event streams
+
+
+
+## In Class Activity I (30 min)
+
+
+
+
+Marble Diagrams are indispensable when it comes to learning Rx.
+
+
+
+
+
+## Overview/TT II  (20 min)
+
 
 
 
@@ -80,15 +188,13 @@ How Rx solves them
 ### Sequences
 
 
+But in RxSwift, Event Streams are called sequences.
 
 in RxSwift, everything is a sequence or something that works with a sequence.
 
-### Event Streams
 
 
-Event streams (a sequence of events that happen over time).
 
-But in RxSwift, Event Streams are called sequences.
 
 
 
@@ -108,12 +214,16 @@ schedulers
 
 
 
-## In Class Activity I (30 min)
 
 
-## Overview/TT II (optional) (20 min)
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (30 min)
+
+
+
+## Overview/TT III  (20 min)
+
+## In Class Activity III (30 min)
 
 ## Wrap Up (5 min)
 
