@@ -62,10 +62,40 @@ How Rx solves them
 
 ### RxSwift vs RxCocoa
 
+
+### Problems solved and how xxxx
+
+
+#### synchronous vs asynchronous
+
+
+
 ###  Basic Building blocks
 
-Event Streams
-Observable
+
+#### Sequences
+
+
+
+in RxSwift, everything is a sequence or something that works with a sequence.
+
+#### Event Streams
+
+
+Event streams (a sequence of events that happen over time).
+
+But in RxSwift, Event Streams are called sequences.
+
+
+
+#### Observables
+
+
+And an Observable is just a sequence, with some special powers. One of these powers — in fact the most important one — is that it is asynchronous. Observables produce events, the process of which is referred to as emitting, over a period of time.
+
+
+
+
 Subject
 Marble diagrams
 schedulers
