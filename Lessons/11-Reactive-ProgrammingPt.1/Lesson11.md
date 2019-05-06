@@ -73,35 +73,31 @@ This first Marble Diagram depicts a timeline by itself, with no items being emit
 The following diagram shows a simple description of a hypothetical event stream, with events represented by colored bubbles drawn at intermittent time intervals:
 
 ![Marble_diagram_breakdown](assets/Marble_diagram_breakdown.png) </br>
-Pay close attention to the following symbols in this diagram:
+In the above diagram, pay particular attention to these symbols:
 - The **Error** symbol
 - The **Event Stream Complete** symbol  
 
 <!-- TODO: add why the relevance of these symbols will be clear soon -->
 
 
-##### Diagramming an Array...
-
-We can compare an event stream to an array:
+##### Comparing Arrays to Event Streams
 
 Arrays are sequences in *space*; all items in an array exist in memory.
 
 Event streams, on the other hand, may not exist in space. Events might only occur *over time,* and you may not know all the events that will or can happen, or even when they will occur.
 
+If we consider the scenario in which `eventStreamArray` below started as an empty array (i.e., didn't exist in memory), and each element was populated one-at-a-time over a period of time, then the array will act like an event stream where event  1 (populating `eventStreamArray` with the first element, 2) might happen at the 1st second, event 2 might happen at the 4th second, and so on...
 
 ```Swift
   var eventStreamArray = [2, 30, 22, 5, 60, 1]
 ```
-If we can consider the scenario in which `eventStreamArray` started as an empty array (i.e., didn't exist in memory), and each element was populated one-at-a-time over a period of time, then the array will act like an event stream where an event  1 (populating `eventStreamArray` with the first element, 2) might happen at the 1st second, event 2 might happen at the 4th second, and so on...
 
-
-filter()
+**Diagramming the `filter()` Operator**
 One of the most commonly-used Rx operators, `filter()` only emits items from an Observable if a specific certain condition is met.
 
-In this example, the filter condition applied to `eventStreamArray` is to emit into the resulting stream only those items whose values are `greater than 10`:
+In this example, the filtered condition applied to `eventStreamArray` is to emit into the resulting stream only those items whose values are `greater than 10`:
 
-![Marble_diagram_breakdown](assets/Marble_diagram_breakdown.png)
-
+![filter_diag](assets/filter_diag.png)
 
 
 
