@@ -141,6 +141,14 @@ Marble Diagrams are indispensable when it comes to learning Rx.
 
 
 
+
+![map_exercise_start](assets/map_exercise_start.png)
+
+![map_exercise_solution](assets/map_exercise_solution.png)
+
+
+
+
 ## Overview/TT II  (20 min)
 
 
