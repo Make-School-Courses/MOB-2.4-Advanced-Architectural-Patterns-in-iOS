@@ -37,13 +37,18 @@ By the end of this lesson, you should be able to...
 4. Implement basic examples of MVVM explored in this class
 
 
-## Initial Exercise (15 min)
+## Overview/TT I (20 min)
+
+### Reactive Programming using RxSwift
+
+## Marble Diagrams
+
+
+
 
 how to read marble diagrams
 
-## Overview/TT I (20 min)
 
-### Reactive Programming
 
 #### What it is
 
@@ -53,33 +58,32 @@ how to read marble diagrams
 
 Problems solved by Rx
 -
-
-How Rx solves them
-
-
-
-### Brief History
-
-### RxSwift vs RxCocoa
-
-
 ### Problems solved and how xxxx
 
 
 #### synchronous vs asynchronous
 
+How Rx solves them
 
 
-###  Basic Building blocks
+
+#### Brief History
+
+#### RxSwift & RxCocoa
 
 
-#### Sequences
+
+
+####  Basic Building blocks
+
+
+### Sequences
 
 
 
 in RxSwift, everything is a sequence or something that works with a sequence.
 
-#### Event Streams
+### Event Streams
 
 
 Event streams (a sequence of events that happen over time).
@@ -88,7 +92,7 @@ But in RxSwift, Event Streams are called sequences.
 
 
 
-#### Observables
+### Observables
 
 
 And an Observable is just a sequence, with some special powers. One of these powers — in fact the most important one — is that it is asynchronous. Observables produce events, the process of which is referred to as emitting, over a period of time.
