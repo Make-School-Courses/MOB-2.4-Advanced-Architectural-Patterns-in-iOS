@@ -72,7 +72,7 @@ This first Marble Diagram depicts a timeline by itself, with no items being emit
 
 The following diagram shows a simple description of a hypothetical event stream, with events represented by colored bubbles drawn at intermittent time intervals:
 
-![Marble_diagram_breakdown](assets/Marble_diagram_breakdown.png)
+![Marble_diagram_breakdown](assets/Marble_diagram_breakdown.png) </br>
 Pay close attention to the following symbols in this diagram:
 - The **Error** symbol
 - The **Event Stream Complete** symbol  
