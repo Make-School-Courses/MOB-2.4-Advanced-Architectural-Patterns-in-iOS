@@ -139,7 +139,6 @@ Marble Diagrams are indispensable when it comes to learning Rx.
 
 
 ![reduce_exercise_start](assets/reduce_exercise_start.png)
-
 <!-- ![reduce_exercise_solution](assets/reduce_exercise_solution.png)
  -->
 
@@ -148,8 +147,7 @@ Marble Diagrams are indispensable when it comes to learning Rx.
 
 
  ![distinct_exercise_starter](assets/distinct_exercise_starter.png)
-
- ![distinct_exercise_solution](assets/distinct_exercise_solution.png)
+ <!-- ![distinct_exercise_solution](assets/distinct_exercise_solution.png) -->
 
 
 
