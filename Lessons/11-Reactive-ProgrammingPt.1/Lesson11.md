@@ -1,10 +1,8 @@
 # Reactive Programming (Part 1 of 2)
 
 <!-- INSTRUCTOR NOTES:
-1) For the QuizLet Game in the Initial Exercise:
-- the URL is xxxx
-2) For Activity 1:
-- xxx
+1) For Activity 1:
+- solutions are hidden (as graphics) below each exercise
 3) for Activity 2:
 - xxxx
 -->
@@ -135,17 +133,17 @@ Marble Diagrams are indispensable when it comes to learning Rx.
 
 ![reduce_exercise_start](assets/reduce_exercise_start.png)
 
-![reduce_exercise_solution](assets/reduce_exercise_solution.png)
-
+<!-- ![reduce_exercise_solution](assets/reduce_exercise_solution.png)
+ -->
 
 
 
 
 
 ![map_exercise_start](assets/map_exercise_start.png)
-
+<!-- 
 ![map_exercise_solution](assets/map_exercise_solution.png)
-
+ -->
 
 
 
