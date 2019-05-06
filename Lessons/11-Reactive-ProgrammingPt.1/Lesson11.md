@@ -81,11 +81,50 @@ Pay close attention to the following symbols in this diagram:
 <!-- TODO: add why the relevance of these symbols will be clear soon -->
 
 
+##### Diagramming an Array...
+
+We can compare an event stream to an array:
+
+Arrays are sequences in *space*; all items in an array exist in memory.
+
+Event streams, on the other hand, may not exist in space. Events might only occur *over time,* and you may not know all the events that will or can happen, or even when they will occur.
+
+
+```Swift
+  var eventStreamArray = [2, 30, 22, 5, 60, 1]
+```
+If we can consider the scenario in which `eventStreamArray` started as an empty array (i.e., didn't exist in memory), and each element was populated one-at-a-time over a period of time, then the array will act like an event stream where an event  1 (populating `eventStreamArray` with the first element, 2) might happen at the 1st second, event 2 might happen at the 4th second, and so on...
+
+
+filter()
+One of the most commonly-used Rx operators, `filter()` only emits items from an Observable if a specific certain condition is met.
+
+In this example, the filter condition applied to `eventStreamArray` is to emit into the resulting stream only those items whose values are `greater than 10`:
+
+![Marble_diagram_breakdown](assets/Marble_diagram_breakdown.png)
+
+
+
+
+
+
+So if we have to relate between an array and event stream, then we can assert that if the ["1", "2", "abc",  "3", "4", "cdf", "6"] values happen over a period of time and don't just exist in memory from scratch, the preceding array will act like an event stream where an event "1" might happen at 1st second, event "2" may happen at the 4th second,
+
+
+
+
+
+
+
+
+Let's try to compare eventStream to an array; arrays are sequences in space, which means all the items in the eventStream array now exist in memory; on the other hand, eventStreams don't have that property. Events might happen over time and you won't even know all the items that might happen and when will they happen.
+
+
+
+
+
 
 < comparing Arrays as event streams
-
-
-
 
 
 
@@ -118,6 +157,10 @@ Marble Diagrams are indispensable when it comes to learning Rx.
 
 
 #### What it is
+
+
+<!-- Iterator & Observer pattern -->
+
 
 #### Why learn it
 
@@ -189,6 +232,8 @@ at any moment, might be doing any of the following things and more:
 And an Observable is just a sequence, with some special powers. One of these powers — in fact the most important one — is that it is asynchronous. Observables produce events, the process of which is referred to as emitting, over a period of time.
 
 
+Observable is an array with time dimension
+
 
 
 Subject
@@ -218,4 +263,7 @@ schedulers
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. [Slides]()
+
+<!-- TODO: attribute this... -->
+https://medium.com/@jshvarts/read-marble-diagrams-like-a-pro-3d72934d3ef5
