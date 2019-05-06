@@ -100,7 +100,7 @@ In this example, the filtered condition applied to `eventStreamArray` is to emit
 ![filter_diag](assets/filter_diag.png)
 
 
-
+<!--
 
 
 So if we have to relate between an array and event stream, then we can assert that if the ["1", "2", "abc",  "3", "4", "cdf", "6"] values happen over a period of time and don't just exist in memory from scratch, the preceding array will act like an event stream where an event "1" might happen at 1st second, event "2" may happen at the 4th second,
@@ -119,17 +119,7 @@ Let's try to compare eventStream to an array; arrays are sequences in space, whi
 
 
 
-< comparing Arrays as event streams
-
-
-
-
-
-
-
-
-
-
+< comparing Arrays as event streams -->
 
 
 
@@ -137,10 +127,8 @@ Let's try to compare eventStream to an array; arrays are sequences in space, whi
 
 ## In Class Activity I (30 min)
 
-
-
-
 Marble Diagrams are indispensable when it comes to learning Rx.
+
 
 
 
