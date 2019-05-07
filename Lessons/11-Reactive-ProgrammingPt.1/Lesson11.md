@@ -388,10 +388,10 @@ https://medium.com/@kevalpatel2106/what-is-reactive-programming-da37c1611382
 
 #### Subscribing to Observables
 
-< compare to Notifications >
+<!-- < compare to Notifications > -->
 
 
-
+```Swift
 Subscribes an element handler, an error handler, a completion handler and disposed handler to an observable sequence.
 
      - parameter onNext: Action to invoke for each element in the observable sequence.
@@ -402,12 +402,32 @@ Subscribes an element handler, an error handler, a completion handler and dispos
      - returns: Subscription object used to unsubscribe from the observable sequence.
 
     public func subscribe(onNext: ((Element) -> Void)? = nil, onError: ((Swift.Error) -> Void)? = nil, onCompleted: (() -> Void)? = nil, onDisposed: (() -> Void)? = nil)
-
+```
 
 
 ### Disposing and terminating
 
+When a sequence sends the completed or error event all internal resources that compute sequence elements will be freed.
 
+To cancel production of sequence elements and free resources immediately, call `dispose` on the returned subscription.
+
+If a sequence does not terminate on its own, such as with a series of button taps, resources will be allocated permanently unless `dispose` is called manually, automatically inside of a `disposeBag`, with the `takeUntil` operator, or in some other way.
+
+Using `dispose bags` or `takeUntil operator` is a robust way of making sure resources are cleaned up. We recommend using them in production even if the sequences will terminate in finite time.
+
+Dispose bags are used to return ARC like behavior to RX.
+
+When a DisposeBag is deallocated, it will call dispose on each of the added disposables.
+
+It does not have a dispose method and therefore does not allow calling explicit dispose on purpose. If immediate cleanup is required, we can just create a new bag.
+
+```Swift
+  self.disposeBag = DisposeBag()
+  ```
+This will clear old references and cause disposal of resources.
+
+*from:* </br>
+https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md
 
 <!--
 ### Common operators in swift
