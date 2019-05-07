@@ -388,8 +388,9 @@ https://medium.com/@kevalpatel2106/what-is-reactive-programming-da37c1611382
 
 #### Subscribing to Observables
 
-<!-- < compare to Notifications > -->
+Observables come with a `subscribe` operator to subscribe to events being emitted by the Observable and to perform other operations, like printing each event as it is emitted.
 
+> Here is the official documentation on the actions available to the `subscribe` operator:
 
 ```Swift
 Subscribes an element handler, an error handler, a completion handler and disposed handler to an observable sequence.
@@ -403,6 +404,8 @@ Subscribes an element handler, an error handler, a completion handler and dispos
 
     public func subscribe(onNext: ((Element) -> Void)? = nil, onError: ((Swift.Error) -> Void)? = nil, onCompleted: (() -> Void)? = nil, onDisposed: (() -> Void)? = nil)
 ```
+
+<!-- < compare Observables with subscribe to Notifications > -->
 
 
 ### Disposing and terminating
