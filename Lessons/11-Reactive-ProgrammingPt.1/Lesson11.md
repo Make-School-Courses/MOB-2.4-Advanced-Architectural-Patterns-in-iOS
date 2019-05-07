@@ -37,6 +37,12 @@ By the end of this lesson, you should be able to...
 
 ## Overview/TT I (20 min)
 
+<!-- Need to mention:
+- emitting
+- Observables
+- operators -->
+
+
 ### Reactive Programming using RxSwift
 
 #### Modeling Event Streams with Marble Diagrams
@@ -98,57 +104,38 @@ In this example, the filtered condition applied to `eventStreamArray` is to emit
 ![filter_diag](assets/filter_diag.png)
 
 
-<!--
-
-
-So if we have to relate between an array and event stream, then we can assert that if the ["1", "2", "abc",  "3", "4", "cdf", "6"] values happen over a period of time and don't just exist in memory from scratch, the preceding array will act like an event stream where an event "1" might happen at 1st second, event "2" may happen at the 4th second,
-
-
-
-
-
-
-
-
-Let's try to compare eventStream to an array; arrays are sequences in space, which means all the items in the eventStream array now exist in memory; on the other hand, eventStreams don't have that property. Events might happen over time and you won't even know all the items that might happen and when will they happen.
-
-
-
-
-
-
-< comparing Arrays as event streams -->
-
-
-
-
-
 ## In Class Activity I (30 min)
 
+### In Pairs or As A Class
 Marble Diagrams are indispensable when it comes to learning Rx.
 
+Below are 3 Marble Diagrams using hypothetical event scenarios to illustrate 3 of the most commonly used Rx __*transforming operators.*__
 
+However, all 3 diagrams are incomplete: They are all missing the timeline showing the event stream resulting from each of their respective operators.
 
+> __*TIP:*__ The first 2 are very similar to Swift Higher-Order Functions, so you should be familiar with how they work.
 
+**TODO:**
+- Study each one of the diagrams and the description of each operator.
+- Complete the diagram by filling in the resulting event stream for each operator (*see `filter()` operator diagram above for hints*).
+
+__*Exercise 1:*__ `map()` &mdash; Transform the items emitted by an Observable by applying a function to each item or converting from one item type into another:
 
 ![map_exercise_start](assets/map_exercise_start.png)
 <!--
 ![map_exercise_solution](assets/map_exercise_solution.png)
  -->
 
-
+__*Exercise 2:*__ `reduce()` &mdash; Apply a function to each item emitted by an Observable, sequentially, and emit the final value:
 
 ![reduce_exercise_start](assets/reduce_exercise_start.png)
 <!-- ![reduce_exercise_solution](assets/reduce_exercise_solution.png)
  -->
 
-
-
-
+__*Exercise 3:*__ &mdash; The `distinct()` suppresses duplicate items emitted by an Observable:
 
  ![distinct_exercise_starter](assets/distinct_exercise_starter.png)
  <!-- ![distinct_exercise_solution](assets/distinct_exercise_solution.png) -->
-
 
 
 ## Overview/TT II  (20 min)
@@ -254,6 +241,13 @@ schedulers
 ## Overview/TT III  (20 min)
 
 ## In Class Activity III (30 min)
+
+
+## After Class
+
+- Rx Backpressure Operators
+
+
 
 ## Wrap Up (5 min)
 
