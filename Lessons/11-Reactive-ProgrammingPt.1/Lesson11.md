@@ -382,7 +382,7 @@ Subscribes an element handler, an error handler, a completion handler and dispos
       let helloSequence = Observable.just("Hello Rx")
 
       //TODO: Subsubscribe to Observable, print the event passed in...
-  
+
   }
 
 ```
@@ -401,10 +401,57 @@ func helloRxSwift(){
 
 ``` -->
 
-### Part 2
+### Part 2 - Rx.playground Examples
 
+As a class, review and discuss the behaviors in these simple Observers...
+
+> **Step 1:** First, set up Rx.playground:
+
+1. From **RxSwift-master** project (downloaded from RxSwift site), __*Open Rx.xcworkspace.*__
+2. Build the __*RxExample-macOS__* scheme (Product → Build).
+3. Open __*Rx.playground*__ in the Project navigator (under RxExample project).
+4. If needed, show the Debug Area (View → Debug Area → Show Debug Area).
+
+
+> **Step 2:** Navigate to the Introduction playground and run the 2 examples below...
+
+**Q:** What behavior of Observables do these 2 examples illustrate?
 
 ```Swift
+  example("Observable with no subscribers") {
+      _ = Observable<String>.create { observerOfString -> Disposable in
+          print("This will never be printed")
+          observerOfString.on(.next("😬"))
+          observerOfString.on(.completed)
+          return Disposables.create()
+      }
+  }
+```
+
+```Swift
+  example("Observable with subscriber") {
+    _ = Observable<String>.create { observerOfString in
+              print("Observable created")
+              observerOfString.on(.next("😉"))
+              observerOfString.on(.completed)
+              return Disposables.create()
+          }
+          .subscribe { event in
+              print(event)
+      }
+  }
+```
+
+> **Step 3:** Navigate to the TryYourself playground and run, first as it is, then after uncommenting out the 2 lines realated to `dispose`..
+
+```Swift
+example("Try yourself") {
+  // let disposeBag = DisposeBag()
+  _ = Observable.just("Hello, RxSwift!")
+    .debug("Observable")
+    .subscribe()
+    // .disposed(by: disposeBag) // If dispose bag is used instead, sequence will terminate on scope exit
+}
 
 ```
 
@@ -447,7 +494,7 @@ class ViewController: UIViewController {
 }
 ```
 
-**Step 2:** Add a second button called `buttonTwo` and, using the `tap` function built into __*RxCocoa,*__ call the same `printNext()` function as in the non-Reactive version above...
+> **Step 2:** Add a second button called `buttonTwo` and, using the `tap` function built into __*RxCocoa,*__ call the same `printNext()` function as in the non-Reactive version above...
 
 __*HINTS:*__
 1. Consider using `.subscribe(onNext: _)`
