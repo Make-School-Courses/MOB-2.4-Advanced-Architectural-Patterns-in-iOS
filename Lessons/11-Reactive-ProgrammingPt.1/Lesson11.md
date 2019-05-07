@@ -184,14 +184,13 @@ Each language-specific implementation of Reactive Programming (ReactiveX) implem
 
 ####  Basic Building blocks
 
-
-### Sequences
-
-
-But in RxSwift, Event Streams are called sequences.
-
-in RxSwift, everything is a sequence or something that works with a sequence.
-
+Observables
+Subscribing
+Subject
+Dispose
+DisposeBag
+Schedulers
+Operators
 
 
 ### More on Streams
@@ -224,10 +223,45 @@ at any moment, might be doing any of the following things and more:
 
 
 
-### Observables
+### Observables (aka, Sequences)
+
+The most important thing to understand about Rx is:
+
+The equivalence<sup>1</sup> of observer pattern (Observable<Element> sequence) and normal sequences (Sequence) is the most important thing to understand about Rx.
 
 
-And an Observable is just a sequence, with some special powers. One of these powers — in fact the most important one — is that it is asynchronous. Observables produce events, the process of which is referred to as emitting, over a period of time.
+And the kernel of RxSwift is:
+Every Observable sequence is just a sequence.
+The key advantage for an Observable vs Swift's Sequence is that it can also receive elements asynchronously.
+
+
+But in RxSwift, Event Streams are called sequences.
+
+in RxSwift, everything is a sequence or something that works with a sequence.
+
+< in fact, you can refer to Observables interchangably as sequences >
+
+
+And an Observable is just a sequence, with some special powers. One of these powers — in fact the most important one — is that it is asynchronous.
+
+
+
+
+
+
+
+Observable(ObservableType) is equivalent to Sequence
+ObservableType.subscribe method is equivalent to Sequence.makeIterator method.
+Observer (callback) needs to be passed to ObservableType.subscribe method to receive sequence elements instead of calling next() on the returned iterator.
+
+
+
+
+
+
+
+
+Observables produce events, the process of which is referred to as emitting, over a period of time.
 
 
 Observable is an array with time dimension
@@ -237,12 +271,29 @@ Observable is an array with time dimension
 Every Observable is immutable, which means that each stream composition will create a completely new Observable.
 
 
+
 A stream is a sequence of ongoing events ordered in time. It can emit three different things: a value (of some type), an error, or a "completed" signal.
 
 
-Subject
-Marble diagrams
-schedulers
+#### Lifecycle of an Observable
+
+An Observable can emit (and observers can receive) only three types of events:
+- A **Next** event &mdash; An event that “carries” the latest (or "next") data value. This is the way observers “receive” values. An Observable may emit an indefinite amount of these values, until a terminating event is emitted. 
+A **Completed** event  &mdash;  This event terminates the event sequence with success. It means the Observable completed its life cycle successfully and won’t emit additional events. 
+- An **Error** event  &mdash; The Observable terminates with an error and will not emit additional events.
+
+But an Observable doesn’t do anything until it receives a subscription.
+
+### Subscribing to Observables
+
+< compare to Notifications >
+
+
+
+### Disposing and terminating
+
+
+
 
 ### Common operators in swift
 
@@ -278,3 +329,6 @@ schedulers
 
 <!-- TODO: attribute this... -->
 https://medium.com/@jshvarts/read-marble-diagrams-like-a-pro-3d72934d3ef5
+
+equivalence<sup>1</sup>
+https://github.com/ReactiveX/RxSwift/blob/master/Documentation/MathBehindRx.md
