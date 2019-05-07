@@ -51,37 +51,20 @@ And the observer can react to whatever item or sequence of items the Observable 
 
 Events can contain values, including numbers or instances of a custom type, or events can be recognized gestures, such as taps.
 
-Each language-specific implementation of Reactive Programming (ReactiveX) implements a set of __*operators.*__
-
-Operators are __*the building blocks*__ of Reactive Programming, which you can use to transform, process, and react to events emitted by observables.
+__*Operators*__ are __*the building blocks*__ of Reactive Programming, which you can use to transform, process, and react to events emitted by observables.
 
 ##### Event Streams
-
 An event stream is a sequence of events happening over time.
 
 An asynchronous data stream is a stream of data where values are *emitted* &mdash; one after another &mdash; with a delay between them, and without blocking program flow to wait for results (Parallelism).
 
 And because the stream is asynchronous, the data emitted can appear anywhere in time &mdash; after a second or two, or even after two minutes.
 
-For examples, your iOS app might be doing any of the following at any particular moment:
-- Reacting to button taps and gestures
-- Animating the keyboard as a text field loses focus
-- Downloading a large photo from the Internet
-- Saving bits of data to disk
-- Playing audio
-- Tracking GPS location updates
-
 #### Modeling Event Streams with Marble Diagrams
 
 The common way of modeling asynchronous streams in Rx is to place the emitted values on a time axis in what is called a **Marble Diagram** &mdash; interactive diagrams that depict how Rx operators work with observable sequences over time.
 
-
-
-This first Marble Diagram depicts a timeline by itself, with no items being emitted, illustrating that you read Marble Diagrams from left to right:
-
-![Marble_TimeLine](assets/Marble_TimeLine.png)
-
-And here, our diagram shows a simple description of a hypothetical event stream, with events represented by colored bubbles drawn at intermittent time intervals:
+Here, our diagram shows a simple description of a hypothetical event stream, with events represented by colored bubbles drawn at intermittent time intervals:
 
 ![Marble_diagram_breakdown](assets/Marble_diagram_breakdown.png) </br>
 
@@ -177,7 +160,22 @@ How Rx solves them
 
 
 
+For examples, your iOS app might be doing any of the following at any particular moment:
+- Reacting to button taps and gestures
+- Animating the keyboard as a text field loses focus
+- Downloading a large photo from the Internet
+- Saving bits of data to disk
+- Playing audio
+- Tracking GPS location updates
+
+
 #### Brief History
+
+
+Each language-specific implementation of Reactive Programming (ReactiveX) implements a set of operators.
+
+
+
 
 #### RxSwift & RxCocoa
 
