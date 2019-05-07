@@ -188,13 +188,36 @@ For examples, your iOS app might be doing any of the following at any particular
 
 #### Brief History
 
+Around 2009, a team at Microsoft released a new client and server side framework called Reactive Extensions for .NET (Rx) that offered a solution to the problems of real-time, scalable, asynchronous app development.
+
+It soon became a built-in core library in the .NET framework.
+
+In 2012, it became an open-source component permitting other languages and platforms to reimplement the same functionality.
+
+Today, it is a cross-platform standard implemented in RxJS, Rx.NET, RxScala, RxSwift, and more...
+
+
+
 
 Each language-specific implementation of Reactive Programming (ReactiveX) implements a set of operators.
+
+You can read more about the family of Rx implementations at http://reactivex.io. This is the central repository of documentation about Rx’s operators and core classes
 
 
 
 
 #### RxSwift & RxCocoa
+
+RxSwift also works with all the concepts you’ve covered so far: It tackles mutable state, it allows you to compose event sequences and improves on architectural concepts such as code isolation, reusability and decouplings.
+
+
+t finds the sweet spot between traditionally imperative Cocoa code and purist functional code. It allows you to react to events by using immutable code definitions to process asynchronous pieces of input in a deterministic, composable way.
+
+RxSwift closely follows the general API design that RxPython, RxRuby, RxJS, and all other platforms conform to, so it does not include any specific features or integrations with UIKit or Cocoa to aid you in developing for iOS or macOS.
+
+
+RxCocoa is a standalone library (though it's bundled with RxSwift) that allows you to use many prebuilt features to integrate better with UIKit and Cocoa.
+RxCocoa will provide you with out-of-the-box classes to do reactive networking, react to user interactions, bind data models to UI controls, and more.
 
 
 
