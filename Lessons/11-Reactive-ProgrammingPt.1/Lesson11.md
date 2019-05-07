@@ -371,11 +371,98 @@ Subscribes an element handler, an error handler, a completion handler and dispos
 
 ## In Class Activity II (30 min)
 
+### Part 1
 
+```Swift
+
+```
+
+```Swift
+
+```
+
+### Part 2
+
+
+```Swift
+
+```
+
+### Part 3 - Reactive Button
+
+The following code prints out each element in an array whenever the user taps a button.
+
+> **Step 1:** In a single view project (with RxSwift installed), create a button the view controller, add this code, and validate that it works:
+
+```Swift
+
+import UIKit
+import RxSwift
+import RxCocoa
+
+class ViewController: UIViewController {
+
+  @IBOutlet weak var buttonOne: UIButton!
+
+    var array = [1, 2, 3, 4, 5, 6, 7]
+    var currentIndex = 0
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    @IBAction func tapButtonOne(_ sender: Any) {
+        printNext()
+    }
+
+    func printNext() {
+
+        print(array[currentIndex])
+
+        if currentIndex != array.count - 1 {
+            currentIndex += 1
+        }
+    }
+
+}
+```
+
+**Step 2:** Add a second button called `buttonTwo` and, using the `tap` function built into __*RxCocoa,*__ call the same `printNext()` function as in the non-Reactive version above...
+
+__*HINTS:*__
+1. Consider using `.subscribe(onNext: _)`
+2. Do we really need an `@IBAction` function now?
+
+
+<!-- SOLUTION FOR STEP 2:
+
+```Swift
+
+  // 1) Add button outlet
+  @IBOutlet weak var buttonTwo: UIButton!
+
+  // 2) declare DisposeBag() instance
+  let disposeBag = DisposeBag()
+
+```
+
+```Swift
+  // 3) skip the @IBAction function and just declare in viewDidLoad()
+  override func viewDidLoad() {
+      super.viewDidLoad()
+
+      self.buttonTwo.rx.tap.subscribe(onNext: { _ in
+          self.printNext()
+      }).disposed(by: disposeBag)
+  }
+``` -->
+
+
+<!--
 
 ## Overview/TT III  (20 min)
 
-## In Class Activity III (30 min)
+## In Class Activity III (30 min) -->
 
 
 ## After Class
