@@ -371,6 +371,18 @@ But an Observable doesn’t do anything until it receives a subscription.
 < compare to Notifications >
 
 
+Subscribes an element handler, an error handler, a completion handler and disposed handler to an observable sequence.
+
+     - parameter onNext: Action to invoke for each element in the observable sequence.
+     - parameter onError: Action to invoke upon errored termination of the observable sequence.
+     - parameter onCompleted: Action to invoke upon graceful termination of the observable sequence.
+     - parameter onDisposed: Action to invoke upon any type of termination of sequence (if the sequence has
+     gracefully completed, errored, or if the generation is canceled by disposing subscription).
+     - returns: Subscription object used to unsubscribe from the observable sequence.
+     */
+    public func subscribe(onNext: ((Element) -> Void)? = nil, onError: ((Swift.Error) -> Void)? = nil, onCompleted: (() -> Void)? = nil, onDisposed: (() -> Void)? = nil)
+
+    
 
 ### Disposing and terminating
 
