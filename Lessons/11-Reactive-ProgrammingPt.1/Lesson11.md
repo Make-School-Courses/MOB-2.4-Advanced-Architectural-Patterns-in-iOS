@@ -26,13 +26,30 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
+
+<!-- Reactive programming
+ReactiveX (Rx)
+brief History
+problems it is intended to solve, benefits or how it solves them
+RxSwift and RxCocoa
+how to read Marble diagrams
+Basic Building blocks
+some basic operators
+concepts:
+- Event Streams, Sequences, Observables (and their relationship)
+Lifecyce of Observables
+implement basic examples of:
+- Observables -->
+
+<!--
+1. Describe:
 - the **xxxx** design pattern
 - the software construction problem(s) it is intended to solve
 - potential use cases for it (when to use it; when not to use it)
 3. Assess:
 - the suitability of a given design pattern to solve a given problem
 - the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
-4. Implement basic examples of MVVM explored in this class
+4. Implement basic examples of MVVM explored in this class -->
 
 
 ## Overview/TT I (20 min)
