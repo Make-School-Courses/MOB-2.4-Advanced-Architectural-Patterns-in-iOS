@@ -371,15 +371,35 @@ Subscribes an element handler, an error handler, a completion handler and dispos
 
 ## In Class Activity II (30 min)
 
-### Part 1
+### Part 1 - HelloRxSwift
+
+**TODO:** Using RxSwift, write a simple function that prints out `"Hello Rx"` and call the function from `viewDidLoad()`.
 
 ```Swift
+  func helloRxSwift(){
+
+      //TODO: create Observable and call its .just func
+      let helloSequence = Observable.just("Hello Rx")
+
+      //TODO: Subsubscribe to Observable, print the event passed in...
+  
+  }
 
 ```
 
+<!-- SOLUTION FOR PART 1:
 ```Swift
 
-```
+func helloRxSwift(){
+
+    let helloSequence = Observable.just("Hello Rx")
+
+    _ = helloSequence.subscribe {
+        event in print(event)
+    }
+}
+
+``` -->
 
 ### Part 2
 
@@ -434,7 +454,7 @@ __*HINTS:*__
 2. Do we really need an `@IBAction` function now?
 
 
-<!-- SOLUTION FOR STEP 2:
+<!-- SOLUTION FOR PART 3:
 
 ```Swift
 
