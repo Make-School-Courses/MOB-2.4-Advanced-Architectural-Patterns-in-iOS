@@ -37,28 +37,25 @@ By the end of this lesson, you should be able to...
 
 ## Overview/TT I (20 min)
 
+### Reactive Programming
 
-### Reactive Programming using RxSwift
+Reactive Programming can be thought of as the practice of programming with *asynchronous* data streams, or __*event streams.*__
 
+#### Initial Concepts
 
+In Reactive Programming, an observer *subscribes* to __*an Observable.*__
 
-##### Brief Descriptions
+Observables produce events over a period of time. The process of Observables producing events over a time is referred to as __*emitting.*__
 
+And the observer can react to whatever item or sequence of items the Observable emits.
 
-##### Basic Building Blocks
+Events can contain values, including numbers or instances of a custom type, or events can be recognized gestures, such as taps.
 
+Each language-specific implementation of Reactive Programming (ReactiveX) implements a set of __*operators.*__
 
-<!-- Need to mention:
-- emitting
-- Observables
-- operators -->
-
-
-
+Operators are __*the building blocks*__ of Reactive Programming, which you can use to transform, process, and react to events emitted by observables.
 
 ##### Event Streams
-
-Reactive Programming (Rx) can be thought of as the practice of programming with *asynchronous* data streams, or __*event streams.*__
 
 An event stream is a sequence of events happening over time.
 
@@ -78,15 +75,19 @@ For examples, your iOS app might be doing any of the following at any particular
 
 The common way of modeling asynchronous streams in Rx is to place the emitted values on a time axis in what is called a **Marble Diagram** &mdash; interactive diagrams that depict how Rx operators work with observable sequences over time.
 
+
+
 This first Marble Diagram depicts a timeline by itself, with no items being emitted, illustrating that you read Marble Diagrams from left to right:
 
 ![Marble_TimeLine](assets/Marble_TimeLine.png)
 
-
-Here, our diagram shows a simple description of a hypothetical event stream, with events represented by colored bubbles drawn at intermittent time intervals:
+And here, our diagram shows a simple description of a hypothetical event stream, with events represented by colored bubbles drawn at intermittent time intervals:
 
 ![Marble_diagram_breakdown](assets/Marble_diagram_breakdown.png) </br>
-In the above diagram, pay particular attention to these symbols:
+
+In a Marble Diagram, the left-to-right arrow represents time, and the numbered circles represent elements of a sequence, which are just values plotted on the timeline.
+
+In the last above diagram, pay particular attention to these symbols:
 - The **Error** symbol
 - The **Event Stream Complete** symbol  
 
@@ -108,7 +109,7 @@ If we consider the scenario in which `eventStreamArray` below started as an empt
 **Diagramming the `filter()` Operator** </br>
 One of the most commonly-used Rx operators, `filter()` only emits items from an Observable if a specific condition is met.
 
-In this example, the filtered condition applied to `eventStreamArray` is to emit into the resulting stream only those items whose values are `greater than 10`:
+In this example, the filtered condition applied to the `eventStreamArray` above is to emit into the resulting stream only those items whose values are `greater than 10`:
 
 ![filter_diag](assets/filter_diag.png)
 
@@ -122,7 +123,7 @@ Below are 3 Marble Diagrams of hypothetical, generic event scenarios that illust
 
 However, all 3 diagrams are incomplete: They are all missing the timeline showing the event stream resulting from each of their respective operators.
 
-> __*TIP:*__ You should be familiar with how the first 2 operators work; they are very similar to their HoF counterparts found in the standard Swift libraries.
+> __*TIP:*__ You should be familiar with how the first 2 operators work; they are very similar to their HoF counterparts found in the standard Swift libraries, except they work with Observable sequence elements.
 
 **TODO:**
 - Study each one of the diagrams and the description of each operator.
@@ -157,6 +158,9 @@ __*Exercise 3:*__ &mdash; The `distinct()` suppresses duplicate items emitted by
 
 <!-- Iterator & Observer pattern -->
 
+ReactiveX is a library for composing asynchronous and event-based programs by using observable sequences.
+
+It extends the observer pattern to support sequences of data and/or events and adds operators that allow you to compose sequences together declaratively while abstracting away concerns about things like low-level threading, synchronization, thread-safety, concurrent data structures, and non-blocking I/O.
 
 #### Why learn it
 
@@ -231,6 +235,8 @@ And an Observable is just a sequence, with some special powers. One of these pow
 Observable is an array with time dimension
 
 
+
+Every Observable is immutable, which means that each stream composition will create a completely new Observable.
 
 
 A stream is a sequence of ongoing events ordered in time. It can emit three different things: a value (of some type), an error, or a "completed" signal.
