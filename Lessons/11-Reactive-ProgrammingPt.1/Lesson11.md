@@ -377,7 +377,7 @@ Here database is an observable which emits the data. In this case, it emits the 
 In above code snippet observer is an observer that consumes the data emitted by the database observable. It processes the data received and also handles error inside it.
 
 **Step-3 Manage concurrency:** (if relevant)
-At the last step, we define our schedulers that manage the concurrency. `subscribeOn(Schedulers.newThread())` tells the database observable to run on a `background thread.`` `observeOn(AndroidSchedulers.mainThread())`` tells observer to run on the `main thread`.
+At the last step, we define our schedulers that manage the concurrency. `subscribeOn(Schedulers.newThread())` tells the database observable to run on a `background thread.`` `observeOn(AndroidSchedulers.mainThread())` tells observer to run on the `main thread`.
 
 This is basic code for reactive programming.
 
