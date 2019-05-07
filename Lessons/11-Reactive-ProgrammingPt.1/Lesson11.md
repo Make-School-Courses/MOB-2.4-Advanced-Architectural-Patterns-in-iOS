@@ -150,9 +150,6 @@ __*Exercise 3:*__ &mdash; The `distinct()` suppresses duplicate items emitted by
 
 ## Overview/TT II  (20 min)
 
-
-
-
 #### What it is
 
 
@@ -161,6 +158,10 @@ __*Exercise 3:*__ &mdash; The `distinct()` suppresses duplicate items emitted by
 ReactiveX is a library for composing asynchronous and event-based programs by using observable sequences.
 
 It extends the observer pattern to support sequences of data and/or events and adds operators that allow you to compose sequences together declaratively while abstracting away concerns about things like low-level threading, synchronization, thread-safety, concurrent data structures, and non-blocking I/O.
+
+TODO: Add iterator note...
+
+
 
 #### Why learn it
 
@@ -171,11 +172,29 @@ Problems solved by Rx
 ### Problems solved and how xxxx
 
 
+####  Problems Solved
+
+
+1. State, and specifically, shared mutable state
+
+2. Imperative programming
+
+3. Side effects
+
+
+asynchronous
+
+
+
+
 #### synchronous vs asynchronous
 
-How Rx solves them
 
+TODO: Show synchronous?
 
+As a platform, iOS offers numerous APIs to write asynchronous code and, many a times, this choice becomes hard to manage and a single code base ends up comprising multiple Asynchronous API usages, for example, closures for small Async tasks, delegation for background tasks, notification center for event-based tasks, and such. Managing and modifying such a code base might become a headache even if it is written in the best way possible, and the problem becomes more severe if a big team is involved with a single code base.
+
+TODO: elaborate on this...
 
 For examples, your iOS app might be doing any of the following at any particular moment:
 - Reacting to button taps and gestures
@@ -185,6 +204,19 @@ For examples, your iOS app might be doing any of the following at any particular
 - Playing audio
 - Tracking GPS location updates
 
+
+### How Rx solves them
+
+1. Declarative code
+In imperative programming, you change state at will. In functional programming, you aim to minimize the code that causes side effects. Since you don’t live in a perfect world, the balance lies somewhere in the middle. RxSwift combines some of the best aspects of imperative code and functional code.
+
+
+2. Reactive systems
+Reactive systems is a rather abstract term and covers web or iOS apps that exhibit most or all of the following qualities:
+Responsive: Always keep the UI up to date, representing the latest app state.
+Resilient: Each behavior is defined in isolation and provides for flexible error recovery.
+Elastic: The code handles varied workload, often implementing features such as lazy pull-driven data collections, event throttling, and resource sharing.
+Message driven: Components use message-based communication for improved reusability and isolation, decoupling the lifecycle and implementation of classes. Now that you have a good understanding of the problems RxSwift helps solve and how it approaches these issues, it’s time to talk about the building blocks of Rx and how they play together.
 
 #### Brief History
 
@@ -196,7 +228,7 @@ In 2012, it became an open-source component permitting other languages and platf
 
 Today, it is a cross-platform standard implemented in RxJS, Rx.NET, RxScala, RxSwift, and more...
 
-
+< TODO: clean up, rework >
 
 
 Each language-specific implementation of Reactive Programming (ReactiveX) implements a set of operators.
@@ -208,16 +240,20 @@ You can read more about the family of Rx implementations at http://reactivex.io.
 
 #### RxSwift & RxCocoa
 
+
+< TODO: clean up, rework >
+
 RxSwift also works with all the concepts you’ve covered so far: It tackles mutable state, it allows you to compose event sequences and improves on architectural concepts such as code isolation, reusability and decouplings.
 
 
-t finds the sweet spot between traditionally imperative Cocoa code and purist functional code. It allows you to react to events by using immutable code definitions to process asynchronous pieces of input in a deterministic, composable way.
+RxSwift finds the sweet spot between traditionally imperative Cocoa code and purist functional code. It allows you to react to events by using immutable code definitions to process asynchronous pieces of input in a deterministic, composable way.
 
 RxSwift closely follows the general API design that RxPython, RxRuby, RxJS, and all other platforms conform to, so it does not include any specific features or integrations with UIKit or Cocoa to aid you in developing for iOS or macOS.
 
 
 RxCocoa is a standalone library (though it's bundled with RxSwift) that allows you to use many prebuilt features to integrate better with UIKit and Cocoa.
 RxCocoa will provide you with out-of-the-box classes to do reactive networking, react to user interactions, bind data models to UI controls, and more.
+
 
 
 
@@ -265,6 +301,9 @@ at any moment, might be doing any of the following things and more:
 
 ### Observables (aka, Sequences)
 
+
+< TODO: clean up, rework >
+
 The most important thing to understand about Rx is:
 
 The equivalence<sup>1</sup> of observer pattern (Observable<Element> sequence) and normal sequences (Sequence) is the most important thing to understand about Rx.
@@ -298,7 +337,7 @@ Observer (callback) needs to be passed to ObservableType.subscribe method to rec
 
 
 
-
+< other attributes of Observables >
 
 
 Observables produce events, the process of which is referred to as emitting, over a period of time.
@@ -315,6 +354,7 @@ Every Observable is immutable, which means that each stream composition will cre
 A stream is a sequence of ongoing events ordered in time. It can emit three different things: a value (of some type), an error, or a "completed" signal.
 
 
+
 #### Lifecycle of an Observable
 
 An Observable can emit (and observers can receive) only three types of events:
@@ -322,7 +362,9 @@ An Observable can emit (and observers can receive) only three types of events:
 A **Completed** event  &mdash;  This event terminates the event sequence with success. It means the Observable completed its life cycle successfully and won’t emit additional events. 
 - An **Error** event  &mdash; The Observable terminates with an error and will not emit additional events.
 
+
 But an Observable doesn’t do anything until it receives a subscription.
+
 
 ### Subscribing to Observables
 
