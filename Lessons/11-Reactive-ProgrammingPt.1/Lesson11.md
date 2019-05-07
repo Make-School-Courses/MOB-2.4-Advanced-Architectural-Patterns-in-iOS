@@ -26,7 +26,7 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- Reactive programming, ReactiveX (Rx), RxSwift & RxCocoa
+- Reactive programming, ReactiveX (Rx), RxSwift & RxCocoa </br>
 &nbsp;&nbsp; - history of Rx and the software problems it is intended to solve </br>
 &nbsp;&nbsp; - benefits of Rx (how it solves challenges) </br>
 - how to read Marble diagrams
