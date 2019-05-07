@@ -26,20 +26,16 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-
-<!-- Reactive programming
-ReactiveX (Rx)
-brief History
-problems it is intended to solve, benefits or how it solves them
-RxSwift and RxCocoa
-how to read Marble diagrams
-Basic Building blocks
-some basic operators
-concepts:
-- Event Streams, Sequences, Observables (and their relationship)
-Lifecyce of Observables
-implement basic examples of:
-- Observables -->
+- Reactive programming, ReactiveX (Rx), RxSwift & RxCocoa
+&mdash;&mdash; - history of Rx and the software problems it is intended to solve </br>
+&mdash;&mdash; - benefits of Rx (how it solves challenges) </br>
+- how to read Marble diagrams
+- Basic Building blocks of Rx
+- Basic operators
+- Key concepts: Event Streams, Sequences, Observables (and their relationships), Subscribing
+- The Lifecyce of Observables
+2. Implement basic examples of:
+- Observables
 
 <!--
 1. Describe:
@@ -605,8 +601,18 @@ __*HINTS:*__
 
 ## After Class
 
+1. Research:
+- RxSwift operators (standard)
 - Rx Backpressure Operators
+- Binding Observables
+- Composability & Composable operations
+- Futures_and_promises
+- Concurrency & Parallelism
+- Railway Oriented Programming
 
+2. Execute this tutorial:
+
+https://www.thedroidsonroids.com/blog/rxswift-by-examples-1-the-basics/
 
 
 ## Wrap Up (5 min)
@@ -617,7 +623,7 @@ __*HINTS:*__
 
 ## Additional Resources
 
-1. [Slides]()
+1. [Slides](https://docs.google.com/presentation/d/1eXZsIPnR-3dzGK2SjjRjrE3WFY-WeJzc0h25f6qD9Dk/edit#slide=id.p)
 
 <!-- TODO: attribute this... -->
 https://medium.com/@jshvarts/read-marble-diagrams-like-a-pro-3d72934d3ef5
@@ -627,3 +633,6 @@ https://github.com/ReactiveX/RxSwift/blob/master/Documentation/MathBehindRx.md
 
 <sup>2</sup>
 (https://developer.apple.com/documentation/swift/sequence)
+
+
+https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)
