@@ -298,58 +298,33 @@ at any moment, might be doing any of the following things and more:
 
 ### Observables (aka, Sequences)
 
-
-< TODO: clean up, rework >
-
-The most important thing to understand about Rx is:
-
-The equivalence<sup>1</sup> of observer pattern (Observable<Element> sequence) and normal sequences (Sequence) is the most important thing to understand about Rx.
-
+The most important thing to understand about Rx is the equivalence<sup>1</sup> of the observer pattern (`Observable<Element>` sequence) and normal sequences (`Sequence`).
 
 And the kernel of RxSwift is:
-Every Observable sequence is just a sequence.
-The key advantage for an Observable vs Swift's Sequence is that it can also receive elements asynchronously.
+- Every Observable sequence is just a sequence with some special powers, the most important of its powers is that it is __*asynchronous.*__
+- Event Streams are called sequences.
+- The key advantage for an Observable vs Swift's `Sequence Type`<sup>2</sup> is that Observable can also receive elements __*asynchronously.*__
+
+Thus, in RxSwift, everything is a sequence or something that works with a sequence (and you can refer to Observables and event streams interchangeably as "sequences.")
+
+Other attributes of Observable:
+
+- Every Observable is __*immutable,*__ which means that each stream composition will create a completely new Observable.
+- `ObservableType.subscribe` method is equivalent to `Sequence.makeIterator` method.
+- Observer (callback) needs to be passed to `ObservableType.subscribe` method to receive sequence elements *instead of calling `next()` on the returned iterator.*
 
 
-But in RxSwift, Event Streams are called sequences.
+Arrays, Strings or Dictionaries will be converted to observable sequences in RxSwift. (In fact, you might think of an array converted to an observable sequence as simply an array with time dimension.)
 
-in RxSwift, everything is a sequence or something that works with a sequence.
-
-< in fact, you can refer to Observables interchangably as sequences >
+You can create an observable sequence of any object that conforms to the `Sequence Protocol` from the Swift Standard Library.
 
 
-And an Observable is just a sequence, with some special powers. One of these powers — in fact the most important one — is that it is asynchronous.
+<!-- Observable is an array with time dimension -->
 
+<!-- Observable(ObservableType) is equivalent to Sequence -->
+<!-- Observables produce events, the process of which is referred to as emitting, over a period of time. -->
 
-
-
-
-
-
-Observable(ObservableType) is equivalent to Sequence
-ObservableType.subscribe method is equivalent to Sequence.makeIterator method.
-Observer (callback) needs to be passed to ObservableType.subscribe method to receive sequence elements instead of calling next() on the returned iterator.
-
-
-
-
-
-< other attributes of Observables >
-
-
-Observables produce events, the process of which is referred to as emitting, over a period of time.
-
-
-Observable is an array with time dimension
-
-
-
-Every Observable is immutable, which means that each stream composition will create a completely new Observable.
-
-
-
-A stream is a sequence of ongoing events ordered in time. It can emit three different things: a value (of some type), an error, or a "completed" signal.
-
+<!-- A stream is a sequence of ongoing events ordered in time. It can emit three different things: a value (of some type), an error, or a "completed" signal. -->
 
 
 #### Lifecycle of an Observable
@@ -386,10 +361,10 @@ Subscribes an element handler, an error handler, a completion handler and dispos
 
 
 
-
+<!--
 ### Common operators in swift
 
-
+ -->
 
 
 
@@ -424,3 +399,6 @@ https://medium.com/@jshvarts/read-marble-diagrams-like-a-pro-3d72934d3ef5
 
 equivalence<sup>1</sup>
 https://github.com/ReactiveX/RxSwift/blob/master/Documentation/MathBehindRx.md
+
+<sup>2</sup>
+(https://developer.apple.com/documentation/swift/sequence)
