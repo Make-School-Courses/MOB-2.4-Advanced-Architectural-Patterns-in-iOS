@@ -12,13 +12,12 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:20      | Initial Exercise          |
-| 0:25        | 0:20      | Overview                  |
-| 0:45        | 0:15      | In Class Activity I       |
-| 1:00        | 0:10      | BREAK                     |
-| 1:10        | 0:20      | Overview                  |
-| 1:30        | 0:25      | In Class Activity II      |
-| TOTAL       | 1:55      |                           |
+| 0:05        | 0:20      | Overview                  |
+| 0:25        | 0:15      | In Class Activity I       |
+| 0:40        | 0:10      | BREAK                     |
+| 0:50       | 0:25      | Overview                  |
+| 1:15        | 0:30      | In Class Activity II      |
+| TOTAL       | 1:45      |                           |
 
 
 ## Learning Objectives (5 min)
@@ -110,7 +109,7 @@ In this example, the filtered condition applied to the `eventStreamArray` above 
 ![filter_diag](assets/filter_diag.png)
 
 
-## In Class Activity I (30 min)
+## In Class Activity I (15 min)
 
 ### In Pairs or As A Class
 Marble Diagrams are indispensable when it comes to learning Rx.
@@ -144,7 +143,7 @@ __*Exercise 3:*__ &mdash; The `distinct()` suppresses duplicate items emitted by
  <!-- ![distinct_exercise_solution](assets/distinct_exercise_solution.png) -->
 
 
-## Overview/TT II  (20 min)
+## Overview/TT II  (25 min)
 
 ### ReactiveX, RxSwift & RxCocoa
 
@@ -253,6 +252,8 @@ This is an abstract term covering web or iOS apps that exhibit most or all of th
 
 ####  Basic Building blocks
 
+<!-- TODO: intro and expand  -->
+
 - Observables
 - Subscribing
 - Subject
@@ -330,10 +331,7 @@ An Observable can emit (and observers can receive) only three types of events:
 A **Completed** event  &mdash;  This event terminates the event sequence with success. It means the Observable completed its life cycle successfully and won’t emit additional events. 
 - An **Error** event  &mdash; The Observable terminates with an error and will not emit additional events.
 
-
 But an Observable doesn’t do anything until it receives a subscription.
-
-
 
 #### 3 simple steps to use Rx
 
@@ -379,7 +377,6 @@ This is basic code for reactive programming.
 
 *from:* </br>
 https://medium.com/@kevalpatel2106/what-is-reactive-programming-da37c1611382
-
 
 
 #### Subscribing to Observables
@@ -432,8 +429,6 @@ https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md
 ### Common operators in swift
 
  -->
-
-
 
 
 ## In Class Activity II (30 min)
@@ -529,7 +524,6 @@ The following code prints out each element in an array whenever the user taps a 
 > **Step 1:** In a single view project (with RxSwift installed), create a button the view controller, add this code, and validate that it works:
 
 ```Swift
-
 import UIKit
 import RxSwift
 import RxCocoa
