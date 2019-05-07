@@ -338,7 +338,55 @@ A **Completed** event  &mdash;  This event terminates the event sequence with su
 But an Observable doesn’t do anything until it receives a subscription.
 
 
-### Subscribing to Observables
+
+#### 3 simple steps to use Rx
+
+The following example explains the the 3 simple steps required to use Reactive programming in your application.
+
+```Swift
+Observable<String> database = Observable      //Observable. This will emit the data
+                .just(new String[]{"1", "2", "3", "4"});    //Operator
+
+ Observer<String> observer = new Observer<String>() {
+           @Override
+            public void onCompleted() {
+                //...
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                //...
+            }
+
+            @Override
+            public void onNext(String s) {
+                //...
+            }
+        };
+
+database.subscribeOn(Schedulers.newThread())          //Observable runs on new background thread.
+        .observeOn(AndroidSchedulers.mainThread())    //Observer will run on main UI thread.
+        .subscribe(observer);                         //Subscribe the observer
+```
+**Step-1 Create observable that emits the data:**
+Here database is an observable which emits the data. In this case, it emits the strings.
+
+`just()` is an operator, which basically emits the data provided in the argument one by one.
+
+**Step -2 Create observer that consumes data:**
+In above code snippet observer is an observer that consumes the data emitted by the database observable. It processes the data received and also handles error inside it.
+
+**Step-3 Manage concurrency:** (if relevant)
+At the last step, we define our schedulers that manage the concurrency. `subscribeOn(Schedulers.newThread())` tells the database observable to run on a `background thread.`` `observeOn(AndroidSchedulers.mainThread())`` tells observer to run on the `main thread`.
+
+This is basic code for reactive programming.
+
+*from:* </br>
+https://medium.com/@kevalpatel2106/what-is-reactive-programming-da37c1611382
+
+
+
+#### Subscribing to Observables
 
 < compare to Notifications >
 
