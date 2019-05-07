@@ -37,15 +37,24 @@ By the end of this lesson, you should be able to...
 
 ## Overview/TT I (20 min)
 
+
+### Reactive Programming using RxSwift
+
+
+
+##### Brief Descriptions
+
+
+##### Basic Building Blocks
+
+
 <!-- Need to mention:
 - emitting
 - Observables
 - operators -->
 
 
-### Reactive Programming using RxSwift
 
-#### Modeling Event Streams with Marble Diagrams
 
 ##### Event Streams
 
@@ -65,7 +74,7 @@ For examples, your iOS app might be doing any of the following at any particular
 - Playing audio
 - Tracking GPS location updates
 
-##### Marble Diagrams
+#### Modeling Event Streams with Marble Diagrams
 
 The common way of modeling asynchronous streams in Rx is to place the emitted values on a time axis in what is called a **Marble Diagram** &mdash; interactive diagrams that depict how Rx operators work with observable sequences over time.
 
@@ -221,6 +230,10 @@ And an Observable is just a sequence, with some special powers. One of these pow
 
 Observable is an array with time dimension
 
+
+
+
+A stream is a sequence of ongoing events ordered in time. It can emit three different things: a value (of some type), an error, or a "completed" signal.
 
 
 Subject
