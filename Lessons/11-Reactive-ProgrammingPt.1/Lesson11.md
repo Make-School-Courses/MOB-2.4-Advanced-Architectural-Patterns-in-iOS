@@ -27,8 +27,8 @@ By the end of this lesson, you should be able to...
 
 1. Describe:
 - Reactive programming, ReactiveX (Rx), RxSwift & RxCocoa
-&mdash;&mdash; - history of Rx and the software problems it is intended to solve </br>
-&mdash;&mdash; - benefits of Rx (how it solves challenges) </br>
+&nbsp;&nbsp; - history of Rx and the software problems it is intended to solve </br>
+&nbsp;&nbsp; - benefits of Rx (how it solves challenges) </br>
 - how to read Marble diagrams
 - Basic Building blocks of Rx
 - Basic operators
