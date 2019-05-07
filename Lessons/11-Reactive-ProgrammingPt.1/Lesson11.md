@@ -150,77 +150,17 @@ __*Exercise 3:*__ &mdash; The `distinct()` suppresses duplicate items emitted by
 
 ## Overview/TT II  (20 min)
 
-#### What it is
+### ReactiveX, RxSwift & RxCocoa
 
+ReactiveX (Rx) is a combination of the best ideas from the **Observer pattern,** the **Iterator pattern,** and **Functional Programming.**
 
-<!-- Iterator & Observer pattern -->
+It is a library for composing asynchronous and event-based programs by using observable sequences.
 
-ReactiveX is a library for composing asynchronous and event-based programs by using observable sequences.
-
-It extends the observer pattern to support sequences of data and/or events and adds operators that allow you to compose sequences together declaratively while abstracting away concerns about things like low-level threading, synchronization, thread-safety, concurrent data structures, and non-blocking I/O.
-
-TODO: Add iterator note...
-
-
-
-#### Why learn it
-
-< general reason >
-
-Problems solved by Rx
--
-### Problems solved and how xxxx
-
-
-####  Problems Solved
-
-
-1. State, and specifically, shared mutable state
-
-2. Imperative programming
-
-3. Side effects
-
-
-asynchronous
-
-
-
-
-#### synchronous vs asynchronous
-
-
-TODO: Show synchronous?
-
-As a platform, iOS offers numerous APIs to write asynchronous code and, many a times, this choice becomes hard to manage and a single code base ends up comprising multiple Asynchronous API usages, for example, closures for small Async tasks, delegation for background tasks, notification center for event-based tasks, and such. Managing and modifying such a code base might become a headache even if it is written in the best way possible, and the problem becomes more severe if a big team is involved with a single code base.
-
-TODO: elaborate on this...
-
-For examples, your iOS app might be doing any of the following at any particular moment:
-- Reacting to button taps and gestures
-- Animating the keyboard as a text field loses focus
-- Downloading a large photo from the Internet
-- Saving bits of data to disk
-- Playing audio
-- Tracking GPS location updates
-
-
-### How Rx solves them
-
-1. Declarative code
-In imperative programming, you change state at will. In functional programming, you aim to minimize the code that causes side effects. Since you don’t live in a perfect world, the balance lies somewhere in the middle. RxSwift combines some of the best aspects of imperative code and functional code.
-
-
-2. Reactive systems
-Reactive systems is a rather abstract term and covers web or iOS apps that exhibit most or all of the following qualities:
-Responsive: Always keep the UI up to date, representing the latest app state.
-Resilient: Each behavior is defined in isolation and provides for flexible error recovery.
-Elastic: The code handles varied workload, often implementing features such as lazy pull-driven data collections, event throttling, and resource sharing.
-Message driven: Components use message-based communication for improved reusability and isolation, decoupling the lifecycle and implementation of classes. Now that you have a good understanding of the problems RxSwift helps solve and how it approaches these issues, it’s time to talk about the building blocks of Rx and how they play together.
+It extends the observer pattern to support **sequences** of data and/or events, and it adds **operators** which allow you to compose sequences together declaratively while abstracting away concerns regarding concurrency.
 
 #### Brief History
 
-Around 2009, a team at Microsoft released a new client and server side framework called Reactive Extensions for .NET (Rx) that offered a solution to the problems of real-time, scalable, asynchronous app development.
+Around 2009, a team at Microsoft released a new client and server side framework called Reactive Extensions for .NET that offered a solution to the problems of real-time, scalable, asynchronous app development.
 
 It soon became a built-in core library in the .NET framework.
 
@@ -228,47 +168,104 @@ In 2012, it became an open-source component permitting other languages and platf
 
 Today, it is a cross-platform standard implemented in RxJS, Rx.NET, RxScala, RxSwift, and more...
 
-< TODO: clean up, rework >
-
-
-Each language-specific implementation of Reactive Programming (ReactiveX) implements a set of operators.
-
-You can read more about the family of Rx implementations at http://reactivex.io. This is the central repository of documentation about Rx’s operators and core classes
-
-
-
+ > http://reactivex.io is the central repository of documentation about Rx’s operators and core classes.
 
 #### RxSwift & RxCocoa
 
+**RxSwift** also works with all the concepts you’ve covered so far: It tackles mutable state, it allows you to compose event sequences and improves on architectural concepts such as code isolation, reusability and decouplings.
 
-< TODO: clean up, rework >
+You could think of RxSwift as the "glue" between traditionally imperative Cocoa Touch code and functional code. It allows you to react to events by using __*immutable*__ code definitions to process __*asynchronous*__ pieces of input in a __*deterministic,*__ __*composable*__ manner.
 
-RxSwift also works with all the concepts you’ve covered so far: It tackles mutable state, it allows you to compose event sequences and improves on architectural concepts such as code isolation, reusability and decouplings.
+Because RxSwift closely follows the general API design that RxPython, RxRuby, RxJS, and all other platforms conform to, it does not include any specific features or integrations with UIKit or Cocoa Touch to aid you in developing for iOS.
+
+**RxCocoa** is a standalone library that comes bundled with RxSwift. It allows you to use many prebuilt features to integrate better with UIKit and Cocoa Touch. RxCocoa will provide you with out-of-the-box classes to do reactive networking, react to user interactions, bind data models to UI controls, and more.
+
+<!-- TODO: describe RxCocoa' use cases, details better -->
+
+#### Why learn this?
+
+##### Benefits
+
+The [Rx Documentation](http://reactivex.io) states these as the general benefits of **ReactiveX:**
+
+- **Functional** &mdash; Avoid intricate stateful programs, using clean input/output functions over observable streams.
+- **Less is more** &mdash; ReactiveX's operators often reduce what was once an elaborate challenge into a few lines of code.
+- **Async error handling** &mdash; Traditional try/catch is powerless for errors in asynchronous computations, but ReactiveX is equipped with proper mechanisms for handling errors.
+- **Concurrency made easy** &mdash; Observables and Schedulers in ReactiveX allow the programmer to abstract away low-level threading, synchronization, and concurrency issues.
+
+The benefits of implementing **RxSwift** are more evident in modern mobile apps which are highly interactive and have a multitude of UI events related to data events.
+
+The benefits of **RxSwift** include:
+- Asynchrony is simplified with Declarative Code.
+- Multithreading is simplified.
+- Cleaner Code & Architectures
+- Composable Components.
+- Perfect compatibility with the MVVM template
 
 
-RxSwift finds the sweet spot between traditionally imperative Cocoa code and purist functional code. It allows you to react to events by using immutable code definitions to process asynchronous pieces of input in a deterministic, composable way.
+####  Problems Solved
 
-RxSwift closely follows the general API design that RxPython, RxRuby, RxJS, and all other platforms conform to, so it does not include any specific features or integrations with UIKit or Cocoa to aid you in developing for iOS or macOS.
+By now, you are familiar with the issues inherent in the following:
+
+1. State, especially shared mutable state
+2. Imperative programming
+3. Side effects
+
+In addition to those issues, Rx specifically addresses challenges associated with __*asynchronous*__ operations.
+
+#### Asynchronous
+
+At any given moment, your iOS app might be executing any of the following asynchronous tasks:
+- Reacting to button taps and gestures
+- Animating the keyboard as a text field loses focus
+- Downloading a large photo from the Internet
+- Saving bits of data to disk
+- Playing audio
+- Tracking GPS location updates
+
+And if any 2 tasks occur at the same time &mdash; as they often do &mdash; one task should not block the execution of the other.
+
+For example, reacting to user taps on a button should not have to wait for GPS location updates to complete.
+
+As a platform, iOS offers numerous APIs to write such asynchronous code. Examples include:
+- closures for small Async tasks
+- delegation for background task
+- Notification Center for event-based tasks...
+
+Managing and modifying a single code base comprised of multiple Asynchronous APIs becomes difficult, especially with a large development team.
+
+By its nature, Asynchronous code presents common issues such as race conditions, difficulty Unit Testing, and more...
+
+<!-- TODO: elaborate on all this... -->
+
+<!--
+TODO: Show synchronous? -->
 
 
-RxCocoa is a standalone library (though it's bundled with RxSwift) that allows you to use many prebuilt features to integrate better with UIKit and Cocoa.
-RxCocoa will provide you with out-of-the-box classes to do reactive networking, react to user interactions, bind data models to UI controls, and more.
+### How Rx solves them
 
+1. **Declarative code** &mdash; RxSwift combines some of the best aspects of imperative code and functional code to resolve challenges presented by mutable state, etc.
 
+2. **Reactive systems**
 
+This is an abstract term covering web or iOS apps that exhibit most or all of the following qualities:
+- __*Responsive:*__ Always keep the UI up to date, representing the latest app state.
+- __*Resilient:*__ Each behavior is defined in isolation and provides for flexible error recovery.
+- __*Elastic:*__ The code handles varied workload, often implementing features such as lazy pull-driven data collections, event throttling, and resource sharing.
+- __*Message driven:*__ Components use message-based communication for improved reusability and isolation, decoupling the lifecycle and implementation of classes. Now that you have a good understanding of the problems RxSwift helps solve and how it approaches these issues, it’s time to talk about the building blocks of Rx and how they play together.
 
 
 ####  Basic Building blocks
 
-Observables
-Subscribing
-Subject
-Dispose
-DisposeBag
-Schedulers
-Operators
+- Observables
+- Subscribing
+- Subject
+- Dispose
+- DisposeBag
+- Schedulers
+- Operators
 
-
+<!--
 ### More on Streams
 
 The word asynchronous means that the data emitted can appear anywhere in time, after one second or even after two minutes, for example.
@@ -295,7 +292,7 @@ at any moment, might be doing any of the following things and more:
 • Animating the keyboard as a text field loses focus
 • Downloading a large photo from the Internet
 • Saving bits of data to disk
-• Playing audio
+• Playing audio -->
 
 
 
