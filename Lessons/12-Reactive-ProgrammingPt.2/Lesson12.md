@@ -191,6 +191,20 @@ example("create") {
   }
 ```
 
+**just**  &mdash; Creates an Observable sequence with a single element.
+
+```Swift
+  example("just") {
+      let disposeBag = DisposeBag()
+
+      Observable.just("🔴")
+          .subscribe { event in
+              print(event)
+          }
+          .disposed(by: disposeBag)
+  }
+```
+
 <!-- .create() method for Observables
 .retry(3)
      .debug() -->
