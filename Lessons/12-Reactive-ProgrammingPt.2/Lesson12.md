@@ -37,25 +37,54 @@ By the end of this lesson, you should be able to...
 - **Schedulers**
 - Key Rx **Operators** selected from the roster of operator types available in RxSwift/RxCocoa
 
-
 ## Initial Exercise (15 min)
 
 ...continuation of Lesson 11 -> Activity 2 -> Exercise 3
 
 **Questions from Previous Class:**
--
+
+1. `distinctUntilChanged` &mdash; Suppresses sequential duplicate elements emitted by an Observable sequence.
+
+A variation of `Distinct`. This method will emit values *only* if they are different from the previous value.
+
+Note that in the example below, the 🐱 image was listed 3 times in a row in the middle of the sequence, but because the 🐱 at positions 4 and 5 were both preceded by the same 🐱 element, the 🐱 elements at those positions are ignored and not emitted.
+
+```Swift
+  example("distinctUntilChanged") {
+      let disposeBag = DisposeBag()
+
+      Observable.of("🐱", "🐷", "🐱", "🐱", "🐱", "🐵", "🐱")
+          .distinctUntilChanged()
+          .subscribe(onNext: { print($0) })
+          .disposed(by: disposeBag)
+  }
+
+// OUTPUT:
+🐷
+🐱
+🐵
+🐱
+```
+
+![distinctUntilChanged](assets/distinctUntilChanged.png) </br>
+
+*From:* </br>
+http://reactivex.io/documentation/operators/distinct.html
+http://introtorx.com/Content/v1.0.10621.0/05_Filtering.html#Distinct
+
+
+<!-- takeUntil TBD in swift
+distinctuntilchanged
+race
+combineLatest
+buffertoggle -->
+
 
 ## Overview/TT I (20 min)
 
 
-In today's lesson
+![xxx](assets/xxx.png) </br>
 
-- Expand Observables
-
-Operators
-
-Schedulers
-<!-- overview: Rx is Xx, y, and x (schedulers) -->
 
 <!-- MORE on Observables -->
 
@@ -63,22 +92,136 @@ Schedulers
 
 <!-- compare Notifications to Observables? -->
 
+
+#### Comparing Observables with iOS Notifications
+
+<!-- TODO: both use Observer pattern -->
+
+, you may be familiar with NotificationCenter; it broadcasts notifications to observers, which are different than RxSwift Observables. Here’s an example of an observer of the UIKeyboardDidChangeFrame notification, with a handler as a trailing closure:
+
+
+Subscribing to an RxSwift observable is fairly similar; you call observing an observable subscribing to it. So instead of addObserver(), you use subscribe(). Unlike NotificationCenter, where developers typically use only its .default singleton instance, each observable in Rx is different.
+
+
+More importantly, an observable won’t send events, or perform any work, until it has a
+subscriber.
+Remember that an observable is really a sequence definition; subscribing to an observable is really more like calling next() on an Iterator in the Swift standard library.
+
+
+
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+![xxx](assets/xxx.png) </br>
+
+
 #### Ways to Create Observables
 <!-- .create() method for Observables
 .retry(3)
      .debug() -->
 
+
+     <!-- illustrate 3 from the Rx.playground
+     			analyze what they do differently -->
+
 <!-- < TODO: Get examples -->
 
-##
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+#### Debugging
+
+<!-- < TODO: add Debugging here, simple examples-->
+
+<!-- .debug operator -->
+<!-- Debugging:
+debug - Prints out all subscriptions, events, and disposals.
+RxSwift.Resources.total - Provides a count of all Rx resource allocations, which is useful for detecting leaks during development. -->
+
+
+<!-- < TODO: add Debugging here, simple examples-->
+
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+
+
+
+#### Hot & Cold** Observables
 <!-- Hot and cold observables  -->
+
+
+<!-- TODO: insert the standard comparison chart -->
+
+![xxx](assets/xxx.png) </br>
+
 
 
 ## In Class Activity I (10 min)
 
 <!-- < TODO: observable exercises ??-->
 
+<!-- TODO: convert a Notification to an Observable? -->
 
+
+<!-- TODO: convert a dictionary to an Observable? -->
+
+
+<!-- TODO: start an Observable from scratch -->
+
+
+<!-- < TODO: with debugging options ??-->
+
+
+
+```Swift
+
+```
+
+```Swift
+
+```
 
 ## Overview/TT II (20 min)
 
@@ -89,6 +232,15 @@ Schedulers
 <!-- TODO: give 2 progressive examples  -->
 
 
+
+```Swift
+
+```
+
+
+```Swift
+
+```
 ### Scheduler
 
 <!-- TODO: show 2 scheduer examples - 1 from rx.playground -->
@@ -97,11 +249,24 @@ Schedulers
 - $1
 
 
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
 ## In Class Activity II (30 min)
 
 <!-- TODO: get exercises for subject  -->
 
 
+```Swift
+
+```
 
 ## Overview/TT III (20 min)
 
@@ -114,11 +279,27 @@ Schedulers
 <!-- TODO: end: You can create your own - show link  -->
 
 
+<!-- takeUntil
+distinctuntilchanged
+race
+combineLatest
+buffertoggle -->
+
+
+```Swift
+
+```
+
+
 ## In Class Activity III (30 min)
 
 <!-- TODO: get exercises for Operators  -->
 
 
+
+```Swift
+
+```
 
 ## After Class
 
@@ -127,7 +308,10 @@ Research:
 - Single, Completable, and Maybe (special types of Observables)
 
 
-<!-- TODO: get an exercise for schedulers; 1st, review it in rx.playground, then do an exercise (convert something?) -->
+<!-- TODO: get an exercise for Schedulers; 1st, review it in rx.playground, then do an exercise (convert something?) -->
+
+<!-- < TODO: exercise on debugging with RxSwift.Resources.total -->
+
 
 
 
@@ -144,3 +328,10 @@ Research:
 
 
 https://en.wikipedia.org/wiki/Reactive_extensions
+
+
+https://github.com/RxSwiftCommunity/RxSwiftExt
+
+https://github.com/RxSwiftCommunity
+
+https://community.rxswift.org
