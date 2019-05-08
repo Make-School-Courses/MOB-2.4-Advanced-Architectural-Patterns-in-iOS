@@ -143,15 +143,92 @@ http://adamborek.com/memory-managment-rxswift/
 
 ### Observables (continued...)
 
+
+#### Ways to Create Observables
+
+**create** &mdash; Creates a custom Observable sequence.
+
+```Swift
+example("create") {
+    let disposeBag = DisposeBag()
+
+    let myJust = { (element: String) -> Observable<String> in
+        return Observable.create { observer in
+            observer.on(.next(element))
+            observer.on(.completed)
+            return Disposables.create()
+        }
+    }
+
+    myJust("🔴")
+        .subscribe { print($0) }
+        .disposed(by: disposeBag)
+}
+```
+
+`error` &mdash; Creates an Observable sequence that emits no items and immediately terminates with an error.
+
+```Swift
+  example("error") {
+      let disposeBag = DisposeBag()
+
+      Observable<Int>.error(TestError.test)
+          .subscribe { print($0) }
+          .disposed(by: disposeBag)
+  }
+```
+
+
+`from` &mdash; Creates an Observable sequence from a Sequence, such as an Array, Dictionary, or Set.
+
+```Swift
+  example("from") {
+      let disposeBag = DisposeBag()
+
+      Observable.from(["🐶", "🐱", "🐭", "🐹"])
+          .subscribe(onNext: { print($0) })
+          .disposed(by: disposeBag)
+  }
+```
+
+<!-- .create() method for Observables
+.retry(3)
+     .debug() -->
+
+
+     <!-- illustrate 3 from the Rx.playground
+     			analyze what they do differently -->
+
+<!-- < TODO: Get examples -->
+
+
+
+
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+
 <!-- compare Notifications to Observables? -->
-<!--
+
 
 #### Comparing Observables with iOS Notifications
 
 <!-- TODO: both use Observer pattern -->
 
-THIS needs the same example as an Observable
-- also, most examples converting notifications have MainScheduler
+<!-- THIS needs the same example as an Observable
+- also, most examples converting notifications have MainScheduler -->
 
 
 , you may be familiar with NotificationCenter; it broadcasts notifications to observers, which are different than RxSwift Observables. Here’s an example of an observer of the UIKeyboardDidChangeFrame notification, with a handler as a trailing closure:
@@ -176,39 +253,8 @@ Remember that an observable is really a sequence definition; subscribing to an o
 
 ```
 
-![xxx](assets/xxx.png) </br> -->
+![xxx](assets/xxx.png) </br>
 
-
-#### Ways to Create Observables
-<!-- .create() method for Observables
-.retry(3)
-     .debug() -->
-
-
-     <!-- illustrate 3 from the Rx.playground
-     			analyze what they do differently -->
-
-<!-- < TODO: Get examples -->
-
-
-```Swift
-
-```
-
-
-```Swift
-
-```
-
-
-```Swift
-
-```
-
-
-```Swift
-
-```
 
 #### Debugging
 
