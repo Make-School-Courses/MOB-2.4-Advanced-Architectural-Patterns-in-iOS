@@ -1,4 +1,4 @@
-# Reactive Programming (Part 2 of 2)
+# Reactive Programming (Part 3 of 3)
 
 <!-- INSTRUCTOR NOTES:
 1) For the QuizLet Game in the Initial Exercise:

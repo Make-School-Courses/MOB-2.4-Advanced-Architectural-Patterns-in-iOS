@@ -1,4 +1,4 @@
-# Reactive Programming (Part 2 of 2)
+# Reactive Programming (Part 2 of 3)
 
 <!-- INSTRUCTOR NOTES:
 1) For the QuizLet Game in the Initial Exercise:
@@ -28,44 +28,39 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- the **xxxx** design pattern
-- the software construction problem(s) it is intended to solve
-- potential use cases for it (when to use it; when not to use it)
-3. Assess:
-- the suitability of a given design pattern to solve a given problem
-- the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
-4. Implement basic examples of MVVM explored in this class
+<!-- - Reactive programming, ReactiveX (Rx), RxSwift & RxCocoa </br>
+&nbsp;&nbsp; - history of Rx and the software problems it is intended to solve </br>
+&nbsp;&nbsp; - benefits of Rx (how it solves challenges) </br>
+- how to read Marble diagrams
+- Basic Building blocks of Rx
+- Basic operators
+- Key concepts: Event Streams, Sequences, Observables (and their relationships), Subscribing
+- The Lifecyce of Observables
+2. Implement basic examples of:
+- Observables -->
 
 ## Initial Exercise (15 min)
 
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
+...continuation of Lesson 11 -> Activity 2 -> Exercise 3
+
+**Questions?**
 
 ## Overview/TT I (20 min)
 
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
+
 
 ## In Class Activity I (30 min)
 
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
+
 
 ## Overview/TT II (optional) (20 min)
+
+### Subject
+
+
+### Scheduler
+
+
 
 ## In Class Activity II (optional) (30 min)
 

@@ -1,4 +1,4 @@
-# Reactive Programming (Part 1 of 2)
+# Reactive Programming (Part 1 of 3)
 
 <!-- INSTRUCTOR NOTES:
 1) For Activity 1:
@@ -35,17 +35,6 @@ By the end of this lesson, you should be able to...
 - The Lifecyce of Observables
 2. Implement basic examples of:
 - Observables
-
-<!--
-1. Describe:
-- the **xxxx** design pattern
-- the software construction problem(s) it is intended to solve
-- potential use cases for it (when to use it; when not to use it)
-3. Assess:
-- the suitability of a given design pattern to solve a given problem
-- the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
-4. Implement basic examples of MVVM explored in this class -->
-
 
 ## Overview/TT I (20 min)
 
