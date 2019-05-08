@@ -32,8 +32,8 @@ By the end of this lesson, you should be able to...
 
 1. Describe and implement basic examples of:
 - Optional ways for creating **Observables**  
-- **Hot & Cold**  Observables
-- **Subjects**
+- **Hot & Cold** Observables
+- **Subjects** - A special type of Observable
 - **Schedulers**
 - Key Rx **Operators** selected from the roster of operator types available in RxSwift/RxCocoa
 
