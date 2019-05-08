@@ -84,29 +84,48 @@ Returns an Observable that mirrors the first source Observable to emit an item.
 https://rxmarbles.com/#race
 
 
-
 *Definition from:* </br>
 https://rxjs-dev.firebaseapp.com/api/index/function/race
 
-Note: It is inconclusive, but the `race` operator may also be the same the the `amb` operator listed in the generic Rx operators.
+> *Note: It is inconclusive, but the `race` operator may also be the same the the `amb` operator listed in the generic Rx operators.*
 
 
-3. Retain cycles with
+3. `buffertoggle` and `bufferWhen` operators?
 
-When working with closures when you are pointing to self inside closure like in your case of flapmap the retain cycle gets created if you DON'T use [weak/unowned self].
+> TODO: To understand these operators, experiment with their interactive Marble Diagrams...
+
+`Buffer`
+periodically gather items emitted by an Observable into bundles and emit these bundles rather than emitting the items one at a time
+
+`buffertoggle`
+Collects values from the past as an array. Starts collecting only when opening emits, and calls the closingSelector function to get an Observable that tells when to close the buffer.
+
+`bufferWhen`
+Collects values from the past as an array. When it starts collecting values, it calls a function that returns an Observable that tells when to close the buffer and restart collecting.
+
+*Definitions from:* </br>
+http://reactivex.io/documentation/operators/buffer.html
+http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-bufferToggle
+http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-bufferWhen
+
+> *Note: It is inconclusive, if these operators exist in RxSwift of RxCocoa.*
+
+4. Why would there be __*retain cycles*__ with __*Observables*__?
+
+__*Inside closures*__
+
+> "When working with closures when you are pointing to self inside closure... a retain cycle gets created if you DON'T use `[weak/unowned self]`."
 
 https://stackoverflow.com/questions/35003355/weak-self-in-rxswift-closures
 
-using a DisposeBag sometimes leads to memory leaks. Remember that every operator keeps a strong reference to dependencies used in its closure. If it is self it is also kept by the Observable. As a result, you have a retain cycle.
+__*DisposeBags*__
+> "using a DisposeBag sometimes leads to memory leaks. Remember that every operator keeps a strong reference to dependencies used in its closure. If it is self it is also kept by the Observable. As a result, you have a retain cycle."
 
 http://adamborek.com/memory-managment-rxswift/
 
 
-<!-- takeUntil TBD in swift
-distinctuntilchanged
-race
-combineLatest
-buffertoggle -->
+<!-- x. Why call `.subscribe` be on the Observable not the Observer? -->
+
 
 ### Part 2 - Activity 2 from Previous Class
 
