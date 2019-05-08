@@ -26,29 +26,35 @@
 
 ## Learning Objectives (5 min)
 
+The three building blocks of Rx code are __*Observables,*__ __*Operators*__ and __*Schedulers.*__
+
 By the end of this lesson, you should be able to...
 
-1. Describe:
-<!-- - Reactive programming, ReactiveX (Rx), RxSwift & RxCocoa </br>
-&nbsp;&nbsp; - history of Rx and the software problems it is intended to solve </br>
-&nbsp;&nbsp; - benefits of Rx (how it solves challenges) </br>
-- how to read Marble diagrams
-- Basic Building blocks of Rx
-- Basic operators
-- Key concepts: Event Streams, Sequences, Observables (and their relationships), Subscribing
-- The Lifecyce of Observables
-2. Implement basic examples of:
-- Observables -->
+1. Describe and implement basic examples of:
+- Optional ways for creating **Observables**  
+- **Hot & Cold**  Observables
+- **Subjects**
+- **Schedulers**
+- Key Rx **Operators** selected from the roster of operator types available in RxSwift/RxCocoa
+
 
 ## Initial Exercise (15 min)
 
 ...continuation of Lesson 11 -> Activity 2 -> Exercise 3
 
-**Questions?**
+**Questions from Previous Class:**
 -
 
 ## Overview/TT I (20 min)
 
+
+In today's lesson
+
+- Expand Observables
+
+Operators
+
+Schedulers
 <!-- overview: Rx is Xx, y, and x (schedulers) -->
 
 <!-- MORE on Observables -->
