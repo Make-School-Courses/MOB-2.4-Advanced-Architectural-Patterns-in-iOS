@@ -45,36 +45,72 @@ By the end of this lesson, you should be able to...
 ...continuation of Lesson 11 -> Activity 2 -> Exercise 3
 
 **Questions?**
+-
 
 ## Overview/TT I (20 min)
 
+<!-- overview: Rx is Xx, y, and x (schedulers) -->
+
 <!-- MORE on Observables -->
 
+### Observables (continued...)
 
+<!-- compare Notifications to Observables? -->
+
+#### Ways to Create Observables
 <!-- .create() method for Observables
 .retry(3)
      .debug() -->
 
+<!-- < TODO: Get examples -->
 
-<!-- compare Notifications to Observables? -->
-
-
-## In Class Activity I (30 min)
-
+##
+<!-- Hot and cold observables  -->
 
 
-## Overview/TT II (optional) (20 min)
+## In Class Activity I (10 min)
+
+<!-- < TODO: observable exercises ??-->
+
+
+
+## Overview/TT II (20 min)
 
 ### Subject
 
+<!-- TODO: start with stating it is a Hot, then describe.  -->
+
+<!-- TODO: give 2 progressive examples  -->
+
 
 ### Scheduler
+
+<!-- TODO: show 2 scheduer examples - 1 from rx.playground -->
 
 
 - $1
 
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (30 min)
+
+<!-- TODO: get exercises for subject  -->
+
+
+
+## Overview/TT III (20 min)
+
+### Operators
+
+<!-- TODO: list the 4 types -->
+
+<!-- TODO: pick a couple and show examples...esp. those that the class was confused by -->
+
+<!-- TODO: end: You can create your own - show link  -->
+
+
+## In Class Activity III (30 min)
+
+<!-- TODO: get exercises for Operators  -->
 
 
 
@@ -83,6 +119,9 @@ By the end of this lesson, you should be able to...
 Research:
 
 - Single, Completable, and Maybe (special types of Observables)
+
+
+<!-- TODO: get an exercise for schedulers; 1st, review it in rx.playground, then do an exercise (convert something?) -->
 
 
 
