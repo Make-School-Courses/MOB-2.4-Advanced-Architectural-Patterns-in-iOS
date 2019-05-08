@@ -39,13 +39,13 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (15 min)
 
-...continuation of Lesson 11 -> Activity 2 -> Exercise 3
+### Part 1 - Questions from Previous Class
 
-**Questions from Previous Class:**
+1. How does `distinctUntilChanged` work?
 
-1. `distinctUntilChanged` &mdash; Suppresses sequential duplicate elements emitted by an Observable sequence.
+It's a variation of `Distinct`. It suppresses sequential duplicate elements emitted by an Observable sequence.
 
-A variation of `Distinct`. This method will emit values *only* if they are different from the previous value.
+This method will emit values *only* if they are different from the previous value.
 
 Note that in the example below, the 🐱 image was listed 3 times in a row in the middle of the sequence, but because the 🐱 at positions 4 and 5 were both preceded by the same 🐱 element, the 🐱 elements at those positions are ignored and not emitted.
 
@@ -73,11 +73,45 @@ http://reactivex.io/documentation/operators/distinct.html
 http://introtorx.com/Content/v1.0.10621.0/05_Filtering.html#Distinct
 
 
+2. How does `race` operator do?
+
+Returns an Observable that mirrors the first source Observable to emit an item.
+
+> TODO: Bring up the image of the  `race` operator in the URL below and move the 1, 2, and 3 circles past the first 0 circle. Result: the sequence returned will now be 20, 40, 60...
+
+![race](assets/race.png) </br>
+
+https://rxmarbles.com/#race
+
+
+
+*Definition from:* </br>
+https://rxjs-dev.firebaseapp.com/api/index/function/race
+
+Note: It is inconclusive, but the `race` operator may also be the same the the `amb` operator listed in the generic Rx operators.
+
+
+3. Retain cycles with
+
+When working with closures when you are pointing to self inside closure like in your case of flapmap the retain cycle gets created if you DON'T use [weak/unowned self].
+
+https://stackoverflow.com/questions/35003355/weak-self-in-rxswift-closures
+
+using a DisposeBag sometimes leads to memory leaks. Remember that every operator keeps a strong reference to dependencies used in its closure. If it is self it is also kept by the Observable. As a result, you have a retain cycle.
+
+http://adamborek.com/memory-managment-rxswift/
+
+
 <!-- takeUntil TBD in swift
 distinctuntilchanged
 race
 combineLatest
 buffertoggle -->
+
+### Part 2 - Activity 2 from Previous Class
+
+...continuation of Lesson 11 -> Activity 2 -> Exercise 3
+
 
 
 ## Overview/TT I (20 min)
