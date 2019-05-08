@@ -47,7 +47,7 @@ Students by the end of the course will be able to ...
 | 10 |  Thursday, May 2                        | [Functional Programming Pt.2] |
 | 11 |  Tuesday, May 7                           | [Reactive Programming Pt.1]  |  
 | 12 |  Thursday, May 9                        | [Reactive Programming Pt.2] |
-| 13 |  Tuesday, May 14                          | Final Class (presentations, etc) |
+| 13 |  Tuesday, May 14                        | [Reactive Programming Pt.3] Final Class (presentations, etc) |
 | 14 |  Thursday, May 16                       | Final Exams/Presentations |
 
 [Creational Patterns Pt.1]: Lessons/01-Creational-PatternsPt.1/Lesson1.md
@@ -62,6 +62,7 @@ Students by the end of the course will be able to ...
 [Functional Programming Pt.2]: Lessons/10-Functional-ProgrammingPt.2/Lesson10.md
 [Reactive Programming Pt.1]: Lessons/11-Reactive-ProgrammingPt.1/Lesson11.md
 [Reactive Programming Pt.2]: Lessons/12-Reactive-ProgrammingPt.2/Lesson12.md
+[Reactive Programming Pt.3]: Lessons/13-Reactive-ProgrammingPt.3/Lesson13.md
 
 ## Class Assignments
 
