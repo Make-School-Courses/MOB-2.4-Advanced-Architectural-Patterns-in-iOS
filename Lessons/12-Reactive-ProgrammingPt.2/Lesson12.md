@@ -23,6 +23,7 @@
 | TOTAL       | 1:55      |                           |
 
 
+
 ## Learning Objectives (5 min)
 
 By the end of this lesson, you should be able to...
@@ -70,8 +71,20 @@ By the end of this lesson, you should be able to...
 ### Scheduler
 
 
+- $1
+
 
 ## In Class Activity II (optional) (30 min)
+
+
+
+## After Class
+
+Research:
+
+- Single, Completable, and Maybe (special types of Observables)
+
+
 
 ## Wrap Up (5 min)
 
@@ -83,3 +96,6 @@ By the end of this lesson, you should be able to...
 
 1. [Slides]()
 2.
+
+
+https://en.wikipedia.org/wiki/Reactive_extensions
