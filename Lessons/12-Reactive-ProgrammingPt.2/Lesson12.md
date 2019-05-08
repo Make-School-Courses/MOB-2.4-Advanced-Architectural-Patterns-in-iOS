@@ -73,7 +73,7 @@ http://reactivex.io/documentation/operators/distinct.html
 http://introtorx.com/Content/v1.0.10621.0/05_Filtering.html#Distinct
 
 
-2. How does `race` operator do?
+2. What does `race` operator do?
 
 Returns an Observable that mirrors the first source Observable to emit an item.
 
