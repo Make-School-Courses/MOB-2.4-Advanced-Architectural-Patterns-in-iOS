@@ -47,6 +47,15 @@ By the end of this lesson, you should be able to...
 
 ## Overview/TT I (20 min)
 
+<!-- MORE on Observables -->
+
+
+<!-- .create() method for Observables
+.retry(3)
+     .debug() -->
+
+
+<!-- compare Notifications to Observables? -->
 
 
 ## In Class Activity I (30 min)
@@ -72,4 +81,5 @@ By the end of this lesson, you should be able to...
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. [Slides]()
+2.
