@@ -144,11 +144,15 @@ http://adamborek.com/memory-managment-rxswift/
 ### Observables (continued...)
 
 <!-- compare Notifications to Observables? -->
-
+<!--
 
 #### Comparing Observables with iOS Notifications
 
 <!-- TODO: both use Observer pattern -->
+
+THIS needs the same example as an Observable
+- also, most examples converting notifications have MainScheduler
+
 
 , you may be familiar with NotificationCenter; it broadcasts notifications to observers, which are different than RxSwift Observables. Here’s an example of an observer of the UIKeyboardDidChangeFrame notification, with a handler as a trailing closure:
 
@@ -172,7 +176,7 @@ Remember that an observable is really a sequence definition; subscribing to an o
 
 ```
 
-![xxx](assets/xxx.png) </br>
+![xxx](assets/xxx.png) </br> -->
 
 
 #### Ways to Create Observables
@@ -388,3 +392,6 @@ https://github.com/RxSwiftCommunity/RxSwiftExt
 https://github.com/RxSwiftCommunity
 
 https://community.rxswift.org
+
+
+https://en.wikipedia.org/wiki/Reactor_pattern
