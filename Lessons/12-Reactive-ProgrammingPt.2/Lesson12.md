@@ -578,7 +578,7 @@ This scheduler is usually used to perform UI work.
 
 <!-- compare Notifications to Observables? -->
 
-
+<!--
 #### Comparing Observables with iOS Notifications
 
 <!-- TODO: both use Observer pattern -->
@@ -595,7 +595,7 @@ Subscribing to an RxSwift observable is fairly similar; you call observing an ob
 
 More importantly, an observable won’t send events, or perform any work, until it has a
 subscriber.
-Remember that an observable is really a sequence definition; subscribing to an observable is really more like calling next() on an Iterator in the Swift standard library.
+Remember that an observable is really a sequence definition; subscribing to an observable is really more like calling next() on an Iterator in the Swift standard library. -->
 
 
 
