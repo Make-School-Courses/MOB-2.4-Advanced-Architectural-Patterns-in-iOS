@@ -588,14 +588,14 @@ Abstracts the work that needs to be performed on a specific `dispatch_queue_t`. 
 
 This scheduler is suitable when some work needs to be performed in the __*background.*__
 
-## OperationQueueScheduler (Concurrent scheduler)
+##### OperationQueueScheduler (Concurrent scheduler)
 
 Abstracts the work that needs to be performed on a specific `NSOperationQueue`.
 
 Suitable for cases when there is some bigger chunk of work that needs to be performed in the __*background*__ and you want to fine tune concurrent processing using `maxConcurrentOperationCount`.
 
+#### Simple Example:
 
-**Simple Example:**
 Here is a simple example &mdash; in non-working pseudocode &mdash; of how how to call `observeOn()` to switch between 2 schedulers:
 
 ```Swift
