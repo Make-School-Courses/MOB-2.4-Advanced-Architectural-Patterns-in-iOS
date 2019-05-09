@@ -577,16 +577,16 @@ This scheduler is usually used to perform UI work.
 
 
 <!-- compare Notifications to Observables? -->
-
 <!--
-#### Comparing Observables with iOS Notifications
+
+#### Comparing Observables with iOS Notifications -->
 
 <!-- TODO: both use Observer pattern -->
 
 <!-- THIS needs the same example as an Observable
 - also, most examples converting notifications have MainScheduler -->
 
-
+<!--
 , you may be familiar with NotificationCenter; it broadcasts notifications to observers, which are different than RxSwift Observables. Here’s an example of an observer of the UIKeyboardDidChangeFrame notification, with a handler as a trailing closure:
 
 
