@@ -540,13 +540,55 @@ If you use some scheduler that Rx can prove is *serial,* it will be able to perf
 
 <!-- In case of serial dispatch queue schedulers, `observeOn` is optimized to just a simple `dispatch_async` call. -->
 
+<!-- TODO: This needs more work - esp. wrt Concurrent Schedulers -->
+
+
 #### Builtin schedulers
+
+Schedulers are the Rx equivalent of dispatch queues — but more powerful (for developers) and much easier to use.
+
+RxSwift comes with a number of predefined schedulers, which cover 99% of use cases and hopefully means you will never have to go about creating your own schedulers.
+
+> Note: You can also create your own __*custom schedulers.__*
 
 ##### MainScheduler (Serial scheduler)
 
-Abstracts work that needs to be performed on `MainThread`. In case `schedule` methods are called from main thread, it will perform the action immediately without scheduling.
+MainScheduler sits on top of the main thread.
 
-This scheduler is usually used to perform UI work.
+MainScheduler processes changes on the user interface and performs other high-priority tasks.
+
+In case `schedule` methods are called from main thread, it will perform the action immediately without scheduling.
+
+As a general practice when developing applications on iOS, long-running tasks should not be performed using this scheduler; avoid things like server requests or other heavy tasks.
+
+If your code creates side effects that update the UI, you must switch to the MainScheduler to guarantee those updates make it to the screen.
+
+##### CurrentThreadScheduler (Serial scheduler)
+
+Schedules units of work on the current thread.
+
+This is the __*default scheduler*__ for operators that generate elements.
+
+##### SerialDispatchQueueScheduler (Serial scheduler)
+
+Abstracts the work that needs to be performed on a specific `dispatch_queue_t`. It will make sure that even if a concurrent dispatch queue is passed, it's transformed into a serial one.
+
+Serial schedulers enable certain optimizations for `observeOn`.
+
+The main scheduler is an instance of `SerialDispatchQueueScheduler`.
+
+##### ConcurrentDispatchQueueScheduler (Concurrent scheduler)
+
+Abstracts the work that needs to be performed on a specific `dispatch_queue_t`. You can also pass a serial dispatch queue, it shouldn't cause any problems.
+
+This scheduler is suitable when some work needs to be performed in the __*background.*__
+
+## OperationQueueScheduler (Concurrent scheduler)
+
+Abstracts the work that needs to be performed on a specific `NSOperationQueue`.
+
+Suitable for cases when there is some bigger chunk of work that needs to be performed in the __*background*__ and you want to fine tune concurrent processing using `maxConcurrentOperationCount`.
+
 
 
 <!-- TODO: SHOW EXAMPLE -->
@@ -560,18 +602,6 @@ This scheduler is usually used to perform UI work.
 <!-- TODO: show 2 scheduer examples - 1 from rx.playground -->
 
 
-
-
-
-
-```Swift
-
-```
-
-
-```Swift
-
-```
 
 
 
@@ -598,21 +628,6 @@ subscriber.
 Remember that an observable is really a sequence definition; subscribing to an observable is really more like calling next() on an Iterator in the Swift standard library. -->
 
 
-
-
-```Swift
-
-```
-
-
-```Swift
-
-```
-
-![xxx](assets/xxx.png) </br>
-
-
-
 ## In Class Activity II (30 min)
 
 <!-- TODO: get exercises for subject  -->
@@ -632,6 +647,7 @@ Remember that an observable is really a sequence definition; subscribing to an o
 ```Swift
 
 ```
+
 
 ## Overview/TT III (20 min)
 
