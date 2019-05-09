@@ -144,7 +144,7 @@ The three building blocks of Rx code are __*Observables,*__ __*Operators*__ and 
 
 By now, you have likely realized that each of these Rx concepts by themselves is a non-trivial topic.
 
-Today's class will highlight key aspects of each these core Rx building blocks...
+Today's class will highlight key aspects of each of these core Rx building blocks...
 
 ### Observables (continued...)
 
@@ -162,9 +162,8 @@ And it lets you decide when to send `next`, `error` or `completed` events.
 
 On the other hand, it is up to you to remember to close the stream (by sending the `completed` event) and to return a `Disposable`.
 
-`create()` takes a closure `(AnyObserver<T>) -> Disposable` as a parameter. Inside the closure, you need to send at least one event to the observer. It can be `next()`, `error()` or `completed()`. Usually you will send `next()` and `completed()` (one after another) or `error()` instead of `completed()`.
+`create()` takes a closure &mdash; `(AnyObserver<T>) -> Disposable` &mdash; as a parameter. Inside the closure, you need to send at least one event to the Observer. It can be `next()`, `error()` or `completed()`. Usually you will send `next()` and `completed()` (one after another), or `error()` instead of `completed()`.
 
-__*EXAMPLE:*__
 ```Swift
 example("create") {
     let disposeBag = DisposeBag()
@@ -210,9 +209,9 @@ Each element of an array, for example, is produced as a single emission.
 
 `just()` is just a simple operator which wraps a single value.
 
-If you want only to transform a single value into the Observable, then `just()` is probably more readable option to choose.
+If you want only to transform a single value into the Observable, then `just()` is probably the most readable option to choose.
 
-`just()` takes an argument and sends it as `next` and then it sends `completed` right after `next`.
+`just()` takes an argument and sends it as `next`, and then it sends `completed` right after `next`.
 
 The difference between this operator and `create()` is that `just()` emits *the whole array* as one emission.
 
@@ -230,7 +229,7 @@ The difference between this operator and `create()` is that `just()` emits *the 
 
 4. **`error()`** &mdash; Creates an Observable sequence that emits no items and immediately terminates with an error.
 
-Similar to `just()`...
+This works similar to `just()` but creates an Observable with a given error.
 
 ```Swift
   example("error") {
@@ -254,8 +253,7 @@ By no means complete, here are a few other Observable creation operators which m
 - `empty()` – returns an Observable which caries only a completed event
 - `never()` – returns an Observable which never sends events to its observers
 
-*From:* </br>
-http://adamborek.com/creating-observable-create-just-deferred/
+These are useful for testing purposes, and sometimes also for combining with other Observables or as parameters to operators that expect other Observables as parameters.
 
 2. `generate`  &mdash; Creates an Observable sequence that generates values for as long as the provided condition evaluates to true.
 
@@ -266,6 +264,11 @@ http://adamborek.com/creating-observable-create-just-deferred/
 5. `range`  &mdash; Creates an Observable sequence that emits a range of sequential integers and then terminates.
 
 6. `of()` &mdash; Creates an Observable sequence with a fixed number of elements. (Similar to `from()`)
+
+*From:* </br>
+- http://adamborek.com/creating-observable-create-just-deferred/ </br>
+- `Rx.playground` in RxSwift library
+
 
 ## In Class Activity I (10 min)
 
@@ -280,7 +283,7 @@ http://adamborek.com/creating-observable-create-just-deferred/
       print($0)
   }
 
-*/
+/*
 OUTPUT:
 next(1)
 next(2)
