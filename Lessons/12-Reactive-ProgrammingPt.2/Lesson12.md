@@ -383,7 +383,7 @@ And as an Observable, it can pass through the items it observes by reemitting th
 
 Subject does not call `onCompleted()` until it is unsubscribed/deregistered (i.e., until the `deinit()` of `DisposeBag` or the `dispose()` method is explicitly called.)
 
-> `Subject` is known as a **Hot** Observable. **Hot & Cold Observables** are a follow on Rx topic listed in your __*After Class*__ exercises below.
+> `Subject` is known as a **Hot** Observable. **Hot & Cold Observables** are a follow-on Rx topic listed in your __*After Class*__ exercises below.
 
 #### Three Main Types
 
@@ -512,19 +512,21 @@ Broadcasts new events to *all* subscribers, and the specified `bufferSize` numbe
 
 ### Schedulers
 
-If you want to introduce multithreading into your cascade of Observable operators, you can do so by instructing those operators (or particular Observables) to operate on particular Schedulers.
+If you want to introduce __*multithreading*__ into your cascade of Observable operators, you can do so by instructing those operators (or particular Observables) to operate on specific __*Schedulers.*__
 
 Schedulers abstract away the mechanism for performing work.
 
 To summarize, a scheduler is a context where a process takes place. This context can be a thread, a dispatch queue or similar entities, or even an Operation used inside the OperationQueueScheduler.
 
-Different mechanisms for performing work include the current thread, dispatch queues, operation queues, new threads, thread pools, and run loops.
+<!-- Different mechanisms for performing work include the current thread, dispatch queues, operation queues, new threads, thread pools, and run loops. -->
 
-There are two main operators that work with schedulers, `observeOn` and `subscribeOn`.
+There are two main operators that work with schedulers:
+- `observeOn()`
+- `subscribeOn()`
 
-If you want to perform work on a different scheduler just use `observeOn(scheduler)` operator.
+If you want to perform work on a different scheduler, just use the `observeOn(scheduler)` operator.
 
-You would usually use `observeOn` a lot more often than `subscribeOn`.
+You usually use `observeOn()` a lot more often than `subscribeOn()`.
 
 <!-- TODO: show example of observeOn -- from Rx.playground -->
 
@@ -534,12 +536,9 @@ Since schedulers can really be anything, and all operators that transform sequen
 
 In case the scheduler is concurrent, Rx's `observeOn` and `subscribeOn` operators will make sure everything works perfectly.
 
-If you use some scheduler that Rx can prove is serial, it will be able to perform additional optimizations.
+If you use some scheduler that Rx can prove is *serial,* it will be able to perform additional optimizations.
 
-So far it only performs those optimizations for dispatch queue schedulers.
-
-In case of serial dispatch queue schedulers, `observeOn` is optimized to just a simple `dispatch_async` call.
-
+<!-- In case of serial dispatch queue schedulers, `observeOn` is optimized to just a simple `dispatch_async` call. -->
 
 #### Builtin schedulers
 
@@ -548,6 +547,7 @@ In case of serial dispatch queue schedulers, `observeOn` is optimized to just a 
 Abstracts work that needs to be performed on `MainThread`. In case `schedule` methods are called from main thread, it will perform the action immediately without scheduling.
 
 This scheduler is usually used to perform UI work.
+
 
 <!-- TODO: SHOW EXAMPLE -->
 
