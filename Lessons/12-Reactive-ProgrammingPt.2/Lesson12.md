@@ -189,6 +189,13 @@ http://adamborek.com/creating-observable-create-just-deferred/
 
 2. **`from()`** &mdash; Creates an Observable sequence from a Sequence, such as an Array, Dictionary, or Set.
 
+- Iterables (arrays, etc.) can be thought of as a sort of synchronous Observable.
+- Futures, as a sort of Observable that always emits only a single item.
+
+By explicitly converting such objects to Observables, you allow them to interact as peers with other Observables.
+
+Each element of an array, for example, is produced as a single emission.
+
 ```Swift
   example("from") {
       let disposeBag = DisposeBag()
@@ -199,27 +206,14 @@ http://adamborek.com/creating-observable-create-just-deferred/
   }
 ```
 
-3. **`of()`** &mdash; Creates an Observable sequence with a fixed number of elements.
-
-```Swift
-  example("of") {
-      let disposeBag = DisposeBag()
-
-      Observable.of("🐶", "🐱", "🐭", "🐹")
-          .subscribe(onNext: { element in
-              print(element)
-          })
-          .disposed(by: disposeBag)
-  }
-```
-
-4. **just()**  &mdash; Creates an Observable sequence with a single element.
+3. **just()**  &mdash; Creates an Observable sequence with a single element.
 
 just() is just a simple operator which wraps a single value.
 
 
 if you want just to transform a single value into the Observable the just() is probably more readable option to choose. just() takes an argument and sends it as next and then it sends completed right after the next.
 
+The difference between this and `create()` is that `just()` emits *the whole array* as one emission.
 
 ```Swift
   example("just") {
@@ -233,7 +227,7 @@ if you want just to transform a single value into the Observable the just() is p
   }
 ```
 
-5. **`error()`** &mdash; Creates an Observable sequence that emits no items and immediately terminates with an error.
+4. **`error()`** &mdash; Creates an Observable sequence that emits no items and immediately terminates with an error.
 
 Similar to `just()`...
 
@@ -270,6 +264,7 @@ http://adamborek.com/creating-observable-create-just-deferred/
 
 5. `range`  &mdash; Creates an Observable sequence that emits a range of sequential integers and then terminates.
 
+6. `of()` &mdash; Creates an Observable sequence with a fixed number of elements. (Similar to `from()`)
 
 
 ```Swift
