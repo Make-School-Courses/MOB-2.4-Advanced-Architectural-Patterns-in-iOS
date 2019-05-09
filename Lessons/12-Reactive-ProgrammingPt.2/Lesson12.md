@@ -855,15 +855,13 @@ This is simply 4
 Disposed
 ```
 
-__*Challenges:*__
-
-a) For `debug()` operator &mdash; Experiment with the example given here:
+__*Challenges 1:*__ For `debug()` operator &mdash; Experiment with the example given here:
 
 https://www.caseyliss.com/2016/12/16/rxswift-primer-part-2
 
 ...or, you might learn what `debug()` does by adding it to some of the RxSwift code you've already worked with in these last 2 classes.
 
-b) For `RxSwift.Resources.total` &mdash; `RxSwift.Resources.total` is not enabled by default, and should generally not be enabled in Release builds.
+__*Challenges 2:*__ For `RxSwift.Resources.total` &mdash; `RxSwift.Resources.total` is not enabled by default, and should generally not be enabled in Release builds.
 
 However, it is easy to practice using it..
 
