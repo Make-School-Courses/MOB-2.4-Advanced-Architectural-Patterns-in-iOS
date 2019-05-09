@@ -716,6 +716,61 @@ Remember that an observable is really a sequence definition; subscribing to an o
   ``` -->
 
 
+2. In the incomplete code below, complete the line `let subject = ???` in the following code in **3 different ways** to match 3 different expected outputs:
+
+- For `PublishSubject`, replace the line with:
+
+```Swift
+  let subject = PublishSubject<String>()
+```
+... and its output should be:
+
+```Swift
+  After Subscribe
+```
+
+- For `ReplaySubject`, replace the line with:
+
+```Swift
+ let subject = ReplaySubject<String>.create(bufferSize: 4)
+```
+... and its output should be:
+
+```Swift
+  Before Subscribe Value First
+  Before Subscribe Value Second
+  Before Subscribe Value Third
+  After Subscribe
+```
+
+- For `BehaviorSubject`, replace the line with:
+
+```Swift
+  let subject = BehaviorSubject<String>(value: "Initial value")
+
+```
+... and its output should be:
+
+```Swift
+  Before Subscribe Value Third
+  After Subscribe
+```
+
+**Incomplete Code:**
+```swift
+  let subject = ???
+
+  let observable : Observable<String> = subject
+  subject.onNext("Before Subscribe Value First")
+  subject.onNext("Before Subscribe Value Second")
+  subject.onNext("Before Subscribe Value Third")
+  observable.subscribe(onNext: { text in
+      print(text)
+
+  }).disposed(by: disposeBag)
+  subject.onNext("After Subscribe")
+```
+
 <!-- TODO: get exercises for subject  -->
 <!-- TODO: from the Rx.playground? -->
 
