@@ -554,9 +554,9 @@ Schedulers are the Rx equivalent of dispatch queues — but more powerful (for d
 
 RxSwift comes with a number of predefined schedulers, which cover 99% of use cases and hopefully means you will never have to go about creating your own schedulers.
 
-> Note: You can also create your own __*custom schedulers.__*
+> Note: You can also create your own __*custom schedulers.*__
 
-##### MainScheduler (Serial scheduler)
+##### &mdash; MainScheduler (Serial scheduler)
 
 MainScheduler sits on top of the main thread.
 
@@ -568,13 +568,13 @@ As a general practice when developing applications on iOS, long-running tasks sh
 
 If your code creates side effects that update the UI, you must switch to the MainScheduler to guarantee those updates make it to the screen.
 
-##### CurrentThreadScheduler (Serial scheduler)
+##### &mdash; CurrentThreadScheduler (Serial scheduler)
 
 Schedules units of work on the current thread.
 
 This is the __*default scheduler*__ for operators that generate elements.
 
-##### SerialDispatchQueueScheduler (Serial scheduler)
+##### &mdash; SerialDispatchQueueScheduler (Serial scheduler)
 
 Abstracts the work that needs to be performed on a specific `dispatch_queue_t`. It will make sure that even if a concurrent dispatch queue is passed, it's transformed into a serial one.
 
