@@ -26,13 +26,13 @@
 
 ## Learning Objectives (5 min)
 
-The three building blocks of Rx code are __*Observables,*__ __*Operators*__ and __*Schedulers.*__
+> The three building blocks of Rx code are __*Observables,*__ __*Operators*__ and __*Schedulers.*__
 
 By the end of this lesson, you should be able to...
 
 1. Describe and implement basic examples of:
 - Optional ways for creating **Observables**  
-- **Hot & Cold** Observables
+- **Hot & Cold Observables**
 - **Subjects** - A special type of Observable
 - **Schedulers**
 - Key Rx **Operators** selected from the roster of operator types available in RxSwift/RxCocoa
@@ -150,10 +150,10 @@ http://adamborek.com/memory-managment-rxswift/
 
 ### Observables (continued...)
 
-
 #### Ways to Create Observables
 
-**create** &mdash; Creates a custom Observable sequence.
+There are
+1. **create** &mdash; Creates a custom Observable sequence.
 
 ```Swift
 example("create") {
@@ -239,42 +239,6 @@ example("create") {
 ```Swift
 
 ```
-
-
-<!-- compare Notifications to Observables? -->
-
-
-#### Comparing Observables with iOS Notifications
-
-<!-- TODO: both use Observer pattern -->
-
-<!-- THIS needs the same example as an Observable
-- also, most examples converting notifications have MainScheduler -->
-
-
-, you may be familiar with NotificationCenter; it broadcasts notifications to observers, which are different than RxSwift Observables. Here’s an example of an observer of the UIKeyboardDidChangeFrame notification, with a handler as a trailing closure:
-
-
-Subscribing to an RxSwift observable is fairly similar; you call observing an observable subscribing to it. So instead of addObserver(), you use subscribe(). Unlike NotificationCenter, where developers typically use only its .default singleton instance, each observable in Rx is different.
-
-
-More importantly, an observable won’t send events, or perform any work, until it has a
-subscriber.
-Remember that an observable is really a sequence definition; subscribing to an observable is really more like calling next() on an Iterator in the Swift standard library.
-
-
-
-
-```Swift
-
-```
-
-
-```Swift
-
-```
-
-![xxx](assets/xxx.png) </br>
 
 
 #### Debugging Operators
@@ -492,6 +456,45 @@ This scheduler is usually used to perform UI work.
 ```Swift
 
 ```
+
+
+
+<!-- compare Notifications to Observables? -->
+
+
+#### Comparing Observables with iOS Notifications
+
+<!-- TODO: both use Observer pattern -->
+
+<!-- THIS needs the same example as an Observable
+- also, most examples converting notifications have MainScheduler -->
+
+
+, you may be familiar with NotificationCenter; it broadcasts notifications to observers, which are different than RxSwift Observables. Here’s an example of an observer of the UIKeyboardDidChangeFrame notification, with a handler as a trailing closure:
+
+
+Subscribing to an RxSwift observable is fairly similar; you call observing an observable subscribing to it. So instead of addObserver(), you use subscribe(). Unlike NotificationCenter, where developers typically use only its .default singleton instance, each observable in Rx is different.
+
+
+More importantly, an observable won’t send events, or perform any work, until it has a
+subscriber.
+Remember that an observable is really a sequence definition; subscribing to an observable is really more like calling next() on an Iterator in the Swift standard library.
+
+
+
+
+```Swift
+
+```
+
+
+```Swift
+
+```
+
+![xxx](assets/xxx.png) </br>
+
+
 
 ## In Class Activity II (30 min)
 
