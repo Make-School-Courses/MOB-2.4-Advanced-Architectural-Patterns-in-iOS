@@ -26,8 +26,6 @@
 
 ## Learning Objectives (5 min)
 
-> The three building blocks of Rx code are __*Observables,*__ __*Operators*__ and __*Schedulers.*__
-
 By the end of this lesson, you should be able to...
 
 1. Describe and implement basic examples of:
@@ -142,19 +140,31 @@ http://adamborek.com/memory-managment-rxswift/
 
 ## Overview/TT I (20 min)
 
+The three building blocks of Rx code are __*Observables,*__ __*Operators*__ and __*Schedulers.*__
 
-![xxx](assets/xxx.png) </br>
+By now, you have likely realized that each of these Rx concepts by themselves is a non-trivial topic.
 
-
-<!-- MORE on Observables -->
+Today's class will highlight key aspects of each these core Rx building blocks...
 
 ### Observables (continued...)
 
 #### Ways to Create Observables
 
-There are
-1. **create** &mdash; Creates a custom Observable sequence.
+Observables come with a variety of creation operators. Each has its own set of attributes and behavioral advantages, but also its own limitations.
 
+The operators listed below were selected to introduce you to some of the more commonly-used Observable creation operators and some readily-identifiable advantages and limitations...
+
+1. **`create()`** &mdash; Creates a custom Observable sequence.
+
+`create()` is the most flexible way to create a custom Observable: You can use it to *wrap* any API you want. ou can wrap any API you want to, whether synchronous or asynchronous.
+
+And it lets you decide when to send `next`, `error` or `completed` events.
+
+On the other hand, it is up to you to remember to close the stream (by sending the `completed` event) and to return a `Disposable`.
+
+`create()` takes a closure `(AnyObserver<T>) -> Disposable` as a parameter. Inside the closure, you need to send at least one event to the observer. It can be next(), error() or completed. Usually you will send next() and completed (one after another) or error().
+
+__**EXAMPLE:*__
 ```Swift
 example("create") {
     let disposeBag = DisposeBag()
@@ -173,7 +183,13 @@ example("create") {
 }
 ```
 
-`error` &mdash; Creates an Observable sequence that emits no items and immediately terminates with an error.
+*From:* </br>
+.[id]: url "title"
+Rx.playground in RxSwift library
+http://adamborek.com/creating-observable-create-just-deferred/
+
+
+2. **`error`** &mdash; Creates an Observable sequence that emits no items and immediately terminates with an error.
 
 ```Swift
   example("error") {
@@ -212,6 +228,9 @@ example("create") {
   }
 ```
 
+
+
+
 <!-- .create() method for Observables
 .retry(3)
      .debug() -->
@@ -224,6 +243,9 @@ example("create") {
 
 
 **Other Ways to Create Observables**
+
+<!-- TODO: List empty, etc., as being similar to Just -->
+
 
 
 ```Swift
