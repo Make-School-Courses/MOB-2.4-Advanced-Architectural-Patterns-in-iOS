@@ -595,6 +595,32 @@ Abstracts the work that needs to be performed on a specific `NSOperationQueue`.
 Suitable for cases when there is some bigger chunk of work that needs to be performed in the __*background*__ and you want to fine tune concurrent processing using `maxConcurrentOperationCount`.
 
 
+**Simple Example:**
+Here is a simple example &mdash; in non-working pseudocode &mdash; of how how to call `observeOn()` to switch between 2 schedulers:
+
+```Swift
+  catObservable // 1
+      .breatheFreshAir() // 2
+      .observeOn(MainRouteScheduler.instance) // 3
+      .subscribeOn(TwoLaneFreewayScheduler.instance) // 4
+      .subscribeNext { cat in // 5
+          if cat is Ethan {
+              hug(cat)
+          }
+      }
+      .addDisposableTo(disposeBag)
+```    
+Step-by-step:
+1. We subscribe to Cat observable, which emits Cat signals.
+2. We should be on the same scheduler we were before the subscription (which is the default behaviour of Rx).
+3. Switch the scheduler to the `MainRouteScheduler`. Now every operation below this one will be scheduled on `MainRouteScheduler` (of course if we don’t change the scheduler again later in the pipeline).
+4. Now we say that we start the chain on `TwoLaneFreewayScheduler`. So `breatheFreshAir()` will be scheduled on `TwoLaneFreewayScheduler`, and then the scheduler is changed again using `observeOn()`.
+5. `subscribeNext()` gets scheduled by `MainRouteScheduler`. If we didn’t add the observeOn() before, it would get scheduled by `TwoLaneFreewayScheduler`.
+
+*From:* </br>
+https://www.thedroidsonroids.com/blog/rxswift-examples-4-multithreading/
+
+
 
 <!-- TODO: SHOW EXAMPLE -->
 
