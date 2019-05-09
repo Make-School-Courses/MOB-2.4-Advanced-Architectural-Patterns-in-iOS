@@ -38,12 +38,60 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (15 min)
 
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
+
+### Operators
+
+<!-- TODO: list the 4 types -->
+
+<!-- TODO: pick a couple and show examples...esp. those that the class was confused by -->
+<!-- TODO: retry()? -->
+
+
+`combineLatest`
+
+Combines up to 8 source Observable sequences into a single new Observable sequence and will begin emitting from the combined Observable sequence the latest elements of each source Observable sequence &mdash; once all source sequences have emitted at least one element &mdash; and also when any of the source Observable sequences emits a new element.
+
+
+There is also a variant of combineLatest that takes an Array (or any other collection of Observable sequences):
+
+```Swift
+  example("Array.combineLatest") {
+      let disposeBag = DisposeBag()
+
+      let stringObservable = Observable.just("❤️")
+      let fruitObservable = Observable.from(["🍎", "🍐", "🍊"])
+      let animalObservable = Observable.of("🐶", "🐱", "🐭", "🐹")
+
+      Observable.combineLatest([stringObservable, fruitObservable, animalObservable]) {
+              "\($0[0]) \($0[1]) \($0[2])"
+          }
+          .subscribe(onNext: { print($0) })
+          .disposed(by: disposeBag)
+  }
+```
+
+`This produces:
+❤️ 🍐 🐱
+❤️ 🍊 🐱
+❤️ 🍊 🐭
+❤️ 🍊 🐹
+`
+
+<!-- TODO: end: You can create your own - show link  -->
+
+> NOTE: Because the combineLatest variant that takes a collection passes an array of values to the selector function, it requires that all source Observable sequences are of the same type.
+
+
+<!-- takeUntil
+distinctuntilchanged
+race
+combineLatest
+buffertoggle -->
+
+
+
+<!-- TODO: get exercises for Operators  -->
+
 
 ## Overview/TT I (20 min)
 

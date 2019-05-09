@@ -790,7 +790,6 @@ https://medium.com/@arnavgupta180/rxswift-subjects-and-variables-83c8b2ae1f5
 
 
 
-## Overview/TT III (20 min)
 
 ### Operators
 
@@ -842,20 +841,11 @@ combineLatest
 buffertoggle -->
 
 
-```Swift
-
-```
-
-
-## In Class Activity III (30 min)
 
 <!-- TODO: get exercises for Operators  -->
 
 
 
-```Swift
-
-```
 
 ## After Class
 
@@ -863,6 +853,8 @@ buffertoggle -->
 
 - Single, Completable, and Maybe (special types of Observables)
 - Hot & Cold Observables
+- Review RxSwift versions of common Rx operators:
+xxxx
 
 
 
