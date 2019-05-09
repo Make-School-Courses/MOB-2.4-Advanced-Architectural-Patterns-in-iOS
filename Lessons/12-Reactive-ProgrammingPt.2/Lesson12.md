@@ -77,9 +77,9 @@ http://introtorx.com/Content/v1.0.10621.0/05_Filtering.html#Distinct
 
 Returns an Observable that mirrors the first source Observable to emit an item.
 
-> TODO: Bring up the image of the  `race` operator in the URL below and move the 1, 2, and 3 circles past the first 0 circle. Result: the sequence returned will now be 20, 40, 60...
-
 ![race](assets/race.png) </br>
+
+> TODO: Bring up the image of the  `race` operator in the URL below and move the 1, 2, and 3 circles past the first 0 circle. Result: the sequence returned will now be 20, 40, 60...
 
 https://rxmarbles.com/#race
 
@@ -87,12 +87,11 @@ https://rxmarbles.com/#race
 *Definition from:* </br>
 https://rxjs-dev.firebaseapp.com/api/index/function/race
 
-> *Note: It is inconclusive, but the `race` operator may also be the same the the `amb` operator listed in the generic Rx operators.*
+> *Note: It is inconclusive, but the `race` operator may also be the same as the `amb` operator listed in the generic Rx operators.*
 
 
 3. `buffertoggle` and `bufferWhen` operators?
 
-> TODO: To understand these operators, experiment with their interactive Marble Diagrams...
 
 `Buffer`
 periodically gather items emitted by an Observable into bundles and emit these bundles rather than emitting the items one at a time
@@ -103,12 +102,14 @@ Collects values from the past as an array. Starts collecting only when opening e
 `bufferWhen`
 Collects values from the past as an array. When it starts collecting values, it calls a function that returns an Observable that tells when to close the buffer and restart collecting.
 
+> TODO: To understand these operators, experiment with their interactive Marble Diagrams...
+
 *Definitions from:* </br>
 http://reactivex.io/documentation/operators/buffer.html
 http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-bufferToggle
 http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-bufferWhen
 
-> *Note: It is inconclusive, if these operators exist in RxSwift of RxCocoa.*
+> *Note: It is inconclusive so far whether or not these operators exist in RxSwift of RxCocoa.*
 
 4. Why would there be __*retain cycles*__ with __*Observables*__?
 
