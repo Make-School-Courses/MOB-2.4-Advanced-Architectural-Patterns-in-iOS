@@ -266,40 +266,41 @@ http://adamborek.com/creating-observable-create-just-deferred/
 
 6. `of()` &mdash; Creates an Observable sequence with a fixed number of elements. (Similar to `from()`)
 
-
-```Swift
-
-```
-
-
-```Swift
-
-```
-
-
-```Swift
-
-```
-
-
-```Swift
-
-```
-
-
-
-
-#### Hot & Cold** Observables
-<!-- Hot and cold observables  -->
-
-
-<!-- TODO: insert the standard comparison chart -->
-
-![xxx](assets/xxx.png) </br>
-
-
-
 ## In Class Activity I (10 min)
+
+1. Convert the array in the following code to an Observable:
+
+```Swift
+  let numbers = [1,2,3,4,5]
+
+  //TODO: Create Observable here..
+
+  source.subscribe {
+      print($0)
+  }
+
+*/
+OUTPUT:
+next(1)
+next(2)
+next(3)
+next(4)
+next(5)
+completed
+*/
+```
+
+<!-- SOLUTION TO EX 1:
+```Swift
+let numbers = [1,2,3,4,5]
+
+let source = Observable.from(numbers)
+
+source.subscribe {
+    print($0)
+}
+``` -->
+
 
 <!-- < TODO: observable exercises ??-->
 
@@ -549,7 +550,7 @@ buffertoggle -->
 1. Research:
 
 - Single, Completable, and Maybe (special types of Observables)
-
+- Hot & Cold Observables
 
 
 
@@ -625,6 +626,15 @@ Disposed
 <!-- < TODO: exercise on debugging with RxSwift.Resources.total -->
 
 
+<!--
+
+#### Hot & Cold** Observables
+<!-- Hot and cold observables  -->
+
+
+<!-- TODO: insert the standard comparison chart -->
+
+![xxx](assets/xxx.png) </br> -->
 
 
 ## Wrap Up (5 min)
