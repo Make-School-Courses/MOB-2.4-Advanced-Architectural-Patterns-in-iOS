@@ -582,7 +582,7 @@ Serial schedulers enable certain optimizations for `observeOn`.
 
 The main scheduler is an instance of `SerialDispatchQueueScheduler`.
 
-##### ConcurrentDispatchQueueScheduler (Concurrent scheduler)
+##### &mdash; ConcurrentDispatchQueueScheduler (Concurrent scheduler)
 
 Abstracts the work that needs to be performed on a specific `dispatch_queue_t`. You can also pass a serial dispatch queue, it shouldn't cause any problems.
 
@@ -596,7 +596,7 @@ Suitable for cases when there is some bigger chunk of work that needs to be perf
 
 #### Simple Example:
 
-Here is a simple example &mdash; in non-working pseudocode &mdash; of how how to call `observeOn()` to switch between 2 schedulers:
+Here is a simple example &mdash; in **non-working pseudocode** &mdash; of how how to call `observeOn()` to switch between 2 schedulers:
 
 ```Swift
   catObservable // 1
@@ -610,7 +610,7 @@ Here is a simple example &mdash; in non-working pseudocode &mdash; of how how to
       }
       .addDisposableTo(disposeBag)
 ```    
-Step-by-step:
+__*Step-by-step:*__
 1. We subscribe to Cat observable, which emits Cat signals.
 2. We should be on the same scheduler we were before the subscription (which is the default behaviour of Rx).
 3. Switch the scheduler to the `MainRouteScheduler`. Now every operation below this one will be scheduled on `MainRouteScheduler` (of course if we don’t change the scheduler again later in the pipeline).
