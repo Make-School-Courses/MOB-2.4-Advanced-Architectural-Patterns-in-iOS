@@ -148,7 +148,7 @@ Today's class will highlight key aspects of each these core Rx building blocks..
 
 ### Observables (continued...)
 
-#### Ways to Create Observables
+#### Creating Observables
 
 Observables come with a variety of creation operators. Each has its own set of attributes and behavioral advantages, but also its own limitations.
 
@@ -156,15 +156,15 @@ The operators listed below were selected to introduce you to some of the more co
 
 1. **`create()`** &mdash; Creates a custom Observable sequence.
 
-`create()` is the most flexible way to create a custom Observable: You can use it to *wrap* any API you want. ou can wrap any API you want to, whether synchronous or asynchronous.
+`create()` is the most flexible way to create a custom Observable: You can use it to *wrap* any API you want, whether synchronous or asynchronous.
 
 And it lets you decide when to send `next`, `error` or `completed` events.
 
 On the other hand, it is up to you to remember to close the stream (by sending the `completed` event) and to return a `Disposable`.
 
-`create()` takes a closure `(AnyObserver<T>) -> Disposable` as a parameter. Inside the closure, you need to send at least one event to the observer. It can be next(), error() or completed. Usually you will send next() and completed (one after another) or error().
+`create()` takes a closure `(AnyObserver<T>) -> Disposable` as a parameter. Inside the closure, you need to send at least one event to the observer. It can be `next()`, `error()` or `completed()`. Usually you will send `next()` and `completed()` (one after another) or `error()` instead of `completed()`.
 
-__**EXAMPLE:*__
+__*EXAMPLE:*__
 ```Swift
 example("create") {
     let disposeBag = DisposeBag()
@@ -184,25 +184,10 @@ example("create") {
 ```
 
 *From:* </br>
-.[id]: url "title"
-Rx.playground in RxSwift library
 http://adamborek.com/creating-observable-create-just-deferred/
 
 
-2. **`error`** &mdash; Creates an Observable sequence that emits no items and immediately terminates with an error.
-
-```Swift
-  example("error") {
-      let disposeBag = DisposeBag()
-
-      Observable<Int>.error(TestError.test)
-          .subscribe { print($0) }
-          .disposed(by: disposeBag)
-  }
-```
-
-
-`from` &mdash; Creates an Observable sequence from a Sequence, such as an Array, Dictionary, or Set.
+2. **`from()`** &mdash; Creates an Observable sequence from a Sequence, such as an Array, Dictionary, or Set.
 
 ```Swift
   example("from") {
@@ -214,7 +199,27 @@ http://adamborek.com/creating-observable-create-just-deferred/
   }
 ```
 
-**just**  &mdash; Creates an Observable sequence with a single element.
+3. **`of()`** &mdash; Creates an Observable sequence with a fixed number of elements.
+
+```Swift
+  example("of") {
+      let disposeBag = DisposeBag()
+
+      Observable.of("🐶", "🐱", "🐭", "🐹")
+          .subscribe(onNext: { element in
+              print(element)
+          })
+          .disposed(by: disposeBag)
+  }
+```
+
+4. **just()**  &mdash; Creates an Observable sequence with a single element.
+
+just() is just a simple operator which wraps a single value.
+
+
+if you want just to transform a single value into the Observable the just() is probably more readable option to choose. just() takes an argument and sends it as next and then it sends completed right after the next.
+
 
 ```Swift
   example("just") {
@@ -228,94 +233,43 @@ http://adamborek.com/creating-observable-create-just-deferred/
   }
 ```
 
+5. **`error()`** &mdash; Creates an Observable sequence that emits no items and immediately terminates with an error.
 
+Similar to `just()`...
 
+```Swift
+  example("error") {
+      let disposeBag = DisposeBag()
 
-<!-- .create() method for Observables
-.retry(3)
-     .debug() -->
+      Observable<Int>.error(TestError.test)
+          .subscribe { print($0) }
+          .disposed(by: disposeBag)
+  }
+```
 
-
-     <!-- illustrate 3 from the Rx.playground
-     			analyze what they do differently -->
-
-<!-- < TODO: Get examples -->
-
+*From:* </br>
+`Rx.playground` in RxSwift library
 
 **Other Ways to Create Observables**
 
-<!-- TODO: List empty, etc., as being similar to Just -->
+By no means complete, here are a few other Observable creation operators which may come in handy...
 
+1. `just()` has a few additional siblings:
 
+- `empty()` – returns an Observable which caries only a completed event
+- `never()` – returns an Observable which never sends events to its observers
 
-```Swift
+*From:* </br>
+http://adamborek.com/creating-observable-create-just-deferred/
 
-```
+2. `generate`  &mdash; Creates an Observable sequence that generates values for as long as the provided condition evaluates to true.
 
+3. `repeatElement`  &mdash; Creates an Observable sequence that emits the given element indefinitely.
 
-```Swift
+4. `doOn`  &mdash; Invokes a side-effect action for each emitted event and returns (passes through) the original event.
 
-```
+5. `range`  &mdash; Creates an Observable sequence that emits a range of sequential integers and then terminates.
 
-
-```Swift
-
-```
-
-
-#### Debugging Operators
-
-
-Operators to help debug Rx code.
-
-<!-- < TODO: add Debugging here, simple examples-->
-
-<!-- .debug operator -->
-<!-- Debugging:
-debug - Prints out all subscriptions, events, and disposals.
-RxSwift.Resources.total - Provides a count of all Rx resource allocations, which is useful for detecting leaks during development. -->
-
-
-<!-- < TODO: add Debugging here, simple examples-->
-
-
-Using debugger alone is useful, but usually using `debug` operator will be more efficient. `debug` operator will print out all events to standard output and you can add also label those events.
-
-`debug` acts like a probe. Here is an example of using it:
-
-```swift
-let subscription = myInterval(.milliseconds(100))
-    .debug("my probe")
-    .map { e in
-        return "This is simply \(e)"
-    }
-    .subscribe(onNext: { n in
-        print(n)
-    })
-
-Thread.sleepForTimeInterval(0.5)
-
-subscription.dispose()
-```
-
-will print
-
-```
-[my probe] subscribed
-Subscribed
-[my probe] -> Event next(Box(0))
-This is simply 0
-[my probe] -> Event next(Box(1))
-This is simply 1
-[my probe] -> Event next(Box(2))
-This is simply 2
-[my probe] -> Event next(Box(3))
-This is simply 3
-[my probe] -> Event next(Box(4))
-This is simply 4
-[my probe] dispose
-Disposed
-```
 
 
 ```Swift
@@ -481,6 +435,7 @@ This scheduler is usually used to perform UI work.
 
 
 
+
 <!-- compare Notifications to Observables? -->
 
 
@@ -534,6 +489,7 @@ Remember that an observable is really a sequence definition; subscribing to an o
 <!-- TODO: list the 4 types -->
 
 <!-- TODO: pick a couple and show examples...esp. those that the class was confused by -->
+<!-- TODO: retry()? -->
 
 
 `combineLatest`
@@ -595,9 +551,78 @@ buffertoggle -->
 
 ## After Class
 
-Research:
+1. Research:
 
 - Single, Completable, and Maybe (special types of Observables)
+
+
+
+
+2. RxSwift Debugging
+
+RxSwift comes with two ways to help debug Rx code:
+- The `debug()` operator &mdash; Prints out all subscriptions, events, and disposals.
+- `RxSwift.Resources.total` &mdash; Provides a count of all Rx resource allocations, which is useful for detecting leaks during development.
+
+
+
+
+
+<!-- TODO: list them  -->
+
+
+
+<!-- < TODO: add Debugging here, simple examples-->
+
+<!-- .debug operator -->
+<!-- Debugging:
+debug - Prints out all subscriptions, events, and disposals.
+RxSwift.Resources.total - Provides a count of all Rx resource allocations, which is useful for detecting leaks during development. -->
+
+
+<!-- < TODO: add Debugging here, simple examples-->
+
+
+Using the Xcode debugger alone is useful, but usually using `debug` operator will be more efficient. `debug` operator will print out all events to standard output and you can add also label those events.
+
+`debug` acts like a probe. Here is an example of using it:
+
+```swift
+let subscription = myInterval(.milliseconds(100))
+    .debug("my probe")
+    .map { e in
+        return "This is simply \(e)"
+    }
+    .subscribe(onNext: { n in
+        print(n)
+    })
+
+Thread.sleepForTimeInterval(0.5)
+
+subscription.dispose()
+```
+
+will print
+
+```
+[my probe] subscribed
+Subscribed
+[my probe] -> Event next(Box(0))
+This is simply 0
+[my probe] -> Event next(Box(1))
+This is simply 1
+[my probe] -> Event next(Box(2))
+This is simply 2
+[my probe] -> Event next(Box(3))
+This is simply 3
+[my probe] -> Event next(Box(4))
+This is simply 4
+[my probe] dispose
+Disposed
+```
+
+<!-- TODO:  have them enable the other debugger in rx.playground -->
+
 
 
 <!-- TODO: get an exercise for Schedulers; 1st, review it in rx.playground, then do an exercise (convert something?) -->
