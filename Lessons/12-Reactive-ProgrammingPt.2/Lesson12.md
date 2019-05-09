@@ -881,7 +881,6 @@ However, it is easy to practice using it..
 <!-- < TODO: exercise on debugging with RxSwift.Resources.total -->
 
 
-
 ## Wrap Up (5 min)
 
 - Continue working on your Course Project
@@ -890,18 +889,9 @@ However, it is easy to practice using it..
 
 ## Additional Resources
 
-1. [Slides]()
-2.
-
-
-https://en.wikipedia.org/wiki/Reactive_extensions
-
-
-https://github.com/RxSwiftCommunity/RxSwiftExt
-
-https://github.com/RxSwiftCommunity
-
-https://community.rxswift.org
-
-
-https://en.wikipedia.org/wiki/Reactor_pattern
+1. [Slides](https://docs.google.com/presentation/d/1vMgTfBjhp4Nx0edgo9IM7cfVCHNcW7f6tBZGccPel8g/edit#slide=id.p)
+2. [Reactor_pattern - wikipedia](https://en.wikipedia.org/wiki/Reactor_pattern)
+3. Some excellent RxSwift resources:
+- [RxSwiftExt](https://github.com/RxSwiftCommunity/RxSwiftExt)
+- [RxSwiftCommunity](https://github.com/RxSwiftCommunity)
+- [community.rxswift.org](community.rxswift.org)
