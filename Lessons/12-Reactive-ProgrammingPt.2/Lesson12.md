@@ -588,7 +588,7 @@ Abstracts the work that needs to be performed on a specific `dispatch_queue_t`. 
 
 This scheduler is suitable when some work needs to be performed in the __*background.*__
 
-##### OperationQueueScheduler (Concurrent scheduler)
+##### &mdash; OperationQueueScheduler (Concurrent scheduler)
 
 Abstracts the work that needs to be performed on a specific `NSOperationQueue`.
 
@@ -596,7 +596,7 @@ Suitable for cases when there is some bigger chunk of work that needs to be perf
 
 #### Simple Example:
 
-Here is a simple example &mdash; in **non-working pseudocode** &mdash; of how how to call `observeOn()` to switch between 2 schedulers:
+Here is a simple example &mdash; in **non-working pseudocode** &mdash; of how how to call `observeOn()` and `subscribeOn()` to switch between 2 schedulers:
 
 ```Swift
   catObservable // 1
@@ -612,10 +612,10 @@ Here is a simple example &mdash; in **non-working pseudocode** &mdash; of how ho
 ```    
 __*Step-by-step:*__
 1. We subscribe to Cat observable, which emits Cat signals.
-2. We should be on the same scheduler we were before the subscription (which is the default behaviour of Rx).
+2. We should be on the same scheduler we were before the subscription (which is the default behavior of Rx).
 3. Switch the scheduler to the `MainRouteScheduler`. Now every operation below this one will be scheduled on `MainRouteScheduler` (of course if we don’t change the scheduler again later in the pipeline).
 4. Now we say that we start the chain on `TwoLaneFreewayScheduler`. So `breatheFreshAir()` will be scheduled on `TwoLaneFreewayScheduler`, and then the scheduler is changed again using `observeOn()`.
-5. `subscribeNext()` gets scheduled by `MainRouteScheduler`. If we didn’t add the observeOn() before, it would get scheduled by `TwoLaneFreewayScheduler`.
+5. `subscribeNext()` gets scheduled by `MainRouteScheduler`. If we didn’t add the `observeOn()` before, it would get scheduled by `TwoLaneFreewayScheduler`.
 
 *From:* </br>
 https://www.thedroidsonroids.com/blog/rxswift-examples-4-multithreading/
@@ -660,6 +660,61 @@ Remember that an observable is really a sequence definition; subscribing to an o
 
 
 ## In Class Activity II (30 min)
+
+1. Complete the code below to match the output:
+
+```Swift
+  example("PublishSubject") {
+      let disposeBag = DisposeBag()
+      let subject = PublishSubject<String>()
+
+      subject.addObserver("1").disposed(by: disposeBag)
+      subject.onNext("🐶")
+      subject.onNext("🐱")
+
+      subject.addObserver("2").disposed(by: disposeBag)
+      subject.onNext("🅰️")
+      subject.onNext("🅱️")
+
+        //TODO: Add a 3rd observer
+  }
+
+  /*OUTPUT:
+  Subscription: 3 Event: next(🍐)
+  Subscription: 1 Event: next(🍊)
+  Subscription: 2 Event: next(🍊)
+  Subscription: 3 Event: next(🍊
+    */
+  ```
+
+<!--
+  SOLUTION TO EX 1:
+```Swift
+  example("PublishSubject") {
+      let disposeBag = DisposeBag()
+      let subject = PublishSubject<String>()
+
+      subject.addObserver("1").disposed(by: disposeBag)
+      subject.onNext("🐶")
+      subject.onNext("🐱")
+
+      subject.addObserver("2").disposed(by: disposeBag)
+      subject.onNext("🅰️")
+      subject.onNext("🅱️")
+
+      subject.addObserver("3").disposed(by: disposeBag)
+      subject.onNext("🍐")
+      subject.onNext("🍊")
+  }
+
+  /*OUTPUT:
+  Subscription: 3 Event: next(🍐)
+  Subscription: 1 Event: next(🍊)
+  Subscription: 2 Event: next(🍊)
+  Subscription: 3 Event: next(🍊
+    */
+  ``` -->
+
 
 <!-- TODO: get exercises for subject  -->
 <!-- TODO: from the Rx.playground? -->
