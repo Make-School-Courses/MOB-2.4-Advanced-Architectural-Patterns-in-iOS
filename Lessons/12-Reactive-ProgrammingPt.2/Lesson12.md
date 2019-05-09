@@ -1,11 +1,9 @@
 # Reactive Programming (Part 2 of 3)
 
 <!-- INSTRUCTOR NOTES:
-1) For the QuizLet Game in the Initial Exercise:
-- the URL is xxxx
-2) For Activity 1:
-- xxx
-3) for Activity 2:
+1) For Activity 1:
+- solutions are inline below each exercise
+2) for Activity 2:
 - xxxx
 -->
 
@@ -255,6 +253,8 @@ By no means complete, here are a few other Observable creation operators which m
 
 These are useful for testing purposes, and sometimes also for combining with other Observables or as parameters to operators that expect other Observables as parameters.
 
+Operators like `just`, `error`, `empty` or `never` might sometimes be enough to create an Observable you need, and they don’t require that you write a lot of boilerplate code.
+
 2. `generate`  &mdash; Creates an Observable sequence that generates values for as long as the provided condition evaluates to true.
 
 3. `repeatElement`  &mdash; Creates an Observable sequence that emits the given element indefinitely.
@@ -304,6 +304,7 @@ source.subscribe {
     print($0)
 }
 ``` -->
+
 
 
 <!-- < TODO: observable exercises ??-->
@@ -565,7 +566,7 @@ RxSwift comes with two ways to help debug Rx code:
 - `RxSwift.Resources.total` &mdash; Provides a count of all Rx resource allocations, which is useful for detecting leaks during development.
 
 
-
+<!-- https://www.caseyliss.com/2016/12/16/rxswift-primer-part-2 -->
 
 
 <!-- TODO: list them  -->
