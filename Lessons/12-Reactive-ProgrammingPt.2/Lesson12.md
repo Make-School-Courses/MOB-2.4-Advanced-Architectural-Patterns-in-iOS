@@ -208,12 +208,13 @@ Each element of an array, for example, is produced as a single emission.
 
 3. **just()**  &mdash; Creates an Observable sequence with a single element.
 
-just() is just a simple operator which wraps a single value.
+`just()` is just a simple operator which wraps a single value.
 
+If you want only to transform a single value into the Observable, then `just()` is probably more readable option to choose.
 
-if you want just to transform a single value into the Observable the just() is probably more readable option to choose. just() takes an argument and sends it as next and then it sends completed right after the next.
+`just()` takes an argument and sends it as `next` and then it sends `completed` right after `next`.
 
-The difference between this and `create()` is that `just()` emits *the whole array* as one emission.
+The difference between this operator and `create()` is that `just()` emits *the whole array* as one emission.
 
 ```Swift
   example("just") {
