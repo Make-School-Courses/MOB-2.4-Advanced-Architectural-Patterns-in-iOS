@@ -520,15 +520,20 @@ To summarize, a scheduler is a context where a process takes place. This context
 
 <!-- Different mechanisms for performing work include the current thread, dispatch queues, operation queues, new threads, thread pools, and run loops. -->
 
+#### Two Main Operators
+
+By __*default,*__ an Observable and the chain of operators that you apply to it will do its work, and will notify its observers, on the same thread on which its `subscribe()` method is called.
+
 There are two main operators that work with schedulers:
-- `observeOn()`
-- `subscribeOn()`
+- `observeOn()` &mdash; Specifies a different Scheduler that the Observable will use to send notifications to its observers. For this reason, you may call ObserveOn multiple times at various points during the chain of Observable operators in order to change on which threads certain of those operators operate.
+- `subscribeOn()` &mdash; Designates which thread the Observable will begin operating on, no matter at what point in the chain of operators that operator is called. It changes the default behavior by specifying a different Scheduler on which the Observable should operate.
 
 If you want to perform work on a different scheduler, just use the `observeOn(scheduler)` operator.
 
 You usually use `observeOn()` a lot more often than `subscribeOn()`.
 
 <!-- TODO: show example of observeOn -- from Rx.playground -->
+
 
 #### Serial vs Concurrent Schedulers
 
