@@ -39,6 +39,16 @@ By the end of this lesson, you should be able to...
 ## Initial Exercise (15 min)
 
 
+
+<!--
+
+#### Hot & Cold** Observables
+<!-- Hot and cold observables  -->
+
+
+<!-- TODO: insert the standard comparison chart -->
+
+
 ### Operators
 
 <!-- TODO: list the 4 types -->

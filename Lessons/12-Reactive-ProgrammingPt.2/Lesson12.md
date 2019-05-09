@@ -797,37 +797,25 @@ https://medium.com/@arnavgupta180/rxswift-subjects-and-variables-83c8b2ae1f5
 
 1. Research:
 
-- Single, Completable, and Maybe (special types of Observables)
+- Single, Completable, and Maybe (special types of Observables, aka "traits")
 - Hot & Cold Observables
-- Review RxSwift versions of common Rx operators:
-xxxx
+- Review Rx Operators, especially:
+&nbsp;&nbsp;&nbsp; - the 4 types of Operators
+&nbsp;&nbsp;&nbsp; - scan
+&nbsp;&nbsp;&nbsp; - flatMap and flatMapLatest
+&nbsp;&nbsp;&nbsp; - zip
+&nbsp;&nbsp;&nbsp; - toArray
+&nbsp;&nbsp;&nbsp; - concat
+&nbsp;&nbsp;&nbsp; - takeUntil
+&nbsp;&nbsp;&nbsp; - combineLatest
 
-
+> __*TIP:*__ You an find some info on these in the `Rx.playground` that comes in the RxSwift library. That's a good starting point, but these are limited and basic. Spend some time finding other examples...
 
 2. RxSwift Debugging
 
 RxSwift comes with two ways to help debug Rx code:
 - The `debug()` operator &mdash; Prints out all subscriptions, events, and disposals.
 - `RxSwift.Resources.total` &mdash; Provides a count of all Rx resource allocations, which is useful for detecting leaks during development.
-
-
-<!-- https://www.caseyliss.com/2016/12/16/rxswift-primer-part-2 -->
-
-
-<!-- TODO: list them  -->
-
-
-
-<!-- < TODO: add Debugging here, simple examples-->
-
-<!-- .debug operator -->
-<!-- Debugging:
-debug - Prints out all subscriptions, events, and disposals.
-RxSwift.Resources.total - Provides a count of all Rx resource allocations, which is useful for detecting leaks during development. -->
-
-
-<!-- < TODO: add Debugging here, simple examples-->
-
 
 Using the Xcode debugger alone is useful, but usually using `debug` operator will be more efficient. `debug` operator will print out all events to standard output and you can add also label those events.
 
@@ -867,7 +855,24 @@ This is simply 4
 Disposed
 ```
 
-<!-- TODO:  have them enable the other debugger in rx.playground -->
+__*Challenges:*__
+
+a) For `debug()` operator &mdash; Experiment with the example given here:
+
+https://www.caseyliss.com/2016/12/16/rxswift-primer-part-2
+
+...or, you might learn what `debug()` does by adding it to some of the RxSwift code you've already worked with in these last 2 classes.
+
+b) For `RxSwift.Resources.total` &mdash; `RxSwift.Resources.total` is not enabled by default, and should generally not be enabled in Release builds.
+
+However, it is easy to practice using it..
+
+**TODO:**
+- In the `RxExample` project in the RxSwift library, look for the `Debugging_Operators` playground. Find and follow the "...instructions on how to enable..." `RxSwift.Resources.total` and enable it in the RxSwift project you've been working with in class.
+- Add some Observable code and examine the output.
+- Find or create some Observable code which has a `weak` self inside a closure. Remove the `weak` modifier to see if you can create and detect a memory leak.
+
+> Don't forget to disable `RxSwift.Resources.total` in your project when you are done using it...
 
 
 
@@ -876,20 +881,10 @@ Disposed
 <!-- < TODO: exercise on debugging with RxSwift.Resources.total -->
 
 
-<!--
-
-#### Hot & Cold** Observables
-<!-- Hot and cold observables  -->
-
-
-<!-- TODO: insert the standard comparison chart -->
-
-![xxx](assets/xxx.png) </br> -->
-
 
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
+- Continue working on your Course Project
 - Complete reading
 - Complete challenges
 
