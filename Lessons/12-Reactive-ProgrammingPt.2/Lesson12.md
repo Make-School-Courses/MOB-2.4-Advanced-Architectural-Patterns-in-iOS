@@ -307,7 +307,7 @@ source.subscribe {
 
 2. Complete the code below that creates an Observable from scratch:
 
-> **HINT:** For clues, see the description for the `create()` operator above.
+> **HINT:** For clues, see requirements for the `create()` operator in its description above.
 
 ```Swift
 let source : Observable<Int> = Observable.create { observer in
@@ -365,21 +365,6 @@ disposed
 ```
 -->
 
-
-
-<!-- < TODO: observable exercises ??-->
-
-
-
-
-```Swift
-
-```
-
-```Swift
-
-```
-
 ## Overview/TT II (20 min)
 
 ### Subject
@@ -396,33 +381,136 @@ As an Observer, it can subscribe to one or more Observables.
 
 And as an Observable, it can pass through the items it observes by reemitting them, and it can add new elements that can be emitted to all subscribers.
 
-#### Four Subject Types
+Subject does not call `onCompleted()` until it is unsubscribed/deregistered (i.e., until the `deinit()` of `DisposeBag` or the `dispose()` method is explicitly called.)
 
-There are four subject types in RxSwift, each with unique characteristics that can be useful in different scenarios:
+> `Subject` is known as a **Hot** Observable. **Hot & Cold Observables** are a follow on Rx topic listed in your __*After Class*__ exercises below.
 
+#### Three Main Types
+
+There are three primary Subject types in RxSwift, each with unique characteristics that can be useful in different scenarios:
 - PublishSubject
 - BehaviorSubject
 - ReplaySubject
-- Variable
+
+> Other emerging Subject types worth knowing include: AsyncSubject, PublishRelay and BehaviorRelay.
+
+1. **PublishSubject** &mdash; Subscriber of this Subject will only receive *new* events that are emitted *after* a subscription.
+
+A PublishSubject starts empty, and only emits new elements (`next` events) to its subscribers; in other words, elements added to a PublishSubject *before* a subscriber subscribes will not be received by that subscriber.
 
 
+> Note: The concept of emitting previous `next` events to new subscribers is called __*replaying,*__ and publish subjects __*DO NOT replay.*__
+
+```Swift
+  class PublishSubjectExample {
+  	let disposeBag = DisposeBag()
+
+  	func publishSubject() {
+  		let title = PublishSubject<String>()
+  		title.onNext("Before Subscribe")
+
+  		title.subscribe(onNext: {
+  			print($0)
+  		}).disposed(by: disposeBag)
+
+  		title.onNext("After Subscribe")
+  	}
+  }
+
+  /* Output:
+  After Subscribe
+  */
+```
+
+2. **BehaviorSubject** &mdash; A subscriber of this Subject will receive the last event emitted before subscription and all the event emitted after the subscription.
+
+Broadcasts *new* events to *all* subscribers, and the *most recent* (or initial) value to *new* subscribers.
+
+It starts with an initial value and __*replays*__ it or the latest element to *new* subscribers.
+
+> This example demonstrate how to unsubscribe explicitly by calling `dispose()` (as opposed to using `DisposeBag`).
+
+```Swift
+  class BehaviorSubjectExample {
+
+  	func behaviorSubject() {
+  		let subtitle = BehaviorSubject<String>(value: "InitialValue")
+
+  		let subscribedTitle = subtitle.subscribe(onNext: { (subtitle) in
+  			print(subtitle)
+  		}, onError: { (error) in
+  			print(error)
+  		}, onCompleted: {
+  			print("Completed")
+  		}, onDisposed: {
+  			print("Disposed")
+  		})
+
+  		subtitle.onNext("UpdatedValue")
+  		subscribedTitle.dispose()
+  		subtitle.onNext("FinalValue - Won't get it!!")
+  	}
+  }
+  /*
+  Output:
+    InitialValue
+    UpdatedValue
+    Disposed
+  */
+```
+
+3. **ReplaySubject** &mdash; As it name states, it allows us to replay the earlier events and will be received on the initial subscription. We can decide, how many previous events will be replayed/cached/stacked.
+
+Initialized with a buffer size and will maintain a buffer of elements up to that size and __*replay*__ it to new subscribers
+
+Broadcasts new events to *all* subscribers, and the specified `bufferSize` number of previous events to *new* subscribers.
+
+```Swift
+  class ReplaySubjectExample {
+  	let disposeBag = DisposeBag()
+
+  	func replaySubject() {
+  		let chatStack = ReplaySubject<String>.create(bufferSize: 3)
+
+  		chatStack.onNext("hello")
+  		chatStack.onNext("world")
+  		chatStack.onNext("!!!")
+  		chatStack.onNext("you will not recieve hello :)")
+  		chatStack.subscribe(onNext: { value in
+  				print(value)
+  		}, onError: { error in
+  			print(error)
+  		} , onCompleted: {
+  			print("completed")
+  		}, onDisposed: {
+  			print("disposed")
+  		}).disposed(by: disposeBag)
+
+  	}
+  }
+
+  /* Output:
+  world
+  !!!
+  you will not recieve hello :)
+  */
+
+```
+
+**Key Notes:**
+- What's missing in these previous examples? A `Completed` event. PublishSubject, ReplaySubject, and BehaviorSubject __*do not automatically*__ emit `Completed` events when they are about to be disposed of.
+- These examples introduce the use of the `onNext(_:)` convenience method, equivalent to `on(.next(_:)`, which causes a new `Next` event to be emitted to subscribers with the provided element. There are also `onError(_:)` and `onCompleted()` convenience methods, equivalent to `on(.error(_:))` and `on(.completed)`, respectively.
 
 
-<!-- TODO: give 2 progressive examples  -->
+*From:* </br>
+- https://codeburst.io/rxswift-reactive-thinking-part-2-efb209237e6e </br>
+- `Rx.playground` in RxSwift library
+
 
 <!-- TODO: Add the examples of each of the 4 from Rx.playground -->
 
 
-
-```Swift
-
-```
-
-
-```Swift
-
-```
-### Scheduler
+### Schedulers
 
 If you want to introduce multithreading into your cascade of Observable operators, you can do so by instructing those operators (or particular Observables) to operate on particular Schedulers.
 
@@ -463,6 +551,7 @@ This scheduler is usually used to perform UI work.
 
 <!-- TODO: SHOW EXAMPLE -->
 
+<!-- TODO: briefly spell out each type -->
 
 
 
@@ -527,18 +616,17 @@ Remember that an observable is really a sequence definition; subscribing to an o
 ## In Class Activity II (30 min)
 
 <!-- TODO: get exercises for subject  -->
+<!-- TODO: from the Rx.playground? -->
+
+<!-- TODO: from the simple Ray W example? see my Subject notes doc -->
+
 
 
 <!-- TODO: convert a Notification to an Observable? -->
 
 
-<!-- TODO: convert a dictionary to an Observable? -->
-
-
-<!-- TODO: start an Observable from scratch -->
-
-
-<!-- < TODO: with debugging options ??-->
+<!-- TODO: convert a dictionary to an Observable?
+- with debugging options ??-->
 
 
 ```Swift
@@ -563,19 +651,19 @@ Combines up to 8 source Observable sequences into a single new Observable sequen
 There is also a variant of combineLatest that takes an Array (or any other collection of Observable sequences):
 
 ```Swift
-example("Array.combineLatest") {
-    let disposeBag = DisposeBag()
+  example("Array.combineLatest") {
+      let disposeBag = DisposeBag()
 
-    let stringObservable = Observable.just("❤️")
-    let fruitObservable = Observable.from(["🍎", "🍐", "🍊"])
-    let animalObservable = Observable.of("🐶", "🐱", "🐭", "🐹")
+      let stringObservable = Observable.just("❤️")
+      let fruitObservable = Observable.from(["🍎", "🍐", "🍊"])
+      let animalObservable = Observable.of("🐶", "🐱", "🐭", "🐹")
 
-    Observable.combineLatest([stringObservable, fruitObservable, animalObservable]) {
-            "\($0[0]) \($0[1]) \($0[2])"
-        }
-        .subscribe(onNext: { print($0) })
-        .disposed(by: disposeBag)
-}
+      Observable.combineLatest([stringObservable, fruitObservable, animalObservable]) {
+              "\($0[0]) \($0[1]) \($0[2])"
+          }
+          .subscribe(onNext: { print($0) })
+          .disposed(by: disposeBag)
+  }
 ```
 
 `This produces:
