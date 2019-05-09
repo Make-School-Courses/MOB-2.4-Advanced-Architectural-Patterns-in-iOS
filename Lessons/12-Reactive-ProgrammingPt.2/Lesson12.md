@@ -216,7 +216,7 @@ example("create") {
 <!-- < TODO: Get examples -->
 
 
-
+**Other Ways to Create Observables**
 
 
 ```Swift
@@ -345,6 +345,28 @@ RxSwift.Resources.total - Provides a count of all Rx resource allocations, which
 ### Subject
 
 <!-- TODO: start with stating it is a Hot, then describe.  -->
+
+<!-- subject is a Hot Observable -->
+
+A special type in RxSwift, a **Subject** is a sort of bridge or proxy that can behave as both of these:
+- An __*Observable sequence*__
+- An __*Observer*__
+
+As an Observer, it can subscribe to one or more Observables.
+
+And as an Observable, it can pass through the items it observes by reemitting them, and it can add new elements that can be emitted to all subscribers.
+
+#### Four Subject Types
+
+There are four subject types in RxSwift, each with unique characteristics that can be useful in different scenarios:
+
+- PublishSubject
+- BehaviorSubject
+- ReplaySubject
+- Variable
+
+
+
 
 <!-- TODO: give 2 progressive examples  -->
 
