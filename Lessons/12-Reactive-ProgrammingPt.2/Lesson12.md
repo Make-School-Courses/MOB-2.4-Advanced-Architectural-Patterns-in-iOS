@@ -47,7 +47,7 @@ It's a variation of `Distinct`. It suppresses sequential duplicate elements emit
 
 This method will emit values *only* if they are different from the previous value.
 
-Note that in the example below, the 🐱 image was listed 3 times in a row in the middle of the sequence, but because the 🐱 at positions 4 and 5 were both preceded by the same 🐱 element, the 🐱 elements at those positions are ignored and not emitted.
+Note that in the example below, the 🐱 image was listed 3 times in a row in the middle of the sequence. But because the 🐱 at positions 4 and 5 were both preceded by the same 🐱 element, the 🐱 elements at those positions are ignored and not emitted:
 
 ```Swift
   example("distinctUntilChanged") {
@@ -77,9 +77,10 @@ http://introtorx.com/Content/v1.0.10621.0/05_Filtering.html#Distinct
 
 Returns an Observable that mirrors the first source Observable to emit an item.
 
+**TODO:** Bring up the image of the  `race` operator in the URL below and move the 1, 2, and 3 circles past the first 0 circle. Result: the sequence returned will now be 20, 40, 60...
+
 ![race](assets/race.png) </br>
 
-> TODO: Bring up the image of the  `race` operator in the URL below and move the 1, 2, and 3 circles past the first 0 circle. Result: the sequence returned will now be 20, 40, 60...
 
 https://rxmarbles.com/#race
 
@@ -102,7 +103,12 @@ Collects values from the past as an array. Starts collecting only when opening e
 `bufferWhen`
 Collects values from the past as an array. When it starts collecting values, it calls a function that returns an Observable that tells when to close the buffer and restart collecting.
 
-> TODO: To understand these operators, experiment with their interactive Marble Diagrams...
+**TODO:** To understand these operators, experiment with their interactive Marble Diagrams...
+
+https://rxmarbles.com/#buffer
+https://rxmarbles.com/#bufferToggle
+https://rxmarbles.com/#bufferWhen
+
 
 *Definitions from:* </br>
 http://reactivex.io/documentation/operators/buffer.html
