@@ -294,23 +294,6 @@ completed
 */
 ```
 
-
-let source : Observable = Observable.create { observer in
-    for i in 1...5 {
-        observer.on(.next(i))
-    }
-    observer.on(.completed)
-
-    // Note that this is optional. If you require no cleanup you can return
-    // `Disposables.create()` (which returns the `NopDisposable` singleton)
-    return Disposables.create {
-        print("disposed")
-    }
-}
-
-source.subscribe {
-    print($0)
-}
 <!-- SOLUTION TO EX 1:
 ```Swift
 let numbers = [1,2,3,4,5]
@@ -322,20 +305,68 @@ source.subscribe {
 }
 ``` -->
 
+2. Complete the code below that creates an Observable from scratch:
+
+```Swift
+let source : Observable<Int> = Observable.create { observer in
+
+           for i in 1...5 {
+               observer.on(.next(i))
+           }
+           observer.on(.completed)
+
+           return Disposables.create {
+               print("disposed")
+           }
+       }
+       source.subscribe {
+           print($0)
+       }
+
+/* OUTPUT:
+next(1)
+next(2)
+next(3)
+next(4)
+next(5)
+completed
+disposed
+*/
+```
+
+<!-- SOLUTION TO EX 2:
+```Swift
+let source : Observable<Int> = Observable.create { observer in
+
+           for i in 1...5 {
+               observer.on(.next(i))
+           }
+           observer.on(.completed)
+
+           return Disposables.create {
+               print("disposed")
+           }
+       }
+       source.subscribe {
+           print($0)
+       }
+
+/* OUTPUT:
+next(1)
+next(2)
+next(3)
+next(4)
+next(5)
+completed
+disposed
+*/
+```
+-->
+
 
 
 <!-- < TODO: observable exercises ??-->
 
-<!-- TODO: convert a Notification to an Observable? -->
-
-
-<!-- TODO: convert a dictionary to an Observable? -->
-
-
-<!-- TODO: start an Observable from scratch -->
-
-
-<!-- < TODO: with debugging options ??-->
 
 
 
@@ -494,6 +525,18 @@ Remember that an observable is really a sequence definition; subscribing to an o
 ## In Class Activity II (30 min)
 
 <!-- TODO: get exercises for subject  -->
+
+
+<!-- TODO: convert a Notification to an Observable? -->
+
+
+<!-- TODO: convert a dictionary to an Observable? -->
+
+
+<!-- TODO: start an Observable from scratch -->
+
+
+<!-- < TODO: with debugging options ??-->
 
 
 ```Swift
