@@ -426,7 +426,11 @@ There are four subject types in RxSwift, each with unique characteristics that c
 ```
 ### Scheduler
 
+If you want to introduce multithreading into your cascade of Observable operators, you can do so by instructing those operators (or particular Observables) to operate on particular Schedulers.
+
 Schedulers abstract away the mechanism for performing work.
+
+To summarize, a scheduler is a context where a process takes place. This context can be a thread, a dispatch queue or similar entities, or even an Operation used inside the OperationQueueScheduler.
 
 Different mechanisms for performing work include the current thread, dispatch queues, operation queues, new threads, thread pools, and run loops.
 
@@ -499,7 +503,40 @@ This scheduler is usually used to perform UI work.
 
 <!-- TODO: pick a couple and show examples...esp. those that the class was confused by -->
 
+
+`combineLatest`
+
+Combines up to 8 source Observable sequences into a single new Observable sequence and will begin emitting from the combined Observable sequence the latest elements of each source Observable sequence &mdash; once all source sequences have emitted at least one element &mdash; and also when any of the source Observable sequences emits a new element.
+
+
+There is also a variant of combineLatest that takes an Array (or any other collection of Observable sequences):
+
+```Swift
+example("Array.combineLatest") {
+    let disposeBag = DisposeBag()
+
+    let stringObservable = Observable.just("❤️")
+    let fruitObservable = Observable.from(["🍎", "🍐", "🍊"])
+    let animalObservable = Observable.of("🐶", "🐱", "🐭", "🐹")
+
+    Observable.combineLatest([stringObservable, fruitObservable, animalObservable]) {
+            "\($0[0]) \($0[1]) \($0[2])"
+        }
+        .subscribe(onNext: { print($0) })
+        .disposed(by: disposeBag)
+}
+```
+
+`This produces:
+❤️ 🍐 🐱
+❤️ 🍊 🐱
+❤️ 🍊 🐭
+❤️ 🍊 🐹
+`
+
 <!-- TODO: end: You can create your own - show link  -->
+
+> NOTE: Because the combineLatest variant that takes a collection passes an array of values to the selector function, it requires that all source Observable sequences are of the same type.
 
 
 <!-- takeUntil
