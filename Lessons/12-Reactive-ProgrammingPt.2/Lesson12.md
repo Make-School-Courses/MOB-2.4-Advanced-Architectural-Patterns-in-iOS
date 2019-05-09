@@ -270,7 +270,10 @@ Remember that an observable is really a sequence definition; subscribing to an o
 ![xxx](assets/xxx.png) </br>
 
 
-#### Debugging
+#### Debugging Operators
+
+
+Operators to help debug Rx code.
 
 <!-- < TODO: add Debugging here, simple examples-->
 
@@ -281,6 +284,45 @@ RxSwift.Resources.total - Provides a count of all Rx resource allocations, which
 
 
 <!-- < TODO: add Debugging here, simple examples-->
+
+
+Using debugger alone is useful, but usually using `debug` operator will be more efficient. `debug` operator will print out all events to standard output and you can add also label those events.
+
+`debug` acts like a probe. Here is an example of using it:
+
+```swift
+let subscription = myInterval(.milliseconds(100))
+    .debug("my probe")
+    .map { e in
+        return "This is simply \(e)"
+    }
+    .subscribe(onNext: { n in
+        print(n)
+    })
+
+Thread.sleepForTimeInterval(0.5)
+
+subscription.dispose()
+```
+
+will print
+
+```
+[my probe] subscribed
+Subscribed
+[my probe] -> Event next(Box(0))
+This is simply 0
+[my probe] -> Event next(Box(1))
+This is simply 1
+[my probe] -> Event next(Box(2))
+This is simply 2
+[my probe] -> Event next(Box(3))
+This is simply 3
+[my probe] -> Event next(Box(4))
+This is simply 4
+[my probe] dispose
+Disposed
+```
 
 
 ```Swift
@@ -370,6 +412,8 @@ There are four subject types in RxSwift, each with unique characteristics that c
 
 <!-- TODO: give 2 progressive examples  -->
 
+<!-- TODO: Add the examples of each of the 4 from Rx.playground -->
+
 
 
 ```Swift
@@ -382,10 +426,50 @@ There are four subject types in RxSwift, each with unique characteristics that c
 ```
 ### Scheduler
 
+Schedulers abstract away the mechanism for performing work.
+
+Different mechanisms for performing work include the current thread, dispatch queues, operation queues, new threads, thread pools, and run loops.
+
+There are two main operators that work with schedulers, `observeOn` and `subscribeOn`.
+
+If you want to perform work on a different scheduler just use `observeOn(scheduler)` operator.
+
+You would usually use `observeOn` a lot more often than `subscribeOn`.
+
+<!-- TODO: show example of observeOn -- from Rx.playground -->
+
+#### Serial vs Concurrent Schedulers
+
+Since schedulers can really be anything, and all operators that transform sequences need to preserve additional [implicit guarantees](GettingStarted.md#implicit-observable-guarantees), it is important what kind of schedulers are you creating.
+
+In case the scheduler is concurrent, Rx's `observeOn` and `subscribeOn` operators will make sure everything works perfectly.
+
+If you use some scheduler that Rx can prove is serial, it will be able to perform additional optimizations.
+
+So far it only performs those optimizations for dispatch queue schedulers.
+
+In case of serial dispatch queue schedulers, `observeOn` is optimized to just a simple `dispatch_async` call.
+
+
+#### Builtin schedulers
+
+##### MainScheduler (Serial scheduler)
+
+Abstracts work that needs to be performed on `MainThread`. In case `schedule` methods are called from main thread, it will perform the action immediately without scheduling.
+
+This scheduler is usually used to perform UI work.
+
+<!-- TODO: SHOW EXAMPLE -->
+
+
+
+
+
+
 <!-- TODO: show 2 scheduer examples - 1 from rx.playground -->
 
 
-- $1
+
 
 
 
