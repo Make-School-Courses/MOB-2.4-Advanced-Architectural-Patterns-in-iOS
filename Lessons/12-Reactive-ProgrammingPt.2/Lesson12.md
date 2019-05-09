@@ -307,13 +307,15 @@ source.subscribe {
 
 2. Complete the code below that creates an Observable from scratch:
 
+> **HINT:** For clues, see the description for the `create()` operator above.
+
 ```Swift
 let source : Observable<Int> = Observable.create { observer in
 
            for i in 1...5 {
-               observer.on(.next(i))
+               // TODO: iterate through the range, processing each element in the Observable
            }
-           observer.on(.completed)
+           // TODO: process completion of Observable
 
            return Disposables.create {
                print("disposed")
