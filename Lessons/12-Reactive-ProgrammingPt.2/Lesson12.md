@@ -771,6 +771,10 @@ Remember that an observable is really a sequence definition; subscribing to an o
   subject.onNext("After Subscribe")
 ```
 
+*from:* </br>
+https://medium.com/@arnavgupta180/rxswift-subjects-and-variables-83c8b2ae1f5
+
+
 <!-- TODO: get exercises for subject  -->
 <!-- TODO: from the Rx.playground? -->
 
@@ -784,10 +788,6 @@ Remember that an observable is really a sequence definition; subscribing to an o
 <!-- TODO: convert a dictionary to an Observable?
 - with debugging options ??-->
 
-
-```Swift
-
-```
 
 
 ## Overview/TT III (20 min)
