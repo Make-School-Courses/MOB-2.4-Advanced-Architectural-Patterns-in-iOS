@@ -856,7 +856,7 @@ __*Challenges 1:*__ For `debug()` operator &mdash; Experiment with the example g
 
 https://www.caseyliss.com/2016/12/16/rxswift-primer-part-2
 
-...or, you might learn what `debug()` does by adding it to some of the RxSwift code you've already worked with in these last 2 classes.
+...and/or learn what `debug()` does by adding it to some of the RxSwift code you've already worked with in these last 2 classes.
 
 __*Challenges 2:*__ For `RxSwift.Resources.total` &mdash; `RxSwift.Resources.total` is not enabled by default, and should generally not be enabled in Release builds.
 
@@ -868,7 +868,6 @@ However, it is easy to practice using it..
 - Find or create some Observable code which has a `weak` self inside a closure. Remove the `weak` modifier to see if you can create and detect a memory leak.
 
 > Don't forget to disable `RxSwift.Resources.total` in your project when you are done using it...
-
 
 
 <!-- TODO: get an exercise for Schedulers; 1st, review it in rx.playground, then do an exercise (convert something?) -->
