@@ -790,24 +790,21 @@ https://medium.com/@arnavgupta180/rxswift-subjects-and-variables-83c8b2ae1f5
 
 
 
-
-
-
 ## After Class
 
 1. Research:
 
 - Single, Completable, and Maybe (special types of Observables, aka "traits")
 - Hot & Cold Observables
-- Review Rx Operators, especially:
-&nbsp;&nbsp;&nbsp; - the 4 types of Operators
-&nbsp;&nbsp;&nbsp; - scan
-&nbsp;&nbsp;&nbsp; - flatMap and flatMapLatest
-&nbsp;&nbsp;&nbsp; - zip
-&nbsp;&nbsp;&nbsp; - toArray
-&nbsp;&nbsp;&nbsp; - concat
-&nbsp;&nbsp;&nbsp; - takeUntil
-&nbsp;&nbsp;&nbsp; - combineLatest
+- Review Rx Operators, especially: </br>
+&nbsp;&nbsp;&nbsp; - the 4 types of Operators </br>
+&nbsp;&nbsp;&nbsp; - scan </br>
+&nbsp;&nbsp;&nbsp; - flatMap and flatMapLatest </br>
+&nbsp;&nbsp;&nbsp; - zip </br>
+&nbsp;&nbsp;&nbsp; - toArray </br>
+&nbsp;&nbsp;&nbsp; - concat </br>
+&nbsp;&nbsp;&nbsp; - takeUntil </br>
+&nbsp;&nbsp;&nbsp; - combineLatest </br>
 
 > __*TIP:*__ You an find some info on these in the `Rx.playground` that comes in the RxSwift library. That's a good starting point, but these are limited and basic. Spend some time finding other examples...
 
