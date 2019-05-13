@@ -79,13 +79,15 @@ There is also a variant of combineLatest that takes an Array (or any other colle
           .disposed(by: disposeBag)
   }
 ```
+**Q:** What is the output of the `print()` function? Why?
 
-`This produces:
+<!-- SOLUTION:
+This produces:
 ❤️ 🍐 🐱
 ❤️ 🍊 🐱
 ❤️ 🍊 🐭
-❤️ 🍊 🐹
-`
+❤️ 🍊 🐹 -->
+
 
 <!-- TODO: end: You can create your own - show link  -->
 
