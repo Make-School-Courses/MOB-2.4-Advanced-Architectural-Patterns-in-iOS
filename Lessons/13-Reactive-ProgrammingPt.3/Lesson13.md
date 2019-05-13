@@ -57,10 +57,9 @@ By the end of this lesson, you should be able to...
 <!-- TODO: retry()? -->
 
 
-`combineLatest`
+1. `combineLatest`
 
 Combines up to 8 source Observable sequences into a single new Observable sequence and will begin emitting from the combined Observable sequence the latest elements of each source Observable sequence &mdash; once all source sequences have emitted at least one element &mdash; and also when any of the source Observable sequences emits a new element.
-
 
 There is also a variant of combineLatest that takes an Array (or any other collection of Observable sequences):
 
@@ -79,6 +78,9 @@ There is also a variant of combineLatest that takes an Array (or any other colle
           .disposed(by: disposeBag)
   }
 ```
+
+> NOTE: Because the combineLatest variant that takes a collection passes an array of values to the selector function, it requires that all source Observable sequences are of the same type.
+
 **Q:** What is the output of the `print()` function? Why?
 
 <!-- SOLUTION:
@@ -91,7 +93,7 @@ This produces:
 
 <!-- TODO: end: You can create your own - show link  -->
 
-> NOTE: Because the combineLatest variant that takes a collection passes an array of values to the selector function, it requires that all source Observable sequences are of the same type.
+
 
 
 <!-- takeUntil
