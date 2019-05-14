@@ -371,7 +371,7 @@ https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
+- Continue working on your Course Project
 - Complete reading
 - Complete challenges
 
