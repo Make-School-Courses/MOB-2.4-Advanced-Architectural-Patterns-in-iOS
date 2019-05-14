@@ -225,10 +225,12 @@ viewModel
 Writing table and collection view data sources is tedious. There is a large number of delegate methods that need to be implemented for the simplest case possible.  -->
 
 
-### RxSwift and UI Components (Table Views)
+### RxSwift and MVVM
 
 
-
+<!-- TODO:
+- intro
+- examples -->
 
 ## In Class Activity II (30 min)
 
