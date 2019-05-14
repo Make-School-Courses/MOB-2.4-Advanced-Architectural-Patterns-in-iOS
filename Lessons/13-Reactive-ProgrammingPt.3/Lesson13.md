@@ -34,7 +34,7 @@ By the end of this lesson, you should be able to...
 
 ## Initial Exercise (20 min)
 
-### Operators
+### Operators expanded
 
 The RxSwift library currently offers most (but not all) of the standard Rx operators, which are typically grouped into types describing general functional behavior.
 
@@ -44,11 +44,9 @@ Below is a partial list of RxSwift operators by type, followed by only a few of 
 <!-- TODO: add short descriptions of each example below each type -->
 
 
-**Transforming Operators** &mdash; Operators that transform `Nex`t event elements emitted by an Observable sequence.
+**Transforming Operators** &mdash; Operators that transform `Next` event elements emitted by an Observable sequence.
 
-- map
-- flatMap and flatMapLatest
-- scan
+- map, scan, flatMap and flatMapLatest
 
 **Combination Operators** &mdash; Operators that combine multiple source Observables into a single Observable.
 
@@ -73,9 +71,12 @@ Below is a partial list of RxSwift operators by type, followed by only a few of 
 
 **Connectable Operators** &mdash; Connectable Observable sequences resembles ordinary Observable sequences, except that they do not begin emitting elements when subscribed to, but instead, only when their connect() method is called. In this way, you can wait for all intended subscribers to subscribe to a connectable Observable sequence __*before*__ it begins emitting elements.
 
-- publish
-- replay
-- multicast
+- publish, replay, multicast
+
+**Error Handling Operators** &mdash; Operators that help to recover from error notifications from an Observable.
+
+- catchError, catchErrorJustReturn, retry
+
 
 > For more RxSwift operators and examples of each, see the Rx.playground in the RxSwift library, as a starting point for your exploration into RxSwift operators.
 
