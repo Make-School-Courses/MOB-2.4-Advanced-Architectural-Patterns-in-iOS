@@ -2,7 +2,7 @@
 
 <!-- INSTRUCTOR NOTES:
 1) For Activity 1:
-- xxx
+- solutions are inline below each example/exercise
 3) for Activity 2:
 - xxxx
 -->
@@ -79,12 +79,16 @@ Below is a partial list of RxSwift operators by type, followed by only a few of 
 
 > For more RxSwift operators and examples of each, see the Rx.playground in the RxSwift library, as a starting point for your exploration into RxSwift operators.
 
+...and, by the way, you can also __*create your own operators!*__
+
 
 <!-- TODO: pick a couple and show examples...esp. those that the class was confused by -->
 <!-- TODO: retry()? -->
 
 
 ## In Class Activity I (30 min)
+
+### As A Class - Discuss the questions posed below each example
 
 __*Example 1:*__ A Combination Operator &mdash; `combineLatest`
 
@@ -120,6 +124,66 @@ This produces:
 ❤️ 🍊 🐹 -->
 
 
+__*Example 2:*__ A Transforming Operator &mdash; `scan`
+
+Begins with an initial `seed value`, and then applies an `accumulator closure` to each element emitted by an Observable sequence, and returns each intermediate result as a single-element Observable sequence.
+
+```swift
+  example("scan") {
+      let disposeBag = DisposeBag()
+
+      Observable.of(10, 100, 1000)
+          .scan(1) { aggregateValue, newValue in
+              aggregateValue + newValue
+          }
+          .subscribe(onNext: { print($0) })
+          .disposed(by: disposeBag)
+  }
+
+  /* OUTPUT:
+  11
+  111
+  1111
+  */
+```
+
+**Q:** In this example, the `observable` calls `scan()` on itself. What is the `seed value`? What will the output be?
+
+```Swift
+  let observable = Observable<String>.create { (observer) -> Disposable in
+      observer.onNext("D")
+      observer.onNext("U")
+      observer.onNext("M")
+      observer.onNext("M")
+      observer.onNext("Y")
+      return NopDisposable.instance
+  }
+
+  observable.scan("") { (lastValue, currentValue) -> String in
+  	// The new value emitted is the LAST value emitted + current value:
+      return lastValue + currentValue
+      }.subscribeNext { (element) in
+          print(element)
+      }.disposed(disposeBag)
+      }
+  }
+```
+
+<!-- SOLUTION: This will print:
+D
+DU
+DUM
+DUMM
+DUMMY -->
+
+
+**Q:** What is this code doing? What advantage might provide?
+
+```Swift
+  myButton.rx_tap.scan(false) { lastState, newValue in
+      return !lastState
+  }
+```
 
 
 <!-- TODO: end: You can create your own - show link  -->
@@ -295,3 +359,5 @@ https://github.com/RxSwiftCommunity/RxDataSources
 
 https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Traits.md#driver
 <sup>x</sup>
+
+http://adamborek.com/practical-introduction-rxswift/
