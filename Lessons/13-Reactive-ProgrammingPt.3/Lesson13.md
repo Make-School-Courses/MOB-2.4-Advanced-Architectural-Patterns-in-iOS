@@ -234,7 +234,7 @@ Two critical ways that Rx helps you handle data changes to the UI properly are b
 
 #### Bindings
 
-**Binding** &mdash; A means of keeping `model` and `view` values *synchronized* without you having to write a lot of “glue code.” It allows you to establish a mediated connection between a view and a piece of data, “binding” them such that a change in one is reflected in the other. <sup>x</sup>
+**Binding** &mdash; A means of keeping `model` and `view` values *synchronized* without you having to write a lot of “glue code.” It allows you to establish a mediated connection between a view and a piece of data, “binding” them such that a change in one is reflected in the other. <sup>1</sup>
 
 Binding is one of key ways that Rx enables building apps in a *declarative* way. It creates a connected relationship between two entities.
 
@@ -362,7 +362,7 @@ https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 - The `throttle()` operator, compared with the`debounce` operator
 - What is an `Action` in Rx
 - Converting Data Sources to Rx
-- `Driver` (RxCocoa) <sup>x</sup>
+- `Driver` (RxCocoa) <sup>2</sup>
 
 ## Wrap Up (5 min)
 
@@ -372,13 +372,11 @@ https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 
 ## Additional Resources
 
-1. [Slides]()
-2. [What Are Bindings - from Apple docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html)  <sup>x</sup>
-
-https://github.com/RxSwiftCommunity/RxDataSources
-
-https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Traits.md#driver
-<sup>x</sup>
+1. [Slides](https://docs.google.com/presentation/d/1DbNZp_lyenlqqRh05TB2QaJHStCz4Q9xDX21sjE3JFQ/edit#slide=id.p)
+2. [What Are Bindings - from Apple docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html)  <sup>1</sup>
+3. [RxDataSources - from RxSwiftCommunity](https://github.com/RxSwiftCommunity/RxDataSources)
+4. [Driver - from RxSwift documentation](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Traits.md#driver)
+<sup>2</sup>
 
 http://adamborek.com/practical-introduction-rxswift/
 
