@@ -121,7 +121,7 @@ Why is this important in iOS?
 
 And Rx lets you create amazing UI behavior without managing the state complexity of variable interactions, and with fewer lines of code.
 
-Two critical ways that Rx let you handle data changes to the UI properly are by using:
+Two critical ways that Rx helps you handle data changes to the UI properly are by using:
 - **Bindings**
 - **Reactive Data Sources**
 
@@ -152,7 +152,7 @@ The primary method for binding an observable to another entity is the `bind(to:)
 __*Example 1*__
 
 > When you bind an observable subscription to the `text` property, the property returns a new observer which executes its block parameter when each
-> value is emitted. In other words: any time it receives a new value, it runs the code `label.text = text`
+> value is emitted. In other words: any time the `text` property receives a new value, it runs the code `label.text = text`
 
 ```swift
 Observable.combineLatest(firstName.rx.text, lastName.rx.text) { $0 + " " + $1 }
@@ -187,8 +187,27 @@ Writing table and collection view data sources is tedious. There is a large numb
 
 ## In Class Activity I (30 min)
 
-- I do, We do, You do
--
+__*Required resources:*__
+- Xcode with RxSwift enabled
+- the starter app, `MVVMRx_SampleProject-master`
+
+__*Exercise 1:*__ Find and examine:
+
+- The `ObserverType protocol` (in RxSwift library)
+- Descriptions of `bindTo(_:)` functions (in RxCocoa)
+
+__*Exercise 2:*__ In the starter app, the code for the `albums` scene is complete. But the code for the `tracks` scene needs to be completed in 3 places.
+
+- Search for the 3 `TODO:`s specific to this lesson (there are more than 3 `TODO:`s in the app).
+- Using clues from how the `albums` scene was implemented, implement which is missing for each of the 3 `TODO:`s for the `albums` scene
+
+**Q:** For Part 3 of this exercise, what exactly is the nature of the "observable" bound to the code called for each cell/row?
+
+**Q:** In HomeViewModel, note the construction of the 4 PublishSubjects. What benefit(s) does the `error` PublishSubject provide?
+
+
+*MVVMRx_SampleProject-master app from:* </br>
+https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 
 ## Overview/TT II (optional) (20 min)
 
