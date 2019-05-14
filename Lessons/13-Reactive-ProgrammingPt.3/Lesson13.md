@@ -4,7 +4,7 @@
 1) For Activity 1:
 - solutions are inline below each example/exercise
 3) for Activity 2:
-- xxxx
+- Solution app is not included here...download it from source...(starter app was zipped and sent via slack)
 -->
 
 ## Minute-by-Minute
@@ -13,12 +13,12 @@
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
 | 0:05        | 0:20      | Initial Exercise          |
-| 0:25        | 0:20      | Overview                  |
-| 0:45        | 0:30      | In Class Activity I       |
-| 1:00        | 0:10      | BREAK                     |
-| 1:10        | 0:20      | Overview                  |
-| 1:30        | 0:25      | In Class Activity II      |
-| TOTAL       | 1:55      |                           |
+| 0:20        | 0:15      | Overview                  |
+| 0:35        | 0:20      | In Class Activity I       |
+| 0:55        | 0:10      | BREAK                     |
+| 1:05        | 0:20      | Overview                  |
+| 1:25        | 0:25      | In Class Activity II      |
+| TOTAL       | 1:50      |                           |
 
 
 ## Learning Objectives (5 min)
@@ -377,9 +377,7 @@ https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 3. [RxDataSources - from RxSwiftCommunity](https://github.com/RxSwiftCommunity/RxDataSources)
 4. [Driver - from RxSwift documentation](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Traits.md#driver)
 <sup>2</sup>
-
-http://adamborek.com/practical-introduction-rxswift/
-
-https://medium.com/textileio/build-your-first-set-app-using-mvvm-and-rxswift-5a37d027950f
+5. [A Practical Intro to RxSwift - an article](http://adamborek.com/practical-introduction-rxswift/)
+6. [Build an App with RxSwift and MVVM - an article](https://medium.com/textileio/build-your-first-set-app-using-mvvm-and-rxswift-5a37d027950f)
 
 <!-- ...TODO: and add Links to more MVVM at end   -->
