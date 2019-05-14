@@ -349,7 +349,6 @@ __*Exercise 2:*__ In the starter app, the code for the `albums` scene is complet
 **Q:** How does this app implement MVVM?
 
 
-
 </br>
 
 *Source for starter app:* </br>
