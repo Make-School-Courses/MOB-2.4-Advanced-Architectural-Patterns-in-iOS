@@ -46,28 +46,19 @@ Below is a partial list of RxSwift operators by type, followed by only a few of 
 
 **Transforming Operators** &mdash; Operators that transform `Next` event elements emitted by an Observable sequence.
 
-- map, scan, flatMap and flatMapLatest
+- map, scan, flatMap, flatMapLatest
 
 **Combination Operators** &mdash; Operators that combine multiple source Observables into a single Observable.
 
-- startWith
-- merge
-- zip
-- switchLatest
+- startWith, merge, zip, switchLatest
 
 **Filtering and Conditional Operators** &mdash; Operators that selectively emit elements from a source Observable sequence.
 
-- filter
-- distinctUntilChanged
-- takes
-- takeUntil
-- skip
+- filter, distinctUntilChanged, take, takeUntil, skip
 
 **Mathematical and Aggregate Operators** &mdash; Operators that operate on the entire sequence of items emitted by an Observable.
 
-- toArray
-- reduce
-- concat
+- toArray, reduce, concat
 
 **Connectable Operators** &mdash; Connectable Observable sequences resembles ordinary Observable sequences, except that they do not begin emitting elements when subscribed to, but instead, only when their connect() method is called. In this way, you can wait for all intended subscribers to subscribe to a connectable Observable sequence __*before*__ it begins emitting elements.
 
@@ -85,7 +76,7 @@ Below is a partial list of RxSwift operators by type, followed by only a few of 
 <!-- TODO: retry()? -->
 
 
-__*Example 1:*__ `combineLatest` &mdash; A Combination Operator
+__*Example 1:*__ A Combination Operator &mdash; `combineLatest`
 
 Combines up to 8 source Observable sequences into a single new Observable sequence and will begin emitting from the combined Observable sequence the latest elements of each source Observable sequence &mdash; once all source sequences have emitted at least one element &mdash; and also when any of the source Observable sequences emits a new element.
 
