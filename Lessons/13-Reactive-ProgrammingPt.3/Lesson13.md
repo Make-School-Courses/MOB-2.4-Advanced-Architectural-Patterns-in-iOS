@@ -81,6 +81,10 @@ Below is a partial list of RxSwift operators by type, followed by only a few of 
 
 ...and, by the way, you can also __*create your own operators!*__
 
+https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md#custom-operators
+
+<!-- TODO: end: You can create your own - show link  -->
+
 
 <!-- TODO: pick a couple and show examples...esp. those that the class was confused by -->
 <!-- TODO: retry()? -->
@@ -189,7 +193,6 @@ DUMMY -->
 - Rx.playground in RxSwift library
 - http://swiftpearls.com/RxSwift-for-dummies-2-Operators.html
 
-<!-- TODO: end: You can create your own - show link  -->
 
 
 
@@ -294,6 +297,25 @@ Writing table and collection view data sources is tedious. There is a large numb
 
 ### RxSwift and MVVM
 
+When applied appropriately, the MVVM pattern can result in an app with fewer defects that is more easily tested and maintained.
+
+Two of MVVM's primary benefits are:
+- Data immutability  &mdash; Guarantees total control over updates triggered by the UI. Guards against issued caused by application *state.*
+- Testability is greatly improved &mdash; With ViewModels, much of an app can be easily tested in a "headless" manner (without any views).
+
+In MVVM, the `ViewModel` is responsible for interacting with `Model` data, applying business logic, and preparing (formatting) data for user (View) presentation. The `ViewModel` may also execute database or network interactions.
+
+The new role of the `View Controller` is to simply *bind* the data exposed by the `ViewModel` to the `View`. The `View Controller` also handles user interactions like button taps and gestures, notifying the `ViewModel` of those events.
+
+Ways to implement __*data binding*__ on the `ViewModel` include:
+- Delegation
+- Key-Value Observing
+- Reactive Programming
+
+MVVM works especially well with RxSwift/RxCocoa because these Rx frameworks have built-in functionality that let's you bind Observables to UI components.
+
+
+
 
 <!-- TODO:
 - intro
@@ -364,3 +386,5 @@ https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Traits.md#driver
 <sup>x</sup>
 
 http://adamborek.com/practical-introduction-rxswift/
+
+https://medium.com/textileio/build-your-first-set-app-using-mvvm-and-rxswift-5a37d027950f
