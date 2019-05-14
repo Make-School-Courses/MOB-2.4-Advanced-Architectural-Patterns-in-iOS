@@ -227,6 +227,9 @@ viewModel
     .disposed(by: disposeBag)
 ```
 
+
+<!-- Question re: Data Source - is this an example of doing that with Rx? -->
+
 *Source:* </br>
 `Why.md` in Documentation section of RxSwift library.*
 
@@ -236,6 +239,10 @@ viewModel
 
 Writing table and collection view data sources is tedious. There is a large number of delegate methods that need to be implemented for the simplest case possible.  -->
 
+<!--
+Part 2 - how is this using MVVM
+
+...and add Links to more MVVM at end  -->
 
 ## In Class Activity I (30 min)
 
