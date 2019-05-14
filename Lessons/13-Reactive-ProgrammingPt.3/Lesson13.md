@@ -347,13 +347,11 @@ __*Exercise 2:*__ In the starter app, the code for the `albums` scene is complet
 
 **Q:** How does this app implement MVVM?
 
-<!--
-Part 2 - how is this using MVVM
-
-...TODO: and add Links to more MVVM at end  -->
 
 
-*MVVMRx_SampleProject-master app from:* </br>
+</br>
+
+*The starter app - MVVMRx_SampleProject-master app - was modified from this project:* </br>
 https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 
 
@@ -388,3 +386,5 @@ https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Traits.md#driver
 http://adamborek.com/practical-introduction-rxswift/
 
 https://medium.com/textileio/build-your-first-set-app-using-mvvm-and-rxswift-5a37d027950f
+
+<!-- ...TODO: and add Links to more MVVM at end   -->
