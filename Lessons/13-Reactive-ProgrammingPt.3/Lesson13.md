@@ -16,7 +16,7 @@
 | 0:00        | 0:05      | Objectives                |
 | 0:05        | 0:20      | Initial Exercise          |
 | 0:25        | 0:20      | Overview                  |
-| 0:45        | 0:15      | In Class Activity I       |
+| 0:45        | 0:30      | In Class Activity I       |
 | 1:00        | 0:10      | BREAK                     |
 | 1:10        | 0:20      | Overview                  |
 | 1:30        | 0:25      | In Class Activity II      |
@@ -36,81 +36,59 @@ By the end of this lesson, you should be able to...
 - the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
 4. Implement basic examples of MVVM explored in this class
 
-## Initial Exercise (15 min)
-
-
-
-<!--
-
-#### Hot & Cold** Observables
-<!-- Hot and cold observables  -->
-
-
-<!-- TODO: insert the standard comparison chart -->
-
+## Initial Exercise (20 min)
 
 ### Operators
 
-<!-- TODO: list the 4 types -->
+The RxSwift library currently offers most (but not all) of the standard Rx operators, which are typically grouped into types describing general functional behavior.
 
-several types of operators, with a few examples:
-
-#### Transforming Operators
-
-Operators that transform Next event elements emitted by an Observable sequence.
+Below is a partial list of RxSwift operators by type, followed by only a few of the operators which exemplify each type.
 
 
-map, flatMap and flatMapLatest
-distinctuntilchanged
+<!-- TODO: add short descriptions of each example below each type -->
 
 
-#### Combination Operators
+**Transforming Operators** &mdash; Operators that transform `Nex`t event elements emitted by an Observable sequence.
 
-Operators that combine multiple source Observables into a single Observable.
+- map
+- flatMap and flatMapLatest
+- scan
 
+**Combination Operators** &mdash; Operators that combine multiple source Observables into a single Observable.
 
-startWith
-merge
-zip
-combineLatest
-switchLatest
+- startWith
+- merge
+- zip
+- switchLatest
 
-#### Filtering and Conditional Operators
+**Filtering and Conditional Operators** &mdash; Operators that selectively emit elements from a source Observable sequence.
 
-Operators that selectively emit elements from a source Observable sequence.
+- filter
+- distinctUntilChanged
+- takes
+- takeUntil
+- skip
 
-filter
+**Mathematical and Aggregate Operators** &mdash; Operators that operate on the entire sequence of items emitted by an Observable.
 
-distinctUntilChanged
-take
-takeUntil
-skip
+- toArray
+- reduce
+- concat
 
-#### Mathematical and Aggregate Operators
+**Connectable Operators** &mdash; Connectable Observable sequences resembles ordinary Observable sequences, except that they do not begin emitting elements when subscribed to, but instead, only when their connect() method is called. In this way, you can wait for all intended subscribers to subscribe to a connectable Observable sequence __*before*__ it begins emitting elements.
 
-Operators that operate on the entire sequence of items emitted by an Observable.
+- publish
+- replay
+- multicast
 
-toArray
-
-reduce
-concat
-
-
-#### Connectable Operators
-
-Connectable Observable sequences resembles ordinary Observable sequences, except that they not begin emitting elements when subscribed to, but instead, only when their connect() method is called. In this way, you can wait for all intended subscribers to subscribe to a connectable Observable sequence before it begins emitting elements.
-
-publish
-replay
-multicast
-> As a starting point, see the examples for each Operator type in the Rx.playground that comes with RxSwift.
+> For more RxSwift operators and examples of each, see the Rx.playground in the RxSwift library, as a starting point for your exploration into RxSwift operators.
 
 
 <!-- TODO: pick a couple and show examples...esp. those that the class was confused by -->
 <!-- TODO: retry()? -->
 
 
-1. `combineLatest`
+__*Example 1:*__ `combineLatest` &mdash; A Combination Operator
 
 Combines up to 8 source Observable sequences into a single new Observable sequence and will begin emitting from the combined Observable sequence the latest elements of each source Observable sequence &mdash; once all source sequences have emitted at least one element &mdash; and also when any of the source Observable sequences emits a new element.
 
@@ -144,16 +122,24 @@ This produces:
 ❤️ 🍊 🐹 -->
 
 
+
+
 <!-- TODO: end: You can create your own - show link  -->
 
 
 
 
-<!-- takeUntil
+<!-- TODO: Add these operators to exercise?
+
+takeUntil
+
+scan
+  - has example in RxSwift
+    - needs better example?
+
 distinctuntilchanged
-race
-combineLatest
-buffertoggle -->
+
+ -->
 
 
 
