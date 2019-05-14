@@ -274,7 +274,7 @@ __*Example 2*__
 ```swift
 viewModel
     .rows
-    .bind(to: resultsTableView.rx.items(cellIdentifier: "WikipediaSearchCell", 
+    .bind(to: resultsTableView.rx.items(cellIdentifier: "WikipediaSearchCell",
     cellType: WikipediaSearchCell.self)) { (_, viewModel, cell) in
         cell.title = viewModel.title
         cell.url = viewModel.url
