@@ -185,6 +185,9 @@ DUMMY -->
   }
 ```
 
+*Sources:* </br>
+- Rx.playground in RxSwift library
+- http://swiftpearls.com/RxSwift-for-dummies-2-Operators.html
 
 <!-- TODO: end: You can create your own - show link  -->
 
