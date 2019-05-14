@@ -316,11 +316,8 @@ Ways to implement __*data binding*__ on the `ViewModel` include:
 MVVM works especially well with RxSwift/RxCocoa because these Rx frameworks have built-in functionality that let's you bind Observables to UI components.
 
 
-
-
 <!-- TODO:
-- intro
-- examples -->
+- add an example -->
 
 ## In Class Activity II (30 min)
 
@@ -362,7 +359,7 @@ https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 - `ControlPropertyType`
 - `Binder`
 - The `retry()` operator
-- The `throttle()` operator
+- The `throttle()` operator, compared with the`debounce` operator
 - What is an `Action` in Rx
 - Converting Data Sources to Rx
 - `Driver` (RxCocoa) <sup>x</sup>
