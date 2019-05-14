@@ -317,7 +317,9 @@ MVVM works especially well with RxSwift/RxCocoa because these Rx frameworks have
 
 
 <!-- TODO:
-- add an example -->
+- add an example. this seems ok, but Swift code needs updates:
+https://stackoverflow.com/questions/46201795/rxswift-rxcocoa-and-uitableview
+-->
 
 ## In Class Activity II (30 min)
 
