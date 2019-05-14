@@ -146,7 +146,7 @@ debounce?
 
 ## Overview/TT II (20 min)
 
-### Rx and UI / Table Views
+### RxSwift and UI Components (Table Views)
 
 In Wikipedia's definition of [Reactive programming](https://en.wikipedia.org/wiki/Reactive_programming), these 2 overall benefits standout:
 - Rx has been proposed as a way to simplify the creation of interactive user interfaces and near-real-time system animation.
@@ -215,7 +215,7 @@ viewModel
 <!-- Question re: Data Source - is this an example of doing that with Rx? -->
 
 *Source:* </br>
-`Why.md` in Documentation section of RxSwift library.*
+`Why.md` in Documentation section of RxSwift library.
 
 
 
@@ -223,16 +223,19 @@ viewModel
 
 Writing table and collection view data sources is tedious. There is a large number of delegate methods that need to be implemented for the simplest case possible.  -->
 
-<!--
-Part 2 - how is this using MVVM
 
-...and add Links to more MVVM at end  -->
+### RxSwift and UI Components (Table Views)
+
+
+
 
 ## In Class Activity II (30 min)
 
 __*Required resources:*__
 - Xcode with RxSwift enabled
 - the starter app, `MVVMRx_SampleProject-master`
+
+### Part 1 - Individually
 
 __*Exercise 1:*__ Find and examine:
 
@@ -247,6 +250,15 @@ __*Exercise 2:*__ In the starter app, the code for the `albums` scene is complet
 **Q:** For Part 3 of this exercise, what exactly is the nature of the "observable" bound to the code called for each cell/row?
 
 **Q:** In HomeViewModel, note the construction of the 4 PublishSubjects. What benefit(s) does the `error` PublishSubject provide?
+
+### Part 2 - As A Class
+
+**Q:** How does this app implement MVVM?
+
+<!--
+Part 2 - how is this using MVVM
+
+...TODO: and add Links to more MVVM at end  -->
 
 
 *MVVMRx_SampleProject-master app from:* </br>
