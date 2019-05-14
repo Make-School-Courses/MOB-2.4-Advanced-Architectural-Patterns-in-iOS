@@ -53,6 +53,59 @@ By the end of this lesson, you should be able to...
 
 <!-- TODO: list the 4 types -->
 
+several types of operators, with a few examples:
+
+#### Transforming Operators
+
+Operators that transform Next event elements emitted by an Observable sequence.
+
+
+map, flatMap and flatMapLatest
+distinctuntilchanged
+
+
+#### Combination Operators
+
+Operators that combine multiple source Observables into a single Observable.
+
+
+startWith
+merge
+zip
+combineLatest
+switchLatest
+
+#### Filtering and Conditional Operators
+
+Operators that selectively emit elements from a source Observable sequence.
+
+filter
+
+distinctUntilChanged
+take
+takeUntil
+skip
+
+#### Mathematical and Aggregate Operators
+
+Operators that operate on the entire sequence of items emitted by an Observable.
+
+toArray
+
+reduce
+concat
+
+
+#### Connectable Operators
+
+Connectable Observable sequences resembles ordinary Observable sequences, except that they not begin emitting elements when subscribed to, but instead, only when their connect() method is called. In this way, you can wait for all intended subscribers to subscribe to a connectable Observable sequence before it begins emitting elements.
+
+publish
+replay
+multicast
+> As a starting point, see the examples for each Operator type in the Rx.playground that comes with RxSwift.
+
+
 <!-- TODO: pick a couple and show examples...esp. those that the class was confused by -->
 <!-- TODO: retry()? -->
 
@@ -175,8 +228,7 @@ viewModel
 ```
 
 *Source:* </br>
-* `Why.md` in Documentation section of RxSwift library.*
-
+`Why.md` in Documentation section of RxSwift library.*
 
 
 
@@ -221,8 +273,8 @@ https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 
 ## Additional Resources
 
-1. Links to additional readings and videos
-
+1. [Slides]()
+2.
 https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html  <sup>x</sup>
 
 https://github.com/RxSwiftCommunity/RxDataSources
