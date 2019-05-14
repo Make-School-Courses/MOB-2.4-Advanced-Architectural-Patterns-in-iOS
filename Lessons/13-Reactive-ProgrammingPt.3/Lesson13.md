@@ -24,15 +24,23 @@
 ## Learning Objectives (5 min)
 
 By the end of this lesson, you should be able to...
-<!--
-1. Describe and implement basic examples of:
-- Optional ways for creating **Observables**  
-- **Hot & Cold Observables**
-- **Subjects** - A special type of Observable
-- **Schedulers**
-- Key Rx **Operators** selected from the roster of operator types available in RxSwift/RxCocoa -->
+
+1. Describe:
+- RxSwift **Operator Types,** along with examples of each type
+- The benefits derived from combining **RxSwift** with the **MVVM** design pattern
+2. Implement basic examples of:
+- **UI components** (Table Views) constructed using **RxSwift** (Operators, Subjects) and **MVVM** (viewModels)
 
 ## Initial Exercise (20 min)
+
+### As A Class
+
+Let's use this time to (optionally):
+1. review or clarify recent lessons
+2. review progress on your Course Project
+3. prepare for the upcoming Final Exam
+
+## Overview/TT I (20 min)
 
 ### Operators expanded
 
@@ -76,6 +84,8 @@ Below is a partial list of RxSwift operators by type, followed by only a few of 
 <!-- TODO: retry()? -->
 
 
+## In Class Activity I (30 min)
+
 __*Example 1:*__ A Combination Operator &mdash; `combineLatest`
 
 Combines up to 8 source Observable sequences into a single new Observable sequence and will begin emitting from the combined Observable sequence the latest elements of each source Observable sequence &mdash; once all source sequences have emitted at least one element &mdash; and also when any of the source Observable sequences emits a new element.
@@ -100,7 +110,7 @@ There is also a variant of combineLatest that takes an Array (or any other colle
 
 > NOTE: Because the combineLatest variant that takes a collection passes an array of values to the selector function, it requires that all source Observable sequences are of the same type.
 
-**Q:** What is the output of the `print()` function? Why?
+**Q:** What will be the output of the `print()` function? Why?
 
 <!-- SOLUTION:
 This produces:
@@ -134,7 +144,7 @@ debounce?
 <!-- TODO: get exercises for Operators  -->
 
 
-## Overview/TT I (20 min)
+## Overview/TT II (20 min)
 
 ### Rx and UI / Table Views
 
@@ -218,7 +228,7 @@ Part 2 - how is this using MVVM
 
 ...and add Links to more MVVM at end  -->
 
-## In Class Activity I (30 min)
+## In Class Activity II (30 min)
 
 __*Required resources:*__
 - Xcode with RxSwift enabled
@@ -242,9 +252,6 @@ __*Exercise 2:*__ In the starter app, the code for the `albums` scene is complet
 *MVVMRx_SampleProject-master app from:* </br>
 https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 
-## Overview/TT II (20 min)
-
-## In Class Activity II (30 min)
 
 ## After Class
 
@@ -256,6 +263,7 @@ https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 - The `throttle()` operator
 - What is an `Action` in Rx
 - Converting Data Sources to Rx
+- `Driver` (RxCocoa) <sup>x</sup>
 
 ## Wrap Up (5 min)
 
@@ -269,3 +277,6 @@ https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 2. [What Are Bindings - from Apple docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html)  <sup>x</sup>
 
 https://github.com/RxSwiftCommunity/RxDataSources
+
+https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Traits.md#driver
+<sup>x</sup>
