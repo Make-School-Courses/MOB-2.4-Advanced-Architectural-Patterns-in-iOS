@@ -1,9 +1,7 @@
 # Reactive Programming (Part 3 of 3)
 
 <!-- INSTRUCTOR NOTES:
-1) For the QuizLet Game in the Initial Exercise:
-- the URL is xxxx
-2) For Activity 1:
+1) For Activity 1:
 - xxx
 3) for Activity 2:
 - xxxx
@@ -26,15 +24,13 @@
 ## Learning Objectives (5 min)
 
 By the end of this lesson, you should be able to...
-
-1. Describe:
-- the **xxxx** design pattern
-- the software construction problem(s) it is intended to solve
-- potential use cases for it (when to use it; when not to use it)
-3. Assess:
-- the suitability of a given design pattern to solve a given problem
-- the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
-4. Implement basic examples of MVVM explored in this class
+<!--
+1. Describe and implement basic examples of:
+- Optional ways for creating **Observables**  
+- **Hot & Cold Observables**
+- **Subjects** - A special type of Observable
+- **Schedulers**
+- Key Rx **Operators** selected from the roster of operator types available in RxSwift/RxCocoa -->
 
 ## Initial Exercise (20 min)
 
@@ -137,7 +133,7 @@ scan
   - has example in RxSwift
     - needs better example?
 
-distinctuntilchanged
+debounce?
 
  -->
 
@@ -254,9 +250,20 @@ __*Exercise 2:*__ In the starter app, the code for the `albums` scene is complet
 *MVVMRx_SampleProject-master app from:* </br>
 https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT II (20 min)
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (30 min)
+
+## After Class
+
+1. Research:
+
+- `ControlPropertyType`
+- `Binder`
+- The `retry()` operator
+- The `throttle()` operator
+- What is an `Action` in Rx
+- Converting Data Sources to Rx
 
 ## Wrap Up (5 min)
 
@@ -267,7 +274,6 @@ https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
 ## Additional Resources
 
 1. [Slides]()
-2.
-https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html  <sup>x</sup>
+2. [What Are Bindings - from Apple docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html)  <sup>x</sup>
 
 https://github.com/RxSwiftCommunity/RxDataSources
