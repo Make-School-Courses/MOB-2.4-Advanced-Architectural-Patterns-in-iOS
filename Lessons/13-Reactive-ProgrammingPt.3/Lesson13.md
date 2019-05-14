@@ -354,7 +354,6 @@ __*Exercise 2:*__ In the starter app, the code for the `albums` scene is complet
 
 *Source for starter app:* </br>
 https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693
-
 </br>
 
 ## After Class
