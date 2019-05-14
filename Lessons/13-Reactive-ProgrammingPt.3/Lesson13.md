@@ -122,6 +122,9 @@ There is also a variant of combineLatest that takes an Array (or any other colle
 
 <!-- SOLUTION:
 This produces:
+--- Array.combineLatest example ---
+❤️ 🍎 🐶
+❤️ 🍐 🐶
 ❤️ 🍐 🐱
 ❤️ 🍊 🐱
 ❤️ 🍊 🐭
