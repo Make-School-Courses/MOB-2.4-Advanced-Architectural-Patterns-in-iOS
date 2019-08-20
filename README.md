@@ -27,7 +27,7 @@ Students by the end of the course will be able to ...
 |:-----:|:----------------------:|:---------------------------------------:|
 |  1 |  Mon, Aug 26                         | [Creational Patterns Pt.1] |
 |  2 |  Wed, Aug 28	                      | [Creational Patterns Pt.2]  |
-|  - |  Mon, Sept 2	                      | NO CLASS - Labor day]  |
+|  - |  Mon, Sept 2	                      | NO CLASS - Labor day  |
 |  3 |  Wed, Sept 4                        | [Behavioral Patterns Pt.1]  |
 |  4 |  Mon, Sept 9                    | [Behavioral Patterns Pt.2] |
 |  5 |  Wed, Sept 11                        | [Structural Patterns Pt.1]|
