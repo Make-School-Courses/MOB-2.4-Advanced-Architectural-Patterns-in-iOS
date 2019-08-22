@@ -1,0 +1,62 @@
+# Proposal Example
+
+### Tunely - discover new favorite music
+
+App that let's users explore music and save songs they like. Later they can add these songs to any of their playlists in their Spotify profile.
+
+## User Stories
+
+- User can login using their Spotify account
+- User can discard a song to get the next one
+- User can save a song they like
+- User can see list of saved songs
+- User can add any song to a playlist in their Spotify profile
+- User can see their profile in the app
+  - Stats
+  - Settings
+  - Contact
+
+## Design
+
+![example](assets/proposal.png)
+
+## Stretch challenges
+
+- Do a swipe left/right to dismiss or save song.
+- Play a preview of songs in the saved list.
+- Create a new playlist before adding a song.
+- Share songs
+
+## Calendar
+
+Mon, Aug 26  
+- Project assigned
+
+Wed, Aug 28
+- Proposal delivered
+
+Tue, Sep 3
+- Proposal approved  
+
+Wed, Sep 4
+- Github repo link added to tracker
+
+Wed, Sep 11
+- Shell of the app done
+- User can login with Spotify
+
+Wed, Sep 23
+- User can discard a song to get the next one
+- User can save a song they like
+- User can see list of saved songs
+- User can add any song to a playlist in their Spotify profile
+
+Wed, Oct 2
+- User can see their profile in the app
+- Refactor
+
+Tue, Oct 8
+- Turn in final projects
+
+Wed, Oct 9   
+- Project presentation
