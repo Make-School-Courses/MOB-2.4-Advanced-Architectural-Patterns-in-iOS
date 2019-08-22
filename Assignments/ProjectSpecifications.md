@@ -36,6 +36,18 @@ __*Suggestions*__
 - Keep good track of the project's progress in Github.
 - Ensure you and your partner have good communication.
 
+### Delivery dates
+|          Date          |                 Milestone                 |
+|:----------------------:|:---------------------------------------:  |
+|  Mon, Aug 26           | Project assigned                          |
+|  Wed, Aug 28           | Proposal delivered (then wait for approval)|
+|  Tue, Sep 3            | All proposals approved                     |
+|  Wed, Sep 4            | Github repo link added to tracker          |
+|  Wed, Sep 11           | First progress check in                    |
+|  Wed, Sep 23           | Second progress check in                   |
+|  Wed, Oct 2            | Third progress check in                    |
+|  Tue, Oct 8            | Turn in final project                      |
+|  Wed, Oct 9            | Project presentation                       |
 
 ### To Jog Your Creativity
 

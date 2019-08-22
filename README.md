@@ -25,21 +25,20 @@ Students by the end of the course will be able to ...
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  Mon, Aug 26                         | [Creational Patterns Pt.1] |
-|  2 |  Wed, Aug 28	                      | [Creational Patterns Pt.2]  |
+|  1 |  Mon, Aug 26                         | [Creational Patterns Pt.1] & [Creational Patterns Pt.2] |
+|  2 |  Wed, Aug 28	                      | [Behavioral Patterns Pt.1]  |
 |  - |  Mon, Sept 2	                      | NO CLASS - Labor day  |
-|  3 |  Wed, Sept 4                        | [Behavioral Patterns Pt.1]  |
-|  4 |  Mon, Sept 9                    | [Behavioral Patterns Pt.2] |
-|  5 |  Wed, Sept 11                        | [Structural Patterns Pt.1]|
-|  6 |  Mon, Sept 16                    | [Structural Patterns Pt.2] |
-|  7 |  Wed, Sept 18                        | [MVVM] |
-|  8 |  Mon, Sept 23                     | [Coordinators] |
-|  9 |  Wed, Sept 25                        | [Functional Programming Pt.1]
-| 10 |  Mon, Sept 30                        | [Functional Programming Pt.2] |
-| 11 |  Wed, Oct 2                           | [Reactive Programming Pt.1]  |  
-| 12 |  Mon, Oct 7                        | [Reactive Programming Pt.2] |
-| 13 |  Wed, Oct 9                        | [Reactive Programming Pt.3] |
-| 14 |  Thursday, May 16                       | Final Exams/Presentations |
+|  3 |  Wed, Sept 4                        | [Behavioral Patterns Pt.2]  |
+|  4 |  Mon, Sept 9                    | [Structural Patterns Pt.1] & [Structural Patterns Pt.2]|
+|  5 |  Wed, Sept 11                        |  [MVVM]|
+|  6 |  Mon, Sept 16                    | [Coordinators]|
+|  7 |  Wed, Sept 18                        | [Functional Programming Pt.1] |
+|  8 |  Mon, Sept 23                     | [Functional Programming Pt.2] |
+|  9 |  Wed, Sept 25                        | [Reactive Programming Pt.1]|
+| 10 |  Mon, Sept 30                        | [Reactive Programming Pt.2] |
+| 11 |  Wed, Oct 2                           |   [Reactive Programming Pt.3] |  
+| 12 |  Mon, Oct 7                        | Final Exam |
+| 13 |  Wed, Oct 9                        | Presentations & Exam Review|
 
 [Creational Patterns Pt.1]: Lessons/01-Creational-PatternsPt.1/Lesson1.md
 [Creational Patterns Pt.2]: Lessons/02-Creational-PatternsPt.2/Lesson2.md
@@ -69,7 +68,7 @@ To pass this course you must meet the following requirements:
 
 - Complete all required assignments
 - Pass all projects according to the associated project rubric
-- Pass the final summative assessment according to the rubric as specified in this class. 
+- Pass the final summative assessment according to the rubric as specified in this class.
  - This will be further explained in the [study guide](ADD_STUDY_GUIDE_LNK)
 - Actively participate in class and abide by the attendance policy
 - Make up all classwork from all absences
@@ -81,7 +80,7 @@ To pass this course you must meet the following requirements:
 - [Program Learning Outcomes](https://make.sc/program-learning-outcomes) - What you will achieve after finishing Make School, all courses are designed around these outcomes.
 - [Grading System](https://make.sc/grading-system) - How grading is done at Make School
 - [Diversity and Inclusion Statement](https://make.sc/diversity-and-inclusion-statement) - Learn about Diversity and Inclusion at Make School
-- [Academic Honesty](https://make.sc/academic-honesty-policy) - Our policies around plagerism, cheating, and other forms of academic misconduct 
+- [Academic Honesty](https://make.sc/academic-honesty-policy) - Our policies around plagerism, cheating, and other forms of academic misconduct
 - [Attendance Policy](https://make.sc/attendance-policy) - What we expect from you in terms of attendance for all classes at Make School
 - [Course Credit Policy](https://make.sc/course-credit-policy) - Our policy for how you obtain credit for your courses
 - [Disability Services (Academic Accommodations)](https://make.sc/disability-services) - Services and accommodations we provide for students
