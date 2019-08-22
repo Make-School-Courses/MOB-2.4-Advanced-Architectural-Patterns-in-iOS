@@ -7,6 +7,7 @@ App that let's users explore music and save songs they like. Later they can add 
 ## User Stories
 
 - User can login using their Spotify account
+- User can listen to a preview of the songs they get
 - User can discard a song to get the next one
 - User can save a song they like
 - User can see list of saved songs
