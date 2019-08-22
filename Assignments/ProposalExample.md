@@ -43,6 +43,7 @@ Wed, Sep 4
 
 Wed, Sep 11
 - Shell of the app done
+- Integrate [Spotify SDK for iOS](https://developer.spotify.com/documentation/ios/#requirements)
 - User can login with Spotify
 
 Wed, Sep 23
