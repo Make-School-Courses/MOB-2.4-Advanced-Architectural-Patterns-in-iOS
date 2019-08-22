@@ -22,7 +22,9 @@ You have the freedom to choose the category of your app :
 
 *A restriction: the app can't be a game*
 
-Before you start developing, you'll need to get your idea approved. Submit a proposal that follows the outline in [this example](ProposalExample.md)
+Before you start developing, you'll need to get your idea approved. Submit a proposal that follows the outline in [this example]
+
+[this example]: Assignments/ProposalExample.md
 
 You can start working on your app as soon as you get your proposal approved. Use what you've learned so far in your iOS journey to get you started with the first version of the app. As you learn how to apply patterns in class you'll have the chance to refactor your project to include the new content. This way you'll be able to clearly see how you can improve your codebase by comparing before and after code snapshots.
 
