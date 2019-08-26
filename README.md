@@ -59,6 +59,7 @@ Students by the end of the course will be able to ...
 ### Projects
 
 [Final project]
+
 [Final project]: Assignments/ProjectSpecifications.md
 
 ## Evaluation
