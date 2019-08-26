@@ -1,6 +1,6 @@
 # Final Project
 
-## Project's goals
+## Project goals
 
 - Create a portfolio piece that demonstrates to prospective employers your knowledge of iOS design patterns relevant to iOS development.
 - Reinforce the ability to collaborate in a team project.
@@ -20,15 +20,15 @@ You have the freedom to choose the category of your app :
 - Food
 - Health & Fitness
 
-*A restriction: the app can't be a game*
+**Restriction: the app can NOT be a game**
 
 Before you start developing, you'll need to get your idea approved. Submit a proposal that follows the outline in [this example]
 
 [this example]: Assignments/ProposalExample.md
 
-You can start working on your app as soon as you get your proposal approved. Use what you've learned so far in your iOS journey to get you started with the first version of the app. As you learn how to apply patterns in class you'll have the chance to refactor your project to include the new content. This way you'll be able to clearly see how you can improve your codebase by comparing before and after code snapshots.
+You can start working on your app as soon as you get your proposal approved. Use what you've learned so far in your iOS journey to get you started with the first version of the app. As you learn how to apply patterns in this class you'll have the chance to refactor your project to include new content. This way you'll be able to clearly see how you can improve your codebase by comparing before and after code snapshots.
 
-The purpose behind working with a partner is to simulate a real job situation. You'll get the chance to work within teams and less likely as the sole developer of a project. Here lies the importance of using a project management tool, so every team member can easily check the project's status and assigned tasks.
+The purpose behind working with a partner is to simulate a real industry situation. You'll get the chance to work within teams and less likely as the sole developer of a project. Here lies the importance of using a project management tool, so every team member can easily check the project's status and assigned tasks.
 
 
 __*Suggestions*__
