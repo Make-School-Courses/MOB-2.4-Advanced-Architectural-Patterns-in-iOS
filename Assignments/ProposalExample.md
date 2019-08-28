@@ -30,16 +30,14 @@ App that let's users explore music and save songs they like. Later they can add 
 
 ## Calendar
 
-Mon, Aug 26  
+Wed, Aug 28
 - Project assigned
 
-Wed, Aug 28
-- Proposal delivered
-
 Tue, Sep 3
-- Proposal approved  
+- Proposal delivered  
 
 Wed, Sep 4
+- Proposal approved
 - Github repo link added to tracker
 
 Wed, Sep 11
