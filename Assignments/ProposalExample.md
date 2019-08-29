@@ -19,7 +19,7 @@ App that let's users explore music and save songs they like. Later they can add 
 
 ## Design
 
-![example](assets/proposal.png)
+![example](assets/tunely.png)
 
 ## Stretch challenges
 
