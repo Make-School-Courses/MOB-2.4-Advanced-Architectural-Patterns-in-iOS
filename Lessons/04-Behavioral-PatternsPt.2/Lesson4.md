@@ -34,12 +34,12 @@ https://docs.google.com/document/d/1giZglDE141ewuj1fGunZhTqCRq0pA11SO-Sta_yYT60/
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- the **Observer** and **Mediator** patterns
-- the software construction problem each is intended to solve
-- potential use cases for each (when to use them)
+  - the **Observer** and **Mediator** patterns
+  - the software construction problem each is intended to solve
+  - potential use cases for each (when to use them)
 3. Assess:
-- the suitability of a given design pattern to solve a given problem
-- the trade offs (pros/cons) inherent in each
+  - the suitability of a given design pattern to solve a given problem
+  - the trade offs (pros/cons) inherent in each
 4. Implement basic examples of both patterns explored in this class
 
 ## Initial Exercise (15 min)
@@ -77,10 +77,10 @@ The **Observer pattern** lets one object observe changes to the __*state*__ of a
 
 Observer is comprised of __*two main objects:*__ <sup>1</sup>
 1. **Subject** — The object under observation.
-- The subject object __*allows observer objects to register*__ (and unregister) their interest in receiving updates (notifications) whenever changes are made to the subject, and it __*automatically notifies observers*__ of any state changes.<sup>2</sup>
-- Subjects are __*responsible for maintaining a list of their dependents*__ (observers).
+  - The subject object __*allows observer objects to register*__ (and unregister) their interest in receiving updates (notifications) whenever changes are made to the subject, and it __*automatically notifies observers*__ of any state changes.<sup>2</sup>
+  - Subjects are __*responsible for maintaining a list of their dependents*__ (observers).
 2. **Observer(s)** — The object(s) doing the observing.
-- It is the responsibility of observers is __*to register (and unregister) themselves on a subject*__ (to get notified of state changes) and __*to update their state*__ (synchronize their state with subject’s state) when they are notified.
+  - It is the responsibility of observers is __*to register (and unregister) themselves on a subject*__ (to get notified of state changes) and __*to update their state*__ (synchronize their state with subject’s state) when they are notified.
 
 This makes subject and observers loosely coupled - subject and observers have no explicit knowledge of each other. Observers can be added and removed independently at run-time.
 
@@ -236,11 +236,11 @@ In [Using Key-Value Observing in Swift](https://developer.apple.com/documentatio
 
 __*Implementation Notes:*__
 1. Your Subject class only needs to have:
-- A variable called `counter`, initialized to `0`, and modified with
+  - A variable called `counter`, initialized to `0`, and modified with
 ```Swift
 @objc dynamic
 ```
-2. Your Observer class needs this specific `init()`` function:
+2. Your Observer class needs this specific `init()` function:
 ```Swift
   init(subject:Subject) {
         super.init()
@@ -469,19 +469,19 @@ spamGenerator.spamSpamSpamSpam(message: "I'd Like to Add you to my LinkedIn Netw
 ## After Class
 
 1. Look up these other Behavioral Patterns:
-- Visitor
-- Iterator
-- Memento
-- Strategy
+  - Visitor
+  - Iterator
+  - Memento
+  - Strategy
 2. Research the following concepts:
-- The Lapsed Listener Problem
-- `NSKeyValueObserving` and its `addObserver` function
-- `NSKeyValueChangeKey`
-- `NSKeyValueObservingOptions`
+  - The Lapsed Listener Problem
+  - `NSKeyValueObserving` and its `addObserver` function
+  - `NSKeyValueChangeKey`
+  - `NSKeyValueObservingOptions`
 3. **TODO:** Extend the Media Player app you created in the previous class by implementing the following using either the Observer or the Mediator pattern:
-- add a notification that, when the video clip is done playing, sends the user this message: "Your media file is done playing — do you want to replay it?"
+  - add a notification that, when the video clip is done playing, sends the user this message: "Your media file is done playing — do you want to replay it?"
 4. **TODO:** Analyze the following simple implementation of the Observer pattern (KVO).
-- For discussion in next class, pay particular attention to the `.observe(_:_)` function, especially the implications of its origin (where does it come from?) and purpose.
+  - For discussion in next class, pay particular attention to the `.observe(_:_)` function, especially the implications of its origin (where does it come from?) and purpose.
 ```Swift
 import UIKit
 
