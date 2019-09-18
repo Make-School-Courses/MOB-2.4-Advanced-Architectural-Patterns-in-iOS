@@ -157,7 +157,7 @@ var myArr = [
 
 > With __*imperative programming,*__ you tell the compiler what you want to happen, __*step by step:*__
 
-```Swift
+```swift
 // Imperative approach
 for item in myArr { // step through the array and decide if condition is met
     if item.name == "Def" {
@@ -168,7 +168,7 @@ for item in myArr { // step through the array and decide if condition is met
 
 > With __*declarative programming,*__ you write code that describes **what** results are desired, but __*not*__ the step-by-step commands on **how** to achieve them:
 
-```Swift
+```swift
 // Declarative approach
 if myArr.contains(where: { $0.name == "Def" }) {
     print("yes")
@@ -183,7 +183,7 @@ if myArr.contains(where: { $0.name == "Def" }) {
 > Consider how the following code is __*imperative.*__ Notice that we are manipulating the values inside a mutable array called numbers,
 > and then printing to the console:
 
-```Swift
+```swift
 //Imperative Approach
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -303,7 +303,7 @@ The `map` function in Swift is a type of functor; it is a HoF that solves the pr
 
 > In this example, map is used first to convert the names in the array to lowercase strings and then to count their characters.
 
-```Swift
+```swift
 let cast = ["Vivien", "Marlon", "Kim", "Karl"]
 let lowercaseNames = cast.map { $0.lowercased() }
 // 'lowercaseNames' == ["vivien", "marlon", "kim", "karl"]
@@ -319,7 +319,7 @@ If you use `map` with a Swift `Dictionary` or `Set`, the return type will still 
 
 > Consider a dictionary with book names as key and the amount of each book as the value.
 
-```Swift
+```swift
 let bookAmount = ["harrypotter": 100.0, "junglebook": 60.00]
 ```
 
@@ -327,7 +327,7 @@ let bookAmount = ["harrypotter": 100.0, "junglebook": 60.00]
 > value that comprise each element of the dictionary.
 > Notice that the contents of the array result returned by `map` is up to you:
 
-```Swift
+```swift
 let returnFromMap = bookAmount.map({ key, value in
 //    print(key.capitalized)
 //    print(value * 10)
@@ -348,7 +348,7 @@ https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-
 
 1. Here is an imperative version of a function called `doubleIt` that takes an array of numbers and returns a new array after doubling every item in the initial array:
 
-```Swift
+```swift
 func doubleIt(inputArray: Array<Int>) {
 
     var results = [Int]()
@@ -364,7 +364,7 @@ doubleIt(inputArray: [1,2,3]) // [2,4,6]
 
 **TODO:** Complete the declarative (FP) version of `doubleIt` below so that it achieves the same result as the code above by using the `map` function instead of the `for loop`:
 
-```Swift
+```swift
 func doubleIt(inputArray: Array<Int>) {
 
     // TODO: Use map here...
