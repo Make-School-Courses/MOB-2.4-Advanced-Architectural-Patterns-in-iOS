@@ -362,7 +362,9 @@ func doubleIt(inputArray: Array<Int>) {
 doubleIt(inputArray: [1,2,3]) // [2,4,6]
 ```
 
-**TODO:** Code the declarative (FP) version of `doubleIt`so that it achieves the same result as the code above by using the `map` function instead of the `for loop`
+**TODO:** 
+
+1. Code the declarative (FP) version of `doubleIt`so that it achieves the same result as the code above by using the `map` function instead of the `for loop`
 
 <!-- 
 ```swift
