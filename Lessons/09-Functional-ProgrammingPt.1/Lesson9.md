@@ -137,7 +137,7 @@ Functional code is less prone to bugs and easier to understand than imperative c
 
 > First, create a type and an array to hold objects of the type.
 
-```Swift
+```swift
 class MyItem {
     var name: String
     var description: String
@@ -362,8 +362,9 @@ func doubleIt(inputArray: Array<Int>) {
 doubleIt(inputArray: [1,2,3]) // [2,4,6]
 ```
 
-**TODO:** Complete the declarative (FP) version of `doubleIt` below so that it achieves the same result as the code above by using the `map` function instead of the `for loop`:
+**TODO:** Code the declarative (FP) version of `doubleIt`so that it achieves the same result as the code above by using the `map` function instead of the `for loop`
 
+<!-- 
 ```swift
 func doubleIt(inputArray: Array<Int>) {
 
@@ -374,14 +375,15 @@ func doubleIt(inputArray: Array<Int>) {
 
 doubleIt(inputArray: [1,2,3]) // [2,4,6]
 ```
+-->
 
 2. Given an array of Users which have properties name:String and age:Int:
-- write a `map` function that returns an array of strings consisting of the user’s names
+   - write a `map` function that returns an array of strings consisting of the user’s names
 
 3. Take the initial array of Users from the exercise above and, using `map`, convert it to a Dictionary
 
 4. Given an array of dictionaries containing keys for “name” and “age”:
-- write a `map` function that returns an array of users created from it
+  - write a `map` function that returns an array of users created from it
 
 *From:* </br>
 https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
