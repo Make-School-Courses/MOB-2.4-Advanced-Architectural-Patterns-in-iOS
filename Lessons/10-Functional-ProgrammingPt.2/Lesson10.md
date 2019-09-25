@@ -464,8 +464,9 @@ print(even)
 ```
 <!-- SOLUTION to Exercise 3:
 let values = [11, 13, 14, 17, 21, 33, 22]
-let even = values.filter { $0 % 2 == 0 }
-
+let even = values.filter { (someInt) -> Bool in
+    someInt % 2 == 0
+}
 print(even)
 // Output: [14, 22]
 -->
