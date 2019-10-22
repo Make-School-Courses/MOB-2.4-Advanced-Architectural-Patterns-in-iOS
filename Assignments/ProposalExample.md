@@ -21,6 +21,8 @@ App that let's users explore music and save songs they like. Later they can add 
 
 ![example](assets/tunely.png)
 
+You can easily do a wireframe like this one using Sketch.
+
 ## Stretch challenges
 
 - Do a swipe left/right to dismiss or save song.
