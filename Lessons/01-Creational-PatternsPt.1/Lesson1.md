@@ -48,6 +48,7 @@ By the end of this lesson, you should be able to...
 ### 3 Types of Design Patterns
 
 There are three main types of design patterns:
+
 - **Structural**
 - **Behavioral**
 - **Creational**
@@ -59,6 +60,7 @@ Creational patterns are concerned with how objects are created in an application
 They aim to increase an application’s flexibility in instantiating objects in a manner suitable for a given situation.
 
 Creational design patterns include:
+
 - __*Object Template*__
 - __*Factory Method*__
 - Abstract Factory
@@ -74,15 +76,21 @@ Creational design patterns include:
 
 
 ### The Singleton Pattern
+
+![singleton](singleton.png)
+
+*[Free Code Camp](https://medium.com/free-code-camp/singleton-design-pattern-pros-and-cons-e10f98e23d63)*
+
 The singleton pattern restricts a class to only one, unique instance.
 
 To ensure there is only one instance of your singleton, you must make it impossible for anyone else to make an instance.
 
 Swift allows you to do this by marking the initializers as `private`. You can then add a `static` property for the shared instance, which is initialized inside the class.
 
-**Apple* uses this approach **extensively in iOS** development.
+Apple uses this approach **extensively in iOS** development.
 
 Examples include:
+
 - UserDefaults.standard
 - UIApplication.shared
 - FileManager.default
@@ -93,33 +101,20 @@ __*Simple Example:*__
 
 This simplified example illustrates the basic structure of a class definition designed to create a single instance of an object:
 
-```Swift
+```swift
 // Singleton design pattern
 class Singleton {
 
    static let sharedInstance = Singleton()
 
-   private init() { // use a private init to ensure only 1 instance is created
+   // use a private init to ensure only 1 instance is created
+   private init() { 
       // do something
    }
 }
 // Instantiate the Singleton object
 let singleton = Singleton.sharedInstance
-   ```
-
-#### Pros & Cons
-
-**PROS**
-- __*Instance Control*__ — prevents other objects from instantiating their own copies of the Singleton object, ensuring that all objects access the single instance.
-- __*Flexibility*__ - The class controls the instantiation process; hence, the class has the flexibility to change the instantiation process.
-- __*Ease of Implementation*__ — Can create and use it anywhere and for the lifetime of the app. And you are absolutely sure of the number of instances when you use a Singleton.
-
-**CONS**
-Singletons are not the answer to every problem. And some developers are critical of Singletons for various reasons, including:
-
-- __*Singletons hinder unit testing:*__ A Singleton might cause issues for writing testable code if the object and the methods associated with it are so tightly coupled that it becomes impossible to test without writing a fully-functional class dedicated to the Singleton.
-- __*Singletons create hidden dependencies*__ and carry state around for the lifetime of the application.
-- They inherently __*cause code to be tightly coupled.__*
+```
 
 ## In Class Activity I (20 min)
 
@@ -133,7 +128,7 @@ In a playground, create a Singleton class called `DataSource` with these members
 
 1. An array that holds a few items:
 
-```Swift
+```swift
 var creationalPatternsArray = ["Abstract Factory", "Factory Method",
                       "Builder", "Dependency Injection", "Lazy Initialization",
                       "Object Pool", "Prototype", "Singleton"]
@@ -141,10 +136,10 @@ var creationalPatternsArray = ["Abstract Factory", "Factory Method",
 
 2. A `private init()` function that only contains these two statements:</br>
 
-    ```Swift
-        print("self is:", self)
-        print("creationalPatternsArray is", creationalPatternsArray)
-      ```
+```swift
+print("self is:", self)
+print("creationalPatternsArray is", creationalPatternsArray)
+```
 
 **Step 2:**  Instantiate the Singleton object
 
@@ -154,7 +149,7 @@ Now, __*run*__ your playground...
 
 **Step 3:**  Below your code so far, add and invoke the following `looper()` function:
 
-```Swift
+```swift
 func looper(){
 
   for num in 1...5 {
@@ -176,7 +171,31 @@ Discuss...
 
 **Q:** What use cases can you imagine for the Singleton pattern?
 
-   <!--
+## Think, Pair Share: Pros/Cons
+
+**2 min:** Think of what the pros/cons are for the singleton pattern
+
+**2 min:** Pair with a neighbor and discuss
+
+**5 min:** Share with the class, instructor will post/share their pro/con list during this time as well.
+
+<!--
+#### Pros & Cons
+
+**PROS**
+- __*Instance Control*__ — prevents other objects from instantiating their own copies of the Singleton object, ensuring that all objects access the single instance.
+- __*Flexibility*__ - The class controls the instantiation process; hence, the class has the flexibility to change the instantiation process.
+- __*Ease of Implementation*__ — Can create and use it anywhere and for the lifetime of the app. And you are absolutely sure of the number of instances when you use a Singleton.
+
+**CONS**
+Singletons are not the answer to every problem. And some developers are critical of Singletons for various reasons, including:
+
+- __*Singletons hinder unit testing:*__ A Singleton might cause issues for writing testable code if the object and the methods associated with it are so tightly coupled that it becomes impossible to test without writing a fully-functional class dedicated to the Singleton.
+- __*Singletons create hidden dependencies*__ and carry state around for the lifetime of the application.
+- They inherently __*cause code to be tightly coupled.__*
+-->
+
+<!--
 #### Part 2 - As A Class
 
 Discuss...
@@ -204,7 +223,12 @@ Discuss...
 
 ## Overview/TT #2 (20 min)
 
+![object-template](obj-temp.jpg)
+
+*[Pro Design Patterns in Swift](https://link.springer.com/chapter/10.1007/978-1-4842-0394-1_4)*
+
 __*The Object Template Pattern*__
+
 - Helps prevent the tight coupling of components
 - Also provides a foundation for more advanced patterns
 
@@ -214,13 +238,15 @@ When some component in your app needs a new object created, it calls the runtime
 
 The __*object template pattern,*__ is composed of **three operations:**
 
-1. A calling component asks the runtime to **create** an object and provides the **template name** and required **initialization values.**
+1. A **calling component** asks the runtime to **create** an object and provides the **template name** and required **initialization values.**
 
-2. The **runtime allocates memory** to store the object, **uses the template** to create it, and **prepares** (initializes) **the object for use.**
+2. The **runtime allocates memory** to store the object, **uses the template** to create it, and **initializes** (prepares) **the object for use.**
 
 3. The **runtime returns the created object** to the calling component
 
 Because this __*process can be easily repeated*__ as often as desired (within memory limits), a single template can be used to create many, many objects.
+
+**This is essentially OOP as you learned in your CS classes!**
 
 <!-- Needs code sample -->
 
@@ -233,7 +259,7 @@ Because this __*process can be easily repeated*__ as often as desired (within me
 
 The following code sets up an array of tuples each representing a specific product:
 
-```Swift
+```swift
 var products = [
    (“Kayak”, “A boat for one person”, 275.0, 10),
    (“Lifejacket”, “Protective and fashionable”, 48.95, 14),
@@ -257,14 +283,17 @@ print(“Total value of stock: $\(calculateStockValue(tuples: products))“)
 **Q:** If we remove an element from each of the tuples, how will that effect the rest of the code?
 
 **TODOs:**
+
 1. Have one person validate the code by running it in a playground just as it is.
 2. For each of the tuples in the array, remove the second element - the element which describes the product - so that your array now looks like this:
-```Swift
+
+```swift
 var products = [
    (“Kayak”, 275.0, 10),
    (“Lifejacket”, 48.95, 14),
    (“Soccer Ball”, 19.5, 32)]
-   ```
+```
+
 3. Analyze and discuss with your partner the various places in the code which must now be rewritten to accommodate this change to the product tuples.
 - Also discuss what this reveals regarding the impact of tuples on extending and maintaining code.
 4. Now, validate your analysis by applying your proposed fixes to the code in the playground (each person should do this separately in their own playground)
@@ -274,13 +303,15 @@ var products = [
 
 1. **Research** — and __*be ready to discuss*__ in our next class the following:
 
-a) The two design patterns we’ve covered today, paying rapt attention to:
+a) The two design patterns we’ve covered today, paying attention to:
+
 - definition/design
 - the specific problem(s) that the pattern is intended to solve
 - pros/cons of using it
 - use case examples (with code to illustrate them, if possible)
 
 b) These concepts:
+
 - Inversion of Control (IoC)
 - Tight Coupling...and the benefits of decoupling
 - The Singleton Plus design pattern
@@ -297,6 +328,7 @@ The code snippet you analyzed above presents a simple example of __*Tight Coupli
 ## Wrap Up (5 min)
 
 1) Brief summary of today's design Patterns
+
 2) Any questions re: the After Class assignments above
 
 
