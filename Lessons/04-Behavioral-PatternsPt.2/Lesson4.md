@@ -71,22 +71,28 @@ Review: The After Class coding assignment from previous class.
 
 ## Overview/TT I (15 min)
 
-### The Observer Pattern &nbsp;&nbsp;&nbsp;&nbsp;:eyes:
+### The Observer Pattern &nbsp; 👀
+
+![observer](observer.png)
 
 The **Observer pattern** lets one object observe changes to the __*state*__ of another object without needing to know the implementation of the object observed.
 
-Observer is comprised of __*two main objects:*__ <sup>1</sup>
+Observer is comprised of __*two main objects:*__ <!--<sup>1</sup>-->
+
 1. **Subject** — The object under observation.
-  - The subject object __*allows observer objects to register*__ (and unregister) their interest in receiving updates (notifications) whenever changes are made to the subject, and it __*automatically notifies observers*__ of any state changes.<sup>2</sup>
+  - The subject object __*allows observer objects to register*__ (and unregister) their interest in receiving updates (notifications) whenever changes are made to the subject, and it __*automatically notifies observers*__ of any state changes.<!--<sup>2</sup>-->
   - Subjects are __*responsible for maintaining a list of their dependents*__ (observers).
+
 2. **Observer(s)** — The object(s) doing the observing.
   - It is the responsibility of observers is __*to register (and unregister) themselves on a subject*__ (to get notified of state changes) and __*to update their state*__ (synchronize their state with subject’s state) when they are notified.
 
 This makes subject and observers loosely coupled - subject and observers have no explicit knowledge of each other. Observers can be added and removed independently at run-time.
 
+<!--
 <sup>1</sup> *This notification-registration interaction is also known as* __*"publish-subscribe."*__
 
 <sup>2</sup> *Another common actor in the Observer pattern is a* __*Client object.*__ *Subject objects often have methods to attach and detach observers to a client object.*
+-->
 
 #### Implementation Notes
 
@@ -99,21 +105,24 @@ The key to implementing the Observer pattern is to __*define the interactions*__
 - **Notify Observers**
 
 __*Weak References:*__
+
 Best practice is to keep only weak references to all observers. Otherwise, it’s easy to introduce retain cycles, especially when the owner of an observed object is also an observer itself.
 
 **Simple Representation of Key Implementation Points**
 
 The example below (in non-functioning pseudocode) illustrates the basic patterns involved in implementing the Observer pattern.
 
-__*Key Highlights:*__
+<!--__*Key Highlights:*__-->
 
-- At item (2), notice that this `addObserver(_:)` function is set up to accept only a single observer. A better, more real-world design would likely accept a variable number of observers.
-- Item (8) shows how the Subject object fulfills it responsibility to maintain a list of its observers.
+<!--- At item (2), notice that this `addObserver(_:)` function is set up to accept only a single observer. A better, more real-world design would likely accept a variable number of observers.-->
+<!--- Item (8) shows how the Subject object fulfills it responsibility to maintain a list of its observers.-->
 
 __*Note:*__ This is example is a non-functioning "shell" only provided to illustrate key implementation features of the pattern. __*It will not run in a playground.*__
 
-```Swift
+```swift
 protocol Observable { // 1) Subject protocol
+   // Accepts only a single observer.
+   // A real-world design would accept a variable number of observers.
    func addObserver(observer:ObserverObject); // 2) Register
    func removeObserver(observer:ObserverObject); // 3) Unregister
 }
@@ -157,30 +166,41 @@ class Subject: Observable { // 7) Subject implementation
    }
 }
 ```
-#### Problems Addressed
+
+## Breakout Jigsaws
+
+Get into breakout rooms based on the following topics. Take 5-10 min to research as a group, then split into new groups and share your findings with members of other groups:
+
+**Topics:**
+
+- What are the benefits of the observer pattern?
+- What are the pitfalls of the observer pattern?
+- When should I use the observer pattern?
+
+<!--#### Problems Addressed
 
 - A one-to-many dependency between objects should be defined without making the objects tightly coupled.
 
 - It should be possible that when one object changes state an open-ended number of dependent objects are updated automatically.
 
 - A single object should be able to notify an open-ended number of other objects.
-
-#### Benefits
+-->
+<!--#### Benefits
 
 - Observer simplifies application design by allowing objects that provide notifications to do so in a uniform way without needing to know how those notifications are processed and acted on by the recipients (i.e., without being tightly coupled).
 
 - It allows us to define “one-to-many” relationships between many observers receiving updates from the same subject.
 
-- The observer pattern allows large and complex groups of objects to cooperate with one another with few dependencies between them.
+- The observer pattern allows large and complex groups of objects to cooperate with one another with few dependencies between them.-->
 
-##### Why learn this?
+<!--##### Why learn this?
 
 The Observer pattern is so widely used that you are likely to have come across it if you have developed an application using a __*modern UI component framework.*__
 
 It plays a key part in the familiar **model–view–controller (MVC)** architectural pattern. It is implemented in numerous programming libraries and systems, __*including almost all GUI toolkits.*__
+-->
 
-
-#### Pitfalls
+<!--#### Pitfalls
 
 - **Biggest pitfall:** Allowing objects that send and receive notifications to become interdependent.
 
@@ -191,11 +211,11 @@ It plays a key part in the familiar **model–view–controller (MVC)** architec
 Use the Observer pattern whenever you want one object to receive changes made on another object but where the sender (Subject) of the notifications does not depend on the recipient (Observer) to complete its work.
 
 __*Do not use*__ the Observer pattern unless the Subject of the notifications is functionally dependent from the recipients (observers): i.e., the observers could be removed from the application without preventing the subject from performing its work.
+-->
+<!--##### Example Use Cases
+Observer is **often used with MVC** where the view **controller is the observer** and the **model is the subject.** This allows the model to communicate changes back to the view controller without needing to know anything about the view controller’s type. Hence, different view controllers can use and observe changes on a shared model type.-->
 
-##### Example Use Cases
-Observer is **often used with MVC** where the view **controller is the observer** and the **model is the subject.** This allows the model to communicate changes back to the view controller without needing to know anything about the view controller’s type. Hence, different view controllers can use and observe changes on a shared model type.
-
-### The Observer Pattern in iOS
+## Example Use Cases
 
 There are several examples of the observer pattern in the Cocoa Touch and Cocoa frameworks. The Cocoa Touch implementation of the Observer pattern that most programmers encounter is in the UI frameworks, where user interactions and changes in UI component state are expressed using *events* (which are *a type of Notification*).
 
@@ -235,22 +255,27 @@ In [Using Key-Value Observing in Swift](https://developer.apple.com/documentatio
 **TODO:** Complete and run the partially-implemented playground code below following the steps from Apple's *Using Key-Value Observing in Swift* document listed above.
 
 __*Implementation Notes:*__
+
 1. Your Subject class only needs to have:
   - A variable called `counter`, initialized to `0`, and modified with
-```Swift
+
+```swift
 @objc dynamic
 ```
+
 2. Your Observer class needs this specific `init()` function:
-```Swift
+
+```swift
   init(subject:Subject) {
         super.init()
         subject.addObserver(self, forKeyPath: "counter",
                             options: NSKeyValueObservingOptions.new, context: nil)
     }
-   ```
+```
 
 **Partially-Implemented Playground Code**
-```Swift
+
+```swift
 import Foundation;
 
 /* Step 1: Create a Subject class and Annotate a Property for Key-Value Observing */
@@ -290,6 +315,8 @@ Notification: Optional("counter") = Optional(99)
 
 ### The Mediator Pattern &nbsp;&nbsp;&nbsp;:leftwards_arrow_with_hook::m::arrow_right_hook:
 
+![mediator](med.png)
+
 The **Mediator pattern** simplifies peer-to-peer communication between objects by introducing a __*mediator object*__ that acts as a __*communications broker*__ between other objects.
 
 Instead of objects communicating directly - and thus requiring knowledge of each other's implementations (i.e., tight coupling) - __*peer objects send messages*__ to each other via the __*mediator object.*__
@@ -299,6 +326,7 @@ Mediator joins together colleagues (peers) who share a single interface.
 #### Implementation Notes
 
 Implementing Mediator typically involves some or all of the following components:
+
 1. **Colleague protocol** - Defines methods and properties each colleague must implement.
 2. **Colleague objects** — `Peer objects` that want to communicate with each other `implement the colleague protocol`. `Colleague objects` send messages to and receives messages from other colleagues through an associated mediator object.
 3. **Mediator protocol** — Defines methods and properties the mediator class must implement.
@@ -306,17 +334,28 @@ Implementing Mediator typically involves some or all of the following components
 5. **Client object** – Creates colleagues and associates an appropriate mediator object with each.
 
 __*When is the pattern implemented correctly?*__  
+
  - When each object deals only with the mediator and has no direct knowledge of its peers.
 
 
  <!-- TODO: Add examples of protocols and objects from resources
  -->
 
-#### Problem(s) Addressed
+<!--#### Problem(s) Addressed
 
-Designing groups of interdependent and/or reusable obects which need to communicate with one another can easily result in tight coupling.
+Designing groups of interdependent and/or reusable obects which need to communicate with one another can easily result in tight coupling.-->
 
-#### Benefits
+## Breakout Jigsaws
+
+Get into breakout rooms based on the following topics. Take 5-10 min to research as a group, then split into new groups and share your findings with members of other groups:
+
+**Topics:**
+
+- What are the benefits of the mediator pattern?
+- What are the pitfalls of the mediator pattern?
+- When should I use the mediator pattern?
+
+<!--#### Benefits
 
 This design pattern __*promotes loose coupling*__ by keeping objects from referring to each other explicitly, and it __*lets you vary their interaction independently.*__
 
@@ -341,7 +380,7 @@ Use this pattern when...
 **Do not use** this pattern if you have one object that needs to send notifications to a range of disparate objects — consider using the Observer pattern instead.
 
 __*Example Use Case -*__ The most popular usage of the Mediator pattern in Swift code is facilitating communications between GUI components of an app. *The Mediator objects fits into the* __*Controller*__ *role of MVC.*
-
+-->
 <!-- TODO: add related patterns
 -->
 
@@ -352,15 +391,17 @@ The playground code below is not complete...
 When completed, it will loosely emulate a common real-world scenario in which various categories of "peers" communicate across the same system.
 
 The seeks to implement the Mediator pattern by:
+
 - creating Colleague and Mediator protocols
 - creating a base implementation class that conforms to the Colleague protocol, and creating classes/objects by extending that base classes
 - creating an implementation of a class that conforms to the Mediator protocol to coordinate communication between disparate peer objects
 - using a Client object to make message requests, through the mediator, for each type of peer
 
 **TODO:** Your job is to complete the code so that its output will match the output listed in the comment below the code snippet
+
 - __*TIP*__ All of the places where the code is incomplete are neatly marked with "//TODO:" annotation.
 
-```Swift
+```swift
 import UIKit
 
 // Colleague protocol
@@ -482,7 +523,8 @@ spamGenerator.spamSpamSpamSpam(message: "I'd Like to Add you to my LinkedIn Netw
   - add a notification that, when the video clip is done playing, sends the user this message: "Your media file is done playing — do you want to replay it?"
 4. **TODO:** Analyze the following simple implementation of the Observer pattern (KVO).
   - For discussion in next class, pay particular attention to the `.observe(_:_)` function, especially the implications of its origin (where does it come from?) and purpose.
-```Swift
+
+```swift
 import UIKit
 
 @objc class Person: NSObject {
