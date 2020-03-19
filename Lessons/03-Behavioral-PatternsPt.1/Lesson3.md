@@ -29,13 +29,13 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- the **Chain-of-Responsibility** and **Command** patterns
-- the software construction problem each is intended to solve
-- potential use cases for each (when to use them)
-3. Assess:
-- the suitability of a given design pattern to solve a given problem
-- the trade offs (pros/cons) inherent in each
-4. Implement basic examples of both patterns explored in this class
+    - the **Chain-of-Responsibility** and **Command** patterns
+    - the software construction problem each is intended to solve
+    - potential use cases for each (when to use them)
+2. Assess:
+    - the suitability of a given design pattern to solve a given problem
+    - the trade offs (pros/cons) inherent in each
+3. Implement basic examples of both patterns explored in this class
 
 
 ## Initial Exercise (15 min)
@@ -76,6 +76,10 @@ Though there are many more to explore, we will focus on these two key Behavioral
 
 ### Chain-of-Responsibility
 
+![CoR](assets/cor.jpg)
+
+*[agostini.com](https://agostini.tech/2018/05/27/design-patterns-in-swift-chain-of-responsibility/)*
+
 The __*Chain-of-Responsibility*__ pattern is a behavioral design pattern that allows an event to be processed by one of many handlers.
 
 It consists of a source of command objects and a series of processing objects.
@@ -107,11 +111,6 @@ This enables sending a request to a __*chain*__ of receivers *without* having to
 [Example](https://medium.com/design-patterns-in-swift/design-patterns-in-swift-chain-of-responsibility-pattern-f575c85a43c)
 
 
-### When should you use it?
-
-- Use this pattern whenever you have a group of related objects that handle similar events but vary based on event type, attributes, user choices/input, or anything else related to the event.
-
-
 ### Key Example Use Case
 
 The Cocoa and Cocoa Touch frameworks actively use the chain-of-responsibility pattern for handling events.
@@ -130,7 +129,11 @@ __*Source:*__ *wikipedia.org*
 
 __*Source:*__ *Apple, Inc.*
 
+### Question: When should you use it?
 
+<!--
+- Use this pattern whenever you have a group of related objects that handle similar events but vary based on event type, attributes, user choices/input, or anything else related to the event.
+-->
 
 ## In Class Activity I (20 min)
 
@@ -145,20 +148,23 @@ A responder object can choose *not* to handle an event simply by forwarding the 
 1. Download the [TouchResponder starter app](https://github.com/Make-School-Labs/StarterApp-MOB-2.4-L03)
 
 2. Open the `TouchableView.swift` file and __*Jump to Definition*__ `[Ctrl+Cmd+Click]` the `UIView` in the class declaration on line 16
-```Swift
+
+```swift
 class TouchableView: UIView {
 ```
+
 ...this will open the `UIView` definition/header file in the `UIKit` framework and display the `UIView class's` structural declaration...
 
-```Swift
+```swift
 @available(iOS 2.0, *)
 open class UIView : UIResponder, NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate {
-  ```
+```
+
 ...notice how `UIView` extends the `UIResponder` class (and conforms to a long list of protocols).
 
 - `[Ctrl+Cmd+Click]` on `UIResponder` to see how it is constructed:
 
-```Swift
+```swift
   @available(iOS 2.0, *)
   open class UIResponder : NSObject, UIResponderStandardEditActions {
 
@@ -188,9 +194,9 @@ If the Touch object's `tapCount == 2`, then:
 
 - log that conditional state:
 
-```Swift
+```swift
  print("Double Tap Began")
- ```
+```
 
 - and hand off the responsibility of handling the double-tap event **to next responder's `touchesBegan(_:_:)` function** and *log the identity of the next Responder*.
 
@@ -200,7 +206,7 @@ If the Touch object's `tapCount == 2`, then:
 
 - just log that state in the conditional's `else` block:
 
-```Swift
+```swift
 print("Single Tap Began")
 ```
 
@@ -251,21 +257,6 @@ print("Single Tap Began")
 
 ![Responder_chain_objects_in_view_debug_hierarchy](assets/Responder_chain_objects_in_view_debug_hierarchy.png)
 
-__*For The More Curious*__
-1. Using the Debug View Hierarchy tool on this simple example reveals little of the powerful utility this tool can have in analyzing your code.
-- TODO: To understand more of how this tool can be used, experiment with it on some of your actual projects that have more complex UI architectures.
-2. Apple has long provided ways to analyze view hierarchies. In addition to the Debug View Hierarchy tool, there have been several command-line debugging phrases which can be used to analyze the view hierarchy of your app during runtime.
-
-One example: You can return information about the state of your current view hierarchy by setting a breakpoint and executing the following command in your debug pane:
-
-```Swift
-expr -l objc++ -O -- [UIViewController _printHierarchy]
-```
-
-The output from this command can provide information useful in debugging your views:
-
-![special_po_command_for_views](assets/special_po_command_for_views.png)
-
 
 #### Part 3: Class Discussion
 
@@ -278,7 +269,7 @@ The output from this command can provide information useful in debugging your vi
 
 ### Command
 
- *Command* is a design pattern in which an object is used to encapsulate all information needed to perform an action or trigger an event at a later time. This information includes the method name, the object that owns the method and values for the method parameters
+**Command** is a design pattern in which an object is used to encapsulate all information needed to perform an action or trigger an event at a later time. This information includes the method name, the object that owns the method and values for the method parameters
 
  The pattern allows you to *model* the concept of executing an action. It seeks to encapsulate information to perform an action into a command object.
 
@@ -319,7 +310,7 @@ The most well-known use of this pattern: In some strategy games, the ability to 
 
 **TODO:** Below is a simple example of the Command pattern which models a real-world television remote control device. Complete the implementation so that sending commands to turn the TV on or off work successfully.
 
-```Swift
+```swift
 import UIKit
 
 // Receiver
@@ -437,3 +428,19 @@ https://devimages-cdn.apple.com/samplecode/avfoundationMedia/AVFoundationQueuePl
 6. [Using Responders and the Responder Chain to Handle Events - from Apple](https://developer.apple.com/documentation/uikit/touches_presses_and_gestures/using_responders_and_the_responder_chain_to_handle_events)
 7. [Design Patterns in Swift: Chain of Responsibility Pattern - an article](https://medium.com/design-patterns-in-swift/design-patterns-in-swift-chain-of-responsibility-pattern-f575c85a43c)
 8. [Slides]()
+
+__*For The More Curious*__
+
+1. Using the Debug View Hierarchy tool on this simple example reveals little of the powerful utility this tool can have in analyzing your code.
+- TODO: To understand more of how this tool can be used, experiment with it on some of your actual projects that have more complex UI architectures.
+2. Apple has long provided ways to analyze view hierarchies. In addition to the Debug View Hierarchy tool, there have been several command-line debugging phrases which can be used to analyze the view hierarchy of your app during runtime.
+
+One example: You can return information about the state of your current view hierarchy by setting a breakpoint and executing the following command in your debug pane:
+
+```Swift
+expr -l objc++ -O -- [UIViewController _printHierarchy]
+```
+
+The output from this command can provide information useful in debugging your views:
+
+![special_po_command_for_views](assets/special_po_command_for_views.png)
