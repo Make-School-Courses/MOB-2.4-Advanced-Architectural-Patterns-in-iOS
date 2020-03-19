@@ -93,16 +93,22 @@ Examples of Structural patterns include:
 *For lessons 5 and 6 in this course, we will cover the patterns highlighted in bold text above…*
 
 **Structural Pattern Notes:**
+
 1. MVC is a high-level example of a Structural pattern.
 2. Many of the structural patterns have similar implementations but different intents. Best practice: Ensure you select the Structural pattern which best suits your intended purpose.
-2. Adapter and Decorator are often each referred to as “wrapper” patterns because they wrap an object and provide a new interface around it. Here are some key differences between the two patterns:
-- **Adapter** - Can be used when the wrapper must respect a particular interface and must support polymorphic behavior.
+3. Adapter and Decorator are often each referred to as “wrapper” patterns because they wrap an object and provide a new interface around it. Here are some key differences between the patterns:
+
+<!--- **Adapter** - Can be used when the wrapper must respect a particular interface and must support polymorphic behavior.
 - **Decorator** makes it possible to add or alter behavior of an interface at run-time.
 - **Facade** is used when an easier or simpler interface to an underlying object is desired. *(We will learn more about Facade in next lesson.)*
-
+-->
 ![example](assets/wikipedia_table.png)
 
 ### The Adapter Pattern&nbsp;&nbsp;&nbsp;&nbsp;:electric_plug:
+
+![adapter](assets/adapter.png)
+
+*[Kazi Mahbubur Rahman](https://medium.com/@iamcrypticcoder/adapter-pattern-in-swift-4-d7ee2e71667c)*
 
 Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.
 
@@ -126,18 +132,21 @@ The __*Adapter object*__ does the actual work - it "wraps" the original object a
 The pattern is implemented correctly when the adapter allows a component to be integrated into the application without requiring modification of the existing application modules or the component.
 
 **Best Practices in Swift**
+
 - __*Use Protocols*__ -  The *design* of iOS protocols does not perfectly match the description of the Adapter pattern, though it achieves the *goal* of the pattern: allowing classes with otherwise incompatible interfaces to work together.
-- __*Use Class Extensions*__ - The most elegant way to implement the Adapter pattern is with a Swift extension. Extensions allow you to add functionality to classes that you are unable to modify. This functionality includes adding conformance to a protocol, which is perfectly suited to implementing the Adapter pattern. <sup>1</sup>
+- __*Use Class Extensions*__ - The most elegant way to implement the Adapter pattern is with a Swift extension. <!--Extensions allow you to add functionality to classes that you are unable to modify. This functionality includes adding conformance to a protocol, which is perfectly suited to implementing the Adapter pattern. <sup>1</sup>-->
 
 
-#### Simple example
+#### Example
 
-**The Problem** </br>
+**The Problem**
+
 In the following example: A Hobbit object can only `walk()`, but a Guardian object (__*code not listed*__) must `march()`. What if a Hobbit is promoted to guard the citadel?
 
 Then the Hobbit must somehow be able to `march()` just as a Guardian object does.
 
-**The Solution** </br>
+**The Solution** 
+
 Use the Adapter pattern to adapt the Hobbit class to conform to the behaviors required of a Guardian.
 
 ```swift
@@ -173,14 +182,19 @@ hobbit.march()
  Hobbit is walking a few steps
  */
 ```
-*Example above adapted from this article:*
-</br>
- https://medium.com/jeremy-codes/adapter-pattern-in-swift-7332e178f112
 
+*[adapted example]( https://medium.com/jeremy-codes/adapter-pattern-in-swift-7332e178f112)*
+
+## Add On To This Example
+
+**TODO:** Assume we have another `protocol` for a `Warrior` who has an `attack` function. How would we adapt a `Hobbit` to be a `Warrior`, where their `attack` function has them walk, swing a sword, then march?
+
+## Review Adapter Pattern
 
 #### Problems Addressed
 
 The Adapter pattern solves problems like:
+
 - *How can a class be reused that does not have an interface that a client requires?*
 - *How can classes that have incompatible interfaces work together?*
 - *How can an alternative interface be provided for a class?*
@@ -188,6 +202,7 @@ The Adapter pattern solves problems like:
 Problems that Adapter solves arise when an existing system needs to integrate a new component that has a similar function but that doesn’t present a common interface and that cannot be modified.
 
 Another key use of Adapter arises *when you do not have access to the original source code.* Incompatible code can be introduced into a project when:
+
 - a __*third-party component*__ is used
 - or when you depend on the code produced by another development team working on a related project.
 
@@ -224,16 +239,19 @@ However, none of the classes so far implement a `pause()` function, which is hig
 The current code is also incomplete.
 
 **TODO:**
+
 1. Complete the current code so that it it runs and prints:
-```Swift
+
+```swift
 Now Playing:  Titanium.aac
 Now Playing:  Cat_riding_a_roomba.mp4
 ```
+
 2. Using the Adapter pattern, add a `pause()` function.
 
 **Playground Code**
 
-```Swift
+```swift
 import UIKit
 
 // Target protocol 1
@@ -302,7 +320,9 @@ myPlayer.pause(fileName: "Cat_riding_a_roomba.mp4")
 
 ## Overview/TT II  (15 min)
 
-#### The Decorator Pattern &nbsp;&nbsp;&nbsp;:art:
+### The Decorator Pattern &nbsp;&nbsp;&nbsp;:art:
+
+![decorator](assets/decorator.png)
 
 The Decorator pattern is used to extend or alter the functionality of objects __*at run-time*__ by wrapping them in an object of a decorator class. This provides *a flexible alternative to using inheritance* to modify behavior.
 
@@ -311,7 +331,7 @@ It allows behavior to be added to an individual object - __*dynamically,*__ at r
 
 #### Implementation Notes
 
-Decorator and Adapter are two key patterns related to polymorphism that you will see often in Swift. They are implemented using the language keywords `protocol` and `extension` respectively.
+<!--Decorator and Adapter are two key patterns related to polymorphism that you will see often in Swift. They are implemented using the language keywords `protocol` and `extension` respectively.-->
 
 The __*primary example*__ of the Decorator pattern __*in Swift*__ is when you create an `extension`.
 
@@ -322,12 +342,13 @@ Decorator is typically comprised of these components:
 1. **(Abstract) Core Component** — The (abstract) base class or protocol that a base object will subclass or implement.
 2. **Concrete Core Component** - Implementation of the Core Component.
 3. **Decorator** — The Decorator can extend the Core Component using two forms:
-- As an __*Abstract Decorator*__ - A protocol which extends the Core Component protocol
-- As a __*Concrete Decorator*__ - An implementation (or subclass) of the Core Component.
+    - As an __*Abstract Decorator*__ - A protocol which extends the Core Component protocol
+    - As a __*Concrete Decorator*__ - An implementation (or subclass) of the Core Component.
 
 The pattern has been implemented correctly when you can select some of the objects created from a class to be modified without affecting all of them and without requiring changes to the original class.
 
 **Key Points**
+
 - Concrete Decorators have the capability of wrapping around Components or other Decorators and building structures.
 - Decorator designed so that multiple decorators can be stacked on top of each other, each time adding a new functionality to the overridden method(s).
 - Decorators and the original class object share a common set of features.
@@ -354,9 +375,12 @@ The changes in behavior defined with the decorator pattern can be combined to cr
 **TIP** If you do not have control over the class definition (source code) of an object, you can apply the decorator pattern.
 
 #### Pitfalls
-The main pitfall is implementing the pattern so that it affects all of the objects created from a given class rather than allowing changes to be applied selectively. A less common pitfall is implementing the pattern so that it has hidden side effects that are not related to the original purpose of the objects being modified.
 
-#### Related Patterns
+**Question:** What do you think is the main pitfall to this pattern?
+
+<!--The main pitfall is implementing the pattern so that it affects all of the objects created from a given class rather than allowing changes to be applied selectively. A less common pitfall is implementing the pattern so that it has hidden side effects that are not related to the original purpose of the objects being modified.-->
+
+<!--#### Related Patterns
 
 Decorator is structurally nearly identical to the Chain-of-Responsibility (CoR) pattern.
 
@@ -374,7 +398,7 @@ Cocoa Touch uses the Decorator pattern in the implementation of several of its c
 In Swift there are two very common implementations of this pattern: **Extensions** and **Delegation.**
 
 *Source: Apple*
-
+-->
 #### When to use
 Use Decorator when you need to change the behavior of objects without changing the class they are created from or the components that use them.
 
@@ -382,17 +406,19 @@ Another use case: when you must use several existing classes or structs which la
 
 Do not use the Decorator pattern when you are able to change the class that creates the objects you want to modify. It is usually simpler and easier to modify the class directly.
 
-#### Simple Example
+#### Example
 
 **The Problem**
-In this example, the SimpleCoffee object is constrained to only a single price and a single ingredient. If additional ingredients are desired, the cost of a coffee-based item must increase to reflect the cost of additional or more expensive ingredients added.
+
+In this example, the `SimpleCoffee` object is constrained to only a single price and a single ingredient. If additional ingredients are desired, the cost of a coffee-based item must increase to reflect the cost of additional or more expensive ingredients added.
 
 **The Solution**
-Instead of subclassing SimpleCoffee for every type of coffee or ingredient desired, the Decorator pattern was used to extend the original object with new desired behaviors.
+
+Instead of subclassing `SimpleCoffee` for every type of coffee or ingredient desired, the `Decorator` pattern was used to extend the original object with new desired behaviors.
 
 **Playground Code**
 
-```Swift
+```swift
 import UIKit
 
 // Abstract Core Component
@@ -472,7 +498,7 @@ print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients(
  Cost : 1.5; Ingredients: Coffee, Milk
  Cost : 2.2; Ingredients: Coffee, Milk, Whip
  */
- ```
+```
 
 *From this series of Swift design pattern articles:*
  https://github.com/ochococo/Design-Patterns-In-Swift
@@ -484,15 +510,17 @@ print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients(
 When completed, the playground code below will aggregate pizza prices based on type of pizza and toppings selected.
 
 **TODO:** Complete the  code so that it it runs and its output matches the 2 scenarios listed in comments below the working code.
-1. Implement the toppings decorator classes:</br>
-&nbsp;&nbsp;&nbsp; - **Extra Cheese** - costs 1.0 extra</br>
-&nbsp;&nbsp;&nbsp; - **Mushrooms** - at 1.49</br>
-&nbsp;&nbsp;&nbsp; - **Jalapeno Peppers** - at 1.19</br>
+
+1. Implement the toppings decorator classes:
+    - **Extra Cheese** - costs 1.0 extra
+    - **Mushrooms** - at 1.49
+    - **Jalapeno Peppers** - at 1.19
 2. Implement the **Gourmet** pizza type. Its price is 7.49
 3. Ensure the code works and outputs correctly *for both* the *Plain Margherita* and the *Plain Gourmet* client code scenarios.
 
 **Playground Code**
-```Swift
+
+```swift
 import UIKit
 
 // Abstract Core Component
