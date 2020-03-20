@@ -28,13 +28,13 @@
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- the **Proxy** and **Facade** patterns
-- the software construction problem each is intended to solve
-- potential use cases for each (when to use them)
-3. Assess:
-- the suitability of a given design pattern to solve a given problem
-- the trade offs (pros/cons) inherent in each
-4. Implement basic examples of both patterns explored in this class
+    - the **Proxy** and **Facade** patterns
+    - the software construction problem each is intended to solve
+    - potential use cases for each (when to use them)
+2. Assess:
+    - the suitability of a given design pattern to solve a given problem
+    - the trade offs (pros/cons) inherent in each
+3. Implement basic examples of both patterns explored in this class
 
 ## Initial Exercise (10 min)
 
@@ -45,13 +45,18 @@ By the end of this lesson, you should be able to...
 
 ## Overview/TT I (25 min)
 
-#### Proxy &nbsp;&nbsp;&nbsp;:mailbox_closed:
+#### Proxy &nbsp;:mailbox_closed:
+
+![proxy](proxy.png)
+
+*[Sihui Huang](https://www.sihui.io/design-pattern-proxy/)*
 
 The Proxy design pattern is used to provide a __*surrogate*__ or __*placeholder*__ object, which references an underlying object.
 
 In its most general form, a *proxy* is a class functioning as an interface to something else.
 
 The proxy could interface to anything:
+
 - a network connection to a remote service
 - a large object in memory
 - a file
@@ -65,7 +70,7 @@ The Proxy pattern is used to solve three different problems:
 
 1. **Remote Object Problem** - This arises when dealing with resources that are accessed over a network, such as a web page or a RESTful web service.
 
-2. **Expensive**<sup>1</sup> **Operation Problem** - Involves tasks such as making HTTP requests which are classified as *expensive*<sup>1</sup> operations.
+2. **Expensive Operation Problem** - Involves tasks such as making HTTP requests which are classified as *expensive* operations.
 
 3. **Restricted Access Problem** - When you need to restrict access to an object but you don’t have access to the source code or because there is already a dependency on the object type elsewhere in the application, and you cannot afford to let any user perform the operations that the object encapsulates.
 
@@ -100,7 +105,7 @@ And, if you use the proxy pattern to implement __*reference counting:*__
 - Do not use proxies to manage the life cycle of objects.
 - Do not use proxies to implement concurrency protections such as locks and semaphores. Let GCD handle this.
 
-##### Proxy in iOS
+### Proxy in iOS
 
 Proxy is very popular in iOS. It is frequently used throughout the Cocoa Touch framework.
 
@@ -124,53 +129,13 @@ Proxies are used in three main situations mentioned:
 
 Implementing proxy can be complex and labor intensive. If you need a solution that does *not* involve intercepting and adapting operations of another object, consider using one of the other Structural patterns instead.
 
-#### Implementation Notes
-
-The *proxy class* provides the same public interface as the underlying *subject class,* adding a level of __*indirection*__ *by accepting requests from a client object* and passing these to the real subject object as needed.
-
-But implementation of the proxy pattern varies based on the kind of problem that it is being used to solve.
-
-1. **Solving the Remote Object Problem** - Use a **Remote Proxy**, where a local object is a proxy for (represents) a remote object, and calling a method on the local object causes the corresponding method to be invoked on the remote object.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The proxy object hides the details of how the remote resource is accessed and only presents its data.</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It consolidates requests to the remote resource in a single application class. It allows implementation changes</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to itself or the remote object without requiring changes to the calling client code.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*Examples:*__ </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - HTTP requests to a remote web service</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Any scenario involving a *distributed system,* such as an ATM (the ATM must communicate </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  transactions with the bank's central computing system).
-
-2. **Solving the Expensive Operation Problem** - A **Virtual Proxy** is used for loading objects on demand. It provides a simplified version of a complex or heavy object. Only when the detail of the object is required is the main object actually populated, providing a form of lazy initialization.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Virtual Proxy can be used to minimize the cost of expensive operations by decoupling the operation from </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; its use, which can often be combined or at least deferred until the cost of performing the operation is lower.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __*Examples:*__ </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - A file management utility may use an object for each file visible on the screen. When obtaining the file list, </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the file name, size and other easy-to-retrieve information would be held in proxy objects. Only when </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the actual file is viewed (requested) would the real object be created and populated with the </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; full contents of the file, as these are slower to access and require more memory. </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - A very large image object can be represented using a virtual proxy object (with thumbnail and </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; other image metadata), only loading the real object "on demand" the real image is requested by the user.
-
-3. **Solving the Restricted Access Problem** - By using a **Protection Proxy**, which might be used to control access to a resource based on access rights. The proxy is defined as a wrapper around an object, adding additional logic to enforce some kind of restriction on its use (which presents a different implementation path from the other proxy types).
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Protection Proxy object usually conforms to a common protocol shared with the wrapped object, </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; which means that proxy objects can be used as seamless replacements without having to </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify calling clients.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The proxy intercepts requests to access the properties and methods of the underlying object and will  </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pass them on only if an access control policy has been satisfied.
-
-The Proxy pattern is implemented correctly when the proxy object can be used to perform operations on the resource it represents.
-
-Note, too, that proxies can reveal as much or as little of their implementation detail as they choose.
-
 #### Protection Proxy Example
 
-For this simple example, assume that the `HAL9000` object has its own access control/authentication mechanism and that you do not want client classes to access that mechanism directly.
+For this example, assume that the `HAL9000` object has its own access control/authentication mechanism and that you do not want client classes to access that mechanism directly.
 
 Instead, the `CurrentComputer` class acts as a Protection Proxy intercepting and handling the client's request for access to the `HAL9000` object.
 
-```Swift
+```swift
 //Protection Proxy protocol
 protocol DoorOperator {
     func open(doors: String) -> String
@@ -220,16 +185,60 @@ computer.open(doors: podBay) // Result: "HAL9000: Affirmative, Dave. I read you.
 *From this series of Swift design pattern articles:* </br>
  https://github.com/ochococo/Design-Patterns-In-Swift
  <!-- under GNU License -->
+ 
+## Implementation Notes
+
+The *proxy class* provides the same public interface as the underlying *subject class,* adding a level of __*indirection*__ *by accepting requests from a client object* and passing these to the real subject object as needed.
+
+But implementation of the proxy pattern varies based on the kind of problem that it is being used to solve.
+
+**Break into 3 groups where each group discusses one of the following problems. Can you add more to how the proxy pattern helps here?**
+
+#### **Solving the Remote Object Problem**
+
+Use a **Remote Proxy**, where a local object is a proxy for (represents) a remote object, and calling a method on the local object causes the corresponding method to be invoked on the remote object.
+
+    - The proxy object hides the details of how the remote resource is accessed and only presents its data.
+    - It consolidates requests to the remote resource in a single application class. It allows implementation changes to itself or the remote object without requiring changes to the calling client code.
+
+__*Examples:*__
+
+- HTTP requests to a remote web service
+- Any scenario involving a *distributed system,* such as an ATM (the ATM must communicate transactions with the bank's central computing system).
+
+#### **Solving the Expensive Operation Problem**
+
+A **Virtual Proxy** is used for loading objects on demand. It provides a simplified version of a complex or heavy object. Only when the detail of the object is required is the main object actually populated, providing a form of lazy initialization.
+
+- A Virtual Proxy can be used to minimize the cost of expensive operations by decoupling the operation from its use, which can often be combined or at least deferred until the cost of performing the operation is lower.
+
+__*Examples:*__
+
+- A file management utility may use an object for each file visible on the screen. When obtaining the file list, the file name, size and other easy-to-retrieve information would be held in proxy objects. Only when the actual file is viewed (requested) would the real object be created and populated with the full contents of the file, as these are slower to access and require more memory.
+- A very large image object can be represented using a virtual proxy object (with thumbnail and other image metadata), only loading the real object "on demand" the real image is requested by the user.
+
+#### **Solving the Restricted Access Problem**
+
+By using a **Protection Proxy**, which might be used to control access to a resource based on access rights. The proxy is defined as a wrapper around an object, adding additional logic to enforce some kind of restriction on its use (which presents a different implementation path from the other proxy types).
+
+- A Protection Proxy object usually conforms to a common protocol shared with the wrapped object, which means that proxy objects can be used as seamless replacements without having to modify calling clients.
+- The proxy intercepts requests to access the properties and methods of the underlying object and will pass them on only if an access control policy has been satisfied.
+
+The Proxy pattern is implemented correctly when the proxy object can be used to perform operations on the resource it represents.
+
+Note, too, that proxies can reveal as much or as little of their implementation detail as they choose.
+
 
 ## In Class Activity I (25 min)
 
 In this exercise, you are going to create an `Image` protocol and concrete classes implementing it:
+
 - `ProxyImage` is a a proxy class created to reduce the memory footprint created when loading the image.
 - Loading the image will up to the `RealImage` object.
 
 Your "client" will use `ProxyImage` to get an `Image` object to load and display, as needs.
 
-```Swift
+```swift
 import UIKit
 
 //Step 1 - Create a protocol (interface)
@@ -296,7 +305,9 @@ https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm
 
 ## Overview/TT II (20 min)
 
-#### Facade &nbsp;&nbsp;&nbsp;:office:
+#### Facade &nbsp;:office:
+
+![facade](facade.png)
 
 The Facade pattern is used to define a simplified interface to a more complex subsystem: a library, a framework, or a complex system of classes.
 
@@ -326,7 +337,9 @@ Also steer clear of creating a “god” facade, which might need to know too ma
 
 #### When to use
 
-Facade is often used when a system is very complex, or it is difficult to understand because it has a large number of interdependent classes, or because its source code is unavailable.
+**Think, Pair, Share:** When should you use the Facade pattern?
+
+<!--Facade is often used when a system is very complex, or it is difficult to understand because it has a large number of interdependent classes, or because its source code is unavailable.
 
 Use Facade when:
 - you want to provide a simple or unified interface to a complex subsystem.
@@ -334,7 +347,7 @@ Use Facade when:
 
 The facade pattern is ideal when working with a large number of interdependent classes, or with classes that require the use of multiple methods, particularly when they are complicated to use or difficult to understand.
 
-Facade is __*particularly useful*__ when wrapping __*poorly designed subsystems*__ but cannot be refactored because the __*source code is unavailable*__ or the existing interface is too widely used.
+Facade is __*particularly useful*__ when wrapping __*poorly designed subsystems*__ but cannot be refactored because the __*source code is unavailable*__ or the existing interface is too widely used.-->
 
 #### Implementation Notes
 
@@ -346,6 +359,7 @@ This minimize dependencies on a subsystem by offloading work to the Facade objec
 
 
 **To implement** Facade:
+
 1. **Identify target system(s)** whose functionality you seek to simplify.
 2. **Define a Facade object** which provides simple methods to interact with the system and allows clients to use the facade instead of needing to interact with multiple classes in the system. The Facade object could also perform additional functionality before or after forwarding a request/interaction with the target system.
 
@@ -362,7 +376,7 @@ In this example, three simple classes - `SubSystemOne`, `SubSystemTwo`, and `Sub
 
 Though these are classes, each one could be a separate collection of related classes, as in an API.
 
-```Swift
+```swift
 ///Subsystem 1
 class SubSystemOne {
 
@@ -396,7 +410,7 @@ class SubSystemThree {
 
 Note that after *wrapping* each of the three "subsystems," the Facade class can choose which behaviors of a given subsystem are to be exercised. The Facade class can also aggregate similar subsystem functions into a single function, simplifying the executions of several functions.
 
-```Swift
+```swift
 
 ///Facade class
 class Facade {
@@ -491,7 +505,7 @@ The `HotelBooker` and `FlightBooker` classes in the code below represent separat
 
 **TODO:** Using the Facade pattern, create a class that will unify the calls to these two disparate interfaces for your customer's app.
 
-```Swift
+```swift
 import UIKit
 
 ///Subsystem 1
