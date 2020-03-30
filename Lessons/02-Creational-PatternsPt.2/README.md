@@ -410,6 +410,8 @@ Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely
 
 2) Any questions re: the After Class assignments above
 
+3) Complete the sections in the [worksheet](https://docs.google.com/document/d/11jRhbMQfxqDy3SP-Xs_EnWUnuwcwX3QFvNYnRbVvwWo/edit?usp=sharing) for the patterns covered in class.
+
 <!-- > -->
 
 ## Additional Resources

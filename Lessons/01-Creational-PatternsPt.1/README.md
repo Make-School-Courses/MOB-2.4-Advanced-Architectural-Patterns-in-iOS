@@ -239,6 +239,8 @@ The code snippet you analyzed above presents a simple example of __*Tight Coupli
 
 2) Any questions re: the After Class assignments above
 
+3) Complete the sections in the [worksheet](https://docs.google.com/document/d/11jRhbMQfxqDy3SP-Xs_EnWUnuwcwX3QFvNYnRbVvwWo/edit?usp=sharing) for the patterns covered in class.
+
 <!-- > -->
 
 ## Additional Resources
