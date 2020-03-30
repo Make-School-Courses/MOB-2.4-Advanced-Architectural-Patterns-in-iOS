@@ -1,22 +1,20 @@
+<!-- Run this slideshow via the following command: -->
+<!-- reveal-md README.md -w -->
+
+
+<!-- .slide: class="header" -->
+
 # Creational Patterns Pt.1
 
-## Minute-by-Minute
+## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/01-Creational-PatternsPt.1/README.html ':ignore')
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Intro                |
-| 0:05        | 0:05      | Objectives                |
-| 0:10       | 0:20      | Overview #1                 |
-| 0:30        | 0:20      | In Class Activity I       |
-|0:50        | 0:10      | BREAK                     |
-| 1:00       | 0:10      | Overview #2                 |
-| 1:10        | 0:30      | In Class Activity II      |
-|1:40       | 0:05    | Wrap Up                     |
-| TOTAL       | 1:45      |                           |
+<!-- > -->
 
-## Why you should know this or industry application (5 min)
+## Why you should know this
 
 __*Design patterns*__ represent time-tested solutions to general software development challenges realized by numerous experienced software engineers through decades of trial and error.
+
+<!-- > -->
 
 Design patterns...
 
@@ -25,10 +23,9 @@ Design patterns...
 - Fast-track developer on-boarding
 - Allow you to spot similarities between code
 
-It’s best for a new developer to have an understanding of what they are before running into them...
+<!-- > -->
 
-
-## Learning Objectives (5 min)
+## Learning Objectives
 
 By the end of this lesson, you should be able to...
 
@@ -42,21 +39,25 @@ By the end of this lesson, you should be able to...
   - the trade offs (pros/cons) inherent in each
 4. Implement basic examples of both patterns explored in this class
 
+<!-- > -->
 
-## Overview/TT #1 (20 min)
 
-### 3 Types of Design Patterns
+## 3 Types of Design Patterns
 
 There are three main types of design patterns:
 - **Structural**
 - **Behavioral**
 - **Creational**
 
+<!-- > -->
 
 ### Creational patterns
+
 Creational patterns are concerned with how objects are created in an application.
 
 They aim to increase an application’s flexibility in instantiating objects in a manner suitable for a given situation.
+
+<!-- > -->
 
 Creational design patterns include:
 - __*Object Template*__
@@ -66,21 +67,21 @@ Creational design patterns include:
 - __*Singleton*__
 - Prototype
 
-*From: wikipedia*
-
-*Lessons 1 and 2 cover the Creational design Patterns highlighted above*
-
 <!-- TODO: Insert a diagram? -->
 
+<!-- > -->
 
-### The Singleton Pattern
+## The Singleton Pattern
+
 The singleton pattern restricts a class to only one, unique instance.
 
 To ensure there is only one instance of your singleton, you must make it impossible for anyone else to make an instance.
 
+<!-- > -->
+
 Swift allows you to do this by marking the initializers as `private`. You can then add a `static` property for the shared instance, which is initialized inside the class.
 
-**Apple* uses this approach **extensively in iOS** development.
+**Apple uses this approach extensively in iOS** development.
 
 Examples include:
 - UserDefaults.standard
@@ -88,6 +89,8 @@ Examples include:
 - FileManager.default
 
 ...all return a Singleton object.
+
+<!-- > -->
 
 __*Simple Example:*__
 
@@ -107,6 +110,8 @@ class Singleton {
 let singleton = Singleton.sharedInstance
    ```
 
+<!-- > -->
+
 #### Pros & Cons
 
 **PROS**
@@ -114,103 +119,37 @@ let singleton = Singleton.sharedInstance
 - __*Flexibility*__ - The class controls the instantiation process; hence, the class has the flexibility to change the instantiation process.
 - __*Ease of Implementation*__ — Can create and use it anywhere and for the lifetime of the app. And you are absolutely sure of the number of instances when you use a Singleton.
 
+<!-- > -->
+
 **CONS**
+
 Singletons are not the answer to every problem. And some developers are critical of Singletons for various reasons, including:
 
 - __*Singletons hinder unit testing:*__ A Singleton might cause issues for writing testable code if the object and the methods associated with it are so tightly coupled that it becomes impossible to test without writing a fully-functional class dedicated to the Singleton.
 - __*Singletons create hidden dependencies*__ and carry state around for the lifetime of the application.
-- They inherently __*cause code to be tightly coupled.__*
+- They inherently __*cause code to be tightly coupled.*__
 
-## In Class Activity I (20 min)
+<!-- > -->
 
-#### Individually
+## Creating a singleton
 
-Let's create a simple example of a Singleton class that designed to create an array to be used as an application's a single, globally-accessible data source.
+Follow [this guide]() to practice with singletons.
 
-**Step 1:** Create the Singleton
+<!-- > -->
 
-In a playground, create a Singleton class called `DataSource` with these members:
-
-1. An array that holds a few items:
-
-```Swift
-var creationalPatternsArray = ["Abstract Factory", "Factory Method",
-                      "Builder", "Dependency Injection", "Lazy Initialization",
-                      "Object Pool", "Prototype", "Singleton"]
-```
-
-2. A `private init()` function that only contains these two statements:</br>
-
-    ```Swift
-        print("self is:", self)
-        print("creationalPatternsArray is", creationalPatternsArray)
-      ```
-
-**Step 2:**  Instantiate the Singleton object
-
-`let data = DataSource.sharedInstance`
-
-Now, __*run*__ your playground...
-
-**Step 3:**  Below your code so far, add and invoke the following `looper()` function:
-
-```Swift
-func looper(){
-
-  for num in 1...5 {
-          _ = DataSource.sharedInstance
-          print("num is:", num)
-    }
-}
-looper()
-```
-
-__*Run*__ your playground again...
-
-
-#### As A Class
-
-Discuss...
-
-**Q:** What is surprising or noteworthy about the result of running `looper()`?
-
-**Q:** What use cases can you imagine for the Singleton pattern?
-
-   <!--
-#### Part 2 - As A Class
-
-Discuss...
-
-**Q:** How do you think this pattern works to create a single, global instance?
-
-**Q:** What advantages and disadvantages come to mind?
--->
-
-<!-- FIRST ACTIVITY 1 - retained as fallback:
-- View [Swift 2.0 Programming : Design Patterns : The Singleton Pattern](https://www.youtube.com/watch?v=3g7zZJWEbX0) video by the funza Academy (7 mins)
-
-### 2. In Pairs - Discuss
-
-**Q:** What iOS design patterns have you used or are familiar with so far?
-
-**Q:** When have you encountered the Singleton pattern in code you've written or come across so far? (See the list of Apple examples above for ideas.)
-- Why do you think a Singleton was chosen for either (a) the Apple examples listed, or (b) code you've used or seen?
-
-### 3. As A Class
-
-- 1 or 2 students to share results of discussion with class...
--->
-
-
-## Overview/TT #2 (20 min)
+## Object template
 
 __*The Object Template Pattern*__
 - Helps prevent the tight coupling of components
 - Also provides a foundation for more advanced patterns
 
+<!-- > -->
+
 In the __*object template pattern,*__ you define a template from which objects are created from a class or struct.
 
 When some component in your app needs a new object created, it calls the runtime by specifying the name of the template to use, along with any initialization values required to configure the object.
+
+<!-- > -->
 
 The __*object template pattern,*__ is composed of **three operations:**
 
@@ -225,6 +164,8 @@ Because this __*process can be easily repeated*__ as often as desired (within me
 <!-- Needs code sample -->
 
 <!-- Needs diagram -->
+
+<!-- > -->
 
 
 ## In Class Activity II (30 min)
