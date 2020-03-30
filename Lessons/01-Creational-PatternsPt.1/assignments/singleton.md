@@ -77,3 +77,7 @@ Discuss...
 
 - 1 or 2 students to share results of discussion with class...
 -->
+
+#### Now you do
+
+Create a very simple networking class that will serve as a shared resource in an app. You can read [this article](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift) to find some inspiration.

@@ -69,6 +69,14 @@ Creational design patterns include:
 - __*Singleton*__
 - Prototype
 
+<!-- > -->
+
+### Warm up
+
+Take 5 minutes to do a quick search on what the Singleton and Object template patterns are.
+
+- Write a small description for each.
+
 <!-- TODO: Insert a diagram? -->
 
 <!-- > -->
@@ -149,10 +157,6 @@ Follow [this guide]() to practice with singletons.
 
 ## Object template
 
-![object-template](obj-temp.jpg)
-
-*[Pro Design Patterns in Swift](https://link.springer.com/chapter/10.1007/978-1-4842-0394-1_4)*
-
 __*The Object Template Pattern*__
 
 - Helps prevent the tight coupling of components
@@ -174,62 +178,29 @@ The __*object template pattern,*__ is composed of **three operations:**
 
 3. The **runtime returns the created object** to the calling component
 
+<!-- > -->
+
 Because this __*process can be easily repeated*__ as often as desired (within memory limits), a single template can be used to create many, many objects.
 
 **This is essentially OOP as you learned in your CS classes!**
 
-<!-- Needs code sample -->
+<!-- > -->
 
-<!-- Needs diagram -->
+![object-template](obj-temp.jpg)
+
+*[Pro Design Patterns in Swift](https://link.springer.com/chapter/10.1007/978-1-4842-0394-1_4)*
+
+<!-- Needs code sample -->
 
 <!-- > -->
 
 
-## In Class Activity II (30 min)
+## Exploring the template pattern
 
-### In Pairs
+Follow [this activity]()
 
-The following code sets up an array of tuples each representing a specific product:
 
-```swift
-var products = [
-   (“Kayak”, “A boat for one person”, 275.0, 10),
-   (“Lifejacket”, “Protective and fashionable”, 48.95, 14),
-   (“Soccer Ball”, “FIFA-approved size and weight”, 19.5, 32)]
-
-func calculateTax(product:(String, String, Double, Int)) -> Double {
-   return product.2 * 0.2;
-}
-
-func calculateStockValue(tuples:[(String, String, Double, Int)]) -> Double {
-   return tuples.reduce(0, {
-       (total, product) -> Double in
-       return total + (product.2 * Double(product.3))
-   });
-}
-
-print(“Sales tax for Kayak: $\(calculateTax(product: products[0]))“)
-print(“Total value of stock: $\(calculateStockValue(tuples: products))“)
-```
-
-**Q:** If we remove an element from each of the tuples, how will that effect the rest of the code?
-
-**TODOs:**
-
-1. Have one person validate the code by running it in a playground just as it is.
-2. For each of the tuples in the array, remove the second element - the element which describes the product - so that your array now looks like this:
-
-```swift
-var products = [
-   (“Kayak”, 275.0, 10),
-   (“Lifejacket”, 48.95, 14),
-   (“Soccer Ball”, 19.5, 32)]
-```
-
-3. Analyze and discuss with your partner the various places in the code which must now be rewritten to accommodate this change to the product tuples.
-- Also discuss what this reveals regarding the impact of tuples on extending and maintaining code.
-4. Now, validate your analysis by applying your proposed fixes to the code in the playground (each person should do this separately in their own playground)
-
+<!-- > -->
 
 ## After Class
 
@@ -242,6 +213,8 @@ a) The two design patterns we’ve covered today, paying attention to:
 - pros/cons of using it
 - use case examples (with code to illustrate them, if possible)
 
+<!-- > -->
+
 b) These concepts:
 
 - Inversion of Control (IoC)
@@ -250,19 +223,23 @@ b) These concepts:
 - Dependency Injection
 - the `private` access control level
 
+<!-- > -->
+
 2. **Rework the code** In the Activity above to **optimize maintainability:**
 
 The code snippet you analyzed above presents a simple example of __*Tight Coupling.*__ The functions used to process the items in the products array are *tightly coupled* to the variables in each product tuple.
 
 **TODO:** Applying what you’ve learned today, refactor the code in the snippet above to allow changing the properties on the product in a way that minimizes the need to change the calling code.
 
+<!-- > -->
 
-## Wrap Up (5 min)
+## Wrap Up
 
 1) Brief summary of today's design Patterns
 
 2) Any questions re: the After Class assignments above
 
+<!-- > -->
 
 ## Additional Resources
 
@@ -272,4 +249,4 @@ The code snippet you analyzed above presents a simple example of __*Tight Coupli
 3. [Top 5 Design Patterns in Swift for iOS App Development - an article](https://rubygarage.org/blog/swift-design-patterns)
 4. [Creational pattern - wikipedia](https://en.wikipedia.org/wiki/Creational_pattern)
 5. [What Is a Singleton and How To Create One In Swift - an article](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift)
-6. [Swift 2.0 Programming : Design Patterns : The Singleton Pattern - video by funza Academy](https://www.youtube.com/watch?v=3g7zZJWEbX0)(7 mins)
+6. [Swift 2.0 Programming : Design Patterns : The Singleton Pattern - video by funza Academy](https://www.youtube.com/watch?v=3g7zZJWEbX0)

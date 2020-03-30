@@ -1,25 +1,18 @@
+<!-- Run this slideshow via the following command: -->
+<!-- reveal-md README.md -w -->
+
+
+<!-- .slide: class="header" -->
+
 # Creational Patterns Pt.2
 
-## Minute-by-Minute
+## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/02-Creational-PatternsPt.2/README.html ':ignore')
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05       | 0:15      | Initial Exercise             |
-| 0:20       | 0:15      | Overview  I                |
-| 0:35        | 0:15      | In Class Activity I       |
-| 0:50        | 0:10      | BREAK                     |
-| 1:00         | 0:20      | Overview  II                |
-| 1:20        | 0:30      | In Class Activity II      |
-|1:50       | 0:05    | Wrap Up                     |
-| TOTAL       | 1:55     |                           |
+<!-- > -->
 
-## Learning Objectives (5 min)
-
-By the end of this lesson, you should be able to...
+## Learning Objectives
 
 1. Describe
-
 - the **Factory Method** and **Builder** patterns
 - the software construction problem each is intended to solve
 - potential use cases for each (when to use them)
@@ -31,25 +24,15 @@ By the end of this lesson, you should be able to...
 
 3. Implement basic examples of both patterns explored in this class
 
-
-## Initial Exercise (15 min)
-
-### Part 1 - Individually
-
-...__*Yay!!*__ ...__*time for a Quiz!*__
-
-### Part 2 - In Pairs
-
-Grade each other's quizzes, sharing answers, insights, etc.
-
-
-## Overview/TT I (15 min)
+<!-- > -->
 
 ### The Factory Method Pattern
 
 ![factory method](factory.png)
 
 *[Swift World](https://medium.com/swiftworld/swift-world-design-patterns-factory-method-2be4bb3c73cc)*
+
+<!-- > -->
 
 #### Problems Addressed
 
@@ -59,20 +42,25 @@ Grade each other's quizzes, sharing answers, insights, etc.
 
 By using the Factory Method pattern!
 
+<!-- > -->
+
 #### Description
 Factory Method is a Creational Pattern that is used to create objects without needing to specify the exact class of the object to be created.
 
 Instead of using a constructor, it creates objects by calling a specialized method accessible to calling components.
 
+<!-- > -->
 
 #### Implementation
 
 Factory Method implementation is:
 
-- either specified in an interface or protocol and implemented by child classes
-- or implemented in a base class and optionally overridden by derived classes
+- either specified in an interface or **protocol** and implemented by child classes
+- or implemented in a **base class** and optionally overridden by derived classes
 
 Once implemented, the Factory Method will have all logic required to select a specifically desired class to instantiate, but it only exposes the protocol or base class to the calling component.
+
+<!-- > -->
 
 The Factory Method pattern is executed in **three operations:**
 
@@ -80,13 +68,17 @@ The Factory Method pattern is executed in **three operations:**
 2. The factory method executes using the passed-in arguments to create an instance of the desired class.
 3. Once the instance of the desired class is created, the factory method returns to the calling component a reference to the newly-created object of the desired class.
 
-## In Class Activity I (15 min)
+<!-- > -->
+
+## In Class Activity I
 
 In the code below, all vehicles are to be created using the `CarFactory` protocol's `create()` function.
 
 But only the code for creating the Truck object has been completed.
 
 **TODO:** Complete the code for creating the **SportsCar** and **SUV** obects following the basic guidelines of the Factory Method pattern introduced above. Validate creation of each object by running it's `drive()` function.
+
+<!-- > -->
 
 ```swift
 // factory protocol
@@ -134,6 +126,8 @@ let sportsCarFactory = SportsCarFactory()
 let suvFactory = SUVFactory()
 ```
 
+<!-- > -->
+
 ## Think, Pair, Share
 
 1. What are the benefits of the factory method?
@@ -158,13 +152,15 @@ This pattern works when a calling component can rely on the existence of only on
 
 -->
 
-## Overview/TT II (20 min)
+<!-- > -->
 
 ### The Builder Pattern
 
 ![builder](builder.png)
 
 *[Khaled Kamal](https://medium.com/@khaledkamal/diving-in-design-pattern-swift-2a1c5861495c)*
+
+<!-- > -->
 
 #### Description
 
@@ -174,6 +170,8 @@ It differs from other Creational patterns in that it:
 
 - employs a step-by-step approach
 - calls for separating the construction of an object from its own class (i.e., An external class controls the construction algorithm).
+
+<!-- > -->
 
 #### Implementation
 
@@ -193,16 +191,23 @@ The construction of the intended object is assigned to builder classes/objects a
 To create an object, you successively call builder methods on an instance of a builder class, which builds the final object step-by-step and returns it as its final step.
 -->
 
+<!-- > -->
+
 **Typical Steps**
 
 1. In a base builder class or protocol, declare the construction steps common to all intended optional object representations.
 2. Declare a concrete builder class for each of the object representations. Implement their specific construction steps, including implementing a function to fetch/return the constructed object, if applicable.
 3. Consider creating an additional class — often referred to as a **Director** — to encapsulate various ways to construct an object using the same builder class.
+
+<!-- > -->
+
 4. Implement client code (in calling component) to create both the builder and director objects.
     - The client should pass the builder object to the director, and the director will use this builder object in all additional construction.
 5. Returning the constructed result can be achieved in optional ways. For example:
     - It can be obtained directly from the director,  if all optional intended objects follow the same steps.
     - The client can fetch the result from the builder.
+
+<!-- > -->
 
 #### Example
 
@@ -246,6 +251,7 @@ let widget = director.construct()
 print(widget.parts) // prints: adding part #1 adding part #2 adding part #3 adding part #4 adding part #5
 ```
 
+<!-- > -->
 
 ## Think, Pair, Share
 
@@ -284,7 +290,7 @@ Builder facilitates this architecture nicely!
 
 -->
 
-## In Class Activity II (optional) (30 min)
+<!-- > -->
 
 ### Part 1
 
@@ -293,6 +299,9 @@ The code below uses the Builder pattern (with a Director) to standardize the cre
 The implementation for the Kids bike is already complete.
 
 Your job is to complete the code so that the remaining two bicycle types can also be created.
+
+<!-- > -->
+
 
 ```swift
 import UIKit
@@ -365,6 +374,8 @@ let kids = bikeAssembler.createKidsBike()
 print(kids.description)
 ```
 
+<!-- > -->
+
 ### Part 2
 
 Create a `Single View App` project.
@@ -372,6 +383,7 @@ Create a `Single View App` project.
 - On the main screen, provide 4 buttons, each of a different color and another button that will create a detail view
 - Applying the Builder pattern, generate the detail view based on the color the user selects (i.e., set the color of the detail view to the color selected by the UserDefaults)
 
+<!-- > -->
 
 ## After Class
 
@@ -386,15 +398,19 @@ Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely
     - Object Pool Pattern
     - Bridge Pattern
 
+<!-- > -->
+
 2. *(Stretch Goal)* Using the Builder pattern, create a simple Single View App with the constructs necessary to build a pizza -  including 4 toppings - when the user presses a button (no UI presentation needed; log results are fine for now)
 
+<!-- > -->
 
-## Wrap Up (5 min)
+## Wrap Up
 
 1) Brief review of today's design patterns
 
 2) Any questions re: the After Class assignments above
 
+<!-- > -->
 
 ## Additional Resources
 
