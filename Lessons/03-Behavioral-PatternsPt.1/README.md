@@ -270,13 +270,21 @@ Follow [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-A
 
 ## Command
 
+![restaurant](assets/restaurant.png)
+
+*[refactoring guru](https://refactoring.guru/design-patterns/command)*
+
+<!-- > -->
+
 **Command** is a design pattern in which an object is used to encapsulate all information needed to perform an action or trigger an event at a later time.
 
 This information includes the method name, the object that owns the method and values for the method parameters
 
 <!-- > -->
 
-The pattern allows you to *model* the concept of executing an action. It seeks to encapsulate information to perform an action into a command object.
+It turns a request/action into a stand-alone object that contains all information about the request.
+
+This transformation lets you parameterize methods with different requests, delay or queue a request’s execution, and support undoable operations.
 
 <!-- > -->
 
@@ -300,19 +308,19 @@ Implementing (hard-wiring) a request directly into a class is inflexible because
 
 ### Benefits
 
-Commands are an object-oriented replacement for callbacks.
-
-Using command objects makes it easier to construct general components that need to delegate, sequence or execute method calls at a time of their choosing without the need to know the class of the method or the method parameters.
-
-__*Source:*__ *wikipedia.org*
+- **Single Responsibility Principle**.
+- **Open/Closed Principle**. (Introduce new commands into the app without breaking existing code)
+- You can implement **undo/redo**.
+- You can implement **deferred execution** of operations.
+- You can **assemble** a set of simple commands into a complex one.
 
 <!-- > -->
 
 ### When to use it?
 
-Use the Command pattern whenever you want to create actions that can be executed on receivers **at a later point in time.**
-
-For example, you can create and store commands to be performed by a computer AI, then execute these over time.
+- When you want to parametrize objects with operations.
+- When you want to queue operations, schedule their execution, or execute them remotely.
+- When you want to implement reversible operations.
 
 <!-- > -->
 
@@ -357,7 +365,8 @@ https://devimages-cdn.apple.com/samplecode/avfoundationMedia/AVFoundationQueuePl
 
 6. [Using Responders and the Responder Chain to Handle Events - from Apple](https://developer.apple.com/documentation/uikit/touches_presses_and_gestures/using_responders_and_the_responder_chain_to_handle_events)
 7. [Design Patterns in Swift: Chain of Responsibility Pattern - an article](https://medium.com/design-patterns-in-swift/design-patterns-in-swift-chain-of-responsibility-pattern-f575c85a43c)
-8. [Refactoring guru](https://refactoring.guru/design-patterns/chain-of-responsibility/swift/example#example-0)
+8. [Refactoring guru - Chain](https://refactoring.guru/design-patterns/chain-of-responsibility/swift/example#example-0)
+9. [Refactoring guru - Command](https://refactoring.guru/design-patterns/command)
 
 <!-- > -->
 
