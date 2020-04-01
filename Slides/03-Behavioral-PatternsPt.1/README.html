@@ -171,7 +171,7 @@ class StudentExp : Chain {
 
     func shouldApproveExpenditure(expenditure : Expenditure) {
         if expenditure.amount > 101 && expenditure.amount < 1000 {
-            print("Megan or Caroline can approve this expenditure.")
+            print("Megan or Lisa can approve this expenditure.")
         } else {
             if _nextManagementLevel != nil{
                 nextManagementLevel.shouldApproveExpenditure(expenditure: expenditure)
