@@ -43,7 +43,7 @@ Students by the end of the course will be able to ...
 
 [Creational Patterns Pt.1]: Lessons/01-Creational-PatternsPt.1/README.md
 [Creational Patterns Pt.2]: Lessons/02-Creational-PatternsPt.2/README.md
-[Behavioral Patterns Pt.1]: Lessons//03-Behavioral-PatternsPt.1/README.md
+[Behavioral Patterns Pt.1]: Lessons/03-Behavioral-PatternsPt.1/README.md
 [Behavioral Patterns Pt.2]: Lessons/04-Behavioral-PatternsPt.2/Lesson4.md
 [Structural Patterns Pt.1]: Lessons/05-Structural-PatternsPt.1/Lesson5.md
 [Structural Patterns Pt.2]: Lessons/06-Structural-PatternsPt.2/Lesson6.md
