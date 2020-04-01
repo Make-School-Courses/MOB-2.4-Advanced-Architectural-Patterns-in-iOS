@@ -4,7 +4,7 @@
 
 <!-- .slide: class="header" -->
 
-# Behavioral Patterns Pt.2
+# Behavioral Patterns Pt.1
 
 ## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/03-Behavioral-PatternsPt.1/README.html ':ignore')
 
