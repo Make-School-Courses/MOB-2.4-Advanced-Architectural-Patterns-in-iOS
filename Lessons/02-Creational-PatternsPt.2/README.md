@@ -419,4 +419,5 @@ Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely
 1. [Factory Method Pattern - wikipedia](https://en.wikipedia.org/wiki/Factory_method_pattern)
 2. Builder Design Pattern:</br>
 [Article 1](https://en.wikipedia.org/wiki/Builder_pattern)</br>
-[Article 2](https://www.geeksforgeeks.org/builder-design-pattern/)
+[Article 2](https://www.geeksforgeeks.org/builder-design-pattern/)</br>
+3. [The swift dev- builder pattern](https://theswiftdev.com/swift-builder-design-pattern/)

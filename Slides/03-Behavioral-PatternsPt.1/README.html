@@ -83,9 +83,9 @@ Though there are many more to explore, we will focus on these two key Behavioral
 </script></section><section  data-markdown><script type="text/template">
 ### Chain-of-Responsibility
 
-![CoR](assets/cor.jpg)
+![CoR](assets/analogy.png)
 
-*[agostini.com](https://agostini.tech/2018/05/27/design-patterns-in-swift-chain-of-responsibility/)*
+*[refactoring guru](https://refactoring.guru/design-patterns/chain-of-responsibility)*
 </script></section><section  data-markdown><script type="text/template">
 The __*Chain-of-Responsibility*__ pattern is a behavioral design pattern that allows an event to be processed by one of many handlers.
 
@@ -95,8 +95,11 @@ Each processing object contains logic that defines the types of command objects 
 
 __*Source:*__ *wikipedia.org*
 </script></section><section  data-markdown><script type="text/template">
-![example](assets/CoR_diagram.png)
-</script></section><section  data-markdown><script type="text/template">
+![example](assets/CoRdiagram.png)
+
+*[refactoring guru](https://refactoring.guru/design-patterns/chain-of-responsibility)*
+<!-- > -->
+
 ### Problems Addressed
 
 1. Implementing a request directly within the class that sends the request is inflexible because it couples the class to a particular receiver and makes it impossible to support multiple receivers.

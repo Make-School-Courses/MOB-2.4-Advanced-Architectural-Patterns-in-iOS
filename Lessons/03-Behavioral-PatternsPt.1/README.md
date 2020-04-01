@@ -71,9 +71,9 @@ Though there are many more to explore, we will focus on these two key Behavioral
 
 ### Chain-of-Responsibility
 
-![CoR](assets/cor.jpg)
+![CoR](assets/analogy.png)
 
-*[agostini.com](https://agostini.tech/2018/05/27/design-patterns-in-swift-chain-of-responsibility/)*
+*[refactoring guru](https://refactoring.guru/design-patterns/chain-of-responsibility)*
 
 <!-- > -->
 
@@ -87,8 +87,9 @@ __*Source:*__ *wikipedia.org*
 
 <!-- > -->
 
-![example](assets/CoR_diagram.png)
+![example](assets/CoRdiagram.png)
 
+*[refactoring guru](https://refactoring.guru/design-patterns/chain-of-responsibility)*
 <!-- > -->
 
 ### Problems Addressed
