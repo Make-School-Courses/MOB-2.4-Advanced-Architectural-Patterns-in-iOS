@@ -9,6 +9,7 @@
 ## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/03-Behavioral-PatternsPt.1/README.html ':ignore')
 
 <!-- > -->
+
 <!-- INSTRUCTOR NOTES:
 1) For the quiz in the Initial Exercise:
 - the URL is https://docs.google.com/document/d/1cwT3b-DUSuB1AwO2bqU-BWuDepK8pANbj5I4R1UOrqA/edit
@@ -112,7 +113,117 @@ This enables sending a request to a __*chain*__ of receivers *without* having to
 
 ### Example of CoR
 
-[Example](https://medium.com/design-patterns-in-swift/design-patterns-in-swift-chain-of-responsibility-pattern-f575c85a43c)
+```swift
+class Expenditure {
+    private var _amount = Int()
+    var amount : Int{
+        get{
+            return _amount
+        }
+        set {
+            _amount = newValue
+        }
+    }
+    init(amount : Int) {
+        self.amount = amount
+    }
+}
+
+protocol Chain{
+    var nextManagementLevel : Chain{ get set }
+    func shouldApproveExpenditure(expenditure : Expenditure)
+}
+
+class StudentCouncil : Chain {
+
+    private var _nextManagementLevel : Chain?
+    var nextManagementLevel : Chain{
+        set{
+            _nextManagementLevel = newValue
+        }
+        get{
+            return _nextManagementLevel!
+        }
+    }
+
+    func shouldApproveExpenditure(expenditure : Expenditure) {
+        if expenditure.amount > 0 && expenditure.amount < 100 {
+            print("A student from the Student Council can approve this expenditure")
+        } else {
+            if _nextManagementLevel != nil{
+                nextManagementLevel.shouldApproveExpenditure(expenditure: expenditure)
+            }
+        }
+    }
+}
+
+class StudentExp : Chain {
+
+    private var _nextManagementLevel : Chain?
+    var nextManagementLevel : Chain{
+        set{
+            _nextManagementLevel = newValue
+        }
+        get{
+            return _nextManagementLevel!
+        }
+    }
+
+    func shouldApproveExpenditure(expenditure : Expenditure) {
+        if expenditure.amount > 101 && expenditure.amount < 1000 {
+            print("Megan or Caroline can approve this expenditure.")
+        } else {
+            if _nextManagementLevel != nil{
+                nextManagementLevel.shouldApproveExpenditure(expenditure: expenditure)
+            }
+        }
+    }
+}
+
+class Dean : Chain {
+
+    private var _nextManagementLevel : Chain?
+    var nextManagementLevel : Chain{
+        set{
+            _nextManagementLevel = newValue
+        }
+        get{
+            return _nextManagementLevel!
+        }
+    }
+
+    func shouldApproveExpenditure(expenditure : Expenditure) {
+        if expenditure.amount > 1001 && expenditure.amount < 10000 {
+            print("Anne can approve this expenditure.")
+        } else {
+            print("This expenditure is too large and won't get approved, sorry.")
+        }
+    }
+}
+
+
+let studentCouncil = StudentCouncil()
+let studentExp = StudentExp()
+let dean = Dean()
+
+studentCouncil.nextManagementLevel = studentExp
+studentExp.nextManagementLevel = dean
+
+let expenditure = Expenditure(amount: 5)
+studentCouncil.shouldApproveExpenditure(expenditure: expenditure)
+
+expenditure.amount = 500
+studentCouncil.shouldApproveExpenditure(expenditure: expenditure)
+
+expenditure.amount = 5000
+studentCouncil.shouldApproveExpenditure(expenditure: expenditure)
+
+expenditure.amount = 50000
+studentCouncil.shouldApproveExpenditure(expenditure: expenditure)
+
+```
+
+[Adapted from this article](https://medium.com/design-patterns-in-swift/design-patterns-in-swift-chain-of-responsibility-pattern-f575c85a43c)
 
 <!-- > -->
 
