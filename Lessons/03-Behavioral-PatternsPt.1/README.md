@@ -357,6 +357,7 @@ https://devimages-cdn.apple.com/samplecode/avfoundationMedia/AVFoundationQueuePl
 
 6. [Using Responders and the Responder Chain to Handle Events - from Apple](https://developer.apple.com/documentation/uikit/touches_presses_and_gestures/using_responders_and_the_responder_chain_to_handle_events)
 7. [Design Patterns in Swift: Chain of Responsibility Pattern - an article](https://medium.com/design-patterns-in-swift/design-patterns-in-swift-chain-of-responsibility-pattern-f575c85a43c)
+8. [Refactoring guru](https://refactoring.guru/design-patterns/chain-of-responsibility/swift/example#example-0)
 
 <!-- > -->
 
