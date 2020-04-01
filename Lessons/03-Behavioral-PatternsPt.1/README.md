@@ -90,6 +90,7 @@ __*Source:*__ *wikipedia.org*
 ![example](assets/CoRdiagram.png)
 
 *[refactoring guru](https://refactoring.guru/design-patterns/chain-of-responsibility)*
+
 <!-- > -->
 
 ### Problems Addressed
