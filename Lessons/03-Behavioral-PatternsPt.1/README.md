@@ -152,7 +152,7 @@ __*Source:*__ *Apple, Inc.*
 
 ## Chain of responsibility - Activity
 
-Follow [this activity]()
+Follow [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/03-Behavioral-PatternsPt.1/assignments/chain.md)
 
 <!-- > -->
 
@@ -210,7 +210,7 @@ The most well-known use of this pattern: In some strategy games, the ability to 
 
 ## Command Pattern - Activity
 
-Follow [this activity]()
+Follow [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/03-Behavioral-PatternsPt.1/assignments/command.md)
 
 <!-- > -->
 
