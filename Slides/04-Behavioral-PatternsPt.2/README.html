@@ -1,4 +1,23 @@
-<!-- Run this slideshow via the following command: -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Syllabus Template Slides</title>
+    <link rel="stylesheet" href="./../css/reveal.css" />
+    <link rel="stylesheet" href="./../css/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./../css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./../css/print/paper.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="./../assets/Reveal/makeschool.css" />
+
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- Run this slideshow via the following command: -->
 <!-- reveal-md README.md -w -->
 
 
@@ -7,25 +26,25 @@
 # Behavioral Patterns Pt.2
 
 ## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/04-Behavioral-PatternsPt.2/README.html ':ignore')
-
-<!-- > -->
-
-<!-- INSTRUCTOR NOTES:
-1) For the quiz in the Initial Exercise:
-- the URL is xxxx
-https://docs.google.com/document/d/1giZglDE141ewuj1fGunZhTqCRq0pA11SO-Sta_yYT60/edit
-
-- Answers are listed in a comment in the Initial Exercise section
-
-2) For Activity 1:
-- see below Additional Resources
-
-3) for Activity 2:
-- see below Additional Resources
--->
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
+<!-- INSTRUCTOR <aside class="notes"><p>1) For the quiz in the Initial Exercise:</p>
+<ul>
+<li><p>the URL is xxxx
+<a href="https://docs.google.com/document/d/1giZglDE141ewuj1fGunZhTqCRq0pA11SO-Sta_yYT60/edit">https://docs.google.com/document/d/1giZglDE141ewuj1fGunZhTqCRq0pA11SO-Sta_yYT60/edit</a></p>
+</li>
+<li><p>Answers are listed in a comment in the Initial Exercise section</p>
+</li>
+</ul>
+<p>2) For Activity 1:</p>
+<ul>
+<li>see below Additional Resources</li>
+</ul>
+<p>3) for Activity 2:</p>
+<ul>
+<li>see below Additional Resources</li>
+<li>-&gt;</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template">
 ## Learning Objectives
 
 By the end of this lesson, you should be able to...
@@ -38,9 +57,7 @@ By the end of this lesson, you should be able to...
   - the suitability of a given design pattern to solve a given problem
   - the trade offs (pros/cons) inherent in each
 4. Implement basic examples of both patterns explored in this class
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ## Initial Exercise
 
 ### Part 1 - Individually
@@ -58,17 +75,13 @@ Question 1. b) It discards it
 
 Question 2. A, G, B, F, C, E, D
 -->
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ### Part 2 - As A Class
 
 Review: The After Class coding assignment from previous class.
 - Share progress and implementation details with class.
-
-<!-- > -->
-
-### The Observer Pattern &nbsp; 👀
+</script></section><section  data-markdown><script type="text/template">
+### The Observer Pattern  👀
 
 ![observer](observer.png)
 
@@ -81,58 +94,40 @@ Store sends mails to all customers whenever something new comes out = SPAM.
 
 Problem: Customers wastes time with pointless visits to the store or store wastes resources spamming incorrect customers.
 -->
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 The **Observer pattern** lets one object observe changes to the **state** of another object without needing to know the implementation of the object observed.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 Observer is comprised of **two main objects:**
 
 1. **Subject** — The object under observation.
   - The subject object **allows observer objects to register** (and unregister) their interest in receiving updates (notifications) whenever changes are made to the subject, and it **automatically notifies observers** of any state changes.
   - Subjects are **responsible for maintaining a list of their dependents** (observers).
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 2. **Observer(s)** — The object(s) doing the observing.
   - It is the responsibility of observers is **to register (and unregister) themselves on a subject** (to get notified of state changes) and **to update their state** (synchronize their state with subject’s state) when they are notified.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 This makes subject and observers loosely coupled - subject and observers have no explicit knowledge of each other.
 
 Observers can be added and removed independently at run-time.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ### Implementation Notes
 
 The observer pattern is implemented correctly when an object can receive notifications without being tightly coupled to the object that sends them.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 The key to implementing the Observer pattern is to **define the interactions** between the Subject and Observer objects **using protocols**. Subject and Observer protocols should contain methods to:
 
 - **Add Observers**
 - **Remove Observers**
 - **Notify Observers**
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ![publisher](publisher.png)
 
 [*refactoring guru*](https://refactoring.guru/design-patterns/observer)
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ![publisher](publisher2.png)
 
 [*refactoring guru*](https://refactoring.guru/design-patterns/observer)
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 **Example**
 
 ```swift
@@ -204,10 +199,8 @@ class ObserverB: Observer {
     }
 }
 ```
-
-<!-- > -->
-
-## Breakout Jigsaws
+</script></section><section  data-markdown><script type="text/template">
+## Breakout Jigsaw
 
 Get into breakout rooms based on the following topics. Take 5-10 min to research as a group, then split into new groups and share your findings with members of other groups:
 
@@ -246,49 +239,37 @@ Use the Observer pattern whenever you want one object to receive changes made on
 
 __*Do not use*__ the Observer pattern unless the Subject of the notifications is functionally dependent from the recipients (observers): i.e., the observers could be removed from the application without preventing the subject from performing its work.
 -->
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ## Example Use Cases
 
 There are several examples of the observer pattern in the Cocoa Touch and Cocoa frameworks.
 
 The Cocoa Touch implementation of the Observer pattern that most programmers encounter is in the UI frameworks, where user interactions and changes in UI component state are expressed using *events* (which are *a type of Notification*).
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 Cocoa implements the observer pattern in two ways:
 - **Notifications**
 - **Key-Value Observing (KVO)**
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 #### Notifications
 
-Notifications are based on a subscribe-and-publish model that allows an object (the publisher) to send messages to other objects (subscribers/listeners).
+Notifications are based on a **subscribe-and-publish** model that allows an object (the publisher) to send messages to other objects (subscribers/listeners).
 
-The publisher never needs to know anything about the subscribers.
+**The publisher never needs to know anything about the subscribers.**
 
 Notifications are heavily used by Apple.
 
 *(See lessons in MOB 1.3 for more on iOS Notifications)*
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 #### Key-Value Observing (KVO)
 
 Objective-C has a feature called **Key-Value Observing (KVO)** that allows one object to receive notifications when the value of another object’s __*property*__ changes.
 
 It is useful for communicating changes between logically separated parts of your app—such as between models and views.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 You can use KVO to communicate between Swift objects as long as both of them are derived from `NSObject`, and you use the  `@objc dynamic` keyword when defining the property that will be observed.
 
-__*Note:*__ *KVO is similar to property observers (`willSet` and `didSet`), except KVO is for adding observers outside of the type definition.*
-
-<!-- > -->
-
+*KVO is similar to property observers (`willSet` and `didSet`), except KVO is for adding observers outside of the type definition.*
+</script></section><section  data-markdown><script type="text/template">
 #### Apple's KVO Implementation Steps
 
 In [Using Key-Value Observing in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift), Apple outlines KVO implementation in four simple steps:
@@ -297,63 +278,43 @@ In [Using Key-Value Observing in Swift](https://developer.apple.com/documentatio
 2. Define an Observer class
 3. Associate the Observer with the Property to Observe
 4. Respond to a Property Change
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ## KVO Activity
 
 Complete [this activity](assignments/kvo.md) to learn how to implement KVO.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ## Observer Pattern Activity
 
 You will implement the observer pattern manually.
 
 Take [this working real-life scenario](https://refactoring.guru/design-patterns/observer/swift/example#example-1) and turn it into a working app.
-
-<!-- > -->
-
-### The Mediator Pattern &nbsp;&nbsp;&nbsp;:leftwards_arrow_with_hook::m::arrow_right_hook:
+</script></section><section  data-markdown><script type="text/template">
+### The Mediator Pattern
 
 ![mediator](mediator.png)
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 The **Mediator pattern** simplifies peer-to-peer communication between objects by introducing a __*mediator object*__ that acts as a __*communications broker*__ between other objects.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 Instead of objects communicating directly - and thus requiring knowledge of each other's implementations (i.e., tight coupling) - __*peer objects send messages*__ to each other via the __*mediator object.*__
 
 Mediator joins together colleagues (peers) who share a single interface.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 #### Implementation Notes
 
 Implementing Mediator typically involves some or all of the following components:
 
 1. **Colleague protocol** - Defines methods and properties each colleague must implement.
 2. **Colleague objects** — `Peer objects` that want to communicate with each other `implement the colleague protocol`. `Colleague objects` send messages to and receives messages from other colleagues through an associated mediator object.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 3. **Mediator protocol** — Defines methods and properties the mediator class must implement.
 4. **Mediator object** - `Implements the mediator protocol.` __*Coordinates and controls communication*__ between all colleague objects.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 5. **Client object** – Creates colleagues and associates an appropriate mediator object with each.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 __*When is the pattern implemented correctly?*__  
 
  - When each object deals only with the mediator and has no direct knowledge of its peers.
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ## Breakout Jigsaws
 
 Get into breakout rooms based on the following topics. Take 5-10 min to research as a group, then split into new groups and share your findings with members of other groups:
@@ -392,15 +353,11 @@ __*Example Use Case -*__ The most popular usage of the Mediator pattern in Swift
 -->
 <!-- TODO: add related patterns
 -->
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ## In Class Activity
 
 Complete [this activity](assignments/mediator.md) to learn how to implement the mediator pattern
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ## After Class
 
 1. Look up these other Behavioral Patterns:
@@ -408,22 +365,16 @@ Complete [this activity](assignments/mediator.md) to learn how to implement the 
   - Iterator
   - Memento
   - Strategy
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 2. Research the following concepts:
   - The Lapsed Listener Problem
   - `NSKeyValueObserving` and its `addObserver` function
   - `NSKeyValueChangeKey`
   - `NSKeyValueObservingOptions`
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 3. **TODO:** Extend the Media Player app you created in the previous class by implementing the following using either the Observer or the Mediator pattern:
   - add a notification that, when the video clip is done playing, sends the user this message: "Your media file is done playing — do you want to replay it?"
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 4. **TODO:** Analyze the following simple implementation of the Observer pattern (KVO).
   - For discussion in next class, pay particular attention to the `.observe(_:_)` function, especially the implications of its origin (where does it come from?) and purpose.
 
@@ -431,21 +382,19 @@ Complete [this activity](assignments/mediator.md) to learn how to implement the 
 import UIKit
 
 @objc class Person: NSObject {
-    @objc dynamic var name = "Taylor Swift"
+    @objc dynamic var name = "Peter Gene Bayot Hernandez"
 }
 
-let taylor = Person()
-print(taylor.name)// prints ""Taylor Swift"
+let peter = Person()
+print(peter.name)// prints ""Peter Gene Bayot Hernandez"
 
-taylor.observe(\Person.name, options: .new) { person, change in
+peter.observe(\Person.name, options: .new) { person, change in
     print("I'm now called \(person.name)")
 }
 
-taylor.name = "Justin Bieber" // prints "I'm now called Justin Bieber"
+peter.name = "Bruno Mars" // prints "I'm now called Bruno Mars"
 ```
-
-<!-- > -->
-
+</script></section><section  data-markdown><script type="text/template">
 ## Additional Resources
 
 2. [Observer pattern - wikipedia](https://refactoring.guru/design-patterns/observer)
@@ -597,3 +546,54 @@ Michael Faraday received: I'd Like to Add you to my LinkedIn Network for possibl
 Queen Elizabeth I received: I'd Like to Add you to my LinkedIn Network. I am a recruiter at Apple
  */
 -->
+</script></section></div>
+    </div>
+
+    <script src="./../js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './../plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './../plugin/zoom-js/zoom.js', async: true },
+        { src: './../plugin/notes/notes.js', async: true },
+        { src: './../plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":true,"progress":true,"autoPlayMedia":false,"slideNumber":"c/t","showSlideNumber":"all","controlsTutorial":true,"controlsLayout":"edges","transition":"slide","transitionSpeed":"medium","minScale":0.5,"maxScale":3}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
