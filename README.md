@@ -57,6 +57,8 @@ Students by the end of the course will be able to ...
 
 ## Class Assignments
 
+Will be posted in Gradescope.
+
 ### Projects
 
 [Final project]
