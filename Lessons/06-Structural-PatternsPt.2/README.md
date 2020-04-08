@@ -1,4 +1,4 @@
-# Structural Patterns Pt.2
+# Structural Patterns Pt.2 - Resources
 
 <!-- INSTRUCTOR NOTES:
 1) No quiz this class -- course project intro instead
@@ -8,42 +8,320 @@
 - Solution is embedded below Add'l Resources
 -->
 
-## Minute-by-Minute
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05       | 0:10      | Initial Exercise             |
-| 0:15       | 0:25      | Overview  I                |
-| 0:40       | 0:25      | In Class Activity I       |
-| 1:05       | 0:10      | BREAK                     |
-| 1:15         | 0:20      | Overview  II                |
-| 1:35       | 0:20      | In Class Activity II      |
-|1:55       | 0:05    | Wrap Up                     |
-| TOTAL       | 2:00    |    
+### The Decorator Pattern &nbsp;&nbsp;&nbsp;:art:
+
+The Decorator pattern is used to extend or alter the functionality of objects __*at run-time*__ by wrapping them in an object of a decorator class. This provides *a flexible alternative to using inheritance* to modify behavior.
+
+It allows behavior to be added to an individual object - __*dynamically,*__ at run-time - without affecting the behavior of other objects from the same class or in cases where subclassing would result in an exponential rise of new classes.
 
 
-## Learning Objectives (5 min)
+#### Implementation Notes
 
-By the end of this lesson, you should be able to...
+<!--Decorator and Adapter are two key patterns related to polymorphism that you will see often in Swift. They are implemented using the language keywords `protocol` and `extension` respectively.-->
 
-1. Describe:
-    - the **Proxy** and **Facade** patterns
-    - the software construction problem each is intended to solve
-    - potential use cases for each (when to use them)
-2. Assess:
-    - the suitability of a given design pattern to solve a given problem
-    - the trade offs (pros/cons) inherent in each
-3. Implement basic examples of both patterns explored in this class
+The __*primary example*__ of the Decorator pattern __*in Swift*__ is when you create an `extension`.
 
-## Initial Exercise (10 min)
+Decorator consists of base components that are *extended* at *run-time* and ‘decorated’ with decorator classes.
 
-### As A Class
+Decorator is typically comprised of these components:
 
-- Course Project Kickoff
+1. **(Abstract) Core Component** — The (abstract) base class or protocol that a base object will subclass or implement.
+2. **Concrete Core Component** - Implementation of the Core Component.
+3. **Decorator** — The Decorator can extend the Core Component using two forms:
+    - As an __*Abstract Decorator*__ - A protocol which extends the Core Component protocol
+    - As a __*Concrete Decorator*__ - An implementation (or subclass) of the Core Component.
+
+The pattern has been implemented correctly when you can select some of the objects created from a class to be modified without affecting all of them and without requiring changes to the original class.
+
+**Key Points**
+
+- Concrete Decorators have the capability of wrapping around Components or other Decorators and building structures.
+- Decorator designed so that multiple decorators can be stacked on top of each other, each time adding a new functionality to the overridden method(s).
+- Decorators and the original class object share a common set of features.
+- To prevent subclassing the Core Component class can be declared `final`.
+
+#### Problems Addressed
+What problems can the Decorator design pattern solve?
+
+Responsibilities should be added to (and removed from) an object dynamically at run-time.
+- A flexible alternative to subclassing for extending functionality should be provided.
+- When using subclassing, different subclasses extend a class in different ways. But an extension is bound to the class at compile-time and can't be changed at run-time.
+
+Decorator is also a solution to the **Exploding Class Hierarchy** problem: An exploding class hierarchy occurs when the number of classes needed to add a new functionality to a given class hierarchy grows exponentially.
+
+*Source: wikipedia*
+
+#### Benefits
+The decorator pattern is an alternative to subclassing. Subclassing adds behavior at compile time, and the change affects all instances of the original class; decorating can provide new behavior at run-time for selected objects.
+
+The decorator pattern is often useful for adhering to the __*Single Responsibility Principle,*__ as it allows functionality to be divided between classes with unique areas of concern.
+
+The changes in behavior defined with the decorator pattern can be combined to create complex effects without needing to create large numbers of subclasses.
+
+**TIP** If you do not have control over the class definition (source code) of an object, you can apply the decorator pattern.
+
+#### Pitfalls
+
+**Question:** What do you think is the main pitfall to this pattern?
+
+<!--The main pitfall is implementing the pattern so that it affects all of the objects created from a given class rather than allowing changes to be applied selectively. A less common pitfall is implementing the pattern so that it has hidden side effects that are not related to the original purpose of the objects being modified.-->
+
+<!--#### Related Patterns
+
+Decorator is structurally nearly identical to the Chain-of-Responsibility (CoR) pattern.
+
+The difference:
+- in CoR, exactly one of the classes handles the request
+- for Decorator, all classes handle the request
+Decorator in iOS
+
+Decorator is a pattern for object composition, which is something that you are encouraged to do in your own code.
+
+Cocoa Touch, however, provides some classes and mechanisms of its own that are based on the pattern.
+
+Cocoa Touch uses the Decorator pattern in the implementation of several of its classes, including `NSAttributedString`, `NSScrollView`, and `UIDatePicke`r. The latter two classes are examples of compound views, which group together simple objects of other view classes and coordinate their interaction.
+
+In Swift there are two very common implementations of this pattern: **Extensions** and **Delegation.**
+
+*Source: Apple*
+-->
+#### When to use
+Use Decorator when you need to change the behavior of objects without changing the class they are created from or the components that use them.
+
+Another use case: when you must use several existing classes or structs which lack some desired functionality and that cannot be subclassed. Building a new target interface by wrapping these classes with Decorator can be a very clean solution.
+
+Do not use the Decorator pattern when you are able to change the class that creates the objects you want to modify. It is usually simpler and easier to modify the class directly.
+
+#### Example
+
+**The Problem**
+
+In this example, the `SimpleCoffee` object is constrained to only a single price and a single ingredient. If additional ingredients are desired, the cost of a coffee-based item must increase to reflect the cost of additional or more expensive ingredients added.
+
+**The Solution**
+
+Instead of subclassing `SimpleCoffee` for every type of coffee or ingredient desired, the `Decorator` pattern was used to extend the original object with new desired behaviors.
+
+**Playground Code**
+
+```swift
+import UIKit
+
+// Abstract Core Component
+protocol Coffee {
+    func getCost() -> Double
+    func getIngredients() -> String
+}
+
+// Concrete Core Component
+class SimpleCoffee: Coffee {
+    func getCost() -> Double {
+        return 1.0
+    }
+
+    func getIngredients() -> String {
+        return "Coffee"
+    }
+}
+
+// Decorator (Base) class
+class CoffeeDecorator: Coffee {
+    private let decoratedCoffee: Coffee
+    fileprivate let ingredientSeparator: String = ", "
+
+    required init(decoratedCoffee: Coffee) {
+        self.decoratedCoffee = decoratedCoffee
+    }
+
+    func getCost() -> Double {
+        return decoratedCoffee.getCost()
+    }
+
+    func getIngredients() -> String {
+        return decoratedCoffee.getIngredients()
+    }
+}
+
+// Decorator class
+final class Milk: CoffeeDecorator {
+    required init(decoratedCoffee: Coffee) {
+        super.init(decoratedCoffee: decoratedCoffee)
+    }
+
+    override func getCost() -> Double {
+        return super.getCost() + 0.5
+    }
+
+    override func getIngredients() -> String {
+        return super.getIngredients() + ingredientSeparator + "Milk"
+    }
+}
+
+// Decorator class
+final class WhipCoffee: CoffeeDecorator {
+    required init(decoratedCoffee: Coffee) {
+        super.init(decoratedCoffee: decoratedCoffee)
+    }
+
+    override func getCost() -> Double {
+        return super.getCost() + 0.7
+    }
+
+    override func getIngredients() -> String {
+        return super.getIngredients() + ingredientSeparator + "Whip"
+    }
+}
+
+var someCoffee: Coffee = SimpleCoffee()
+print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients())")
+someCoffee = Milk(decoratedCoffee: someCoffee)
+print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients())")
+someCoffee = WhipCoffee(decoratedCoffee: someCoffee)
+print("Cost : \(someCoffee.getCost()); Ingredients: \(someCoffee.getIngredients())")
+
+/* Will print:
+ Cost : 1.0; Ingredients: Coffee
+ Cost : 1.5; Ingredients: Coffee, Milk
+ Cost : 2.2; Ingredients: Coffee, Milk, Whip
+ */
+```
+
+*From this series of Swift design pattern articles:*
+ https://github.com/ochococo/Design-Patterns-In-Swift
+ <!-- under GNU License -->
 
 
-## Overview/TT I (25 min)
+## In Class Activity II  (25 min)
+
+When completed, the playground code below will aggregate pizza prices based on type of pizza and toppings selected.
+
+**TODO:** Complete the  code so that it it runs and its output matches the 2 scenarios listed in comments below the working code.
+
+1. Implement the toppings decorator classes:
+    - **Extra Cheese** - costs 1.0 extra
+    - **Mushrooms** - at 1.49
+    - **Jalapeno Peppers** - at 1.19
+2. Implement the **Gourmet** pizza type. Its price is 7.49
+3. Ensure the code works and outputs correctly *for both* the *Plain Margherita* and the *Plain Gourmet* client code scenarios.
+
+**Playground Code**
+
+```swift
+import UIKit
+
+// Abstract Core Component
+protocol PizzaBase {
+    func getPrice() -> Double
+}
+
+// Concrete Core Component
+class PlainPizza: PizzaBase {
+
+    var myPrice: Double = 1.0
+
+    func getPrice() -> Double {
+        return self.myPrice
+    }
+}
+
+// Concrete Core Component
+class Margherita: PizzaBase {
+
+    var price: Double = 6.99
+
+    func getPrice() -> Double {
+        return self.price
+    }
+}
+
+// Concrete Core Component
+class Gourmet: PizzaBase {
+
+    //TODO: Implement the Gourmet pizza; price is 7.49
+}
+
+// Decorator (base) class
+class ToppingsDecorator: PizzaBase {
+
+    private let pizza: PizzaBase
+
+    required init(pizzaToDecorate: PizzaBase) {
+        self.pizza = pizzaToDecorate
+    }
+
+    func getPrice() -> Double {
+        return pizza.getPrice()
+    }
+}
+
+// Decorator class (extended)
+class ExtraCheeseTopping: ToppingsDecorator {
+
+    //TODO: Implement Extra Cheese -- add 1.0 to current price
+}
+
+// Decorator class (extended)
+class MushroomTopping: ToppingsDecorator {
+
+    //TODO: Implement adding mushrooms -- add 1.49 to current price
+
+}
+
+// Decorator class (extended)
+class JalapenoTopping: ToppingsDecorator {
+
+    //TODO: Implement JalapenoToppingk, add an extra 1.19 for peppers
+
+}
+
+/// Client-code for Margherita
+let pizza: PizzaBase = Margherita()
+print("Plain Margherita: ", pizza.getPrice())
+
+/// Client-code for Gourmet
+//let pizza: PizzaBase = Gourmet()
+//print("Plain Gourmet: ", pizza.getPrice())
+
+let moreCheese: ExtraCheeseTopping = ExtraCheeseTopping(pizzaToDecorate: pizza)
+print("moreCheese: ", moreCheese.getPrice())
+
+let evenMoreCheese: ExtraCheeseTopping = ExtraCheeseTopping(pizzaToDecorate: moreCheese)
+print("evenMoreCheese: ", evenMoreCheese.getPrice())
+
+let mushrooms: MushroomTopping = MushroomTopping(pizzaToDecorate: evenMoreCheese)
+print("mushrooms: ", mushrooms.getPrice())
+
+let withPeppers: JalapenoTopping = JalapenoTopping(pizzaToDecorate: mushrooms)
+print("withPeppers: ", withPeppers.getPrice())
+
+/* OUTPUT:
+
+ 1) For Client-code for Margherita, should print:
+
+ Plain Margherita:  6.99
+ moreCheese:  7.99
+ evenMoreCheese:  8.99
+ mushrooms:  10.48
+ withPeppers:  11.67
+
+ 1) For Client-code for Gourmet, should print:
+
+ Plain Gourmet:  7.49
+ moreCheese:  8.49
+ evenMoreCheese:  9.49
+ mushrooms:  10.98
+ withPeppers:  12.17
+
+ /*
+```
+*Adapted from this Java example:*
+
+https://stackoverflow.com/questions/2707401/understand-the-decorator-pattern-with-a-real-world-example
+
+<!-- SOLUTION FOR ACTIVITY 2 -- is below Additional Resources... -->
+
+
 
 #### Proxy &nbsp;:mailbox_closed:
 
@@ -185,7 +463,7 @@ computer.open(doors: podBay) // Result: "HAL9000: Affirmative, Dave. I read you.
 *From this series of Swift design pattern articles:* </br>
  https://github.com/ochococo/Design-Patterns-In-Swift
  <!-- under GNU License -->
- 
+
 ## Implementation Notes
 
 The *proxy class* provides the same public interface as the underlying *subject class,* adding a level of __*indirection*__ *by accepting requests from a client object* and passing these to the real subject object as needed.
@@ -229,7 +507,7 @@ The Proxy pattern is implemented correctly when the proxy object can be used to 
 Note, too, that proxies can reveal as much or as little of their implementation detail as they choose.
 
 
-## In Class Activity I (25 min)
+## In Class Activity
 
 In this exercise, you are going to create an `Image` protocol and concrete classes implementing it:
 
@@ -539,29 +817,9 @@ Flight booked successfully
 */
 ```
 
-
-## After Class
-
-1. Research the following concepts:
-
-- `NSProxy`
-- Lazy initialization
-- Anti-pattern
-- Indirection
-- Distributed object communication
-
-2. **TODO:** - Get started with the Course Project
-
-
-## Wrap Up (5 min)
-
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
-
 ## Additional Resources
 
-1. [Slides](https://docs.google.com/presentation/d/1IFSv5SJR7c-Y1MMKmLcSPvIQ_pMrEBX_TOkiXkl4i94/edit?usp=sharing)
+1. [Refactoring Guru](https://refactoring.guru/design-patterns/structural-patterns)
 2. [Proxy pattern - wikipedia](https://en.wikipedia.org/wiki/Proxy_pattern)
 2. [Facade pattern - wikipedia](https://en.wikipedia.org/wiki/Facade_pattern)
 4. [Proxy design pattern in iOS - an article](http://devmonologue.com/ios/proxy-design-pattern-ios/)
