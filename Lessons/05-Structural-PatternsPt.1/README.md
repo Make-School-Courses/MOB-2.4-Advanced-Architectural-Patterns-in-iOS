@@ -10,13 +10,13 @@
 
 <!-- > -->
 
-<!-- INSTRUCTOR NOTES:
+<!-- INSTRUCTOR:
 1) For the quiz in the Initial Exercise:
 - the URL is https://docs.google.com/document/d/1kz7OpSDh_S2d7KCbUTeYEOR1M9r6-zgkxDhUGdvaDiY/edit
 2) For Activity 1:
-- Solution is embedded below Addtional Resources
+- Solution is embedded below Additional Resources
 3) for Activity 2:
-- Solution is embedded below Addtional Resources
+- Solution is embedded below Additional Resources
 -->
 
 <!-- > -->
@@ -69,7 +69,7 @@ They can assemble objects and classes into larger structures while keeping these
 
 <!-- > -->
 
-**Structural Pattern Notes:**
+**Structural Pattern:**
 
 1. MVC is a **high-level** example of a Structural pattern.
 2. Many of the structural patterns have similar implementations but different **intents**.
@@ -82,7 +82,7 @@ They can assemble objects and classes into larger structures while keeping these
 
 <!-- > -->
 
-### The Adapter Pattern&nbsp;&nbsp;&nbsp;&nbsp;:electric_plug:
+### The Adapter Pattern
 
 ![adapter](assets/adapter1.png)
 
