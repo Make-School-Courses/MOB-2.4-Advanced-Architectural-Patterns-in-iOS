@@ -1,29 +1,16 @@
+<!-- Run this slideshow via the following command: -->
+<!-- reveal-md README.md -w -->
+
+
+<!-- .slide: class="header" -->
+
 # Coordinators
 
-<!-- INSTRUCTOR NOTES:
-1) For the QuizLet Game in the Initial Exercise:
-- the URL is xxxx
-2) For Activity 1:
-- solutions are hidden below Additional Resources
-3) for Activity 2:
-- xxxx
--->
+## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/07-Coordinators/README.html ':ignore')
 
-## Minute-by-Minute
+<!-- > -->
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Initial Exercise          |
-| 0:20        | 0:25      | Overview                  |
-| 0:45        | 0:25      | In Class Activity I       |
-| 1:10        | 0:10      | BREAK                     |
-| 1:20        | 0:15      | Overview                  |
-| 1:35        | 0:20      | In Class Activity II      |
-| TOTAL       | 1:55      |                           |
-
-
-## Learning Objectives (5 min)
+## Learning Objectives
 
 By the end of this lesson, you should be able to...
 
@@ -34,18 +21,19 @@ By the end of this lesson, you should be able to...
 - how to implement Coordinator in iOS
 3. Assess:
 - the suitability of a given design pattern to solve a given problem
-- the trade offs (pros/cons) inherent in choosing high-level (MVC, MVVM, etc.) design patterns
+- the trade offs (pros/cons)
 4. Design and implement basic examples of **Coordinator** explored in this class
 
+<!-- > -->
 
-## Initial Exercise (15 min)
+## Initial Exercise
 
 ### As A Class
 
-1. Review After Class assignment from Lesson 7
+1. Review assignment from last class
 - students demo their solutions
 
-## Overview/TT I (25 min)
+<!-- > -->
 
 ### The Coordinator Pattern
 
@@ -60,10 +48,10 @@ The idea behind the Coordinator pattern is the creation of a separate entity &md
 >
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/) &mdash; Soroush Khanlou<sup>1</sup>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* [Coordinators Redux](http://khanlou.com/2015/10/coordinators-redux/) &mdash; Soroush Khanlou
 
 
-The Coordinator encapsulates a part of the application. A Coordinator knows nothing of its parent Coordinator, but it can start its child Coordinators.
+<!-- > -->
 
 Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewControllers taking all of the driving logic (navigation) out of view controllers and moving it up one level &mdash; to a __*Coordinator layer.*__
 
@@ -73,32 +61,27 @@ Similar to how UIViewControllers manage UIViews, Coordinators can manage UIViewC
 *Source:* </br>
 https://medium.com/@saad.eloulladi/ios-coordinator-pattern-in-swift-39a15aa3b01b
 
-
-
+<!-- > -->
 
 ### Problems Addressed
-
-Most of the challenges the Coordinator pattern addresses are related to the limitations of how View Controllers are designed to work within standard MVC.
-
-Key issues the Coordinator pattern can potentially resolve are...
 
 1. **The Pushing Problem**
 
 One of the standard ways to perform navigation on iOS is to use a `UINavigationController` onto which each view controller can either pop or push other view controllers.
-
-Most iOS developers have implemented this type of navigation a hundred or more times:
 
 ```Swift
 if let vc = storyboard?.instantiateViewController(withIdentifier: "SomeVC") {
     navigationController?.pushViewController(vc, animated: true)
 }
 ```
-__*The Problem*__
 
-When the view controllers themselves must decide the next view controller to push onto `self.navigationController`,
-the View controllers are too tightly coupled.
+<!-- > -->
+
+When the view controllers themselves must decide the next view controller to push onto `self.navigationController`, the View controllers are too tightly coupled.
 
 As an app grows, this approach becomes difficult to deal with: The codebase will be hard to change and maintain, and view controllers are almost impossible to reuse.
+
+<!-- > -->
 
 What if...
 - you need to be able to navigate to the same view controller from multiple places?
@@ -128,16 +111,21 @@ class MyViewController : UIViewController {
 }
 ``` -->
 
+<!-- > -->
+
 2. **Massive View Controller Problem** &mdash; (see previous lesson for description and example)
 
 3. **Reusability** &mdash; with standard MVC, View Controllers are nearly impossible to reuse, especially if overloaded with non-VC tasks.
 
 4. **Tight Coupling** &mdash; an inflexible design in which every controller needs to know details about other controllers inhibits an app's growth.
 
+<!-- > -->
+
 5. **Deep Linking Issues** &mdash; *(see Coordinators and Deep Linking section)*
 
 6. **Testing** &mdash; if you want to generate different views or a different flow in response to user choices (A/B testing) or to handle layout variations, standard MVC implementations of VCs make it extremely difficult to test those scenarios.  
 
+<!-- > -->
 
 ### Implementation Notes
 
@@ -148,142 +136,103 @@ A solid, basic implementation of coordinators includes 3 main steps:
 2. Create a __*main coordinator*__ that will control app flow. Start it when your app launches.
 3. Create/present view controllers.
 
+<!-- > -->
+
 **About the Coordinator Protocol**
 
 All coordinators will conform to this protocol. At bare minimum, it should include:
-- A property to store any child coordinators. Coordinator responsibility is to handle navigation flow: the same way that UINavigationController keeps reference of its stack, Coordinators do the same with their children.
-- A property to store the navigation controller being used to present view controllers. (Even if you don’t show the navigation bar at the top, using a navigation controller is the easiest way to present view controllers.)
+- A property to store any **child coordinators**. Coordinator responsibility is to **handle navigation flow**: the same way that UINavigationController keeps reference of its stack, Coordinators do the same with their children. (optional)
+- A property to store the **navigation controller** being used to present view controllers. (Even if you don’t show the navigation bar at the top, using a navigation controller is the easiest way to present view controllers.)
 - A `start()` function to make the coordinator take control. This allows us to create a coordinator fully and activate it only when we’re ready.
 
+<!-- > -->
 
-<!-- TODO: Need to get an example of this  -->
 
 #### Example:
 
-*The code below is for illustration only &mdash; IT WILL NOT run in a playground!*
-
-This example code illustrates basic implementation steps of the Coordinator pattern when intended for use as a an application-wide navigation strategy.
-
-1. Coordinator protocol created, keeping a reference (an array property) to all of its *children:*
+1. Coordinator protocol created
 
 ```Swift
-protocol Coordinator : class {
-    var childCoordinators : [Coordinator] { get set }
+protocol Coordinator {
     func start()
+    var navigationController: UINavigationController { get set }
+    var childCoordinators : [Coordinator] { get set } //not always
 }
 ```
+
+<!-- > -->
 
 2. For building the user flow, a concrete implementation of the protocol is created:
 
 ```Swift
-class BaseCoordinator : Coordinator {
-    var childCoordinators : [Coordinator] = []
+class BaseCoordinator: Coordinator {
+
+    var navigationController: UINavigationController
+    private var someViewController: UIViewController?
+
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
 
     func start() {
-        fatalError("Children should implement `start`.")
+        someViewController = ViewController()        
+        navigationController.pushViewController(someViewController, animated: true)
     }
 }
+
 ```
 
-3. The View Controller Creation protocol is created:
+<!-- > -->
 
-```Swift
-  protocol ControllerCreator {
-      static func instantiate() -> Self
-  }
-```
-
-4. All view controllers targeted for participation in the coordinated navigation approach must:
-- Conform to the `ControllerCreator` protocol
+3. All view controllers targeted for participation in the coordinated navigation approach must:
 - Have a `BaseCoordinator` property for access to its properties and functions
 
 ```Swift
-class ViewController: UIViewController, ControllerCreator {
+class ViewController: UIViewController {
 
-     weak var coordinator: BaseCoordinator?
-
+    var coordinator: BaseCoordinator?
      ...
-```
-
-5. If an application-wide navigation strategy, then the `AppDelegate` will need:
-- a `BaseCoordinator` property
-- an application-wide association between its `BaseCoordinator` property and an instance of `UINavigationController` in its `application: didFinishLaunchingWithOptions:` function
-
-
-## In Class Activity I (25 min)
-
-### Individually
-
-**Required Resources:**
-1. Download the starter app: [iOS-CoordinatorsActivity1_B](https://github.com/Make-School-Labs/iOS-CoordinatorsActivity1_B)
-
-**Background:**
-
-The `iOS-CoordinatorsActivity1_B` app is incomplete.
-
-Instead of pushing and presenting ViewControllers from other view controllers, the app seeks to implement the Coordinator pattern.
-
-When completed, all screen navigation will be managed by coordinators.
-
-Currently, the app contains implementations of two protocols for:
-
-&nbsp;&nbsp;&nbsp;&nbsp; - The Coordinator procol - for navigation </br>
-&nbsp;&nbsp;&nbsp;&nbsp; - The Storyboarded protocol - for dynamically instantiating View Controller objects from the Main Storyboard bundle </br>
-
-__*Navigation Protocol*__
-```Swift
-protocol Coordinator {
-    var childCoordinators: [Coordinator] { get set }
-    var navigationController: UINavigationController { get set }
-
-    func start()
 }
 ```
 
-__*VC Creation Protocol*__
+<!-- > -->
 
-```Swift
-protocol Storyboarded {
-    static func instantiate() -> Self
-}
+5. If staring from the AppDelegate:
+
+```swift
+let navController = UINavigationController()
+coordinator = BaseCoordinator(navigationController: navController)
+coordinator?.start()
+
+window = UIWindow(frame: UIScreen.main.bounds)
+window?.rootViewController = navController
+window?.makeKeyAndVisible()
 ```
 
-__*Note that:*__
-- the main VC (`ViewController`) is __*not*__ configured as the "Initial View Controller" in the storyboad
-- in order to be created dynamically, all VCs are given a `StoryBoard ID`
+<!-- > -->
 
-**- TODO -** </br>
-The code in the app is nearly complete. Your job is to:
-- analyze the app's structure wrt how it is creating view controllers
-- complete any missing code so that the `BuyViewController` and `CreateAccountViewController` are presented using the Coordinator pattern instead of typical iOS navigation process (*see* The Pushing Problem *above*)
+##Practicing a simple approach
 
+Follow [these instructions]() to create a flow using coordinators.
 
-> **TIP:** Look for the //TODO: annotations we left in the app for you...
+<!-- > -->
 
+## Benefits
 
-*Adapted from:* </br>
-https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios
-
-
-<!-- INSTRUCTOR NOTES: solutions for Activity 1 are hidden below Additional Resources -->
-
-
-## Overview/TT II (15 min)
-
-### Benefits
-
-Coordinators are very easy to use and implement. They can have huge impact on cleaning the code base and on making view controllers more loosely coupled from each other.
+They can have huge impact on cleaning the code base and on making view controllers more loosely coupled from each other.
 
 The pattern can be adopted for only part of an app or used across the entire application.
+
+<!-- > -->
 
 Coordinators create a well defined way to deal with navigation in which view controllers are:
 1. Isolated from each other (do not need to know about each other)
 2. Reusable in different contexts
 3. Lightweight, less "massive," and focused on their key responsibilities
 
-And they can provide the ability to organize an application's architecture by use case scenarios.
+<!-- > -->
 
-### Pitfalls
+## Pitfalls
 
 The downside of the Coordinator pattern:
 
@@ -291,68 +240,57 @@ The downside of the Coordinator pattern:
 
 2. **Overkill** &mdash; The pattern could well take too much work for very simple apps. Many extra classes will need to be created upfront.
 
-### When to Use
+<!-- > -->
+
+## When to Use
 
 Coordinators are especially useful for complex apps with a large number of destinations screens that can be reached (presented) from multiple places.
 
-### Coordinator Types
 
-Coordinators can be created for a variety of purposes.
+<!-- > -->
 
-Most often, Coordinators are used for:
+## AppCoordinator
 
-- navigation flow
-- managing changes to the Model
+Creating an app-wide `AppCoordinator` is the most common implementation of Coordinators for navigation flow.
 
-**AppCoordinator**
+This requires one high-level coordinator instantiated in the `AppDelegate` that directs navigation for the whole app (also known as the *Application Controller pattern*
 
-Creating an app-wide `AppCoordinator` is the most common implementation of Coordinators for navigation flow. This requires one high-level coordinator instantiated in the `AppDelegate` that directs navigation for the whole app (also known as the *Application Controller pattern*<sup>2</sup>)
+<!-- > -->
 
 The `AppCoordinator` holds an array of child coordinators, who in turn might hold an array of their own child coordinators.
 
 This is especially useful in a TabBar app: each TabBar scene's navigation controller could get its own coordinator for directing its own behavior and flow. And each coordinator can be spawned by its parent coordinator.
 
-In addition, child coordinators can be created for specific tasks like signing up or creating content.
-
-> **TIP:** Remember to employ the Coordinator pattern early in your development process so child coordinators can be useful even in single-step tasks (such as authentication).
-
+<!-- > -->
 
 ![example](assets/coordinator_types2.png)
 
 *Source:* </br>
 https://www.scoop.it/topic/swift-by-jerometonnelier/p/4097595680/2018/05/11/the-c-in-mvvm-c-mihael-y-cholakov
 
-
-</br>
-
-
-*Diagram representing the relationship between an `AppCoordinator` and its child coordinators, as well as a few other potential coordinator types:*
-
-![example](assets/coordinator_types.png)
-
-*Source:* </br>
-https://www.slideshare.net/secret/3jJlEE1weo0RRl
-
-</br>
-
-
-
+<!-- > -->
 
 ### Coordinator and Deep Linking
 
 A **deep link** is any link that directs a user past the home page of a website or app to content inside of it:
 - for example, linking directly to a product instead of the home page.
 
+<!-- > -->
+
 **iOS and Deep Linking**
 For many kinds of apps we not only want to make it easy to navigate within our own app, but also to enable other apps and websites to deep link into ours.
 
 A common way to do this on iOS is to define a URL scheme that other apps can then use to link directly into a specific screen or feature of an app.
+
+<!-- > -->
 
 __*The Obstacle*__
 
 To support deep linking in an iOS app, you might need to open specific views in the app, regardless of the navigation history or navigation design.
 
 With standard MVC and its potential to tightly-couple View Controllers, it is very difficult to implement deep linking.
+
+<!-- > -->
 
 __*The Solution*__
 
@@ -363,6 +301,8 @@ https://medium.com/@abhimuralidharan/universal-links-in-ios-79c4ee038272
 
 <!-- this needs some example TODO: research this more -->
 
+<!-- > -->
+
 ### Coordinator &mdash; with Other Patterns
 
 Coordinator is an easy pattern to implement with other complementary patterns.
@@ -371,26 +311,48 @@ For examples:
 1. __*Coordinator with MVVM*__
 - MVVM results in thinner VCs, more easily testable code, and data formatting logic that is decoupled from VCs.
 - Adding navigation flow coordinators further decouples VCs
+
+<!-- > -->
+
 2. __*Coordinator with Factory*__
 - Combines more flexible navigation with the ability to create objects (even View Controllers) on demand and to dynamically customized specifications.
 
+<!-- > -->
 
-## In Class Activity II (20 min)
+## In Class Activity
 
-### Individually
+Download [this starter code](https://github.com/alfianlosari/MovieCoordinator-Starter-Project)
+
+It is the starting point of [this tutorial](https://medium.com/swift2go/refactoring-ios-app-with-coordinator-pattern-for-navigation-alfian-losari-50081bfa7a4a)
+
+Your task is to refactor the code to use the coordinator pattern.
+
+Modify the Coordinator protocol to be like this:
+
+```swift
+protocol Coordinator {
+    func start()
+    var navigationController: UINavigationController { get set }
+}
+```
+
+<!-- > -->
+
+### Stretch Challenges
 
 This exercise follows on today's Activity 1...
 
-**Resources Required**
+**Resources Required** Your completed app from Activity 1
 
-- you can use your completed app from Activity 1
-
-**TODO:** In the tutorial below, complete this section:
+**TODO:** In the tutorial below, complete these sections:
 
 - "How and when to use child coordinators"
+- "Navigating backwards"
+- "Passing data between view controllers"
 
 [Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
 
+<!-- > -->
 
 ## After Class
 
@@ -402,37 +364,9 @@ This exercise follows on today's Activity 1...
 - Deep Linking (specific to iOS)
 - `Universal Link`
 - State Machine
-- VIPER pattern
 - MVP
 
-2. Follow on exercise to today's Activity 1 and Activity 2:
-
-&nbsp;&nbsp; **Resources Required**
-- use your completed app from Activity 2
-
-> __*Important Note:*__ First, back up (or commit to github) your completed app from Activity 1.
-
-&nbsp;&nbsp;  **TODO:**
-
-At minimum, complete these sections of the tutorial below (same tutorial used in Activity 2):
-
-- "Navigating backwards"
-- "Passing data between view controllers"
-
-[Advanced coordinators in iOS - a tutorial](https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios)
-
-
-__*Stretch Challenge:*__
-- finish all of the implementation sections in this tutorial
-
-3. Continue working on your Course Project...
-
-
-## Wrap Up (5 min)
-
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+<!-- > -->
 
 ## Additional Resources
 
@@ -441,6 +375,9 @@ __*Stretch Challenge:*__
 3. [Coordinators - video presentation](https://vimeo.com/144116310)
 4. [Coordinators - a slideshare from LinkedIn](https://www.slideshare.net/secret/3jJlEE1weo0RRl)
 5. [8 Patterns to Help You Destroy Massive View Controller - an article](http://khanlou.com/2014/09/8-patterns-to-help-you-destroy-massive-view-controller/)
+
+<!-- > -->
+
 6. [NextPrevious What Are Cocoa Bindings? - from Apple ](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html#//apple_ref/doc/uid/20002372-CJBEJBHH)
 7. [Application Controller - Martin Fowler](https://martinfowler.com/eaaCatalog/applicationController.html) <sup>2</sup>
 8. [Presentation Model - Martin Fowler](https://martinfowler.com/eaaDev/PresentationModel.html)
