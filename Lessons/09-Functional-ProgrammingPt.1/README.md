@@ -22,7 +22,7 @@ By the end of this lesson, you should be able to...
 1. Describe:
 - the programming issues caused by **mutable state**
 - the difference between **Imperative** and **Declarative** programming styles
-- **Functional Programming constructs** 
+- **Functional Programming constructs**
 - potential use cases for FP
 2. Implement basic examples of constructs explored in class, especially:
 - `Pure Functions`
