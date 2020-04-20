@@ -6,7 +6,7 @@
 
 # Coordinators
 
-## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/07-Coordinators/README.html ':ignore')
+## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/08-Coordinators/README.html ':ignore')
 
 <!-- > -->
 
