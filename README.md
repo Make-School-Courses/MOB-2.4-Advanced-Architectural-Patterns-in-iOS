@@ -50,7 +50,7 @@ Students by the end of the course will be able to ...
 [MVVM]: Lessons/07-MVVM/README.md
 [Coordinators]: Lessons/08-Coordinators/README.md
 [Functional Programming Pt.1]: Lessons/09-Functional-ProgrammingPt.1/README.md
-[Functional Programming Pt.2]: Lessons/10-Functional-ProgrammingPt.2/Lesson10.md
+[Functional Programming Pt.2]: Lessons/10-Functional-ProgrammingPt.2/README.md
 [Reactive Programming Pt.1]: Lessons/11-Reactive-ProgrammingPt.1/Lesson11.md
 [Reactive Programming Pt.2]: Lessons/12-Reactive-ProgrammingPt.2/Lesson12.md
 [Reactive Programming Pt.3]: Lessons/13-Reactive-ProgrammingPt.3/Lesson13.md

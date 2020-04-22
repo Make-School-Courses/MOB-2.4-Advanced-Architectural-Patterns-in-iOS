@@ -6,7 +6,7 @@
 
 # Functional Programming (Part 1 of 2)
 
-## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/08-Coordinators/README.html ':ignore')
+## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/09-Functional-ProgrammingPt.1/README.html ':ignore')
 
 <!-- > -->
 
