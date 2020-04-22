@@ -32,6 +32,14 @@ You can easily do a wireframe like this one using Sketch.
 
 ## Calendar
 
+
+- Week 1
+- Week 2
+- Week 3
+
+<!--
+## Calendar
+
 Wed, Aug 28
 - Project assigned
 
@@ -62,3 +70,5 @@ Tue, Oct 8
 
 Wed, Oct 9   
 - Project presentation
+
+-->

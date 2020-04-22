@@ -3,12 +3,11 @@
 ## Project goals
 
 - Create a portfolio piece that demonstrates to prospective employers your knowledge of iOS design patterns relevant to iOS development.
-- Reinforce the ability to collaborate in a team project.
 - Organize and document the project's progress using a project management tool.
 
 ## What you are building
 
-You have 7 weeks starting now to complete a functional app with a partner. You'll have to scope effectively for the time given and document all progress using a [Github project board](https://help.github.com/en/articles/about-project-boards).
+You have 3 weeks starting now to complete a functional app with a partner. You'll have to scope effectively for the time given and document all progress using a [Github project board](https://help.github.com/en/articles/about-project-boards).
 
 You have the freedom to choose the category of your app :
 
@@ -38,7 +37,11 @@ __*Suggestions*__
 - Keep good track of the project's progress in Github.
 - Ensure you and your partner have good communication.
 
-### Delivery dates
+### Delivery date
+
+Last day of classes
+
+<!--
 |          Date          |                 Milestone                 |
 |:----------------------:|:---------------------------------------:  |
 |  Wed, Aug 28           | Project assigned                           |
@@ -49,6 +52,8 @@ __*Suggestions*__
 |  Wed, Oct 2            | Third progress check in                    |
 |  Tue, Oct 8            | Turn in final project                      |
 |  Wed, Oct 9            | Project presentation                       |
+
+-->
 
 ### To Jog Your Creativity
 
