@@ -1,84 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Syllabus Template Slides</title>
+    <link rel="stylesheet" href="./../css/reveal.css" />
+    <link rel="stylesheet" href="./../css/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./../css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./../css/print/paper.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="./../assets/Reveal/makeschool.css" />
+
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- Run this slideshow via the following command: -->
+<!-- reveal-md README.md -w -->
+
+
+<!-- .slide: class="header" -->
+
 # Reactive Programming (Part 1 of 3)
 
-<!-- INSTRUCTOR NOTES:
+## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/11-Reactive-ProgrammingPt.1/README.html ':ignore')
+
+
+<!-- INSTRUCTOR:
 1) For Activity 1:
 - solutions are hidden (as graphics) below each exercise
 3) for Activity 2:
 - xxxx
 -->
-
-## Minute-by-Minute
-
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:20      | Overview                  |
-| 0:25        | 0:15      | In Class Activity I       |
-| 0:40        | 0:10      | BREAK                     |
-| 0:50       | 0:25      | Overview                  |
-| 1:15        | 0:30      | In Class Activity II      |
-| TOTAL       | 1:45      |                           |
-
-
-## Learning Objectives (5 min)
+</script></section><section  data-markdown><script type="text/template">
+## Learning Objectives
 
 By the end of this lesson, you should be able to...
 
 1. Describe:
-- Reactive programming, ReactiveX (Rx), RxSwift & RxCocoa </br>
-&nbsp;&nbsp; - history of Rx and the software problems it is intended to solve </br>
-&nbsp;&nbsp; - benefits of Rx (how it solves challenges) </br>
-- how to read Marble diagrams
-- Basic Building blocks of Rx
-- Basic operators
-- Key concepts: Event Streams, Sequences, Observables (and their relationships), Subscribing
-- The Lifecyce of Observables
-2. Implement basic examples of:
-- Observables
+  - Reactive programming, ReactiveX (Rx), RxSwift & RxCocoa </br>
+  - How to read Marble diagrams
+  - Basic Building blocks of Rx
+  - Basic operators
+  - Key concepts: Event Streams, Sequences, Observables (and their relationships), Subscribing
+  - The Lifecycle of Observables
+2. Implement basic examples of Observables
+</script></section><section  data-markdown><script type="text/template">
+## Reactive Programming
 
-## Overview/TT I (20 min)
-
-### Reactive Programming
-
-Reactive Programming can be thought of as the practice of programming with *asynchronous* data streams, or __*event streams.*__
-
-#### Initial Concepts
+Reactive Programming can be thought of as the practice of programming with **asynchronous** data streams, or __*event streams.*__
+</script></section><section  data-markdown><script type="text/template">
+### Initial Concepts
 
 In Reactive Programming, an observer *subscribes* to __*an Observable.*__
 
-Observables produce events over a period of time. The process of Observables producing events over a time is referred to as __*emitting.*__
+Observables produce events over a period of time.
 
-And the observer can react to whatever item or sequence of items the Observable emits.
+The process of Observables producing events over a time is referred to as __*emitting.*__
 
-Events can contain values, including numbers or instances of a custom type, or events can be recognized gestures, such as taps.
+An observer can react to whatever item or sequence of items the Observable emits.
+</script></section><section  data-markdown><script type="text/template">
+__*Operators*__ are __*the building blocks*__ of Reactive Programming, which you can use to:
 
-__*Operators*__ are __*the building blocks*__ of Reactive Programming, which you can use to transform, process, and react to events emitted by observables.
+- transform
+- process
+- and react to events emitted by observables.
+</script></section><section  data-markdown><script type="text/template">
+### Event Streams
 
-##### Event Streams
-An event stream is a sequence of events happening over time.
+An event stream is a **sequence of events** happening over time.
 
-An asynchronous data stream is a stream of data where values are *emitted* &mdash; one after another &mdash; with a delay between them, and without blocking program flow to wait for results (Parallelism).
+An **asynchronous data stream** is a stream of data where values are *emitted*, one after another, with a delay between them, and without blocking program flow to wait for results.
 
-And because the stream is asynchronous, the data emitted can appear anywhere in time &mdash; after a second or two, or even after two minutes.
+And because the stream is asynchronous, the data emitted can appear anywhere in time.
+</script></section><section  data-markdown><script type="text/template">
+### Modeling Event Streams with Marble Diagrams
 
-#### Modeling Event Streams with Marble Diagrams
+The common way of modeling asynchronous streams in Rx is to place the emitted values on a time axis in what is called a **Marble Diagram**
 
-The common way of modeling asynchronous streams in Rx is to place the emitted values on a time axis in what is called a **Marble Diagram** &mdash; interactive diagrams that depict how Rx operators work with observable sequences over time.
-
+These are interactive diagrams that show how Rx operators work with observable sequences over time.
+</script></section><section  data-markdown><script type="text/template">
 Here, our diagram shows a simple description of a hypothetical event stream, with events represented by colored bubbles drawn at intermittent time intervals:
 
 ![Marble_diagram_breakdown](assets/Marble_diagram_breakdown.png) </br>
-
+</script></section><section  data-markdown><script type="text/template">
 In a Marble Diagram, the left-to-right arrow represents time, and the numbered circles represent elements of a sequence, which are just values plotted on the timeline.
 
-In the last above diagram, pay particular attention to these symbols:
+In the last diagram, pay particular attention to these symbols:
 - The **Error** symbol
 - The **Event Stream Complete** symbol  
-
-<!-- TODO: add why the relevance of these symbols will be clear soon -->
-
-
-##### Comparing Arrays to Event Streams
+</script></section><section  data-markdown><script type="text/template">
+<!--
+### Comparing Arrays to Event Streams
 
 Arrays are sequences in *space*; all items in an array exist in memory.
 
@@ -97,52 +112,22 @@ In this example, the filtered condition applied to the `eventStreamArray` above 
 
 ![filter_diag](assets/filter_diag.png)
 
+-->
 
-## In Class Activity I (15 min)
+## In Class Activity
 
-### In Pairs or As A Class
-Marble Diagrams are indispensable when it comes to learning Rx.
-
-Below are 3 Marble Diagrams of hypothetical, generic event scenarios that illustrate 3 of the most commonly used Rx __*transforming operators.*__
-
-However, all 3 diagrams are incomplete: They are all missing the timeline showing the event stream resulting from each of their respective operators.
-
-> __*TIP:*__ You should be familiar with how the first 2 operators work; they are very similar to their HoF counterparts found in the standard Swift libraries, except they work with Observable sequence elements.
-
-**TODO:**
-- Study each one of the diagrams and the description of each operator.
-- Complete the diagram by filling in the resulting event stream for each operator (*see the `filter()` operator diagram above for hints*).
-
-__*Exercise 1:*__ `map()` &mdash; Transforms items emitted by an Observable by applying a function to each item or converting from one item type into another:
-
-![map_exercise_start](assets/map_exercise_start.png)
-<!--
-![map_exercise_solution](assets/map_exercise_solution.png)
- -->
-
-__*Exercise 2:*__ `reduce()` &mdash; Applies a function to each item emitted by an Observable, sequentially, and emits the final value:
-
-![reduce_exercise_start](assets/reduce_exercise_start.png)
-<!-- ![reduce_exercise_solution](assets/reduce_exercise_solution.png)
- -->
-
-__*Exercise 3:*__ &mdash; The `distinct()` suppresses duplicate items emitted by an Observable:
-
- ![distinct_exercise_starter](assets/distinct_exercise_starter.png)
- <!-- ![distinct_exercise_solution](assets/distinct_exercise_solution.png) -->
-
-
-## Overview/TT II  (25 min)
-
-### ReactiveX, RxSwift & RxCocoa
+Instructions [here]()
+</script></section><section  data-markdown><script type="text/template">
+## ReactiveX, RxSwift & RxCocoa
 
 ReactiveX (Rx) is a combination of the best ideas from the **Observer pattern,** the **Iterator pattern,** and **Functional Programming.**
 
-It is a library for composing asynchronous and event-based programs by using observable sequences.
-
+It is a library for composing **asynchronous** and **event-based** programs by using **observable sequences**.
+</script></section><section  data-markdown><script type="text/template">
 It extends the observer pattern to support **sequences** of data and/or events, and it adds **operators** which allow you to compose sequences together declaratively while abstracting away concerns regarding concurrency.
+</script></section><section  data-markdown><script type="text/template"><!--
 
-#### Brief History
+### Brief History
 
 Around 2009, a team at Microsoft released a new client and server side framework called Reactive Extensions for .NET that offered a solution to the problems of real-time, scalable, asynchronous app development.
 
@@ -153,51 +138,39 @@ In 2012, it became an open-source component permitting other languages and platf
 Today, it is a cross-platform standard implemented in RxJS, Rx.NET, RxScala, RxSwift, and more...
 
  > http://reactivex.io is the central repository of documentation about Rx’s operators and core classes.
+-->
 
-#### RxSwift & RxCocoa
+### RxSwift & RxCocoa
 
 **RxSwift** also works with all the concepts you’ve covered so far: It tackles mutable state, it allows you to compose event sequences and improves on architectural concepts such as code isolation, reusability and decouplings.
 
-You could think of RxSwift as the "glue" between traditionally imperative Cocoa Touch code and functional code. It allows you to react to events by using __*immutable*__ code definitions to process __*asynchronous*__ pieces of input in a __*deterministic,*__ __*composable*__ manner.
+You could think of RxSwift as the "glue" between traditionally **imperative** Cocoa Touch code and **functional** code.
 
-Because RxSwift closely follows the general API design that RxPython, RxRuby, RxJS, and all other platforms conform to, it does not include any specific features or integrations with UIKit or Cocoa Touch to aid you in developing for iOS.
+It allows you to react to events by using __*immutable*__ code definitions to process __*asynchronous*__ pieces of input in a __*deterministic*__ manner.
+</script></section><section  data-markdown><script type="text/template">
+**RxCocoa** is a standalone library that comes bundled with RxSwift.
 
-**RxCocoa** is a standalone library that comes bundled with RxSwift. It allows you to use many prebuilt features to integrate better with UIKit and Cocoa Touch. RxCocoa will provide you with out-of-the-box classes to do reactive networking, react to user interactions, bind data models to UI controls, and more.
+It allows you to use many prebuilt features to integrate better with UIKit and Cocoa Touch.
 
-<!-- TODO: describe RxCocoa' use cases, details better -->
-
-#### Why learn this?
-
-##### Benefits
+RxCocoa will provide you with out-of-the-box classes to do reactive networking, react to user interactions, bind data models to UI controls, and more.
+</script></section><section  data-markdown><script type="text/template">
+### Benefits
 
 The [Rx Documentation](http://reactivex.io) states these as the general benefits of **ReactiveX:**
 
-- **Functional** &mdash; Avoid intricate stateful programs, using clean input/output functions over observable streams.
-- **Less is more** &mdash; ReactiveX's operators often reduce what was once an elaborate challenge into a few lines of code.
-- **Async error handling** &mdash; Traditional try/catch is powerless for errors in asynchronous computations, but ReactiveX is equipped with proper mechanisms for handling errors.
+- **Functional** &mdash; Avoid intricate stateful programs
+- **Less is more** &mdash; ReactiveX's operators often reduce lines of code.
+- **Async error handling** &mdash;
 - **Concurrency made easy** &mdash; Observables and Schedulers in ReactiveX allow the programmer to abstract away low-level threading, synchronization, and concurrency issues.
-
+</script></section><section  data-markdown><script type="text/template">
 The benefits of implementing **RxSwift** are more evident in modern mobile apps which are highly interactive and have a multitude of UI events related to data events.
 
 The benefits of **RxSwift** include:
 - Asynchrony is simplified with Declarative Code.
 - Multithreading is simplified.
 - Cleaner Code & Architectures
-- Composable Components.
-- Perfect compatibility with the MVVM template
-
-
-####  Problems Solved
-
-By now, you are familiar with the issues inherent in the following:
-
-1. State, especially shared mutable state
-2. Imperative programming
-3. Side effects
-
-In addition to those issues, Rx specifically addresses challenges associated with __*asynchronous*__ operations.
-
-#### Asynchronous
+</script></section><section  data-markdown><script type="text/template">
+### Asynchronous
 
 At any given moment, your iOS app might be executing any of the following asynchronous tasks:
 - Reacting to button taps and gestures
@@ -208,24 +181,7 @@ At any given moment, your iOS app might be executing any of the following asynch
 - Tracking GPS location updates
 
 And if any 2 tasks occur at the same time &mdash; as they often do &mdash; one task should not block the execution of the other.
-
-For example, reacting to user taps on a button should not have to wait for GPS location updates to complete.
-
-As a platform, iOS offers numerous APIs to write such asynchronous code. Examples include:
-- closures for small Async tasks
-- delegation for background task
-- Notification Center for event-based tasks...
-
-Managing and modifying a single code base comprised of multiple Asynchronous APIs becomes difficult, especially with a large development team.
-
-By its nature, Asynchronous code presents common issues such as race conditions, difficulty Unit Testing, and more...
-
-<!-- TODO: elaborate on all this... -->
-
-<!--
-TODO: Show synchronous? -->
-
-
+</script></section><section  data-markdown><script type="text/template"><!--
 ### How Rx solves them
 
 1. **Declarative code** &mdash; RxSwift combines some of the best aspects of imperative code and functional code to resolve challenges presented by mutable state, etc.
@@ -237,11 +193,9 @@ This is an abstract term covering web or iOS apps that exhibit most or all of th
 - __*Resilient:*__ Each behavior is defined in isolation and provides for flexible error recovery.
 - __*Elastic:*__ The code handles varied workload, often implementing features such as lazy pull-driven data collections, event throttling, and resource sharing.
 - __*Message driven:*__ Components use message-based communication for improved reusability and isolation, decoupling the lifecycle and implementation of classes. Now that you have a good understanding of the problems RxSwift helps solve and how it approaches these issues, it’s time to talk about the building blocks of Rx and how they play together.
+-->
 
-
-####  Basic Building blocks
-
-<!-- TODO: intro and expand  -->
+##  Basic Building blocks
 
 - Observables
 - Subscribing
@@ -279,26 +233,16 @@ at any moment, might be doing any of the following things and more:
 • Downloading a large photo from the Internet
 • Saving bits of data to disk
 • Playing audio -->
-
-
-
+</script></section><section  data-markdown><script type="text/template">
 ### Observables (aka, Sequences)
 
-The most important thing to understand about Rx is the equivalence<sup>1</sup> of the observer pattern (`Observable<Element>` sequence) and normal sequences (`Sequence`).
+The most important thing to understand about Rx is the equivalence of the observer pattern (`Observable<Element>` sequence) and normal sequences (`Sequence`).
 
-And the kernel of RxSwift is:
 - Every Observable sequence is just a sequence with some special powers, the most important of its powers is that it is __*asynchronous.*__
 - Event Streams are called sequences.
-- The key advantage for an Observable vs Swift's `Sequence Type`<sup>2</sup> is that Observable can also receive elements __*asynchronously.*__
-
-Thus, in RxSwift, everything is a sequence or something that works with a sequence (and you can refer to Observables and event streams interchangeably as "sequences.")
-
-Other attributes of Observable:
-
-- Every Observable is __*immutable,*__ which means that each stream composition will create a completely new Observable.
-- `ObservableType.subscribe` method is equivalent to `Sequence.makeIterator` method.
-- Observer (callback) needs to be passed to `ObservableType.subscribe` method to receive sequence elements *instead of calling `next()` on the returned iterator.*
-
+- The key advantage for an Observable vs Swift's `Sequence Type` is that Observable can also receive elements __*asynchronously.*__
+</script></section><section  data-markdown><script type="text/template">
+In RxSwift, everything is a sequence or something that works with a sequence.
 
 Arrays, Strings or Dictionaries will be converted to observable sequences in RxSwift. (In fact, you might think of an array converted to an observable sequence as simply an array with time dimension.)
 
@@ -311,18 +255,30 @@ You can create an observable sequence of any object that conforms to the `Sequen
 <!-- Observables produce events, the process of which is referred to as emitting, over a period of time. -->
 
 <!-- A stream is a sequence of ongoing events ordered in time. It can emit three different things: a value (of some type), an error, or a "completed" signal. -->
-
-
+</script></section><section  data-markdown><script type="text/template">
 #### Lifecycle of an Observable
 
 An Observable can emit (and observers can receive) only three types of events:
-- A **Next** event &mdash; An event that “carries” the latest (or "next") data value. This is the way observers “receive” values. An Observable may emit an indefinite amount of these values, until a terminating event is emitted. 
-A **Completed** event  &mdash;  This event terminates the event sequence with success. It means the Observable completed its life cycle successfully and won’t emit additional events. 
-- An **Error** event  &mdash; The Observable terminates with an error and will not emit additional events.
+
+A **Next** event.
+
+An event that “carries” the latest (or "next") data value.
+
+This is the way observers “receive” values. An Observable may emit an indefinite amount of these values, until a terminating event is emitted. 
+</script></section><section  data-markdown><script type="text/template">
+A **Completed** event.  
+
+This event terminates the event sequence with success.
+
+It means the Observable completed its life cycle successfully and won’t emit additional events. 
+</script></section><section  data-markdown><script type="text/template">
+An **Error** event.
+
+The Observable terminates with an error and will not emit additional events.
 
 But an Observable doesn’t do anything until it receives a subscription.
-
-#### 3 simple steps to use Rx
+</script></section><section  data-markdown><script type="text/template">
+### 3 simple steps to use Rx
 
 The following example explains the the 3 simple steps required to use Reactive programming in your application.
 
@@ -351,30 +307,39 @@ database.subscribeOn(Schedulers.newThread())          //Observable runs on new b
         .observeOn(AndroidSchedulers.mainThread())    //Observer will run on main UI thread.
         .subscribe(observer);                         //Subscribe the observer
 ```
+
 **Step-1 Create observable that emits the data:**
-Here database is an observable which emits the data. In this case, it emits the strings.
+
+`database` is an observable which emits the data. In this case, it emits strings.
 
 `just()` is an operator, which basically emits the data provided in the argument one by one.
-
+</script></section><section  data-markdown><script type="text/template">
 **Step -2 Create observer that consumes data:**
-In above code snippet observer is an observer that consumes the data emitted by the database observable. It processes the data received and also handles error inside it.
 
-**Step-3 Manage concurrency:** (if relevant)
-At the last step, we define our schedulers that manage the concurrency. `subscribeOn(Schedulers.newThread())` tells the database observable to run on a `background thread.` `observeOn(AndroidSchedulers.mainThread())` tells observer to run on the `main thread`.
+`observer` is an observer that consumes the data emitted by the database observable.
+
+It processes the data received and also handles error inside it.
+</script></section><section  data-markdown><script type="text/template">
+**Step-3 Manage concurrency:**
+
+At the last step, we define our schedulers that manage the concurrency.
+
+`subscribeOn(Schedulers.newThread())` tells the database observable to run on a `background thread.`
+
+ `observeOn(AndroidSchedulers.mainThread())` tells observer to run on the `main thread`.
 
 This is basic code for reactive programming.
 
 *from:* </br>
 https://medium.com/@kevalpatel2106/what-is-reactive-programming-da37c1611382
-
-
-#### Subscribing to Observables
+</script></section><section  data-markdown><script type="text/template">
+### Subscribing to Observables
 
 Observables come with a `subscribe` operator to subscribe to events being emitted by the Observable and to perform other operations, like printing each event as it is emitted.
 
-> Here is the official documentation on the actions available to the `subscribe` operator:
+Here is the official documentation on the actions available to the `subscribe` operator:
 
-```Swift
+```swift
 Subscribes an element handler, an error handler, a completion handler and disposed handler to an observable sequence.
 
      - parameter onNext: Action to invoke for each element in the observable sequence.
@@ -388,45 +353,37 @@ Subscribes an element handler, an error handler, a completion handler and dispos
 ```
 
 <!-- < compare Observables with subscribe to Notifications > -->
-
-
+</script></section><section  data-markdown><script type="text/template">
 ### Disposing and terminating
 
-When a sequence sends the completed or error event all internal resources that compute sequence elements will be freed.
+When a sequence sends the **completed** or **error** event all internal resources that compute sequence elements will be freed.
 
 To cancel production of sequence elements and free resources immediately, call `dispose` on the returned subscription.
-
+</script></section><section  data-markdown><script type="text/template">
 If a sequence does not terminate on its own, such as with a series of button taps, resources will be allocated permanently unless `dispose` is called manually, automatically inside of a `disposeBag`, with the `takeUntil` operator, or in some other way.
 
-Using `dispose bags` or `takeUntil operator` is a robust way of making sure resources are cleaned up. We recommend using them in production even if the sequences will terminate in finite time.
+Using `dispose bags` or `takeUntil operator` is a robust way of making sure resources are cleaned up.
 
 Dispose bags are used to return ARC like behavior to RX.
-
+</script></section><section  data-markdown><script type="text/template">
 When a DisposeBag is deallocated, it will call dispose on each of the added disposables.
 
 It does not have a dispose method and therefore does not allow calling explicit dispose on purpose. If immediate cleanup is required, we can just create a new bag.
 
-```Swift
+```swift
   self.disposeBag = DisposeBag()
-  ```
+```
 This will clear old references and cause disposal of resources.
 
 *from:* </br>
 https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md
 
-<!--
-### Common operators in swift
-
- -->
-
-
-## In Class Activity II (30 min)
-
+</script></section><section  data-markdown><script type="text/template">
 ### Part 1 - HelloRxSwift
 
 **TODO:** Using RxSwift, write a simple function that prints out `"Hello Rx"` and call the function from `viewDidLoad()`.
 
-```Swift
+```swift
   func helloRxSwift(){
 
       //TODO: create Observable and call its .just func
@@ -451,7 +408,7 @@ func helloRxSwift(){
 }
 
 ``` -->
-
+</script></section><section  data-markdown><script type="text/template">
 ### Part 2 - Rx.playground Examples
 
 As a class, review and discuss the behaviors in these simple Observers...
@@ -462,13 +419,12 @@ As a class, review and discuss the behaviors in these simple Observers...
 2. Build the __*RxExample-macOS__* scheme (Product → Build).
 3. Open __*Rx.playground*__ in the Project navigator (under RxExample project).
 4. If needed, show the Debug Area (View → Debug Area → Show Debug Area).
-
-
+</script></section><section  data-markdown><script type="text/template">
 > **Step 2:** Navigate to the Introduction playground and run the 2 examples below...
 
 **Q:** What behavior of Observables do these 2 examples illustrate?
 
-```Swift
+```swift
   example("Observable with no subscribers") {
       _ = Observable<String>.create { observerOfString -> Disposable in
           print("This will never be printed")
@@ -478,8 +434,8 @@ As a class, review and discuss the behaviors in these simple Observers...
       }
   }
 ```
-
-```Swift
+</script></section><section  data-markdown><script type="text/template">
+```swift
   example("Observable with subscriber") {
     _ = Observable<String>.create { observerOfString in
               print("Observable created")
@@ -492,6 +448,7 @@ As a class, review and discuss the behaviors in these simple Observers...
       }
   }
 ```
+</script></section><section  data-markdown><script type="text/template">
 
 > **Step 3:** Navigate to the TryYourself playground and run, first as it is, then after uncommenting out the 2 lines realated to `dispose`..
 
@@ -505,6 +462,7 @@ example("Try yourself") {
 }
 
 ```
+<!-- > -->
 
 ### Part 3 - Reactive Button
 
@@ -543,7 +501,7 @@ class ViewController: UIViewController {
 
 }
 ```
-
+</script></section><section  data-markdown><script type="text/template">
 > **Step 2:** Add a second button called `buttonTwo` and, using the `tap` function built into __*RxCocoa,*__ call the same `printNext()` function as in the non-Reactive version above...
 
 __*HINTS:*__
@@ -573,15 +531,7 @@ __*HINTS:*__
       }).disposed(by: disposeBag)
   }
 ``` -->
-
-
-<!--
-
-## Overview/TT III  (20 min)
-
-## In Class Activity III (30 min) -->
-
-
+</script></section><section  data-markdown><script type="text/template">
 ## After Class
 
 1. Research:
@@ -593,17 +543,10 @@ __*HINTS:*__
 - Concurrency & Parallelism
 - Railway Oriented Programming
 
-2. Execute this tutorial:
+2. Try out this tutorial:
 
 https://www.thedroidsonroids.com/blog/rxswift-by-examples-1-the-basics/
-
-
-## Wrap Up (5 min)
-
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
-
+</script></section><section  data-markdown><script type="text/template">
 ## Additional Resources
 
 1. [Slides](https://docs.google.com/presentation/d/1eXZsIPnR-3dzGK2SjjRjrE3WFY-WeJzc0h25f6qD9Dk/edit#slide=id.p)
@@ -612,3 +555,54 @@ https://www.thedroidsonroids.com/blog/rxswift-by-examples-1-the-basics/
 4. [MathBehindRx - an article](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/MathBehindRx.md) <sup>1</sup>
 5. [Sequence - Apple docs](https://developer.apple.com/documentation/swift/sequence) <sup>2</sup>
 6. [Asynchrony - wikipedia](https://en.wikipedia.org/wiki/Asynchrony_(computer_programming))
+</script></section></div>
+    </div>
+
+    <script src="./../js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './../plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './../plugin/zoom-js/zoom.js', async: true },
+        { src: './../plugin/notes/notes.js', async: true },
+        { src: './../plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":true,"progress":true,"autoPlayMedia":false,"slideNumber":"c/t","showSlideNumber":"all","controlsTutorial":true,"controlsLayout":"edges","transition":"slide","transitionSpeed":"medium","minScale":0.5,"maxScale":3}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
