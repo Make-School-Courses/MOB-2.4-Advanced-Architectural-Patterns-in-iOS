@@ -1,40 +1,33 @@
+<!-- Run this slideshow via the following command: -->
+<!-- reveal-md README.md -w -->
+
+
+<!-- .slide: class="header" -->
+
 # Reactive Programming (Part 2 of 3)
 
-<!-- INSTRUCTOR NOTES:
+## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/11-Reactive-ProgrammingPt.1/README.html ':ignore')
+
+<!-- > -->
+
+<!-- INSTRUCTOR:
 1) For Activity 1:
 - solutions are inline below each exercise
 2) for Activity 2:
 - xxxx
 -->
 
-## Minute-by-Minute
-
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:20      | Initial Exercise          |
-| 0:25        | 0:20      | Overview                  |
-| 0:45        | 0:15      | In Class Activity I       |
-| 1:00        | 0:10      | BREAK                     |
-| 1:10        | 0:20      | Overview                  |
-| 1:30        | 0:25      | In Class Activity II      |
-| TOTAL       | 1:55      |                           |
-
-
-
-## Learning Objectives (5 min)
+## Learning Objectives
 
 By the end of this lesson, you should be able to...
 
 1. Describe and implement basic examples of:
 - Optional ways for creating **Observables**  
-- **Hot & Cold Observables**
-- **Subjects** - A special type of Observable
-- **Schedulers**
+  - **Subjects** - A special type of Observable
+  - **Schedulers**
 - Key Rx **Operators** selected from the roster of operator types available in RxSwift/RxCocoa
 
-## Initial Exercise (15 min)
-
+<!--
 ### Part 1 - Questions from Previous Class
 
 1. How does `distinctUntilChanged` work?
@@ -126,31 +119,31 @@ __*DisposeBags*__
 
 http://adamborek.com/memory-managment-rxswift/
 
+-->
 
-<!-- x. Why call `.subscribe` be on the Observable not the Observer? -->
-
+<!-- > -->
 
 ### Part 2 - Activity 2 from Previous Class
 
-...continuation of Lesson 11 -> Activity 2 -> Exercise 3
+Last class -> Activity 2 -> Exercise 3
 
-
-
-## Overview/TT I (20 min)
+<!-- > -->
 
 The three building blocks of Rx code are __*Observables,*__ __*Operators*__ and __*Schedulers.*__
 
-By now, you have likely realized that each of these Rx concepts by themselves is a non-trivial topic.
-
 Today's class will highlight key aspects of each of these core Rx building blocks...
+
+<!-- > -->
 
 ### Observables (continued...)
 
-#### Creating Observables
+**Creating Observables**
 
 Observables come with a variety of creation operators. Each has its own set of attributes and behavioral advantages, but also its own limitations.
 
-The operators listed below were selected to introduce you to some of the more commonly-used Observable creation operators and some readily-identifiable advantages and limitations...
+The following opearators  were selected to introduce you to some of the more commonly-used Observable creation operators and some readily-identifiable advantages and limitations...
+
+<!-- > -->
 
 1. **`create()`** &mdash; Creates a custom Observable sequence.
 
@@ -159,6 +152,8 @@ The operators listed below were selected to introduce you to some of the more co
 And it lets you decide when to send `next`, `error` or `completed` events.
 
 On the other hand, it is up to you to remember to close the stream (by sending the `completed` event) and to return a `Disposable`.
+
+<!-- > -->
 
 `create()` takes a closure &mdash; `(AnyObserver<T>) -> Disposable` &mdash; as a parameter. Inside the closure, you need to send at least one event to the Observer. It can be `next()`, `error()` or `completed()`. Usually you will send `next()` and `completed()` (one after another), or `error()` instead of `completed()`.
 
@@ -183,6 +178,7 @@ example("create") {
 *From:* </br>
 http://adamborek.com/creating-observable-create-just-deferred/
 
+<!-- > -->
 
 2. **`from()`** &mdash; Creates an Observable sequence from a Sequence, such as an Array, Dictionary, or Set.
 
@@ -190,6 +186,8 @@ http://adamborek.com/creating-observable-create-just-deferred/
 - Futures, as a sort of Observable that always emits only a single item.
 
 By explicitly converting such objects to Observables, you allow them to interact as peers with other Observables.
+
+<!-- > -->
 
 Each element of an array, for example, is produced as a single emission.
 
@@ -203,6 +201,8 @@ Each element of an array, for example, is produced as a single emission.
   }
 ```
 
+<!-- > -->
+
 3. **just()**  &mdash; Creates an Observable sequence with a single element.
 
 `just()` is just a simple operator which wraps a single value.
@@ -210,6 +210,8 @@ Each element of an array, for example, is produced as a single emission.
 If you want only to transform a single value into the Observable, then `just()` is probably the most readable option to choose.
 
 `just()` takes an argument and sends it as `next`, and then it sends `completed` right after `next`.
+
+<!-- > -->
 
 The difference between this operator and `create()` is that `just()` emits *the whole array* as one emission.
 
@@ -224,6 +226,8 @@ The difference between this operator and `create()` is that `just()` emits *the 
           .disposed(by: disposeBag)
   }
 ```
+
+<!-- > -->
 
 4. **`error()`** &mdash; Creates an Observable sequence that emits no items and immediately terminates with an error.
 
@@ -242,6 +246,8 @@ This works similar to `just()` but creates an Observable with a given error.
 *From:* </br>
 `Rx.playground` in RxSwift library
 
+<!-- > -->
+
 **Other Ways to Create Observables**
 
 By no means complete, here are a few other Observable creation operators which may come in handy...
@@ -255,13 +261,23 @@ These are useful for testing purposes, and sometimes also for combining with oth
 
 Operators like `just`, `error`, `empty` or `never` might sometimes be enough to create an Observable you need, and they don’t require that you write a lot of boilerplate code.
 
+<!-- > -->
+
 2. `generate`  &mdash; Creates an Observable sequence that generates values for as long as the provided condition evaluates to true.
+
+<!-- > -->
 
 3. `repeatElement`  &mdash; Creates an Observable sequence that emits the given element indefinitely.
 
+<!-- > -->
+
 4. `doOn`  &mdash; Invokes a side-effect action for each emitted event and returns (passes through) the original event.
 
+<!-- > -->
+
 5. `range`  &mdash; Creates an Observable sequence that emits a range of sequential integers and then terminates.
+
+<!-- > -->
 
 6. `of()` &mdash; Creates an Observable sequence with a fixed number of elements. (Similar to `from()`)
 
@@ -269,6 +285,7 @@ Operators like `just`, `error`, `empty` or `never` might sometimes be enough to 
 - http://adamborek.com/creating-observable-create-just-deferred/ </br>
 - `Rx.playground` in RxSwift library
 
+<!-- > -->
 
 ## In Class Activity I (10 min)
 
@@ -304,6 +321,8 @@ source.subscribe {
     print($0)
 }
 ``` -->
+
+<!-- > -->
 
 2. Complete the code below that creates an Observable from scratch:
 
@@ -365,7 +384,7 @@ disposed
 ```
 -->
 
-## Overview/TT II (20 min)
+<!-- > -->
 
 ### Subject
 
@@ -381,9 +400,11 @@ As an Observer, it can subscribe to one or more Observables.
 
 And as an Observable, it can pass through the items it observes by reemitting them, and it can add new elements that can be emitted to all subscribers.
 
+<!-- > -->
+
 Subject does not call `onCompleted()` until it is unsubscribed/deregistered (i.e., until the `deinit()` of `DisposeBag` or the `dispose()` method is explicitly called.)
 
-> `Subject` is known as a **Hot** Observable. **Hot & Cold Observables** are a follow-on Rx topic listed in your __*After Class*__ exercises below.
+<!-- > -->
 
 #### Three Main Types
 
@@ -394,10 +415,13 @@ There are three primary Subject types in RxSwift, each with unique characteristi
 
 > Other emerging Subject types worth knowing include: AsyncSubject, PublishRelay and BehaviorRelay.
 
+<!-- > -->
+
 1. **PublishSubject** &mdash; Subscriber of this Subject will only receive *new* events that are emitted *after* a subscription.
 
 A PublishSubject starts empty, and only emits new elements (`next` events) to its subscribers; in other words, elements added to a PublishSubject *before* a subscriber subscribes will not be received by that subscriber.
 
+<!-- > -->
 
 > Note: The concept of emitting previous `next` events to new subscribers is called __*replaying,*__ and publish subjects __*DO NOT replay.*__
 
@@ -417,16 +441,25 @@ A PublishSubject starts empty, and only emits new elements (`next` events) to i
   	}
   }
 
-  /* Output:
-  After Subscribe
-  */
+
 ```
+
+<!--
+/* Output:
+After Subscribe
+*/
+
+-->
+
+<!-- > -->
 
 2. **BehaviorSubject** &mdash; A subscriber of this Subject will receive the last event emitted before subscription and all the event emitted after the subscription.
 
 Broadcasts *new* events to *all* subscribers, and the *most recent* (or initial) value to *new* subscribers.
 
 It starts with an initial value and __*replays*__ it or the latest element to *new* subscribers.
+
+<!-- > -->
 
 > This example demonstrate how to unsubscribe explicitly by calling `dispose()` (as opposed to using `DisposeBag`).
 
@@ -451,19 +484,26 @@ It starts with an initial value and __*replays*__ it or the latest element to *n
   		subtitle.onNext("FinalValue - Won't get it!!")
   	}
   }
-  /*
-  Output:
-    InitialValue
-    UpdatedValue
-    Disposed
-  */
+
 ```
+
+
+<!--
+/* Output:
+InitialValue
+UpdatedValue
+Disposed*/
+-->
+
+<!-- > -->
 
 3. **ReplaySubject** &mdash; As it name states, it allows us to replay the earlier events and will be received on the initial subscription. We can decide, how many previous events will be replayed/cached/stacked.
 
 Initialized with a buffer size and will maintain a buffer of elements up to that size and __*replay*__ it to new subscribers
 
 Broadcasts new events to *all* subscribers, and the specified `bufferSize` number of previous events to *new* subscribers.
+
+<!-- > -->
 
 ```Swift
   class ReplaySubjectExample {
@@ -489,18 +529,27 @@ Broadcasts new events to *all* subscribers, and the specified `bufferSize` numbe
   	}
   }
 
+```
+
+<!--
   /* Output:
   world
   !!!
-  you will not recieve hello :)
+  you will not receive hello :)
   */
+  -->
 
-```
+<!-- > -->
 
-**Key Notes:**
-- What's missing in these previous examples? A `Completed` event. PublishSubject, ReplaySubject, and BehaviorSubject __*do not automatically*__ emit `Completed` events when they are about to be disposed of.
-- These examples introduce the use of the `onNext(_:)` convenience method, equivalent to `on(.next(_:)`, which causes a new `Next` event to be emitted to subscribers with the provided element. There are also `onError(_:)` and `onCompleted()` convenience methods, equivalent to `on(.error(_:))` and `on(.completed)`, respectively.
+- What's missing in these previous examples?
 
+<!-- > -->
+
+A `Completed` event. PublishSubject, ReplaySubject, and BehaviorSubject __*do not automatically*__ emit `Completed` events when they are about to be disposed of.
+
+- These examples introduce the use of the `onNext(_:)` convenience method, equivalent to `on(.next(_:)`, which causes a new `Next` event to be emitted to subscribers with the provided element.
+
+There are also `onError(_:)` and `onCompleted()` convenience methods, equivalent to `on(.error(_:))` and `on(.completed)`, respectively.
 
 *From:* </br>
 - https://codeburst.io/rxswift-reactive-thinking-part-2-efb209237e6e </br>
@@ -509,8 +558,9 @@ Broadcasts new events to *all* subscribers, and the specified `bufferSize` numbe
 
 <!-- TODO: Add the examples of each of the 4 from Rx.playground -->
 
+<!-- > -->
 
-### Schedulers
+## Schedulers
 
 If you want to introduce __*multithreading*__ into your cascade of Observable operators, you can do so by instructing those operators (or particular Observables) to operate on specific __*Schedulers.*__
 
@@ -518,15 +568,26 @@ Schedulers abstract away the mechanism for performing work.
 
 To summarize, a scheduler is a context where a process takes place. This context can be a thread, a dispatch queue or similar entities, or even an Operation used inside the OperationQueueScheduler.
 
+<!-- > -->
+
 <!-- Different mechanisms for performing work include the current thread, dispatch queues, operation queues, new threads, thread pools, and run loops. -->
 
-#### Two Main Operators
+### Two Main Operators
 
 By __*default,*__ an Observable and the chain of operators that you apply to it will do its work, and will notify its observers, on the same thread on which its `subscribe()` method is called.
 
+<!-- > -->
+
 There are two main operators that work with schedulers:
+
 - `observeOn()` &mdash; Specifies a different Scheduler that the Observable will use to send notifications to its observers. For this reason, you may call ObserveOn multiple times at various points during the chain of Observable operators in order to change on which threads certain of those operators operate.
+
+<!-- > -->
+
+
 - `subscribeOn()` &mdash; Designates which thread the Observable will begin operating on, no matter at what point in the chain of operators that operator is called. It changes the default behavior by specifying a different Scheduler on which the Observable should operate.
+
+<!-- > -->
 
 If you want to perform work on a different scheduler, just use the `observeOn(scheduler)` operator.
 
@@ -534,8 +595,9 @@ You usually use `observeOn()` a lot more often than `subscribeOn()`.
 
 <!-- TODO: show example of observeOn -- from Rx.playground -->
 
+<!--
 
-#### Serial vs Concurrent Schedulers
+### Serial vs Concurrent Schedulers
 
 Since schedulers can really be anything, and all operators that transform sequences need to preserve additional [implicit guarantees](GettingStarted.md#implicit-observable-guarantees), it is important what kind of schedulers are you creating.
 
@@ -543,38 +605,45 @@ In case the scheduler is concurrent, Rx's `observeOn` and `subscribeOn` operator
 
 If you use some scheduler that Rx can prove is *serial,* it will be able to perform additional optimizations.
 
-<!-- In case of serial dispatch queue schedulers, `observeOn` is optimized to just a simple `dispatch_async` call. -->
+-->
 
-<!-- TODO: This needs more work - esp. wrt Concurrent Schedulers -->
+<!-- > -->
 
-
-#### Builtin schedulers
+### Builtin schedulers
 
 Schedulers are the Rx equivalent of dispatch queues — but more powerful (for developers) and much easier to use.
 
 RxSwift comes with a number of predefined schedulers, which cover 99% of use cases and hopefully means you will never have to go about creating your own schedulers.
 
-> Note: You can also create your own __*custom schedulers.*__
+> You can also create your own __*custom schedulers.*__
 
-##### &mdash; MainScheduler (Serial scheduler)
+<!-- > -->
 
-MainScheduler sits on top of the main thread.
+### &mdash; MainScheduler (Serial scheduler)
+
+MainScheduler sits on top of the **main thread**.
 
 MainScheduler processes changes on the user interface and performs other high-priority tasks.
 
 In case `schedule` methods are called from main thread, it will perform the action immediately without scheduling.
 
+<!-- > -->
+
 As a general practice when developing applications on iOS, long-running tasks should not be performed using this scheduler; avoid things like server requests or other heavy tasks.
 
 If your code creates side effects that update the UI, you must switch to the MainScheduler to guarantee those updates make it to the screen.
 
-##### &mdash; CurrentThreadScheduler (Serial scheduler)
+<!-- > -->
+
+### &mdash; CurrentThreadScheduler (Serial scheduler)
 
 Schedules units of work on the current thread.
 
 This is the __*default scheduler*__ for operators that generate elements.
 
-##### &mdash; SerialDispatchQueueScheduler (Serial scheduler)
+<!-- > -->
+
+### &mdash; SerialDispatchQueueScheduler (Serial scheduler)
 
 Abstracts the work that needs to be performed on a specific `dispatch_queue_t`. It will make sure that even if a concurrent dispatch queue is passed, it's transformed into a serial one.
 
@@ -582,21 +651,29 @@ Serial schedulers enable certain optimizations for `observeOn`.
 
 The main scheduler is an instance of `SerialDispatchQueueScheduler`.
 
-##### &mdash; ConcurrentDispatchQueueScheduler (Concurrent scheduler)
+<!-- > -->
+
+### &mdash; ConcurrentDispatchQueueScheduler (Concurrent scheduler)
 
 Abstracts the work that needs to be performed on a specific `dispatch_queue_t`. You can also pass a serial dispatch queue, it shouldn't cause any problems.
 
 This scheduler is suitable when some work needs to be performed in the __*background.*__
 
-##### &mdash; OperationQueueScheduler (Concurrent scheduler)
+<!-- > -->
+
+### &mdash; OperationQueueScheduler (Concurrent scheduler)
 
 Abstracts the work that needs to be performed on a specific `NSOperationQueue`.
 
 Suitable for cases when there is some bigger chunk of work that needs to be performed in the __*background*__ and you want to fine tune concurrent processing using `maxConcurrentOperationCount`.
 
-#### Simple Example:
+<!-- > -->
 
-Here is a simple example &mdash; in **non-working pseudocode** &mdash; of how how to call `observeOn()` and `subscribeOn()` to switch between 2 schedulers:
+<!--
+
+#### Example:
+
+Here is a simple example &mdash; in **pseudocode** &mdash; of how how to call `observeOn()` and `subscribeOn()` to switch between 2 schedulers:
 
 ```Swift
   catObservable // 1
@@ -610,6 +687,8 @@ Here is a simple example &mdash; in **non-working pseudocode** &mdash; of how ho
       }
       .addDisposableTo(disposeBag)
 ```    
+
+
 __*Step-by-step:*__
 1. We subscribe to Cat observable, which emits Cat signals.
 2. We should be on the same scheduler we were before the subscription (which is the default behavior of Rx).
@@ -620,21 +699,11 @@ __*Step-by-step:*__
 *From:* </br>
 https://www.thedroidsonroids.com/blog/rxswift-examples-4-multithreading/
 
-
+-->
 
 <!-- TODO: SHOW EXAMPLE -->
 
 <!-- TODO: briefly spell out each type -->
-
-
-
-
-
-<!-- TODO: show 2 scheduer examples - 1 from rx.playground -->
-
-
-
-
 
 
 <!-- compare Notifications to Observables? -->
@@ -658,8 +727,9 @@ More importantly, an observable won’t send events, or perform any work, until 
 subscriber.
 Remember that an observable is really a sequence definition; subscribing to an observable is really more like calling next() on an Iterator in the Swift standard library. -->
 
+<!-- > -->
 
-## In Class Activity II (30 min)
+## In Class Activity II
 
 1. Complete the code below to match the output:
 
@@ -715,6 +785,8 @@ Remember that an observable is really a sequence definition; subscribing to an o
     */
   ``` -->
 
+
+<!-- > -->
 
 2. In the incomplete code below, complete the line `let subject = ???` in the following code in **3 different ways** to match 3 different expected outputs:
 
@@ -774,21 +846,20 @@ Remember that an observable is really a sequence definition; subscribing to an o
 *from:* </br>
 https://medium.com/@arnavgupta180/rxswift-subjects-and-variables-83c8b2ae1f5
 
+<!-- > -->
 
 <!-- TODO: get exercises for subject  -->
+
 <!-- TODO: from the Rx.playground? -->
 
 <!-- TODO: from the simple Ray W example? see my Subject notes doc -->
 
-
-
 <!-- TODO: convert a Notification to an Observable? -->
-
 
 <!-- TODO: convert a dictionary to an Observable?
 - with debugging options ??-->
 
-
+<!-- > -->
 
 ## After Class
 
@@ -875,17 +946,13 @@ However, it is easy to practice using it..
 <!-- < TODO: exercise on debugging with RxSwift.Resources.total -->
 
 
-## Wrap Up (5 min)
-
-- Continue working on your Course Project
-- Complete reading
-- Complete challenges
+<!-- > -->
 
 ## Additional Resources
 
-1. [Slides](https://docs.google.com/presentation/d/1vMgTfBjhp4Nx0edgo9IM7cfVCHNcW7f6tBZGccPel8g/edit#slide=id.p)
-2. [Reactor_pattern - wikipedia](https://en.wikipedia.org/wiki/Reactor_pattern)
-3. Some excellent RxSwift resources:
+1. [Reactor_pattern - wikipedia](https://en.wikipedia.org/wiki/Reactor_pattern)
+2. Some excellent RxSwift resources:
 - [RxSwiftExt](https://github.com/RxSwiftCommunity/RxSwiftExt)
 - [RxSwiftCommunity](https://github.com/RxSwiftCommunity)
 - [community.rxswift.org](community.rxswift.org)
+- [Rx Resources Repo](https://github.com/DroidsOnRoids/RxSwiftExamples)

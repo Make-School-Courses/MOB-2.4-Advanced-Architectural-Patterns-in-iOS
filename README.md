@@ -34,9 +34,9 @@ Students by the end of the course will be able to ...
 |  6 |  Wed, April 15              | [Functional Programming Pt.1] |
 |  8 |  Wed, April 22              | [Functional Programming Pt.2] |
 |  9 |  Mon, April 27              | [Reactive Programming Pt.1] |
-| 10 |  Wed, April 29              | [Reactive Programming Pt.2]|  
-| 11 |  Mon, May 4                 | [Reactive Programming Pt.3]|
-| 12 |  Wed, May 6                 | Lab + Review |
+| 10 |  Wed, April 29              | Lab |  
+| 11 |  Mon, May 4                 | [Reactive Programming Pt.2]|
+| 12 |  Wed, May 6                 | [Reactive Programming Pt.3] |
 | 13 |  Mon, May 11                | Final Exam  |
 | 14 |  Wed, May 13                | Presentations & Exam Review |
 
@@ -52,7 +52,7 @@ Students by the end of the course will be able to ...
 [Functional Programming Pt.1]: Lessons/09-Functional-ProgrammingPt.1/README.md
 [Functional Programming Pt.2]: Lessons/10-Functional-ProgrammingPt.2/README.md
 [Reactive Programming Pt.1]: Lessons/11-Reactive-ProgrammingPt.1/README.md
-[Reactive Programming Pt.2]: Lessons/12-Reactive-ProgrammingPt.2/Lesson12.md
+[Reactive Programming Pt.2]: Lessons/12-Reactive-ProgrammingPt.2/README.md
 [Reactive Programming Pt.3]: Lessons/13-Reactive-ProgrammingPt.3/Lesson13.md
 
 ## Class Assignments
