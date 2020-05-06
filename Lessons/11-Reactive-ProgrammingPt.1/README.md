@@ -604,9 +604,9 @@ https://www.thedroidsonroids.com/blog/rxswift-by-examples-1-the-basics/
 
 ## Additional Resources
 
-1. [Slides](https://docs.google.com/presentation/d/1eXZsIPnR-3dzGK2SjjRjrE3WFY-WeJzc0h25f6qD9Dk/edit#slide=id.p)
 2. [Central repo for ReactiveX](http://reactivex.io)
 3. [Reading Marble Diagrams - an article](https://medium.com/@jshvarts/read-marble-diagrams-like-a-pro-3d72934d3ef5)
 4. [MathBehindRx - an article](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/MathBehindRx.md) <sup>1</sup>
 5. [Sequence - Apple docs](https://developer.apple.com/documentation/swift/sequence) <sup>2</sup>
 6. [Asynchrony - wikipedia](https://en.wikipedia.org/wiki/Asynchrony_(computer_programming))
+7. [RxSwift repo](https://github.com/ReactiveX/RxSwift)

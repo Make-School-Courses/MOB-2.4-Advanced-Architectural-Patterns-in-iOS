@@ -53,7 +53,7 @@ Students by the end of the course will be able to ...
 [Functional Programming Pt.2]: Lessons/10-Functional-ProgrammingPt.2/README.md
 [Reactive Programming Pt.1]: Lessons/11-Reactive-ProgrammingPt.1/README.md
 [Reactive Programming Pt.2]: Lessons/12-Reactive-ProgrammingPt.2/README.md
-[Reactive Programming Pt.3]: Lessons/13-Reactive-ProgrammingPt.3/Lesson13.md
+[Reactive Programming Pt.3]: Lessons/13-Reactive-ProgrammingPt.3/README.md
 
 ## Class Assignments
 
