@@ -30,13 +30,13 @@ By the end of this lesson, you should be able to...
 
 ## Operators expanded
 
-[Operators list]()
+[Operators list](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/13-Reactive-ProgrammingPt.3/assignments/operators.md)
 
 <!-- > -->
 
 ## In Class Activity I
 
-[Operators activity]()
+[Operators activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/13-Reactive-ProgrammingPt.3/assignments/operators-activity.md)
 
 <!-- > -->
 
@@ -167,7 +167,7 @@ https://stackoverflow.com/questions/46201795/rxswift-rxcocoa-and-uitableview
 
 ## In Class Activity II
 
-[MVVM & Rx]()
+[MVVM & Rx](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/13-Reactive-ProgrammingPt.3/assignments/mvvm.md)
 
 <!-- > -->
 
