@@ -8,6 +8,12 @@ We will be exploring interesting architectural patterns that will help you build
 
 [MOB-2.3](https://github.com/Make-School-Courses/MOB-2.3-Concurrency-Parallelism-in-iOS)
 
+## Course Specifics
+
+**Course Delivery**: online | 7 weeks | 14 sessions
+
+**Course Credits**: 3 units | 37.5 Seat Hours | 75 Total Hours
+
 ## Learning Outcomes
 
 Students by the end of the course will be able to ...
@@ -75,8 +81,13 @@ To pass this course you must meet the following requirements:
  - This will be further explained in the [study guide](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/StudyGuide.md)
 - Actively participate in class and abide by the attendance policy
 
-## Make School Course Policies
+##  Information Resources
 
+Any additional resources you may need (online books, etc.) can be found here. You can also find additional resources through the library linked below:
+
+- [make.sc/library](http://make.sc/library)
+
+## Make School Course Policies
 
 - [Program Learning Outcomes](https://make.sc/program-learning-outcomes) - What you will achieve after finishing Make School, all courses are designed around these outcomes.
 - [Grading System](https://make.sc/grading-system) - How grading is done at Make School
