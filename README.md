@@ -25,27 +25,26 @@ Students by the end of the course will be able to ...
 
 ## Schedule
 
-**Course Dates:** Monday, March 30 – Wednesday, May 13, 2020 (7 weeks)
+**Course Dates:** Wednesday, January 20 – Wednesday, March 3, 2020 (7 weeks)
 
-**Class Times:** Monday and Wednesday at 9:30–12:20pm (14 class sessions)
+**Class Times:** Monday, Wednesday at 9:30am–12:15pm (13 class sessions)
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  Mon, March 30              | [Creational Patterns Pt.1] & [Creational Patterns Pt.2]  |
-|  2 |  Wed, April 1               | [Behavioral Patterns Pt.1]|
-|  3 |  Mon, April 6               | [Behavioral Patterns Pt.2]|
-|  4 |  Wed, April 8               | [Structural Patterns Pt.1] & [Structural Patterns Pt.2] |
-|  5 |  Mon, April 13              | [MVVM]  |
-|  7 |  Mon, April 20              | [Coordinators] |
-|  6 |  Wed, April 15              | [Functional Programming Pt.1] |
-|  8 |  Wed, April 22              | [Functional Programming Pt.2] |
-|  9 |  Mon, April 27              | [Reactive Programming Pt.1] |
-| 10 |  Wed, April 29              | Lab |  
-| 11 |  Mon, May 4                 | [Reactive Programming Pt.2]|
-| 12 |  Wed, May 6                 | [Reactive Programming Pt.3] |
-| 13 |  Mon, May 11                | Final Exam  |
-| 14 |  Wed, May 13                | Presentations & Exam Review |
-
+|  - |  Mon, Jan 18	             | No Class - MLK Day |
+|  1 |  Wed, Jan 20              | [Creational Patterns Pt.1] & [Creational Patterns Pt.2]  |
+|  2 |  Mon, Jan 25              | [Behavioral Patterns Pt.1]|
+|  3 |  Wed, Jan 27              | [Behavioral Patterns Pt.2]|
+|  4 |  Mon, Feb 1	             | [Structural Patterns Pt.1] & [Structural Patterns Pt.2] |
+|  5 |  Wed, Feb 3               | [MVVM]  |
+|  7 |  Mon, Feb 8               | [Coordinators] |
+|  6 |  Wed, Feb 10              | [Functional Programming Pt.1] |
+|  8 |  Mon, Feb 15              | [Functional Programming Pt.2] |
+|  9 |  Wed, Feb 17              | [Reactive Programming Pt.1] |
+| 10 |  Mon, Feb 22              | Lab |  
+| 11 |  Wed, Feb 24              | [Reactive Programming Pt.2]|
+| 12 |  Mon, Mar 1               | [Reactive Programming Pt.3] |
+| 13 |  Wed, Mar 3               | Final Exam  |
 
 [Creational Patterns Pt.1]: Lessons/01-Creational-PatternsPt.1/README.md
 [Creational Patterns Pt.2]: Lessons/02-Creational-PatternsPt.2/README.md
