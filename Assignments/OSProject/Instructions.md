@@ -67,3 +67,5 @@ Looking for a project to contribute takes time, make sure you choose one that's 
 - [Unwrap](https://github.com/twostraws/Unwrap)
 - [My Simple App](https://github.com/LinnierGames/My-Simple-App)
 - [ToDo App](https://github.com/IEEE-VIT/ToDo-iOS)
+- [Welcome Screen](https://github.com/WilsonGramer/AppleWelcomeScreen)
+- [Some projects in this list](https://github.com/jogendra/example-ios-apps)
