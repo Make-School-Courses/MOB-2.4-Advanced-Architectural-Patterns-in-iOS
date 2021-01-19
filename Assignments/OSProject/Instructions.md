@@ -1,6 +1,6 @@
 # MOB 2.4 Project Specifications - Contributing to Open Source
 
-#### What you'll do
+### What you'll do
 
 You will first find a project to make a contribution to, it can't be one of your own. Make **at least two contributions** (you can do more). They can be in the same project or different ones.
 
@@ -19,7 +19,7 @@ For this course...
 
 ❌ Changes to documentation only or fixing typos.
 
-#### Requirements
+### Requirements
 
 - [ ] Two documented and submitted Pull Requests
 - [ ] Projects use one or more of the following:
@@ -30,14 +30,14 @@ For this course...
 - [ ] PR are submitted with a template
 - [ ] Contributions are submitted according to due dates
 
-#### Due dates
+### Due dates
 
 Wed Feb 17         | Wed Mar 3
 ------------       |  -------------
 First PR submitted | Second PR submitted (or more)
 Share in class     | Reviewed by instructor only
 
-#### Sharing progress
+### Sharing progress
 
 When you are done with your first contribution, you'll share your progress in class by answering the following questions:
 
@@ -49,7 +49,7 @@ When you are done with your first contribution, you'll share your progress in cl
 
 You can do slides for this check in if it helps you deliver the update. **Keep it to less than 5 min**.
 
-#### Rubric
+### Rubric
 
 - **25 pts each** - Valid PR submitted
 - **5 pts each**  - PR uses a template
@@ -57,6 +57,6 @@ You can do slides for this check in if it helps you deliver the update. **Keep i
 
 You need at least **70 points** to pass the course.
 
-#### Resources
+### Resources
 
 If the project you are contributing to doesn't specify a format to submit the PR, use [this template](PRTemplate.md).

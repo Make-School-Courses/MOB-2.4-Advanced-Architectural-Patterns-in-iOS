@@ -5,7 +5,7 @@ A learning technique you are familiar with is helping others with bug fixing or 
 > Open source is code that is made freely available for possible modification and redistribution.
 > [Wikipedia](https://en.wikipedia.org/wiki/Open_source)
 
-#### Why contribute?
+### Why contribute?
 
 - 📈 Build experience
 - 👩🏻‍💻 Learn through practice
@@ -14,17 +14,17 @@ A learning technique you are familiar with is helping others with bug fixing or 
 - ⭐️ Find mentors or mentees
 - 🌎 Be part of a community
 
-#### Terminology
+### Terminology
 
 Even when each project has their own rules on how to work and contribute, there is terminology that remains the same. Making the first contribution to an open source project can feel intimidating on its own and even more if we are not sure how the mechanics work.
 
 📖 Take some time to read about the [Anatomy of an open source project](https://opensource.guide/how-to-contribute/#anatomy-of-an-open-source-project) to become familiar with terms you'll be seeing often.
 
-#### Getting started
+### Getting started
 
 If this is your first time ever contributing to open source projects or if you want to review the basics, **go through the [First Contributions](https://github.com/firstcontributions/first-contributions) repository**. It has a step by step guide to make a contribution following the standard *fork → clone → edit → pull request* workflow.
 
-#### Choosing a project
+### Choosing a project
 
 Before putting your own projects out to the world, it's a good idea to practice contributing to existing projects. It could be a project that has code you use regularly. If there's something you know needs to be fixed or improved, that could be a good place to start since you are already familiar with the source code.
 
@@ -39,7 +39,7 @@ There's also websites to help you find using filters by programming language or 
 
 📖 When you find a project, go through [this checklist](https://opensource.guide/how-to-contribute/#a-checklist-before-you-contribute) to see if it's a good option before starting.
 
-#### Course Credits
+### Course Credits
 
 Now that you've become familiar with contributing to open source, it's time to put it into practice. Throughout the course you'll have time to make contributions to open source projects.
 
@@ -50,6 +50,6 @@ In the best case scenario these PRs would be accepted into the project, but sinc
 
 📖 Read [these instructions](Instructions.md) to know about what you'll be doing for this course and how it will be graded.
 
-#### References
+### References
 
 [Open source guide - how to contribute](https://opensource.guide/how-to-contribute/)
