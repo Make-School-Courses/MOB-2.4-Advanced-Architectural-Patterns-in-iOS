@@ -66,3 +66,4 @@ Looking for a project to contribute takes time, make sure you choose one that's 
 - [Open Food Facts](https://github.com/openfoodfacts/openfoodfacts-ios)
 - [Unwrap](https://github.com/twostraws/Unwrap)
 - [My Simple App](https://github.com/LinnierGames/My-Simple-App)
+- [ToDo App](https://github.com/IEEE-VIT/ToDo-iOS)
