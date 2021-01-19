@@ -53,7 +53,7 @@ You can do slides for this check in if it helps you deliver the update. **Keep i
 
 - **25 pts each** - Valid PR submitted
 - **5 pts each**  - PR uses a template
-- **10 pts once** - Sharing progress in class
+- **10 pts once** - Sharing progress in class by Feb 17
 
 You need at least **70 points** to pass the course.
 
