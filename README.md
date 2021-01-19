@@ -40,8 +40,8 @@ Students by the end of the course will be able to ...
 |  7 |  Mon, Feb 8               | [Coordinators] |
 |  6 |  Wed, Feb 10              | [Functional Programming Pt.1] |
 |  8 |  Mon, Feb 15              | [Functional Programming Pt.2] |
-|  9 |  Wed, Feb 17              | [Reactive Programming Pt.1] |
-| 10 |  Mon, Feb 22              | Lab |  
+|  9 |  Wed, Feb 17              | Lab - Sharing Progress |
+| 10 |  Mon, Feb 22              | [Reactive Programming Pt.1] |  
 | 11 |  Wed, Feb 24              | [Reactive Programming Pt.2]|
 | 12 |  Mon, Mar 1               | [Reactive Programming Pt.3] |
 | 13 |  Wed, Mar 3               | Final Exam  |
@@ -68,7 +68,7 @@ Will be posted in Gradescope.
 
 [Final project]
 
-[Final project]: Assignments/ProjectSpecifications.md
+[Final project]: Assignments/OSProject/Intro.md
 
 ## Evaluation
 
