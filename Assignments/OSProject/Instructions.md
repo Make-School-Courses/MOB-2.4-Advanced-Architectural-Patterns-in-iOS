@@ -60,3 +60,9 @@ You need at least **70 points** to pass the course.
 ### Resources
 
 If the project you are contributing to doesn't specify a format to submit the PR, use [this template](PRTemplate.md).
+
+Looking for a project to contribute takes time, make sure you choose one that's ideal for this class. Here are some suggestions that you can choose from:
+
+- [Open Food Facts](https://github.com/openfoodfacts/openfoodfacts-ios)
+- [Unwrap](https://github.com/twostraws/Unwrap)
+- [My Simple App][https://github.com/LinnierGames/My-Simple-App]
