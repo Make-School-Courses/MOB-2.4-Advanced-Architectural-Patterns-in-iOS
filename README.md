@@ -75,7 +75,7 @@ Will be posted in Gradescope.
 To pass this course you must meet the following requirements:
 
 - Complete 80% of the class/homework assignments
-- Score at least 19 in the final project according to the associated [project rubric](https://docs.google.com/document/d/1qKSs3S4QlhD_6QpkSsQKtzIdp2lCouEmoRVxvJDvhI0/edit)
+- Score at least 70 in the final project according to rubric
 - Pass the final summative assessment with more than 70%
  - This will be further explained in the [study guide](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/StudyGuide.md)
 - Actively participate in class and abide by the attendance policy
