@@ -87,7 +87,7 @@ Take 3 minutes to write a small description for each pattern based on what you k
 
 ## The Singleton Pattern
 
-![cartoon](assets/cartoonSingleton.png)
+<img src="https://refactoring.guru/images/patterns/content/singleton/singleton.png">
 
 The singleton pattern makes sure that a class has only one instance. And that it can be accessed from anywhere in your code.
 

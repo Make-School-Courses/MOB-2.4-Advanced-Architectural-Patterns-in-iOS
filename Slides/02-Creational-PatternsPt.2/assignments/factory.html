@@ -17,51 +17,78 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template">## Object Template
+      <div class="slides"><section  data-markdown><script type="text/template"># Factory Pattern Activity
 
-### In Pairs
+In this scenario, you are given the task to code how UI components get created.
 
-The following code sets up an array of tuples each representing a specific product:
+UI components vary in color and typography depending on where they are located. For example, font weights and colors are not the same for menu buttons and buttons in the settings screen.
 
-```swift
-var products = [
-   (“Kayak”, “A boat for one person”, 275.0, 10),
-   (“Lifejacket”, “Protective and fashionable”, 48.95, 14),
-   (“Soccer Ball”, “FIFA-approved size and weight”, 19.5, 32)]
+But you were asked to create an easy interface for creating these UI components. Here's something you can try in a new Playground:
 
-func calculateTax(product:(String, String, Double, Int)) -> Double {
-   return product.2 * 0.2;
-}
-
-func calculateStockValue(tuples:[(String, String, Double, Int)]) -> Double {
-   return tuples.reduce(0, {
-       (total, product) -> Double in
-       return total + (product.2 * Double(product.3))
-   });
-}
-
-print(“Sales tax for Kayak: $\(calculateTax(product: products[0]))“)
-print(“Total value of stock: $\(calculateStockValue(tuples: products))“)
-```
-
-**Q:** If we remove an element from each of the tuples, how will that effect the rest of the code?
-
-**TODOs:**
-
-1. Have one person validate the code by running it in a playground just as it is.
-2. For each of the tuples in the array, remove the second element - the element which describes the product - so that your array now looks like this:
+Let's assume we can create these types of components:
 
 ```swift
-var products = [
-   (“Kayak”, 275.0, 10),
-   (“Lifejacket”, 48.95, 14),
-   (“Soccer Ball”, 19.5, 32)]
+enum ComponentType {
+    case button
+    case label
+    case image
+}
 ```
 
-3. Analyze and discuss with your partner the various places in the code which must now be rewritten to accommodate this change to the product tuples.
-- Also discuss what this reveals regarding the impact of tuples on extending and maintaining code.
+And that we are starting with the Menu items.
 
-4. Now, validate your analysis by applying your proposed fixes to the code in the playground (each person should do this separately in their own playground)
+```swift
+//over simplified subclasses as examples
+//when instantiated, these will be concrete products from the factory
+class SettingsButton: UIButton{}
+class SettingsLabel: UILabel{}
+class SettingsImage: UIImageView{}
+```
+
+To have different styling when creating views, create a protocol to serve as an interface for the factory. Any class that conforms to it will be able to have its own factory method and do the custom styling.
+
+```swift
+protocol ComponentFactory {
+    //this is the factory method
+    func createView(component: ComponentType) -> UIView
+}
+```
+
+Now create the factory and specify what happens when using the factory method.
+
+```
+//this class will be the creator
+//it will apply logic and  decide what needs to be instantiated based on given arguments
+
+class MenuComponentFactory: ComponentFactory {
+    func createView(component: ComponentType) -> UIView {
+        switch component {
+        case .button:
+            return MenuButton()
+        case .label:
+            return MenuLabel()
+        case .image:
+            return MenuImage()
+        }
+    }
+}
+```
+
+Now the client doesn't know how the components get created, it uses the interface to ask for them only. If styling ever changes, those changes will come through the factory but nothing will change in the client's way of asking for the UI.
+
+```swift
+//asks for a menu label
+let menuFactory = SettingsComponentFactory()
+menuFactory.createView(component: .label)
+```
+
+1️⃣ Complete the implementation of UI components in the *settings screen*.
+
+2️⃣ Read [this tip](https://www.swiftbysundell.com/tips/creating-extensions-with-static-factory-methods/) on working with static factory methods.
+
+3️⃣ Write in the chat any questions you might have or if you are done let the instructor know.
+
+[Resource for activity](https://levelup.gitconnected.com/factory-method-pattern-in-swift-1f1b73488072)
 </script></section></div>
     </div>
 

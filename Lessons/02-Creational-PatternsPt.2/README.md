@@ -46,7 +46,7 @@ Instead of using a constructor, it creates objects by calling a **specialized me
 
 The Factory Method pattern is executed in **three operations:**
 
-![diagram](assets/factorydiagram.png)
+![diagram](assets/factoryDiagram.png)
 
 <!-- v -->
 
@@ -109,6 +109,14 @@ This pattern works when a calling component can rely on the existence of only on
 
 <img src="https://refactoring.guru/images/patterns/diagrams/builder/problem1.png">
 
+<!-- v -->
+
+<img src="https://refactoring.guru/images/patterns/diagrams/builder/problem2.png">
+
+<!-- v -->
+
+<img src="https://refactoring.guru/images/patterns/diagrams/builder/solution1.png">
+
 <!-- > -->
 
 #### Description
@@ -124,11 +132,23 @@ It differs from other Creational patterns in that it:
 
 #### Implementation
 
+![diagram](assets/builder.png)
+
+<!-- > -->
+
 **Step-by-Step Approach**
 
-The pattern organizes object construction into a set of steps which must be created in the same order, or by using a specific algorithm, to repeatedly create multiple objects of the same type.
+The pattern organizes object construction into a set of **steps** which must be created in the same order, or by using a specific algorithm, to repeatedly create multiple objects of the same type.
 
-To create an object, you execute a series these steps on a __*builder*__ object. The construction of the intended object is assigned to builder classes/objects and split into multiple steps — but you are not required to call all steps for *all* objects created. You are allowed to call only those steps required to produced a particular object configuration.
+<!-- > -->
+
+To create an object, you execute a series steps on a __*builder*__ object.
+
+The construction of the intended object is assigned to builder classes/objects and split into multiple steps — but you are not required to call all steps for *all* objects created.
+
+You are allowed to call only those steps required to produced a particular object configuration.
+
+<!-- > -->
 
 <!--
 **External Builders**
@@ -144,61 +164,27 @@ To create an object, you successively call builder methods on an instance of a b
 
 **Typical Steps**
 
-1. In a base builder class or protocol, declare the construction steps common to all intended optional object representations.
-2. Declare a concrete builder class for each of the object representations. Implement their specific construction steps, including implementing a function to fetch/return the constructed object, if applicable.
+1. In a **base builder class or protocol**, declare the construction steps common to all intended optional object representations.
+
+2. Declare a **concrete builder class** for each of the object representations. Implement their specific construction steps, including implementing a function to fetch/return the constructed object, if applicable.
+
 3. Consider creating an additional class — often referred to as a **Director** — to encapsulate various ways to construct an object using the same builder class.
 
 <!-- > -->
 
-4. Implement client code (in calling component) to create both the builder and director objects.
+4. Implement client code to create both the builder and director objects.
     - The client should pass the builder object to the director, and the director will use this builder object in all additional construction.
+
 5. Returning the constructed result can be achieved in optional ways. For example:
     - It can be obtained directly from the director,  if all optional intended objects follow the same steps.
     - The client can fetch the result from the builder.
 
 <!-- > -->
 
-#### Example
+#### Examples
 
-```swift
-// Builder Pattern example
-
-// 1. Declare the construction steps common to all intended optional object representations.
-class WidgetFactory {
-   var parts: String = “”
-}
-
-// 2. Declare a concrete builder class for each of the object representations.
-class Builder {
-   let widgetFactory = WidgetFactory()
-   var part = 0
-   func buildPart() {
-       part += 1
-       widgetFactory.parts = widgetFactory.parts + ” adding part #\(part)”
-   }
-
-   func getResult() -> WidgetFactory{
-       return widgetFactory
-   }
-}
-
-   // 3. Create a director class
-   class Director {
-       let builder = Builder()
-       func construct() -> WidgetFactory {
-           for _ in 1...5 {
-               builder.buildPart()
-           }
-           return builder.getResult()
-       }
-}
-// 4. Create builder and director objects
-let director = Director()
-let widget = director.construct()
-
-// 5. Return the constructed result
-print(widget.parts) // prints: adding part #1 adding part #2 adding part #3 adding part #4 adding part #5
-```
+- [Link to widget example](assignments/widget.md)
+- [Link to burger example](assignments/burgerExample.md)
 
 <!-- > -->
 
@@ -241,106 +227,19 @@ Builder facilitates this architecture nicely!
 
 <!-- > -->
 
-### Part 1
+## In Class Activity
 
-The code below uses the Builder pattern (with a Director) to standardize the creation of three types of bicycles.
-
-The implementation for the Kids bike is already complete.
-
-Your job is to complete the code so that the remaining two bicycle types can also be created.
+[Link to activity](assignments/builder.md)
 
 <!-- > -->
 
+## After Class / Lab
 
-```swift
-import UIKit
-
-enum BicycleSize: String {
-   case small
-   case medium
-   case large
-}
-
-enum BicycleType : String {
-   case kids
-   case standard
-   case mountain
-}
-
-struct Bicycle
-{
-   public let type: BicycleType
-   public let color: UIColor
-   public let size: BicycleSize
-}
-
-extension Bicycle: CustomStringConvertible {
-   public var description: String {
-       return type.rawValue + ” bicycle”
-   }
-}
-
-// Builder Protocol
-protocol BikeBuilder {
-   var type: BicycleType { get set }
-   var color: UIColor { get set }
-   var size: BicycleSize { get set }
-
-   func construct() -> Bicycle
-}
-
-// MARK: - Builder
-class BicycleBuilder: BikeBuilder {
-
-   var type: BicycleType = .standard
-   var color: UIColor = .gray
-   var size: BicycleSize = .medium
-
-   func construct() -> Bicycle {
-       return Bicycle(type: type, color: color, size: size)
-   }
-}
-
-// MARK: - Director
-public class BikeAssembler {
-
-   // Build a kids bike
-   func createKidsBike() -> Bicycle {
-       let builder = BicycleBuilder()
-       builder.type = .kids
-       builder.size = .small
-       return builder.construct()
-   }
-
-   // TODO: 1) build the Mountain bike
-
-   // TODO: 2) the Standard bike
-
-}
-
-let bikeAssembler = BikeAssembler()
-let kids = bikeAssembler.createKidsBike()
-print(kids.description)
-```
-
-<!-- > -->
-
-### Part 2
-
-Create a `Single View App` project.
-
-- On the main screen, provide 4 buttons, each of a different color and another button that will create a detail view
-- Applying the Builder pattern, generate the detail view based on the color the user selects (i.e., set the color of the detail view to the color selected by the UserDefaults)
-
-<!-- > -->
-
-## After Class
+Complete the sections in the [worksheet](https://docs.google.com/document/d/11jRhbMQfxqDy3SP-Xs_EnWUnuwcwX3QFvNYnRbVvwWo/edit?usp=sharing) for the patterns covered in class.
 
 Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely related to the *Abstract Factory pattern* and can also be considered a specialization of the *Template Method pattern.*
 
-**TODO:**
-
-1. Research these patterns with an eye toward examining how they relate to either the Builder or Factory Method patterns:
+Research these patterns with an eye toward examining how they relate to either the Builder or Factory Method patterns:
     - Virtual Constructor
     - Abstract Factory Pattern
     - Template Method Pattern
@@ -349,17 +248,7 @@ Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely
 
 <!-- > -->
 
-2. *(Stretch Goal)* Using the Builder pattern, create a simple Single View App with the constructs necessary to build a pizza -  including 4 toppings - when the user presses a button (no UI presentation needed; log results are fine for now)
-
-<!-- > -->
-
-## Wrap Up
-
-1) Brief review of today's design patterns
-
-2) Any questions re: the After Class assignments above
-
-3) Complete the sections in the [worksheet](https://docs.google.com/document/d/11jRhbMQfxqDy3SP-Xs_EnWUnuwcwX3QFvNYnRbVvwWo/edit?usp=sharing) for the patterns covered in class.
+*(Stretch Challenge/Article idea)* Using the Builder pattern, create a simple Single View App with the constructs necessary to build a pizza -  including 4 toppings - when the user presses a button
 
 <!-- > -->
 
