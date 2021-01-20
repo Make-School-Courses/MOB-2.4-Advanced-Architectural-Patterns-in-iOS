@@ -37,7 +37,7 @@ protocol ComponentFactory {
 
 Now create the factory and specify what happens when using the factory method.
 
-```
+```swift
 //this class will be the creator
 //it will apply logic and  decide what needs to be instantiated based on given arguments
 
