@@ -59,7 +59,7 @@ Now the client doesn't know how the components get created, it uses the interfac
 
 ```swift
 //asks for a menu label
-let menuFactory = SettingsComponentFactory()
+let menuFactory = MenuComponentFactory()
 menuFactory.createView(component: .label)
 ```
 
