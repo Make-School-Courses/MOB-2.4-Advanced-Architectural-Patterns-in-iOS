@@ -14,11 +14,10 @@
 
 1. Describe
 - the **Factory Method** and **Builder** patterns
-- the software construction problem each is intended to solve
+- the software problem each is intended to solve
 - potential use cases for each (when to use them)
 
 2. Assess:
-
 - the suitability of a given design pattern to solve a given problem
 - the trade offs (pros/cons) inherent in each
 
@@ -28,16 +27,9 @@
 
 ### The Factory Method Pattern
 
-![factory method](factory.png)
-
-*[Swift World](https://medium.com/swiftworld/swift-world-design-patterns-factory-method-2be4bb3c73cc)*
-
-<!-- > -->
-
 #### Problems Addressed
 
 - How do you create objects without needing to specify the exact class of the object to be created?
-- How can an object be created so that subclasses can redefine which class to instantiate?
 - How can a class defer instantiation to subclasses?
 
 By using the Factory Method pattern!
@@ -45,9 +37,28 @@ By using the Factory Method pattern!
 <!-- > -->
 
 #### Description
-Factory Method is a Creational Pattern that is used to create objects without needing to specify the exact class of the object to be created.
 
-Instead of using a constructor, it creates objects by calling a specialized method accessible to calling components.
+Factory Method is a Creational Pattern used to create objects without needing to specify the exact class of the object.
+
+Instead of using a constructor, it creates objects by calling a **specialized method** accessible to calling components.
+
+<!-- > -->
+
+The Factory Method pattern is executed in **three operations:**
+
+![diagram](assets/factorydiagram.png)
+
+<!-- v -->
+
+1. A function in some calling component calls the factory method supplying it with the arguments required to select the  implementation class desired.
+
+<!-- v -->
+
+2. The factory method executes using the passed-in arguments to create an instance of the desired class.
+
+<!-- v -->
+
+3. Once the instance of the desired class is created, the factory method returns to the calling component a reference to the newly-created object of the desired class.
 
 <!-- > -->
 
@@ -62,75 +73,15 @@ Once implemented, the Factory Method will have all logic required to select a sp
 
 <!-- > -->
 
-The Factory Method pattern is executed in **three operations:**
-
-1. A function in some calling component calls the factory method supplying it with the arguments required to select the  implementation class desired.
-2. The factory method executes using the passed-in arguments to create an instance of the desired class.
-3. Once the instance of the desired class is created, the factory method returns to the calling component a reference to the newly-created object of the desired class.
-
-<!-- > -->
-
 ## In Class Activity I
 
-In the code below, all vehicles are to be created using the `CarFactory` protocol's `create()` function.
-
-But only the code for creating the Truck object has been completed.
-
-**TODO:** Complete the code for creating the **SportsCar** and **SUV** obects following the basic guidelines of the Factory Method pattern introduced above. Validate creation of each object by running it's `drive()` function.
-
-<!-- > -->
-
-```swift
-// factory protocol
-protocol CarFactory {
-    func create() -> Car
-}
-
-class Car {
-    func drive() {
-        print("driving a car")
-    }
-}
-
-class Truck: Car {
-    override func drive() {
-        print("driving a truck")
-    }
-}
-
-class SportsCar: Car {
-   // missing function
-
-}
-
-class SUV: Car {
-    override func drive() {
-        print("I’d rather be driving!")
-    }
-}
-
-/// concrete factory
-class TruckFactory: CarFactory {
-    func create() -> Car {
-        return Truck()
-    }
-}
-
-let truckFactory = TruckFactory()
-let truck = truckFactory.create()
-truck.drive() // prints "driving a truck"
-
-let sportsCarFactory = SportsCarFactory()
-
-
-let suvFactory = SUVFactory()
-```
+[Link to activity](assignments/factory.md)
 
 <!-- > -->
 
 ## Think, Pair, Share
 
-1. What are the benefits of the factory method?
+1. What are the benefits of the factory pattern?
 2. When would you use it?
 
 After you pair, We'll go over the benefits and use cases as a class
@@ -156,15 +107,13 @@ This pattern works when a calling component can rely on the existence of only on
 
 ### The Builder Pattern
 
-![builder](builder.png)
-
-*[Khaled Kamal](https://medium.com/@khaledkamal/diving-in-design-pattern-swift-2a1c5861495c)*
+<img src="https://refactoring.guru/images/patterns/diagrams/builder/problem1.png">
 
 <!-- > -->
 
 #### Description
 
-The Builder pattern is a creational design pattern that allows you to create  complex objects — composed of requisite parts — from simple objects.
+The Builder pattern is a creational design pattern that allows you to create complex objects — composed of requisite parts — from simple objects.
 
 It differs from other Creational patterns in that it:
 
@@ -416,8 +365,10 @@ Also known as __*A Virtual Constructor,*__ the Factory Method pattern is closely
 
 ## Additional Resources
 
-1. [Factory Method Pattern - wikipedia](https://en.wikipedia.org/wiki/Factory_method_pattern)
-2. Builder Design Pattern:</br>
-[Article 1](https://en.wikipedia.org/wiki/Builder_pattern)</br>
-[Article 2](https://www.geeksforgeeks.org/builder-design-pattern/)</br>
-3. [The swift dev- builder pattern](https://theswiftdev.com/swift-builder-design-pattern/)
+- [Factory Method Pattern - wikipedia](https://en.wikipedia.org/wiki/Factory_method_pattern)
+- [Article 1](https://en.wikipedia.org/wiki/Builder_pattern)</br>
+- [Article 2](https://www.geeksforgeeks.org/builder-design-pattern/)</br>
+- [The swift dev- builder pattern](https://theswiftdev.com/swift-builder-design-pattern/)
+- [Refactoring Guru - Builder Pattern](https://refactoring.guru/design-patterns/builder)
+- [Refactoring Guru - Factory Pattern](https://refactoring.guru/design-patterns/factory-method)
+- Book: Pro Design Patterns in Swift
