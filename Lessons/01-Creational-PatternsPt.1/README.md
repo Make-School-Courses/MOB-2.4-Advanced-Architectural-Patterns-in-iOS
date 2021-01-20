@@ -156,7 +156,7 @@ __*Singletons hinder unit testing:*__ A Singleton might cause issues for writing
 
 <!-- v -->
 
-__*Singletons need special treatment with miltithreding*__ to avoid having multiple threads creating the object more than once.
+__*Singletons need special treatment with multithreading*__ to avoid having multiple threads creating the object more than once.
 
 <!-- v -->
 
@@ -166,7 +166,7 @@ They inherently __*cause code to be tightly coupled.*__
 
 ## Creating a singleton
 
-Follow [this guide](assignments/singleton.md) to practice with singletons.
+Follow [this guide](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/01-Creational-PatternsPt.1/assignments/singleton.md) to practice with singletons.
 
 <!-- > -->
 
@@ -194,16 +194,9 @@ Because this __*process can be easily repeated*__ as often as desired (within me
 
 <!-- > -->
 
-![object-template](assets/obj-temp.jpg)
-
-*[Pro Design Patterns in Swift](https://link.springer.com/chapter/10.1007/978-1-4842-0394-1_4)*
-
-<!-- > -->
-
-
 ## Exploring the template pattern
 
-Follow [this activity](assignments/template.md) to see the benefits of the object template pattern.
+Follow [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/01-Creational-PatternsPt.1/assignments/template.md) to see the benefits of the object template pattern.
 
 <!-- > -->
 

@@ -75,7 +75,7 @@ Once implemented, the Factory Method will have all logic required to select a sp
 
 ## In Class Activity I
 
-[Link to activity](assignments/factory.md)
+[Link to activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/02-Creational-PatternsPt.2/assignments/factory.md)
 
 <!-- > -->
 
@@ -229,7 +229,7 @@ Builder facilitates this architecture nicely!
 
 ## In Class Activity
 
-[Link to activity](assignments/builder.md)
+[Link to activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/02-Creational-PatternsPt.2/assignments/builder.md)
 
 <!-- > -->
 
