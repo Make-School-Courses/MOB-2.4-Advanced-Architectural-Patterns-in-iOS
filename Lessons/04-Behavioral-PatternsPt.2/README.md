@@ -8,9 +8,7 @@
 
 ## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/04-Behavioral-PatternsPt.2/README.html ':ignore')
 
-<!-- > -->
-
-<!-- INSTRUCTOR NOTES:
+<!-- INSTRUCTOR:
 1) For the quiz in the Initial Exercise:
 - the URL is xxxx
 https://docs.google.com/document/d/1giZglDE141ewuj1fGunZhTqCRq0pA11SO-Sta_yYT60/edit
@@ -39,7 +37,7 @@ By the end of this lesson, you should be able to...
   - the trade offs (pros/cons) inherent in each
 4. Implement basic examples of both patterns explored in this class
 
-<!-- > -->
+<!--
 
 ## Initial Exercise
 

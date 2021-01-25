@@ -1,6 +1,6 @@
-## In Class Activity II - Command
+## Command Pattern - Activity
 
-**TODO:** Below is a simple example of the Command pattern which models a real-world television remote control device. Complete the implementation so that sending commands to turn the TV on or off work successfully.
+**TODO:** Below is a simple example of the Command pattern which models a real-world television remote control device. **Complete the implementation so that sending commands to turn the TV on or off work successfully.**
 
 ```swift
 import UIKit

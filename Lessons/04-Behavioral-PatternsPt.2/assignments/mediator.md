@@ -118,5 +118,5 @@ spamGenerator.spamSpamSpamSpam(message: "I'd Like to Add you to my LinkedIn Netw
  Queen Elizabeth I received: I'd Like to Add you to my LinkedIn Network. I am a recruiter at Apple
  */
 ```
-<!-- Instructor Note: Solution to Activity  is below Additional Resources
+<!-- Instructor: Solution to Activity  is below Additional Resources
 -->

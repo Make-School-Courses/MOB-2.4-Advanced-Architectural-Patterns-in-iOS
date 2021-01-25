@@ -10,7 +10,7 @@
 
 <!-- > -->
 
-<!-- INSTRUCTOR NOTES:
+<!-- INSTRUCTOR:
 1) For the quiz in the Initial Exercise:
 - the URL is https://docs.google.com/document/d/1cwT3b-DUSuB1AwO2bqU-BWuDepK8pANbj5I4R1UOrqA/edit
 2) For Activity 1:
@@ -26,7 +26,7 @@ By the end of this lesson, you should be able to...
 
 1. Describe:
     - the **Chain-of-Responsibility** and **Command** patterns
-    - the software construction problem each is intended to solve
+    - the software problem each is intended to solve
     - potential use cases for each (when to use them)
 2. Assess:
     - the suitability of a given design pattern to solve a given problem
@@ -43,12 +43,6 @@ By the end of this lesson, you should be able to...
 
 <!-- Quiz location:
 https://docs.google.com/document/d/1cwT3b-DUSuB1AwO2bqU-BWuDepK8pANbj5I4R1UOrqA/edit
--->
-
-<!-- Quiz location:
-
-TODO: Add quiz answers
-
 -->
 
 <!-- > -->
@@ -95,137 +89,25 @@ __*Source:*__ *wikipedia.org*
 
 ### Problems Addressed
 
-1. Implementing a request directly within the class that sends the request is inflexible because it couples the class to a particular receiver and makes it impossible to support multiple receivers.
-
-2. In addition, it is preferred that more than one receiver should be able to handle a request.
-
-Hence, Chain-of-Responsibility decouples the sender of a request from its receiver.
+There are several objects that can handle a request but only one of them should be used.
 
 <!-- > -->
 
 ### How to Implement
 
-You define a chain of *r*eceiver** objects having the responsibility, depending on run-time conditions, to either *handle a request* or *forward it to the next receiver* on the chain (if any).
+You define a chain of **receiver** objects having the responsibility, depending on run-time conditions, to either **handle a request** or **forward it to the next receiver** on the chain (if any).
 
 <!-- > -->
 
-This enables sending a request to a __*chain*__ of receivers *without* having to know which one handles the request. The request gets passed along the chain until a receiver handles the request. The __*sender*__ of a request is __*no longer coupled*__ to a particular receiver.
+This enables sending a request to a __*chain*__ of receivers *without* having to know which one handles the request.
+
+The request gets passed along the chain until a receiver handles the request. The __*sender*__ of a request is __*no longer coupled*__ to a particular receiver.
 
 <!-- > -->
 
 ### Example of CoR
 
-```swift
-class Expenditure {
-    private var _amount = Int()
-    var amount : Int{
-        get{
-            return _amount
-        }
-        set {
-            _amount = newValue
-        }
-    }
-    init(amount : Int) {
-        self.amount = amount
-    }
-}
-
-protocol Chain{
-    var nextManagementLevel : Chain{ get set }
-    func shouldApproveExpenditure(expenditure : Expenditure)
-}
-
-class StudentCouncil : Chain {
-
-    private var _nextManagementLevel : Chain?
-    var nextManagementLevel : Chain{
-        set{
-            _nextManagementLevel = newValue
-        }
-        get{
-            return _nextManagementLevel!
-        }
-    }
-
-    func shouldApproveExpenditure(expenditure : Expenditure) {
-        if expenditure.amount > 0 && expenditure.amount < 100 {
-            print("A student from the Student Council can approve this expenditure")
-        } else {
-            if _nextManagementLevel != nil{
-                nextManagementLevel.shouldApproveExpenditure(expenditure: expenditure)
-            }
-        }
-    }
-}
-
-class StudentExp : Chain {
-
-    private var _nextManagementLevel : Chain?
-    var nextManagementLevel : Chain{
-        set{
-            _nextManagementLevel = newValue
-        }
-        get{
-            return _nextManagementLevel!
-        }
-    }
-
-    func shouldApproveExpenditure(expenditure : Expenditure) {
-        if expenditure.amount > 101 && expenditure.amount < 1000 {
-            print("Megan or Lisa can approve this expenditure.")
-        } else {
-            if _nextManagementLevel != nil{
-                nextManagementLevel.shouldApproveExpenditure(expenditure: expenditure)
-            }
-        }
-    }
-}
-
-class Dean : Chain {
-
-    private var _nextManagementLevel : Chain?
-    var nextManagementLevel : Chain{
-        set{
-            _nextManagementLevel = newValue
-        }
-        get{
-            return _nextManagementLevel!
-        }
-    }
-
-    func shouldApproveExpenditure(expenditure : Expenditure) {
-        if expenditure.amount > 1001 && expenditure.amount < 10000 {
-            print("Anne can approve this expenditure.")
-        } else {
-            print("This expenditure is too large and won't get approved, sorry.")
-        }
-    }
-}
-
-
-let studentCouncil = StudentCouncil()
-let studentExp = StudentExp()
-let dean = Dean()
-
-studentCouncil.nextManagementLevel = studentExp
-studentExp.nextManagementLevel = dean
-
-let expenditure = Expenditure(amount: 5)
-studentCouncil.shouldApproveExpenditure(expenditure: expenditure)
-
-expenditure.amount = 500
-studentCouncil.shouldApproveExpenditure(expenditure: expenditure)
-
-expenditure.amount = 5000
-studentCouncil.shouldApproveExpenditure(expenditure: expenditure)
-
-expenditure.amount = 50000
-studentCouncil.shouldApproveExpenditure(expenditure: expenditure)
-
-```
-
-[Adapted from this article](https://medium.com/design-patterns-in-swift/design-patterns-in-swift-chain-of-responsibility-pattern-f575c85a43c)
+[Link to Example]()
 
 <!-- > -->
 
@@ -239,13 +121,9 @@ Objects that participate in the chain are called __*responder objects,*__ inheri
 
 __*All view objects*__ (UIView), view controller objects (UIViewController), window objects (UIWindow), and the application object (UIApplication) __*are responder objects*__
 
-Typically, when a view receives an event it can’t handle, it dispatches it to its superview until it reaches the view controller or window object. If the window can’t handle the event, the event is __*dispatched*__ to the __*application object,*__ which is __*the last object in the chain.*__
+Typically, when a view receives an event it can’t handle, it dispatches it to its superview until it reaches the view controller or window object.
 
-<!-- > -->
-
-**On iOS,** it’s __*typical to handle view events in the view controller*__ which manages the view hierarchy, instead of subclassing the view itself. Since a view controller lies in the responder chain after all of its managed subviews, it can intercept any view events and handle them.
-
-__*Source:*__ *wikipedia.org*
+If the window can’t handle the event, the event is __*dispatched*__ to the __*application object,*__ which is __*the last object in the chain.*__
 
 <!-- > -->
 
@@ -265,7 +143,7 @@ __*Source:*__ *Apple, Inc.*
 
 ## Chain of responsibility - Activity
 
-Follow [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/03-Behavioral-PatternsPt.1/assignments/chain.md)
+Follow [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/03-Behavioral-PatternsPt.1/assignments/chain2.md)
 
 <!-- > -->
 
@@ -297,7 +175,7 @@ It involves **three component types**:
 
  - The **receiver** is the object acted upon by the command.
 
- <!-- > -->
+<!-- > -->
 
 ### Problems Addressed
 
@@ -325,7 +203,9 @@ Implementing (hard-wiring) a request directly into a class is inflexible because
 
 <!-- > -->
 
-The most well-known use of this pattern: In some strategy games, the ability to rollback moves the user did not like is an essential user experience feature. The command pattern simplifies the implementation of `Undo` and `Redo` user actions.  
+The most well-known use of this pattern:
+
+In some strategy games, the ability to rollback moves the user did not like is an essential user experience feature. The command pattern simplifies the implementation of `Undo` and `Redo` user actions.  
 
 <!-- > -->
 
@@ -337,7 +217,7 @@ Follow [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-A
 
 ## After Class
 
-1. Review the other Behavioral Patterns in the links below
+1. The other Behavioral Patterns in the links below
 2. Research the following concepts:
 - The Composite Pattern
 - `UndoManager` (in Foundation framework)
@@ -348,9 +228,14 @@ Follow [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-A
 
 <!-- > -->
 
-2. Using Apple's **Media Player** framework, implement a simple, crude (i.e., basic UI only) iPhone app that will play, pause, and restart (skip to beginning) the following sample file (or any video/audio file of your choice):
+*Stretch Challenge* Using Apple's **Media Player** framework, implement a simple (i.e., basic UI only) iPhone app that will play, pause, and restart (skip to beginning) the following sample file (or any video/audio file of your choice):
 
 https://devimages-cdn.apple.com/samplecode/avfoundationMedia/AVFoundationQueuePlayer_HLS2/master.m3u8
+
+<!-- > -->
+
+[Archived activity CoR](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/03-Behavioral-PatternsPt.1/assignments/chain2.md)
+(But you can try it out)
 
 <!-- > -->
 
