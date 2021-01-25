@@ -300,15 +300,13 @@ In [Using Key-Value Observing in Swift](https://developer.apple.com/documentatio
 
 ## KVO Activity
 
-Complete [this activity](assignments/kvo.md) to learn how to implement KVO.
+Complete [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/04-Behavioral-PatternsPt.2/assignments/kvo.md) to learn how to implement KVO.
 
 <!-- > -->
 
-## Observer Pattern Activity
+## Observer Pattern - Stretch Challenge Activity
 
-You will implement the observer pattern manually.
-
-Take [this working real-life scenario](https://refactoring.guru/design-patterns/observer/swift/example#example-1) and turn it into a working app.
+Implement the observer pattern manually using [this working real-life scenario](https://refactoring.guru/design-patterns/observer/swift/example#example-1) and turn it into a working app.
 
 <!-- > -->
 
@@ -393,9 +391,9 @@ __*Example Use Case -*__ The most popular usage of the Mediator pattern in Swift
 
 <!-- > -->
 
-## In Class Activity
+## Implementing the Mediator Pattern
 
-Complete [this activity](assignments/mediator.md) to learn how to implement the mediator pattern
+Complete [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/04-Behavioral-PatternsPt.2/assignments/mediator.md to learn how to implement the mediator pattern
 
 <!-- > -->
 
@@ -417,12 +415,12 @@ Complete [this activity](assignments/mediator.md) to learn how to implement the 
 
 <!-- > -->
 
-3. **TODO:** Extend the Media Player app you created in the previous class by implementing the following using either the Observer or the Mediator pattern:
+3. **Continued Stretch Challenge:** Extend the Media Player app you created in the previous class by implementing the following using either the Observer or the Mediator pattern:
   - add a notification that, when the video clip is done playing, sends the user this message: "Your media file is done playing — do you want to replay it?"
 
 <!-- > -->
 
-4. **TODO:** Analyze the following simple implementation of the Observer pattern (KVO).
+4. Analyze the following simple implementation of the Observer pattern (KVO).
   - For discussion in next class, pay particular attention to the `.observe(_:_)` function, especially the implications of its origin (where does it come from?) and purpose.
 
 ```swift
