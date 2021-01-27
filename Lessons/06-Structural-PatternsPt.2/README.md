@@ -823,13 +823,7 @@ Flight booked successfully
 2. [Proxy pattern - wikipedia](https://en.wikipedia.org/wiki/Proxy_pattern)
 2. [Facade pattern - wikipedia](https://en.wikipedia.org/wiki/Facade_pattern)
 4. [Proxy design pattern in iOS - an article](http://devmonologue.com/ios/proxy-design-pattern-ios/)
-
-<sup>1</sup> The term *expensive* is used to refer to any aspect of an operation that should be minimized, including:
-- the amount  of computation required
-- the memory needed,
-- the load on the device battery,
-- the bandwidth consumed,
-- and the elapsed time that the user has to wait.
+5. [Gang Of Four Cheat Sheet](http://www.blackwasp.co.uk/GangOfFour.aspx)
 
 
 <!-- SOLUTION TO ACTIVITY 1:

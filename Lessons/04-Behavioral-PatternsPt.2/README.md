@@ -461,8 +461,9 @@ peter.name = "Bruno Mars" // prints "I'm now called Bruno Mars"
 <!-- v -->
 
 1. [Design Patterns on iOS using Swift – Part 2/2 - from Ray Wenderlich](https://www.raywenderlich.com/476-design-patterns-on-ios-using-swift-part-2-2)
-- Contains descriptions and examples of the Observer pattern in iOS, including both Notifications and KVO, with a simple, excellent KVO example in which a `UIActivityIndicator` is stopped when there is a change to an `image property`.
 1. [Mediator Pattern Problem Inspiration](https://github.com/kingreza/Swift-Mediator))
+1. [Gang Of Four Cheat Sheet](http://www.blackwasp.co.uk/GangOfFour.aspx)
+
 
 <!-- TODO: add:
 the lapsed listener problem
