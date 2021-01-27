@@ -393,7 +393,17 @@ __*Example Use Case -*__ The most popular usage of the Mediator pattern in Swift
 
 ## Implementing the Mediator Pattern
 
-Complete [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/04-Behavioral-PatternsPt.2/assignments/mediator.md to learn how to implement the mediator pattern
+[Mediator Pattern Video Explanation](https://youtu.be/A9Ku5DXWNvs)
+
+[Follow along this video to implement the pattern](https://youtu.be/bmm5cLi1SB4)
+
+<!-- v -->
+
+Things to think about from the coding sample:
+- Looks like there are objects strongly referencing each other. What can be changed to prevent this?
+- What if there's more demand of requests of a certain concentration and limited TAs available? Can we give them a limit of requests?
+- It's possible to keep refactoring this solution. What about another protocol for the Peer classes? or a Base Class?
+- Can the Request class be a Struct?
 
 <!-- > -->
 
