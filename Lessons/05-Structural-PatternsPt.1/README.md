@@ -175,7 +175,7 @@ This functionality includes adding conformance to a protocol, which is perfectly
 
 ## Example
 
-[Link to example]()
+[Link to example](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/05-Structural-PatternsPt.1/assignments/adapterExample.md)
 
 <!-- > -->
 
@@ -225,7 +225,7 @@ Adapter is also very often used in systems based on some legacy code.
 
 ## In Class Activity
 
-Complete [this activity](assignments/adapter.md) to learn how to implement the pattern.
+Complete [this activity](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/05-Structural-PatternsPt.1/assignments/adapter.md) to learn how to implement the pattern.
 
 <!-- > -->
 
