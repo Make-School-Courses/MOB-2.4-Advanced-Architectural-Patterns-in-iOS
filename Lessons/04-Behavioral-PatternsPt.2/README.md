@@ -454,14 +454,15 @@ peter.name = "Bruno Mars" // prints "I'm now called Bruno Mars"
 
 ## Additional Resources
 
-2. [Observer pattern - wikipedia](https://refactoring.guru/design-patterns/observer)
-4. [Mediator pattern - wikipedia](https://refactoring.guru/design-patterns/mediator)
-4. [God Object - wikipedia](https://en.wikipedia.org/wiki/God_object) <sup>3</sup>
-5. [Using Key-Value Observing in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)
-6. [Lapsed Listener Problem - wikipedia](https://en.wikipedia.org/wiki/Lapsed_listener_problem)
-7. [Design Patterns on iOS using Swift – Part 2/2 - from Ray Wenderlich](https://www.raywenderlich.com/476-design-patterns-on-ios-using-swift-part-2-2)
-- Contains descriptions and examples of the Observer pattern in iOS, including both Notifications and KVO, with a simple, excellent KVO example in which a `UIActivityIndicator` is stopped when there is a change to an `image property`.
+1. [Observer pattern - wikipedia](https://refactoring.guru/design-patterns/observer)
+1. [Mediator pattern - wikipedia](https://refactoring.guru/design-patterns/mediator)
+1. [Using Key-Value Observing in Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)
 
+<!-- v -->
+
+1. [Design Patterns on iOS using Swift – Part 2/2 - from Ray Wenderlich](https://www.raywenderlich.com/476-design-patterns-on-ios-using-swift-part-2-2)
+- Contains descriptions and examples of the Observer pattern in iOS, including both Notifications and KVO, with a simple, excellent KVO example in which a `UIActivityIndicator` is stopped when there is a change to an `image property`.
+1. [Mediator Pattern Problem Inspiration](https://github.com/kingreza/Swift-Mediator))
 
 <!-- TODO: add:
 the lapsed listener problem
