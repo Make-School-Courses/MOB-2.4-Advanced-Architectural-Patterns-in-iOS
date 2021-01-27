@@ -35,13 +35,6 @@ By the end of this lesson, you should be able to...
 - the trade offs (pros/cons)
 4. Implement basic examples
 
-<!-- > -->
-
-## Media Player Assignment Review
-
-- Review progress of the media player app for which After Class work was assigned in the last 2 class sessions
-- One student to volunteer to present their work (if time permits)
-
 
 <!-- Quiz location:
 https://docs.google.com/document/d/1kz7OpSDh_S2d7KCbUTeYEOR1M9r6-zgkxDhUGdvaDiY/edit
@@ -63,17 +56,9 @@ https://en.wikipedia.org/wiki/Lapsed_listener_problem
 
 ## Structural Patterns
 
-Structural design patterns ease design by identifying a simple way to realize relationships between entities.
+Structural design patterns ease design by identifying a simple way to **establish relationships between entities**.
 
-They can assemble objects and classes into larger structures while keeping these structures flexible and efficient.
-
-<!-- > -->
-
-**Structural Pattern:**
-
-1. MVC is a **high-level** example of a Structural pattern.
-2. Many of the structural patterns have similar implementations but different **intents**.
-3. Adapter and Decorator are often each referred to as **wrapper** patterns because they wrap an object and provide a new interface around it.
+They can assemble objects and classes into larger structures while keeping these structures **flexible** and **efficient**.
 
 <!--- **Adapter** - Can be used when the wrapper must respect a particular interface and must support polymorphic behavior.
 - **Decorator** makes it possible to add or alter behavior of an interface at run-time.
@@ -84,17 +69,49 @@ They can assemble objects and classes into larger structures while keeping these
 
 ### The Adapter Pattern
 
-![adapter](assets/adapter1.png)
+**Analogy**
 
-[*Refactoring Guru*](https://refactoring.guru/design-patterns/adapter)
+<img src="https://refactoring.guru/images/patterns/content/adapter/adapter-comic-1-en-2x.png">
+
+<aside class="notes">
+If you've traveled to Europe and you are from America, or vice versa, you noticed that you couldn't plug in most of your electronics to charge the,. The power plugs and sockets are different. You need to get a plug adapter that has the American-style socket and the European-style.
+</aside>
+
+[source](https://refactoring.guru/design-patterns/adapter)
 
 <!-- > -->
 
-![adapter](assets/adapter2.png)
+**Scenario**
 
-[*Refactoring Guru*](https://refactoring.guru/design-patterns/adapter)
+<img src="https://refactoring.guru/images/patterns/diagrams/adapter/problem-en-2x.png">
+
+<aside class ="notes">
+You want to create an app the monitors the stock market. Apparently Game Stop's stock is growing like crazy and you want to check that out.
+
+Your app downloads the data from multiple sources in XML format. And you want to display this data in nice-looking charts for your users.
+
+You got traction with your app and decided you wanted to add a 3-rd party library for analytics. But the library can only work with data in JSON format.
+</aside>
 
 <!-- > -->
+
+What can you do? What are your thoughts?  🤔
+
+Share them in the chat.
+
+<!-- > -->
+
+**Possible Solution**
+
+<img src="https://refactoring.guru/images/patterns/diagrams/adapter/solution-en-2x.png">
+
+<aside class="notes">
+You can create an adapter. One that will transform you data from XML to JSON so that you code can directly communicate with the analytics library. Therefore, you should make your code communicate to the library only through this adapter.
+</aside>
+
+<!-- > -->
+
+### Formal definition
 
 **Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.**
 
@@ -122,6 +139,20 @@ Adapter is typically composed of four main *actors*:
 
 <!-- > -->
 
+And how they all work happens in 4 steps:
+
+![steps](assets/adapterSteps.png)
+
+<!-- v -->
+
+1. Client makes a request.
+2. The adapter takes the request and searches for the method needed to be called with knowledge from both API's
+3. The component gets the request, does the job and returns it to the adapter.
+4. The adapter translates the response.
+5. The response is handled to the client.
+
+<!-- > -->
+
 The __*Adapter object*__ does the actual work - it "wraps" the original object and adds new requirements specified by the Target.
 
 The pattern is implemented correctly when the adapter allows a component to be integrated into the application **without requiring modification** of the existing application modules or the component.
@@ -142,65 +173,9 @@ This functionality includes adding conformance to a protocol, which is perfectly
 
 <!-- > -->
 
-### Example
+## Example
 
-**The Problem**
-
-In the following example: A Hobbit object can only `walk()`, but a Guardian object (__*code not listed*__) must `march()`. What if a Hobbit is promoted to guard the citadel?
-
-Then the Hobbit must somehow be able to `march()` just as a Guardian object does.
-
-<!-- > -->
-
-**The Solution**
-
-Use the Adapter pattern to adapt the Hobbit class to conform to the behaviors required of a Guardian.
-
-<!-- > -->
-
-```swift
-import UIKit
-
-/// Adaptee
-class Hobbit {
-    func walk() {
-        print("Hobbit is walking a few steps")
-    }
-}
-
-/// Target
-protocol GuardianOfTheCitadel {
-    func march()
-}
-
-/// Adapter
-extension Hobbit: GuardianOfTheCitadel {
-    func march() {
-        walk()
-        print("Hobbit realizes he is a few steps behind the formation")
-        walk()
-    }
-}
-
-let hobbit = Hobbit()
-hobbit.march()
-
-/* This will print:
- Hobbit is walking a few steps
- Hobbit realizes he is a few steps behind the formation
- Hobbit is walking a few steps
- */
-```
-
-*[adapted example]( https://medium.com/jeremy-codes/adapter-pattern-in-swift-7332e178f112)*
-
-<!-- > -->
-
-## Add On To This Example
-
-**TODO:** Assume we have another `protocol` for a `Warrior` who has an `attack` function.
-
-How would we adapt a `Hobbit` to be a `Warrior`, where their `attack` function has them walk, swing a sword, then march?
+[Link to example]()
 
 <!-- > -->
 
@@ -248,60 +223,50 @@ Adapter is also very often used in systems based on some legacy code.
 
 <!-- > -->
 
-### When not to use
-
-__*Do not use__* the Adapter pattern when you are able to modify the source code of the component that you want to integrate
-
-<!-- > -->
-
 ## In Class Activity
 
 Complete [this activity](assignments/adapter.md) to learn how to implement the pattern.
 
 <!-- > -->
 
-## Jigsaw Activity
+## Jigsaw Activity - Now it's your turn
 
-Now it's your turn to pick a pattern belonging to the Structural category to explain how it works and the main categories we always for each pattern.
+In groups, pick a pattern from the Structural Patterns category to explain it.
 
-Make sure to include a working coding example and prepare Slides to give a small 15 min presentation. Make a copy of [this template](https://docs.google.com/presentation/d/10oYlj86pBim3ZGBt5PSkJEQjIMuDDBFnwT74j4SJsd0/edit?usp=sharing) for it.
+**25 min** Make a copy of [this template](https://docs.google.com/presentation/d/10oYlj86pBim3ZGBt5PSkJEQjIMuDDBFnwT74j4SJsd0/edit?usp=sharing) and fill it out with your group.
 
-Resources [here](/06-Structural-PatternsPt.2/README.md)
+**15 min each group** Share the slides and explain the code snippet for the example implementation.
 
 <!-- > -->
 
 ## After Class
 
-1. Look up these other Structural patterns:
+Finish the worksheet with all the patterns covered up to today and turn in the complete version in Gradescope.
 
-- Aggregate
-- Extensibility
-- Flyweight
-- Marker
+<!-- > -->
 
-2. Research the following concepts:
-
-- The pros and cons of `Class Adapter` vs. `Object Adapter`
-- The `Single Responsibility Principle`
-- The principle of `Composition Over Inheritance`
-
-
-3. **TODO:** Extend the Media Player app you created and improved in previous classes by implementing the following using either the Adapter or the Decorator pattern:
+**Continued Stretch Challenge:** Extend the Media Player app you created and improved in previous classes by implementing the following using either the Adapter or the Decorator pattern:
 
 - Add functionality so that the user can skip to the `Next` or `Previous` video clip
+(This will require that you have a collection of several video clips)
 
-__*Note*__ *- This will require that you have a collection of at several video clips.*
-
+<!-- > -->
 
 ## Additional Resources
 
 2. [Adapter pattern - wikipedia](https://en.wikipedia.org/wiki/Adapter_pattern)
 3. [Decorator pattern - wikipedia](https://en.wikipedia.org/wiki/Decorator_pattern)
 4. [CocoaDesignPatterns - Apple docs](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaFundamentals/CocoaDesignPatterns/CocoaDesignPatterns.html)
+
+<!-- v -->
+
 5. [Swift adapter design pattern - an article](https://theswiftdev.com/2018/07/30/swift-adapter-design-pattern/)
 6. [Pro Design Patterns in Swift - a book by Adam Freeman](https://www.amazon.com/Design-Patterns-Swift-Adam-Freeman/dp/148420395X) <sup>1</sup>
 7. [Single responsibility principle - wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle)
 8. [Open–closed principle - wikipedia](https://en.wikipedia.org/wiki/Open–closed_principle)
+
+<!-- v -->
+
 9. [Combinatorial explosion - wikipedia](https://en.wikipedia.org/wiki/Combinatorial_explosion)
 10. [Composition over inheritance - wikipedia](https://en.wikipedia.org/wiki/Composition_over_inheritance)
 11. [Difference between object adapter pattern and class adapter pattern - stackoverflow](https://stackoverflow.com/questions/9978477/difference-between-object-adapter-pattern-and-class-adapter-pattern)
