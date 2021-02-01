@@ -35,7 +35,7 @@ Students by the end of the course will be able to ...
 |  1 |  Wed, Jan 20              | [Creational Patterns Pt.1] & [Creational Patterns Pt.2]  |
 |  2 |  Mon, Jan 25              | [Behavioral Patterns Pt.1] & [Behavioral Patterns Pt.2]  |
 |  3 |  Wed, Jan 27              | [Structural Patterns Pt.1] |
-|  4 |  Mon, Feb 1	             | [Structural Patterns Pt.2] |
+|  4 |  Mon, Feb 1	             | [Structural Patterns Pt.2] & Project Kick-Off|
 |  5 |  Wed, Feb 3               | [MVVM]  |
 |  7 |  Mon, Feb 8               | [Coordinators] |
 |  6 |  Wed, Feb 10              | [Functional Programming Pt.1] |

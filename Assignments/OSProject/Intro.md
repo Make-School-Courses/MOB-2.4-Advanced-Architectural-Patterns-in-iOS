@@ -48,7 +48,7 @@ A well documented and submitted Pull Request.
 
 In the best case scenario these PRs would be accepted into the project, but since it's something we don't have a time frame for and it's not in our control, it won't be required for credit.
 
-📖 Read [these instructions](Instructions.md) to know about what you'll be doing for this course and how it will be graded.
+📖 Read [these instructions](Assignments/OSProject/Instructions.md) to know about what you'll be doing for this course and how it will be graded.
 
 ### References
 
