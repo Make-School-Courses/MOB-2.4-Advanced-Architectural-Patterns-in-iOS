@@ -27,7 +27,7 @@ For this course...
   - UIKit
   - SwiftUI
   - or any other Apple Framework
-- [ ] PR are submitted with a template
+- [ ] PR are submitted with a template (you can find one in the linked resources)
 - [ ] Contributions are submitted according to due dates
 
 ### Due dates
@@ -59,7 +59,7 @@ You need at least **70 points** to pass the course.
 
 ### Resources
 
-If the project you are contributing to doesn't specify a format to submit the PR, use [this template](PRTemplate.md).
+If the project you are contributing to doesn't specify a format to submit the PR, use [this template](Assignments/OSProject/PRTemplate.md).
 
 Looking for a project to contribute takes time, make sure you choose one that's ideal for this class. Here are some suggestions that you can choose from:
 
