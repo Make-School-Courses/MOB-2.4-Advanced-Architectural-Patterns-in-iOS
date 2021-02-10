@@ -61,6 +61,12 @@ extension City {
 We can define several example cities:
 
 ```swift
+
+let paris = City(name: "Paris", population: 2241)
+let madrid = City(name: "Madrid", population: 3165)
+let amsterdam = City(name: "Amsterdam", population: 827)
+let berlin = City(name: "Berlin", population: 3562)”
+
 let cities = [paris, madrid, amsterdam, berlin]
 ```
 
