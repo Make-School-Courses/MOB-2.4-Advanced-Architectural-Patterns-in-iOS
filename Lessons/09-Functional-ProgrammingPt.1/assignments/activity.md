@@ -68,3 +68,6 @@ let cities = [paris, madrid, amsterdam, berlin]
 ```
 
 Print a list of cities with at least one million inhabitants, together with their total populations.
+
+
+*From: Chris Eidhof. “Functional Swift.” Apple Books*
