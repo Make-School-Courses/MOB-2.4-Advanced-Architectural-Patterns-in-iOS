@@ -3,6 +3,11 @@
 
 ### Individually or In a team create a playground or Repl.it to work on the following:
 
+#### Resources:
+- [map documentation](https://developer.apple.com/documentation/swift/array/3017522-map)
+- [filter documentation](https://developer.apple.com/documentation/swift/sequence/3018365-filter)
+- [reduce documentation](https://developer.apple.com/documentation/swift/array/2298686-reduce)
+
 1. Here is an imperative version of a function called `doubleIt` that takes an array of numbers and returns a new array after doubling every item in the initial array:
 
 ```swift
