@@ -322,50 +322,6 @@ Draw the architectural diagram of MVVM-C, mentioning responsibilities and main p
 8. [Presentation Model - Martin Fowler](https://martinfowler.com/eaaDev/PresentationModel.html)
 9. [Universal Links - Apple Devloper](https://developer.apple.com/ios/universal-links/)
 10. [Universal links in iOS - an article](https://medium.com/@abhimuralidharan/universal-links-in-ios-79c4ee038272)
-
-
-
-<!-- INSTRUCTOR:  SOLUTION TO ACTIVITY 1
-
-      PART 1: IN App Delegate:
-
-        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-            // create the main navigation controller to be used for our app
-            let navController = UINavigationController()
-
-            // send that into our coordinator so that it can display view controllers
-    //TODO: pass the navController var into the coordinator property
-            coordinator = MainCoordinator(navigationController: navController)
-
-            // tell the coordinator to take over control
-            coordinator?.start()
-
-            // create a basic UIWindow and activate it
-            window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = navController
-            window?.makeKeyAndVisible()
-
-            return true
-        }
-
-
-        PART 2: in MainCoordinator:
-
-        //TODO: Create functions to instantiate other VCs
-        func buySubscription() {
-            let vc = BuyViewController.instantiate()
-            vc.coordinator = self
-            navigationController.pushViewController(vc, animated: true)
-        }
-
-        func createAccount() {
-            let vc = CreateAccountViewController.instantiate()
-            vc.coordinator = self
-            navigationController.pushViewController(vc, animated: true)
-        }
-
-        -->
 </script></section></div>
     </div>
 

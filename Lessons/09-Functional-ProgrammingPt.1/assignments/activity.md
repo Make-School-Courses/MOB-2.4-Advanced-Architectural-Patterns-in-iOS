@@ -21,7 +21,7 @@ doubleIt(inputArray: [1,2,3]) // [2,4,6]
 
 **TODO:**
 
-1. Code the declarative (FP) version of `doubleIt`so that it achieves the same result as the code above by using the `map` function instead of the `for loop`
+Code the declarative (FP) version of `doubleIt`so that it achieves the same result as the code above by using the `map` function instead of the `for loop`
 
 <!--
 ```swift
@@ -36,13 +36,32 @@ doubleIt(inputArray: [1,2,3]) // [2,4,6]
 ```
 -->
 
-2. Given an array of Users which have properties name:String and age:Int:
-   - write a `map` function that returns an array of strings consisting of the user’s names
+2. Suppose we have an array containing strings representing the contents of a directory:
 
-3. Take the initial array of Users from the exercise above and, using `map`, convert it to a Dictionary
+let exampleFiles = ["README.md", "HelloWorld.swift", "FlappyBird.swift"]
 
-4. Given an array of dictionaries containing keys for “name” and “age”:
-   - write a `map` function that returns an array of users created from it
+Now suppose we want an array of all the .swift files. This is easy to compute with a simple loop. Use the HOF filter.
 
-*From:* </br>
-https://www.weheartswift.com/higher-order-functions-map-filter-reduce-and-more/
+3. Define a function that sums all the integers in an array.
+
+4. Suppose we have the following struct, consisting of a city’s name and population (measured in thousands of inhabitants):
+
+```swift
+struct City {
+  let name: String
+  let population: Int
+}
+
+extension City {
+  func scalingPopulation() -> City {
+    return City(name: name, population: population * 1000)
+  }
+}
+```
+We can define several example cities:
+
+```swift
+let cities = [paris, madrid, amsterdam, berlin]
+```
+
+Print a list of cities with at least one million inhabitants, together with their total populations.

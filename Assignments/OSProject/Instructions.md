@@ -70,3 +70,4 @@ Looking for a project to contribute takes time, make sure you choose one that's 
 - [Welcome Screen](https://github.com/WilsonGramer/AppleWelcomeScreen)
 - [Some projects in this list](https://github.com/jogendra/example-ios-apps)
 - [Design Patterns Cheat Sheet](https://github.com/ochococo/Design-Patterns-In-Swift)
+- [Material Components for iOS](https://github.com/material-components/material-components-ios/tree/develop/contributing)

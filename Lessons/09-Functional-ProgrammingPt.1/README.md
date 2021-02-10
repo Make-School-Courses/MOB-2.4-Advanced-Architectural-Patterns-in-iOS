@@ -4,16 +4,11 @@
 
 <!-- .slide: class="header" -->
 
-# Functional Programming (Part 1 of 2)
+# Functional Programming Pt.1
 
 ## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/09-Functional-ProgrammingPt.1/README.html ':ignore')
 
 <!-- > -->
-
-<!-- INSTRUCTOR:
-1)  SOLUTION FOR ACTIVITY 2:
-- Is in comments below Add'l Rsrcs
--->
 
 ## Learning Objectives
 
@@ -22,26 +17,15 @@ By the end of this lesson, you should be able to...
 1. Describe:
 - the programming issues caused by **mutable state**
 - the difference between **Imperative** and **Declarative** programming styles
-- **Functional Programming constructs**
 - potential use cases for FP
-2. Implement basic examples of constructs explored in class, especially:
-- `Pure Functions`
-- the `map` function
+2. Implement basic examples of FP constructs explored in class
 
-<!-- > -->
-
-## Initial Exercise
-
-Review solutions to last class's After Class assignment:  
-
-- Media Player
-- Coordinators
 
 <!-- > -->
 
 ##  Functional Programming
 
-“Functional programming is a programming paradigm &mdash; a style of building the structure and elements of computer programs &mdash; that treats computation as the evaluation of **mathematical functions** and **avoids changing-state and mutable data.**”
+“Functional programming is a **programming paradigm** &mdash; a style of building the structure and elements of computer programs &mdash; that treats computation as the evaluation of **mathematical functions** and **avoids changing-state and mutable data.**”
 
 <!-- > -->
 
@@ -55,7 +39,7 @@ iOS and Mac apps rely heavily on **state** to change their presentation and resp
 
 In OOP, programs are composed of classes and objects. And statements, when executed, can mutate the state of objects.
 
-However, __*state*__ is complex and becomes the _*responsible for most of the easily avoidable bugs*__ that users encounter.
+However, __*state*__ is complex and becomes the *responsible for most of the easily avoidable bugs* that users encounter.
 
 **State management is difficult and error-prone.**
 
@@ -73,53 +57,58 @@ Swift is not purely a functional programming language &mdash; we must always imp
 
 <!-- > -->
 
-### Key Concepts
+## Key concepts
 
-| State |  HOF |  Mutation     | Pure         |
-|:-----:|:-----:|:------------:|:------------:|
-| Declarative |  Functional    | Imperative   |
+- State
+- Higher Order functions
+- Mutation
+- Pure Function
+- Declarative
+- Functional
+- Imperative
 
-
-<!-- > -->
+<!-- v -->
 
 Refers to a program's stored values at any given time.
+<p class="fragment fade-in">State</p>
 
-<!-- State -->
-
-<!-- > -->
+<!-- v -->
 
 The act of updating some state in-place.
 
-<!-- Mutation -->
+<p class="fragment fade-in">Mutation</p>
 
-<!-- > -->
+<!-- v -->
 
 A function that does at least one of the following:</br>
 &nbsp;&nbsp;&nbsp; - takes one or more functions as arguments </br>
 &nbsp;&nbsp;&nbsp; - returns a function as its result.
 
-<!-- HOF -->
+<p class="fragment fade-in">HOF</p>
 
-<!-- > -->
+<!-- v -->
 
-A programming paradigm that uses statements that change a program's state. Consists of commands for the computer to perform and implements algorithms in explicit steps.
+A programming paradigm that uses statements that change a program's state
 
-<!-- Imperative -->
+Consists of commands for the computer to perform and implements algorithms in explicit steps.
 
-<!-- > -->
+<p class="fragment fade-in">Imperative</p>
 
-Focuses on what the program should accomplish without specifying how the program should achieve the result. It seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
+<!-- v -->
 
-<!-- Declarative -->
+Focuses on what the program should accomplish without specifying how the program should achieve the result.
 
-<!-- > -->
+It seeks to minimize or eliminate *side effects* by describing __*what*__ the program must accomplish rather than describing __*how*__ to accomplish it.
+
+<p class="fragment fade-in">Declarative</p>
+
+<!-- v -->
 
 Meets two criteria: </br>
-&nbsp;&nbsp;&nbsp; - It always produces the same output if given the same input. </br>
-&nbsp;&nbsp;&nbsp; - It does not produce external side effects (they do not change any data or state </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; outside of themselves)
+- It always produces the same output if given the same input.
+- It does not produce external side effects (they do not change any data or state outside of themselves)
 
-<!-- Pure function -->
+<p class="fragment fade-in">Pure Function</p>
 
 <!-- > -->
 
@@ -143,32 +132,27 @@ A function produces side effects if it modifies some variable's value (state) ou
 
 <!-- > -->
 
-Not all side effects are unwanted. In fact, it is difficult to produce an iOS app without changing the state of some key variables.
-
-However, uncontrolled side effects can cause unintended consequences: As apps grow, mutable state becomes harder to manage (and to test), especially
-with concurrency for which mutable state can create dead-locks and race conditions.
-
-<!-- > -->
-
 #### Benefits of FP
 
 Benefits of applying immutability include:
-- elimination of concurrency issues such as dead-locks and race conditions
-- easy to create, test and maintain
-- it promotes code with no side effects
-- cleaner code with less possibility for bugs.
-- more opportunities for the compiler to optimize the code for performance
+- Elimination of concurrency issues such as dead-locks and race conditions
+- Easy to create, test and maintain
+- Promotes code with no side effects
+- Cleaner code with less possibility for bugs
+- More opportunities for the compiler to optimize the code for performance
 
 <!-- > -->
 
-### Imperative vs. Declarative Code Style
+### Imperative vs Declarative Code
 
-##### Example 1
+<!-- > -->
+
+#### Example 1
 
 First, create a type and an array to hold objects of the type.
 
 ```swift
-class MyItem {
+class Animal {
     var name: String
     var description: String
 
@@ -177,50 +161,56 @@ class MyItem {
         self.description = description
     }
 }
+```
 
-var myArr = [
-    MyItem(name: "Abc", description: "Lorem ipsum 1."),
-    MyItem(name: "Def", description: "Lorem ipsum 2."),
-    MyItem(name: "Xyz", description: "Lorem ipsum 3.")
+<!-- v -->
+
+```swift
+var animals = [
+    Animal(name: "Bear", description: "omnivore"),
+    Animal(name: "Caterpillar", description: "herbivore"),
+    Animal(name: "Ladybug", description: "carnivore")
 ]
 ```
 
-<!-- > -->
+<!-- v -->
 
 With __*imperative programming,*__ you tell the compiler what you want to happen, __*step by step:*__
 
 ```swift
 // Imperative approach
-for item in myArr { // step through the array and decide if condition is met
-    if item.name == "Def" {
-        print("Yes")
+for item in animals {
+    // step through the array and decide if condition is met
+    if item.name == "Ladybug" {
+        print("🐞 eat other insects ")
     }
 }
 ```
 
-<!-- > -->
+<!-- v -->
 
 With __*declarative programming,*__ you write code that describes **what** results are desired, but __*not*__ the step-by-step commands on **how** to achieve them:
 
 ```swift
 // Declarative approach
-if myArr.contains(where: { $0.name == "Def" }) {
-    print("yes")
+if animals.contains(where: { $0.name == "Ladubug" }) {
+    print("🐞 eat other insects ")
 }
 ```
 
+<!-- v -->
+
+Both attain the same result.
+
+But the imperative version walks through the array step-by-step, while the functional version simply passes a closure to the `.contains(where: )` function, which exists for every array object.
+
 <!-- > -->
 
-Both attain the same result. But the imperative version walks through the array step-by-step, while the functional version simply passes a closure to the `.contains(where: )` function, which exists for every array object.
+#### Example 2
 
-<!-- > -->
-
-##### Example 2
-
-Consider how the following code is __*imperative.*__ Notice that we are manipulating the values inside a mutable array called numbers,and then printing to the console:
+Consider how the following code is __*imperative.*__ Notice that we are manipulating the values inside a mutable array called numbers, and then printing to the console:
 
 ```swift
-//Imperative Approach
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 for i in 0..<numbers.count {
@@ -231,85 +221,75 @@ for i in 0..<numbers.count {
 print(numbers) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ```
 
-<!-- > -->
+<!-- v -->
 
 Now consider this alternative __*functional approach:*__
 
 ```swift
-//Functional Approach
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // 1)
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 extension Array where Element == Int {
-
-    func timesTen() -> [Int] { // 2)
+    func timesTen() -> [Int] {
         var output = [Int]()
-
-        for num in self { // 3) and 4)
+        for num in self {
             output.append(num * 10)
         }
         return output
     }
-
 }
 
-let result = numbers.timesTen() // 4)
+let result = numbers.timesTen()
 
 print(numbers) //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(result) //[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ```
 
-<!-- > -->
+<!-- v -->
 
 Again, the results of the functional version are similar to that of the imperative one, except now:
 
 - The `numbers` array is now made immutable with the `let` keyword.
-- We moved the process of multiplying numbers into a method stored in an extension on Array.
+- We moved the process of multiplying numbers into a method stored in an extension of Array.
 -Though still using a `for loop` and updating a variable called `output`, the scope of this variable is limited to the method.
-- The input argument (`numbers`) is being passed by value into the method, giving it the same scope as the output.
+- The input argument `numbers` is being passed by value into the method, giving it the same scope as the output.
 
-*from:* </br>
-https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c1f420ca9
+[source](https://medium.com/swift2go/functional-programming-in-swift-an-introduction-253c1f420ca9)
 
 <!-- > -->
 
-## In Class Activity
+## In Class Activity - 5 min
 
-1. Analyze the code in Example 2 above
-2. Answer the following questions about it:
+1. Analyze the code in the previous Example 2
+2. Answer the following questions about it
 
 **Q:** What happens if another thread tries to access the `numbers` array during this process for:
 
 - the imperative version?
 - the functional version?
 
-<!-- > -->
+<!-- v -->
 
 **Q:** What happens if we later want to access the original values stored in numbers?
 
 - with the imperative version?
 - with the functional version?
 
-<!-- > -->
-
-**Q:** How reliably can the code be tested using:
-
-- the imperative version?
-- the functional version?
-
-<!-- > -->
+<!-- v -->
 
 ### First-Class and Higher-Order Functions
 
-**First-Class Functions:** </br>
+**First-Class Functions:**
+
 True FP requires functions to be __*first class*__, and functions in Swift are *first class* citizens.
 
 This means that functions are types, which allows us to treat them like values (variables) and to pass functions around like data: we can pass them into other functions as arguments, and even allows functions to return other functions.
 
-Treating functions as types lets us combine different functions to create new functions with new behavior.
+**Treating functions as types lets us combine different functions to create new functions with new behavior.**
 
 <!-- > -->
 
-**Higher-Order Functions:** </br>
+**Higher-Order Functions:**
+
 Every language with FP has some version of `Map`, `Filter`, `Reduce`, as does Swift.
 
 These functions are called __*Higher-Order Functions (HoF)*__ because they can take other functions as their parameters.
@@ -318,11 +298,11 @@ Higher-Order Functions can be used to reduce repetition and refactor code.
 
 <!-- > -->
 
-### Functors and the `map` Function
+### Functors and the map Function
 
 FP employs concepts of a branch of mathematics called *Category Theory.* where a category is a collection of "objects."
 
-In Category Theory, a *map* between categories (object collections) is called a **"functor."**
+In Category Theory, a **map** between categories (object collections) is called a **"functor."**
 
 <!-- > -->
 
@@ -345,7 +325,7 @@ resulting values back into a new container of the same structure and shape.
 
 <!-- > -->
 
-#### Example 1 - `map` with Array
+#### Example 1 - map with Array
 
 Use map to convert the names in the array to lowercase strings and then to count their characters.
 
@@ -365,7 +345,7 @@ let letterCounts = cast.map { $0.count }
 
 <!-- > -->
 
-#### Example 2 - `map`with Dictionary
+#### Example 2 - map with Dictionary
 
 The `map` function is not limited to arrays; you can use it on other collection types, too.
 
@@ -402,8 +382,7 @@ print(returnFromMap) // [("Harrypotter", 1000.0), ("Junglebook", 600.0)]
 ```
 -->
 
-*From:* </br>
-https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-reduce-flatmap-1837646a63e8
+*source*(https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-reduce-flatmap-1837646a63e8)
 
 <!-- > -->
 
