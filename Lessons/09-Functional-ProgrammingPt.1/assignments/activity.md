@@ -1,7 +1,7 @@
 
 ## In Class Activity
 
-### Individually
+### Individually or In a team create a playground or Repl.it to work on the following:
 
 1. Here is an imperative version of a function called `doubleIt` that takes an array of numbers and returns a new array after doubling every item in the initial array:
 
