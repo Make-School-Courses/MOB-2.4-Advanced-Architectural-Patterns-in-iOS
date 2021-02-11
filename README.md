@@ -62,7 +62,13 @@ Students by the end of the course will be able to ...
 
 ## Class Assignments
 
-Will be posted in Gradescope.
+|    Assignment             | Date Assigned |   Due Date   |     Submission Form     |
+|:-------------------------:|:-------------:|:------------:|:-----------------------:|
+| Creational P. Evidence  |  Jan 20       |  Jan 25           |  Gradescope  |
+| Behavioral P. Evidence  |  Jan 25       |  Jan 27          |  Gradescope  |
+| Structural P. Evidence  |  Jan 27       |  Feb 1           |  Gradescope    |
+| Patterns Worksheet      |  Jan 20       |  Feb 3           |  Gradescope   |
+| Final Project           |  Feb 1        |  Feb 17 & Mar 3  |  Gradescope   |
 
 ### Projects
 
