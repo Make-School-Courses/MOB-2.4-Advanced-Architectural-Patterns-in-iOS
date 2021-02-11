@@ -74,6 +74,7 @@ Students by the end of the course will be able to ...
 |    Project             | Date Assigned |   Due Date   |     Submission Form  |
 |:----------------------:|:-------------:|:------------:|:--------------------:|
 | [Final Project]           |  Feb 1        |  Feb 17 & Mar 3  |  Gradescope   |
+
 [Final project]: Assignments/OSProject/Intro.md
 
 ## Evaluation
