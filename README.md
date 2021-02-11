@@ -68,19 +68,19 @@ Students by the end of the course will be able to ...
 | Behavioral P. Evidence  |  Jan 25       |  Jan 27          |  Gradescope  |
 | Structural P. Evidence  |  Jan 27       |  Feb 1           |  Gradescope    |
 | Patterns Worksheet      |  Jan 20       |  Feb 3           |  Gradescope   |
-| Final Project           |  Feb 1        |  Feb 17 & Mar 3  |  Gradescope   |
 
-### Projects
+### Project
 
-[Final project]
-
+|    Project             | Date Assigned |   Due Date   |     Submission Form  |
+|:----------------------:|:-------------:|:------------:|:--------------------:|
+| [Final Project]           |  Feb 1        |  Feb 17 & Mar 3  |  Gradescope   |
 [Final project]: Assignments/OSProject/Intro.md
 
 ## Evaluation
 
 To pass this course you must meet the following requirements:
 
-- Complete 80% of the class/homework assignments
+- Complete 80% of the class assignments
 - Score at least 70 in the final project according to rubric
 - Pass the final summative assessment with more than 70%
  - This will be further explained in the [study guide](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/StudyGuide.md)
