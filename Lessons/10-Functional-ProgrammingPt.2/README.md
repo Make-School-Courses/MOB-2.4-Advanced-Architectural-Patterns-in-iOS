@@ -4,7 +4,7 @@
 
 <!-- .slide: class="header" -->
 
-# Functional Programming (Part 2 of 2)
+# Functional Programming Pt.2
 
 ## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/10-Functional-ProgrammingPt.2/README.html ':ignore')
 
@@ -21,17 +21,11 @@ By the end of this lesson, you should be able to...
 
 1. Describe **Higher-kinded types (HKTs)** in FP:
   - **Functors**
-  - **Applicative Functors** (aka, Applicatives)
+  - **Applicative Functors**
   - **Monads**
 2. Describe how HKTs map to **Higher-Order Functions (HoFs)** in Swift
-3. Implement basic examples of the Swift HoFs explored in class: `map`, `filter`, `reduce`, `flatMap`, and `compactMap`.
-4. Describe **Best Practices** for integrating FP and OOP in Swift.
-
-<!-- > -->
-
-### Introducing
-
-- The Final Project
+3. Practice using: `map`, `flatMap`, and `compactMap`.
+4. Describe **Best Practices** for integrating FP
 
 <!-- > -->
 
@@ -46,8 +40,6 @@ A **Higher-Order Function** is a function that does at least one of the followin
 ## Higher-kinded types
 
 Another concept from Category Theory that Functional Programming languages seek to implement is called **Higher-kinded types (HKT)**
-
-Think of HKTs as __*types*__ *that* __*take other types*__ and __*construct new types*__ with them.
 
 In progressive order, HKTs types are:
 
@@ -73,8 +65,6 @@ A Functor can also be thought of as:
 <!-- > -->
 
 In other words, a Functor is *any type that implements the `map` function.*
-
-![functor_mapping](assets/functor_mapping.png)
 
 The map function can be applied to any *container type* that wraps a value or multiple values inside itself. Any container that provides the map function becomes the Functor.
 
@@ -126,9 +116,7 @@ We can apply map to the functor, because it knows how to apply functions to valu
 
 <!-- > -->
 
-In the last lesson, we saw how to use the `map` function with collections (Swift Sequence types).
-
-Because Optionals are also *container types,* we can also use the `map` function with Optionals to guard against `nil` (without unwrapping them).
+Because Optionals are *container types,* we can use the `map` function to guard against `nil` (without unwrapping them).
 
 <!-- > -->
 
@@ -185,7 +173,7 @@ Applicative Functors take Functors to the next level.
 
 An **Applicative** lets you put the transformation function inside a container or Functor.
 
-With an Applicative, our values are wrapped in a context, just like Functors. But our functions are wrapped in a context, too.
+With an Applicative, both the value and the function are wrapped in a context.
 
 <!-- > -->
 
@@ -207,7 +195,7 @@ For instance, we can extend a Functor by adding an `apply` function that *takes 
 
 Unfortunately, Swift does not provide any `apply` function on arrays. To be able to implement Applicative Functors, we need to create `apply` functions.
 
-Here is a simple version of an `apply` function that takes only one argument:
+Here is a simple version of an `apply` function. Look at the definition and describe what it does:
 
 ```swift
 func apply<T, V>(fn: ([T]) -> V, args: [T]) -> V {
@@ -223,14 +211,13 @@ Here is how that `apply` function could be used in your code:
 let numbers = [1, 3, 5]
 
 func incrementValues(a: [Int]) -> [Int] {
-
     return a.map { $0 + 1 }
 }
 
 let applied = apply(fn: incrementValues, args: numbers) // prints: [2, 4, 6]
 ```
 
-<!-- > -->
+<!--
 
 Just to demonstrate how you could make the above `apply` function available to *all* arrays in a project, here is the same simple example in an extension of the Array class:
 
@@ -242,8 +229,6 @@ extension Array {
     }
 }
 ```
-
-<!-- > -->
 
 ### Example 2 - Creating `apply` for Optionals
 
@@ -273,7 +258,7 @@ func apply<T,U>(_ wrappedF: Optional<(T) -> U>, to value: Optional<T>) -> Option
 apply(wrappedFunction, to: value) // Prints: 17
 ```
 
-<!-- > -->
+-->
 
 ## Monads
 
@@ -350,7 +335,7 @@ print(result) // [Optional(5), Optional(42), nil, Optional(100), nil]
 As a result, the return type of the mapping transformation is [Int?] – an array of optional integers:
 
 ```swift
-  [Optional(5), Optional(42), nil, Optional(100), nil]
+[Optional(5), Optional(42), nil, Optional(100), nil]
 ```
 
 <!-- > -->
@@ -385,9 +370,9 @@ You can also define `flatMap` for other types, such as functions, tuples, reacti
 
 <!-- > -->
 
-## Activity I
+## Practice Playground
 
-Instructions [here]()
+Complete the Functional Playground
 
 <!-- > -->
 
@@ -411,13 +396,6 @@ Use `lets` instead of `vars` when dealing with data. Functional code is less pro
 
 Using `value types` (structs) and `protocols` instead of classes helps you avoid mutable state. This can lead not only to much safer and easier to maintain code, but also to performance gains in computationally intensive parts of the program.
 
-<!-- > -->
-
-Consider creating a struct when one or more of these apply:
-- the object's primary purpose is to encapsulate a few relatively simple data values
-- encapsulated values will be copied rather than referenced when you assign or pass around an instance
-- Any properties stored by the struct are themselves value types
-- the object does not need to inherit properties or behavior from another existing type
 
 <!-- > -->
 
@@ -435,19 +413,6 @@ Complicated things can be broken down into smaller, simpler things: break code d
 Swift is not a purely functional programming language and we always need to deal with Cocoa Touch frameworks that are mostly designed according to OOP principles.
 
 Achieving a goal of no global side effects is not possible a great deal of the time due to how the Cocoa Touch frameworks are set up.
-
-<!-- > -->
-
-## In Class Activity
-
-Despite the emphasis on OOP constructs in the Cocoa Touch frameworks, especially in UIKit, it is still possible to apply FP principles to Views and View Controllers.
-
-As a Class: Examine and discuss the way that this post uses FP concepts (`apply` functions, HoFs, etc.) to dynamically style view controllers:
-
-https://medium.com/@akbsteam/functional-swift-6-view-styling-1efc4588d1ce
-
-The post contains a playground, which can also be found here:
-[View_Styling_Exercise.playground](View_Styling_Exercise.playground)
 
 <!-- > -->
 
@@ -479,14 +444,5 @@ The post contains a playground, which can also be found here:
 3. [What is a Mondad? - article](https://www.hackingwithswift.com/example-code/language/what-is-a-monad)
 4. [Fold - wikipedia](https://en.wikipedia.org/wiki/Fold_(higher-order_function))
 5. [Lots of Videos on FP in Swift](http://2014.funswiftconf.com)
-6. For curious readers, it is recommended to read the [Swift Evolution Proposal](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002736.html) and the **Higher-kinded types** section of the [Generic manifesto](https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#higher-kinded-types).
-
-
-<!--
-Misc secondary posts:
-(https://blog.codinghorror.com/code-smells/)
-https://academy.realm.io/posts/andy-matuschak-controlling-complexity/
-
-
-https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
- -->
+6. For curious readers, it is recommended to read the [Swift Evolution Proposal](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002736.html) and the **Higher-kinded types** section of the [Generic manifesto](https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#higher-kinded-types)
+7. Book: Swift In  by Tjeerd in 't Veen
