@@ -45,28 +45,6 @@ And because the stream is asynchronous, the data emitted can appear anywhere in 
 
 <!-- > -->
 
-### Modeling Event Streams with Marble Diagrams
-
-The common way of modeling asynchronous streams is to place the emitted values on a time axis in what is called a **Marble Diagram**
-
-These are interactive diagrams that show how operators work with sequences over time.
-
-<!-- > -->
-
-Here, our diagram shows a simple description of a hypothetical event stream, with events represented by colored bubbles drawn at intermittent time intervals:
-
-![Marble_diagram_breakdown](assets/Marble_diagram.png) </br>
-
-<!-- > -->
-
-In a Marble Diagram, the left-to-right arrow represents time, and the numbered circles represent elements of a sequence, which are just values plotted on the timeline.
-
-In the last diagram, pay particular attention to these symbols:
-- The **Error** symbol
-- The **Event Stream Complete** symbol  
-
-<!-- > -->
-
 ## Combine
 
 A framework that provides a declarative Swift API for processing values over time.
@@ -139,6 +117,33 @@ let _ = Just(8)
         print("The end result was \(receivedValue)")
     }
 ```
+
+<aside class="notes">
+The pipeline starts with the publisher Just, which responds with the value that its defined with (in this case, the Integer 8). The output type is <Integer>, and the failure type is <Never>.
+The pipeline then has a map operator, which is transforming the value and its type. In this example it is ignoring the published input and returning a string. This is also transforming the output type to <String>, and leaving the failure type still set as <Never>.
+The pipeline then ends with a sink subscriber.
+</aside>
+
+<!-- > -->
+
+When creating pipeline like the previous example we are often selecting **operators** to help transform the data, types, or both to achieve an end goal. That end goal might be:
+
+- enabling or disabling a user interface element
+- retrieving some piece of data to be displayed
+
+<!-- > -->
+
+## Marble Diagrams
+
+Focus on describing how a specific pipeline changes the stream of data.
+
+<img src="https://heckj.github.io/swiftui-notes/images/diagrams/marble_diagram.svg">
+
+<aside class="notes">
+A publisher is generating and sending data, operators are reacting to that data and potentially changing it, and subscribers requesting and accepting it. On top of that, some operators may change the timing when events happen. We can illustrate these changes with a visual description called a marble diagram.
+</aside>
+
+<!-- > -->
 
 ## In Class Activity
 
