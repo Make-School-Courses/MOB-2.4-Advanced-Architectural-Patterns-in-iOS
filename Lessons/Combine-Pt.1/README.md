@@ -120,7 +120,10 @@ let _ = Just(8)
 
 <aside class="notes">
 The pipeline starts with the publisher Just, which responds with the value that its defined with (in this case, the Integer 8). The output type is <Integer>, and the failure type is <Never>.
-The pipeline then has a map operator, which is transforming the value and its type. In this example it is ignoring the published input and returning a string. This is also transforming the output type to <String>, and leaving the failure type still set as <Never>.
+
+The pipeline then has a map operator, which is transforming the value and its type. In this example it is ignoring the published input and returning a string.
+
+This is also transforming the output type to <String>, and leaving the failure type still set as <Never>.
 The pipeline then ends with a sink subscriber.
 </aside>
 
@@ -140,15 +143,21 @@ Focus on describing how a specific pipeline changes the stream of data.
 <img src="https://heckj.github.io/swiftui-notes/images/diagrams/marble_diagram.svg">
 
 <aside class="notes">
-A publisher is generating and sending data, operators are reacting to that data and potentially changing it, and subscribers requesting and accepting it. On top of that, some operators may change the timing when events happen. We can illustrate these changes with a visual description called a marble diagram.
+A publisher is generating and sending data, operators are reacting to that data and potentially changing it, and subscribers requesting and accepting it.
+
+On top of that, some operators may change the timing when events happen. We can illustrate these changes with a visual description called a marble diagram.
 </aside>
 
 <!-- > -->
 
 ## In Class Activity
 
-Instructions [here]()
+**5 min read, 10 min share**
 
+Visit [this website](https://rxmarbles.com) that has marble diagrams for some operators in Rx.
+
+- Choose one operator and understand what it does
+- Be ready to share your explanation in class
 
 <!-- > -->
 
