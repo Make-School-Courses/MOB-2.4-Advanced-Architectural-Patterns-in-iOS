@@ -230,42 +230,18 @@ Visit [this website](https://rxmarbles.com) that has marble diagrams for some op
 
 <!-- > -->
 
-## Subjects
-
-A special case of publisher that also adhere to the [Subject protocol](https://developer.apple.com/documentation/combine/subject). 
-
-Lets you inject values in a stream by calling a `send` method.
-
-<aside class = "notes">
-Subjects can act as a conductor to send values from non-Combine imperative code to Combine subscribers.
-</aside>
-
-<!-- > -->
-
-## Built-in Subjects
-
-- [PassthroughSubject](https://heckj.github.io/swiftui-notes/#reference-passthroughsubject)
-- [CurrentValueSubject](https://heckj.github.io/swiftui-notes/#reference-currentvaluesubject)
-
-<aside class ="notes">
-PassthroughSubject let's you publish new values on demand. They will pass along values and a completion event.
-
-CurrentValueSubject lets you look at the current value of a publisher.
-</aside>
-
-<!-- > -->
-
-## Playground Challenge
-
-Blackjack hand dealer
-
-<!-- > -->
-
 ## Why Combine?
 
 Now that you've been introduced to Combine, what's one benefit of using it over "standard code"? 🤔
 
 - Write your answer in the chat 
+
+<!-- v -->
+
+- Combine is integrated on the system level
+- Handling asynchronous operations can become reusable
+- Operators are composable
+- Can be used in any architecture
 
 <!-- > -->
 
