@@ -41,9 +41,9 @@ Students by the end of the course will be able to ...
 |  6 |  Wed, Feb 10              | [Functional Programming Pt.1] |
 |  8 |  Mon, Feb 15              | [Functional Programming Pt.2] |
 |  9 |  Wed, Feb 17              | Lab - Sharing Progress |
-| 10 |  Mon, Feb 22              | [Reactive Programming Pt.1] |  
-| 11 |  Wed, Feb 24              | [Reactive Programming Pt.2] |
-| 12 |  Mon, Mar 1               | [Reactive Programming Pt.3] |
+| 10 |  Mon, Feb 22              | [Combine Pt.1] |  
+| 11 |  Wed, Feb 24              | Combine Pt.2 |
+| 12 |  Mon, Mar 1               | Combine Pt.3 & Review |
 | 13 |  Wed, Mar 3               | Final Exam  |
 
 [Creational Patterns Pt.1]: Lessons/01-Creational-PatternsPt.1/README.md
@@ -56,9 +56,7 @@ Students by the end of the course will be able to ...
 [Coordinators]: Lessons/08-Coordinators/README.md
 [Functional Programming Pt.1]: Lessons/09-Functional-ProgrammingPt.1/README.md
 [Functional Programming Pt.2]: Lessons/10-Functional-ProgrammingPt.2/README.md
-[Reactive Programming Pt.1]: Lessons/11-Reactive-ProgrammingPt.1/README.md
-[Reactive Programming Pt.2]: Lessons/12-Reactive-ProgrammingPt.2/README.md
-[Reactive Programming Pt.3]: Lessons/13-Reactive-ProgrammingPt.3/README.md
+[Combine Pt.1]: Lessons/Combine-Pt.1/README.md
 
 ## Class Assignments
 
