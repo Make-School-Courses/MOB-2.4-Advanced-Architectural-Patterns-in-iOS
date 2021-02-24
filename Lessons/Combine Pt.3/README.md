@@ -6,7 +6,7 @@
 
 # Combine
 
-## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/Combine-Pt.2/README.html ':ignore')
+## [Slides](https://make-school-courses.github.io/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/Slides/Combine-Pt.3/README.html ':ignore')
 
 <!-- > -->
 

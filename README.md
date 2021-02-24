@@ -43,7 +43,7 @@ Students by the end of the course will be able to ...
 |  9 |  Wed, Feb 17              | Lab - Sharing Progress |
 | 10 |  Mon, Feb 22              | [Combine Pt.1] |  
 | 11 |  Wed, Feb 24              | [Combine Pt.2] |
-| 12 |  Mon, Mar 1               | Combine Pt.3 & Review |
+| 12 |  Mon, Mar 1               | [Combine Pt.3] & Review |
 | 13 |  Wed, Mar 3               | Final Exam  |
 
 [Creational Patterns Pt.1]: Lessons/01-Creational-PatternsPt.1/README.md
@@ -57,7 +57,8 @@ Students by the end of the course will be able to ...
 [Functional Programming Pt.1]: Lessons/09-Functional-ProgrammingPt.1/README.md
 [Functional Programming Pt.2]: Lessons/10-Functional-ProgrammingPt.2/README.md
 [Combine Pt.1]: Lessons/Combine-Pt.1/README.md
-[Combine Pt.2]: Lessons/Combine-Pt./README.md
+[Combine Pt.2]: Lessons/Combine-Pt.2/README.md
+[Combine Pt.3]: Lessons/Combine-Pt.3/README.md
 
 ## Class Assignments
 
