@@ -9,6 +9,6 @@
 - **[Coordinators](Lessons/08-Coordinators/README.md)**
 - **[FP Pt.1 ](Lessons/09-Functional-ProgrammingPt.1/README.md)**
 - **[FP Pt.2 ](Lessons/10-Functional-ProgrammingPt.2/README.md)**
-- **[RP Pt.1 ](Lessons/11-Reactive-ProgrammingPt.1/README.md)**
-- **[RP Pt.2 ](Lessons/12-Reactive-ProgrammingPt.2/README.md)**
-- **[RP Pt.3 ](Lessons/13-Reactive-ProgrammingPt.3/README.md)**
+- **[RP Pt.1 ](Lessons/Combine-Pt.1/README.md)**
+- **[RP Pt.2 ](Lessons/Combine-Pt.2/README.md)**
+- **[RP Pt.3 ](Lessons/Combine-Pt.3/README.md)**
