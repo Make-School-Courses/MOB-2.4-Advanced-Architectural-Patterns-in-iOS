@@ -42,7 +42,7 @@ Students by the end of the course will be able to ...
 |  8 |  Mon, Feb 15              | [Functional Programming Pt.2] |
 |  9 |  Wed, Feb 17              | Lab - Sharing Progress |
 | 10 |  Mon, Feb 22              | [Combine Pt.1] |  
-| 11 |  Wed, Feb 24              | Combine Pt.2 |
+| 11 |  Wed, Feb 24              | [Combine Pt.2] |
 | 12 |  Mon, Mar 1               | Combine Pt.3 & Review |
 | 13 |  Wed, Mar 3               | Final Exam  |
 

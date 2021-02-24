@@ -16,10 +16,10 @@ By the end of this lesson, you will be able to:
 
 **Describe**:
 - Subjects
+- Back pressure
 
 **Implement**:
 - Subscriptions with operators
-- Combine in an Xcode project to update UI
 
 <!-- > -->
 
@@ -268,42 +268,7 @@ movies
 
 ## In-Class Activity
 
-In pairs, solve the two given challenges in Operators.playground
-
-<!-- > -->
-
-## @Published
-
-A type that publishes a property marked with an attribute.
-
-```swift
-@propertyWrapper struct Published<Value>
-```
-- Publishing a property with the `@Published` attribute creates a publisher of this type. 
-- You access the publisher with the $ operator
-- Class constrained
-
-[Docs](https://developer.apple.com/documentation/combine/published)
-
-<!-- v -->
-
-```swift
-class Weather {
-    ...
-    @Published var temperature : Int!
-    ...
-    let _ = $temperature
-        .sink() { value in
-            print ("Temperature now: \(value)")
-    }
-}
-```
-
-<!-- v -->
-
-## Integration with UIKIt
-
-Declarative UI updates from user input.
+Challenges in Operators.playground
 
 <!-- > -->
 
