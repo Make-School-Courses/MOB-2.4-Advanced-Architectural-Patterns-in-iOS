@@ -57,6 +57,7 @@ Students by the end of the course will be able to ...
 [Functional Programming Pt.1]: Lessons/09-Functional-ProgrammingPt.1/README.md
 [Functional Programming Pt.2]: Lessons/10-Functional-ProgrammingPt.2/README.md
 [Combine Pt.1]: Lessons/Combine-Pt.1/README.md
+[Combine Pt.2]: Lessons/Combine-Pt./README.md
 
 ## Class Assignments
 
