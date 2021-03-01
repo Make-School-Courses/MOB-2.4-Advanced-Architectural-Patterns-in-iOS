@@ -1,7 +1,7 @@
 # Study Guide for MOB 2.4 Final Assessment
 **Overview**: Your final exam will focus on the learning outcomes for this course.  Review each outcome thoroughly and ask questions if you are unclear about the outcome or your level of understanding. 
 
-**Final Exam Format:** Written and coding.  
+**Final Exam Format:** Written 
 
 **Outcome:** Analyze and apply different creational, behavioral and structural patterns.
 
