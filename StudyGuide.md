@@ -43,7 +43,8 @@
   - Studied several operators and 2 sample projects
 
 - *Ways you can demonstrate your skill / knowledge level of this outcome*
-  - Identify the building blocks of Rx.
-  - Be able to show the results of a marble diagram.
-  - Distinguish between the different types of publishers and how they work.
+  - Identify the building blocks of Combine and how they work in a subscription
+  - Be able to show the results of a marble diagram or a code snippet with operators
+  - Distinguish between the different types of subscribers/publishers covered in class
+  - Explain scenarios that are suitable to be implemented with Combine
 
