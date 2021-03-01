@@ -37,14 +37,18 @@ A type that publishes a property marked with an attribute.
 
 ```swift
 class Weather {
-    ...
-    @Published var temperature : Int!
-    ...
-    let _ = $temperature
-        .sink() { value in
-            print ("Temperature now: \(value)")
+    @Published var temperature: Double
+    init(temperature: Double) {
+        self.temperature = temperature
     }
 }
+
+let weather = Weather(temperature: 20)
+cancellable = weather.$temperature
+    .sink() {
+        print ("Temperature now: \($0)")
+}
+weather.temperature = 25
 ```
 
 <!-- v -->
@@ -52,6 +56,8 @@ class Weather {
 ## Integration with UIKIt
 
 Declarative UI updates from user input.
+
+[Instructions](assignments/Example-1.md)
 
 <!-- > -->
 
@@ -65,12 +71,12 @@ Fetching, transforming and displaying data.
 
 Combine is a new framework and it will take more reading and practice to get used to it. But you can start using what you already know, little by little. 😉
 
-
 <!-- > -->
 
 ## Additional Resources
 
 - [Using Combine](https://heckj.github.io/swiftui-notes/#coreconcepts-publisher-subscriber)
+- [Combine Concepts - Playground](https://github.com/AvdLee/CombineSwiftPlayground)
 - Book: Practical Combine by Donny Walls
 - Book: Combine - Asynchronous programming with Swift By Shai Mishali, Marin Todorov, Florent Pillet and Scott Gardner
 

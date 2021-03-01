@@ -167,7 +167,7 @@ numbers
 
 <!-- v -->
 
-**FlatMap**
+**CompactMap**
 
 ```swift
 let strings = ["hey", "meh", "8","0.88", "80"].publisher
