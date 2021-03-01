@@ -200,38 +200,18 @@ Visit [this website](https://rxmarbles.com) that has marble diagrams for some op
 
 - Choose one operator and understand what it does
 - Be ready to share your explanation in class
-</script></section><section  data-markdown><script type="text/template">
-## Subjects
-
-A special case of publisher that also adhere to the [Subject protocol](https://developer.apple.com/documentation/combine/subject). 
-
-Lets you inject values in a stream by calling a `send` method.
-
-<aside class = "notes">
-Subjects can act as a conductor to send values from non-Combine imperative code to Combine subscribers.
-</aside>
-</script></section><section  data-markdown><script type="text/template">
-## Built-in Subjects
-
-- [PassthroughSubject](https://heckj.github.io/swiftui-notes/#reference-passthroughsubject)
-- [CurrentValueSubject](https://heckj.github.io/swiftui-notes/#reference-currentvaluesubject)
-
-<aside class ="notes">
-PassthroughSubject let's you publish new values on demand. They will pass along values and a completion event.
-
-CurrentValueSubject lets you look at the current value of a publisher.
-</aside>
-</script></section><section  data-markdown><script type="text/template">
-## Playground Challenge
-
-Blackjack hand dealer
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section ><section data-markdown><script type="text/template">
 ## Why Combine?
 
 Now that you've been introduced to Combine, what's one benefit of using it over "standard code"? 🤔
 
 - Write your answer in the chat 
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
+- Combine is integrated on the system level
+- Handling asynchronous operations can become reusable
+- Operators are composable
+- Can be used in any architecture
+</script></section></section><section  data-markdown><script type="text/template">
 ## After Class
 
 Check out the Subscription protocol, specifically the `request` method. It takes in a value for demand. What is this? Research the meaning of it and how it relates to a concept called **Backpressure**. 
