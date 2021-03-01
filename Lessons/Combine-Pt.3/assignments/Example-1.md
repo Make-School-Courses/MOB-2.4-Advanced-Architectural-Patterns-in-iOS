@@ -29,7 +29,7 @@ Why? We want to validate the conditions everytime one of these change.
 Whenever the user types, the values for the @Published vars change. Add the delegate method below.
 
 ```swift
-extension ViewController: UITextFieldDelegate{
+extension ViewController{
     @objc func textFieldEditingDidChange(_ sender: UITextField) {
         switch sender {
         case emailTextField:
@@ -45,13 +45,6 @@ extension ViewController: UITextFieldDelegate{
 }
 ```
 
-Don't forget to set the delegate for each textfield.
-
-```swift
-passwordTextField.delegate = self
-confirmPasswordTextField.delegate = self
-emailTextField.delegate = self
-```
 
 ## Step 3 - Adding the target to text fields
 

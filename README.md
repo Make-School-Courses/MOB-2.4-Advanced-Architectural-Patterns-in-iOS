@@ -21,7 +21,7 @@ Students by the end of the course will be able to ...
 1. Analyze and apply different creational, behavioral and structural patterns.
 1. Implement MVVM, Coordinators as architectural patterns.
 1. Use functional programming in Swift.
-1. Evaluate when to implement Reactive Programming in their projects.
+1. Explain the main components in Reactive programming and implement solutions in common scenarios
 
 ## Schedule
 
@@ -37,8 +37,8 @@ Students by the end of the course will be able to ...
 |  3 |  Wed, Jan 27              | [Structural Patterns Pt.1] |
 |  4 |  Mon, Feb 1	             | [Structural Patterns Pt.2] & Project Kick-Off|
 |  5 |  Wed, Feb 3               | [MVVM]  |
-|  7 |  Mon, Feb 8               | [Coordinators] |
-|  6 |  Wed, Feb 10              | [Functional Programming Pt.1] |
+|  6 |  Mon, Feb 8               | [Coordinators] |
+|  7 |  Wed, Feb 10              | [Functional Programming Pt.1] |
 |  8 |  Mon, Feb 15              | [Functional Programming Pt.2] |
 |  9 |  Wed, Feb 17              | Lab - Sharing Progress |
 | 10 |  Mon, Feb 22              | [Combine Pt.1] |  
