@@ -65,6 +65,8 @@ Declarative UI updates from user input.
 
 Fetching, transforming and displaying data.
 
+[Instructions](assignments/Example-2.md)
+
 <!-- > -->
 
 ## After Class

@@ -99,7 +99,7 @@ var validatedPassword: AnyPublisher<String?, Never> {
 }
 ```
 
-This publisher will use the special type [CombineLatest](https://developer.apple.com/documentation/combine/publishers/combinelatest).The return value is a tuple with the values of password and email. This publisher wants to make sure everything is ready to submit and we'll use it to enable/disable the Register button.
+This publisher will use the special type [CombineLatest](https://developer.apple.com/documentation/combine/publishers/combinelatest). The return value is a tuple with the values of password and email. This publisher wants to make sure everything is ready to submit and we'll use it to enable/disable the Register button.
 
 ```swift
 var readyToSubmit: AnyPublisher<(String, String)?, Never> {
@@ -131,3 +131,5 @@ self.readyToSubmit
     .assign(to: \.isEnabled, on: registerButton)
     .store(in: &cancellableSet)
 ```
+
+This should be all you need to get the form working correctly. Try it out 😀
