@@ -16,7 +16,7 @@ By the end of this lesson, you will be able to:
 
 **Implement**:
 - Combine to update UI with UIKit
-- Combine to fetch and display data 
+- Combine to fetch and display data
 
 <!-- > -->
 
@@ -27,7 +27,7 @@ A type that publishes a property marked with an attribute.
 ```swift
 @propertyWrapper struct Published<Value>
 ```
-- Publishing a property with the `@Published` attribute creates a publisher of this type. 
+- Publishing a property with the `@Published` attribute creates a publisher of this type.
 - You access the publisher with the $ operator
 - Class constrained
 
@@ -69,7 +69,7 @@ The result is a tuple `(Data, URLResponse)`
 
 And there's also support with **Codable** by using the operator `decode(type:decoder:)`
 
-[Playground Sample Code]()
+[Playground Sample Code](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/Combine-Pt.3/assignments/Networking.playground.zip)
 
 <aside class="notes">
 When using this combination, we need to first use map on the result from dataTaskPublisher, to just get the Data part of it from the tuple. Then we can apply the operator to decode it.
@@ -115,4 +115,3 @@ Combine is a new framework and it will take more reading and practice to get use
 - [Combine + UI Updates](https://useyourloaf.com/blog/getting-started-with-combine/)
 - Book: Practical Combine by Donny Walls
 - Book: Combine - Asynchronous programming with Swift By Shai Mishali, Marin Todorov, Florent Pillet and Scott Gardner
-
